@@ -15,4 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
-/jetty
+/coverage/*
+/jetty/*
