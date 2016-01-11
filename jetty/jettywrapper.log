@@ -1,0 +1,108 @@
+0    [main] INFO  org.eclipse.jetty.server.Server  – jetty-8.1.10.v20130312
+15   [main] INFO  org.eclipse.jetty.deploy.providers.ScanningAppProvider  – Deployment monitor /Users/tterrell/Projects/pomegranate/jetty/contexts at interval 0
+19   [main] INFO  org.eclipse.jetty.deploy.DeploymentManager  – Deployable added: /Users/tterrell/Projects/pomegranate/jetty/contexts/solr.xml
+51   [main] INFO  org.eclipse.jetty.webapp.WebInfConfiguration  – Extract jar:file:/Users/tterrell/Projects/pomegranate/jetty/webapps/solr.war!/ to /Users/tterrell/Projects/pomegranate/jetty/solr-webapp/webapp
+954  [main] INFO  org.eclipse.jetty.webapp.StandardDescriptorProcessor  – NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+997  [main] INFO  org.apache.solr.servlet.SolrDispatchFilter  – SolrDispatchFilter.init()
+1009 [main] INFO  org.apache.solr.core.SolrResourceLoader  – JNDI not configured for solr (NoInitialContextEx)
+1009 [main] INFO  org.apache.solr.core.SolrResourceLoader  – using system property solr.solr.home: /Users/tterrell/Projects/pomegranate/jetty/solr
+1011 [main] INFO  org.apache.solr.core.SolrResourceLoader  – new SolrResourceLoader for directory: '/Users/tterrell/Projects/pomegranate/jetty/solr/'
+1012 [main] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/' to classloader
+1012 [main] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/solr-analysis-extras-4.10.3.jar' to classloader
+1013 [main] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/solr-clustering-4.10.3.jar' to classloader
+1013 [main] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/solr-langid-4.10.3.jar' to classloader
+1088 [main] INFO  org.apache.solr.core.ConfigSolr  – Loading container configuration from /Users/tterrell/Projects/pomegranate/jetty/solr/solr.xml
+1173 [main] INFO  org.apache.solr.core.CoresLocator  – Config-defined core root directory: /Users/tterrell/Projects/pomegranate/jetty/solr
+1179 [main] INFO  org.apache.solr.core.CoreContainer  – New CoreContainer 854487022
+1180 [main] INFO  org.apache.solr.core.CoreContainer  – Loading cores into CoreContainer [instanceDir=/Users/tterrell/Projects/pomegranate/jetty/solr/]
+1181 [main] INFO  org.apache.solr.core.CoreContainer  – loading shared library: /Users/tterrell/Projects/pomegranate/jetty/solr/lib
+1181 [main] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/' to classloader
+1181 [main] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/solr-analysis-extras-4.10.3.jar' to classloader
+1181 [main] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/solr-clustering-4.10.3.jar' to classloader
+1181 [main] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/solr-langid-4.10.3.jar' to classloader
+1194 [main] INFO  org.apache.solr.handler.component.HttpShardHandlerFactory  – Setting socketTimeout to: 0
+1194 [main] INFO  org.apache.solr.handler.component.HttpShardHandlerFactory  – Setting urlScheme to: null
+1198 [main] INFO  org.apache.solr.handler.component.HttpShardHandlerFactory  – Setting connTimeout to: 0
+1199 [main] INFO  org.apache.solr.handler.component.HttpShardHandlerFactory  – Setting maxConnectionsPerHost to: 20
+1200 [main] INFO  org.apache.solr.handler.component.HttpShardHandlerFactory  – Setting corePoolSize to: 0
+1200 [main] INFO  org.apache.solr.handler.component.HttpShardHandlerFactory  – Setting maximumPoolSize to: 2147483647
+1201 [main] INFO  org.apache.solr.handler.component.HttpShardHandlerFactory  – Setting maxThreadIdleTime to: 5
+1201 [main] INFO  org.apache.solr.handler.component.HttpShardHandlerFactory  – Setting sizeOfQueue to: -1
+1201 [main] INFO  org.apache.solr.handler.component.HttpShardHandlerFactory  – Setting fairnessPolicy to: false
+1323 [main] INFO  org.apache.solr.update.UpdateShardHandler  – Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+1325 [main] INFO  org.apache.solr.logging.LogWatcher  – SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+1326 [main] INFO  org.apache.solr.logging.LogWatcher  – Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+1327 [main] INFO  org.apache.solr.core.CoreContainer  – Host Name: 
+1674 [main] INFO  org.apache.solr.core.CoresLocator  – Looking for core definitions underneath /Users/tterrell/Projects/pomegranate/jetty/solr
+1685 [main] INFO  org.apache.solr.core.CoresLocator  – Found core blacklight-core in /Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/
+1686 [main] INFO  org.apache.solr.core.CoresLocator  – Found 1 core definitions
+1687 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrResourceLoader  – new SolrResourceLoader for directory: '/Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/'
+1703 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrConfig  – Adding specified lib dirs to ClassLoader
+1704 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/analysis-extras/lib/icu4j-53.1.jar' to classloader
+1704 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/analysis-extras/lib/morfologik-fsa-1.7.1.jar' to classloader
+1704 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/analysis-extras/lib/morfologik-polish-1.7.1.jar' to classloader
+1704 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/analysis-extras/lib/morfologik-stemming-1.7.1.jar' to classloader
+1705 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/analysis-extras/lucene-libs/lucene-analyzers-icu-4.10.3.jar' to classloader
+1705 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/analysis-extras/lucene-libs/lucene-analyzers-morfologik-4.10.3.jar' to classloader
+1705 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/analysis-extras/lucene-libs/lucene-analyzers-smartcn-4.10.3.jar' to classloader
+1705 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrResourceLoader  – Adding 'file:/Users/tterrell/Projects/pomegranate/jetty/solr/lib/contrib/analysis-extras/lucene-libs/lucene-analyzers-stempel-4.10.3.jar' to classloader
+1724 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrConfig  – Using Lucene MatchVersion: 4.10.3
+1761 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.Config  – Loaded SolrConfig: solrconfig.xml
+1764 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.schema.IndexSchema  – Reading Solr Schema from /Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/conf/schema.xml
+1777 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.schema.IndexSchema  – [blacklight-core] Schema name=Hydra
+1859 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.schema.IndexSchema  – unique key field: id
+1907 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.CoreContainer  – Creating SolrCore 'blacklight-core' using configuration from instancedir /Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/
+1919 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – solr.StandardDirectoryFactory
+1923 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – [blacklight-core] Opening new SolrCore at /Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/, dataDir=/Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/data/
+1923 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – JMX monitoring not detected for core: blacklight-core
+1930 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.CachingDirectoryFactory  – return new directory for /Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/data
+1943 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – New index directory detected: old=null new=/Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/data/index/
+1944 [coreLoadExecutor-5-thread-1] WARN  org.apache.solr.core.SolrCore  – [blacklight-core] Solr index directory '/Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/data/index' doesn't exist. Creating new index...
+1951 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.CachingDirectoryFactory  – return new directory for /Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/data/index
+2006 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – SolrDeletionPolicy.onCommit: commits: num=1
+	commit{dir=/Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/data/index,segFN=segments_1,generation=1}
+2007 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – newest commit generation = 1
+2040 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – no updateRequestProcessorChain defined as default, creating implicit default
+2044 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /update: org.apache.solr.handler.UpdateRequestHandler
+2045 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /update/json: org.apache.solr.handler.UpdateRequestHandler
+2045 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /update/csv: org.apache.solr.handler.UpdateRequestHandler
+2045 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /update/json/docs: org.apache.solr.handler.UpdateRequestHandler
+2048 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created search: solr.SearchHandler
+2049 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /get: solr.RealTimeGetHandler
+2049 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – adding lazy requestHandler: solr.ReplicationHandler
+2049 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /replication: solr.ReplicationHandler
+2049 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+2049 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /analysis/field: solr.FieldAnalysisRequestHandler
+2050 [coreLoadExecutor-5-thread-1] WARN  org.apache.solr.core.RequestHandlers  – Multiple requestHandler registered to the same name: /update ignoring: org.apache.solr.handler.UpdateRequestHandler
+2050 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /update: solr.UpdateRequestHandler
+2050 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /admin/: org.apache.solr.handler.admin.AdminHandlers
+2051 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.RequestHandlers  – created /admin/ping: solr.PingRequestHandler
+2061 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.handler.loader.XMLLoader  – xsltCacheLifetimeSeconds=60
+2062 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.handler.loader.XMLLoader  – xsltCacheLifetimeSeconds=60
+2063 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.handler.loader.XMLLoader  – xsltCacheLifetimeSeconds=60
+2063 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.handler.loader.XMLLoader  – xsltCacheLifetimeSeconds=60
+2063 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.handler.loader.XMLLoader  – xsltCacheLifetimeSeconds=60
+2072 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – Hard AutoCommit: disabled
+2073 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – Soft AutoCommit: disabled
+2079 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=/Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/data/index,segFN=segments_1,generation=1}
+2079 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.SolrCore  – newest commit generation = 1
+2083 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.search.SolrIndexSearcher  – Opening Searcher@3c5e76e5[blacklight-core] main
+2087 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.rest.ManagedResourceStorage  – File-based storage initialized to use dir: /Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/conf
+2088 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.rest.RestManager  – Initializing RestManager with initArgs: {storageDir=/Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/conf}
+2093 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.rest.ManagedResourceStorage  – Reading _rest_managed.json using file:dir=/Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/conf
+2097 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.rest.ManagedResourceStorage  – Loaded LinkedHashMap at path _rest_managed.json using file:dir=/Users/tterrell/Projects/pomegranate/jetty/solr/blacklight-core/conf
+2098 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.rest.ManagedResource  – Loaded initArgs {} for /rest/managed
+2098 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.rest.RestManager  – Initializing 0 registered ManagedResources
+2105 [searcherExecutor-6-thread-1] INFO  org.apache.solr.core.SolrCore  – [blacklight-core] Registered new searcher Searcher@3c5e76e5[blacklight-core] main{StandardDirectoryReader(segments_1:1:nrt)}
+2105 [coreLoadExecutor-5-thread-1] INFO  org.apache.solr.core.CoreContainer  – registering core: blacklight-core
+2106 [main] INFO  org.apache.solr.servlet.SolrDispatchFilter  – user.dir=/Users/tterrell/Projects/pomegranate/jetty
+2107 [main] INFO  org.apache.solr.servlet.SolrDispatchFilter  – SolrDispatchFilter.init() done
+2125 [main] INFO  org.eclipse.jetty.server.AbstractConnector  – Started SocketConnector@0.0.0.0:8983
+139239 [qtp361993357-13] INFO  org.apache.solr.core.SolrCore  – [blacklight-core] webapp=/solr path=/select params={qt=search&fl=id&fl=full_title_tesim&fl=thumbnail_url_ssm&fl=full_image_url_ssm&fq=-exhibit_test-exhibit_public_bsi:false&sort=score+desc&rows=10&wt=ruby&facet=false} hits=0 status=0 QTime=32 
+139249 [qtp361993357-15] INFO  org.apache.solr.core.SolrCore  – [blacklight-core] webapp=/solr path=/select params={qt=search&fl=id&fl=full_title_tesim&fl=thumbnail_url_ssm&fl=full_image_url_ssm&fq=-exhibit_test-exhibit_public_bsi:false&sort=score+desc&rows=10&wt=ruby&facet=false} hits=0 status=0 QTime=1 
+139381 [qtp361993357-17] INFO  org.apache.solr.core.SolrCore  – [blacklight-core] webapp=/solr path=/select params={qt=search&fl=*&fq=spotlight_exhibit_slug_test-exhibit_bsi:true&sort=timestamp+desc&rows=10&wt=ruby} hits=0 status=0 QTime=13 
+156210 [qtp361993357-20] INFO  org.apache.solr.core.SolrCore  – [blacklight-core] webapp=/solr path=/select params={qt=search&fl=*&fq=spotlight_exhibit_slug_test-exhibit_bsi:true&sort=score+desc&rows=10&wt=ruby} hits=0 status=0 QTime=1 
+179976 [qtp361993357-13] INFO  org.apache.solr.core.SolrCore  – [blacklight-core] webapp=/solr path=/select params={qt=search&fl=*&fq=spotlight_exhibit_slug_test-exhibit_bsi:true&sort=timestamp+desc&rows=10&wt=ruby} hits=0 status=0 QTime=1 
+181458 [qtp361993357-15] INFO  org.apache.solr.core.SolrCore  – [blacklight-core] webapp=/solr path=/select params={qt=search&fl=*&fq=spotlight_exhibit_slug_test-exhibit_bsi:true&sort=score+desc&rows=10&wt=ruby} hits=0 status=0 QTime=1 
+192217 [qtp361993357-17] INFO  org.apache.solr.core.SolrCore  – [blacklight-core] webapp=/solr path=/select params={qt=search&fl=*&fq=spotlight_exhibit_slug_test-exhibit_bsi:true&sort=score+desc&rows=10&wt=ruby} hits=0 status=0 QTime=0 
