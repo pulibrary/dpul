@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/pulibrary/pomegranate.png?label=ready&title=Ready)](https://waffle.io/pulibrary/pomegranate)
 # Pomegranate
 
 A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton University Library.
