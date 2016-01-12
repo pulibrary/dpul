@@ -39,6 +39,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'simplecov', '~> 0.9', require: false
   gem 'coveralls', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'vcr'
+  gem 'webmock', require: false
 end
 
 group :development do
@@ -62,5 +66,4 @@ gem 'blacklight-gallery', '>= 0.3.0'
 gem 'blacklight-oembed'
 gem 'social-share-button'
 gem 'devise_invitable'
-gem 'rubocop', require: false
-gem 'rubocop-rspec', require: false
+gem 'osullivan'
