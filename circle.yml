@@ -18,4 +18,4 @@ dependencies:
     - bin/jetty_wait
 test:
   pre:
-    # - bundle exec rake rubocop
+    - bundle exec rake rubocop

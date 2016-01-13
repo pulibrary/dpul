@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount Blacklight::Oembed::Engine, at: 'oembed'
   root to: 'spotlight/exhibits#index'
   mount Spotlight::Engine, at: 'spotlight'
-#  root to: "catalog#index" # replaced by spotlight root path
+  # root to: "catalog#index" # replaced by spotlight root path
   blacklight_for :catalog
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

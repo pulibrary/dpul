@@ -62,3 +62,5 @@ gem 'blacklight-gallery', '>= 0.3.0'
 gem 'blacklight-oembed'
 gem 'social-share-button'
 gem 'devise_invitable'
+gem 'rubocop', require: false
+gem 'rubocop-rspec', require: false
