@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount Blacklight::Oembed::Engine, at: 'oembed'
   root to: 'spotlight/exhibits#index'
+  resources :exhibits, path: '/spotlight', only: [:create]
   mount Spotlight::Engine, at: 'spotlight'
   # root to: "catalog#index" # replaced by spotlight root path
   blacklight_for :catalog

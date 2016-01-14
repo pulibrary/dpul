@@ -7,7 +7,7 @@ class ExternalCollectionsQuery
     private
 
       def remote_url
-        "https://hydra-dev.princeton.edu/collections/manifest"
+        Pomegranate.config["all_collection_manifest_url"]
       end
   end
 

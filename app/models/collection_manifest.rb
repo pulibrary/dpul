@@ -3,6 +3,12 @@ class CollectionManifest < IIIF::Presentation::Collection
     new(ExternalManifest.load(url).send(:data))
   end
 
+  def self.find_by_slug(slug)
+    ExternalCollectionsQuery.all.find do |manifest|
+      manifest.slug == slug
+    end
+  end
+
   def slug
     metadata.find do |entry|
       entry["label"] == slug_key

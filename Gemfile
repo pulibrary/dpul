@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rubocop-rspec', require: false
   gem 'vcr'
   gem 'webmock', require: false
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :development do
