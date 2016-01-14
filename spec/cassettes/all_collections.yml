@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://hydra-dev.princeton.edu/collections/manifest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Vary:
+      - Accept
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 1220de90-1693-4c4f-ab88-4b02d9247d16
+      Etag:
+      - W/"2fc1c01183eb74d9e5e2c08e87d9f59d"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.044988'
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Thu, 14 Jan 2016 18:55:20 GMT
+      X-Powered-By:
+      - Phusion Passenger 5.0.23
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 5.0.23
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
+    body:
+      encoding: UTF-8
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/manifest","@type":"sc:Collection","label":"Plum
+        Collections","description":"All collections which are a part of Plum.","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/manifest/range/g70309271427520","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"manifests":[{"@id":"https://hydra-dev.princeton.edu/collections/5d86p020k/manifest","@type":"sc:Manifest","label":"Test
+        Collection 2","viewingHint":"individuals","viewingDirection":"left-to-right"},{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest","@type":"sc:Manifest","label":"princeton","viewingHint":"individuals","viewingDirection":"left-to-right"}]}'
+    http_version: 
+  recorded_at: Thu, 14 Jan 2016 18:55:20 GMT
+- request:
+    method: get
+    uri: https://hydra-dev.princeton.edu/collections/5d86p020k/manifest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Vary:
+      - Accept
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 7785efb2-2311-4189-bacd-7d11e6f2d70e
+      Etag:
+      - W/"a4296c841bb94d176daf27ff572e2264"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.147972'
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Thu, 14 Jan 2016 18:56:20 GMT
+      X-Powered-By:
+      - Phusion Passenger 5.0.23
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 5.0.23
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
+    body:
+      encoding: UTF-8
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/5d86p020k/manifest","@type":"sc:Manifest","label":"Test
+        Collection 2","viewingHint":"individuals","viewingDirection":"left-to-right","service":{"@context":"http://iiif.io/api/auth/0/context.json","@id":"https://hydra-dev.princeton.edu/users/auth/cas","label":"Login
+        to Plum using CAS","profile":"http://iiif.io/api/auth/0/login","service":{"hsh":null}},"structures":[{"@id":"https://hydra-dev.princeton.edu/collections/5d86p020k/manifest/range/g70309456906720","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"metadata":[{"label":"Exhibit","value":[{"@value":"test-collection-2"}]}]}'
+    http_version: 
+  recorded_at: Thu, 14 Jan 2016 18:56:20 GMT
+- request:
+    method: get
+    uri: https://hydra-dev.princeton.edu/collections/2b88qc199/manifest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Vary:
+      - Accept
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 21a92eff-1881-498b-a366-71b382349ebf
+      Etag:
+      - W/"db6f22e3faddc639d095898b2aa3b5d4"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.177122'
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Thu, 14 Jan 2016 18:56:20 GMT
+      X-Powered-By:
+      - Phusion Passenger 5.0.23
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 5.0.23
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
+    body:
+      encoding: UTF-8
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest","@type":"sc:Manifest","label":"princeton","viewingHint":"individuals","viewingDirection":"left-to-right","service":{"@context":"http://iiif.io/api/auth/0/context.json","@id":"https://hydra-dev.princeton.edu/users/auth/cas","label":"Login
+        to Plum using CAS","profile":"http://iiif.io/api/auth/0/login","service":{"hsh":null}},"structures":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest/range/g70309282360200","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"metadata":[{"label":"Exhibit","value":[{"@value":"princeton-best"}]}]}'
+    http_version: 
+  recorded_at: Thu, 14 Jan 2016 18:56:20 GMT
+recorded_with: VCR 3.0.0
