@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rubocop-rspec', require: false
   gem 'vcr'
   gem 'webmock', require: false
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -66,4 +68,4 @@ gem 'blacklight-gallery', '>= 0.3.0'
 gem 'blacklight-oembed'
 gem 'social-share-button'
 gem 'devise_invitable'
-gem 'osullivan'
+gem 'iiif-presentation'

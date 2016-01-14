@@ -1,0 +1,14 @@
+defaults: &defaults
+  all_collection_manifest_url: "https://hydra-dev.princeton.edu/collections/manifest"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+staging:
+  <<: *defaults

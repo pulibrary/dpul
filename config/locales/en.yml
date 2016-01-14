@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  spotlight:
+    exhibits:
+      new_exhibit_form:
+        fields:
+          slug:
+            label: Plum Collection

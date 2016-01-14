@@ -1,0 +1,14 @@
+<%= bootstrap_form_for @exhibit, url: ((spotlight.exhibit_path(@exhibit) if @exhibit.persisted?) || exhibits_path), layout: :horizontal, label_col: 'col-md-2', control_col: 'col-md-10', html: {class: "row"} do |f| %>
+<div class="row col-md-12">
+  <%= f.collection_select(:slug, ExternalCollectionsQuery.all, :slug, :label, label: t(:'.fields.slug.label')) %>
+  <%= f.text_field :tag_list %>
+
+  <%= render 'initial_resources_form', locals: { f: f } %>
+
+  <div class="form-actions">
+    <div class="primary-actions">
+      <%= f.submit nil, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+<% end %>
