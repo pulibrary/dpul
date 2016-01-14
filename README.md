@@ -17,4 +17,11 @@ rake jetty:configure_solr
 rake jetty:start
 ```
 
+To create an initial user account and exhibit, use the Spotlight rake tasks:
+
+```sh
+rake spotlight:initialize
+rake spotlight:exhibit
+```
+
 After setup, run Pomegranate locally with `rails s`.
