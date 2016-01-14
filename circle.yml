@@ -13,9 +13,9 @@ dependencies:
     - sudo sh bin/ci_kakadu_install.sh
     - RAILS_ENV=development bundle exec rake jetty:unzip
     - bundle exec rake jetty:configure_solr
-    - cd jetty && java -Djetty.port=8983 -Dsolr.solr.home=/home/ubuntu/plum/jetty/solr -XX:MaxPermSize=256m -Xmx512m -jar start.jar:
+    - cd jetty && java -Djetty.port=8983 -Dsolr.solr.home=/home/ubuntu/pomegranate/jetty/solr -XX:MaxPermSize=256m -Xmx512m -jar start.jar:
         background: true
     - bin/jetty_wait
 test:
   pre:
-    # - bundle exec rake rubocop
+    - bundle exec rake rubocop
