@@ -7,6 +7,8 @@ begin
       FileList['solr_conf/conf/*'].each do |f|
         cp("#{f}", 'jetty/solr/blacklight-core/conf/', verbose: true)
       end
+
+      cp_r('jetty/solr/blacklight-core', 'jetty/solr/blacklight-test', verbose: true)
     end
   end
 rescue LoadError
