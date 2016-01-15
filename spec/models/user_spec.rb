@@ -1,9 +1,20 @@
 require 'rails_helper'
 
-describe User do
-  let(:email) { 'user@example.com' }
-  subject { described_class.new email: email }
-  it 'has an email address' do
-    expect(subject.to_s).to eq email
+RSpec.describe User do
+  subject { FactoryGirl.build(:user) }
+
+  it "uses the username as its stringified value" do
+    expect(subject.to_s).to eq subject.username
+  end
+
+  describe ".from_omniauth" do
+    it "creates a user" do
+      token = double("token", provider: "cas", uid: "test")
+      user = described_class.from_omniauth(token)
+      expect(user).to be_persisted
+      expect(user.provider).to eq "cas"
+      expect(user.uid).to eq "test"
+      expect(user.username).to eq "test"
+    end
   end
 end
