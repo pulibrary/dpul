@@ -19,6 +19,7 @@ describe IIIFResource do
         { "label": "Date created", "value": [{ "@value": "1985" }] }
       ]}'
     }
+    let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
 
     before do
       allow_any_instance_of(described_class).to receive(:open).with(url).and_return(StringIO.new(json))
@@ -26,14 +27,14 @@ describe IIIFResource do
 
     describe '#initialize' do
       it 'loads metadata from the IIIF manifest' do
-        resource = described_class.new(manifest_url: url)
+        resource = described_class.new(manifest_url: url, exhibit: exhibit)
         expect(resource.url).to eq(url)
       end
     end
 
     describe '#manifest' do
       it 'retrieves and parses an IIIF manifest' do
-        resource = described_class.new(manifest_url: url)
+        resource = described_class.new(manifest_url: url, exhibit: exhibit)
         manifest = resource.manifest
         expect(manifest['@id']).to eq(url)
         expect(manifest['label']).to eq('Sample Manifest')
@@ -42,16 +43,14 @@ describe IIIFResource do
     end
 
     describe '#to_solr' do
-      subject { described_class.new(manifest_url: url) }
+      subject { described_class.new(manifest_url: url, exhibit: exhibit) }
       before do
-        exhibit = Spotlight::Exhibit.new
-        allow(exhibit).to receive(:blacklight_config).and_return(Blacklight::Configuration.new)
-        subject.exhibit = exhibit
+        allow(exhibit).to receive_message_chain(:blacklight_config, :document_model, :resource_type_field).and_return(:spotlight_resource_type_ssim)
       end
 
       it 'indexes iiif metadata' do
         solr_doc = subject.to_solr
-        expect(solr_doc[:spotlight_title_ssim]).to eq('Sample Manifest')
+        expect(solr_doc[:full_title_ssim]).to eq('Sample Manifest')
         expect(solr_doc[:thumbnail_ssim]).to eq('http://example.com/loris/1.jp2/full/100,/0/default.jpg')
         expect(solr_doc[:creator_ssim]).to eq(['Author, Alice, 1954-'])
         expect(solr_doc[:date_created_ssim]).to eq(['1985'])
@@ -59,18 +58,17 @@ describe IIIFResource do
     end
   end
 
-  context 'with recorded http interactions', vcr: { cassette_name: 'iiif_manifest' } do
+  context 'with recorded http interactions', vcr: { cassette_name: 'all_collections' } do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
     it 'ingests a iiif manifest' do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
-      resource = described_class.new manifest_url: url
-      resource.exhibit = exhibit
+      resource = described_class.new manifest_url: url, exhibit: exhibit
       expect(resource.save).to be true
 
       reloaded = described_class.last
       expect(reloaded.url).to eq url
       solr_doc = reloaded.to_solr
-      expect(solr_doc[:spotlight_title_ssim]).to eq 'Christopher and his kind, 1929-1939'
+      expect(solr_doc[:full_title_ssim]).to eq 'Christopher and his kind, 1929-1939'
       expect(solr_doc[:date_created_ssim]).to eq ['1976']
     end
   end

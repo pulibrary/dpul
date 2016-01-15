@@ -2,14 +2,17 @@ require 'iiif/presentation'
 require 'open-uri'
 
 class IIIFResource < Spotlight::Resource
+  belongs_to :exhibit, class_name: 'Spotlight::Exhibit'
+
   # If a manifest_url if provided, it is retrieved, parsed and indexed
-  def initialize(manifest_url: nil)
+  def initialize(manifest_url: nil, exhibit: nil)
     super()
     self.url = manifest_url
+    self.exhibit_id = exhibit.id if exhibit
   end
 
   def title_field
-    :"#{solr_fields.prefix}spotlight_title#{solr_fields.string_suffix}"
+    :"#{solr_fields.prefix}full_title#{solr_fields.string_suffix}"
   end
 
   def field_name(name)
@@ -22,15 +25,17 @@ class IIIFResource < Spotlight::Resource
   end
 
   def to_solr
-    solr_doc = super
-
-    solr_doc[title_field] = manifest['label']
-    solr_doc[field_name('thumbnail')] = manifest['thumbnail']['@id'] if manifest['thumbnail']
-    manifest['metadata'].each do |h|
-      solr_doc[field_name(h['label'].parameterize('_'))] = h['value'].map { |v| v["@value"] }
+    super.tap do |solr_doc|
+      solr_doc['id'] = id
+      solr_doc[title_field] = manifest['label']
+      if manifest['thumbnail']
+        solr_doc[field_name('thumbnail')] = manifest['thumbnail']['@id']
+        solr_doc['content_metadata_image_iiif_info_ssm'] = manifest['thumbnail']['@id'].sub(/full.*/, 'info.json')
+      end
+      manifest['metadata'].each do |h|
+        solr_doc[field_name(h['label'].parameterize('_'))] = h['value'].map { |v| v["@value"] }
+      end
     end
-
-    solr_doc
   end
 
   def solr_fields
