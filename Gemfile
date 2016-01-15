@@ -39,13 +39,15 @@ group :development, :test do
   gem 'pry-rails'
   gem 'simplecov', '~> 0.9', require: false
   gem 'coveralls', require: false
-  gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
   gem 'vcr'
   gem 'webmock', require: false
   gem 'capybara'
   gem 'factory_girl_rails', require: false
   gem 'poltergeist'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails-console'
 end
 
 group :development do
@@ -56,7 +58,11 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'pg'
+end
 
+gem 'rubocop', require: false
 gem 'blacklight', '~> 5.16'
 gem 'blacklight-spotlight', github: 'sul-dlss/spotlight'
 gem 'jettywrapper', '>= 2.0'
