@@ -44,7 +44,8 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock', require: false
   gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', require: false
+  gem 'poltergeist'
 end
 
 group :development do
@@ -69,3 +70,4 @@ gem 'blacklight-oembed'
 gem 'social-share-button'
 gem 'devise_invitable'
 gem 'iiif-presentation'
+gem 'omniauth-cas'
