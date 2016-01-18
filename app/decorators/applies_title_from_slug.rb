@@ -7,9 +7,16 @@ class AppliesTitleFromSlug < SimpleDelegator
   end
 
   def save(*args)
-    __getobj__.title = title
     __getobj__.slug = slug
+    __getobj__.title = title
+    return false unless valid?
     super
+  end
+
+  def valid?(*args)
+    super
+    errors.add :slug, "can't be blank" if slug.blank?
+    errors.blank?
   end
 
   private
@@ -19,6 +26,6 @@ class AppliesTitleFromSlug < SimpleDelegator
     end
 
     def title
-      manifest.label
+      manifest.try(:label)
     end
 end
