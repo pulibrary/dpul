@@ -15,4 +15,14 @@ class ApplicationController < ActionController::Base
     return key if key
     "guest_" + guest_user_unique_suffix
   end
+
+  def create_guest_user(key = nil)
+    User.new do |g|
+      g.username = guest_username_authentication_key(key)
+      g.email = guest_email_authentication_key(key)
+      g.guest = true if g.respond_to? :guest
+      g.skip_confirmation! if g.respond_to?(:skip_confirmation!)
+      g.save(validate: false)
+    end
+  end
 end
