@@ -17,8 +17,8 @@ class ExternalCollectionsQuery
   end
 
   def collection_manifests
-    @collection_manifests ||= manifest_urls.map do |url|
-      CollectionManifest.load(url)
+    @collection_manifests ||= all_manifest.collections.map do |collection|
+      CollectionManifest.new(collection.send(:data))
     end
   end
 
@@ -26,11 +26,5 @@ class ExternalCollectionsQuery
 
     def all_manifest
       @all_manifest ||= ExternalManifest.load(remote_url)
-    end
-
-    def manifest_urls
-      all_manifest.manifests.map do |manifest|
-        manifest['@id']
-      end
     end
 end

@@ -23,5 +23,20 @@ RSpec.describe ExhibitsController, vcr: { cassette_name: "all_collections" } do
         expect(last_exhibit.slug).to eq "princeton-best"
       end
     end
+    context "when not given a slug" do
+      let(:params) do
+        {
+          exhibit: {
+            slug: ""
+          }
+        }
+      end
+      it "renders an error" do
+        post :create, params
+
+        expect(response).to render_template "new"
+        expect(assigns["exhibit"].errors.messages[:slug]).to eq ["can't be blank"]
+      end
+    end
   end
 end
