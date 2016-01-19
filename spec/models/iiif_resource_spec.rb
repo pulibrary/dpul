@@ -19,6 +19,22 @@ describe IIIFResource do
         { "label": "Date created", "value": [{ "@value": "1985" }] }
       ]}'
     }
+    let(:updated_json) { '{
+      "@context":"http://iiif.io/api/presentation/2/context.json",
+      "@id":"http://example.com/1/manifest",
+      "@type":"sc:Manifest",
+      "label":"Updated Manifest",
+      "thumbnail":{
+        "@id":"http://example.com/loris/1a.jp2/full/100,/0/default.jpg",
+        "service":{
+          "@context":"http://iiif.io/api/image/2/context.json",
+          "@id":"https://example.com/loris/1a.jp2",
+          "profile":"http://iiif.io/api/image/2/level2.json" }},
+      "metadata":[
+        { "label": "Creator", "value": [{ "@value": "Author, Andrea, 1955-" }] },
+        { "label": "Date created", "value": [{ "@value": "1988" }] }
+      ]}'
+    }
     let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
 
     before do
@@ -54,6 +70,21 @@ describe IIIFResource do
         expect(solr_doc[:thumbnail_ssim]).to eq('http://example.com/loris/1.jp2/full/100,/0/default.jpg')
         expect(solr_doc[:creator_ssim]).to eq(['Author, Alice, 1954-'])
         expect(solr_doc[:date_created_ssim]).to eq(['1985'])
+      end
+      it "updates metadata when the remote manifest is updated" do
+        solr_doc = subject.to_solr
+        expect(solr_doc[:full_title_ssim]).to eq('Sample Manifest')
+        expect(solr_doc[:thumbnail_ssim]).to eq('http://example.com/loris/1.jp2/full/100,/0/default.jpg')
+        expect(solr_doc[:creator_ssim]).to eq(['Author, Alice, 1954-'])
+        expect(solr_doc[:date_created_ssim]).to eq(['1985'])
+
+        allow_any_instance_of(described_class).to receive(:open).with(url).and_return(StringIO.new(updated_json))
+        subject.instance_variable_set :@manifest, nil
+        updated_doc = subject.to_solr
+        expect(updated_doc[:full_title_ssim]).to eq('Updated Manifest')
+        expect(updated_doc[:thumbnail_ssim]).to eq('http://example.com/loris/1a.jp2/full/100,/0/default.jpg')
+        expect(updated_doc[:creator_ssim]).to eq(['Author, Andrea, 1955-'])
+        expect(updated_doc[:date_created_ssim]).to eq(['1988'])
       end
     end
   end
