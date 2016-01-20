@@ -35,10 +35,15 @@ class IIIFResource < Spotlight::Resource
       manifest['metadata'].each do |h|
         solr_doc[field_name(h['label'].parameterize('_'))] = h['value'].map { |v| v["@value"] }
       end
+      solr_doc.merge! sidecar.to_solr
     end
   end
 
   def solr_fields
     Spotlight::Engine.config.solr_fields
+  end
+
+  def sidecar
+    @sidecar ||= document_model.new(id: id).sidecar(exhibit)
   end
 end
