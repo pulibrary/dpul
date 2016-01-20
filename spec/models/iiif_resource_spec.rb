@@ -60,9 +60,6 @@ describe IIIFResource do
 
     describe '#to_solr' do
       subject { described_class.new(manifest_url: url, exhibit: exhibit) }
-      before do
-        allow(exhibit).to receive_message_chain(:blacklight_config, :document_model, :resource_type_field).and_return(:spotlight_resource_type_ssim)
-      end
 
       it 'indexes iiif metadata' do
         solr_doc = subject.to_solr
@@ -85,6 +82,17 @@ describe IIIFResource do
         expect(updated_doc[:thumbnail_ssim]).to eq('http://example.com/loris/1a.jp2/full/100,/0/default.jpg')
         expect(updated_doc[:creator_ssim]).to eq(['Author, Andrea, 1955-'])
         expect(updated_doc[:date_created_ssim]).to eq(['1988'])
+      end
+    end
+
+    describe "custom fields" do
+      subject { described_class.new(manifest_url: url, exhibit: exhibit) }
+
+      let(:custom_field) { Spotlight::CustomField.new exhibit: exhibit, field: 'field_name_ssim', configuration: { label: 'Custom Field' } }
+
+      it "indexes custom fields" do
+        subject.sidecar.data[custom_field.field] = 'xyz'
+        expect(subject.to_solr[custom_field.field]).to eq 'xyz'
       end
     end
   end
