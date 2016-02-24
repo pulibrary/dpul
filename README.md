@@ -25,3 +25,14 @@ rake spotlight:exhibit
 ```
 
 After setup, run Pomegranate locally with `rails s`.
+
+### Auto-update from [Plum](https://github.com/pulibrary/plum)
+
+Plum announces events to a durable RabbitMQ fanout exchange. In order to use them, do the
+following:
+
+1. Configure the `events` settings in `config/config.yml`
+2. Run `WORKERS=PlumEventHandler rake sneakers:run`
+
+This will subscribe to the plum events and update the pomegranate records when they're
+created, updated, or deleted.
