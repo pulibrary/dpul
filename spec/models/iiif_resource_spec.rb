@@ -38,7 +38,7 @@ describe IIIFResource do
     let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
 
     before do
-      allow_any_instance_of(described_class).to receive(:open).with(url).and_return(StringIO.new(json))
+      allow_any_instance_of(described_class).to receive(:open).with(url, allow_redirections: :safe).and_return(StringIO.new(json))
     end
 
     describe '#initialize' do
@@ -75,7 +75,7 @@ describe IIIFResource do
         expect(solr_doc[:creator_ssim]).to eq(['Author, Alice, 1954-'])
         expect(solr_doc[:date_created_ssim]).to eq(['1985'])
 
-        allow_any_instance_of(described_class).to receive(:open).with(url).and_return(StringIO.new(updated_json))
+        allow_any_instance_of(described_class).to receive(:open).with(url, allow_redirections: :safe).and_return(StringIO.new(updated_json))
         subject.instance_variable_set :@manifest, nil
         updated_doc = subject.to_solr
         expect(updated_doc[:full_title_ssim]).to eq('Updated Manifest')
