@@ -298,6 +298,7 @@ GEM
       addressable (~> 2.3)
       nokogiri (~> 1.5)
       omniauth (~> 1.2.0)
+    open_uri_redirections (0.2.1)
     openseadragon (0.2.1)
       rails (> 3.2.0)
     orm_adapter (0.5.0)
@@ -522,6 +523,7 @@ DEPENDENCIES
   jettywrapper (>= 2.0)
   jquery-rails
   omniauth-cas
+  open_uri_redirections
   pg
   poltergeist
   pry-rails

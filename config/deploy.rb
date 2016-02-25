@@ -45,3 +45,13 @@ namespace :deploy do
     end
   end
 end
+
+namespace :sneakers do
+  task :restart do
+    on roles(:app) do
+      execute :sudo, :initctl, :restart, "pom-sneakers"
+    end
+  end
+end
+after 'deploy:reverted', 'sneakers:restart'
+after 'deploy:published', 'sneakers:restart'

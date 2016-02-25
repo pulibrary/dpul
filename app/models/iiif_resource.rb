@@ -1,5 +1,6 @@
 require 'iiif/presentation'
 require 'open-uri'
+require 'open_uri_redirections'
 
 class IIIFResource < Spotlight::Resource
   belongs_to :exhibit, class_name: 'Spotlight::Exhibit'
@@ -21,7 +22,7 @@ class IIIFResource < Spotlight::Resource
 
   def manifest
     return {} if url.blank?
-    @manifest ||= ::IIIF::Service.parse(open(url).read)
+    @manifest ||= ::IIIF::Service.parse(open(url, allow_redirections: :safe).read)
   end
 
   def to_solr
