@@ -58,57 +58,15 @@ http_interactions:
       - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        eyJAY29udGV4dCI6Imh0dHA6Ly9paWlmLmlvL2FwaS9wcmVzZW50YXRpb24v
-        Mi9jb250ZXh0Lmpzb24iLCJAaWQiOiJodHRwczovL2h5ZHJhLWRldi5wcmlu
-        Y2V0b24uZWR1L2NvbGxlY3Rpb25zL21hbmlmZXN0IiwiQHR5cGUiOiJzYzpD
-        b2xsZWN0aW9uIiwibGFiZWwiOiJQbHVtIENvbGxlY3Rpb25zIiwiZGVzY3Jp
-        cHRpb24iOiJBbGwgY29sbGVjdGlvbnMgd2hpY2ggYXJlIGEgcGFydCBvZiBQ
-        bHVtLiIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMiLCJzdHJ1Y3R1cmVz
-        IjpbeyJAaWQiOiJodHRwczovL2h5ZHJhLWRldi5wcmluY2V0b24uZWR1L2Nv
-        bGxlY3Rpb25zL21hbmlmZXN0L3JhbmdlL2c3MDI3MjA5NDg2MTYyMCIsIkB0
-        eXBlIjoic2M6UmFuZ2UiLCJsYWJlbCI6IkxvZ2ljYWwiLCJ2aWV3aW5nSGlu
-        dCI6InRvcCJ9XSwiY29sbGVjdGlvbnMiOlt7IkBpZCI6Imh0dHBzOi8vaHlk
-        cmEtZGV2LnByaW5jZXRvbi5lZHUvY29sbGVjdGlvbnMvMmI4OHFjMTk5L21h
-        bmlmZXN0IiwiQHR5cGUiOiJzYzpDb2xsZWN0aW9uIiwibGFiZWwiOiJwcmlu
-        Y2V0b24iLCJ2aWV3aW5nSGludCI6ImluZGl2aWR1YWxzIiwic3RydWN0dXJl
-        cyI6W3siQGlkIjoiaHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9uLmVkdS9j
-        b2xsZWN0aW9ucy8yYjg4cWMxOTkvbWFuaWZlc3QvcmFuZ2UvZzcwMjcyMDk4
-        ODE2NjQwIiwiQHR5cGUiOiJzYzpSYW5nZSIsImxhYmVsIjoiTG9naWNhbCIs
-        InZpZXdpbmdIaW50IjoidG9wIn1dLCJtYW5pZmVzdHMiOlt7IkBpZCI6Imh0
-        dHBzOi8vaHlkcmEtZGV2LnByaW5jZXRvbi5lZHUvY29uY2Vybi9zY2FubmVk
-        X3Jlc291cmNlcy8xcjY2ajExNDkvbWFuaWZlc3QiLCJAdHlwZSI6InNjOk1h
-        bmlmZXN0IiwibGFiZWwiOiJDaHJpc3RvcGhlciBhbmQgaGlzIGtpbmQsIDE5
-        MjktMTkzOSIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMiLCJ2aWV3aW5n
-        RGlyZWN0aW9uIjoibGVmdC10by1yaWdodCJ9LHsiQGlkIjoiaHR0cHM6Ly9o
-        eWRyYS1kZXYucHJpbmNldG9uLmVkdS9jb25jZXJuL3NjYW5uZWRfcmVzb3Vy
-        Y2VzLzQ0NTU4ZDI5Zi9tYW5pZmVzdCIsIkB0eXBlIjoic2M6TWFuaWZlc3Qi
-        LCJsYWJlbCI6Ikwnb3JkaW5lIGRvcmljbyBvc3NpYSBpbCB0ZW1waW8gZCdF
-        cmNvbGUgbmVsbGEgY2l0dGHMgCBkaSBDb3JpIHVtaWxpYXRvIGFsbGEgc2Fu
-        dGl0YSBkaSBub3N0cm8gc2lnbm9yZSBQYXBhIFBpbyBTZXN0byIsInZpZXdp
-        bmdIaW50IjoicGFnZWQiLCJ2aWV3aW5nRGlyZWN0aW9uIjoibGVmdC10by1y
-        aWdodCJ9XSwibWV0YWRhdGEiOlt7ImxhYmVsIjoiRXhoaWJpdCIsInZhbHVl
-        IjpbeyJAdmFsdWUiOiJwcmluY2V0b24tYmVzdCJ9XX1dfSx7IkBpZCI6Imh0
-        dHBzOi8vaHlkcmEtZGV2LnByaW5jZXRvbi5lZHUvY29sbGVjdGlvbnMvNjk2
-        OXowNzc0L21hbmlmZXN0IiwiQHR5cGUiOiJzYzpDb2xsZWN0aW9uIiwibGFi
-        ZWwiOiJUZXN0IENvbGxlY3Rpb24gMiIsInZpZXdpbmdIaW50IjoiaW5kaXZp
-        ZHVhbHMiLCJzdHJ1Y3R1cmVzIjpbeyJAaWQiOiJodHRwczovL2h5ZHJhLWRl
-        di5wcmluY2V0b24uZWR1L2NvbGxlY3Rpb25zLzY5Njl6MDc3NC9tYW5pZmVz
-        dC9yYW5nZS9nNzAyNzIwOTUwNDMyNDAiLCJAdHlwZSI6InNjOlJhbmdlIiwi
-        bGFiZWwiOiJMb2dpY2FsIiwidmlld2luZ0hpbnQiOiJ0b3AifV0sIm1hbmlm
-        ZXN0cyI6W3siQGlkIjoiaHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9uLmVk
-        dS9jb25jZXJuL3NjYW5uZWRfcmVzb3VyY2VzL2dxNjdqcjE2cS9tYW5pZmVz
-        dCIsIkB0eXBlIjoic2M6TWFuaWZlc3QiLCJsYWJlbCI6Ikwnb3JkaW5lIGRv
-        cmljbyBvc3NpYSBpbCB0ZW1waW8gZCdFcmNvbGUgbmVsbGEgY2l0dGHMgCBk
-        aSBDb3JpIHVtaWxpYXRvIGFsbGEgc2FudGl0YSBkaSBub3N0cm8gc2lnbm9y
-        ZSBQYXBhIFBpbyBTZXN0byIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMi
-        LCJ2aWV3aW5nRGlyZWN0aW9uIjoibGVmdC10by1yaWdodCJ9LHsiQGlkIjoi
-        aHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9uLmVkdS9jb25jZXJuL3NjYW5u
-        ZWRfcmVzb3VyY2VzLzY5Njl6MDc5cC9tYW5pZmVzdCIsIkB0eXBlIjoic2M6
-        TWFuaWZlc3QiLCJsYWJlbCI6IlRlc3QgUmVzb3VyY2UiLCJ2aWV3aW5nSGlu
-        dCI6ImluZGl2aWR1YWxzIiwidmlld2luZ0RpcmVjdGlvbiI6ImxlZnQtdG8t
-        cmlnaHQifV0sIm1ldGFkYXRhIjpbeyJsYWJlbCI6IkV4aGliaXQiLCJ2YWx1
-        ZSI6W3siQHZhbHVlIjoidGVzdC1jb2xsZWN0aW9uLTIifV19XX1dfQ==
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/manifest","@type":"sc:Collection","label":"Plum
+        Collections","description":"All collections which are a part of Plum.","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/manifest/range/g70272094861620","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"collections":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest","@type":"sc:Collection","label":"princeton","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest/range/g70272098816640","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"manifests":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest","@type":"sc:Manifest","label":"Christopher
+        and his kind, 1929-1939","viewingHint":"individuals","viewingDirection":"left-to-right"},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest","@type":"sc:Manifest","label":"L''ordine
+        dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita
+        di nostro signore Papa Pio Sesto","viewingHint":"paged","viewingDirection":"left-to-right"}],"metadata":[{"label":"Exhibit","value":["princeton-best"]}]},{"@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest","@type":"sc:Collection","label":"Test
+        Collection 2","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest/range/g70272095043240","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"manifests":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/gq67jr16q/manifest","@type":"sc:Manifest","label":"L''ordine
+        dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita
+        di nostro signore Papa Pio Sesto","viewingHint":"individuals","viewingDirection":"left-to-right"},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/6969z079p/manifest","@type":"sc:Manifest","label":"Test
+        Resource","viewingHint":"individuals","viewingDirection":"left-to-right"}],"metadata":[{"label":"Exhibit","value":["test-collection-2"]}]}]}'
     http_version: 
   recorded_at: Mon, 18 Jan 2016 19:55:33 GMT
 - request:
@@ -169,57 +127,15 @@ http_interactions:
       - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        eyJAY29udGV4dCI6Imh0dHA6Ly9paWlmLmlvL2FwaS9wcmVzZW50YXRpb24v
-        Mi9jb250ZXh0Lmpzb24iLCJAaWQiOiJodHRwczovL2h5ZHJhLWRldi5wcmlu
-        Y2V0b24uZWR1L2NvbGxlY3Rpb25zL21hbmlmZXN0IiwiQHR5cGUiOiJzYzpD
-        b2xsZWN0aW9uIiwibGFiZWwiOiJQbHVtIENvbGxlY3Rpb25zIiwiZGVzY3Jp
-        cHRpb24iOiJBbGwgY29sbGVjdGlvbnMgd2hpY2ggYXJlIGEgcGFydCBvZiBQ
-        bHVtLiIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMiLCJzdHJ1Y3R1cmVz
-        IjpbeyJAaWQiOiJodHRwczovL2h5ZHJhLWRldi5wcmluY2V0b24uZWR1L2Nv
-        bGxlY3Rpb25zL21hbmlmZXN0L3JhbmdlL2c3MDI3MjI1NzY3MzI4MCIsIkB0
-        eXBlIjoic2M6UmFuZ2UiLCJsYWJlbCI6IkxvZ2ljYWwiLCJ2aWV3aW5nSGlu
-        dCI6InRvcCJ9XSwiY29sbGVjdGlvbnMiOlt7IkBpZCI6Imh0dHBzOi8vaHlk
-        cmEtZGV2LnByaW5jZXRvbi5lZHUvY29sbGVjdGlvbnMvMmI4OHFjMTk5L21h
-        bmlmZXN0IiwiQHR5cGUiOiJzYzpDb2xsZWN0aW9uIiwibGFiZWwiOiJwcmlu
-        Y2V0b24iLCJ2aWV3aW5nSGludCI6ImluZGl2aWR1YWxzIiwic3RydWN0dXJl
-        cyI6W3siQGlkIjoiaHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9uLmVkdS9j
-        b2xsZWN0aW9ucy8yYjg4cWMxOTkvbWFuaWZlc3QvcmFuZ2UvZzcwMjcyMDc5
-        MDAwMDIwIiwiQHR5cGUiOiJzYzpSYW5nZSIsImxhYmVsIjoiTG9naWNhbCIs
-        InZpZXdpbmdIaW50IjoidG9wIn1dLCJtYW5pZmVzdHMiOlt7IkBpZCI6Imh0
-        dHBzOi8vaHlkcmEtZGV2LnByaW5jZXRvbi5lZHUvY29uY2Vybi9zY2FubmVk
-        X3Jlc291cmNlcy8xcjY2ajExNDkvbWFuaWZlc3QiLCJAdHlwZSI6InNjOk1h
-        bmlmZXN0IiwibGFiZWwiOiJDaHJpc3RvcGhlciBhbmQgaGlzIGtpbmQsIDE5
-        MjktMTkzOSIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMiLCJ2aWV3aW5n
-        RGlyZWN0aW9uIjoibGVmdC10by1yaWdodCJ9LHsiQGlkIjoiaHR0cHM6Ly9o
-        eWRyYS1kZXYucHJpbmNldG9uLmVkdS9jb25jZXJuL3NjYW5uZWRfcmVzb3Vy
-        Y2VzLzQ0NTU4ZDI5Zi9tYW5pZmVzdCIsIkB0eXBlIjoic2M6TWFuaWZlc3Qi
-        LCJsYWJlbCI6Ikwnb3JkaW5lIGRvcmljbyBvc3NpYSBpbCB0ZW1waW8gZCdF
-        cmNvbGUgbmVsbGEgY2l0dGHMgCBkaSBDb3JpIHVtaWxpYXRvIGFsbGEgc2Fu
-        dGl0YSBkaSBub3N0cm8gc2lnbm9yZSBQYXBhIFBpbyBTZXN0byIsInZpZXdp
-        bmdIaW50IjoicGFnZWQiLCJ2aWV3aW5nRGlyZWN0aW9uIjoibGVmdC10by1y
-        aWdodCJ9XSwibWV0YWRhdGEiOlt7ImxhYmVsIjoiRXhoaWJpdCIsInZhbHVl
-        IjpbeyJAdmFsdWUiOiJwcmluY2V0b24tYmVzdCJ9XX1dfSx7IkBpZCI6Imh0
-        dHBzOi8vaHlkcmEtZGV2LnByaW5jZXRvbi5lZHUvY29sbGVjdGlvbnMvNjk2
-        OXowNzc0L21hbmlmZXN0IiwiQHR5cGUiOiJzYzpDb2xsZWN0aW9uIiwibGFi
-        ZWwiOiJUZXN0IENvbGxlY3Rpb24gMiIsInZpZXdpbmdIaW50IjoiaW5kaXZp
-        ZHVhbHMiLCJzdHJ1Y3R1cmVzIjpbeyJAaWQiOiJodHRwczovL2h5ZHJhLWRl
-        di5wcmluY2V0b24uZWR1L2NvbGxlY3Rpb25zLzY5Njl6MDc3NC9tYW5pZmVz
-        dC9yYW5nZS9nNzAyNzIyNTgxMTIzNDAiLCJAdHlwZSI6InNjOlJhbmdlIiwi
-        bGFiZWwiOiJMb2dpY2FsIiwidmlld2luZ0hpbnQiOiJ0b3AifV0sIm1hbmlm
-        ZXN0cyI6W3siQGlkIjoiaHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9uLmVk
-        dS9jb25jZXJuL3NjYW5uZWRfcmVzb3VyY2VzL2dxNjdqcjE2cS9tYW5pZmVz
-        dCIsIkB0eXBlIjoic2M6TWFuaWZlc3QiLCJsYWJlbCI6Ikwnb3JkaW5lIGRv
-        cmljbyBvc3NpYSBpbCB0ZW1waW8gZCdFcmNvbGUgbmVsbGEgY2l0dGHMgCBk
-        aSBDb3JpIHVtaWxpYXRvIGFsbGEgc2FudGl0YSBkaSBub3N0cm8gc2lnbm9y
-        ZSBQYXBhIFBpbyBTZXN0byIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMi
-        LCJ2aWV3aW5nRGlyZWN0aW9uIjoibGVmdC10by1yaWdodCJ9LHsiQGlkIjoi
-        aHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9uLmVkdS9jb25jZXJuL3NjYW5u
-        ZWRfcmVzb3VyY2VzLzY5Njl6MDc5cC9tYW5pZmVzdCIsIkB0eXBlIjoic2M6
-        TWFuaWZlc3QiLCJsYWJlbCI6IlRlc3QgUmVzb3VyY2UiLCJ2aWV3aW5nSGlu
-        dCI6ImluZGl2aWR1YWxzIiwidmlld2luZ0RpcmVjdGlvbiI6ImxlZnQtdG8t
-        cmlnaHQifV0sIm1ldGFkYXRhIjpbeyJsYWJlbCI6IkV4aGliaXQiLCJ2YWx1
-        ZSI6W3siQHZhbHVlIjoidGVzdC1jb2xsZWN0aW9uLTIifV19XX1dfQ==
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/manifest","@type":"sc:Collection","label":"Plum
+        Collections","description":"All collections which are a part of Plum.","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/manifest/range/g70272257673280","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"collections":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest","@type":"sc:Collection","label":"princeton","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest/range/g70272079000020","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"manifests":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest","@type":"sc:Manifest","label":"Christopher
+        and his kind, 1929-1939","viewingHint":"individuals","viewingDirection":"left-to-right"},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest","@type":"sc:Manifest","label":"L''ordine
+        dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita
+        di nostro signore Papa Pio Sesto","viewingHint":"paged","viewingDirection":"left-to-right"}],"metadata":[{"label":"Exhibit","value":["princeton-best"]}]},{"@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest","@type":"sc:Collection","label":"Test
+        Collection 2","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest/range/g70272258112340","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"manifests":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/gq67jr16q/manifest","@type":"sc:Manifest","label":"L''ordine
+        dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita
+        di nostro signore Papa Pio Sesto","viewingHint":"individuals","viewingDirection":"left-to-right"},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/6969z079p/manifest","@type":"sc:Manifest","label":"Test
+        Resource","viewingHint":"individuals","viewingDirection":"left-to-right"}],"metadata":[{"label":"Exhibit","value":["test-collection-2"]}]}]}'
     http_version: 
   recorded_at: Mon, 18 Jan 2016 19:55:34 GMT
 - request:

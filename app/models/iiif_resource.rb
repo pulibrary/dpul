@@ -29,6 +29,7 @@ class IIIFResource < Spotlight::Resource
     super.tap do |solr_doc|
       solr_doc['id'] = id
       solr_doc[title_field] = manifest['label']
+      solr_doc['manifest_url_ssm'] = [url]
       if manifest['thumbnail']
         solr_doc[field_name('thumbnail')] = manifest['thumbnail']['@id']
         solr_doc['content_metadata_image_iiif_info_ssm'] = manifest['thumbnail']['@id'].sub(/full.*/, 'info.json')
