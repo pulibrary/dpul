@@ -1,5 +1,5 @@
 defaults: &defaults
-  universal_viewer_url: "http://uv-dev.princeton.edu/lib/embed.js"
+  universal_viewer_url: "https://uv-dev.princeton.edu/lib/embed.js"
   all_collection_manifest_url: "https://hydra-dev.princeton.edu/iiif/collections"
   events:
     server: 'amqp://localhost:5672'
