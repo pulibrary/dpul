@@ -8,7 +8,7 @@ class CollectionManifest < IIIF::Presentation::Collection
   def slug
     metadata.find do |entry|
       entry["label"] == slug_key
-    end["value"].first["@value"]
+    end["value"].first
   end
 
   private
