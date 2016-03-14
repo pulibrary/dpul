@@ -15,8 +15,8 @@ describe IIIFResource do
           "@id":"https://example.com/loris/1.jp2",
           "profile":"http://iiif.io/api/image/2/level2.json" }},
       "metadata":[
-        { "label": "Creator", "value": [{ "@value": "Author, Alice, 1954-" }] },
-        { "label": "Date created", "value": [{ "@value": "1985" }] }
+        { "label": "Creator", "value": ["Author, Alice, 1954-"] },
+        { "label": "Date created", "value": ["1985"] }
       ]}'
     }
     let(:updated_json) { '{
@@ -31,8 +31,8 @@ describe IIIFResource do
           "@id":"https://example.com/loris/1a.jp2",
           "profile":"http://iiif.io/api/image/2/level2.json" }},
       "metadata":[
-        { "label": "Creator", "value": [{ "@value": "Author, Andrea, 1955-" }] },
-        { "label": "Date created", "value": [{ "@value": "1988" }] }
+        { "label": "Creator", "value": ["Author, Andrea, 1955-"] },
+        { "label": "Date created", "value": ["1988"] }
       ]}'
     }
     let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
