@@ -35,7 +35,7 @@ class IIIFResource < Spotlight::Resource
         solr_doc['content_metadata_image_iiif_info_ssm'] = manifest['thumbnail']['@id'].sub(/full.*/, 'info.json')
       end
       manifest['metadata'].each do |h|
-        solr_doc[field_name(h['label'].parameterize('_'))] = h['value'].map { |v| v["@value"] || v }
+        solr_doc[field_name(h['label'].parameterize('_'))] = Array.wrap(h['value']).map { |v| v["@value"] || v }
       end
       solr_doc.merge! sidecar.to_solr
     end

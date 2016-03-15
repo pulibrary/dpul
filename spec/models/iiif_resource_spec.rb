@@ -16,7 +16,8 @@ describe IIIFResource do
           "profile":"http://iiif.io/api/image/2/level2.json" }},
       "metadata":[
         { "label": "Creator", "value": ["Author, Alice, 1954-"] },
-        { "label": "Date created", "value": ["1985"] }
+        { "label": "Date created", "value": ["1985"] },
+        { "label": "ark", "value": "test" }
       ]}'
     }
     let(:updated_json) { '{
@@ -32,7 +33,8 @@ describe IIIFResource do
           "profile":"http://iiif.io/api/image/2/level2.json" }},
       "metadata":[
         { "label": "Creator", "value": ["Author, Andrea, 1955-"] },
-        { "label": "Date created", "value": ["1988"] }
+        { "label": "Date created", "value": ["1988"] },
+        { "label": "ark", "value": "test" }
       ]}'
     }
     let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
@@ -74,6 +76,7 @@ describe IIIFResource do
         expect(solr_doc[:thumbnail_ssim]).to eq('http://example.com/loris/1.jp2/full/100,/0/default.jpg')
         expect(solr_doc[:creator_ssim]).to eq(['Author, Alice, 1954-'])
         expect(solr_doc[:date_created_ssim]).to eq(['1985'])
+        expect(solr_doc[:ark_ssim]).to eq(["test"])
 
         allow_any_instance_of(described_class).to receive(:open).with(url, allow_redirections: :safe).and_return(StringIO.new(updated_json))
         subject.instance_variable_set :@manifest, nil
