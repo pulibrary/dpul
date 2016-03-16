@@ -1,0 +1,21 @@
+@import 'bootstrap-tagsinput';
+@import 'jquery.jcrop';
+@import 'bootstrap-sprockets';
+@import 'utils/variables__bootstrap'; // pul bootstrap variables override
+@import 'sir-trevor';
+@import 'sir-trevor-icons';
+@import 'bootstrap';
+@import 'openseadragon/openseadragon';
+@import 'blacklight/blacklight';
+@import 'blacklight_gallery/default';
+@import 'spotlight/spotlight';
+
+@import 'normalize-rails';
+@import 'pul-assets';
+
+.viewer {
+  height: 400px;
+  iframe {
+    position: absolute;
+  }
+}
