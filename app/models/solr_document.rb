@@ -36,7 +36,9 @@ class SolrDocument
         "id",
         "_version_",
         "timestamp",
-        "manifest_url_ssm"
+        "manifest_url_ssm",
+        "thumbnail_ssim",
+        "content_metadata_image_iiif_info_ssm"
       ]
     end
 end
