@@ -11,6 +11,15 @@ GIT
       susy (~> 2.2.12)
 
 GIT
+  remote: git://github.com/sul-dlss/spotlight-resources-iiif.git
+  revision: 4d39b7d9524b55cd6ea6ac179fb5526373f30525
+  specs:
+    spotlight-resources-iiif (0.1.1)
+      blacklight-spotlight
+      faraday
+      iiif-presentation
+
+GIT
   remote: git://github.com/sul-dlss/spotlight.git
   revision: e496307681e7df6ca9c0d5c07893c29c317b7f06
   specs:
@@ -556,6 +565,7 @@ DEPENDENCIES
   sitemap_generator
   sneakers
   social-share-button
+  spotlight-resources-iiif!
   spring
   sqlite3
   turbolinks

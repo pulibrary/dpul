@@ -58,15 +58,57 @@ http_interactions:
       - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
     body:
       encoding: ASCII-8BIT
-      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/manifest","@type":"sc:Collection","label":"Plum
-        Collections","description":"All collections which are a part of Plum.","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/manifest/range/g70272094861620","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"collections":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest","@type":"sc:Collection","label":"princeton","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest/range/g70272098816640","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"manifests":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest","@type":"sc:Manifest","label":"Christopher
-        and his kind, 1929-1939","viewingHint":"individuals","viewingDirection":"left-to-right"},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest","@type":"sc:Manifest","label":"L''ordine
-        dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita
-        di nostro signore Papa Pio Sesto","viewingHint":"paged","viewingDirection":"left-to-right"}],"metadata":[{"label":"Exhibit","value":["princeton-best"]}]},{"@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest","@type":"sc:Collection","label":"Test
-        Collection 2","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest/range/g70272095043240","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"manifests":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/gq67jr16q/manifest","@type":"sc:Manifest","label":"L''ordine
-        dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita
-        di nostro signore Papa Pio Sesto","viewingHint":"individuals","viewingDirection":"left-to-right"},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/6969z079p/manifest","@type":"sc:Manifest","label":"Test
-        Resource","viewingHint":"individuals","viewingDirection":"left-to-right"}],"metadata":[{"label":"Exhibit","value":["test-collection-2"]}]}]}'
+      string: !binary |-
+        eyJAY29udGV4dCI6Imh0dHA6Ly9paWlmLmlvL2FwaS9wcmVzZW50YXRpb24v
+        Mi9jb250ZXh0Lmpzb24iLCJAaWQiOiJodHRwczovL2h5ZHJhLWRldi5wcmlu
+        Y2V0b24uZWR1L2NvbGxlY3Rpb25zL21hbmlmZXN0IiwiQHR5cGUiOiJzYzpD
+        b2xsZWN0aW9uIiwibGFiZWwiOiJQbHVtIENvbGxlY3Rpb25zIiwiZGVzY3Jp
+        cHRpb24iOiJBbGwgY29sbGVjdGlvbnMgd2hpY2ggYXJlIGEgcGFydCBvZiBQ
+        bHVtLiIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMiLCJzdHJ1Y3R1cmVz
+        IjpbeyJAaWQiOiJodHRwczovL2h5ZHJhLWRldi5wcmluY2V0b24uZWR1L2Nv
+        bGxlY3Rpb25zL21hbmlmZXN0L3JhbmdlL2c3MDI3MjA5NDg2MTYyMCIsIkB0
+        eXBlIjoic2M6UmFuZ2UiLCJsYWJlbCI6IkxvZ2ljYWwiLCJ2aWV3aW5nSGlu
+        dCI6InRvcCJ9XSwiY29sbGVjdGlvbnMiOlt7IkBpZCI6Imh0dHBzOi8vaHlk
+        cmEtZGV2LnByaW5jZXRvbi5lZHUvY29sbGVjdGlvbnMvMmI4OHFjMTk5L21h
+        bmlmZXN0IiwiQHR5cGUiOiJzYzpDb2xsZWN0aW9uIiwibGFiZWwiOiJwcmlu
+        Y2V0b24iLCJ2aWV3aW5nSGludCI6ImluZGl2aWR1YWxzIiwic3RydWN0dXJl
+        cyI6W3siQGlkIjoiaHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9uLmVkdS9j
+        b2xsZWN0aW9ucy8yYjg4cWMxOTkvbWFuaWZlc3QvcmFuZ2UvZzcwMjcyMDk4
+        ODE2NjQwIiwiQHR5cGUiOiJzYzpSYW5nZSIsImxhYmVsIjoiTG9naWNhbCIs
+        InZpZXdpbmdIaW50IjoidG9wIn1dLCJtYW5pZmVzdHMiOlt7IkBpZCI6Imh0
+        dHBzOi8vaHlkcmEtZGV2LnByaW5jZXRvbi5lZHUvY29uY2Vybi9zY2FubmVk
+        X3Jlc291cmNlcy8xcjY2ajExNDkvbWFuaWZlc3QiLCJAdHlwZSI6InNjOk1h
+        bmlmZXN0IiwibGFiZWwiOiJDaHJpc3RvcGhlciBhbmQgaGlzIGtpbmQsIDE5
+        MjktMTkzOSIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMiLCJ2aWV3aW5n
+        RGlyZWN0aW9uIjoibGVmdC10by1yaWdodCJ9LHsiQGlkIjoiaHR0cHM6Ly9o
+        eWRyYS1kZXYucHJpbmNldG9uLmVkdS9jb25jZXJuL3NjYW5uZWRfcmVzb3Vy
+        Y2VzLzQ0NTU4ZDI5Zi9tYW5pZmVzdCIsIkB0eXBlIjoic2M6TWFuaWZlc3Qi
+        LCJsYWJlbCI6Ikwnb3JkaW5lIGRvcmljbyBvc3NpYSBpbCB0ZW1waW8gZCdF
+        cmNvbGUgbmVsbGEgY2l0dGHMgCBkaSBDb3JpIHVtaWxpYXRvIGFsbGEgc2Fu
+        dGl0YSBkaSBub3N0cm8gc2lnbm9yZSBQYXBhIFBpbyBTZXN0byIsInZpZXdp
+        bmdIaW50IjoicGFnZWQiLCJ2aWV3aW5nRGlyZWN0aW9uIjoibGVmdC10by1y
+        aWdodCJ9XSwibWV0YWRhdGEiOlt7ImxhYmVsIjoiRXhoaWJpdCIsInZhbHVl
+        IjpbInByaW5jZXRvbi1iZXN0Il19XX0seyJAaWQiOiJodHRwczovL2h5ZHJh
+        LWRldi5wcmluY2V0b24uZWR1L2NvbGxlY3Rpb25zLzY5Njl6MDc3NC9tYW5p
+        ZmVzdCIsIkB0eXBlIjoic2M6Q29sbGVjdGlvbiIsImxhYmVsIjoiVGVzdCBD
+        b2xsZWN0aW9uIDIiLCJ2aWV3aW5nSGludCI6ImluZGl2aWR1YWxzIiwic3Ry
+        dWN0dXJlcyI6W3siQGlkIjoiaHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9u
+        LmVkdS9jb2xsZWN0aW9ucy82OTY5ejA3NzQvbWFuaWZlc3QvcmFuZ2UvZzcw
+        MjcyMDk1MDQzMjQwIiwiQHR5cGUiOiJzYzpSYW5nZSIsImxhYmVsIjoiTG9n
+        aWNhbCIsInZpZXdpbmdIaW50IjoidG9wIn1dLCJtYW5pZmVzdHMiOlt7IkBp
+        ZCI6Imh0dHBzOi8vaHlkcmEtZGV2LnByaW5jZXRvbi5lZHUvY29uY2Vybi9z
+        Y2FubmVkX3Jlc291cmNlcy9ncTY3anIxNnEvbWFuaWZlc3QiLCJAdHlwZSI6
+        InNjOk1hbmlmZXN0IiwibGFiZWwiOiJMJ29yZGluZSBkb3JpY28gb3NzaWEg
+        aWwgdGVtcGlvIGQnRXJjb2xlIG5lbGxhIGNpdHRhzIAgZGkgQ29yaSB1bWls
+        aWF0byBhbGxhIHNhbnRpdGEgZGkgbm9zdHJvIHNpZ25vcmUgUGFwYSBQaW8g
+        U2VzdG8iLCJ2aWV3aW5nSGludCI6ImluZGl2aWR1YWxzIiwidmlld2luZ0Rp
+        cmVjdGlvbiI6ImxlZnQtdG8tcmlnaHQifSx7IkBpZCI6Imh0dHBzOi8vaHlk
+        cmEtZGV2LnByaW5jZXRvbi5lZHUvY29uY2Vybi9zY2FubmVkX3Jlc291cmNl
+        cy82OTY5ejA3OXAvbWFuaWZlc3QiLCJAdHlwZSI6InNjOk1hbmlmZXN0Iiwi
+        bGFiZWwiOiJUZXN0IFJlc291cmNlIiwidmlld2luZ0hpbnQiOiJpbmRpdmlk
+        dWFscyIsInZpZXdpbmdEaXJlY3Rpb24iOiJsZWZ0LXRvLXJpZ2h0In1dLCJt
+        ZXRhZGF0YSI6W3sibGFiZWwiOiJFeGhpYml0IiwidmFsdWUiOlsidGVzdC1j
+        b2xsZWN0aW9uLTIiXX1dfV19
     http_version: 
   recorded_at: Mon, 18 Jan 2016 19:55:33 GMT
 - request:
@@ -127,15 +169,57 @@ http_interactions:
       - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
     body:
       encoding: ASCII-8BIT
-      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/manifest","@type":"sc:Collection","label":"Plum
-        Collections","description":"All collections which are a part of Plum.","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/manifest/range/g70272257673280","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"collections":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest","@type":"sc:Collection","label":"princeton","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest/range/g70272079000020","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"manifests":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest","@type":"sc:Manifest","label":"Christopher
-        and his kind, 1929-1939","viewingHint":"individuals","viewingDirection":"left-to-right"},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest","@type":"sc:Manifest","label":"L''ordine
-        dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita
-        di nostro signore Papa Pio Sesto","viewingHint":"paged","viewingDirection":"left-to-right"}],"metadata":[{"label":"Exhibit","value":["princeton-best"]}]},{"@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest","@type":"sc:Collection","label":"Test
-        Collection 2","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest/range/g70272258112340","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"manifests":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/gq67jr16q/manifest","@type":"sc:Manifest","label":"L''ordine
-        dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita
-        di nostro signore Papa Pio Sesto","viewingHint":"individuals","viewingDirection":"left-to-right"},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/6969z079p/manifest","@type":"sc:Manifest","label":"Test
-        Resource","viewingHint":"individuals","viewingDirection":"left-to-right"}],"metadata":[{"label":"Exhibit","value":["test-collection-2"]}]}]}'
+      string: !binary |-
+        eyJAY29udGV4dCI6Imh0dHA6Ly9paWlmLmlvL2FwaS9wcmVzZW50YXRpb24v
+        Mi9jb250ZXh0Lmpzb24iLCJAaWQiOiJodHRwczovL2h5ZHJhLWRldi5wcmlu
+        Y2V0b24uZWR1L2NvbGxlY3Rpb25zL21hbmlmZXN0IiwiQHR5cGUiOiJzYzpD
+        b2xsZWN0aW9uIiwibGFiZWwiOiJQbHVtIENvbGxlY3Rpb25zIiwiZGVzY3Jp
+        cHRpb24iOiJBbGwgY29sbGVjdGlvbnMgd2hpY2ggYXJlIGEgcGFydCBvZiBQ
+        bHVtLiIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMiLCJzdHJ1Y3R1cmVz
+        IjpbeyJAaWQiOiJodHRwczovL2h5ZHJhLWRldi5wcmluY2V0b24uZWR1L2Nv
+        bGxlY3Rpb25zL21hbmlmZXN0L3JhbmdlL2c3MDI3MjI1NzY3MzI4MCIsIkB0
+        eXBlIjoic2M6UmFuZ2UiLCJsYWJlbCI6IkxvZ2ljYWwiLCJ2aWV3aW5nSGlu
+        dCI6InRvcCJ9XSwiY29sbGVjdGlvbnMiOlt7IkBpZCI6Imh0dHBzOi8vaHlk
+        cmEtZGV2LnByaW5jZXRvbi5lZHUvY29sbGVjdGlvbnMvMmI4OHFjMTk5L21h
+        bmlmZXN0IiwiQHR5cGUiOiJzYzpDb2xsZWN0aW9uIiwibGFiZWwiOiJwcmlu
+        Y2V0b24iLCJ2aWV3aW5nSGludCI6ImluZGl2aWR1YWxzIiwic3RydWN0dXJl
+        cyI6W3siQGlkIjoiaHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9uLmVkdS9j
+        b2xsZWN0aW9ucy8yYjg4cWMxOTkvbWFuaWZlc3QvcmFuZ2UvZzcwMjcyMDc5
+        MDAwMDIwIiwiQHR5cGUiOiJzYzpSYW5nZSIsImxhYmVsIjoiTG9naWNhbCIs
+        InZpZXdpbmdIaW50IjoidG9wIn1dLCJtYW5pZmVzdHMiOlt7IkBpZCI6Imh0
+        dHBzOi8vaHlkcmEtZGV2LnByaW5jZXRvbi5lZHUvY29uY2Vybi9zY2FubmVk
+        X3Jlc291cmNlcy8xcjY2ajExNDkvbWFuaWZlc3QiLCJAdHlwZSI6InNjOk1h
+        bmlmZXN0IiwibGFiZWwiOiJDaHJpc3RvcGhlciBhbmQgaGlzIGtpbmQsIDE5
+        MjktMTkzOSIsInZpZXdpbmdIaW50IjoiaW5kaXZpZHVhbHMiLCJ2aWV3aW5n
+        RGlyZWN0aW9uIjoibGVmdC10by1yaWdodCJ9LHsiQGlkIjoiaHR0cHM6Ly9o
+        eWRyYS1kZXYucHJpbmNldG9uLmVkdS9jb25jZXJuL3NjYW5uZWRfcmVzb3Vy
+        Y2VzLzQ0NTU4ZDI5Zi9tYW5pZmVzdCIsIkB0eXBlIjoic2M6TWFuaWZlc3Qi
+        LCJsYWJlbCI6Ikwnb3JkaW5lIGRvcmljbyBvc3NpYSBpbCB0ZW1waW8gZCdF
+        cmNvbGUgbmVsbGEgY2l0dGHMgCBkaSBDb3JpIHVtaWxpYXRvIGFsbGEgc2Fu
+        dGl0YSBkaSBub3N0cm8gc2lnbm9yZSBQYXBhIFBpbyBTZXN0byIsInZpZXdp
+        bmdIaW50IjoicGFnZWQiLCJ2aWV3aW5nRGlyZWN0aW9uIjoibGVmdC10by1y
+        aWdodCJ9XSwibWV0YWRhdGEiOlt7ImxhYmVsIjoiRXhoaWJpdCIsInZhbHVl
+        IjpbInByaW5jZXRvbi1iZXN0Il19XX0seyJAaWQiOiJodHRwczovL2h5ZHJh
+        LWRldi5wcmluY2V0b24uZWR1L2NvbGxlY3Rpb25zLzY5Njl6MDc3NC9tYW5p
+        ZmVzdCIsIkB0eXBlIjoic2M6Q29sbGVjdGlvbiIsImxhYmVsIjoiVGVzdCBD
+        b2xsZWN0aW9uIDIiLCJ2aWV3aW5nSGludCI6ImluZGl2aWR1YWxzIiwic3Ry
+        dWN0dXJlcyI6W3siQGlkIjoiaHR0cHM6Ly9oeWRyYS1kZXYucHJpbmNldG9u
+        LmVkdS9jb2xsZWN0aW9ucy82OTY5ejA3NzQvbWFuaWZlc3QvcmFuZ2UvZzcw
+        MjcyMjU4MTEyMzQwIiwiQHR5cGUiOiJzYzpSYW5nZSIsImxhYmVsIjoiTG9n
+        aWNhbCIsInZpZXdpbmdIaW50IjoidG9wIn1dLCJtYW5pZmVzdHMiOlt7IkBp
+        ZCI6Imh0dHBzOi8vaHlkcmEtZGV2LnByaW5jZXRvbi5lZHUvY29uY2Vybi9z
+        Y2FubmVkX3Jlc291cmNlcy9ncTY3anIxNnEvbWFuaWZlc3QiLCJAdHlwZSI6
+        InNjOk1hbmlmZXN0IiwibGFiZWwiOiJMJ29yZGluZSBkb3JpY28gb3NzaWEg
+        aWwgdGVtcGlvIGQnRXJjb2xlIG5lbGxhIGNpdHRhzIAgZGkgQ29yaSB1bWls
+        aWF0byBhbGxhIHNhbnRpdGEgZGkgbm9zdHJvIHNpZ25vcmUgUGFwYSBQaW8g
+        U2VzdG8iLCJ2aWV3aW5nSGludCI6ImluZGl2aWR1YWxzIiwidmlld2luZ0Rp
+        cmVjdGlvbiI6ImxlZnQtdG8tcmlnaHQifSx7IkBpZCI6Imh0dHBzOi8vaHlk
+        cmEtZGV2LnByaW5jZXRvbi5lZHUvY29uY2Vybi9zY2FubmVkX3Jlc291cmNl
+        cy82OTY5ejA3OXAvbWFuaWZlc3QiLCJAdHlwZSI6InNjOk1hbmlmZXN0Iiwi
+        bGFiZWwiOiJUZXN0IFJlc291cmNlIiwidmlld2luZ0hpbnQiOiJpbmRpdmlk
+        dWFscyIsInZpZXdpbmdEaXJlY3Rpb24iOiJsZWZ0LXRvLXJpZ2h0In1dLCJt
+        ZXRhZGF0YSI6W3sibGFiZWwiOiJFeGhpYml0IiwidmFsdWUiOlsidGVzdC1j
+        b2xsZWN0aW9uLTIiXX1dfV19
     http_version: 
   recorded_at: Mon, 18 Jan 2016 19:55:34 GMT
 - request:
@@ -199,7 +283,7 @@ http_interactions:
       string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest","@type":"sc:Manifest","label":"Christopher
         and his kind, 1929-1939","viewingHint":"individuals","viewingDirection":"left-to-right","service":{"@context":"http://iiif.io/api/auth/0/context.json","@id":"https://hydra-dev.princeton.edu/users/auth/cas","label":"Login
         to Plum using CAS","profile":"http://iiif.io/api/auth/0/login","service":{"hsh":null}},"structures":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest/range/g70272255683880","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"metadata":[{"label":"Date
-        created","value":[{"@value":"1976"}]}]}'
+        created","value":[{"@value":"1976"}, "2010"]}]}'
     http_version: 
   recorded_at: Mon, 18 Jan 2016 19:55:34 GMT
 - request:
@@ -1131,4 +1215,98 @@ http_interactions:
         L2xldmVsMi5qc29uIn19fQ==
     http_version: 
   recorded_at: Mon, 18 Jan 2016 19:55:36 GMT
+- request:
+    method: head
+    uri: https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: Success
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Connection:
+      - keep-alive
+      Status:
+      - 200 Success
+      Cache-Control:
+      - no-cache
+      Vary:
+      - Accept
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - bafeba81-5c78-4504-89e6-89181b0e93be
+      X-Runtime:
+      - '0.048371'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Mon, 28 Mar 2016 22:03:40 GMT
+      X-Powered-By:
+      - Phusion Passenger 5.0.26
+      Server:
+      - nginx/1.8.1 + Phusion Passenger 5.0.26
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 28 Mar 2016 22:03:40 GMT
+- request:
+    method: head
+    uri: https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: Success
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Connection:
+      - keep-alive
+      Status:
+      - 200 Success
+      Cache-Control:
+      - no-cache
+      Vary:
+      - Accept
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 7b9b098e-baec-4bdc-9436-8180e6368c37
+      X-Runtime:
+      - '0.044486'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Mon, 28 Mar 2016 22:03:41 GMT
+      X-Powered-By:
+      - Phusion Passenger 5.0.26
+      Server:
+      - nginx/1.8.1 + Phusion Passenger 5.0.26
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 28 Mar 2016 22:03:41 GMT
 recorded_with: VCR 3.0.0

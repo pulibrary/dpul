@@ -1,7 +1,0 @@
-<%# default partial to display solr document fields in catalog show view -%>
-<dl class="dl-horizontal  dl-invert">
-  <% document.display_fields.each do |field_name, field| -%>
-    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name.gsub("_ssim","") %></dt>
-    <dd class="blacklight-<%= field_name.parameterize %>"><%= field.join(", ") %></dd>
-  <% end -%>
-</dl>

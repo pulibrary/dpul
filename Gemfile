@@ -82,3 +82,4 @@ gem 'open_uri_redirections'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
+gem 'spotlight-resources-iiif', github: 'sul-dlss/spotlight-resources-iiif'

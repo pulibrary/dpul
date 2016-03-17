@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ExhibitsController, vcr: { cassette_name: "all_collections" } do
+RSpec.describe ExhibitsController, vcr: { cassette_name: "all_collections", allow_playback_repeats: true } do
   before do
     allow(Spotlight::DefaultThumbnailJob).to receive(:perform_later)
     sign_in FactoryGirl.create(:site_admin)

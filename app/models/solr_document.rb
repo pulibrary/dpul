@@ -19,26 +19,4 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
-
-  def display_fields
-    @display_fields ||= to_h.select do |x|
-      !x.start_with?("spotlight_") &&
-      !reserved_fields.include?(x) &&
-      !x.end_with?("bsi")
-    end
-  end
-
-  private
-
-    def reserved_fields
-      [
-        "full_title_ssim",
-        "id",
-        "_version_",
-        "timestamp",
-        "manifest_url_ssm",
-        "thumbnail_ssim",
-        "content_metadata_image_iiif_info_ssm"
-      ]
-    end
 end
