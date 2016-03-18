@@ -1,0 +1,30 @@
+<% #Using the Bootstrap Pagination class  -%>
+<% #DEPRECATED - using id="previousNextDocument" as a selector is deprecated and will be removed in Blacklight 6.0 %>
+<div id='previousNextDocument' class='pagination-search-widgets'>
+  <% if current_search_session %>
+    <div class="search-widgets">
+      <%=link_to t('blacklight.search.start_over'), start_over_path(current_search_session.try(:query_params) || {}), id: 'startOverLink', class: 'btn' %>
+
+      <%= link_back_to_catalog class: 'btn' %>
+    </div>
+  <% end %>
+  <% if @previous_document || @next_document %>
+    <div class="page_links">
+      <%= link_to_previous_document @previous_document %> |
+
+      <%= item_page_entry_info %> |
+
+      <%= link_to_next_document @next_document %>
+    </div>
+  <% end %>
+
+  <ul class="show__nav">
+    <%= render_show_doc_actions @document do |config, inner| %>
+      <li class="<%= config.key %>">
+        <%= inner %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
+

@@ -39,7 +39,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'simplecov', '~> 0.9', require: false
   gem 'coveralls', require: false
-  gem 'rubocop-rspec', require: false
+  gem 'rubocop-rspec', '~> 1.3.1', require: false
   gem 'vcr'
   gem 'webmock', require: false
   gem 'capybara'
@@ -62,7 +62,7 @@ group :production do
   gem 'pg'
 end
 
-gem 'rubocop', require: false
+gem 'rubocop', '~> 0.35.0', require: false
 gem 'blacklight', '~> 5.16'
 gem 'blacklight-spotlight', github: 'sul-dlss/spotlight'
 gem 'jettywrapper', '>= 2.0'
@@ -79,3 +79,6 @@ gem 'iiif-presentation'
 gem 'omniauth-cas'
 gem 'sneakers'
 gem 'open_uri_redirections'
+
+# PUL Assets
+gem 'pul-assets', github: 'pulibrary/pul_assets'
