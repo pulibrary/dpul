@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events" } do
+RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_playback_repeats: true } do
   subject { described_class.new(event) }
   let(:event) do
     {

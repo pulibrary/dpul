@@ -10,7 +10,7 @@ class CatalogController < ApplicationController
     config.view.masonry.partials = [:index]
     config.view.slideshow.partials = [:index]
 
-    # config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
+    config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
     # config.show.partials.insert(1, :openseadragon)
     config.show.partials.insert(1, :universal_viewer)
 
@@ -33,6 +33,7 @@ class CatalogController < ApplicationController
     config.add_sort_field 'relevance', sort: 'score desc', label: 'Relevance'
     config.index.thumbnail_field = 'thumbnail_ssim'
 
+    config.add_facet_fields_to_solr_request!
     config.add_field_configuration_to_solr_request!
   end
 end
