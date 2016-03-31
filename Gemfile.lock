@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: git://github.com/sul-dlss/spotlight-resources-iiif.git
-  revision: 4d39b7d9524b55cd6ea6ac179fb5526373f30525
+  revision: 0cd961de4e4653ca3aef4ee6596ec27722ffe7fc
   specs:
     spotlight-resources-iiif (0.1.1)
       blacklight-spotlight
@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: git://github.com/sul-dlss/spotlight.git
-  revision: e496307681e7df6ca9c0d5c07893c29c317b7f06
+  revision: 84632ff9ba3b7d16f6c727aca53f9912a3b15978
   specs:
     blacklight-spotlight (0.17.1)
       acts-as-taggable-on (~> 3.5)
@@ -297,7 +297,7 @@ GEM
     memoist (0.14.0)
     method_source (0.8.2)
     mime-types (2.99.1)
-    mini_magick (4.4.0)
+    mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     modernizr-rails (2.7.1)

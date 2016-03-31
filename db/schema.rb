@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114233535) do
+ActiveRecord::Schema.define(version: 20160330215214) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 20160114233535) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "field_type"
+    t.boolean  "readonly_field", default: false
   end
 
   create_table "spotlight_exhibits", force: :cascade do |t|
