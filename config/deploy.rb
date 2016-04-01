@@ -53,5 +53,21 @@ namespace :sneakers do
     end
   end
 end
+namespace :sidekiq do
+  task :quiet do
+    on roles(:app) do
+      # Horrible hack to get PID without having to use terrible PID files
+      puts capture("kill -USR1 $(sudo initctl status pom-workers | grep /running | awk '{print $NF}') || :")
+    end
+  end
+  task :restart do
+    on roles(:app) do
+      execute :sudo, :initctl, :restart, "pom-workers"
+    end
+  end
+end
 after 'deploy:reverted', 'sneakers:restart'
 after 'deploy:published', 'sneakers:restart'
+after 'deploy:starting', 'sidekiq:quiet'
+after 'deploy:reverted', 'sidekiq:restart'
+after 'deploy:published', 'sidekiq:restart'
