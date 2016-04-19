@@ -80,6 +80,7 @@ gem 'omniauth-cas'
 gem 'sneakers'
 gem 'open_uri_redirections'
 gem 'sidekiq'
+gem 'redis-namespace'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
