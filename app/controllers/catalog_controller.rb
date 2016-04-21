@@ -35,5 +35,6 @@ class CatalogController < ApplicationController
 
     config.add_facet_fields_to_solr_request!
     config.add_field_configuration_to_solr_request!
+    config.document_presenter_class = RTLPresenter
   end
 end

@@ -19,3 +19,6 @@
     position: absolute;
   }
 }
+li[dir=rtl] {
+  text-align: right;
+}
