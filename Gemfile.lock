@@ -486,6 +486,7 @@ GEM
     sshkit (1.9.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    string_rtl (0.1.0)
     susy (2.2.12)
       sass (>= 3.3.0, < 3.5)
     term-ansicolor (1.3.2)
@@ -578,6 +579,7 @@ DEPENDENCIES
   spotlight-resources-iiif!
   spring
   sqlite3
+  string_rtl
   turbolinks
   uglifier (>= 1.3.0)
   vcr
