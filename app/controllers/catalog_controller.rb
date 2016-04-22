@@ -2,6 +2,7 @@
 # Simplified catalog controller
 class CatalogController < ApplicationController
   include Blacklight::Catalog
+  self.search_params_logic += [:hide_parented_resources, :join_from_parent]
 
   configure_blacklight do |config|
     config.show.oembed_field = :oembed_url_ssm
