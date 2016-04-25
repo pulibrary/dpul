@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: git://github.com/sul-dlss/spotlight-resources-iiif.git
-  revision: 0cd961de4e4653ca3aef4ee6596ec27722ffe7fc
+  revision: e98c2f565bd09466b0697a1121ed21595cfe4f03
   specs:
     spotlight-resources-iiif (0.1.1)
       blacklight-spotlight
