@@ -11,17 +11,9 @@ GIT
       susy (~> 2.2.12)
 
 GIT
-  remote: git://github.com/sul-dlss/spotlight-resources-iiif.git
-  revision: e98c2f565bd09466b0697a1121ed21595cfe4f03
-  specs:
-    spotlight-resources-iiif (0.1.1)
-      blacklight-spotlight
-      faraday
-      iiif-presentation
-
-GIT
-  remote: git://github.com/sul-dlss/spotlight.git
-  revision: 84632ff9ba3b7d16f6c727aca53f9912a3b15978
+  remote: git://github.com/pulibrary/spotlight.git
+  revision: 06934a5fdabadc2b46663876f3a948ee32f973e8
+  branch: readonly_field_names
   specs:
     blacklight-spotlight (0.17.1)
       acts-as-taggable-on (~> 3.5)
@@ -55,6 +47,15 @@ GIT
       social-share-button (~> 0.1.5)
       tophat
       underscore-rails (~> 1.6)
+
+GIT
+  remote: git://github.com/sul-dlss/spotlight-resources-iiif.git
+  revision: e98c2f565bd09466b0697a1121ed21595cfe4f03
+  specs:
+    spotlight-resources-iiif (0.1.1)
+      blacklight-spotlight
+      faraday
+      iiif-presentation
 
 GEM
   remote: https://rubygems.org/
@@ -385,7 +386,7 @@ GEM
       redis (~> 3.0, >= 3.0.4)
     representable (2.3.0)
       uber (~> 0.0.7)
-    request_store (1.3.0)
+    request_store (1.3.1)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
     retriable (1.4.1)

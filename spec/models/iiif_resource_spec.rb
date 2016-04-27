@@ -11,7 +11,7 @@ describe IIIFResource do
       solr_doc = nil
       resource.to_solr { |x| solr_doc = x }
       expect(solr_doc["full_title_ssim"]).to eq 'Christopher and his kind, 1929-1939'
-      expect(solr_doc["date-created_tesim"]).to eq ['1976', '2010']
+      expect(solr_doc["readonly_date-created_tesim"]).to eq ['1976', '2010']
     end
     context "when given a MVW", vcr: { cassette_name: 'mvw' } do
       let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }

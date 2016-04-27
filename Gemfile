@@ -64,7 +64,7 @@ end
 
 gem 'rubocop', '~> 0.35.0', require: false
 gem 'blacklight', '~> 5.16'
-gem 'blacklight-spotlight', github: 'sul-dlss/spotlight'
+gem 'blacklight-spotlight', github: 'pulibrary/spotlight', branch: 'readonly_field_names'
 gem 'jettywrapper', '>= 2.0'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
