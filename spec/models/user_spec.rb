@@ -16,5 +16,10 @@ RSpec.describe User do
       expect(user.uid).to eq "test"
       expect(user.username).to eq "test"
     end
+    it "doesn't make them an administrator" do
+      token = double("token", provider: "cas", uid: "test")
+      user = described_class.from_omniauth(token)
+      expect(user.roles).to eq []
+    end
   end
 end
