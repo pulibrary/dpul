@@ -12,8 +12,8 @@ GIT
 
 GIT
   remote: git://github.com/pulibrary/spotlight.git
-  revision: 06934a5fdabadc2b46663876f3a948ee32f973e8
-  branch: readonly_field_names
+  revision: 6c8ec3e88cfc460a59022c2006c44e0e6ffbfbc7
+  branch: namespace_view_plus_readonly_field_names
   specs:
     blacklight-spotlight (0.17.1)
       acts-as-taggable-on (~> 3.5)

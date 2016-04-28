@@ -24,10 +24,26 @@ RSpec.describe ExhibitsController, vcr: { cassette_name: "all_collections", allo
       end
     end
     context "when not given a slug" do
+      render_views
       let(:params) do
         {
           exhibit: {
             slug: ""
+          }
+        }
+      end
+      it "renders an error" do
+        post :create, params
+
+        expect(response).to render_template "new"
+        expect(assigns["exhibit"].errors.messages[:slug]).to eq ["can't be blank"]
+      end
+    end
+    context "when given no params" do
+      let(:params) do
+        {
+          exhibit: {
+            tag_list: nil
           }
         }
       end
