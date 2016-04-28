@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://hydra-dev.princeton.edu/iiif/collections
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Vary:
+      - Accept
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 4603ac1c-1a7a-4d6e-a7d3-c898ffdc0187
+      Etag:
+      - W/"a8d00663d4087eec82aba5f931b2f919"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.032554'
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Thu, 28 Apr 2016 16:06:58 GMT
+      X-Powered-By:
+      - Phusion Passenger 5.0.26
+      Server:
+      - nginx/1.8.1 + Phusion Passenger 5.0.26
+    body:
+      encoding: UTF-8
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/manifest","@type":"sc:Manifest","label":"Plum
+        Collections","description":"All collections which are a part of Plum."}'
+    http_version: 
+  recorded_at: Thu, 28 Apr 2016 16:06:58 GMT
+recorded_with: VCR 3.0.1
