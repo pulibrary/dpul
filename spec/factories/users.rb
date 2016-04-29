@@ -3,8 +3,12 @@ FactoryGirl.define do
     transient do
       exhibit { FactoryGirl.create(:exhibit) }
     end
-    sequence(:email) { |n| "user#{n}@example.com" }
+    sequence(:email) { |n| "user#{n}@princeton.edu" }
     sequence(:username) { |n| "user#{n}" }
+    uid do |user|
+      user.username
+    end
+    provider "cas"
 
     factory :site_admin do
       after(:create) do |user, _evaluator|

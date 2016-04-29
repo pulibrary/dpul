@@ -23,4 +23,7 @@ class User < ActiveRecord::Base
       user.email = "#{access_token.uid}@princeton.edu"
     end
   end
+
+  def add_default_roles
+  end
 end
