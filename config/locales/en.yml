@@ -21,9 +21,180 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    action:
+      spotlight/exhibit:
+        create: "Create Collection"
+        destroy: "Delete this collection"
+    submit:
+      exhibit:
+        created: "The Collection was created."
+        updated: "The Collection was successfully updated."
+        batch_updated: "Collections were successfully updated."
+        batch_error: "There was an error updating the requested Collection."
+        destroyed: "The collection was deleted."
+      blacklight_configuration:
+        create: "Save"
+        submit: "Save changes"
+        update: "Save changes"
+        updated: "The collection was successfully updated."
+  blacklight:
+    search:
+      fields:
+        facet:
+          exhibit_tag: Collection Tags
   spotlight:
+    admin_users:
+      create:
+        success: Added user as a collections adminstrator
+        error: There was a problem adding the user as a collections adminstrator
+      destroy:
+        success: User removed from site adminstrator role
+        error: There was a problem removing the user from the site adminstrator role
+      index:
+        section: Manage collections
+        page_title: Manage administrators
+        instructions: Existing collection administrators
+        add: Add new administrator
+        destroy: Remove from role
+        save: Add role
+        pending: pending
+    appearances:
+      edit:
+        exhibit_style:
+          heading: "Collection style"
+        site_masthead:
+          heading: Site masthead
+          help: >
+            You can select and crop an image to use as a background in your collection's
+            masthead. To use an image as a masthead background, you should use an image that
+            is at least 120 pixels tall and 1200 pixels wide. For best results use an image at
+            least 1800 pixels wide. You can crop larger images using the cropping tool below.
+        site_thumbnail:
+          heading: Site thumbnail
+          help: "You can select and crop an image to visually represent this collection."
+    search_configurations:
+      search_fields:
+        header: "Field-based search"
+        help: >
+          If the search box is displayed, you can also enable field-based search.
+          Field-based search adds a dropdown menu to your collection's search box that
+          provides the user with an option to restrict a search query to a single metadata field.
+    metadata_configurations:
+      edit:
+        exhibit_specific:
+          header: "Collection-Specific Fields"
+    catalog:
+      reindex_progress_panel:
+        error: 'An error occured while reindexing. Contact your collections administrator for more information.'
+    invitation_mailer:
+      invitation_instructions:
+        someone_invited_you: "The Collections Administrator has invited you to help work on the \"%{exhibit_name}\" collection at %{url}. You can accept this invitation by clicking the link below."
+    exhibits_admin_invitation_mailer:
+      invitation_instructions:
+        someone_invited_you: "The Collections Administrator has invited you to help manage collections. You can accept this invitation by clicking the link below."
+        ignore_html: "If you don't want to accept the invitation, please ignore this email. Your collections administrator account won't be created until you access the link above."
+    custom_fields:
+      edit:
+        header: Edit Collection-Specific Field
+      new:
+        header: Add Collection-Specific Field
     exhibits:
+      index:
+        published: Published collections
+        user: Your collections
+        unpublished: Unpublished collections
+      delete:
+        heading: Delete collections
+      exhibit_card_back:
+        visit_exhibit: "Visit collection"
+      new:
+        header: Create a new collection
+      import:
+        instructions: You can import a collection JSON file exported from this application to use that data file to define this collection.
+      export:
+        instructions: >
+          You can create a backup of this collection by exporting the data that defines it to a JSON file.
+          You can then import that JSON file into new collection to restore the collection data or to use as a starting point for a new collection.
       new_exhibit_form:
         fields:
           slug:
             label: Plum Collection
+    pages:
+      order_pages:
+        pages_header: Custom Pages
+        instructions: Add new pages below. Drag and drop pages to change the order in which they are displayed in the sidebar.
+        new_page: "Add new page"
+        save: "Save"
+        cancel: "Cancel"
+      index:
+        home_pages:
+          title: Collection Home
+          header: Collection Home
+        feature_pages:
+          title: Feature Pages
+          header: Feature Pages
+          home_pages_header: Homepage
+        about_pages:
+          title: About Pages
+          header: About Pages
+      new:
+        header: New page
+      edit:
+        header: Edit page
+        locked: "This page is currently being edited by %{user} (%{created_at})"
+      form:
+        title_placeholder: "Title"
+        page_content: "Content"
+        page_options: "Options"
+        page_thumbnail: "Thumbnail"
+        thumbnail:
+          help: >
+            You can select and crop an image to visually represent this page. It will be
+            used as the thumbnail image if you include this page using the 'Highlight Featured Pages' widget.
+    sir_trevor:
+      blocks:
+        browse_block:
+          items:
+            one: "%{count} item"
+            other: "%{count} items"
+    contacts:
+      new:
+        header: "Add Collection Contact"
+    about_pages:
+      contacts_form:
+        instructions: >
+          Enter details for each librarian, curator or other contact person for this collection.
+          Select the contacts you want to be show in the sidebar of the About Pages. Drag and
+          drop contacts to specify the order in which they are shown in the sidebar.
+    featured_images:
+      form: &featured_images_form
+        source:
+          exhibit:
+            label: "From this collection"
+            help: "To find an image, start typing the title of a collection item."
+    sites:
+      new:
+        section: Manage collections
+        page_title: Create a new collection
+      edit:
+        section: Manage collections
+      edit_exhibits:
+        section: Manage collections
+        page_title: Order collections
+        instructions: Drag and drop the collections below to specify the order in which they are displayed on the collections homepage.
+    browse:
+      index:
+        header: "Browse Collection"
+    tags:
+      index:
+        no_tags: "No items in this collection have been tagged. You can add tags to an item on the Item Details page while in curation mode."
+    indexing_complete_mailer:
+      documents_indexed:
+        body:
+          one: "%{count} document has been indexed from the CSV file and added to the collection %{title}."
+          other: "%{count} documents have been indexed from the CSV file and added to the collection %{title}."
+  shared:
+    site_sidebar:
+      header: Actions
+      create_exhibit: 'Create a new collection'

@@ -10,14 +10,14 @@ RSpec.feature 'Home Page', type: :feature do
 
     scenario 'site admins can create exhibits' do
       visit root_path
-      expect(page).to have_link "Create Exhibit"
+      expect(page).to have_link "Create Collection"
     end
   end
 
   context "while not logged in" do
     scenario "it doesn't show links to create exhibits" do
       visit root_path
-      expect(page).not_to have_link 'Create Exhibit'
+      expect(page).not_to have_link 'Create Collection'
     end
   end
 end
