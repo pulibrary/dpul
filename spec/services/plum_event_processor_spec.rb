@@ -51,6 +51,34 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
 
       expect(resource["full_title_ssim"]).to eq ["Updated Record"]
     end
+    context "when it's no longer accessible", vcr: { cassette_name: "plum_events_no_permission" } do
+      it "marks it as non-public" do
+        exhibit = FactoryGirl.create(:exhibit, slug: "first")
+        IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
+
+        expect(subject.process).to eq true
+        Blacklight.default_index.connection.commit
+
+        resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
+        expect(resource["exhibit_first_public_bsi"]).to eq false
+      end
+    end
+    context "when it's private and then is made accessible" do
+      it "marks it as public" do
+        exhibit = FactoryGirl.create(:exhibit, slug: "first")
+        IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
+        resource_id = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first["id"]
+        document = SolrDocument.find(resource_id)
+        document.make_private!(exhibit)
+        document.save
+
+        Blacklight.default_index.connection.commit
+        expect(subject.process).to eq true
+
+        resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
+        expect(resource["exhibit_first_public_bsi"]).to eq false
+      end
+    end
     context "when it's removed from a collection" do
       let(:collection_slugs) { [] }
       it "removes old ones" do
