@@ -11,6 +11,16 @@ GIT
       susy (~> 2.2.12)
 
 GIT
+  remote: git://github.com/pulibrary/spotlight-resources-iiif.git
+  revision: fabb019401f41dd59a5db785dfe7e7021e6b33a0
+  branch: index_full_image
+  specs:
+    spotlight-resources-iiif (0.1.1)
+      blacklight-spotlight
+      faraday
+      iiif-presentation
+
+GIT
   remote: git://github.com/pulibrary/spotlight.git
   revision: 6c8ec3e88cfc460a59022c2006c44e0e6ffbfbc7
   branch: namespace_view_plus_readonly_field_names
@@ -47,15 +57,6 @@ GIT
       social-share-button (~> 0.1.5)
       tophat
       underscore-rails (~> 1.6)
-
-GIT
-  remote: git://github.com/sul-dlss/spotlight-resources-iiif.git
-  revision: e98c2f565bd09466b0697a1121ed21595cfe4f03
-  specs:
-    spotlight-resources-iiif (0.1.1)
-      blacklight-spotlight
-      faraday
-      iiif-presentation
 
 GEM
   remote: https://rubygems.org/
