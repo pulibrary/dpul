@@ -85,4 +85,4 @@ gem 'string_rtl'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
-gem 'spotlight-resources-iiif', github: 'sul-dlss/spotlight-resources-iiif'
+gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: "index_full_image"
