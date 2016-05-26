@@ -22,3 +22,12 @@
 li[dir=rtl] {
   text-align: right;
 }
+
+.long-description-text {
+  column-width: auto;
+  -webkit-column-width: auto;
+  -moz-column-width: auto;
+  column-gap: auto;
+  -webkit-column-gap: auto;
+  -moz-column-gap: auto;
+}
