@@ -19,15 +19,16 @@ class PlumEventProcessor
 
     def update_existing_resources
       IIIFResource.where(url: manifest_url).each do |resource|
-        next if resource.save_and_index
         # Make solr document private if it's no longer valid.
         manifest = Spotlight::Resources::IiifManifest.new(url: resource.url)
         manifest.with_exhibit(resource.exhibit)
         document = SolrDocument.find(manifest.compound_id)
-        if document
+        if resource.save_and_index
+          document.make_public!(resource.exhibit)
+        else
           document.make_private!(resource.exhibit)
-          document.save
         end
+        document.save
       end
     end
 
