@@ -30,6 +30,13 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
   end
   context "when given a delete event" do
     let(:type) { "DELETED" }
+    let(:event) do
+      {
+        "id" => "1r66j1149",
+        "event" => "DELETED",
+        "manifest_url" => "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest"
+      }
+    end
     it "deletes that resource" do
       exhibit = FactoryGirl.create(:exhibit, slug: "first")
       IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
