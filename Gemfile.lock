@@ -197,6 +197,7 @@ GEM
       tins (~> 1.6.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     deprecation (1.0.0)
       activesupport
@@ -550,6 +551,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   coveralls
+  database_cleaner
   devise
   devise-guests (~> 0.3)
   devise_invitable

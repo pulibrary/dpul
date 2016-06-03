@@ -4,7 +4,18 @@ class ExternalCollectionsQuery
       new(remote_url).collection_manifests
     end
 
+    def uncreated
+      exhibit_slugs = all_exhibit_slugs
+      all.select do |manifest|
+        !exhibit_slugs.include?(manifest.slug)
+      end
+    end
+
     private
+
+      def all_exhibit_slugs
+        Spotlight::Exhibit.pluck(:slug)
+      end
 
       def remote_url
         Pomegranate.config["all_collection_manifest_url"]
