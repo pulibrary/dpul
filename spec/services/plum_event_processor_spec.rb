@@ -71,12 +71,13 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
         document = SolrDocument.find(resource_id)
         document.make_private!(exhibit)
         document.save
-
         Blacklight.default_index.connection.commit
+
         expect(subject.process).to eq true
+        Blacklight.default_index.connection.commit
 
         resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
-        expect(resource["exhibit_first_public_bsi"]).to eq false
+        expect(resource["exhibit_first_public_bsi"]).to eq true
       end
     end
     context "when it's removed from a collection" do
