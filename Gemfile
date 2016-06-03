@@ -48,6 +48,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
   gem 'capistrano-rails-console'
+  gem 'database_cleaner'
 end
 
 group :development do
