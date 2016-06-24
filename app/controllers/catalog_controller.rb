@@ -12,9 +12,13 @@ class CatalogController < ApplicationController
 
     blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language'
     blacklight_config.add_facet_field 'readonly_format_ssim', label: 'Format'
-    Spotlight::CustomField.all.group(:field).each do |field|
+    unique_custom_fields.each do |field|
       blacklight_config.add_show_field field.field, label: field.configuration["label"]
     end
+  end
+
+  def unique_custom_fields
+    Spotlight::CustomField.select(:field, :configuration).distinct
   end
 
   configure_blacklight do |config|
