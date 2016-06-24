@@ -37,7 +37,7 @@ RSpec.describe CatalogController do
 
     expect(document_ids.length).to eq 1
     expect(assigns[:response][:response][:numFound]).to eq 1
-    expect(assigns[:response]["facet_counts"]["facet_fields"]).to eq({})
+    expect(assigns[:response]["facet_counts"]["facet_fields"]).to eq("readonly_format_ssim" => [], "readonly_language_ssim" => [])
   end
 
   def document_ids

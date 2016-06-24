@@ -3,6 +3,19 @@
 class CatalogController < ApplicationController
   include Blacklight::Catalog
   self.search_params_logic += [:hide_parented_resources, :join_from_parent]
+  before_action :search_across_settings
+
+  def search_across_settings
+    return if current_exhibit
+    blacklight_config.add_index_field 'readonly_subject_tesim', label: 'Subject'
+    blacklight_config.add_index_field 'readonly_description_tesim', label: 'Description'
+
+    blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language'
+    blacklight_config.add_facet_field 'readonly_format_ssim', label: 'Format'
+    Spotlight::CustomField.all.group(:field).each do |field|
+      blacklight_config.add_show_field field.field, label: field.configuration["label"]
+    end
+  end
 
   configure_blacklight do |config|
     config.show.oembed_field = :oembed_url_ssm
