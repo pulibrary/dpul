@@ -6,7 +6,7 @@
     <span class='background-container-gradient'></span>
   <% end %>
 
-  <%= render 'shared/exhibit_navbar' if current_exhibit && resource_masthead? %>
+  <%= render 'shared/exhibit_navbar' if resource_masthead? %>
 
   <div class="container site-title-container">
     <div class="site-title h1">
@@ -18,7 +18,7 @@
           <small><%= current_exhibit.subtitle %></small>
         <% end %>
       <% else %>
-        <%= application_name %>
+        <%= link_to application_name, main_app.root_path %>
         <% if current_site.subtitle.present? %>
           <small><%= current_site.subtitle %></small>
         <% end %>
@@ -26,7 +26,7 @@
     </div>
   </div>
 
-  <%= render 'shared/exhibit_navbar' if current_exhibit && !resource_masthead? %>
+  <%= render 'shared/exhibit_navbar' if !resource_masthead? %>
 </div>
 </header>
 

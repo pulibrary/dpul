@@ -12,8 +12,8 @@ GIT
 
 GIT
   remote: git://github.com/pulibrary/spotlight-resources-iiif.git
-  revision: fabb019401f41dd59a5db785dfe7e7021e6b33a0
-  branch: index_full_image
+  revision: 264e50d8775b5d37e1f805e06ad315dc7791d706
+  branch: full_image_and_both_suffixes
   specs:
     spotlight-resources-iiif (0.1.1)
       blacklight-spotlight
@@ -349,6 +349,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.3.0)
+      byebug (~> 8.0)
+      pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     rack (1.6.4)
@@ -565,6 +568,7 @@ DEPENDENCIES
   open_uri_redirections
   pg
   poltergeist
+  pry-byebug
   pry-rails
   pul-assets!
   rails (= 4.2.5)

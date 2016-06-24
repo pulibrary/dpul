@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'simplecov', '~> 0.9', require: false
   gem 'coveralls', require: false
   gem 'rubocop-rspec', '~> 1.3.1', require: false
@@ -86,4 +87,4 @@ gem 'string_rtl'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
-gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: "index_full_image"
+gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: "full_image_and_both_suffixes"

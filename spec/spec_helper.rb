@@ -1,3 +1,4 @@
+require 'pry-byebug'
 require 'simplecov'
 if ENV['CI']
   require 'coveralls'
