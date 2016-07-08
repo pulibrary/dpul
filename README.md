@@ -12,9 +12,6 @@ A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton U
 git clone git@github.com:pulibrary/pomegranate.git
 cd pomegranate
 bundle install
-rake jetty:unzip
-rake jetty:configure_solr
-rake jetty:start
 ```
 
 To create an initial user account and exhibit, use the Spotlight rake tasks:

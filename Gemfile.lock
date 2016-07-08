@@ -176,8 +176,6 @@ GEM
       carrierwave (>= 0.8.0, < 0.11.0)
       jquery-rails
       rails (>= 3.2)
-    childprocess (0.5.9)
-      ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -228,7 +226,6 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
-    ffi (1.9.10)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     github-markup (1.4.0)
@@ -263,12 +260,6 @@ GEM
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    jettywrapper (2.0.3)
-      activesupport (>= 3.0.0)
-      childprocess
-      i18n
-      logger
-      rubyzip
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -287,7 +278,6 @@ GEM
     little-plugger (1.1.4)
     lodash-rails (4.6.1)
       railties (>= 3.1)
-    logger (1.2.8)
     logging (2.1.0)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
@@ -432,7 +422,7 @@ GEM
       tins (<= 1.6.0)
     rubocop-rspec (1.3.1)
     ruby-oembed (0.10.0)
-    ruby-progressbar (1.7.5)
+    ruby-progressbar (1.8.1)
     rubyzip (1.2.0)
     safe_yaml (1.0.4)
     sass (3.4.21)
@@ -480,6 +470,10 @@ GEM
     social-share-button (0.1.10)
       coffee-rails
       sass-rails
+    solr_wrapper (0.14.1)
+      faraday
+      ruby-progressbar
+      rubyzip
     spring (1.6.4)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -562,7 +556,6 @@ DEPENDENCIES
   friendly_id
   iiif-presentation
   jbuilder (~> 2.0)
-  jettywrapper (>= 2.0)
   jquery-rails
   omniauth-cas
   open_uri_redirections
@@ -584,6 +577,7 @@ DEPENDENCIES
   sitemap_generator
   sneakers
   social-share-button
+  solr_wrapper (~> 0.14.1)
   spotlight-resources-iiif!
   spring
   sqlite3
@@ -595,4 +589,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.11.2
+   1.12.3
