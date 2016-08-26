@@ -6,9 +6,10 @@ class SearchBuilder
     end
 
     def to_s
-      queries.map do |query|
+      q = queries.map do |query|
         "(#{dismax_join(send(query))})"
       end.join(" OR ")
+      "{!lucene}#{q}"
     end
 
     private
