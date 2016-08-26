@@ -67,7 +67,7 @@ end
 gem 'rubocop', '~> 0.35.0', require: false
 gem 'blacklight', '~> 5.16'
 gem 'blacklight-spotlight', github: 'pulibrary/spotlight', branch: 'namespace_view_plus_readonly_field_names'
-gem 'solr_wrapper', '~> 0.14.1'
+gem 'solr_wrapper', '~> 0.15.0'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
