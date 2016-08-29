@@ -88,6 +88,7 @@ gem 'sprockets-es6'
 gem 'sprockets-rails', '~> 2.3.3'
 gem 'sprockets', '~> 3.5.0'
 gem 'almond-rails', '~> 0.0.3'
+gem 'pul_uv_rails', github: 'pulibrary/pul_uv_rails', tag: 'v1.7.27'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'

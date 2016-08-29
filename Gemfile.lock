@@ -11,6 +11,13 @@ GIT
       susy (~> 2.2.12)
 
 GIT
+  remote: git://github.com/pulibrary/pul_uv_rails.git
+  revision: 4ae89c38c86cb3479374139df2dc19d6016597a1
+  tag: v1.7.27
+  specs:
+    pul_uv_rails (1.7.27)
+
+GIT
   remote: git://github.com/pulibrary/spotlight-resources-iiif.git
   revision: 264e50d8775b5d37e1f805e06ad315dc7791d706
   branch: full_image_and_both_suffixes
@@ -579,6 +586,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   pul-assets!
+  pul_uv_rails!
   rails (= 4.2.7.1)
   redis-namespace
   rsolr (~> 1.0.6)
