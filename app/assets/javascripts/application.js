@@ -10,11 +10,23 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks//
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require pul-assets
+//= require 'blacklight_oembed/jquery.oembed.js'
+//= require blacklight_gallery
+//= require openseadragon
+//= require spotlight
+// ES6 modules
+//= require almond
+//= require universal_viewer
+//= require pom_boot
 
-//= require_tree .
+Blacklight.onLoad(function() {
+  Initializer = require('pom_boot')
+  window.pom = new Initializer()
+})

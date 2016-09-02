@@ -11,3 +11,5 @@ module Pomegranate
 
     module_function :config, :config_yaml
 end
+
+Sprockets::ES6.configuration = { 'modules' => 'amd', 'moduleIds' => true }

@@ -1,3 +1,2 @@
-<%= javascript_include_tag Pomegranate.config["universal_viewer_url"] %>
 <div class="uv viewer" data-uri="<%= document.fetch(Spotlight::Resources::Iiif::Engine.config.iiif_manifest_field) %>"></div>
-
+<%= PulUvRails::UniversalViewer.script_tag %>
