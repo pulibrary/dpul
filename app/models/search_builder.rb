@@ -1,7 +1,8 @@
 class SearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
+  include Spotlight::AccessControlsEnforcementSearchBuilder
 
-  include Spotlight::Catalog::AccessControlsEnforcement::SearchBuilder
+  self.default_processor_chain += [:hide_parented_resources, :join_from_parent]
 
   def hide_parented_resources(solr_params)
     solr_params[:fq] ||= []

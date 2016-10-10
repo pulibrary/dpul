@@ -1,4 +1,4 @@
-class RTLPresenter < ::Blacklight::DocumentPresenter
+class RTLShowPresenter < ::Blacklight::ShowPresenter
   def field_value_separator
     "<br/>".html_safe
   end
@@ -11,7 +11,7 @@ class RTLPresenter < ::Blacklight::DocumentPresenter
   #   @param [String] field
   #   @param [Hash] options
   #   @options opts [String] :value
-  def render_document_show_field_value(field, options = {})
+  def field_value(field, options = {})
     string = "<ul>"
     super.split(field_value_separator).each do |value|
       string << "<li dir=\"#{value.dir}\">#{value}</li>"
