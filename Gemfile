@@ -65,8 +65,8 @@ group :production do
 end
 
 gem 'rubocop', '~> 0.35.0', require: false
-gem 'blacklight', '~> 5.16'
-gem 'blacklight-spotlight', github: 'pulibrary/spotlight', branch: 'namespace_view_plus_readonly_field_names'
+gem 'blacklight', '~> 5.18'
+gem 'blacklight-spotlight', '0.17.1'
 gem 'solr_wrapper', '~> 0.15.0'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
