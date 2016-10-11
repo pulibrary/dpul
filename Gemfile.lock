@@ -19,10 +19,10 @@ GIT
 
 GIT
   remote: git://github.com/pulibrary/spotlight-resources-iiif.git
-  revision: cc1e168ca69ba0bee1e8644457334563b36846ed
-  branch: full_image_and_both_suffixes_fix
+  revision: 16bd7635fa0604a588c4d77e8dfede01587c4b9d
+  branch: workaround
   specs:
-    spotlight-resources-iiif (0.1.1)
+    spotlight-resources-iiif (0.2.0)
       blacklight-spotlight
       faraday
       iiif-presentation
@@ -103,7 +103,7 @@ GEM
       bootstrap-sass (~> 3.0)
       rails
       ruby-oembed
-    blacklight-spotlight (0.19.0)
+    blacklight-spotlight (0.19.2)
       acts-as-taggable-on (~> 3.5)
       autoprefixer-rails
       blacklight (~> 6.3)
@@ -115,7 +115,7 @@ GEM
       carrierwave
       carrierwave-crop
       devise (>= 3.0)
-      devise_invitable (~> 1.5)
+      devise_invitable (~> 1.6)
       faraday
       faraday_middleware
       friendly_id (~> 5.1.0)
@@ -531,7 +531,7 @@ DEPENDENCIES
   blacklight (= 6.3)
   blacklight-gallery (>= 0.3.0)
   blacklight-oembed
-  blacklight-spotlight (= 0.19.0)
+  blacklight-spotlight (= 0.19.2)
   byebug
   capistrano-passenger
   capistrano-rails

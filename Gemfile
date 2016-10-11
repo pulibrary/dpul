@@ -66,7 +66,7 @@ end
 
 gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false
 gem 'blacklight', '6.3'
-gem 'blacklight-spotlight', '0.19.0'
+gem 'blacklight-spotlight', '0.19.2'
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
@@ -92,4 +92,4 @@ gem 'pul_uv_rails', github: 'pulibrary/pul_uv_rails', tag: 'v1.7.27'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
-gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: "full_image_and_both_suffixes_fix"
+gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'workaround'

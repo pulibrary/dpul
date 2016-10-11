@@ -9,7 +9,7 @@ class PlumEventProcessor
 
     def delete_old_resources
       delete_resources.each do |resource|
-        resource.to_solr.map { |x| x[:id] }.each do |id|
+        resource.document_builder.to_solr.map { |x| x[:id] }.each do |id|
           index.delete_by_id id.to_s
           index.commit
         end

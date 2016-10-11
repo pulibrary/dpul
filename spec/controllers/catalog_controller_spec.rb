@@ -10,7 +10,7 @@ RSpec.describe CatalogController do
 
       get :index, q: "", exhibit_id: exhibit.id
 
-      expect(document_ids).to eq [resource.to_solr.to_a.first[:id]]
+      expect(document_ids).to eq [resource.document_builder.to_solr.to_a.first[:id]]
     end
     it "returns MVW from metadata found in volume" do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
@@ -19,7 +19,7 @@ RSpec.describe CatalogController do
 
       get :index, q: "SR1", exhibit_id: exhibit.id
 
-      expect(document_ids).to eq [resource.to_solr.to_a.first[:id]]
+      expect(document_ids).to eq [resource.document_builder.to_solr.to_a.first[:id]]
     end
   end
   it "can search across, and hides duplicates" do
