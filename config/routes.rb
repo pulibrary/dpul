@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'spotlight/exhibits#index'
   resources :exhibits, path: '/spotlight', only: [:create]
-  
+
   mount Spotlight::Engine, at: 'spotlight'
   mount Blacklight::Engine => '/'
 

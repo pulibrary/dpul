@@ -1,6 +1,9 @@
 class RTLShowPresenter < ::Blacklight::ShowPresenter
+  include ActionView::Helpers::TagHelper
+  include ActionView::Context
+
   def field_value_separator
-    "<br/>".html_safe
+    tag('br')
   end
 
   ##
@@ -12,11 +15,12 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   #   @param [Hash] options
   #   @options opts [String] :value
   def field_value(field, options = {})
-    string = "<ul>"
-    super.split(field_value_separator).each do |value|
-      string << "<li dir=\"#{value.dir}\">#{value}</li>"
+    tags = super.split(field_value_separator).collect do |value|
+      content_tag(:li, value, dir: value.dir)
     end
-    string << "</ul>"
-    string.html_safe
+
+    content_tag(:ul) do
+      safe_join tags
+    end
   end
 end

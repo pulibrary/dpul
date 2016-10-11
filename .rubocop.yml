@@ -5,6 +5,7 @@ Rails:
 
 AllCops:
   DisplayCopNames: true
+  TargetRubyVersion: 2.2
   Include:
     - '**/Rakefile'
     - '**/config.ru'
@@ -60,7 +61,6 @@ Style/MultilineBlockLayout:
   Exclude:
     - 'spec/**/*'
 
-
 Style/IndentationConsistency:
   EnforcedStyle: rails
 
@@ -111,9 +111,6 @@ RSpec/ExampleWording:
 RSpec/FilePath:
   Enabled: false
 
-RSpec/InstanceVariable:
-  Enabled: false
-
 RSpec/DescribeClass:
   Exclude:
     - 'spec/abilities/**/*'
@@ -121,3 +118,26 @@ RSpec/DescribeClass:
     - 'spec/views/**/*'
     - 'spec/routing/**/*'
     - 'spec/inputs/**/*'
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MessageExpectation:
+  Exclude:
+    - 'spec/jobs/iiif_ingest_job_spec.rb'
+
+RSpec/NestedGroups:
+  Exclude:
+    - 'spec/models/iiif_resource_spec.rb'
+
+RSpec/VerifiedDoubles:
+  Exclude:
+    - 'spec/presenters/rtl_presenter_spec.rb'
+
+RSpec/SubjectStub:
+  Exclude:
+    - 'spec/workers/plum_event_handler_spec.rb'
+
