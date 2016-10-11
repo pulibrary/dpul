@@ -11,8 +11,8 @@ RSpec.feature 'Exhibit Home Page', type: :feature do
 
     scenario 'site admins see dashboard and edit buttons' do
       visit spotlight.exhibit_root_path exhibit
-      expect(page).to have_selector 'a.btn', 'Dashboard'
-      expect(page).to have_selector 'a.btn', 'Edit'
+      expect(page).to have_selector 'a.btn', text: 'Dashboard'
+      expect(page).to have_selector 'a.btn', text: 'Edit'
     end
   end
 

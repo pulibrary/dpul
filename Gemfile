@@ -64,9 +64,9 @@ group :production do
   gem 'pg'
 end
 
-gem 'rubocop', '~> 0.41', require: false
+gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false
 gem 'blacklight', '6.3'
-gem 'blacklight-spotlight', '0.18.0'
+gem 'blacklight-spotlight', '0.19.0'
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'

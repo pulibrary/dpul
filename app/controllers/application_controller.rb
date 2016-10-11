@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   include Blacklight::Controller
   include Spotlight::Controller
 
+  before_action :set_paper_trail_whodunnit
+  
   layout 'blacklight'
 
   # Prevent CSRF attacks by raising an exception.
