@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: git://github.com/pulibrary/spotlight-resources-iiif.git
-  revision: 16bd7635fa0604a588c4d77e8dfede01587c4b9d
+  revision: de623acdfe2283accb2b9c44b60f038854303841
   branch: workaround
   specs:
     spotlight-resources-iiif (0.2.0)
@@ -103,7 +103,7 @@ GEM
       bootstrap-sass (~> 3.0)
       rails
       ruby-oembed
-    blacklight-spotlight (0.19.2)
+    blacklight-spotlight (0.20.3)
       acts-as-taggable-on (~> 3.5)
       autoprefixer-rails
       blacklight (~> 6.3)
@@ -531,7 +531,7 @@ DEPENDENCIES
   blacklight (= 6.3)
   blacklight-gallery (>= 0.3.0)
   blacklight-oembed
-  blacklight-spotlight (= 0.19.2)
+  blacklight-spotlight (= 0.20.3)
   byebug
   capistrano-passenger
   capistrano-rails

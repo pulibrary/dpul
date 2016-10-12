@@ -58,16 +58,18 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
 
       expect(resource["full_title_ssim"]).to eq ["Updated Record"]
     end
-    context "when it's no longer accessible", vcr: { cassette_name: "plum_events_no_permission" } do
+    context "when it's no longer accessible" do
       it "marks it as non-public" do
         exhibit = FactoryGirl.create(:exhibit, slug: "first")
         IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
 
-        expect(processor.process).to eq true
-        Blacklight.default_index.connection.commit
-
-        resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
-        expect(resource["exhibit_first_public_bsi"]).to eq false
+        # swap casseette to make the resource inaccessible
+        VCR.use_cassette('plum_events_no_permission') do
+          expect(processor.process).to eq true
+          Blacklight.default_index.connection.commit
+          resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
+          expect(resource["exhibit_first_public_bsi"]).to eq false
+        end
       end
     end
     context "when it's private and then is made accessible" do
