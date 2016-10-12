@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: aff0564584e84ffa505e6e278b65ca3c4ee5d698
+  specs:
+    friendly_id (5.2.0.beta.1)
+      activerecord (>= 4.0.0)
+
+GIT
   remote: git://github.com/pulibrary/pul_assets.git
   revision: afaa2495a4579c4c6154cb672106d2fad15438ac
   specs:
@@ -103,7 +110,7 @@ GEM
       bootstrap-sass (~> 3.0)
       rails
       ruby-oembed
-    blacklight-spotlight (0.21.0)
+    blacklight-spotlight (0.22.0)
       acts-as-taggable-on (>= 4.0.0.pre)
       autoprefixer-rails
       blacklight (~> 6.3)
@@ -131,7 +138,6 @@ GEM
       roar-rails
       signet
       sir_trevor_rails (~> 0.5)
-      social-share-button (~> 0.3)
       tophat
       underscore-rails (~> 1.6)
     bootstrap-sass (3.3.7)
@@ -232,8 +238,6 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
-    friendly_id (5.2.0.beta.1)
-      activerecord (>= 4.0.0)
     github-markup (1.4.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -445,9 +449,6 @@ GEM
       serverengine (~> 1.5.11)
       thor
       thread (~> 0.1.7)
-    social-share-button (0.8.0)
-      coffee-rails
-      sass-rails
     solr_wrapper (0.18.1)
       faraday
       ruby-progressbar
@@ -531,7 +532,7 @@ DEPENDENCIES
   blacklight (= 6.3)
   blacklight-gallery (>= 0.3.0)
   blacklight-oembed
-  blacklight-spotlight (= 0.21.0)
+  blacklight-spotlight (= 0.22.0)
   byebug
   capistrano-passenger
   capistrano-rails
@@ -544,7 +545,7 @@ DEPENDENCIES
   devise-guests (~> 0.3)
   devise_invitable
   factory_girl_rails
-  friendly_id
+  friendly_id!
   iiif-presentation
   jbuilder (~> 2.0)
   jquery-rails
@@ -568,7 +569,6 @@ DEPENDENCIES
   simplecov (~> 0.12)
   sitemap_generator
   sneakers
-  social-share-button
   solr_wrapper
   spotlight-resources-iiif!
   spring

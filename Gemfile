@@ -66,16 +66,15 @@ end
 
 gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false
 gem 'blacklight', '6.3'
-gem 'blacklight-spotlight', '0.21.0'
+gem 'blacklight-spotlight', '0.22.0'
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
-gem 'friendly_id'
+gem 'friendly_id', github: 'norman/friendly_id'
 gem 'sitemap_generator'
 gem 'blacklight-gallery', '>= 0.3.0'
 gem 'blacklight-oembed'
-gem 'social-share-button'
 gem 'devise_invitable'
 gem 'iiif-presentation'
 gem 'omniauth-cas'
