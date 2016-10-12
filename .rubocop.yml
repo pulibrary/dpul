@@ -1,5 +1,7 @@
 require: rubocop-rspec
 
+inherit_from: .rubocop_todo.yml
+
 Rails:
   Enabled: true
 
@@ -108,9 +110,6 @@ RSpec/ExampleWording:
   IgnoredWords:
     - only
 
-RSpec/FilePath:
-  Enabled: false
-
 RSpec/DescribeClass:
   Exclude:
     - 'spec/abilities/**/*'
@@ -118,26 +117,3 @@ RSpec/DescribeClass:
     - 'spec/views/**/*'
     - 'spec/routing/**/*'
     - 'spec/inputs/**/*'
-
-RSpec/MultipleExpectations:
-  Enabled: false
-
-RSpec/ExampleLength:
-  Enabled: false
-
-RSpec/MessageExpectation:
-  Exclude:
-    - 'spec/jobs/iiif_ingest_job_spec.rb'
-
-RSpec/NestedGroups:
-  Exclude:
-    - 'spec/models/iiif_resource_spec.rb'
-
-RSpec/VerifiedDoubles:
-  Exclude:
-    - 'spec/presenters/rtl_presenter_spec.rb'
-
-RSpec/SubjectStub:
-  Exclude:
-    - 'spec/workers/plum_event_handler_spec.rb'
-
