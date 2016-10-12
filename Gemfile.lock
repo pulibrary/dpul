@@ -82,7 +82,7 @@ GEM
     amq-protocol (2.0.1)
     arel (6.0.3)
     ast (2.3.0)
-    autoprefixer-rails (6.5.0.2)
+    autoprefixer-rails (6.5.1)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -110,7 +110,7 @@ GEM
       bootstrap-sass (~> 3.0)
       rails
       ruby-oembed
-    blacklight-spotlight (0.22.0)
+    blacklight-spotlight (0.25.0)
       acts-as-taggable-on (>= 4.0.0.pre)
       autoprefixer-rails
       blacklight (~> 6.3)
@@ -121,6 +121,7 @@ GEM
       cancancan
       carrierwave
       carrierwave-crop
+      clipboard-rails (~> 1.5)
       devise (>= 3.0)
       devise_invitable (~> 1.6)
       faraday
@@ -128,7 +129,6 @@ GEM
       friendly_id (>= 5.2.0.beta.1, < 6)
       github-markup
       legato
-      lodash-rails
       mini_magick
       nokogiri
       oauth2
@@ -190,6 +190,7 @@ GEM
       carrierwave (>= 0.8.0, < 0.11.0)
       jquery-rails
       rails (>= 3.2)
+    clipboard-rails (1.5.10)
     cliver (0.3.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -264,8 +265,6 @@ GEM
       activesupport (>= 3.0.0)
     legato (0.7.0)
       multi_json
-    lodash-rails (4.16.4)
-      railties (>= 3.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -532,7 +531,7 @@ DEPENDENCIES
   blacklight (= 6.3)
   blacklight-gallery (>= 0.3.0)
   blacklight-oembed
-  blacklight-spotlight (= 0.22.0)
+  blacklight-spotlight (= 0.25.0)
   byebug
   capistrano-passenger
   capistrano-rails
