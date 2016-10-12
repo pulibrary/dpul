@@ -110,7 +110,7 @@ GEM
       bootstrap-sass (~> 3.0)
       rails
       ruby-oembed
-    blacklight-spotlight (0.28.0)
+    blacklight-spotlight (0.29.1)
       acts-as-taggable-on (>= 4.0.0.pre)
       autoprefixer-rails
       blacklight (~> 6.3)
@@ -133,7 +133,7 @@ GEM
       nokogiri
       oauth2
       openseadragon
-      paper_trail (~> 5.0)
+      paper_trail (~> 5.0, >= 5.2.1)
       rails (>= 4.2.0, < 6)
       roar-rails
       signet
@@ -531,7 +531,7 @@ DEPENDENCIES
   blacklight (= 6.3)
   blacklight-gallery (>= 0.3.0)
   blacklight-oembed
-  blacklight-spotlight (= 0.28.0)
+  blacklight-spotlight (= 0.29.1)
   byebug
   capistrano-passenger
   capistrano-rails
