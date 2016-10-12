@@ -91,4 +91,4 @@ gem 'pul_uv_rails', github: 'pulibrary/pul_uv_rails', tag: 'v1.7.27'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
-gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'workaround'
+gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'pomegranate'

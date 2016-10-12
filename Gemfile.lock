@@ -26,11 +26,11 @@ GIT
 
 GIT
   remote: git://github.com/pulibrary/spotlight-resources-iiif.git
-  revision: de623acdfe2283accb2b9c44b60f038854303841
-  branch: workaround
+  revision: fb088dd402e6d1df7f1ae1db5344f73967424e45
+  branch: pomegranate
   specs:
     spotlight-resources-iiif (0.2.0)
-      blacklight-spotlight
+      blacklight-spotlight (~> 0.26)
       faraday
       iiif-presentation
 
