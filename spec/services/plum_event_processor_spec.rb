@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_playback_repeats: true } do
-  subject { described_class.new(event) }
+  subject(:processor) { described_class.new(event) }
   let(:event) do
     {
       "id" => "1r66j1149",
@@ -15,7 +15,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
   context "when given an unknown event" do
     let(:type) { "AWFULBADTHINGSHAPPENED" }
     it "returns false" do
-      expect(subject.process).to eq false
+      expect(processor.process).to eq false
     end
   end
   context "when given a creation event" do
@@ -23,7 +23,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
     it "builds the resource in that exhibit" do
       exhibit = FactoryGirl.create(:exhibit, slug: "first")
 
-      expect(subject.process).to eq true
+      expect(processor.process).to eq true
 
       expect(IIIFResource.where(exhibit: exhibit, url: url).length).to eq 1
     end
@@ -41,7 +41,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
       exhibit = FactoryGirl.create(:exhibit, slug: "first")
       IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
 
-      expect(subject.process).to eq true
+      expect(processor.process).to eq true
 
       expect(IIIFResource.all.length).to eq 0
       expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 0
@@ -53,21 +53,23 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
       exhibit = FactoryGirl.create(:exhibit, slug: "first")
       IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
 
-      expect(subject.process).to eq true
+      expect(processor.process).to eq true
       resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
 
       expect(resource["full_title_ssim"]).to eq ["Updated Record"]
     end
-    context "when it's no longer accessible", vcr: { cassette_name: "plum_events_no_permission" } do
+    context "when it's no longer accessible" do
       it "marks it as non-public" do
         exhibit = FactoryGirl.create(:exhibit, slug: "first")
         IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
 
-        expect(subject.process).to eq true
-        Blacklight.default_index.connection.commit
-
-        resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
-        expect(resource["exhibit_first_public_bsi"]).to eq false
+        # swap casseette to make the resource inaccessible
+        VCR.use_cassette('plum_events_no_permission') do
+          expect(processor.process).to eq true
+          Blacklight.default_index.connection.commit
+          resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
+          expect(resource["exhibit_first_public_bsi"]).to eq false
+        end
       end
     end
     context "when it's private and then is made accessible" do
@@ -80,7 +82,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
         document.save
         Blacklight.default_index.connection.commit
 
-        expect(subject.process).to eq true
+        expect(processor.process).to eq true
         Blacklight.default_index.connection.commit
 
         resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
@@ -93,7 +95,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
         exhibit = FactoryGirl.create(:exhibit, slug: "first")
         IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
 
-        expect(subject.process).to eq true
+        expect(processor.process).to eq true
 
         expect(IIIFResource.all.length).to eq 0
         expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 0
@@ -106,7 +108,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
         FactoryGirl.create(:exhibit, slug: "banana")
         IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
 
-        expect(subject.process).to eq true
+        expect(processor.process).to eq true
 
         expect(IIIFResource.joins(:exhibit).where("spotlight_exhibits.slug" => "banana").length).to eq 1
         expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 1

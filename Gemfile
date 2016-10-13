@@ -38,9 +38,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'simplecov', '~> 0.9', require: false
+  gem 'simplecov', '~> 0.12', require: false
   gem 'coveralls', require: false
-  gem 'rubocop-rspec', '~> 1.3.1', require: false
+  gem 'rubocop-rspec', require: false
   gem 'vcr'
   gem 'webmock', require: false
   gem 'capybara'
@@ -64,18 +64,17 @@ group :production do
   gem 'pg'
 end
 
-gem 'rubocop', '~> 0.35.0', require: false
-gem 'blacklight', '~> 5.16'
-gem 'blacklight-spotlight', github: 'pulibrary/spotlight', branch: 'namespace_view_plus_readonly_field_names'
-gem 'solr_wrapper', '~> 0.15.0'
+gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false
+gem 'blacklight', '6.3'
+gem 'blacklight-spotlight', '0.29.1'
+gem 'solr_wrapper'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
-gem 'friendly_id'
+gem 'friendly_id', github: 'norman/friendly_id'
 gem 'sitemap_generator'
 gem 'blacklight-gallery', '>= 0.3.0'
 gem 'blacklight-oembed'
-gem 'social-share-button'
 gem 'devise_invitable'
 gem 'iiif-presentation'
 gem 'omniauth-cas'
@@ -92,4 +91,4 @@ gem 'pul_uv_rails', github: 'pulibrary/pul_uv_rails', tag: 'v1.7.27'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
-gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: "full_image_and_both_suffixes"
+gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'pomegranate'

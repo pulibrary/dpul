@@ -2,7 +2,6 @@
 # Simplified catalog controller
 class CatalogController < ApplicationController
   include Blacklight::Catalog
-  self.search_params_logic += [:hide_parented_resources, :join_from_parent]
   before_action :search_across_settings
 
   def search_across_settings
@@ -12,6 +11,7 @@ class CatalogController < ApplicationController
 
     blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language'
     blacklight_config.add_facet_field 'readonly_format_ssim', label: 'Format'
+    blacklight_config.show.document_presenter_class = RTLShowPresenter
     unique_custom_fields.each do |field|
       blacklight_config.add_show_field field.field, label: field.configuration["label"]
     end
@@ -59,7 +59,6 @@ class CatalogController < ApplicationController
 
     config.add_facet_fields_to_solr_request!
     config.add_field_configuration_to_solr_request!
-    config.document_presenter_class = RTLPresenter
     config.response_model = AdjustedGroupedResponse
   end
 end

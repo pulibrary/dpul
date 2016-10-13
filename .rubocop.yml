@@ -1,8 +1,13 @@
 require: rubocop-rspec
 
+inherit_from: .rubocop_todo.yml
+
+Rails:
+  Enabled: true
+
 AllCops:
-  RunRailsCops: true
   DisplayCopNames: true
+  TargetRubyVersion: 2.2
   Include:
     - '**/Rakefile'
     - '**/config.ru'
@@ -58,7 +63,6 @@ Style/MultilineBlockLayout:
   Exclude:
     - 'spec/**/*'
 
-
 Style/IndentationConsistency:
   EnforcedStyle: rails
 
@@ -105,12 +109,6 @@ RSpec/ExampleWording:
     NOT: does NOT
   IgnoredWords:
     - only
-
-RSpec/FilePath:
-  Enabled: false
-
-RSpec/InstanceVariable:
-  Enabled: false
 
 RSpec/DescribeClass:
   Exclude:

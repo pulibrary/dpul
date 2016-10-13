@@ -5,14 +5,14 @@ RSpec.feature 'Exhibit Home Page', type: :feature do
 
   context 'a logged in site admin' do
     let(:user) { FactoryGirl.create(:site_admin) }
-    before(:each) do
+    before do
       sign_in user
     end
 
     scenario 'site admins see dashboard and edit buttons' do
       visit spotlight.exhibit_root_path exhibit
-      expect(page).to have_selector 'a.btn', 'Dashboard'
-      expect(page).to have_selector 'a.btn', 'Edit'
+      expect(page).to have_selector 'a.btn', text: 'Dashboard'
+      expect(page).to have_selector 'a.btn', text: 'Edit'
     end
   end
 

@@ -9,7 +9,7 @@ class PlumEventProcessor
 
     def delete_old_resources
       delete_resources.each do |resource|
-        resource.to_solr.map { |x| x[:id] }.each do |id|
+        resource.document_builder.to_solr.map { |x| x[:id] }.each do |id|
           index.delete_by_id id.to_s
           index.commit
         end
@@ -23,11 +23,14 @@ class PlumEventProcessor
         manifest = Spotlight::Resources::IiifManifest.new(url: resource.url)
         manifest.with_exhibit(resource.exhibit)
         document = SolrDocument.find(manifest.compound_id)
-        if resource.save_and_index
+
+        begin
+          resource.save_and_index
           document.make_public!(resource.exhibit)
-        else
+        rescue ActiveRecord::RecordInvalid
           document.make_private!(resource.exhibit)
         end
+
         document.save
       end
     end

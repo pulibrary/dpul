@@ -4,7 +4,7 @@ RSpec.feature 'Home Page', type: :feature do
   context 'a logged in site admin' do
     let(:user) { FactoryGirl.create(:site_admin) }
 
-    before(:each) do
+    before do
       sign_in user
     end
 
