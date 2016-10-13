@@ -8,7 +8,7 @@ RSpec.describe CatalogController do
       resource = IIIFResource.new manifest_url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
 
-      get :index, q: "", exhibit_id: exhibit.id
+      get :index, params: { q: "", exhibit_id: exhibit.id }
 
       expect(document_ids).to eq [resource.document_builder.to_solr.to_a.first[:id]]
     end
@@ -17,7 +17,7 @@ RSpec.describe CatalogController do
       resource = IIIFResource.new manifest_url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
 
-      get :index, q: "SR1", exhibit_id: exhibit.id
+      get :index, params: { q: "SR1", exhibit_id: exhibit.id }
 
       expect(document_ids).to eq [resource.document_builder.to_solr.to_a.first[:id]]
     end
@@ -33,7 +33,7 @@ RSpec.describe CatalogController do
               spotlight_resource_type_ssim: ["iiif_resources"])
     index.commit
 
-    get :index, search_field: "all_fields"
+    get :index, params: { search_field: "all_fields" }
 
     expect(document_ids.length).to eq 1
     expect(assigns[:response][:response][:numFound]).to eq 1

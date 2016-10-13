@@ -35,6 +35,9 @@ Metrics/ClassLength:
 Metrics/MethodLength:
   Enabled: false
 
+Metrics/BlockLength:
+  Max: 28
+
 Style/BlockDelimiters:
   Exclude:
     - 'spec/**/*'
@@ -100,6 +103,11 @@ Rails/Date:
 
 Rails/TimeZone:
   Enabled: false
+
+Rails/DynamicFindBy:
+  Exclude:
+    - 'app/controllers/exhibits_controller.rb'
+    - 'app/decorators/applies_title_from_slug.rb'
 
 RSpec/ExampleWording:
   CustomTransform:

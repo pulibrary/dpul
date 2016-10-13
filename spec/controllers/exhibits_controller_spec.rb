@@ -7,15 +7,13 @@ RSpec.describe ExhibitsController, vcr: { cassette_name: "all_collections", allo
   end
   describe "#create" do
     context "when given just a slug" do
-      let(:params) do
+      let(:exhibit) do
         {
-          exhibit: {
-            slug: "princeton-best"
-          }
+          slug: "princeton-best"
         }
       end
       it "works and pulls the title" do
-        post :create, params
+        post :create, params: { exhibit: exhibit }
 
         expect(response).not_to render_template "new"
         last_exhibit = Spotlight::Exhibit.last
@@ -25,30 +23,26 @@ RSpec.describe ExhibitsController, vcr: { cassette_name: "all_collections", allo
     end
     context "when not given a slug" do
       render_views
-      let(:params) do
+      let(:exhibit) do
         {
-          exhibit: {
-            slug: ""
-          }
+          slug: ""
         }
       end
       it "renders an error" do
-        post :create, params
+        post :create, params: { exhibit: exhibit }
 
         expect(response).to render_template "new"
         expect(assigns["exhibit"].errors.messages[:slug]).to eq ["can't be blank"]
       end
     end
     context "when given no params" do
-      let(:params) do
+      let(:exhibit) do
         {
-          exhibit: {
-            tag_list: nil
-          }
+          tag_list: nil
         }
       end
       it "renders an error" do
-        post :create, params
+        post :create, params: { exhibit: exhibit }
 
         expect(response).to render_template "new"
         expect(assigns["exhibit"].errors.messages[:slug]).to eq ["can't be blank"]
