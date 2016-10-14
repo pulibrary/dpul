@@ -1,4 +1,4 @@
-class TaggableIdInteger < ActiveRecord::Migration
+class TaggableIdInteger < ActiveRecord::Migration[4.2]
   def up
     if ActiveRecord::Base.connection.adapter_name == 'PostgreSQL'
       change_column :taggings, :taggable_id, 'integer USING CAST("taggable_id" AS integer)'

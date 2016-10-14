@@ -1,5 +1,5 @@
 # This migration comes from spotlight (originally 20150116161616)
-class AddPublishedToExhibit < ActiveRecord::Migration
+class AddPublishedToExhibit < ActiveRecord::Migration[4.2]
   def change
     add_column :spotlight_exhibits, :published, :boolean, default: false
     add_column :spotlight_exhibits, :published_at, :datetime

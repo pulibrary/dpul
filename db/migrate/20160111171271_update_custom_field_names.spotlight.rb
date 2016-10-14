@@ -1,5 +1,5 @@
 # This migration comes from spotlight (originally 20151124105543)
-class UpdateCustomFieldNames < ActiveRecord::Migration
+class UpdateCustomFieldNames < ActiveRecord::Migration[4.2]
   def up
     fields = {}
 
