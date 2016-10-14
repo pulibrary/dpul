@@ -1,5 +1,5 @@
 # This migration comes from spotlight (originally 20140403180324)
-class CreateSpotlightMainNavigations < ActiveRecord::Migration
+class CreateSpotlightMainNavigations < ActiveRecord::Migration[4.2]
   def change
     create_table :spotlight_main_navigations do |t|
       t.string     :label

@@ -1,5 +1,5 @@
 # This migration comes from spotlight (originally 20140128155152)
-class CreateRoles < ActiveRecord::Migration
+class CreateRoles < ActiveRecord::Migration[4.2]
   def change
     create_table :spotlight_roles do |t|
       t.references :exhibit

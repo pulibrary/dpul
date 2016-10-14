@@ -1,5 +1,5 @@
 # This migration comes from spotlight (originally 20150304111111)
-class AddFeaturedImageToSpotlightClasses < ActiveRecord::Migration
+class AddFeaturedImageToSpotlightClasses < ActiveRecord::Migration[4.2]
   
   def change
     add_column :spotlight_searches, :masthead_id, :integer

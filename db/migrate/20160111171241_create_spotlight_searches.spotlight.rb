@@ -1,5 +1,5 @@
 # This migration comes from spotlight (originally 20140130155151)
-class CreateSpotlightSearches < ActiveRecord::Migration
+class CreateSpotlightSearches < ActiveRecord::Migration[4.2]
   def change
     create_table :spotlight_searches do |t|
       t.string :title

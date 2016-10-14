@@ -1,5 +1,5 @@
 # This migration comes from spotlight (originally 20140218155151)
-class CreateContacts < ActiveRecord::Migration
+class CreateContacts < ActiveRecord::Migration[4.2]
   def change
     create_table :spotlight_contacts do |t|
       t.string     :slug
