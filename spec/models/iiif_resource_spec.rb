@@ -28,20 +28,15 @@ describe IIIFResource do
         expect(mvw_doc["collection_id_ssim"]).to eq nil
       end
     end
-
-    context "when given an unreachable seeAlso url", vcr: { cassette_name: 'see_also_connection_failed', :record => :new_episodes } do
+    context "when given an unreachable seeAlso url", vcr: { cassette_name: 'see_also_connection_failed' } do
       let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest" }
-      it "ingests both items as individual solr records, marking the child" do
+      it "ingests ingests a iiif manifest using the metadata pool" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
         resource = described_class.new manifest_url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
-
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
-        expect(docs.length).to eq 2
-        scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["SR1"] }
-        mvw_doc = docs.find { |x| x["full_title_ssim"] == ["MVW"] }
-        expect(scanned_resource_doc["collection_id_ssim"]).to eq [mvw_doc["id"]]
-        expect(mvw_doc["collection_id_ssim"]).to eq nil
+        scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["Christopher and his kind, 1929-1939"] }
+        expect(scanned_resource_doc["readonly_date-created_tesim"]).to eq ['1976-01-01T00:00:00Z']
       end
     end
   end

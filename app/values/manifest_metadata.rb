@@ -4,9 +4,12 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   end
 
   def jsonld_response
-    Faraday.get(jsonld_url).body if jsonld_url
+    return unless jsonld_url
+    response = Faraday.get(jsonld_url)
+    raise Faraday::Error::ConnectionFailed, response.status unless response.status == 200
+    response.body
   rescue Faraday::Error::ConnectionFailed, Faraday::TimeoutError => e
-    Rails.logger.warn("HTTP GET for #{url} failed with #{e}")
+    Rails.logger.warn("HTTP GET for #{jsonld_url} failed with #{e}")
   end
 
   def jsonld_metadata
