@@ -11,7 +11,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
 
   def jsonld_metadata
     @jsonld_metadata ||= JSON.parse(jsonld_response)
-  rescue JSON::ParserError
+  rescue JSON::ParserError, TypeError
     @jsonld_metadata = nil
   end
 
