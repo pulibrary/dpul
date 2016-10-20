@@ -1,11 +1,8 @@
-# config valid only for current version of Capistrano
-lock '3.4.0'
-
 set :application, 'pomegranate'
 set :repo_url, 'https://github.com/pulibrary/pomegranate.git'
 
 # Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, ENV['BRANCH'] || 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
@@ -48,20 +45,20 @@ end
 
 namespace :sneakers do
   task :restart do
-    on roles(:app) do
+    on roles(:worker) do
       execute :sudo, :initctl, :restart, "pom-sneakers"
     end
   end
 end
 namespace :sidekiq do
   task :quiet do
-    on roles(:app) do
+    on roles(:worker) do
       # Horrible hack to get PID without having to use terrible PID files
       puts capture("kill -USR1 $(sudo initctl status pom-workers | grep /running | awk '{print $NF}') || :")
     end
   end
   task :restart do
-    on roles(:app) do
+    on roles(:worker) do
       execute :sudo, :initctl, :restart, "pom-workers"
     end
   end
