@@ -11,7 +11,6 @@ class CatalogController < ApplicationController
 
     blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language'
     blacklight_config.add_facet_field 'readonly_format_ssim', label: 'Format'
-    blacklight_config.show.document_presenter_class = RTLShowPresenter
     unique_custom_fields.each do |field|
       blacklight_config.add_show_field field.field, label: field.configuration["label"]
     end
@@ -48,6 +47,7 @@ class CatalogController < ApplicationController
 
     # solr field configuration for search results/index views
     config.index.title_field = 'full_title_ssim'
+    config.index.display_title_field = 'readonly_title_tesim'
     config.add_show_field 'creator_ssim', label: 'Creator'
 
     config.add_search_field 'all_fields', label: 'Everything'
@@ -60,5 +60,7 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
     config.add_field_configuration_to_solr_request!
     config.response_model = AdjustedGroupedResponse
+    config.show.document_presenter_class = RTLShowPresenter
+    config.index.document_presenter_class = RTLIndexPresenter
   end
 end
