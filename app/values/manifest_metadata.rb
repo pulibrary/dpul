@@ -28,7 +28,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   end
 
   def process_values(input_hash)
-    Hash[input_hash.map do |key, values|
+    h = Hash[input_hash.map do |key, values|
       values = Array.wrap(values)
       values.map! do |value|
         if value["@value"]
@@ -39,6 +39,8 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       end
       [key, values]
     end]
+    range_labels(h)
+    h
   end
 
   def metadata_hash
@@ -48,4 +50,16 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       process_values(super)
     end
   end
+
+  private
+
+    def range_labels(h)
+      values = []
+      (@manifest['structures'] || []).each do |s|
+        (s['ranges'] || []).each do |r|
+          values << r['label']
+        end
+      end
+      h['Range label'] = values unless values.empty?
+    end
 end
