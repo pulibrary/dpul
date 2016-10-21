@@ -32,6 +32,7 @@ RSpec/MultipleExpectations:
 # Configuration parameters: MaxNesting.
 RSpec/NestedGroups:
   Exclude:
+    - 'spec/helpers/index_helper_spec.rb'
     - 'spec/models/iiif_resource_spec.rb'
 
 # Offense count: 2
@@ -43,4 +44,5 @@ RSpec/SubjectStub:
 # Configuration parameters: IgnoreSymbolicNames.
 RSpec/VerifiedDoubles:
   Exclude:
+    - 'spec/presenters/rtl_index_presenter_spec.rb'
     - 'spec/presenters/rtl_show_presenter_spec.rb'
