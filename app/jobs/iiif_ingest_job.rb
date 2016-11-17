@@ -9,6 +9,6 @@ class IIIFIngestJob < ActiveJob::Base
 
   # Ingest a single IIIF manifest URL as a resource.
   def ingest(url, exhibit)
-    IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
+    IIIFResource.find_or_initialize_by(url: url, exhibit_id: exhibit.id).save_and_index
   end
 end

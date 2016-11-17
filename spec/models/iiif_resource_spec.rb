@@ -5,7 +5,7 @@ describe IIIFResource do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
     it 'ingests a iiif manifest' do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
-      resource = described_class.new manifest_url: url, exhibit: exhibit
+      resource = described_class.new url: url, exhibit: exhibit
       expect(resource.save).to be true
 
       solr_doc = nil
@@ -18,7 +18,7 @@ describe IIIFResource do
       let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
       it "ingests both items as individual solr records, marking the child" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
-        resource = described_class.new manifest_url: url, exhibit: exhibit
+        resource = described_class.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
 
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
@@ -33,7 +33,7 @@ describe IIIFResource do
       let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest" }
       it "ingests a iiif manifest using the metadata pool, excludes range labels when missing" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
-        resource = described_class.new manifest_url: url, exhibit: exhibit
+        resource = described_class.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["Christopher and his kind, 1929-1939"] }

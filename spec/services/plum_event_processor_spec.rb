@@ -39,7 +39,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
     end
     it "deletes that resource" do
       exhibit = FactoryGirl.create(:exhibit, slug: "first")
-      IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
+      IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
       expect(processor.process).to eq true
 
@@ -51,7 +51,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
     let(:type) { "UPDATED" }
     it "updates that resource" do
       exhibit = FactoryGirl.create(:exhibit, slug: "first")
-      IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
+      IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
       expect(processor.process).to eq true
       resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
@@ -61,7 +61,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
     context "when it's no longer accessible" do
       it "marks it as non-public" do
         exhibit = FactoryGirl.create(:exhibit, slug: "first")
-        IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
+        IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
         # swap casseette to make the resource inaccessible
         VCR.use_cassette('plum_events_no_permission') do
@@ -75,7 +75,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
     context "when it's private and then is made accessible" do
       it "marks it as public" do
         exhibit = FactoryGirl.create(:exhibit, slug: "first")
-        IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
+        IIIFResource.new(url: url, exhibit: exhibit).save_and_index
         resource_id = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first["id"]
         document = SolrDocument.find(resource_id)
         document.make_private!(exhibit)
@@ -93,7 +93,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
       let(:collection_slugs) { [] }
       it "removes old ones" do
         exhibit = FactoryGirl.create(:exhibit, slug: "first")
-        IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
+        IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
         expect(processor.process).to eq true
 
@@ -106,7 +106,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
       it "moves it to a new one" do
         exhibit = FactoryGirl.create(:exhibit, slug: "first")
         FactoryGirl.create(:exhibit, slug: "banana")
-        IIIFResource.new(manifest_url: url, exhibit: exhibit).save_and_index
+        IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
         expect(processor.process).to eq true
 
