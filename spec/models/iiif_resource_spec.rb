@@ -23,7 +23,7 @@ describe IIIFResource do
 
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         expect(docs.length).to eq 2
-        scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["SR1"] }
+        scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["Scanned Resource 1"] }
         mvw_doc = docs.find { |x| x["full_title_ssim"] == ["MVW"] }
         expect(scanned_resource_doc["collection_id_ssim"]).to eq [mvw_doc["id"]]
         expect(mvw_doc["collection_id_ssim"]).to eq nil
