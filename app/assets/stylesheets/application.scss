@@ -17,6 +17,7 @@
   iframe {
     position: absolute;
   }
+  margin-bottom: 20px;
 }
 li[dir=rtl] {
   text-align: right;
@@ -33,4 +34,8 @@ li[dir=rtl] {
 .card-back .description {
   max-height: 66%;
   overflow: scroll;
+}
+
+.blacklight-catalog-show .document .dl-horizontal {
+  width: 100%;
 }
