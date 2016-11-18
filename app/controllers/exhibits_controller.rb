@@ -4,9 +4,7 @@ class ExhibitsController < Spotlight::ExhibitsController
 
   def ingest_members
     return unless @exhibit.persisted?
-    collection_manifest = CollectionManifest.find_by_slug(@exhibit.slug)
-    members = collection_manifest.manifests.map { |x| x['@id'] }
-    IIIFIngestJob.new.perform members, @exhibit
+    ExhibitProxy.new(@exhibit).reindex
   end
 
   private

@@ -107,6 +107,7 @@ Rails/TimeZone:
 Rails/DynamicFindBy:
   Exclude:
     - 'app/controllers/exhibits_controller.rb'
+    - 'app/models/exhibit_proxy.rb'
     - 'app/decorators/applies_title_from_slug.rb'
 
 RSpec/ExampleWording:

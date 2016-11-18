@@ -5,7 +5,7 @@ RSpec.describe CatalogController do
     let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
     it "hides scanned resources with parents" do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
-      resource = IIIFResource.new manifest_url: url, exhibit: exhibit
+      resource = IIIFResource.new url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
 
       get :index, params: { q: "", exhibit_id: exhibit.id }
@@ -14,7 +14,7 @@ RSpec.describe CatalogController do
     end
     it "returns MVW from metadata found in volume" do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
-      resource = IIIFResource.new manifest_url: url, exhibit: exhibit
+      resource = IIIFResource.new url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
 
       get :index, params: { q: "SR1", exhibit_id: exhibit.id }
