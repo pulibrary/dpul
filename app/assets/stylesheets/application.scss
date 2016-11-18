@@ -30,3 +30,7 @@ li[dir=rtl] {
   -webkit-column-gap: auto;
   -moz-column-gap: auto;
 }
+.card-back .description {
+  max-height: 66%;
+  overflow: scroll;
+}
