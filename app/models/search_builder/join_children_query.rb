@@ -8,7 +8,7 @@ class SearchBuilder
     def to_s
       return parent_query if parent_query.to_s.start_with?("{!lucene}")
       q = queries.map do |query|
-        "(#{dismax_join(send(query))})"
+        "_query_: \"#{dismax_join(send(query))}\""
       end.join(" OR ")
       "{!lucene}#{q}"
     end

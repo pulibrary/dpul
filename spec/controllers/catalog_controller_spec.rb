@@ -17,7 +17,7 @@ RSpec.describe CatalogController do
       resource = IIIFResource.new url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
 
-      get :index, params: { q: "SR1", exhibit_id: exhibit.id }
+      get :index, params: { q: "Scanned Resource", exhibit_id: exhibit.id }
 
       expect(document_ids).to eq [resource.document_builder.to_solr.to_a.first[:id]]
     end
