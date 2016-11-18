@@ -62,5 +62,6 @@ class CatalogController < ApplicationController
     config.response_model = AdjustedGroupedResponse
     config.show.document_presenter_class = RTLShowPresenter
     config.index.document_presenter_class = RTLIndexPresenter
+    config.navbar.partials = []
   end
 end

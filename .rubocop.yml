@@ -37,6 +37,9 @@ Metrics/MethodLength:
 
 Metrics/BlockLength:
   Max: 31
+  Exclude:
+    - 'app/controllers/catalog_controller.rb'
+    - 'spec/**/*'
 
 Style/BlockDelimiters:
   Exclude:
