@@ -39,3 +39,10 @@ li[dir=rtl] {
 .blacklight-catalog-show .document .dl-horizontal {
   width: 100%;
 }
+
+.facet-field-heading {
+  width: 100%;
+  &::after {
+    margin-top: 2px;
+  }
+}
