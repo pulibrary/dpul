@@ -29,6 +29,7 @@ class CatalogController < ApplicationController
 
     config.show.tile_source_field = :tile_source_ssim
     config.show.partials.insert(1, :universal_viewer)
+    config.view.embed.partials = ['universal_viewer']
 
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
