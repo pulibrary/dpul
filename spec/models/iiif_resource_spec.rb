@@ -28,6 +28,15 @@ describe IIIFResource do
         expect(scanned_resource_doc["collection_id_ssim"]).to eq [mvw_doc["id"]]
         expect(mvw_doc["collection_id_ssim"]).to eq nil
       end
+      it "stores the correct full image URL" do
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+        resource = described_class.new url: url, exhibit: exhibit
+        expect(resource.save_and_index).to be_truthy
+
+        docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
+        scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["Scanned Resource 1"] }
+        expect(scanned_resource_doc["full_image_url_ssm"]).to eq ["https://libimages1.princeton.edu/loris/plum/hq%2F37%2Fvn%2F61%2F6-intermediate_file.jp2/full/!600,600/0/default.jpg"]
+      end
     end
     context "when given an unreachable seeAlso url", vcr: { cassette_name: 'see_also_connection_failed' } do
       let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest" }
