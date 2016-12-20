@@ -23,4 +23,23 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
       safe_join tags
     end
   end
+
+  def header
+    fields = Array.wrap(view_config.title_field)
+    f = fields.detect { |field| @document.has? field }
+    f ||= @configuration.document_model.unique_key
+    @document[f].to_sentence(field_config(f).separator_options)
+    field_value(f, value: @document[f])
+  end
+
+  def field_config(field)
+    super.tap do |f|
+      f.separator_options =
+        {
+          words_connector: field_value_separator,
+          two_words_connector: field_value_separator,
+          last_word_connector: field_value_separator
+        }
+    end
+  end
 end

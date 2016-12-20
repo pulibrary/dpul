@@ -4,14 +4,17 @@ RSpec.describe RTLShowPresenter do
   subject(:presenter) { described_class.new(document, double(blacklight_config: blacklight_config)) }
 
   let(:document) do
-    {
-      field: ["بي"]
-    }
+    SolrDocument.new(
+      field: ["بي"],
+      title: ["بي", "Test"]
+    )
   end
+  let(:cc_config) { CatalogController.new.blacklight_config }
   let(:blacklight_config) do
     double(
       show_fields: { field:
-                    double(highlight: false, accessor: nil, default: nil, field: :field, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil) }
+                    double(highlight: false, accessor: nil, default: nil, field: :field, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil) },
+      view_config: double(title_field: :title)
     )
   end
 
@@ -20,6 +23,12 @@ RSpec.describe RTLShowPresenter do
       it "renders it as a RTL list item" do
         expect(presenter.field_value(:field)).to eq "<ul><li dir=\"rtl\">بي</li></ul>"
       end
+    end
+  end
+
+  describe "#heading" do
+    it "returns multiple titles appropriately" do
+      expect(presenter.header).to eq "<ul><li dir=\"rtl\">بي</li><li dir=\"ltr\">Test</li></ul>"
     end
   end
 end
