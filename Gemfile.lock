@@ -251,6 +251,7 @@ GEM
       activesupport (>= 3.2.18)
       faraday (~> 0.9.0)
       json
+    iso-639 (0.2.8)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -554,6 +555,7 @@ DEPENDENCIES
   factory_girl_rails
   friendly_id!
   iiif-presentation
+  iso-639
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-cas
