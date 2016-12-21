@@ -26,8 +26,8 @@ GIT
 
 GIT
   remote: git://github.com/pulibrary/spotlight-resources-iiif.git
-  revision: fb088dd402e6d1df7f1ae1db5344f73967424e45
-  branch: pomegranate
+  revision: 04b7009f39db5441eda600883349168a6b9ff1d6
+  branch: default_vocab
   specs:
     spotlight-resources-iiif (0.2.0)
       blacklight-spotlight (~> 0.26)
