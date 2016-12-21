@@ -26,6 +26,6 @@ class AppliesTitleFromSlug < SimpleDelegator
     end
 
     def title
-      manifest.try(:label)
+      manifest.try(:human_label)
     end
 end

@@ -11,6 +11,10 @@ class CollectionManifest < IIIF::Presentation::Collection
     end["value"].first
   end
 
+  def human_label
+    Array.wrap(label).first
+  end
+
   private
 
     def slug_key
