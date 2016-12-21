@@ -93,4 +93,4 @@ gem 'riiif'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
-gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'pomegranate'
+gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'default_vocab'
