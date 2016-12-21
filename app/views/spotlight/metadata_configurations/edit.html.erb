@@ -1,0 +1,71 @@
+<%= render 'spotlight/shared/exhibit_sidebar' %>
+<div id="content" class="col-md-9">
+<%= configuration_page_title %>
+<%= bootstrap_form_for @blacklight_configuration, url: spotlight.exhibit_metadata_configuration_path(@exhibit), layout: :horizontal, label_col: 'col-md-3 col-sm-3', control_col: 'col-md-5 col-sm-5' do |f| %>
+    <h3><%= t(:'.order_header') %></h3>
+
+    <p class="instructions"><%= t :'.instructions' %></p>
+
+    <table id="nested-fields" class="table table-striped dd-table">
+      <thead>
+        <tr>
+          <th><%= t :'.fields.label' %></th>
+          <th class="text-center">
+            <div>
+              <%= t :'.view.show', default: t(:'blacklight.search.view.show') %>
+            </div>
+            <%= select_deselect_button %>
+          </th>
+          <% available_view_fields.keys.each do |type| %>
+            <th class="text-center">
+              <div>
+                <%= t :".view.#{type}", default: t(:".view.#{type}") %>
+              </div>
+              <%= select_deselect_button %>
+            </th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody class="metadata_fields dd dd-list" data-behavior="nestable" data-max-depth="1" data-list-node-name="tbody" data-item-node-name="tr" data-expand-btn-HTML=" " data-collapse-btn-HTML=" ">
+        <%= f.fields_for :index_fields do |idxf| %>
+          <% @blacklight_configuration.blacklight_config.index_fields.each do |key, config| %>
+            <%= render partial: 'metadata_field', locals: { key: key, config: config, f: idxf } %>
+          <% end %>
+        <% end %>
+     </tbody>
+  </table>
+
+  <div class="form-actions">
+    <div class="primary-actions">
+      <%= f.submit nil, class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
+
+
+    <h3><%= t(:'.exhibit_specific.header') %></h3>
+    <p class="instructions"><%= t(:'.exhibit_specific.instructions') %></p>
+
+    <table class="table table-striped" id="exhibit-specific-fields">
+      <tbody>
+        <% @exhibit.custom_fields.writeable.each do |field| %>
+          <tr>
+            <td>
+              <div class="field-label"><%= field.label %></div>
+              <div class="actions">
+                <%= exhibit_edit_link field, class: 'btn btn-link' %> &middot;
+                <%= exhibit_delete_link field, class: 'btn btn-link' %>
+              </div>
+            </td>
+            <td class="field-description">
+              <%= field.short_description %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+
+<%= exhibit_create_link Spotlight::CustomField.new, class: 'btn btn-primary' %>
+</div>
