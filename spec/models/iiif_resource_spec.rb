@@ -48,6 +48,7 @@ describe IIIFResource do
         scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["Christopher and his kind, 1929-1939"] }
         expect(scanned_resource_doc["readonly_date-created_tesim"]).to eq ['1976-01-01T00:00:00Z']
         expect(scanned_resource_doc["readonly_range-label_tesim"]).to eq nil
+        expect(scanned_resource_doc["readonly_language_tesim"]).to eq ["English"]
       end
     end
   end

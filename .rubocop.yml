@@ -112,6 +112,7 @@ Rails/DynamicFindBy:
     - 'app/controllers/exhibits_controller.rb'
     - 'app/models/exhibit_proxy.rb'
     - 'app/decorators/applies_title_from_slug.rb'
+    - 'app/values/manifest_metadata.rb'
 
 RSpec/ExampleWording:
   CustomTransform:
