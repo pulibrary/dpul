@@ -93,15 +93,15 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    blacklight (6.3.0)
+    blacklight (6.7.3)
       bootstrap-sass (~> 3.2)
       deprecation
       globalid
       kaminari (>= 0.15)
       nokogiri (~> 1.6)
       rails (>= 4.2, < 6)
-      rsolr (~> 1.0, >= 1.0.6)
-      twitter-typeahead-rails (~> 0.11)
+      rsolr (>= 1.0.6, < 3)
+      twitter-typeahead-rails (= 0.11.1.pre.corejavascript)
     blacklight-gallery (0.6.1)
       blacklight (~> 6.3)
       bootstrap-sass (~> 3.0)
@@ -263,9 +263,18 @@ GEM
       railties (>= 3.2, < 6)
     json (1.8.3)
     jwt (1.5.6)
-    kaminari (0.17.0)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
+    kaminari (1.0.0)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.0.0)
+      kaminari-activerecord (= 1.0.0)
+      kaminari-core (= 1.0.0)
+    kaminari-actionview (1.0.0)
+      actionview
+      kaminari-core (= 1.0.0)
+    kaminari-activerecord (1.0.0)
+      activerecord
+      kaminari-core (= 1.0.0)
+    kaminari-core (1.0.0)
     legato (0.7.0)
       multi_json
     loofah (2.0.3)
@@ -500,7 +509,7 @@ GEM
     turbolinks-source (5.0.0)
     twitter-text (1.14.5)
       unf (~> 0.1.0)
-    twitter-typeahead-rails (0.11.1)
+    twitter-typeahead-rails (0.11.1.pre.corejavascript)
       actionpack (>= 3.1)
       jquery-rails
       railties (>= 3.1)
@@ -537,7 +546,7 @@ PLATFORMS
 
 DEPENDENCIES
   almond-rails (~> 0.0.3)
-  blacklight (= 6.3)
+  blacklight (= 6.7.3)
   blacklight-gallery (>= 0.3.0)
   blacklight-oembed
   blacklight-spotlight (= 0.31.0)
