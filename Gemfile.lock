@@ -286,6 +286,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.2.0)
+    newrelic_rpm (3.17.2.327)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -558,6 +559,7 @@ DEPENDENCIES
   iso-639
   jbuilder (~> 2.0)
   jquery-rails
+  newrelic_rpm
   omniauth-cas
   open_uri_redirections
   pg
@@ -595,4 +597,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.12.5
+   1.13.7
