@@ -67,7 +67,7 @@ end
 
 gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false
 gem 'blacklight', '6.7.3'
-gem 'blacklight-spotlight', '0.31.0'
+gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: :master
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
@@ -96,3 +96,4 @@ gem 'riiif'
 gem 'pul-assets', github: 'pulibrary/pul_assets'
 gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'default_vocab'
 gem 'newrelic_rpm'
+gem 'dalli'
