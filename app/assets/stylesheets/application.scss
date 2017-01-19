@@ -57,3 +57,16 @@ li[dir=rtl] {
 .import-tooltip {
   margin-left: 10px;
 }
+
+.beta {
+  border-left: 4px solid #E0CB52;
+  z-index: 1005;
+  margin: 0;
+  border-radius: 0;
+  padding: 10px 15px;
+
+  p {
+    margin: 0;
+    font-size: 18px;
+  }
+}
