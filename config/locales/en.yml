@@ -44,6 +44,14 @@ en:
         facet:
           exhibit_tag: Collection Tags
   spotlight:
+    configuration:
+      sidebar:
+        header: Configuration
+        settings: General
+        appearance: Appearance
+        users: Users
+        metadata: Metadata Display
+        search_configuration: Search
     admin_users:
       create:
         success: Added user as a collections adminstrator
