@@ -1,5 +1,5 @@
 class ExhibitsController < Spotlight::ExhibitsController
-  prepend_before_action :find_exhibit
+  prepend_before_action :find_exhibit, only: :create
   after_action :ingest_members, only: :create
 
   def ingest_members
