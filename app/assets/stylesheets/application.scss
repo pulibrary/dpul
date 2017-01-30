@@ -84,3 +84,9 @@ li[dir=rtl] {
 #documents > .document > .documentHeader > h3.index_title {
   font-size: 1.3em;
 }
+
+.site-title-container {
+  div.h1.site-title, a, a:visited {
+    color: #e87722;
+  }
+}
