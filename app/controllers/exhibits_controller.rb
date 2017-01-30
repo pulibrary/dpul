@@ -7,6 +7,11 @@ class ExhibitsController < Spotlight::ExhibitsController
     ExhibitProxy.new(@exhibit).reindex
   end
 
+  def destroy
+    @exhibit.resources.destroy_all
+    super
+  end
+
   private
 
     def find_exhibit

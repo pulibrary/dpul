@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount Blacklight::Oembed::Engine, at: 'oembed'
 
   root to: 'spotlight/exhibits#index'
-  resources :exhibits, path: '/spotlight', only: [:create]
+  resources :exhibits, path: '/spotlight', only: [:create, :destroy]
 
   mount Spotlight::Engine, at: 'spotlight'
   mount Blacklight::Engine => '/'

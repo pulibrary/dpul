@@ -49,4 +49,23 @@ RSpec.describe ExhibitsController, vcr: { cassette_name: "all_collections", allo
       end
     end
   end
+
+  describe "#destroy" do
+    let(:exhibit) do
+      {
+        slug: "princeton-best"
+      }
+    end
+    context "when there are resources in the index" do
+      it "destroys them from solr" do
+        post :create, params: { exhibit: exhibit }
+
+        exhibit = Spotlight::Exhibit.last
+        delete :destroy, params: { id: exhibit.id }
+
+        solr = Blacklight.default_index.connection
+        expect(solr.get("select", params: { q: "*:*" })["response"]["numFound"]).to eq 0
+      end
+    end
+  end
 end
