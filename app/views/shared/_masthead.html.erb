@@ -18,7 +18,10 @@
           <small><%= current_exhibit.subtitle %></small>
         <% end %>
       <% else %>
-        <%= link_to application_name, main_app.root_path %>
+        <%= image_tag "dpul.svg", class: 'logo-image' %>
+        <%= link_to main_app.root_path do %>
+          <%= application_name %>
+        <% end %>
         <% if current_site.subtitle.present? %>
           <small><%= current_site.subtitle %></small>
         <% end %>
