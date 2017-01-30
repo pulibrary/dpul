@@ -1,5 +1,5 @@
 class ExhibitsController < Spotlight::ExhibitsController
-  prepend_before_action :find_exhibit, only: :create
+  prepend_before_action :find_exhibit
   after_action :ingest_members, only: :create
 
   def ingest_members
@@ -16,9 +16,13 @@ class ExhibitsController < Spotlight::ExhibitsController
 
     def find_exhibit
       @exhibit ||=
-        decorate(
-          Spotlight::Exhibit.new
-        )
+        if params[:id]
+          Spotlight::Exhibit.find(params[:id])
+        else
+          decorate(
+            Spotlight::Exhibit.new
+          )
+        end
     end
 
     def decorate(obj)

@@ -60,11 +60,15 @@ RSpec.describe ExhibitsController, vcr: { cassette_name: "all_collections", allo
       it "destroys them from solr" do
         post :create, params: { exhibit: exhibit }
 
-        exhibit = Spotlight::Exhibit.last
+        exhibit = assigns(:exhibit)
+        controller.instance_variable_set(:@exhibit, nil)
         delete :destroy, params: { id: exhibit.id }
 
-        solr = Blacklight.default_index.connection
         expect(solr.get("select", params: { q: "*:*" })["response"]["numFound"]).to eq 0
+      end
+
+      def solr
+        Blacklight.default_index.connection
       end
     end
   end
