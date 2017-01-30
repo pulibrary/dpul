@@ -63,5 +63,6 @@ class CatalogController < ApplicationController
     config.show.document_presenter_class = RTLShowPresenter
     config.index.document_presenter_class = RTLIndexPresenter
     config.navbar.partials = []
+    config.index.document_actions.delete(:bookmark)
   end
 end
