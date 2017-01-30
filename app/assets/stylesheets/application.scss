@@ -70,3 +70,13 @@ li[dir=rtl] {
     font-size: 18px;
   }
 }
+
+.remove span.glyphicon {
+  margin-top: 5px;
+}
+
+.constraint.filter .remove.btn {
+  padding-bottom: 8px;
+  padding-top: 4px;
+  padding-right: 9px;
+}
