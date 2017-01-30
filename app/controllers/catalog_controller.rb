@@ -6,11 +6,10 @@ class CatalogController < ApplicationController
 
   def search_across_settings
     return if current_exhibit
-    blacklight_config.add_index_field 'readonly_subject_tesim', label: 'Subject'
-    blacklight_config.add_index_field 'readonly_description_tesim', label: 'Description'
+    blacklight_config.add_index_field 'readonly_creator_ssim', label: 'Creator'
 
     blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language'
-    blacklight_config.add_facet_field 'readonly_format_ssim', label: 'Format'
+    blacklight_config.add_facet_field 'readonly_subject_ssim', label: 'Subject'
     unique_custom_fields.each do |field|
       blacklight_config.add_show_field field.field, label: field.configuration["label"]
     end
