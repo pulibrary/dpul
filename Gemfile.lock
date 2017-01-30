@@ -6,9 +6,38 @@ GIT
       activerecord (>= 4.0.0)
 
 GIT
-  remote: git://github.com/projectblacklight/spotlight.git
-  revision: cc8ed90bacab708d7a4989612cea067eff34a447
+  remote: git://github.com/pulibrary/pul_assets.git
+  revision: 84dc633f5ff39167b4f7e7acf2517fffda630f0f
+  specs:
+    pul-assets (0.2.2)
+      bourbon (~> 4.2.6)
+      breakpoint (~> 2.7.0)
+      jquery-tablesorter (~> 1.20.5)
+      modernizr-rails (~> 2.7.1)
+      normalize-rails (~> 3.0.3)
+      susy (~> 2.2.12)
+
+GIT
+  remote: git://github.com/pulibrary/pul_uv_rails.git
+  revision: 7060d5eac7005573a93aac0335b365e29a576a54
   branch: master
+  specs:
+    pul_uv_rails (1.8.42)
+
+GIT
+  remote: git://github.com/pulibrary/spotlight-resources-iiif.git
+  revision: d572a95806d61c493ed4f428044e1a22e9a946e1
+  branch: default_vocab
+  specs:
+    spotlight-resources-iiif (0.2.0)
+      blacklight-spotlight (~> 0.26)
+      faraday
+      iiif-presentation
+
+GIT
+  remote: git://github.com/pulibrary/spotlight.git
+  revision: f726ac4fb444e661af7abeaddac3aaa27adf5d4a
+  branch: hide_newly_imported_custom_fields
   specs:
     blacklight-spotlight (0.31.0)
       acts-as-taggable-on (>= 4.0.0.pre)
@@ -41,35 +70,6 @@ GIT
       sir_trevor_rails (~> 0.5)
       tophat
       underscore-rails (~> 1.6)
-
-GIT
-  remote: git://github.com/pulibrary/pul_assets.git
-  revision: 84dc633f5ff39167b4f7e7acf2517fffda630f0f
-  specs:
-    pul-assets (0.2.2)
-      bourbon (~> 4.2.6)
-      breakpoint (~> 2.7.0)
-      jquery-tablesorter (~> 1.20.5)
-      modernizr-rails (~> 2.7.1)
-      normalize-rails (~> 3.0.3)
-      susy (~> 2.2.12)
-
-GIT
-  remote: git://github.com/pulibrary/pul_uv_rails.git
-  revision: 7060d5eac7005573a93aac0335b365e29a576a54
-  branch: master
-  specs:
-    pul_uv_rails (1.8.42)
-
-GIT
-  remote: git://github.com/pulibrary/spotlight-resources-iiif.git
-  revision: 04b7009f39db5441eda600883349168a6b9ff1d6
-  branch: default_vocab
-  specs:
-    spotlight-resources-iiif (0.2.0)
-      blacklight-spotlight (~> 0.26)
-      faraday
-      iiif-presentation
 
 GEM
   remote: https://rubygems.org/

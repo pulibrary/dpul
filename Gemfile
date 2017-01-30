@@ -67,7 +67,7 @@ end
 
 gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false
 gem 'blacklight', '6.7.3'
-gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: :master
+gem 'blacklight-spotlight', github: 'pulibrary/spotlight', branch: "hide_newly_imported_custom_fields"
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
