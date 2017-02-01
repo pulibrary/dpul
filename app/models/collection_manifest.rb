@@ -1,8 +1,14 @@
 class CollectionManifest < IIIF::Presentation::Collection
   def self.find_by_slug(slug)
-    ExternalCollectionsQuery.all.find do |manifest|
+    result = ExternalCollectionsQuery.all.find do |manifest|
       manifest.slug == slug
     end
+    return nil if result.nil?
+    CollectionManifest.new(ExternalManifest.load(result.id).send(:data))
+  end
+
+  def id
+    self['@id']
   end
 
   def slug
