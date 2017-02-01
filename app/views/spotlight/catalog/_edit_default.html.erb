@@ -1,0 +1,43 @@
+<%= bootstrap_form_for document, url: spotlight.polymorphic_path([current_exhibit, document]), html: {:'data-form-observer' => true, multipart: true} do |f| %>
+<div class="edit-fields">
+  
+  <%= f.fields_for :sidecar, document.sidecar(current_exhibit) do |c| %>
+    <%= c.check_box :public %>
+  <% end %>
+
+  <%= f.fields_for :uploaded_resource do |r| %>
+    <%= r.url_field :url, type: "file", help: t('.url-field.help', extensions: Spotlight::Engine.config.allowed_upload_extensions.join(' ')), label: "File" %>
+  <% end if document.uploaded_resource? %>
+
+  <%= f.fields_for :sidecar, document.sidecar(current_exhibit) do |c| %>
+    <%= c.fields_for :data do |d| %>
+      <% if document.uploaded_resource? %>
+        <%= d.fields_for :configured_fields do |e| %>
+          <% Spotlight::Resources::Upload.fields(current_exhibit).each do |config| %>
+            <%= e.send((config.form_field_type || :text_field), config.field_name, value: (document.sidecar(current_exhibit).data["configured_fields"] || {})[config.field_name.to_s], label: uploaded_field_label(config)) %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <% current_exhibit.custom_fields.each do |field| %>
+        <div class="form-group">
+          <%= d.label field.field, field.label %>
+          <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field? %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if can? :tag, current_exhibit %>
+  <div class="edit-tags">
+  <%= f.text_field :exhibit_tag_list, value: f.object.tags_from(current_exhibit).to_s, 'data-autocomplete_url' => exhibit_tags_path(current_exhibit, format: 'json') %>
+  </div>
+  <% end %>
+  <div class="form-actions">
+    <div class="primary-actions">
+      <%= cancel_link document, spotlight.polymorphic_path([current_exhibit, document]), class: 'btn btn-link' %>
+      <%= f.submit nil, class: 'btn btn-primary' %>
+      </div>
+  </div>
+</div>
+<% end %>

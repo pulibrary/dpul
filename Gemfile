@@ -97,3 +97,4 @@ gem 'pul-assets', github: 'pulibrary/pul_assets'
 gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'default_vocab'
 gem 'newrelic_rpm'
 gem 'dalli'
+gem 'ruby-prof', require: false

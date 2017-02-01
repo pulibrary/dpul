@@ -433,6 +433,7 @@ GEM
     rubocop-rspec (1.7.0)
       rubocop (>= 0.42.0)
     ruby-oembed (0.10.1)
+    ruby-prof (0.16.2)
     ruby-progressbar (1.8.1)
     rubyzip (1.2.0)
     safe_yaml (1.0.4)
@@ -598,6 +599,7 @@ DEPENDENCIES
   rspec-rails
   rubocop (~> 0.41, >= 0.41.2)
   rubocop-rspec
+  ruby-prof
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sidekiq
