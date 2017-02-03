@@ -1,12 +1,19 @@
-@import 'bootstrap-tagsinput';
-@import 'jquery.jcrop';
-@import 'bootstrap-sprockets';
 @import 'utils/variables__bootstrap'; // pul bootstrap variables override
+
+@import 'bootstrap-sprockets';
+
+@import 'bootstrap';
+
+@import 'blacklight/blacklight';
+
+@import 'bootstrap-tagsinput';
+
+@import 'spotlight/variables_bootstrap';
+@import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'sir-trevor/main';
-@import 'openseadragon/openseadragon';
-@import 'blacklight/blacklight';
-@import 'blacklight_gallery/default';
+@import 'leaflet';
+@import 'leaflet-areaselect';
 @import 'spotlight/spotlight';
 
 @import 'normalize-rails';

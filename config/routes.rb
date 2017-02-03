@@ -37,4 +37,5 @@ Rails.application.routes.draw do
 
   # Dynamic robots.txt
   get '/robots.:format' => 'pages#robots'
+  mount Riiif::Engine => '/images', as: 'riiif'
 end

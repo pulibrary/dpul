@@ -10,7 +10,7 @@ describe IIIFResource do
 
       solr_doc = nil
       resource.document_builder.to_solr { |x| solr_doc = x }
-      expect(solr_doc["full_title_ssim"]).to eq 'Christopher and his kind, 1929-1939'
+      expect(solr_doc["full_title_tesim"]).to eq 'Christopher and his kind, 1929-1939'
       expect(solr_doc["readonly_created_tesim"]).to eq ["1976-01-01T00:00:00Z"]
       expect(solr_doc["readonly_range-label_tesim"]).to eq ["Chapter 1", "Chapter 2"]
     end
@@ -23,8 +23,8 @@ describe IIIFResource do
 
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         expect(docs.length).to eq 2
-        scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["Scanned Resource 1"] }
-        mvw_doc = docs.find { |x| x["full_title_ssim"] == ["MVW"] }
+        scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Scanned Resource 1"] }
+        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["MVW"] }
         expect(scanned_resource_doc["collection_id_ssim"]).to eq [mvw_doc["id"]]
         expect(mvw_doc["collection_id_ssim"]).to eq nil
       end
@@ -34,7 +34,7 @@ describe IIIFResource do
         expect(resource.save_and_index).to be_truthy
 
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
-        scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["Scanned Resource 1"] }
+        scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Scanned Resource 1"] }
         expect(scanned_resource_doc["full_image_url_ssm"]).to eq ["https://libimages1.princeton.edu/loris/plum/hq%2F37%2Fvn%2F61%2F6-intermediate_file.jp2/full/!600,600/0/default.jpg"]
       end
     end
@@ -45,7 +45,7 @@ describe IIIFResource do
         resource = described_class.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
-        scanned_resource_doc = docs.find { |x| x["full_title_ssim"] == ["Christopher and his kind, 1929-1939"] }
+        scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Christopher and his kind, 1929-1939"] }
         expect(scanned_resource_doc["readonly_date-created_tesim"]).to eq ['1976-01-01T00:00:00Z']
         expect(scanned_resource_doc["readonly_range-label_tesim"]).to eq nil
         expect(scanned_resource_doc["readonly_language_tesim"]).to eq ["English"]

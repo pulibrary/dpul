@@ -23,12 +23,11 @@ class PlumEventProcessor
         manifest = Spotlight::Resources::IiifManifest.new(url: resource.url)
         manifest.with_exhibit(resource.exhibit)
         document = SolrDocument.find(manifest.compound_id)
-
-        begin
-          resource.save_and_index
-          document.make_public!(resource.exhibit)
-        rescue ActiveRecord::RecordInvalid
+        resource.save_and_index
+        if resource.document_builder.documents_to_index.to_a.empty?
           document.make_private!(resource.exhibit)
+        else
+          document.make_public!(resource.exhibit)
         end
 
         document.save
