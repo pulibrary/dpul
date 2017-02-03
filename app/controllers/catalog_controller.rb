@@ -46,7 +46,7 @@ class CatalogController < ApplicationController
     config.document_unique_id_param = 'ids'
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'full_title_ssim'
+    config.index.title_field = 'full_title_tesim'
     config.index.display_title_field = 'readonly_title_tesim'
 
     config.add_search_field 'all_fields', label: 'Everything'

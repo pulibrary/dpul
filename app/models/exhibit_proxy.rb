@@ -4,7 +4,7 @@ class ExhibitProxy
     @exhibit = exhibit
   end
 
-  def reindex
+  def reindex(*_args)
     IIIFIngestJob.perform_now members, exhibit
   end
 

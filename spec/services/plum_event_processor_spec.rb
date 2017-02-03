@@ -56,7 +56,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
       expect(processor.process).to eq true
       resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
 
-      expect(resource["full_title_ssim"]).to eq ["Updated Record"]
+      expect(resource["full_title_tesim"]).to eq ["Updated Record"]
     end
     context "when it's no longer accessible" do
       it "marks it as non-public" do
