@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <%= render 'shared/exhibit_navbar' if current_exhibit && !resource_masthead? %>
+  <%= render 'shared/exhibit_navbar' if !resource_masthead? %>
 </div>
 
 <%= render 'shared/breadcrumbs' unless resource_masthead? %>
