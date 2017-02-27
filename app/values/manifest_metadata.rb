@@ -35,6 +35,8 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
           value["@value"]
         elsif key == 'Language'
           ISO_639.find_by_code(value).try(:english_name) || value
+        elsif value["@id"]
+          value["@id"]
         else
           value
         end

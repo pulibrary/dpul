@@ -6,7 +6,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  all_collection_manifest_url: "http://localhost:3000/iiif/collections"
+  # all_collection_manifest_url: "http://localhost:3000/iiif/collections"
 
 test:
   <<: *defaults
