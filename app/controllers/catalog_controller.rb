@@ -63,5 +63,17 @@ class CatalogController < ApplicationController
     config.index.document_presenter_class = RTLIndexPresenter
     config.navbar.partials = []
     config.index.document_actions.delete(:bookmark)
+    config.repository_class = ::FriendlyIdRepository
+  end
+
+  # get a single document from the index
+  # to add responses for formats other than html or json see _Blacklight::Document::Export_
+  def show
+    @response, @document = fetch params[:id], exhibit: @exhibit
+    respond_to do |format|
+      format.html { setup_next_and_previous_documents }
+      format.json { render json: { response: { document: @document } } }
+      additional_export_formats(@document, format)
+    end
   end
 end

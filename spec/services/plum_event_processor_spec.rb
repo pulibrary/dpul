@@ -76,7 +76,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
       it "marks it as public" do
         exhibit = FactoryGirl.create(:exhibit, slug: "first")
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
-        resource_id = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first["id"]
+        resource_id = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first["access_identifier_ssim"].first
         document = SolrDocument.find(resource_id)
         document.make_private!(exhibit)
         document.save

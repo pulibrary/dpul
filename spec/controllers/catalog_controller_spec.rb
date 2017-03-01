@@ -39,6 +39,15 @@ RSpec.describe CatalogController do
     expect(assigns[:response][:response][:numFound]).to eq 1
     expect(assigns[:response]["facet_counts"]["facet_fields"]).to eq("readonly_language_ssim" => [], "readonly_subject_ssim" => [])
   end
+  it "can get a single record by its access identifier" do
+    index.add(id: "1",
+              access_identifier_ssim: "123")
+    index.commit
+
+    get :show, params: { id: "123" }
+
+    expect(assigns[:document].id).to eq "1"
+  end
 
   def document_ids
     assigns[:document_list].map do |x|
