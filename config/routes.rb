@@ -2,11 +2,9 @@ Rails.application.routes.draw do
   mount Spotlight::Resources::Iiif::Engine, at: 'spotlight_resources_iiif'
   mount Blacklight::Oembed::Engine, at: 'oembed'
 
-  root to: 'spotlight/exhibits#index'
-  resources :exhibits, path: '/spotlight', only: [:create, :destroy]
-
-  mount Spotlight::Engine, at: 'spotlight'
   mount Blacklight::Engine => '/'
+  root to: 'spotlight/exhibits#index'
+  resources :exhibits, path: '/', only: [:create, :destroy]
 
   # root to: "catalog#index" # replaced by spotlight root path
   concern :searchable, Blacklight::Routes::Searchable.new
@@ -14,6 +12,8 @@ Rails.application.routes.draw do
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
   end
+
+  mount Spotlight::Engine, at: '/'
 
   concern :exportable, Blacklight::Routes::Exportable.new
 

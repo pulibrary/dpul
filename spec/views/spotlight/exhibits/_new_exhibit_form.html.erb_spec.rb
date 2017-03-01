@@ -18,6 +18,6 @@ RSpec.describe "spotlight/exhibits/_new_exhibit_form.html.erb", vcr: { cassette_
     assign(:exhibit, Spotlight::Exhibit.new)
     render
 
-    expect(rendered).to have_selector "form[action='/spotlight']"
+    expect(rendered).to have_selector "form[action='/']"
   end
 end
