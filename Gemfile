@@ -66,8 +66,8 @@ group :production do
 end
 
 gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false
-gem 'blacklight', '6.7.3'
-gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: :master
+gem 'blacklight', '6.8.0'
+gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: "master"
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
