@@ -7,8 +7,6 @@
     <span class='background-container-gradient'></span>
   <% end %>
   
-  <%= render 'shared/exhibit_navbar' if current_exhibit && resource_masthead? %>
-
   <div class="container site-title-container">
     <div class="site-title h1">
       <% if content_for? :masthead %>
@@ -28,7 +26,7 @@
     </div>
   </div>
 
-  <%= render 'shared/exhibit_navbar' if !resource_masthead? %>
+  <%= render 'shared/exhibit_navbar' %>
 </div>
 
 <%= render 'shared/breadcrumbs' unless resource_masthead? %>

@@ -97,6 +97,11 @@ li[dir=rtl] {
     color: #e87722;
   }
 }
+.image-masthead .navbar {
+  a.navbar-brand, a:visited.navbar-brand, a:hover.navbar-brand {
+    color: #2b2b2b;
+  }
+}
 .logo-image {
   max-height: 40px;
   margin-top: -18px;
