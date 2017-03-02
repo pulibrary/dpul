@@ -17,7 +17,11 @@ class IiifManifest < Spotlight::Resources::IiifManifest
     Digest::MD5.hexdigest("#{exhibit.id}-#{noid}")
   end
 
+  def ark_url
+    manifest["rendering"]["@id"]
+  end
+
   def noid
-    /.*\/(.*)\/manifest/.match(url)[1]
+    /.*\/(.*)/.match(ark_url)[1]
   end
 end

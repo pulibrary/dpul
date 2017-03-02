@@ -20,9 +20,7 @@ class PlumEventProcessor
     def update_existing_resources
       IIIFResource.where(url: manifest_url).each do |resource|
         # Make solr document private if it's no longer valid.
-        manifest = IiifManifest.new(url: resource.url)
-        manifest.with_exhibit(resource.exhibit)
-        document = SolrDocument.find(manifest.noid)
+        document = SolrDocument.find(resource.noid, exhibit: resource.exhibit)
         resource.save_and_index
         if resource.document_builder.documents_to_index.to_a.empty?
           document.make_private!(resource.exhibit)
