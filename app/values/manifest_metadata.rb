@@ -27,21 +27,44 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
                    .transform_keys { |k| k.to_s.humanize }
   end
 
-  def process_values(input_hash)
-    h = Hash[input_hash.map do |key, values|
-      values = Array.wrap(values)
-      values.map! do |value|
+  class Value
+    attr_reader :key, :values
+    def initialize(key, values)
+      @key = key
+      @values = Array.wrap(values)
+    end
+
+    def to_pair
+      [new_key, new_values]
+    end
+
+    def new_key
+      if key == 'Memberof'
+        'Collections'
+      else
+        key
+      end
+    end
+
+    def new_values
+      values.map do |value|
         if value["@value"]
           value["@value"]
         elsif key == 'Language'
           ISO_639.find_by_code(value).try(:english_name) || value
+        elsif key == 'Memberof'
+          value['title']
         elsif value["@id"]
           value["@id"]
         else
           value
         end
       end
-      [key, values]
+    end
+  end
+  def process_values(input_hash)
+    h = Hash[input_hash.map do |key, values|
+      Value.new(key, values).to_pair
     end]
     range_labels(h)
     h
