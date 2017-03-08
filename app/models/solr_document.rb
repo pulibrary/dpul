@@ -19,4 +19,14 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
+
+  class << self
+    def find(id, params = {})
+      solr_response = index.find(id, params)
+      solr_response.documents.first
+    end
+  end
+  def to_param
+    first("access_identifier_ssim") || id
+  end
 end
