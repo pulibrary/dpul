@@ -38,4 +38,9 @@ Rails.application.routes.draw do
   # Dynamic robots.txt
   get '/robots.:format' => 'pages#robots'
   mount Riiif::Engine => '/images', as: 'riiif'
+
+  require 'sidekiq/web'
+  authenticate :user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
