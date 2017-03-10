@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   mount Spotlight::Resources::Iiif::Engine, at: 'spotlight_resources_iiif'
   mount Blacklight::Oembed::Engine, at: 'oembed'
 
+  require 'sidekiq/web'
+  authenticate :user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, skip: [:passwords, :registration]
   devise_scope :user do
     get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
@@ -38,9 +43,4 @@ Rails.application.routes.draw do
   # Dynamic robots.txt
   get '/robots.:format' => 'pages#robots'
   mount Riiif::Engine => '/images', as: 'riiif'
-
-  require 'sidekiq/web'
-  authenticate :user do
-    mount Sidekiq::Web => '/sidekiq'
-  end
 end
