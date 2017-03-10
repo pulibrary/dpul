@@ -19,9 +19,8 @@ class IiifManifest < Spotlight::Resources::IiifManifest
   end
 
   def ark_url
-    if manifest["rendering"] && manifest["rendering"]["@id"]
-      manifest["rendering"]["@id"]
-    end
+    return unless manifest["rendering"] && manifest["rendering"]["@id"]
+    manifest["rendering"]["@id"]
   end
 
   def noid
