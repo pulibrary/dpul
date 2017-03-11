@@ -5,7 +5,9 @@ class ExhibitProxy
   end
 
   def reindex(*_args)
-    IIIFIngestJob.perform_now members, exhibit
+    members.each_slice(50) do |slice|
+      IIIFIngestJob.perform_later slice, exhibit
+    end
   end
 
   def collection_manifest

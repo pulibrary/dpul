@@ -26,7 +26,12 @@ class SolrDocument
       solr_response.documents.first
     end
   end
+
   def to_param
     first("access_identifier_ssim") || id
+  end
+
+  def tags_to_solr
+    {}
   end
 end

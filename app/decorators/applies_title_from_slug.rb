@@ -1,4 +1,5 @@
 class AppliesTitleFromSlug < SimpleDelegator
+  include GlobalID::Identification
   delegate :class, to: :__getobj__
   attr_reader :slug
   def initialize(record, slug)

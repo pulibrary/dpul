@@ -8,8 +8,12 @@ class FriendlyIdRepository < Blacklight::Solr::Repository
     if params[:exhibit]
       super(Digest::MD5.hexdigest("#{params[:exhibit].id}-#{id}"), params.except(:exhibit))
     else
-      first_id = search(q: "access_identifier_ssim:#{id}", rows: 1, fl: "id")["response"]["docs"].first["id"]
-      super(first_id, params)
+      first_id = search(q: "access_identifier_ssim:#{id}", rows: 1, fl: "id")["response"]["docs"].first
+      if first_id && first_id["id"]
+        super(first_id["id"], params)
+      else
+        super(id, params)
+      end
     end
   end
 end
