@@ -5,7 +5,6 @@ class IiifManifest < Spotlight::Resources::IiifManifest
   end
 
   def add_noid
-    return unless ark_url
     solr_hash["access_identifier_ssim"] = [noid]
   end
 
@@ -24,6 +23,10 @@ class IiifManifest < Spotlight::Resources::IiifManifest
   end
 
   def noid
-    /.*\/(.*)/.match(ark_url)[1]
+    if ark_url
+      /.*\/(.*)/.match(ark_url)[1]
+    else
+      /.*\/(.*)\/manifest/.match(url)[1]
+    end
   end
 end
