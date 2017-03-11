@@ -64,6 +64,7 @@ class CatalogController < ApplicationController
     config.navbar.partials = []
     config.index.document_actions.delete(:bookmark)
     config.repository_class = ::FriendlyIdRepository
+    config.http_method = :post
   end
 
   # get a single document from the index
