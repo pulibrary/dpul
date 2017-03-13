@@ -98,3 +98,4 @@ gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', br
 gem 'newrelic_rpm'
 gem 'dalli'
 gem 'ruby-prof', require: false
+gem 'ddtrace'
