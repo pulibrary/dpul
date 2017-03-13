@@ -257,6 +257,7 @@ GEM
       activesupport (>= 4.1.0)
     hashdiff (0.3.0)
     hashie (3.4.6)
+    honeybadger (2.7.2)
     i18n (0.8.1)
     iiif-presentation (0.1.0)
       activesupport (>= 3.2.18)
@@ -585,6 +586,7 @@ DEPENDENCIES
   devise_invitable
   factory_girl_rails
   friendly_id!
+  honeybadger (~> 2.0)
   iiif-presentation
   iso-639
   jbuilder (~> 2.0)
