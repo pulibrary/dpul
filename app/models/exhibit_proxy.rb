@@ -14,6 +14,21 @@ class ExhibitProxy
     CollectionManifest.find_by_slug(exhibit.slug)
   end
 
+  def document_builder
+    DummyDocumentBuilder.new(members)
+  end
+
+  class DummyDocumentBuilder
+    attr_reader :members
+    def initialize(members)
+      @members = members
+    end
+
+    def documents_to_index
+      members
+    end
+  end
+
   def members
     collection_manifest.manifests.map { |x| x['@id'] }
   end
