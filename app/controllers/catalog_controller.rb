@@ -13,6 +13,7 @@ class CatalogController < ApplicationController
     unique_custom_fields.each do |field|
       blacklight_config.add_show_field field.field, label: field.configuration["label"]
     end
+    blacklight_config.search_builder_class = SearchAcrossSearchBuilder
   end
 
   def unique_custom_fields

@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe CatalogController do
+  let(:user) { nil }
   context "with mvw", vcr: { cassette_name: 'mvw' } do
     let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
     it "hides scanned resources with parents" do
-      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
       resource = IIIFResource.new url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
 
@@ -12,8 +13,59 @@ RSpec.describe CatalogController do
 
       expect(document_ids).to eq [resource.document_builder.to_solr.to_a.first[:id]]
     end
+    context "when not signed in" do
+      it "hides resources which are in un-published exhibits" do
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: false
+        resource = IIIFResource.new url: url, exhibit: exhibit
+        expect(resource.save_and_index).to be_truthy
+
+        get :index, params: { q: "", exhibit_id: exhibit.id }
+
+        expect(document_ids).to eq []
+      end
+      it "hides private resources in published exhibits" do
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+        resource = IIIFResource.new url: url, exhibit: exhibit
+        expect(resource.save_and_index).to be_truthy
+        document = SolrDocument.find(resource.noid, exhibit: resource.exhibit)
+        document.make_private!(resource.exhibit)
+        document.save
+        Blacklight.default_index.connection.commit
+
+        get :index, params: { q: "", exhibit_id: exhibit.id }
+
+        expect(document_ids).to eq []
+      end
+    end
+    context "when signed in as a site admin" do
+      let(:user) { FactoryGirl.create(:site_admin) }
+      it "doesn't hide resources from un-published exhibits" do
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: false
+        resource = IIIFResource.new url: url, exhibit: exhibit
+        expect(resource.save_and_index).to be_truthy
+        sign_in user
+
+        get :index, params: { q: "", exhibit_id: exhibit.id }
+
+        expect(document_ids).not_to be_empty
+      end
+      it "doesn't hide private resources in public exhibits" do
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+        resource = IIIFResource.new url: url, exhibit: exhibit
+        expect(resource.save_and_index).to be_truthy
+        document = SolrDocument.find(resource.noid, exhibit: resource.exhibit)
+        document.make_private!(resource.exhibit)
+        document.save
+        Blacklight.default_index.connection.commit
+        sign_in user
+
+        get :index, params: { q: "", exhibit_id: exhibit.id }
+
+        expect(document_ids).not_to be_empty
+      end
+    end
     it "returns MVW from metadata found in volume" do
-      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
       resource = IIIFResource.new url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
 
