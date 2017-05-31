@@ -1,2 +1,2 @@
-<div class="uv viewer" data-config="/uv_config.json" data-uri="<%= document.fetch(Spotlight::Resources::Iiif::Engine.config.iiif_manifest_field) %>"></div>
+<div class="uv viewer" data-config="/uv_config.json" data-uri="<%= document.fetch(Spotlight::Resources::Iiif::Engine.config.iiif_manifest_field).first %>"></div>
 <%= PulUvRails::UniversalViewer.script_tag %>
