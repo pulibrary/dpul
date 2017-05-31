@@ -27,6 +27,10 @@ class SolrDocument
     end
   end
 
+  def fetch(key, *default)
+    Array.wrap(super).map(&:html_safe)
+  end
+
   def to_param
     first("access_identifier_ssim") || id
   end

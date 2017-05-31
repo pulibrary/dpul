@@ -16,7 +16,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   #   @options opts [String] :value
   def field_value(field, options = {})
     tags = super.split(field_value_separator).collect do |value|
-      content_tag(:li, value, dir: value.dir)
+      content_tag(:li, value.html_safe, dir: value.dir)
     end
 
     content_tag(:ul) do
@@ -29,7 +29,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
     f = fields.detect { |field| @document.has? field }
     f ||= @configuration.document_model.unique_key
     @document[f].to_sentence(field_config(f).separator_options)
-    field_value(f, value: @document[f])
+    field_value(f, value: @document[f].map(&:html_safe))
   end
 
   def field_config(field)
