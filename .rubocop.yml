@@ -107,6 +107,11 @@ Rails/Date:
 Rails/TimeZone:
   Enabled: false
 
+Rails/OutputSafety:
+  Exclude:
+    - 'app/presenters/rtl_index_presenter.rb'
+    - 'app/presenters/rtl_show_presenter.rb'
+
 Rails/DynamicFindBy:
   Exclude:
     - 'app/controllers/exhibits_controller.rb'

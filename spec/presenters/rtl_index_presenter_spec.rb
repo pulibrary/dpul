@@ -39,6 +39,14 @@ RSpec.describe RTLIndexPresenter do
       end
     end
 
+    context "when given a title with special characters" do
+      let(:title) { ["Traité sur l'art de la charpente : théorique et pratique"] }
+
+      it "renders appropriately" do
+        expect(presenter.label(:title)).to eq "Traité sur l'art de la charpente : théorique et pratique"
+      end
+    end
+
     context 'when configured with a display title field' do
       let(:index_config) { double(title_field: 'title', display_title_field: 'alternate_title') }
 
