@@ -40,7 +40,7 @@ li[dir=rtl] {
 }
 .card-back .description {
   max-height: 66%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .blacklight-catalog-show .document .dl-horizontal {
