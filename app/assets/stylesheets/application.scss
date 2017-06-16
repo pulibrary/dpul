@@ -92,11 +92,6 @@ li[dir=rtl] {
   font-size: 1.3em;
 }
 
-.site-title-container {
-  div.h1.site-title, a, a:visited {
-    color: #e87722;
-  }
-}
 .image-masthead .navbar {
   a.navbar-brand, a:visited.navbar-brand, a:hover.navbar-brand {
     color: #2b2b2b;
@@ -110,6 +105,7 @@ li[dir=rtl] {
   width: 60%;
   display: inline-block;
 }
+
 .exhibit-card:hover .flipping {
   /*Flip */
   -webkit-transform: rotateY(0.5turn);
@@ -197,4 +193,13 @@ body { -webkit-perspective: 800px; -moz-perspective: 800px; -o-perspective: 800p
       padding-top: 0;
     }
   }
+}
+.uv__overlay {
+  background:transparent;
+  position:relative;
+  width:100%;
+  height:400px;
+  top:400px;
+  margin-top:-400px;
+  z-index: 1000;
 }

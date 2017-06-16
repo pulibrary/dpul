@@ -1,2 +1,3 @@
+<div class="uv__overlay" onClick="style.pointerEvents='none'"></div>
 <div class="uv viewer" data-config="/uv_config.json" data-uri="<%= document.fetch(Spotlight::Resources::Iiif::Engine.config.iiif_manifest_field).first %>"></div>
 <%= PulUvRails::UniversalViewer.script_tag %>

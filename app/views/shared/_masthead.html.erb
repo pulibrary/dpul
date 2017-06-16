@@ -6,7 +6,7 @@
     <span class='background-container' style="background-image: url('<%= current_masthead.iiif_url %>')"></span>
     <span class='background-container-gradient'></span>
   <% end %>
-  
+
   <div class="container site-title-container">
     <div class="site-title h1">
       <% if content_for? :masthead %>
@@ -17,7 +17,6 @@
           <small><%= current_exhibit.subtitle %></small>
         <% end %>
       <% else %>
-        <%= image_tag "dpul.svg", class: 'logo-image' %>
         <%= application_name %>
         <% if current_site.subtitle.present? %>
           <small><%= current_site.subtitle %></small>
