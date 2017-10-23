@@ -1,0 +1,4 @@
+# slow down spiders and disallow indexing anything with a query-string
+User-agent: *
+Crawl-delay: 10
+Disallow: /*?
