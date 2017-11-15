@@ -20,3 +20,7 @@ production:
 
 staging:
   <<: *defaults
+  all_collection_manifest_url: <%= ENV["POMEGRANATE_COLLECTIONS_URL"] %>
+  events:
+    server: <%= ENV["POMEGRANATE_RABBITMQ_URL"] %>
+    exchange: <%= ENV["POMEGRANATE_RABBITMQ_EXCHANGE"] %>
