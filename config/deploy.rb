@@ -46,7 +46,7 @@ end
 namespace :sneakers do
   task :restart do
     on roles(:worker) do
-      execute :sudo, :initctl, :restart, "pom-sneakers"
+      execute :sudo, :service, "dpul-sneakers", :restart
     end
   end
 end
@@ -54,12 +54,12 @@ namespace :sidekiq do
   task :quiet do
     on roles(:worker) do
       # Horrible hack to get PID without having to use terrible PID files
-      puts capture("kill -USR1 $(sudo initctl status pom-workers | grep /running | awk '{print $NF}') || :")
+      puts capture("kill -USR1 $(sudo initctl status sidekiq-workers | grep /running | awk '{print $NF}') || :")
     end
   end
   task :restart do
     on roles(:worker) do
-      execute :sudo, :initctl, :restart, "pom-workers"
+      execute :sudo, :service, "sidekiq-workers", :restart
     end
   end
 end
