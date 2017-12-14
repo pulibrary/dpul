@@ -99,3 +99,4 @@ gem 'newrelic_rpm'
 gem 'dalli'
 gem 'ruby-prof', require: false
 gem 'honeybadger', '~> 2.0'
+gem 'nokogiri', '~> 1.8.1'
