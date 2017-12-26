@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature 'Exhibit Home Page', type: :feature do
-  let(:exhibit) { FactoryGirl.create(:exhibit) }
+  let(:exhibit) { FactoryBot.create(:exhibit) }
 
   context 'a logged in site admin' do
-    let(:user) { FactoryGirl.create(:site_admin) }
+    let(:user) { FactoryBot.create(:site_admin) }
     before do
       sign_in user
     end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Home Page', type: :feature do
   context 'a logged in site admin' do
-    let(:user) { FactoryGirl.create(:site_admin) }
+    let(:user) { FactoryBot.create(:site_admin) }
 
     before do
       sign_in user
