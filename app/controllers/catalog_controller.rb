@@ -17,7 +17,7 @@ class CatalogController < ApplicationController
   end
 
   def unique_custom_fields
-    Spotlight::CustomField.select(:field, :configuration).distinct
+    Spotlight::CustomField.select(:field, :configuration).distinct.to_a.uniq(&:field)
   end
 
   configure_blacklight do |config|
