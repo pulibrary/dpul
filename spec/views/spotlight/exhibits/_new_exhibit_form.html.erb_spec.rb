@@ -8,7 +8,7 @@ RSpec.describe "spotlight/exhibits/_new_exhibit_form.html.erb", vcr: { cassette_
     expect(rendered).to have_select("Plum Collection", options: ['princeton', 'Test Collection 2'])
   end
   it "doesn't display exhibits which are already created" do
-    FactoryGirl.create(:exhibit, slug: "princeton-best")
+    FactoryBot.create(:exhibit, slug: "princeton-best")
     assign(:exhibit, Spotlight::Exhibit.new)
     render
 

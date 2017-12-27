@@ -38,7 +38,7 @@ RSpec.describe CatalogController do
       end
     end
     context "when signed in as a site admin" do
-      let(:user) { FactoryGirl.create(:site_admin) }
+      let(:user) { FactoryBot.create(:site_admin) }
       it "doesn't hide resources from un-published exhibits" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: false
         resource = IIIFResource.new url: url, exhibit: exhibit

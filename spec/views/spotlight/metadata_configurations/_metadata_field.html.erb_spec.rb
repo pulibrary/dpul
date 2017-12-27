@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view do
-  let(:exhibit) { FactoryGirl.create(:exhibit) }
+  let(:exhibit) { FactoryBot.create(:exhibit) }
   let(:p) { 'spotlight/metadata_configurations/metadata_field.html.erb' }
   before do
     assign(:exhibit, exhibit)

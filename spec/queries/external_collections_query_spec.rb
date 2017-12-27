@@ -15,7 +15,7 @@ RSpec.describe ExternalCollectionsQuery, vcr: { cassette_name: "all_collections"
 
   describe ".uncreated" do
     it "returns all collections that don't exist already" do
-      FactoryGirl.create(:exhibit, slug: "princeton-best")
+      FactoryBot.create(:exhibit, slug: "princeton-best")
 
       expect(query.uncreated.map(&:slug)).to eq ["test-collection-2"]
     end

@@ -21,7 +21,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
   context "when given a creation event" do
     let(:type) { "CREATED" }
     it "builds the resource in that exhibit" do
-      exhibit = FactoryGirl.create(:exhibit, slug: "first")
+      exhibit = FactoryBot.create(:exhibit, slug: "first")
 
       expect(processor.process).to eq true
 
@@ -38,7 +38,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
       }
     end
     it "deletes that resource" do
-      exhibit = FactoryGirl.create(:exhibit, slug: "first")
+      exhibit = FactoryBot.create(:exhibit, slug: "first")
       IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
       expect(processor.process).to eq true
@@ -50,7 +50,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
   context "when given an update event" do
     let(:type) { "UPDATED" }
     it "updates that resource" do
-      exhibit = FactoryGirl.create(:exhibit, slug: "first")
+      exhibit = FactoryBot.create(:exhibit, slug: "first")
       IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
       expect(processor.process).to eq true
@@ -60,7 +60,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
     end
     context "when it's no longer accessible" do
       it "marks it as non-public" do
-        exhibit = FactoryGirl.create(:exhibit, slug: "first")
+        exhibit = FactoryBot.create(:exhibit, slug: "first")
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
         # swap casseette to make the resource inaccessible
@@ -74,7 +74,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
     end
     context "when it's private and then is made accessible" do
       it "marks it as public" do
-        exhibit = FactoryGirl.create(:exhibit, slug: "first")
+        exhibit = FactoryBot.create(:exhibit, slug: "first")
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
         resource_id = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first["access_identifier_ssim"].first
         document = SolrDocument.find(resource_id)
@@ -92,7 +92,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
     context "when it's removed from a collection" do
       let(:collection_slugs) { [] }
       it "removes old ones" do
-        exhibit = FactoryGirl.create(:exhibit, slug: "first")
+        exhibit = FactoryBot.create(:exhibit, slug: "first")
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
         expect(processor.process).to eq true
@@ -104,8 +104,8 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
     context "when it's added to a new exhibit" do
       let(:collection_slugs) { ["banana"] }
       it "moves it to a new one" do
-        exhibit = FactoryGirl.create(:exhibit, slug: "first")
-        FactoryGirl.create(:exhibit, slug: "banana")
+        exhibit = FactoryBot.create(:exhibit, slug: "first")
+        FactoryBot.create(:exhibit, slug: "banana")
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
         expect(processor.process).to eq true

@@ -42,7 +42,7 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock', require: false
   gem 'capybara'
-  gem 'factory_girl_rails', require: false
+  gem 'factory_bot_rails', require: false
   gem 'poltergeist'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'

@@ -6,7 +6,7 @@ module Features
       user = if who.instance_of?(User)
                who.username
              else
-               FactoryGirl.create(:user).username
+               FactoryBot.create(:user).username
              end
       OmniAuth.config.add_mock(:cas, uid: user)
       visit user_cas_omniauth_authorize_path

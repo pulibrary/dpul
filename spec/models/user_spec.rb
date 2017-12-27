@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User do
-  let(:user) { FactoryGirl.build(:user) }
+  let(:user) { FactoryBot.build(:user) }
 
   it "uses the username as its stringified value" do
     expect(user.to_s).to eq user.username
