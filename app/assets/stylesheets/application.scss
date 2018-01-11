@@ -19,6 +19,10 @@
 @import 'normalize-rails';
 @import 'pul-assets';
 
+#ajax-modal.modal {
+  top: 40px;
+}
+
 .viewer {
   height: 400px;
   iframe {
