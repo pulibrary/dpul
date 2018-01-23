@@ -27,7 +27,7 @@ production: &production
   host: <%= ENV["POMEGRANATE_DB_HOST"] %>
   username: <%= ENV["POMEGRANATE_DB_USERNAME"] %>
   password: <%= ENV["POMEGRANATE_DB_PASSWORD"] %>
-  pool: 20
+  pool: 40
 
 staging:
   <<: *production
