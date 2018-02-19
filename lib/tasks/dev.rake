@@ -4,7 +4,7 @@ if Rails.env.development? || Rails.env.test?
 
   namespace :pomegranate do
     desc 'Make first user a site admin'
-    task :site_admin do
+    task site_admin: :environment do
       user = User.first
       user.roles.create role: 'admin', resource: Spotlight::Site.instance
       puts "Made #{user} a site admin!"
