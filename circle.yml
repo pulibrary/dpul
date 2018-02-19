@@ -13,7 +13,7 @@ dependencies:
     - npm install -g eslint
   post:
     - sudo sh bin/ci_kakadu_install.sh
-    - bundle exec rake pomegranate:server:
+    - bundle exec rake pomegranate:test:
         background: true
     - bin/jetty_wait
 database:
