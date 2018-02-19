@@ -27,6 +27,13 @@ After setup, run Pomegranate locally with `rails s`.
 4. Select a small collection and hit "Save" (Recommend `ABC Books`)
 5. Wait for import (this will take a while since it's happening in foreground on dev)
 
+### Running Tests
+
+```sh
+bundle exec rake pomegranate:test
+bundle exec rspec spec
+```
+
 ### Auto-update from [Figgy](https://github.com/pulibrary/figgy)
 
 Plum announces events to a durable RabbitMQ fanout exchange. In order to use them, do the
@@ -38,9 +45,3 @@ following:
 This will subscribe to the plum events and update the pomegranate records when they're
 created, updated, or deleted.
 
-### Running Tests
-
-```sh
-bundle exec rake pomegranate:test
-bundle exec rspec spec
-```
