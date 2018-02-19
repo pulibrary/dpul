@@ -6,7 +6,7 @@
 
 A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton University Library.
 
-### Setup
+## Setup
 
 ```sh
 git clone git@github.com:pulibrary/pomegranate.git
@@ -23,7 +23,7 @@ rake spotlight:exhibit
 
 After setup, run Pomegranate locally with `rails s`.
 
-### Auto-update from [Plum](https://github.com/pulibrary/plum)
+## Auto-update from [Plum](https://github.com/pulibrary/plum)
 
 Plum announces events to a durable RabbitMQ fanout exchange. In order to use them, do the
 following:
@@ -33,3 +33,29 @@ following:
 
 This will subscribe to the plum events and update the pomegranate records when they're
 created, updated, or deleted.
+
+## Development Setup
+
+### Test
+
+```sh
+RAILS_ENV=test bundle exec rake pomegranate:test
+bundle exec rspec spec
+```
+
+### Development Server
+
+#### Setting up server:
+
+```sh
+RAILS_ENV=test bundle exec rake pomegranate:development
+bundle exec rails s
+```
+
+#### Importing Data:
+
+1. Log in once via CAS
+2. Run `rake pomegranate:site_admin`
+3. Click "Create a New Collection"
+4. Select a small collection and hit "Save" (Recommend `ABC Books`)
+5. Wait for import (this will take a while since it's happening in foreground on dev)

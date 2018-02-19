@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170227171310) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
     t.string   "user_type"
@@ -20,8 +23,8 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "document_type"
-    t.index ["document_type", "document_id"], name: "index_bookmarks_on_document_type_and_document_id"
-    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+    t.index ["document_type", "document_id"], name: "index_bookmarks_on_document_type_and_document_id", using: :btree
+    t.index ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -30,10 +33,10 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.string   "sluggable_type", limit: 50
     t.string   "scope"
     t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
   create_table "searches", force: :cascade do |t|
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.string   "user_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["user_id"], name: "index_searches_on_user_id"
+    t.index ["user_id"], name: "index_searches_on_user_id", using: :btree
   end
 
   create_table "spotlight_attachments", force: :cascade do |t|
@@ -80,8 +83,8 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["confirmation_token"], name: "index_spotlight_contact_emails_on_confirmation_token", unique: true
-    t.index ["email", "exhibit_id"], name: "index_spotlight_contact_emails_on_email_and_exhibit_id", unique: true
+    t.index ["confirmation_token"], name: "index_spotlight_contact_emails_on_confirmation_token", unique: true, using: :btree
+    t.index ["email", "exhibit_id"], name: "index_spotlight_contact_emails_on_email_and_exhibit_id", unique: true, using: :btree
   end
 
   create_table "spotlight_contacts", force: :cascade do |t|
@@ -103,8 +106,8 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.integer  "avatar_crop_w"
     t.integer  "avatar_crop_h"
     t.integer  "avatar_id"
-    t.index ["avatar_id"], name: "index_spotlight_contacts_on_avatar_id"
-    t.index ["exhibit_id"], name: "index_spotlight_contacts_on_exhibit_id"
+    t.index ["avatar_id"], name: "index_spotlight_contacts_on_avatar_id", using: :btree
+    t.index ["exhibit_id"], name: "index_spotlight_contacts_on_exhibit_id", using: :btree
   end
 
   create_table "spotlight_custom_fields", force: :cascade do |t|
@@ -134,8 +137,8 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.integer  "weight",         default: 50
     t.integer  "site_id"
     t.string   "theme"
-    t.index ["site_id"], name: "index_spotlight_exhibits_on_site_id"
-    t.index ["slug"], name: "index_spotlight_exhibits_on_slug", unique: true
+    t.index ["site_id"], name: "index_spotlight_exhibits_on_site_id", using: :btree
+    t.index ["slug"], name: "index_spotlight_exhibits_on_slug", unique: true, using: :btree
   end
 
   create_table "spotlight_featured_images", force: :cascade do |t|
@@ -163,7 +166,7 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.integer  "exhibit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["exhibit_id"], name: "index_spotlight_filters_on_exhibit_id"
+    t.index ["exhibit_id"], name: "index_spotlight_filters_on_exhibit_id", using: :btree
   end
 
   create_table "spotlight_locks", force: :cascade do |t|
@@ -173,7 +176,7 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.integer  "by_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["on_id", "on_type"], name: "index_spotlight_locks_on_on_id_and_on_type", unique: true
+    t.index ["on_id", "on_type"], name: "index_spotlight_locks_on_on_id_and_on_type", unique: true, using: :btree
   end
 
   create_table "spotlight_main_navigations", force: :cascade do |t|
@@ -184,7 +187,7 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "display",    default: true
-    t.index ["exhibit_id"], name: "index_spotlight_main_navigations_on_exhibit_id"
+    t.index ["exhibit_id"], name: "index_spotlight_main_navigations_on_exhibit_id", using: :btree
   end
 
   create_table "spotlight_pages", force: :cascade do |t|
@@ -204,9 +207,9 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.boolean  "display_sidebar"
     t.boolean  "display_title"
     t.integer  "thumbnail_id"
-    t.index ["exhibit_id"], name: "index_spotlight_pages_on_exhibit_id"
-    t.index ["parent_page_id"], name: "index_spotlight_pages_on_parent_page_id"
-    t.index ["slug", "scope"], name: "index_spotlight_pages_on_slug_and_scope", unique: true
+    t.index ["exhibit_id"], name: "index_spotlight_pages_on_exhibit_id", using: :btree
+    t.index ["parent_page_id"], name: "index_spotlight_pages_on_parent_page_id", using: :btree
+    t.index ["slug", "scope"], name: "index_spotlight_pages_on_slug_and_scope", unique: true, using: :btree
   end
 
   create_table "spotlight_reindexing_log_entries", force: :cascade do |t|
@@ -232,8 +235,8 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.binary   "metadata"
     t.integer  "index_status"
     t.integer  "upload_id"
-    t.index ["index_status"], name: "index_spotlight_resources_on_index_status"
-    t.index ["upload_id"], name: "index_spotlight_resources_on_upload_id"
+    t.index ["index_status"], name: "index_spotlight_resources_on_index_status", using: :btree
+    t.index ["upload_id"], name: "index_spotlight_resources_on_upload_id", using: :btree
   end
 
   create_table "spotlight_roles", force: :cascade do |t|
@@ -241,7 +244,7 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.string  "role"
     t.integer "resource_id"
     t.string  "resource_type"
-    t.index ["resource_type", "resource_id", "user_id"], name: "index_spotlight_roles_on_resource_and_user_id", unique: true
+    t.index ["resource_type", "resource_id", "user_id"], name: "index_spotlight_roles_on_resource_and_user_id", unique: true, using: :btree
   end
 
   create_table "spotlight_searches", force: :cascade do |t|
@@ -260,8 +263,8 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.integer  "masthead_id"
     t.integer  "thumbnail_id"
     t.string   "default_index_view_type"
-    t.index ["exhibit_id"], name: "index_spotlight_searches_on_exhibit_id"
-    t.index ["slug", "scope"], name: "index_spotlight_searches_on_slug_and_scope", unique: true
+    t.index ["exhibit_id"], name: "index_spotlight_searches_on_exhibit_id", using: :btree
+    t.index ["slug", "scope"], name: "index_spotlight_searches_on_slug_and_scope", unique: true, using: :btree
   end
 
   create_table "spotlight_sites", force: :cascade do |t|
@@ -281,10 +284,10 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.integer  "resource_id"
     t.string   "resource_type"
     t.binary   "index_status"
-    t.index ["document_type", "document_id"], name: "spotlight_solr_document_sidecars_solr_document"
-    t.index ["exhibit_id", "document_type", "document_id"], name: "spotlight_solr_document_sidecars_exhibit_document"
-    t.index ["exhibit_id"], name: "index_spotlight_solr_document_sidecars_on_exhibit_id"
-    t.index ["resource_type", "resource_id"], name: "spotlight_solr_document_sidecars_resource"
+    t.index ["document_type", "document_id"], name: "spotlight_solr_document_sidecars_solr_document", using: :btree
+    t.index ["exhibit_id", "document_type", "document_id"], name: "spotlight_solr_document_sidecars_exhibit_document", using: :btree
+    t.index ["exhibit_id"], name: "index_spotlight_solr_document_sidecars_on_exhibit_id", using: :btree
+    t.index ["resource_type", "resource_id"], name: "spotlight_solr_document_sidecars_resource", using: :btree
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -295,14 +298,14 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.integer  "tagger_id"
     t.string   "context",       limit: 128
     t.datetime "created_at"
-    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
   end
 
   create_table "tags", force: :cascade do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
-    t.index ["name"], name: "index_tags_on_name", unique: true
+    t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -330,24 +333,24 @@ ActiveRecord::Schema.define(version: 20170227171310) do
     t.string   "provider"
     t.string   "uid"
     t.string   "username"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
-    t.index ["invitations_count"], name: "index_users_on_invitations_count"
-    t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
-    t.index ["provider"], name: "index_users_on_provider"
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["uid"], name: "index_users_on_uid"
-    t.index ["username"], name: "index_users_on_username"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
+    t.index ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
+    t.index ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
+    t.index ["provider"], name: "index_users_on_provider", using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["uid"], name: "index_users_on_uid", using: :btree
+    t.index ["username"], name: "index_users_on_username", using: :btree
   end
 
   create_table "versions", force: :cascade do |t|
-    t.string   "item_type",                     null: false
-    t.integer  "item_id",                       null: false
-    t.string   "event",                         null: false
+    t.string   "item_type",  null: false
+    t.integer  "item_id",    null: false
+    t.string   "event",      null: false
     t.string   "whodunnit"
-    t.text     "object",     limit: 1073741823
+    t.text     "object"
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
   end
 
 end

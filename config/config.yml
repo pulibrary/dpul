@@ -1,5 +1,5 @@
 defaults: &defaults
-  all_collection_manifest_url: "https://hydra-dev.princeton.edu/iiif/collections"
+  all_collection_manifest_url: "https://figgy.princeton.edu/iiif/collections"
   events:
     server: 'amqp://localhost:5672'
     exchange: 'plum_events'
@@ -10,6 +10,7 @@ development:
 
 test:
   <<: *defaults
+  all_collection_manifest_url: "https://hydra-dev.princeton.edu/iiif/collections"
 
 production:
   <<: *defaults
