@@ -41,7 +41,7 @@ created, updated, or deleted.
 ### Test
 
 ```sh
-RAILS_ENV=test bundle exec rake pomegranate:test
+bundle exec rake pomegranate:test
 bundle exec rspec spec
 ```
 
@@ -50,7 +50,7 @@ bundle exec rspec spec
 #### Setting up server:
 
 ```sh
-RAILS_ENV=test bundle exec rake pomegranate:development
+bundle exec rake pomegranate:development
 bundle exec rails s
 ```
 
