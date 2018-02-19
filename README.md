@@ -12,6 +12,8 @@ A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton U
 git clone git@github.com:pulibrary/pomegranate.git
 cd pomegranate
 bundle install
+bundle exec rake db:create
+bundle exec rake db:migrate
 ```
 
 To create an initial user account and exhibit, use the Spotlight rake tasks:
