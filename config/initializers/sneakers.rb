@@ -11,7 +11,7 @@ Sneakers.logger.level = Logger::INFO
 
 WORKER_OPTIONS = {
   ack: true,
-  threads: 10,
+  threads: 5,
   prefetch: 10,
   timeout_job_after: 60,
   heartbeat: 5,
