@@ -1,4 +1,4 @@
-class IiifService < Spotlight::Resources::IiifService
+class IiifService < ::Spotlight::Resources::IiifService
   def self.iiif_response(url)
     resp = Faraday.get(url)
     if resp.success?

@@ -4,7 +4,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
   before_save :set_noid
 
   def iiif_manifests
-    @iiif_manifests ||= IiifService.parse(url)
+    @iiif_manifests ||= ::IiifService.parse(url)
   end
 
   def cleanup_solr

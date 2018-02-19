@@ -119,8 +119,8 @@ http_interactions:
       - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
     body:
       encoding: UTF-8
-      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest","@type":"sc:Manifest","label":"Christopher
-        and his kind, 1929-1939","viewingHint":"individuals","viewingDirection":"left-to-right","service":{"@context":"http://iiif.io/api/auth/0/context.json","@id":"https://hydra-dev.princeton.edu/users/auth/cas","label":"Login
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest","@type":"sc:Manifest","label":["Christopher
+        and his kind, 1929-1939"],"viewingHint":"individuals","viewingDirection":"left-to-right","service":{"@context":"http://iiif.io/api/auth/0/context.json","@id":"https://hydra-dev.princeton.edu/users/auth/cas","label":"Login
         to Plum using CAS","profile":"http://iiif.io/api/auth/0/login","service":{"hsh":null}},"structures":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest/range/g70272255683880","@type":"sc:Range","label":"Logical","viewingHint":"top"}],
         "structures":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/range/g70237482003920","@type":"sc:Range","label":"Logical","viewingHint":"top","ranges":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/range/g70237482056940","@type":"sc:Range","label":"Chapter
         1","canvases":["https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/sbn9996723","https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/s9k41zd485"]},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/range/g70237482036180","@type":"sc:Range","label":"Chapter
@@ -330,7 +330,7 @@ http_interactions:
       - application/ld+json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"@context":"http://bibdata.princeton.edu/context.json","@id":"http://bibdata.princeton.edu/bibliographic/1234567","title":{"@value":"Christopher and his kind, 1929-1939","@language":"eng"},"language":"eng","creator":"Isherwood, Christopher, 1904-1986","call_number":"PR6017.S5 Z498","extent":"339 p. ; 22 cm.","edition":"1st ed.","format":"Book","genre":"Biography","publisher":"New York : Farrar, Straus Giroux, 1976.","subject":["Isherwood, Christopher, 1904-1986","Authors, English—20th century—Biography"],"donor":["Copland, Aaron, 1900-1990"],"author":"Isherwood, Christopher, 1904-1986","created":"1976-01-01T00:00:00Z","date":"1976", "memberOf": [{"@id": "https://plum.princeton.edu/collections/pw9505t09q", "title": "East Asian Library Digital Bookshelf"}]}'
+      string: '{"@context":"http://bibdata.princeton.edu/context.json","@id":"http://bibdata.princeton.edu/bibliographic/1234567","title":["Christopher and his kind, 1929-1939"],"language":"eng","creator":"Isherwood, Christopher, 1904-1986","call_number":"PR6017.S5 Z498","extent":"339 p. ; 22 cm.","edition":"1st ed.","format":"Book","genre":"Biography","publisher":"New York : Farrar, Straus Giroux, 1976.","subject":["Isherwood, Christopher, 1904-1986","Authors, English—20th century—Biography"],"donor":["Copland, Aaron, 1900-1990"],"author":"Isherwood, Christopher, 1904-1986","created":"1976-01-01T00:00:00Z","date":"1976", "memberOf": [{"@id": "https://plum.princeton.edu/collections/pw9505t09q", "title": "East Asian Library Digital Bookshelf"}]}'
     http_version: 
   recorded_at: Tue, 18 Oct 2016 22:03:21 GMT
 - request:
@@ -379,7 +379,7 @@ http_interactions:
       - application/ld+json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"@context":"http://bibdata.princeton.edu/context.json","@id":"http://bibdata.princeton.edu/bibliographic/1234567","title":{"@value":"Christopher and his kind, 1929-1939","@language":"eng"},"language":"eng","creator":"Isherwood, Christopher, 1904-1986","call_number":"PR6017.S5 Z498","extent":"339 p. ; 22 cm.","edition":"1st ed.","format":"Book","genre":"Biography","publisher":"New York : Farrar, Straus Giroux, 1976.","subject":["Isherwood, Christopher, 1904-1986","Authors, English—20th century—Biography"],"donor":["Copland, Aaron, 1900-1990"],"author":"Isherwood, Christopher, 1904-1986","created":"1976-01-01T00:00:00Z","date":"1976"}'
+      string: '{"@context":"http://bibdata.princeton.edu/context.json","@id":"http://bibdata.princeton.edu/bibliographic/1234567","title":["Christopher and his kind, 1929-1939"],"language":"eng","creator":"Isherwood, Christopher, 1904-1986","call_number":"PR6017.S5 Z498","extent":"339 p. ; 22 cm.","edition":"1st ed.","format":"Book","genre":"Biography","publisher":"New York : Farrar, Straus Giroux, 1976.","subject":["Isherwood, Christopher, 1904-1986","Authors, English—20th century—Biography"],"donor":["Copland, Aaron, 1900-1990"],"author":"Isherwood, Christopher, 1904-1986","created":"1976-01-01T00:00:00Z","date":"1976"}'
     http_version: 
   recorded_at: Tue, 18 Oct 2016 22:03:22 GMT
 - request:
@@ -440,7 +440,7 @@ http_interactions:
       - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
     body:
       encoding: UTF-8
-      string: '{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest","@type":"sc:Collection","label":"princeton","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest/range/g70272079000020","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"metadata":[{"label":"Exhibit","value":["princeton-best"]}], "manifests": [{"@id": "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest", "@type": "sc:Manifest", "label": "Christopher and his kind, 1929-1939", "viewingHint": "individuals", "viewingDirection": "left-to-right"}, {"@id": "https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest", "@type": "sc:Manifest", "label": "L''ordine dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita di nostro signore Papa Pio Seso", "viewingHint": "paged", "viewingDirection": "left-to-right"}]}'
+      string: '{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest","@type":"sc:Collection","label":"princeton","viewingHint":"individuals","structures":[{"@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest/range/g70272079000020","@type":"sc:Range","label":"Logical","viewingHint":"top"}],"metadata":[{"label":"Exhibit","value":["princeton-best"]}], "manifests": [{"@id": "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest", "@type": "sc:Manifest", "label": ["Christopher and his kind, 1929-1939"], "viewingHint": "individuals", "viewingDirection": "left-to-right"}, {"@id": "https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest", "@type": "sc:Manifest", "label": "L''ordine dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita di nostro signore Papa Pio Seso", "viewingHint": "paged", "viewingDirection": "left-to-right"}]}'
     http_version: 
   recorded_at: Mon, 18 Jan 2016 19:55:33 GMT
 - request:
