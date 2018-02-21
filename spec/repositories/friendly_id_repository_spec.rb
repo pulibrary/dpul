@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe FriendlyIdRepository, vcr: { cassette_name: "all_collections" } do
+RSpec.describe FriendlyIdRepository, vcr: { cassette_name: "all_collections", allow_playback_repeats: true } do
   let(:repository) { described_class.new(CatalogController.new.blacklight_config) }
   let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
   let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
