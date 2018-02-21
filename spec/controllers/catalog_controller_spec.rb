@@ -63,6 +63,23 @@ RSpec.describe CatalogController do
 
         expect(document_ids).not_to be_empty
       end
+      it "permits queries with quotes" do
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+        document = SolrDocument.new(id: 'd279a557a62937a8895eebbca2d4744c', exhibit: exhibit)
+        Spotlight::SolrDocumentSidecar.create!(
+          document: document, exhibit: exhibit,
+          data: { 'full_title_tesim' => ['"title1"'] }
+        )
+
+        document.make_private!(exhibit)
+        document.save
+        Blacklight.default_index.connection.commit
+        sign_in user
+
+        get :index, params: { q: '"title1"', exhibit_id: exhibit.id }
+
+        expect(document_ids).not_to be_empty
+      end
     end
     it "returns MVW from metadata found in volume" do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
