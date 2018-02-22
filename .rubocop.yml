@@ -135,7 +135,3 @@ RSpec/DescribeClass:
     - 'spec/views/**/*'
     - 'spec/routing/**/*'
     - 'spec/inputs/**/*'
-
-RSpec/AnyInstance:
-  Exclude:
-    - 'spec/support/stub_iiif_response.rb'
