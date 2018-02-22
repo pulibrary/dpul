@@ -53,6 +53,9 @@ class CatalogController < ApplicationController
     config.add_search_field 'all_fields', label: 'Everything'
 
     config.add_sort_field 'relevance', sort: 'score desc', label: 'Relevance'
+    config.add_sort_field 'sort_title', sort: 'sort_title_ssi asc, sort_date_ssi desc', label: 'Title'
+    config.add_sort_field 'sort_date', sort: 'sort_date_ssi desc, sort_title_ssi asc', label: 'Date'
+    config.add_sort_field 'sort_author', sort: 'sort_author_ssi asc, sort_title_ssi asc', label: 'Author'
 
     config.add_facet_field 'spotlight_resource_type_ssim'
     config.index.thumbnail_field = 'thumbnail_ssim'
