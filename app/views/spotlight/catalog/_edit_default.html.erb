@@ -1,10 +1,5 @@
 <%= bootstrap_form_for document, url: spotlight.polymorphic_path([current_exhibit, document]), html: {:'data-form-observer' => true, multipart: true} do |f| %>
 <div class="edit-fields">
-  
-  <%= f.fields_for :sidecar, document.sidecar(current_exhibit) do |c| %>
-    <%= c.check_box :public %>
-  <% end %>
-
   <%= f.fields_for :uploaded_resource do |r| %>
     <%= r.url_field :url, type: "file", help: t('.url-field.help', extensions: Spotlight::Engine.config.allowed_upload_extensions.join(' ')), label: "File" %>
   <% end if document.uploaded_resource? %>
@@ -19,10 +14,21 @@
         <% end %>
       <% end %>
 
-      <% current_exhibit.custom_fields.each do |field| %>
+      <%# Using `includes(:exhibit)` to ensure all fields are using the same exhibit object to take advantage of memoization %>
+      <% current_exhibit.custom_fields.includes(:exhibit).to_a.uniq(&:label).each do |field| %>
         <div class="form-group">
           <%= d.label field.field, field.label %>
-          <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field? %>
+          <% if field.readonly_field? %>
+            <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field?, name: nil%>
+          <% else %>
+            <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field? %>
+          <% end %>
+          <% unless field.configured_to_display? %>
+            <p class="bg-warning help-block">
+              <%= t(:'.blank_field_warning_html',
+                    link: link_to(t(:'spotlight.configuration.sidebar.metadata'), spotlight.edit_exhibit_metadata_configuration_path(current_exhibit))) %>
+            </p>
+          <% end %>
         </div>
       <% end %>
     <% end %>
@@ -30,7 +36,7 @@
 
   <% if can? :tag, current_exhibit %>
   <div class="edit-tags">
-  <%= f.text_field :exhibit_tag_list, value: f.object.tags_from(current_exhibit).to_s, 'data-autocomplete_url' => exhibit_tags_path(current_exhibit, format: 'json') %>
+  <%= f.text_field :exhibit_tag_list, value: f.object.sidecar(current_exhibit).tags_from(current_exhibit).to_s, 'data-autocomplete_url' => exhibit_tags_path(current_exhibit, format: 'json') %>
   </div>
   <% end %>
   <div class="form-actions">

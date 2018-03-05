@@ -93,11 +93,11 @@ RSpec.describe CatalogController do
   end
   it "can search across, and hides duplicates" do
     index.add(id: "1",
-              "#{Spotlight::Resources::Iiif::Engine.config.iiif_manifest_field}": "manifest",
+              "#{Spotlight::Engine.config.iiif_manifest_field}": "manifest",
               full_title_ssim: ["Test"],
               spotlight_resource_type_ssim: ["iiif_resources"])
     index.add(id: "2",
-              "#{Spotlight::Resources::Iiif::Engine.config.iiif_manifest_field}": "manifest",
+              "#{Spotlight::Engine.config.iiif_manifest_field}": "manifest",
               full_title_ssim: ["Test"],
               spotlight_resource_type_ssim: ["iiif_resources"])
     index.commit

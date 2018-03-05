@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Spotlight::Resources::Iiif::Engine, at: 'spotlight_resources_iiif'
   mount Blacklight::Oembed::Engine, at: 'oembed'
 
   require 'sidekiq/web'

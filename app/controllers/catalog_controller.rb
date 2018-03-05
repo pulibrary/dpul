@@ -39,7 +39,7 @@ class CatalogController < ApplicationController
       group: true,
       'group.main': true,
       'group.limit': 1,
-      'group.field': Spotlight::Resources::Iiif::Engine.config.iiif_manifest_field,
+      'group.field': Spotlight::Engine.config.iiif_manifest_field,
       'group.facet': true
     }
 

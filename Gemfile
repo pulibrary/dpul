@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0.1'
+gem 'rails', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -36,7 +36,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'simplecov', '~> 0.12', require: false
+  gem 'simplecov', require: false
   gem 'coveralls', require: false
   gem 'rubocop-rspec', require: false
   gem 'vcr'
@@ -66,7 +66,7 @@ group :production do
 end
 
 gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false
-gem 'blacklight', '6.8.0'
+gem 'blacklight', '6.14.1'
 gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: "master"
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.0.6'
@@ -86,15 +86,15 @@ gem 'sidekiq'
 gem 'redis-namespace'
 gem 'string_rtl'
 gem 'sprockets-es6'
-gem 'sprockets-rails', '~> 2.3.3'
-gem 'sprockets', '~> 3.5.0'
-gem 'almond-rails', '~> 0.0.3'
+gem 'sprockets-rails'
+gem 'sprockets'
+gem 'almond-rails', '~> 0.1'
 gem 'pul_uv_rails', github: 'pulibrary/pul_uv_rails', branch: 'master'
 gem 'riiif'
 
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
-gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'default_vocab'
+# gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'default_vocab'
 gem 'newrelic_rpm'
 gem 'dalli'
 gem 'ruby-prof', require: false

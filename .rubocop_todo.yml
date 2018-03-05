@@ -27,6 +27,8 @@ RSpec/MessageExpectation:
 # Offense count: 20
 RSpec/MultipleExpectations:
   Max: 4
+  Exclude:
+    - 'spec/models/iiif_resource_spec.rb'
 
 # Offense count: 1
 # Configuration parameters: MaxNesting.

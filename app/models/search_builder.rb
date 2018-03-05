@@ -12,7 +12,7 @@ class SearchBuilder < Blacklight::SearchBuilder
   # @param solr_params [Blacklight::Solr::Request] the Solr query parameters being modified
   def hide_parented_resources(solr_params)
     solr_params[:fq] ||= []
-    solr_params[:fq] << "!#{Spotlight::Resources::Iiif::Engine.config.collection_id_field}:['' TO *]"
+    solr_params[:fq] << "!#{Spotlight::Engine.config.iiif_collection_id_field}:['' TO *]"
   end
 
   # Modifies the Solr query in order to retrieve child resources for all collections within search results
