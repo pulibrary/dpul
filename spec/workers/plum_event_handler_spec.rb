@@ -25,7 +25,7 @@ RSpec.describe PlumEventHandler do
       expect(PlumEventProcessor).to have_received(:new).with(msg)
       expect(handler).to have_received(:ack!)
     end
-    it "rejects the message if the processing fails" do
+    it "acknowleges the message if the event is unknown" do
       plum_event_processor = instance_double(PlumEventProcessor, process: false)
       allow(PlumEventProcessor).to receive(:new).and_return(plum_event_processor)
 
@@ -33,7 +33,7 @@ RSpec.describe PlumEventHandler do
 
       expect(plum_event_processor).to have_received(:process)
       expect(PlumEventProcessor).to have_received(:new).with(msg)
-      expect(handler).to have_received(:reject!)
+      expect(handler).to have_received(:ack!)
     end
   end
 end

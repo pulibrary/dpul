@@ -7,11 +7,7 @@ class PlumEventHandler
 
   def work(msg)
     msg = JSON.parse(msg)
-    result = PlumEventProcessor.new(msg).process
-    if result
-      ack!
-    else
-      reject!
-    end
+    PlumEventProcessor.new(msg).process
+    ack!
   end
 end
