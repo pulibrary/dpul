@@ -1,6 +1,6 @@
 class PlumEventHandler
   include Sneakers::Worker
-  from_queue :pomegranate,
+  from_queue :"pomegranate_#{Rails.env}",
              WORKER_OPTIONS.merge(
                arguments: { 'x-dead-letter-exchange': 'pomegranate-retry' }
              )
