@@ -46,12 +46,7 @@ end
 namespace :sneakers do
   task :restart do
     on roles(:worker) do
-      case fetch(:stage)
-      when "production"
-        execute :sudo, :service, "dpul-sneakers", :restart
-      when "staging"
-        execute :sudo, :initctl, :restart, "pom-sneakers"
-      end
+      execute :sudo, :service, "dpul-sneakers", :restart
     end
   end
 end
@@ -59,23 +54,12 @@ end
 namespace :sidekiq do
   task :quiet do
     on roles(:worker) do
-      # Horrible hack to get PID without having to use terrible PID files
-      case fetch(:stage)
-      when "production"
-        puts capture("kill -USR1 $(sudo initctl status sidekiq-workers | grep /running | awk '{print $NF}') || :")
-      when "staging"
-        puts capture("kill -USR1 $(sudo initctl status pom-workers | grep /running | awk '{print $NF}') || :")
-      end
+      puts capture("kill -USR1 $(sudo initctl status sidekiq-workers | grep /running | awk '{print $NF}') || :")
     end
   end
   task :restart do
     on roles(:worker) do
-      case fetch(:stage)
-      when "production"
-        execute :sudo, :service, "sidekiq-workers", :restart
-      when "staging"
-        execute :sudo, :initctl, :restart, "pom-workers"
-      end
+      execute :sudo, :service, "sidekiq-workers", :restart
     end
   end
 end
