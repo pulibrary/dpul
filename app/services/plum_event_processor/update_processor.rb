@@ -19,16 +19,20 @@ class PlumEventProcessor
 
     def update_existing_resources
       IIIFResource.where(url: manifest_url).each do |resource|
-        # Make solr document private if it's no longer valid.
-        document = SolrDocument.find(resource.noid, exhibit: resource.exhibit)
-        resource.save_and_index
-        if resource.document_builder.documents_to_index.to_a.empty?
-          document.make_private!(resource.exhibit)
-        else
-          document.make_public!(resource.exhibit)
-        end
+        begin
+          # Make solr document private if it's no longer valid.
+          document = SolrDocument.find(resource.noid, exhibit: resource.exhibit)
+          resource.save_and_index
+          if resource.document_builder.documents_to_index.to_a.empty?
+            document.make_private!(resource.exhibit)
+          else
+            document.make_public!(resource.exhibit)
+          end
 
-        document.save
+          document.save
+        rescue Blacklight::Exceptions::RecordNotFound
+          Rails.logger.warn("Unable to find Solr record: #{resource.noid}")
+        end
       end
     end
 
