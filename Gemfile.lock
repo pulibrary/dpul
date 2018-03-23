@@ -213,6 +213,8 @@ GEM
     crass (1.0.3)
     dalli (2.7.6)
     database_cleaner (1.5.3)
+    ddtrace (0.11.2)
+      msgpack
     debug_inspector (0.0.2)
     declarative (0.0.10)
     declarative-option (0.1.0)
@@ -287,6 +289,12 @@ GEM
       rails (>= 4.2.0)
     legato (0.7.0)
       multi_json
+    lograge (0.9.0)
+      actionpack (>= 4)
+      activesupport (>= 4)
+      railties (>= 4)
+      request_store (~> 1.0)
+    logstash-event (1.2.02)
     loofah (2.2.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -301,12 +309,12 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     modernizr-rails (2.7.1)
+    msgpack (1.2.4)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.2.0)
-    newrelic_rpm (3.17.2.327)
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -573,6 +581,7 @@ DEPENDENCIES
   coveralls
   dalli
   database_cleaner
+  ddtrace
   devise
   devise-guests (~> 0.3)
   devise_invitable
@@ -583,7 +592,8 @@ DEPENDENCIES
   iso-639
   jbuilder (~> 2.0)
   jquery-rails
-  newrelic_rpm
+  lograge
+  logstash-event
   nokogiri (~> 1.8.1)
   omniauth-cas
   open_uri_redirections
