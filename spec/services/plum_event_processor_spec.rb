@@ -58,6 +58,16 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
 
       expect(resource["full_title_tesim"]).to eq ["Updated Record"]
     end
+    context "when the record is gone" do
+      it "doesn't blow up" do
+        exhibit = FactoryBot.create(:exhibit, slug: "first")
+        IIIFResource.new(url: url, exhibit: exhibit).save_and_index
+        Blacklight.default_index.connection.delete_by_query("*:*")
+        Blacklight.default_index.connection.commit
+
+        expect(processor.process).to eq true
+      end
+    end
     context "when it's no longer accessible" do
       it "marks it as non-public" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
