@@ -68,6 +68,15 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
         expect(processor.process).to eq true
       end
     end
+    context "when the exhibit is gone" do
+      it "doesn't blow up" do
+        exhibit = FactoryBot.create(:exhibit, slug: "first")
+        IIIFResource.new(url: url, exhibit: exhibit).save_and_index
+        exhibit.delete
+
+        expect(processor.process).to eq true
+      end
+    end
     context "when it's no longer accessible" do
       it "marks it as non-public" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")

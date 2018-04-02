@@ -21,6 +21,7 @@ class PlumEventProcessor
       IIIFResource.where(url: manifest_url).each do |resource|
         begin
           # Make solr document private if it's no longer valid.
+          next if resource.exhibit.blank?
           document = SolrDocument.find(resource.noid, exhibit: resource.exhibit)
           resource.save_and_index
           if resource.document_builder.documents_to_index.to_a.empty?
@@ -61,7 +62,7 @@ class PlumEventProcessor
       end
 
       def existing_slugs
-        existing_resources.map(&:exhibit).map(&:slug)
+        existing_resources.map(&:exhibit).select(&:present?).map(&:slug)
       end
 
       def existing_resources
