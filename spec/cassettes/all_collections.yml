@@ -126,7 +126,7 @@ http_interactions:
         1","canvases":["https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/sbn9996723","https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/s9k41zd485"]},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/range/g70237482036180","@type":"sc:Range","label":"Chapter
         2","canvases":["https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/sww72bb48n","https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/sjs956f80z"]}]}],
         "metadata":[{"label":"Date
-        created","value":[{"@value":"1976"}]}], "seeAlso":{"@id":"https://bibdata.princeton.edu/bibliographic/1234567/jsonld","format":"application/ld+json"}, "rendering":{"@id":"http://arks.princeton.edu/ark:88435/7w62fb79g", "format": "text/html"}}'
+      created","value":[{"@value":"1976"}]}], "seeAlso":[{"@id":"https://bibdata.princeton.edu/bibliographic/1234567/jsonld","format":"application/ld+json"}, {"@id": "bla", "format":"text/xml"}], "rendering":{"@id":"http://arks.princeton.edu/ark:88435/7w62fb79g", "format": "text/html"}}'
     http_version: 
   recorded_at: Mon, 18 Jan 2016 19:55:34 GMT
 - request:
