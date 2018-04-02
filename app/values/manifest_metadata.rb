@@ -1,6 +1,9 @@
 class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   def jsonld_url
-    @manifest["see_also"]["@id"] if @manifest["see_also"]
+    return unless @manifest["see_also"]
+    json_ld_see_also = Array.wrap(@manifest["see_also"]).find { |v| v["format"] == "application/ld+json" }
+    return unless json_ld_see_also
+    json_ld_see_also["@id"]
   end
 
   def jsonld_response
