@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'bixby'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
@@ -38,7 +39,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'simplecov', require: false
   gem 'coveralls', require: false
-  gem 'rubocop-rspec', require: false
   gem 'vcr'
   gem 'webmock', require: false
   gem 'capybara'
@@ -61,11 +61,10 @@ group :development do
   gem 'spring'
 end
 
-group :production do
+group :production, :test do
   gem 'pg'
 end
 
-gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false
 gem 'blacklight', '6.14.1'
 gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: "master"
 gem 'solr_wrapper'
