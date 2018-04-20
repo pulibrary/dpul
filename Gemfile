@@ -31,7 +31,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'bixby'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
@@ -66,6 +65,7 @@ group :production, :test do
 end
 
 gem 'blacklight', '6.14.1'
+gem 'bixby'
 gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: "master"
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.0.6'
