@@ -6,6 +6,7 @@ class PlumEventHandler
              )
 
   def work(msg)
+    ActiveRecord::Base.connection.verify!
     msg = JSON.parse(msg)
     PlumEventProcessor.new(msg).process
     ack!

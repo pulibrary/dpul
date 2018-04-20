@@ -62,7 +62,7 @@ group :development do
 end
 
 group :production, :test do
-  gem 'pg'
+  gem 'pg', '~> 0.20'
 end
 
 gem 'blacklight', '6.14.1'
