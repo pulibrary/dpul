@@ -6,7 +6,16 @@ Sneakers.configure(
   exchange: Pomegranate.config["events"]["exchange"],
   exchange_type: :fanout,
   handler: Sneakers::Handlers::Maxretry,
-  timeout_job_after: 300
+  before_fork: lambda {
+    ActiveSupport.on_load(:active_record) do
+      ActiveRecord::Base.connection_pool.disconnect!
+    end
+  },
+  after_fork: lambda {
+    ActiveSupport.on_load(:active_record) do
+      ActiveRecord::Base.establish_connection
+    end
+  }
 )
 Sneakers.logger.level = Logger::INFO
 
@@ -14,8 +23,8 @@ WORKER_OPTIONS = {
   ack: true,
   threads: 5,
   prefetch: 10,
-  timeout_job_after: 300,
+  timeout_job_after: 60,
   heartbeat: 5,
   amqp_heartbeat: 10,
-  retry_timeout: 300 * 1000 # 5 minutes
+  retry_timeout: 60 * 1000 # 5 minutes
 }.freeze
