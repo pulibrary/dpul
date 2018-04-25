@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CatalogController do
   let(:user) { nil }
-  context "with mvw", vcr: { cassette_name: 'mvw' } do
+  context "with mvw", vcr: { cassette_name: 'mvw', allow_playback_repeats: true } do
     let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
     it "hides scanned resources with parents" do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true

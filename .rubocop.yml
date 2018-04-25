@@ -141,3 +141,6 @@ Naming/FileName:
   Exclude:
     - 'Capfile'
     - 'Gemfile'
+RSpec/AnyInstance:
+  Exclude:
+    - 'spec/support/stub_iiif_response.rb'

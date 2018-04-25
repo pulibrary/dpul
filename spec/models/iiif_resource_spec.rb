@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe IIIFResource do
-  context 'with recorded http interactions', vcr: { cassette_name: 'all_collections' } do
+  context 'with recorded http interactions', vcr: { cassette_name: 'all_collections', allow_playback_repeats: true } do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
     it 'ingests a iiif manifest' do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
@@ -49,7 +49,7 @@ describe IIIFResource do
         expect(scanned_resource_doc["full_image_url_ssm"]).to eq ["https://libimages1.princeton.edu/loris/plum/hq%2F37%2Fvn%2F61%2F6-intermediate_file.jp2/full/!600,600/0/default.jpg"]
       end
     end
-    context "when given an unreachable seeAlso url", vcr: { cassette_name: 'see_also_connection_failed' } do
+    context "when given an unreachable seeAlso url", vcr: { cassette_name: 'see_also_connection_failed', allow_playback_repeats: true } do
       let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest" }
       it "ingests a iiif manifest using the metadata pool, excludes range labels when missing" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
