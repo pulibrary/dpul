@@ -12,7 +12,26 @@ export default class UniversalViewer {
     }
   }
 
-  /** 
+  /**
+   * Accessor for the IFrame element
+   *
+   */
+  getIFrame() {
+    let elements = document.getElementsByTagName("iframe")
+    return elements[0]
+  }
+
+  /**
+   * Overrides the style applied to the IFrame when the OpenSeadragon Viewer is no longer in full-screen mode
+   *
+   */
+  exitWebKit() {
+    let frame = this.getIFrame()
+    frame.style.top = 0
+    frame.style.left = 0
+  }
+
+  /**
   * Asynchronously removes styling from the universal viewer iframe after a timeout.
   * This is a workaround for issues related to exiting fullscreen mode by pressing the
   * escape key.
@@ -21,10 +40,12 @@ export default class UniversalViewer {
     let fullscreen = document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement
     if (fullscreen !== true) {
       this.sleep(200).then(() => {
-        let frame = document.getElementsByTagName("iframe")[0]
+        let frame = this.getIFrame()
         frame.style.top = null
         frame.style.left = null
       })
+    } else if (document.webkitIsFullScreen) {
+      this.exitWebKit()
     }
   }
 
