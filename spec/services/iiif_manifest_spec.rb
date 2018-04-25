@@ -5,6 +5,7 @@ RSpec.describe IiifManifest do
   let(:url) { 'uri://some_id/manifest' }
   let(:collection) { instance_double(Spotlight::Resources::IiifManifest) }
   let(:manifest_fixture) { test_manifest1 }
+
   before do
     allow(collection).to receive(:compound_id).and_return('1')
     stub_iiif_response_for_url(url, manifest_fixture)
@@ -14,6 +15,7 @@ RSpec.describe IiifManifest do
   describe '#to_solr' do
     let(:manifest) { IiifService.new(url).send(:object) }
     let(:exhibit) { FactoryBot.create(:exhibit) }
+
     describe 'sort_title' do
       it 'is a single-value text field' do
         expect(manifest_service.to_solr["sort_title_ssi"]).to eq "Test Manifest 1"
