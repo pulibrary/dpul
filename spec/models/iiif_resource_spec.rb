@@ -10,7 +10,7 @@ describe IIIFResource do
 
       solr_doc = nil
       resource.document_builder.to_solr { |x| solr_doc = x }
-      expect(solr_doc["full_title_tesim"]).to eq 'Christopher and his kind, 1929-1939'
+      expect(solr_doc["full_title_tesim"]).to eq ['Christopher and his kind, 1929-1939']
       expect(solr_doc["readonly_created_tesim"]).to eq ["1976-01-01T00:00:00Z"]
       expect(solr_doc["readonly_range-label_tesim"]).to eq ["Chapter 1", "Chapter 2"]
       expect(Spotlight::CustomField.last.field_type).to eq 'vocab'
@@ -35,7 +35,7 @@ describe IIIFResource do
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         expect(docs.length).to eq 2
         scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Scanned Resource 1"] }
-        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["MVW"] }
+        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["MVW", "Second Title"] }
         expect(scanned_resource_doc["collection_id_ssim"]).to eq [mvw_doc["id"]]
         expect(mvw_doc["collection_id_ssim"]).to eq nil
       end

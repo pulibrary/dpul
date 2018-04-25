@@ -15,7 +15,10 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
 
   def json_ld_value(value)
     return value['@value'] if value.is_a?(Hash)
-    return value.find { |v| v['@language'] == default_json_ld_language }.try(:[], '@value') || value.first if value.is_a?(Array)
+    if value.is_a?(Array)
+      english_values = value.select { |v| v['@language'] == default_json_ld_language }.map { |x| x.try(:[], '@value') || value }
+      return english_values if english_values.present?
+    end
     value
   end
 
@@ -38,7 +41,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
 
   def manifest_metadata
     metadata = metadata_class.new(manifest).to_solr
-    return {} unless metadata.present?
+    return {} if metadata.blank?
     create_sidecars_for(*metadata.keys)
 
     metadata.each_with_object({}) do |(key, value), hash|

@@ -15,7 +15,7 @@ RSpec.describe RTLShowPresenter do
     double(
       show_fields: { field:
                     double(highlight: false, accessor: nil, default: nil, field: :field, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil) },
-      view_config: double(title_field: :title)
+      view_config: double(title_field: :title, html_title_field: nil)
     )
   end
 
@@ -35,6 +35,12 @@ RSpec.describe RTLShowPresenter do
   describe "#heading" do
     it "returns multiple titles appropriately" do
       expect(presenter.header).to eq "<ul><li dir=\"rtl\">بي</li><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
+    end
+  end
+
+  describe "#html_title" do
+    it "returns multiple titles appropriately" do
+      expect(presenter.html_title).to eq "بي, Traité sur l'art de la charpente : théorique et pratique"
     end
   end
 end

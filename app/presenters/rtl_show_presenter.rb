@@ -32,6 +32,17 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
     field_value(f, value: @document[f].map(&:html_safe))
   end
 
+  def heading
+    fields = Array.wrap(view_config.title_field)
+    f = fields.detect { |field| document.has? field }
+    f ||= configuration.document_model.unique_key
+    field_values(field_config(f), value: document[f].map(&:html_safe))
+  end
+
+  def html_title
+    super.split("<br />").map(&:html_safe).join(", ")
+  end
+
   def field_config(field)
     super.tap do |f|
       f.separator_options =
