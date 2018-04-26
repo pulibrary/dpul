@@ -106,8 +106,33 @@ RSpec.describe CatalogController do
 
     expect(document_ids.length).to eq 1
     expect(assigns[:response][:response][:numFound]).to eq 1
-    expect(assigns[:response]["facet_counts"]["facet_fields"]).to eq("readonly_language_ssim" => [], "readonly_subject_ssim" => [])
+    expect(assigns[:response]["facet_counts"]["facet_fields"]).to include "readonly_language_ssim" => []
+    expect(assigns[:response]["facet_counts"]["facet_fields"]).to include "readonly_subject_ssim" => []
   end
+
+  describe '#index' do
+    before do
+      index.add(id: '3',
+                full_title_ssim: ['Item B'],
+                readonly_title_ssim: ['Item B'],
+                spotlight_resource_type_ssim: ['iiif_resources'],
+                readonly_collections_ssim: ['Collection A', 'Collection B'])
+      index.commit
+
+      get :index, params: { q: '' }
+    end
+
+    it 'facets upon collections' do
+      expect(assigns[:response][:facet_counts][:facet_fields]).not_to be_empty
+      expect(assigns[:response][:facet_counts][:facet_fields]).to include readonly_collections_ssim: ['Collection A', 1, 'Collection B', 1]
+    end
+
+    it 'indexes collections' do
+      expect(assigns[:response][:response][:docs]).not_to be_empty
+      expect(assigns[:response][:response][:docs].first).to include readonly_collections_ssim: ['Collection A', 'Collection B']
+    end
+  end
+
   it "can get a single record by its access identifier" do
     index.add(id: "1",
               access_identifier_ssim: "123")
