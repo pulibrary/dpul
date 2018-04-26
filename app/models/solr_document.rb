@@ -34,8 +34,4 @@ class SolrDocument
   def to_param
     first("access_identifier_ssim") || id
   end
-
-  def tags_to_solr
-    {}
-  end
 end
