@@ -14,7 +14,7 @@
       <% elsif current_exhibit %>
         <%= current_exhibit.title %>
         <% if current_exhibit.subtitle.present? %>
-          <small><%= current_exhibit.subtitle %></small>
+          <small dir='<%= current_exhibit.subtitle.dir %>'><%= current_exhibit.subtitle %></small>
         <% end %>
       <% else %>
         <%= application_name %>
