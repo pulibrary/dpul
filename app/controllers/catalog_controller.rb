@@ -58,6 +58,8 @@ class CatalogController < ApplicationController
     config.add_sort_field 'sort_author', sort: 'sort_author_ssi asc, sort_title_ssi asc', label: 'Author'
 
     config.add_facet_field 'spotlight_resource_type_ssim'
+    config.add_facet_field 'readonly_collections_ssim', label: 'Collections'
+    config.add_index_field 'readonly_collections_ssim', label: 'Collections'
     config.index.thumbnail_field = 'thumbnail_ssim'
 
     config.add_facet_fields_to_solr_request!
