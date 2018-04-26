@@ -1,3 +1,6 @@
+/*
+*= require bootstrap-tagsinput
+*/
 @import 'utils/variables__bootstrap'; // pul bootstrap variables override
 
 @import 'bootstrap-sprockets';
@@ -5,8 +8,6 @@
 @import 'bootstrap';
 
 @import 'blacklight/blacklight';
-
-@import 'bootstrap-tagsinput';
 
 @import 'spotlight/variables_bootstrap';
 @import 'bootstrap-sprockets';
@@ -202,4 +203,15 @@ body { -webkit-perspective: 800px; -moz-perspective: 800px; -o-perspective: 800p
   top:400px;
   margin-top:-400px;
   z-index: 1000;
+}
+.edit-tags .twitter-typeahead input {
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  min-height: 25px;
+}
+.bootstrap-tagsinput .tag {
+  line-height: 2;
 }
