@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Catalog', type: :feature do
-  let(:exhibit) { FactoryBot.create(:exhibit) }
+  let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit A') }
   let(:id) { 'd279a557a62937a8895eebbca2d4744c' }
   let(:title) { 'Panoramic alphabet of peace' }
   let(:rights) { 'http://rightsstatements.org/vocab/NKC/1.0/' }
@@ -82,7 +82,7 @@ RSpec.feature 'Catalog', type: :feature do
 
     scenario 'user browses all collections' do
       visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
-      expect(page).to have_link 'Home', href: '/exhibit-title-2'
+      expect(page).to have_link 'Home', href: '/exhibit-a'
       expect(page).to have_css '#documents .document h3.index_title', text: id
     end
   end
