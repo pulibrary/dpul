@@ -8,7 +8,7 @@ class ExternalCollectionsQuery
       exhibit_slugs = all_exhibit_slugs
       all.select do |manifest|
         !exhibit_slugs.include?(manifest.slug)
-      end
+      end.sort_by(&:human_label)
     end
 
     private
