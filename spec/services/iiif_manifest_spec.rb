@@ -33,5 +33,35 @@ RSpec.describe IiifManifest do
         expect(manifest_service.to_solr["sort_author_ssi"]).to eq "John Doe"
       end
     end
+
+    describe 'thumbnail' do
+      it 'is a URI for the thumbnail' do
+        expect(manifest_service.to_solr["thumbnail_ssim"]).to eq 'uri://to-thumbnail'
+      end
+    end
+  end
+
+  context 'with a multi-volume work Manifest' do
+    let(:manifest_fixture) { test_manifest2 }
+    let(:manifest) { IiifService.new(url).send(:object) }
+    let(:exhibit) { FactoryBot.create(:exhibit) }
+
+    describe 'thumbnail' do
+      it 'is a URI for the thumbnail of the first member' do
+        expect(manifest_service.to_solr["thumbnail_ssim"]).to eq 'uri://thumbnail2a'
+      end
+    end
+  end
+
+  context 'with a multi-volume work Manifest in which the first volume does not have a thumbnail' do
+    let(:manifest_fixture) { test_manifest3 }
+    let(:manifest) { IiifService.new(url).send(:object) }
+    let(:exhibit) { FactoryBot.create(:exhibit) }
+
+    describe 'thumbnail' do
+      it 'is a URI for the thumbnail of the first member with a thumbnail' do
+        expect(manifest_service.to_solr["thumbnail_ssim"]).to eq 'uri://thumbnail2b'
+      end
+    end
   end
 end
