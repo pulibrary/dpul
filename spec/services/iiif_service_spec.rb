@@ -1,0 +1,58 @@
+require 'rails_helper'
+
+describe IiifService do
+  describe '.iiif_response' do
+    subject(:response) { described_class.iiif_response(url) }
+
+    let(:url) { 'http://to-manifest1' }
+    let(:http_response) { instance_double(Faraday::Response) }
+    let(:logger) { instance_double(ActiveSupport::Logger) }
+    let(:manifest_fixture) { test_manifest1 }
+
+    before do
+      WebMock.disable!
+
+      allow(http_response).to receive(:success?).and_return(true)
+      # Return the default fixture as the remotely referenced JSON-LD expression
+      allow(http_response).to receive(:body).and_return(manifest_fixture)
+      allow(Faraday).to receive(:get).and_return(http_response)
+    end
+
+    it 'retrieves the Manifest from the IIIF service' do
+      expect(response).not_to be_empty
+      expect { JSON.parse(response) }.not_to raise_error
+      values = JSON.parse(response)
+      expect(values['label']).to eq 'Test Manifest 1'
+    end
+
+    context 'when the request is unsuccessful' do
+      before do
+        allow(http_response).to receive(:success?).and_return(false)
+        allow(logger).to receive(:info)
+        allow(Rails).to receive(:logger).and_return(logger)
+      end
+
+      it 'returns empty values and logs the error' do
+        expect(response).to eq "{}"
+        expect(logger).to have_received(:info).with("Failed to get #{url}")
+      end
+    end
+
+    context 'when the request times out' do
+      before do
+        allow(Faraday).to receive(:get).and_raise(Faraday::TimeoutError)
+        allow(logger).to receive(:warn)
+        allow(Rails).to receive(:logger).and_return(logger)
+      end
+
+      it 'returns empty values and logs the error as warning' do
+        expect(response).to eq "{}"
+        expect(logger).to have_received(:warn).with("HTTP GET for #{url} failed with timeout")
+      end
+    end
+
+    after do
+      WebMock.enable!
+    end
+  end
+end

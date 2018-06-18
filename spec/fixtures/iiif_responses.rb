@@ -54,4 +54,21 @@ module IiifResponses
       ]
     }.to_json
   end
+
+  def test_manifest_see_also
+    values = JSON.parse(test_manifest1)
+    value = [
+      {
+        "@id": "http://for-manifest1.jsonld",
+        "format": "application/ld+json"
+      },
+      {
+        "@id": "uri://for-manifest1.xml",
+        "format": "text/xml"
+      }
+    ]
+
+    values['see_also'] = value
+    values.to_json
+  end
 end

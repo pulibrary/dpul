@@ -15,12 +15,20 @@ RSpec.describe FriendlyIdRepository, vcr: { cassette_name: "all_collections", al
     before do
       resource.reindex
     end
+
     context "when an exhibit isn't passed" do
       it "finds the record by searching inside the access_identifier field" do
         output = repository.find(manifest.noid)
         expect(output["response"]["docs"].first["id"]).to eq manifest.compound_id
       end
     end
+
+    context 'when an exhibit is not passed and no documents can be found' do
+      it 'attempts to retrieve it using the default ID and raises an error' do
+        expect { repository.find("test-id") }.to raise_error(Blacklight::Exceptions::RecordNotFound)
+      end
+    end
+
     context "when an exhibit is passed" do
       it "generates a compound id" do
         allow(repository).to receive(:search)
