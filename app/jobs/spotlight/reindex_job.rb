@@ -46,6 +46,9 @@ module Spotlight
         end
       end
 
+      # If it has been passed to the Job, retrieve the log entry for the reindexing
+      # @param job [Spotlight::ReindexJob]
+      # @return [Spotlight::ReindexingLogEntry]
       def log_entry(job)
         job.arguments.second if job.arguments.second.is_a?(Spotlight::ReindexingLogEntry)
       end
