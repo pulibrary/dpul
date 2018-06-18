@@ -81,6 +81,13 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     end
   end
 
+  # Do not import manifest's description/etc if there's JSON-LD to pull metadata
+  # from.
+  def manifest_fields
+    return [] if jsonld_metadata
+    super
+  end
+
   private
 
     def range_labels(h)

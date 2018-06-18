@@ -15,6 +15,7 @@ describe IIIFResource do
       expect(solr_doc["readonly_range-label_tesim"]).to eq ["Chapter 1", "Chapter 2"]
       expect(Spotlight::CustomField.last.field_type).to eq 'vocab'
       expect(solr_doc["readonly_created_ssim"]).to eq ["1976-01-01T00:00:00Z"]
+      expect(solr_doc["readonly_description_ssim"]).to eq ["First", "Second"]
     end
     it 'indexes collections' do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'

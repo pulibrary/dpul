@@ -144,3 +144,6 @@ Naming/FileName:
 RSpec/AnyInstance:
   Exclude:
     - 'spec/support/stub_iiif_response.rb'
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/models/iiif_resource_spec.rb'
