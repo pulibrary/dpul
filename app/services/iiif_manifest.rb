@@ -77,4 +77,25 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     end
     @exhibit_custom_fields = nil
   end
+
+  private
+
+    # Retrieves the thumbnail URI for the first member (with a thumbnail) within a sc:Collection
+    # @return [String] the thumbnail URI of the first Collection member
+    def nearest_member_thumbnail_uri
+      return unless manifest['manifests'].present?
+      member = manifest['manifests'].find { |manifest| manifest['thumbnail'].present? }
+      return unless member
+      member['thumbnail']['@id']
+    end
+
+    # Retrieves the thumbnail URI from the Manifest
+    # @return [String] the thumbnail URI
+    def add_thumbnail_url
+      if thumbnail_field && !manifest['thumbnail']
+        return unless nearest_member_thumbnail_uri
+        solr_hash[thumbnail_field] = nearest_member_thumbnail_uri
+      end
+      super
+    end
 end

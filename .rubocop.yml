@@ -42,6 +42,10 @@ Metrics/BlockLength:
     - 'lib/tasks/dev.rake'
     - 'spec/**/*'
 
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/fixtures/iiif_responses.rb'
+
 Style/BlockDelimiters:
   Exclude:
     - 'spec/**/*'

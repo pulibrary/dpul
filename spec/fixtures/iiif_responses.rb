@@ -54,4 +54,111 @@ module IiifResponses
       ]
     }.to_json
   end
+
+  def test_manifest2
+    {
+      "@context": "http://iiif.io/api/presentation/2/context.json",
+      "@type": "sc:Collection",
+      "@id": "uri://for-manifest2/manifest",
+      "label": [
+        "Test Manifest 2"
+      ],
+      "viewingHint": "multi-part",
+      "metadata": [
+        {
+          "label": 'Author',
+          "value": 'John Doe'
+        },
+        {
+          "label": 'Author',
+          "value": 'Jane Doe'
+        },
+        {
+          "label": 'Another Field',
+          "value": 'Some data'
+        },
+        {
+          "label": 'Date',
+          "value": '1929'
+        }
+      ],
+      "manifests": [
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@type": "sc:Manifest",
+          "@id": "uri://for-manifest2a/manifest",
+          "label": [
+            "Test Manifest 2a"
+          ],
+          "thumbnail": {
+            "@id": "uri://thumbnail2a"
+          }
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@type": "sc:Manifest",
+          "@id": "uri://for-manifest2b/manifest",
+          "label": [
+            "Test Manifest 2b"
+          ],
+          "thumbnail": {
+            "@id": "uri://thumbnail2b"
+          }
+        }
+      ],
+      "license": "http://rightsstatements.org/vocab/NKC/1.0/"
+    }.to_json
+  end
+
+  def test_manifest3
+    {
+      "@context": "http://iiif.io/api/presentation/2/context.json",
+      "@type": "sc:Collection",
+      "@id": "uri://for-manifest2/manifest",
+      "label": [
+        "Test Manifest 3"
+      ],
+      "viewingHint": "multi-part",
+      "metadata": [
+        {
+          "label": 'Author',
+          "value": 'John Doe'
+        },
+        {
+          "label": 'Author',
+          "value": 'Jane Doe'
+        },
+        {
+          "label": 'Another Field',
+          "value": 'Some data'
+        },
+        {
+          "label": 'Date',
+          "value": '1929'
+        }
+      ],
+      "manifests": [
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@type": "sc:Manifest",
+          "@id": "uri://for-manifest2a/manifest",
+          "label": [
+            "Test Manifest 3a"
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@type": "sc:Manifest",
+          "@id": "uri://for-manifest2b/manifest",
+          "label": [
+            "Test Manifest 3b"
+          ],
+          "thumbnail": {
+            "@id": "uri://thumbnail2b"
+          }
+        }
+      ],
+      "license": "http://rightsstatements.org/vocab/NKC/1.0/"
+    }.to_json
+  end
 end
