@@ -189,12 +189,16 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-selenium (0.0.6)
+      capybara
+      selenium-webdriver
     carrierwave (1.2.2)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    childprocess (0.9.0)
+      ffi (~> 1.0, >= 1.0.11)
     clipboard-rails (1.7.1)
-    cliver (0.3.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -248,6 +252,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
+    ffi (1.9.25)
     github-markup (2.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -344,10 +349,6 @@ GEM
     parser (2.5.1.0)
       ast (~> 2.4.0)
     pg (0.21.0)
-    poltergeist (1.11.0)
-      capybara (~> 2.1)
-      cliver (~> 0.3.1)
-      websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -463,6 +464,9 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    selenium-webdriver (3.12.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2)
     serverengine (2.0.6)
       sigdump (~> 0.2.2)
     sidekiq (4.2.2)
@@ -583,6 +587,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rails-console
   capybara
+  capybara-selenium
   coffee-rails
   coveralls
   dalli
@@ -605,7 +610,6 @@ DEPENDENCIES
   omniauth-cas
   open_uri_redirections
   pg (~> 0.20)
-  poltergeist
   pry-byebug
   pry-rails
   pul-assets!
@@ -637,4 +641,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
