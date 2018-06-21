@@ -21,6 +21,30 @@ describe IndexHelper do
     Object.send(:remove_const, :TestingHelper)
   end
 
+  describe '#index_masonry_document_label' do
+    subject(:output) { helper.index_masonry_document_label(document) }
+
+    let(:label) { 'title' }
+
+    before do
+      allow(helper).to receive(:index_presenter).and_return(index_presenter)
+      allow(helper).to receive(:document_show_link_field).and_return(:full_title_tesim)
+      allow(index_presenter).to receive(:label).and_return(label)
+    end
+
+    it 'retrieves the label using the title' do
+      expect(output).to eq 'title'
+    end
+
+    context 'when multiple titles exist' do
+      let(:label) { ['title1', 'title2'] }
+
+      it 'retrieves the label using only the first title' do
+        expect(output).to eq 'title1'
+      end
+    end
+  end
+
   describe '#render_index_document' do
     before do
       allow(helper).to receive(:index_presenter).and_return(index_presenter)
