@@ -3,9 +3,12 @@
 require "thor"
 
 class Migrate < Thor
+  ENV['RAILS_ENV'] ||= 'test'
+  require File.expand_path('config/environment.rb')
+
   desc "exhibit_thumbnails", "Migrate the IIIF Manifests to the latest IIIF image service points"
   def exhibit_thumbnails
-    Spotlight::ExhibitThumbnail.all.each do |exhibit_thumbnail|
+    ::Spotlight::ExhibitThumbnail.all.each do |exhibit_thumbnail|
       Rails.logger.debug "Retrieving the Solr Document for #{exhibit_thumbnail}..."
       document = exhibit_thumbnail.document
       next unless document && document["readonly_references_ssim"] && !document["readonly_references_ssim"].empty?
@@ -64,5 +67,3 @@ class Migrate < Thor
     end
   end
 end
-
-Migrate.start(ARGV)
