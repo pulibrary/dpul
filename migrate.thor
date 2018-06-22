@@ -1,0 +1,1 @@
+lib/commands/migrate.rb

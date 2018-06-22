@@ -39,8 +39,20 @@ Metrics/BlockLength:
   Max: 31
   Exclude:
     - 'app/controllers/catalog_controller.rb'
+    - 'lib/commands/migrate.rb'
+    - 'migrate.thor'
     - 'lib/tasks/dev.rake'
     - 'spec/**/*'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'lib/commands/migrate.rb'
+    - 'migrate.thor'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'lib/commands/migrate.rb'
+    - 'migrate.thor'
 
 Style/BlockDelimiters:
   Exclude:
@@ -128,6 +140,14 @@ RSpec/ExampleWording:
     NOT: does NOT
   IgnoredWords:
     - only
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/commands/migrate_spec.rb'
+    - 'spec/controllers/**/*'
+    - 'spec/models/**/*'
+    - 'spec/services/**/*'
+    - 'spec/workers/**/*'
 
 RSpec/DescribeClass:
   Exclude:
