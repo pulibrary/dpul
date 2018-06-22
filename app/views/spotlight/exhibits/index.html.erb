@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="<%= "col-md-#{site_sidebar? ? 9 : 12}" %>">
   <% if (current_user && current_user.exhibits.any?) || can?(:manage, Spotlight::Exhibit) %>
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#published" aria-controls="published" role="tab" data-toggle="tab"><%= t('.published') %></a></li>
@@ -18,7 +18,7 @@
       <% else %>
         <%= render 'tags', tags: @exhibits.published.all_tags %>
         <%# Local modification: replaced rendering _exhibits partial, which splits into groups of 3, with the collection directly %>
-        <div>
+        <div class="row">
           <%= render collection: @published_exhibits, partial: 'exhibit_card', as: 'exhibit' %>
         </div>
 
@@ -47,3 +47,8 @@
     <% end %>
   </div>
 </div>
+<% if site_sidebar? %>
+  <aside class="col-md-3">
+    <%= render "shared/site_sidebar" %>
+  </aside>
+<% end %>
