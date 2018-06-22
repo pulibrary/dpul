@@ -17,7 +17,10 @@
         <%= render 'missing_exhibits' %>
       <% else %>
         <%= render 'tags', tags: @exhibits.published.all_tags %>
-        <%= render 'exhibits', exhibits: @published_exhibits %>
+        <%# Local modification: replaced rendering _exhibits partial, which splits into groups of 3, with the collection directly %>
+        <div>
+          <%= render collection: @published_exhibits, partial: 'exhibit_card', as: 'exhibit' %>
+        </div>
 
         <% if @published_exhibits.total_count > @published_exhibits.size %>
           <nav>
