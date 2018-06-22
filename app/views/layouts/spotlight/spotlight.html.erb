@@ -29,19 +29,17 @@
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <% if Rails.env.production? %>
-      <%= render partial: 'shared/matomo' %>
-    <% end %>
+    <%= render partial: 'shared/matomo' %>
   </head>
   <body class="<%= render_body_class %>">
-  <%= render partial: 'shared/announcements' %>
-  <%= render partial: 'pul-assets/header_navbar' %>
-  <%= render partial: 'shared/masthead' %>
-  <%= content_for?(:header_content) ? yield(:header_content) : "" %>
+    <%= render partial: 'shared/announcements' %>
+    <%= render partial: 'pul-assets/header_navbar' %>
+    <%= render partial: 'shared/masthead' %>
+    <%= content_for?(:header_content) ? yield(:header_content) : "" %>
 
-  <%= render partial: 'shared/ajax_modal' %>
+    <%= render partial: 'shared/ajax_modal' %>
 
-  <main id="main-content" role="main">
+    <main id="main-content" role="main">
       <div class="container">
       <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
 
@@ -49,6 +47,10 @@
           <%= content_for?(:content) ? yield(:content) : yield %>
         </div>
 
-  <%= render :partial => 'shared/footer' %>
+      </div>
+    </main>
+
+    <%= render partial: 'shared/matomo_noscript' %>
+    <%= render :partial => 'shared/footer' %>
   </body>
 </html>
