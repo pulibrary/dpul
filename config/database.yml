@@ -15,8 +15,10 @@ development: &default
 
 test:
   <<: *default
-  database: dpul_test
-
+  database: <%= ENV["POMEGRANATE_DB"] %>
+  host: <%= ENV["POMEGRANATE_DB_HOST"] %>
+  username: <%= ENV["POMEGRANATE_DB_USERNAME"] %>
+  password: <%= ENV["POMEGRANATE_DB_PASSWORD"] %>
 
 production: &production
   <<: *default
