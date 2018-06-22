@@ -41,8 +41,8 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock', require: false
   gem 'capybara'
+  gem 'capybara-selenium'
   gem 'factory_bot_rails', require: false
-  gem 'poltergeist'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
   gem 'capistrano-rails-console'
