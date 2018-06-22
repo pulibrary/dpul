@@ -1,4 +1,4 @@
-class PlumEventHandler
+class FiggyEventHandler
   include Sneakers::Worker
   from_queue :"pomegranate_#{Rails.env}",
              WORKER_OPTIONS.merge(
@@ -8,7 +8,7 @@ class PlumEventHandler
   def work(msg)
     ActiveRecord::Base.connection.verify!
     msg = JSON.parse(msg)
-    PlumEventProcessor.new(msg).process
+    FiggyEventProcessor.new(msg).process
     ack!
   end
 end

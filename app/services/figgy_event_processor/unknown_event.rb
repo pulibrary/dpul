@@ -1,4 +1,4 @@
-class PlumEventProcessor
+class FiggyEventProcessor
   class UnknownEvent < Processor
     attr_reader :event
     def initialize(event)

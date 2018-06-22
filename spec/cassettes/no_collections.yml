@@ -50,9 +50,9 @@ http_interactions:
       - nginx/1.8.1 + Phusion Passenger 5.0.26
     body:
       encoding: UTF-8
-      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/manifest","@type":"sc:Manifest","label":"Plum
-        Collections","description":"All collections which are a part of Plum."}'
-    http_version: 
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://hydra-dev.princeton.edu/collections/manifest","@type":"sc:Manifest","label":"Figgy
+        Collections","description":"All collections which are a part of Figgy."}'
+    http_version:
   recorded_at: Thu, 28 Apr 2016 16:06:58 GMT
 - request:
     method: get
@@ -283,7 +283,7 @@ http_interactions:
         bmVmaXQgb2Ygc2Nob2xhcnMgd29ybGR3aWRlLiJdLCJ2aWV3aW5nSGludCI6
         ImluZGl2aWR1YWxzIiwibWV0YWRhdGEiOlt7ImxhYmVsIjoiRXhoaWJpdCIs
         InZhbHVlIjpbInB1ZGwwMDMyIl19XX1dfQ==
-    http_version: 
+    http_version:
   recorded_at: Fri, 03 Feb 2017 23:00:50 GMT
 - request:
     method: get
@@ -337,12 +337,12 @@ http_interactions:
       - nginx/1.12.2 + Phusion Passenger 5.1.12
     body:
       encoding: ASCII-8BIT
-      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Collection","@id":"https://figgy-staging.princeton.edu/iiif/collections","label":"Plum
-        Collections","description":"All collections which are a part of Plum.","metadata":[],"collections":[{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Collection","@id":"https://figgy-staging.princeton.edu/collections/81f1d664-9a15-4e1f-b6fc-56cb47a16647/manifest","label":["Engineering
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Collection","@id":"https://figgy-staging.princeton.edu/iiif/collections","label":"Figgy
+        Collections","description":"All collections which are a part of Figgy.","metadata":[],"collections":[{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Collection","@id":"https://figgy-staging.princeton.edu/collections/81f1d664-9a15-4e1f-b6fc-56cb47a16647/manifest","label":["Engineering
         Library Test"],"description":["Test Collection for Engineering Library"],"metadata":[{"label":"Exhibit","value":["Test"]}],"seeAlso":{"@id":"https://figgy-staging.princeton.edu/catalog/81f1d664-9a15-4e1f-b6fc-56cb47a16647.jsonld","format":"application/ld+json"},"license":null},{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Collection","@id":"https://figgy-staging.princeton.edu/collections/ba94a398-e8fb-4e81-8ea3-b84690a8618f/manifest","label":["Test"],"metadata":[{"label":"Exhibit","value":["test"]}],"seeAlso":{"@id":"https://figgy-staging.princeton.edu/catalog/ba94a398-e8fb-4e81-8ea3-b84690a8618f.jsonld","format":"application/ld+json"},"license":null},{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Collection","@id":"https://figgy-staging.princeton.edu/collections/e8e2d617-b97b-4490-830d-fe851ed350b2/manifest","label":["test
         collection"],"metadata":[{"label":"Exhibit","value":["test"]}],"seeAlso":{"@id":"https://figgy-staging.princeton.edu/catalog/e8e2d617-b97b-4490-830d-fe851ed350b2.jsonld","format":"application/ld+json"},"license":null},{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Collection","@id":"https://figgy-staging.princeton.edu/collections/74d5b7c6-a10c-4111-9964-36f40176df91/manifest","label":["Test
         Collection"],"metadata":[{"label":"Exhibit","value":["test1"]}],"seeAlso":{"@id":"https://figgy-staging.princeton.edu/catalog/74d5b7c6-a10c-4111-9964-36f40176df91.jsonld","format":"application/ld+json"},"license":null},{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Collection","@id":"https://figgy-staging.princeton.edu/concern/ephemera_projects/a7441740-343a-428b-aff8-f06cf4fd4a92/manifest","label":["Latin
         American Ephemera"],"metadata":[{"label":"Exhibit","value":["lae"]}],"seeAlso":{"@id":"https://figgy-staging.princeton.edu/catalog/a7441740-343a-428b-aff8-f06cf4fd4a92.jsonld","format":"application/ld+json"},"license":null},{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Collection","@id":"https://figgy-staging.princeton.edu/concern/ephemera_projects/6a19788b-75d5-4b1a-932f-8861652dc723/manifest","label":["Test"],"metadata":[{"label":"Exhibit","value":["test2"]}],"seeAlso":{"@id":"https://figgy-staging.princeton.edu/catalog/6a19788b-75d5-4b1a-932f-8861652dc723.jsonld","format":"application/ld+json"},"license":null}],"seeAlso":null,"license":null}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 19 Feb 2018 19:37:55 GMT
 recorded_with: VCR 3.0.3

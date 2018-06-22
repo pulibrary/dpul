@@ -6,7 +6,7 @@
         <div class="dd-handle dd3-handle"><%= t :drag %></div>
         <a href="#edit-in-place" class="field-label edit-in-place"><%= index_field_label(nil, key) %></a>
         <%- if @exhibit.custom_fields.vocab.map(&:field).include?(key) %>
-          <span class="import-tooltip glyphicon glyphicon-import" title="Imported from Plum" data-toggle="tooltip"></span>
+          <span class="import-tooltip glyphicon glyphicon-import" title="Imported from Figgy" data-toggle="tooltip"></span>
         <% end %>
         <%= field.hidden_field :label, value: index_field_label(nil, key), class: 'form-control input-sm', data: {:"edit-field-target" => 'true'} %>
        </div>

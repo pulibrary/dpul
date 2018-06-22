@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_playback_repeats: true } do
+RSpec.describe FiggyEventProcessor, vcr: { cassette_name: "figgy_events", allow_playback_repeats: true } do
   subject(:processor) { described_class.new(event) }
   let(:event) do
     {
@@ -83,7 +83,7 @@ RSpec.describe PlumEventProcessor, vcr: { cassette_name: "plum_events", allow_pl
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
         # swap casseette to make the resource inaccessible
-        VCR.use_cassette('plum_events_no_permission') do
+        VCR.use_cassette('figgy_events_no_permission') do
           expect(processor.process).to eq true
           Blacklight.default_index.connection.commit
           resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first

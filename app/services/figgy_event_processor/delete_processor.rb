@@ -1,4 +1,4 @@
-class PlumEventProcessor
+class FiggyEventProcessor
   class DeleteProcessor < Processor
     def process
       IIIFResource.where(url: manifest_url).each do |resource|
