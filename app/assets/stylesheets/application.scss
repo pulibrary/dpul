@@ -219,3 +219,6 @@ body { -webkit-perspective: 800px; -moz-perspective: 800px; -o-perspective: 800p
 .tab-content {
   padding: 1em .1em;
 }
+.dl-horizontal dd ul {
+  word-break: normal;
+}
