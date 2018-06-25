@@ -8,7 +8,6 @@ jobs:
       - image: circleci/ruby:2.3.7-node-browsers
         environment:
           RAILS_ENV: test
-          POMEGRANATE_DB: dpul_test
           POMEGRANATE_DB_HOST: localhost
           POMEGRANATE_DB_USERNAME: pomegranate
           POMEGRANATE_DB_PASSWORD: ""
@@ -35,7 +34,6 @@ jobs:
       - image: circleci/ruby:2.3.7-node-browsers
         environment:
           RAILS_ENV: test
-          POMEGRANATE_DB: dpul_test
           POMEGRANATE_DB_HOST: localhost
           POMEGRANATE_DB_USERNAME: pomegranate
           POMEGRANATE_DB_PASSWORD: ""
@@ -51,7 +49,6 @@ jobs:
       - image: circleci/ruby:2.3.7-node-browsers
         environment:
           RAILS_ENV: test
-          POMEGRANATE_DB: dpul_test
           POMEGRANATE_DB_HOST: localhost
           POMEGRANATE_DB_USERNAME: pomegranate
           POMEGRANATE_DB_PASSWORD: ""
@@ -63,11 +60,8 @@ jobs:
     steps:
       - attach_workspace:
           at: '~/pomegranate'
-      - run: sudo apt-get update
-      - run: sudo apt-get install libpq-dev libopenjp2-7-dev libmagickwand-dev imagemagick pkg-config
       # Wait for DB
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
-      - run: sudo sh bin/ci_kakadu_install.sh
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run:
