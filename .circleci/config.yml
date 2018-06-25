@@ -1,0 +1,84 @@
+---
+version: 2
+jobs:
+  build:
+    working_directory: ~/pomegranate
+    docker:
+      # The primary container is an instance of the first list image listed. Your build commands run in this container.
+      - image: circleci/ruby:2.3.7-node-browsers
+        environment:
+          RAILS_ENV: test
+          POMEGRANATE_DB_HOST: localhost
+          POMEGRANATE_DB_USERNAME: pomegranate
+          POMEGRANATE_DB_PASSWORD: ""
+    steps:
+      - checkout
+      # Restore Cached Dependencies
+      - type: cache-restore
+        name: Restore bundle cache
+        key: pomegranate-{{ checksum "Gemfile.lock" }}
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+      # Cache Dependencies
+      - type: cache-save
+        name: Store bundle cache
+        key: pomegranate-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+      - persist_to_workspace:
+          root: '~/pomegranate'
+          paths: '*'
+  rubocop:
+    working_directory: ~/pomegranate
+    docker:
+      - image: circleci/ruby:2.3.7-node-browsers
+        environment:
+          RAILS_ENV: test
+          POMEGRANATE_DB_HOST: localhost
+          POMEGRANATE_DB_USERNAME: pomegranate
+          POMEGRANATE_DB_PASSWORD: ""
+    steps:
+      - attach_workspace:
+          at: '~/pomegranate'
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rake rubocop
+  test:
+    working_directory: ~/pomegranate
+    docker:
+      - image: circleci/ruby:2.3.7-node-browsers
+        environment:
+          RAILS_ENV: test
+          POMEGRANATE_DB_HOST: localhost
+          POMEGRANATE_DB_USERNAME: pomegranate
+          POMEGRANATE_DB_PASSWORD: ""
+      - image: postgres:10.3
+        environment:
+          POSTGRES_DB: dpul_test
+          POSTGRES_USER: pomegranate
+          POSTGRES_PASSWORD: ""
+    steps:
+      - attach_workspace:
+          at: '~/pomegranate'
+      # Wait for DB
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+      - run:
+          command: bundle exec rake pomegranate:test
+          background: true
+      - run: bin/jetty_wait
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:migrate
+      - run: bundle exec rspec spec
+workflows:
+  version: 2
+  build_accept_deploy:
+    jobs:
+      - build
+      - rubocop:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
