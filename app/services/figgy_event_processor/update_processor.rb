@@ -1,4 +1,4 @@
-class PlumEventProcessor
+class FiggyEventProcessor
   class UpdateProcessor < Processor
     def process
       delete_old_resources

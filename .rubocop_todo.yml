@@ -72,9 +72,9 @@ RSpec/EmptyLineAfterFinalLet:
     - 'spec/models/iiif_resource_spec.rb'
     - 'spec/models/solr_document_spec.rb'
     - 'spec/repositories/friendly_id_repository_spec.rb'
-    - 'spec/services/plum_event_processor_spec.rb'
+    - 'spec/services/figgy_event_processor_spec.rb'
     - 'spec/views/spotlight/metadata_configurations/edit.html.erb_spec.rb'
-    - 'spec/workers/plum_event_handler_spec.rb'
+    - 'spec/workers/figgy_event_handler_spec.rb'
 
 # Offense count: 4
 RSpec/EmptyLineAfterSubject:
@@ -82,7 +82,7 @@ RSpec/EmptyLineAfterSubject:
     - 'spec/decorators/both_fields_spec.rb'
     - 'spec/models/external_manifest_spec.rb'
     - 'spec/queries/external_collections_query_spec.rb'
-    - 'spec/services/plum_event_processor_spec.rb'
+    - 'spec/services/figgy_event_processor_spec.rb'
 
 # Offense count: 15
 # Configuration parameters: Max.
@@ -90,8 +90,8 @@ RSpec/ExampleLength:
   Exclude:
     - 'spec/controllers/catalog_controller_spec.rb'
     - 'spec/models/iiif_resource_spec.rb'
-    - 'spec/services/plum_event_processor_spec.rb'
-    - 'spec/workers/plum_event_handler_spec.rb'
+    - 'spec/services/figgy_event_processor_spec.rb'
+    - 'spec/workers/figgy_event_handler_spec.rb'
 
 # Offense count: 5
 # Configuration parameters: EnforcedStyle.
@@ -122,7 +122,7 @@ RSpec/ScatteredLet:
 # Offense count: 2
 RSpec/SubjectStub:
   Exclude:
-    - 'spec/workers/plum_event_handler_spec.rb'
+    - 'spec/workers/figgy_event_handler_spec.rb'
 
 # Offense count: 8
 # Configuration parameters: IgnoreSymbolicNames.

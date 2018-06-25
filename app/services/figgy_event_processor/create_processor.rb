@@ -1,4 +1,4 @@
-class PlumEventProcessor
+class FiggyEventProcessor
   class CreateProcessor < Processor
     def process
       exhibits.map do |exhibit|
