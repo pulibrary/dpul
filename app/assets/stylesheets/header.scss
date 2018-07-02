@@ -43,16 +43,17 @@
   }
 
   .logo__pul a {
+    @include vertical-align;
     display: inline-block; // float: left;
     height: 38px;
 
     img {
-      height: 34px;
-      @include vertical-align;
+      height: 35px;
+      vertical-align: middle;
     }
 
     &.site-title {
-      @include vertical-align;
+      vertical-align: middle;
       margin-left: 1rem;
       border-left: 1px solid darken($gray, 50%);
       height: 35px;

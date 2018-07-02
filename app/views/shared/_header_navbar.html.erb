@@ -5,7 +5,9 @@
         <a href="https://library.princeton.edu" title="Princeton University Library">
            <%= image_tag("pul-logo-new.svg") %>
         </a>
-        <%=link_to header_title, root_path, :class => "site-title" %>
+        <% unless current_page?(root_path) %>
+          <%=link_to header_title, root_path, :class => "site-title" %>
+        <% end %>
       </div>
       <div class="pull-right menu--level-1 col-xs-12 col-sm-6">
         <%= render partial: '/user_util_links' %>
