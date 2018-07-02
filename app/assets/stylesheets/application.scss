@@ -23,6 +23,20 @@
 
 @import 'mixins';
 @import 'header';
+@import 'footer';
+
+body {
+  background-color: $masthead-bg;
+}
+
+.masthead {
+  margin-bottom: 0px;
+}
+
+#main-content {
+  background-color: $white;
+  padding-top: 15px;
+}
 
 .viewer {
   height: 400px;
