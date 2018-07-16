@@ -11,6 +11,7 @@
 
 @import 'application_variables';
 @import 'spotlight/variables_bootstrap';
+@import 'variables/variables_bootstrap';
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'sir-trevor/main';
@@ -19,7 +20,23 @@
 @import 'spotlight/spotlight';
 
 @import 'normalize-rails';
-@import 'pul-assets';
+
+@import 'mixins';
+@import 'header';
+@import 'footer';
+
+body {
+  background-color: $masthead-bg;
+}
+
+.masthead {
+  margin-bottom: 0px;
+}
+
+#main-content {
+  background-color: $white;
+  padding-top: 15px;
+}
 
 .viewer {
   height: 400px;
