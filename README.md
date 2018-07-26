@@ -25,7 +25,8 @@ After setup, run Pomegranate locally with `rails s`.
 1. Log in once via CAS
 2. Run `rake pomegranate:site_admin`
 3. Click "Create a New Collection"
-4. Select a small collection and hit "Save" (Recommend `ABC Books`)
+4. Select a small collection and hit "Save"
+  - To find a small collection: go to Figgy, submit a blank search, open the facet collection and click 'more', and page to the low-count collections 
 5. Wait for import (this will take a while since it's happening in foreground on dev)
 
 ### Running Tests
