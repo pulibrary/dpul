@@ -1,19 +1,25 @@
 <header role="banner">
-  <div class="l-branding__pul">
-    <div class="container">
-      <div class="logo__pul col-xs-12 col-sm-6">
-        <a href="https://library.princeton.edu" title="Princeton University Library">
-           <%= image_tag("pul-logo-new.svg") %>
-        </a>
-        <% unless current_page?(root_path) %>
-          <%=link_to header_title, root_path, :class => "site-title" %>
+  <library-header app-name="<%= t('blacklight.application_name') %>" app-url="<%= root_path %>">
+    <% if current_user %>
+    <dropdown-menu>
+      <input-button variation="dropdown"><%= current_user %></input-button>
+      <menu-bar type="nav" active="All" :menu-items="[
+        <% if current_exhibit and can? :curate, current_exhibit %>
+        {name: '<%= t('spotlight.dashboards.show.header') %>', component: '<%= t('spotlight.dashboards.show.header') %>', href: '<%= spotlight.exhibit_dashboard_path(current_exhibit) %>'},
         <% end %>
-      </div>
-      <div class="pull-right menu--level-1 col-xs-12 col-sm-6">
-        <ul>
-          <%= render partial: '/user_util_links' %>
-        </ul>
-      </div>
-    </div>
-  </div>
+        <% if can? :create, Spotlight::Exhibit %>
+        {name: '<%= t(:'helpers.action.spotlight/exhibit.create') %>', component: '<%= t(:'helpers.action.spotlight/exhibit.create') %>', href: '<%= spotlight.new_exhibit_path %>'},
+        <% end %>
+        {name: '<%= t('spotlight.header_links.logout') %>', component: '<%= t('spotlight.header_links.logout') %>', href: '<%= main_app.destroy_user_session_path %>'}
+      ]"/>
+    </dropdown-menu>
+    <% else %>
+    <menu-bar type="nav" :menu-items="[
+      {name: '<%= t('spotlight.header_links.login') %>', component: '<%= t('spotlight.header_links.login') %>', href: '<%= new_user_session_path %>'},
+      <% if current_exhibit and show_contact_form? %>
+      {name: '<%= t('spotlight.header_links.contact') %>', component: '<%= t('spotlight.header_links.contact') %>', href: '<%= spotlight.new_exhibit_contact_form_path(current_exhibit) %>'}
+      <% end %>
+    ]"/>
+    <% end %>
+  </library-header>
 </header>

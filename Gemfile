@@ -95,6 +95,9 @@ gem 'almond-rails', '~> 0.1'
 gem 'pul_uv_rails', github: 'pulibrary/pul_uv_rails', branch: 'master'
 gem 'riiif'
 
+# LUX dependency
+gem "webpacker", "~> 3.3"
+
 # PUL Assets
 gem 'pul-assets', github: 'pulibrary/pul_assets'
 # gem 'spotlight-resources-iiif', github: 'pulibrary/spotlight-resources-iiif', branch: 'default_vocab'
