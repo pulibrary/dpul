@@ -96,6 +96,19 @@
     float: right;
   }
 
+  /* insert some button styles so it actually looks like btn-account */
+  >li>a {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    outline: 0;
+    overflow: visible;
+    margin: 0;
+    text-decoration: none;
+    vertical-align: top;
+    font: bold 12px/1.3 "DejaVu", "Arial Unicode MS", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+
   >li>a,
   .btn-account {
     color: $gray;
@@ -305,4 +318,3 @@
     }
   }
 }
-
