@@ -1,0 +1,320 @@
+@import "variables/breaks";
+@import "variables/typography";
+@import "variables/colors";
+
+.logo__pul {
+  height: 40px;
+  display: inline-block;
+
+  img {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+.svg .logo-svg {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.svg .logo-no-svg {
+  display: none;
+}
+
+.l-branding__pul {
+  background: $dark-gray;
+  border-top: 3px solid $orange;
+  min-height: 40px;
+  position: relative;
+  clear: both;
+
+  .menu--level-1,
+  .logo__pul {
+    height: 52px;
+    position: relative;
+    z-index: 10;
+
+    @media (min-width: 645px) {
+      width: 50%;
+    }
+  }
+
+  .logo__pul a {
+    @include vertical-align;
+    display: inline-block; // float: left;
+    height: 38px;
+
+    img {
+      height: 35px;
+      vertical-align: middle;
+    }
+
+    &.site-title {
+      vertical-align: middle;
+      margin-left: 1rem;
+      border-left: 1px solid darken($gray, 50%);
+      height: 35px;
+      padding-left: 1rem;
+      color: white;
+      font-size: 1.6em;
+      line-height: 35px;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:focus,
+      &:active {
+        color: $orange;
+      }
+    }
+  }
+
+  .menu--level-1>ul {
+    display: inline-block;
+
+    @media (min-width: 645px) {
+      margin-top: 0;
+      @include vertical-align;
+    }
+  }
+}
+
+@media (min-width: $bp-small) {
+  .l-branding__pul {
+    height: 55px;
+  }
+}
+
+.menu--level-1>ul {
+  display: block;
+
+  @media (min-width: 645px) {
+    float: right;
+  }
+
+  /* insert some button styles so it actually looks like btn-account */
+  >li>a {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    outline: 0;
+    overflow: visible;
+    margin: 0;
+    text-decoration: none;
+    vertical-align: top;
+    font: bold 12px/1.3 "DejaVu", "Arial Unicode MS", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+
+  >li>a,
+  .btn-account {
+    color: $gray;
+    font-size: 0.75em;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      text-decoration: underline;
+      background-color: transparent;
+    }
+  }
+
+  @media (min-width: 645px) {
+    .dropdown-menu {
+      top: 35px;
+    }
+  }
+
+  >li {
+    float: left;
+    padding: 0 1rem;
+    // border-right: 1px solid darken($gray, 40%);
+
+    @media (max-width: 645px) {
+      line-height: 1em;
+    }
+
+    &:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+}
+
+.l-branding__pul .logo__pul {
+  margin: 0;
+  padding: 0;
+}
+
+.search-options a {
+  color: darken($blue, 3);
+}
+
+.navbar-nav>li {
+  float: left;
+}
+
+@media (max-width: 500px) {
+  .page-heading {
+    margin-bottom: 0;
+  }
+
+  .bookmarks-count {
+    display: none;
+  }
+
+  #sortAndPerPage {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    .page_links,
+    .search-widgets {
+      display: inline-block;
+      float: none;
+      font-size: 1.2em;
+      width: 100%;
+    }
+  }
+
+  .button--start-over .icon-refresh:before,
+  .btn .icon-moveback:before {
+    margin: 0;
+  }
+
+  .pagination-search-widgets {
+
+    .search-widgets li {
+      margin: 0 6px 0 0;
+
+      a,
+      button.btn {
+        margin: 0;
+        width: 100%;
+      }
+
+      .checkbox.toggle_bookmark,
+      .checkbox.toggle_bookmark label,
+      .checkbox.toggle_bookmark span {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .button--start-over a,
+    .btn,
+    .page_links a {
+      margin: 0;
+      min-width: 44px;
+      min-height: 34px;
+    }
+
+    .btn,
+    .page_links a {
+      margin-right: 3px;
+    }
+  }
+
+  .btn-group.query {
+    width: 100%;
+  }
+}
+
+@media (max-width: 645px) {
+  .logo__pul {
+    text-align: center;
+  }
+
+  .l-branding__pul .menu--level-1 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    li {
+      display: inline-block;
+    }
+  }
+
+  .l-branding__pul .menu--level-1 ul li {
+    font-size: 1.2em;
+  }
+
+  .menu--level-1 > ul > li > a,
+  .menu--level-1 > ul .btn-account {
+    font-size: 12px;
+  }
+
+  .l-branding__pul {
+    height: auto;
+  }
+
+  .l-branding__pul .menu--level-1 {
+    height: auto;
+  }
+
+  .menu--level-1 > ul .btn-account {
+    height: auto;
+  }
+}
+
+@media (max-width: 565px) {
+  .pagination-search-widgets {
+    .col-xs-12 {
+      width: 100%;
+      margin-bottom: 6px;
+    }
+
+    .search-widgets .navbar-nav {
+      margin: 0 auto;
+      display: table;
+    }
+
+    .page_links {
+      width: auto;
+      float: right;
+      text-align: center;
+
+      .previous,
+      .next {
+        font-size: 20px;
+        vertical-align: middle;
+        width: 44px;
+        height: 34px;
+        line-height: 0.9em;
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-medium) {
+  .pagination-search-widgets {
+
+    .search-widgets li {
+      margin: 0 6px 0 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.dropdown {
+
+        ul {
+          position: absolute;
+          padding: 0;
+          background: $white;
+          border: 1px solid $gray;
+        }
+
+        li {
+          margin: 0;
+        }
+
+        li a {
+          padding: 6px;
+        }
+      }
+    }
+  }
+}
