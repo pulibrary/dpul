@@ -25,6 +25,20 @@ jobs:
         key: pomegranate-{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
+      # Only necessary if app uses webpacker or yarn in some other way
+      - restore_cache:
+          keys:
+            - pomegranate-npm-{{ checksum "package-lock.json" }}
+            - pomegranate-npm-
+      - run:
+          name: NPM install
+          command: npm install
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: pomegranate-npm-{{ checksum "package-lock.json" }}
+          paths:
+            - npm_modules
+      - run: NODE_ENV=test bundle exec rails webpacker:compile
       - persist_to_workspace:
           root: '~/pomegranate'
           paths: '*'
