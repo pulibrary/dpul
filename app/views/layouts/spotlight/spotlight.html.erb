@@ -18,6 +18,8 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag :modernizr %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
     <%= description %>
@@ -32,25 +34,27 @@
     <%= render partial: 'shared/matomo' %>
   </head>
   <body class="<%= render_body_class %>">
-    <%= render partial: 'shared/announcements' %>
-    <%= render partial: 'shared/header_navbar' %>
-    <%= render partial: 'shared/masthead' %>
-    <%= content_for?(:header_content) ? yield(:header_content) : "" %>
+    <div data-behavior="vue">
+      <%= render partial: 'shared/announcements' %>
+      <%= render partial: 'shared/header_navbar' %>
+      <%= render partial: 'shared/masthead' %>
+      <%= content_for?(:header_content) ? yield(:header_content) : "" %>
 
-    <%= render partial: 'shared/ajax_modal' %>
+      <%= render partial: 'shared/ajax_modal' %>
 
-    <main id="main-content" role="main">
-      <div class="container">
-      <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
+      <main id="main-content" role="main">
+        <div class="container">
+        <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
 
-        <div class="row">
-          <%= content_for?(:content) ? yield(:content) : yield %>
+          <div class="row">
+            <%= content_for?(:content) ? yield(:content) : yield %>
+          </div>
+
         </div>
+      </main>
 
-      </div>
-    </main>
-
-    <%= render partial: 'shared/matomo_noscript' %>
-    <%= render :partial => 'shared/footer' %>
+      <%= render partial: 'shared/matomo_noscript' %>
+      <%= render :partial => 'shared/footer' %>
+    </div>
   </body>
 </html>
