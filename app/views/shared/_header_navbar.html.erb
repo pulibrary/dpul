@@ -1,5 +1,8 @@
 <header role="banner">
-  <library-header app-name="<%= t('blacklight.application_name') %>" app-url="<%= root_path %>">
+  <library-header
+    <% unless current_page?(root_path) %>
+    app-name="<%= t('blacklight.application_name') %>" app-url="<%= root_path %>"
+    <% end %>>
     <% if current_user %>
     <dropdown-menu>
       <input-button variation="dropdown"><%= current_user %></input-button>
