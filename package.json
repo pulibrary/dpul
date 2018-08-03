@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@rails/webpacker": "3.5",
-    "lux-design-system": "0.0.14",
+    "lux-design-system": "pulibrary/lux",
     "vue": "^2.5.16",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.16",
