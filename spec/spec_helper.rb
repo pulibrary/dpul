@@ -2,6 +2,7 @@ require "pry-byebug"
 require "simplecov"
 require "capybara/rspec"
 require "selenium-webdriver"
+require 'webmock/rspec'
 
 if ENV['CI']
   require 'coveralls'
