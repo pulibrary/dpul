@@ -3,8 +3,29 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
   after_destroy :cleanup_solr
   before_save :set_noid
 
+  class InvalidIIIFManifestError < TypeError; end
+
   def iiif_manifests
-    @iiif_manifests ||= ::IiifService.parse(url)
+    @iiif_manifests ||= validate_iiif_manifest_collections!
+  end
+
+  def validate_iiif_manifest_collections!
+    iiif_manifests = ::IiifService.parse(url)
+
+    # Check for valid metadata
+    iiif_manifests.to_a.each do |iiif_manifest|
+      iiif_manifest.with_exhibit(exhibit)
+
+      next unless iiif_manifest.as_json.key?("manifest") &&
+                  iiif_manifest.as_json["manifest"].key?("data") &&
+                  iiif_manifest.as_json["manifest"]["data"].key?("metadata")
+
+      collection_metadata = iiif_manifest.as_json["manifest"]["data"]["metadata"].select { |metadata| metadata["label"] == "Collections" }
+      invalid_collection_metadata = collection_metadata.select { |metadata| metadata["value"].first.is_a?(Hash) }
+      raise(InvalidIIIFManifestError, "Invalid Collection metadata found in the IIIF Manifest: #{url}") unless invalid_collection_metadata.empty?
+    end
+
+    @iiif_manifests = iiif_manifests
   end
 
   def cleanup_solr
