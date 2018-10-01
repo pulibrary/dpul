@@ -75,6 +75,17 @@ namespace :deploy do
     end
   end
 end
+
+namespace :deploy do
+  desc 'Run rake yarn install'
+  task :yarn_install do
+    on roles(:web) do
+      within release_path do
+        execute("cd #{release_path} && yarn install")
+      end
+    end
+  end
+end
 after 'deploy:reverted', 'sneakers:restart'
 after 'deploy:published', 'sneakers:restart'
 after 'deploy:starting', 'sidekiq:quiet'
