@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "lux-design-system": "^0.0.25",
+    "vue-turbolinks": "^2.0.3"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}
