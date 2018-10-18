@@ -49,4 +49,15 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     def document_ids
       document_builder.documents_to_index.to_a.map { |y| y[:id] }
     end
+
+    def write_to_index(batch)
+      documents = documents_that_have_ids(batch)
+      return unless write? && documents.present?
+
+      blacklight_solr.update data: documents.to_json,
+                             headers: { 'Content-Type' => 'application/json' }
+    end
+
+    # Override hard commit after indexing every document, for performance.
+    def commit; end
 end

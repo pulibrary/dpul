@@ -6,7 +6,6 @@ class FiggyEventProcessor
         docs["response"]["docs"].each do |doc|
           index.connection.delete_by_id doc["id"]
         end
-        index.connection.commit
         resource.destroy
       end
       true

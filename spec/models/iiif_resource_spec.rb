@@ -9,6 +9,7 @@ describe IIIFResource do
       expect(resource.save).to be true
 
       solr_doc = nil
+      Blacklight.default_index.connection.commit
       resource.document_builder.to_solr { |x| solr_doc = x }
       expect(solr_doc["full_title_tesim"]).to eq ['Christopher and his kind, 1929-1939']
       expect(solr_doc["readonly_created_tesim"]).to eq ["1976-01-01T00:00:00Z"]
@@ -23,6 +24,7 @@ describe IIIFResource do
       expect(resource.save).to be true
 
       solr_doc = nil
+      Blacklight.default_index.connection.commit
       resource.document_builder.to_solr { |x| solr_doc = x }
       expect(solr_doc["readonly_collections_tesim"]).to eq ["East Asian Library Digital Bookshelf"]
     end
@@ -33,6 +35,7 @@ describe IIIFResource do
         resource = described_class.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
 
+        Blacklight.default_index.connection.commit
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         expect(docs.length).to eq 2
         scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Scanned Resource 1"] }
@@ -45,6 +48,7 @@ describe IIIFResource do
         resource = described_class.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
 
+        Blacklight.default_index.connection.commit
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Scanned Resource 1"] }
         expect(scanned_resource_doc["full_image_url_ssm"]).to eq ["https://libimages1.princeton.edu/loris/plum/hq%2F37%2Fvn%2F61%2F6-intermediate_file.jp2/full/!600,600/0/default.jpg"]
@@ -56,6 +60,8 @@ describe IIIFResource do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
         resource = described_class.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
+
+        Blacklight.default_index.connection.commit
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Christopher and his kind, 1929-1939"] }
         expect(scanned_resource_doc["readonly_date-created_tesim"]).to eq ['1976-01-01T00:00:00Z']
