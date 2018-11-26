@@ -360,7 +360,7 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     public_suffix (2.0.5)
-    rack (2.0.5)
+    rack (2.0.6)
     rack-protection (1.5.5)
       rack
     rack-test (0.6.3)
@@ -614,6 +614,7 @@ DEPENDENCIES
   pry-rails
   pul-assets!
   pul_uv_rails!
+  rack (>= 2.0.6)
   rails (~> 5.0)
   rails-controller-testing
   redis-namespace
