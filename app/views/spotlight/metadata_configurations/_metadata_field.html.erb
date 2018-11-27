@@ -9,11 +9,12 @@
           <span class="import-tooltip glyphicon glyphicon-import" title="Imported from Figgy" data-toggle="tooltip"></span>
         <% end %>
         <%= field.hidden_field :label, value: index_field_label(nil, key), class: 'form-control input-sm', data: {:"edit-field-target" => 'true'} %>
-       </div>
+      </div>
     </td>
+    <td class="checkbox-cell text-center"><%= field.check_box :text_area, inline: true, checked: config.text_area == "1", label: "", disabled: readonly?(key) %></td>
     <td class="checkbox-cell text-center"><%= field.check_box :show, inline: true, checked: config.show, label: "" %></td>
     <% available_view_fields.keys.each do |type| %>
-    <td class="checkbox-cell text-center"><%= field.check_box type, inline: true, checked: config.send(type), label: "" %></td>
+      <td class="checkbox-cell text-center"><%= field.check_box type, inline: true, checked: config.send(type), label: "" %></td>
     <% end %>
   <% end %>
 </tr>

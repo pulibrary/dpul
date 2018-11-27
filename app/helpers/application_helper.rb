@@ -17,4 +17,26 @@ module ApplicationHelper
   def current_year
     Date.today.year
   end
+
+  def text_area?(field, exhibit)
+    index_field_config = exhibit.blacklight_config.index_fields[field.field]
+
+    index_field_config.text_area == "1"
+  end
+
+  def text_area_value(field, sidecar)
+    output = { data: [] }
+
+    field_values = sidecar.data[field.field.to_s]
+    return output.to_json if field_values.blank?
+
+    field_values
+  end
+
+  def readonly?(field)
+    custom_field = Spotlight::CustomField.find_by(field: field)
+    return true if custom_field.nil?
+
+    custom_field.readonly_field
+  end
 end

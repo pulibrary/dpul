@@ -20,6 +20,8 @@
           <%= d.label field.field, field.label %>
           <% if field.readonly_field? %>
             <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field?, name: nil%>
+	  <% elsif text_area?(field, current_exhibit) %>
+	    <%= d.text_area_without_bootstrap field.field, value: text_area_value(field, f.object.sidecar(current_exhibit)), class: 'js-st-instance', data: { 'block-types': Spotlight::Engine.config.sir_trevor_widgets } %>
           <% else %>
             <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field? %>
           <% end %>
@@ -35,10 +37,11 @@
   <% end %>
 
   <% if can? :tag, current_exhibit %>
-  <div class="edit-tags">
-  <%= f.text_field :exhibit_tag_list, value: f.object.sidecar(current_exhibit).tags_from(current_exhibit).to_s, 'data-autocomplete_url' => exhibit_tags_path(current_exhibit, format: 'json') %>
-  </div>
+    <div class="edit-tags">
+      <%= f.text_field :exhibit_tag_list, value: f.object.sidecar(current_exhibit).tags_from(current_exhibit).to_s, 'data-autocomplete_url' => exhibit_tags_path(current_exhibit, format: 'json') %>
+    </div>
   <% end %>
+
   <div class="form-actions">
     <div class="primary-actions">
       <%= cancel_link document, spotlight.polymorphic_path([current_exhibit, document]), class: 'btn btn-link' %>
