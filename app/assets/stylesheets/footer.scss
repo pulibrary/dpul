@@ -21,15 +21,15 @@ footer {
       font-size: 16px;
       margin-bottom: 0.75em;
       font-weight: bold;
-      color: $orange;
+      color: $dark-orange;
       font-family: $font-serif;
       a {
-          color: $orange;
+          color: $dark-orange;
       }
     }
 
     a {
-      font-size: 1.1em;
+      font-size: 1.02em;
       color: $dark-gray;
       font-family: $font-serif;
     }
@@ -43,7 +43,7 @@ footer {
 .l-region--footer .footer--copyright,
 .l-region--footer li a {
     color: $brand-black;
-    font-size: 0.9em;
+    font-size: 1.02em;
 }
 
 .svg .facebook-logo:before,

@@ -26,5 +26,6 @@ module Pomegranate
     # config.i18n.default_locale = :de
 
     config.autoload_paths += %W(#{Rails.root}/app/workers)
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end
