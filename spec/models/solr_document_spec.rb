@@ -12,4 +12,9 @@ RSpec.describe SolrDocument do
       expect(solr_document.to_param).to eq "123"
     end
   end
+  describe "#export_formats" do
+    it "does not provide dublin core formats" do
+      expect(solr_document.export_formats).not_to include(:oai_dc_xml, :dc_xml)
+    end
+  end
 end
