@@ -8,8 +8,8 @@ class CatalogController < ApplicationController
     return if current_exhibit
     blacklight_config.add_index_field 'readonly_creator_ssim', label: 'Creator'
 
-    blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language'
-    blacklight_config.add_facet_field 'readonly_subject_ssim', label: 'Subject'
+    blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language', limit: 10
+    blacklight_config.add_facet_field 'readonly_subject_ssim', label: 'Subject', limit: 10
     unique_custom_fields.each do |field|
       blacklight_config.add_show_field field.field, label: field.configuration["label"]
     end
@@ -58,7 +58,7 @@ class CatalogController < ApplicationController
     config.add_sort_field 'sort_author', sort: 'sort_author_ssi asc, sort_title_ssi asc', label: 'Author'
 
     config.add_facet_field 'spotlight_resource_type_ssim'
-    config.add_facet_field 'readonly_collections_ssim', label: 'Collections'
+    config.add_facet_field 'readonly_collections_ssim', label: 'Collections', limit: 10
     config.add_index_field 'readonly_collections_ssim', label: 'Collections'
     config.index.thumbnail_field = 'thumbnail_ssim'
 
@@ -71,6 +71,14 @@ class CatalogController < ApplicationController
     config.index.document_actions.delete(:bookmark)
     config.repository_class = ::FriendlyIdRepository
     config.http_method = :post
+  end
+
+  # Overrides the spotlight search_facet_url method to use
+  # facet_catalog_url named route instead of catalog_facet_url.
+  # https://github.com/projectblacklight/spotlight/blob/v1.4.1/app/controllers/concerns/spotlight/controller.rb#L63
+  def search_facet_url(*args)
+    return super if current_exhibit
+    main_app.facet_catalog_url(*args)
   end
 
   # get a single document from the index
