@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
+  get '/viewers', to: 'pages#viewers', as: 'viewers_page'
   mount Spotlight::Engine, at: '/'
 
   concern :exportable, Blacklight::Routes::Exportable.new

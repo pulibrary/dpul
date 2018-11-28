@@ -1,3 +1,6 @@
+<% manifest = document.fetch(Spotlight::Engine.config.iiif_manifest_field).first %>
 <div class="uv__overlay" onClick="style.pointerEvents='none'"></div>
-<div class="uv viewer" data-config="/uv_config.json" data-uri="<%= document.fetch(Spotlight::Engine.config.iiif_manifest_field).first %>"></div>
+<div class="uv viewer" data-config="/uv_config.json" data-uri="<%= manifest %>"></div>
 <%= PulUvRails::UniversalViewer.script_tag %>
+<%= link_to image_tag("iiif.png", class: "logo", alt: "IIIF Drag and Drop"),
+            viewers_page_path(manifest: manifest, format: :html) %>

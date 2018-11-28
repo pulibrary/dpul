@@ -1,6 +1,7 @@
 module ApplicationHelper
   include Blacklight::BlacklightHelperBehavior
   include Spotlight::ApplicationHelper
+  delegate :url, to: :request, prefix: true
 
   def site_sidebar?
     can?(:manage, Spotlight::Site.instance) || can?(:create, Spotlight::Exhibit)

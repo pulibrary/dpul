@@ -1,0 +1,26 @@
+<% @page_title = "Viewers" %>
+<div class="container-fluid">
+  <div class="col-xs-12 col-md-10">
+    <h2>IIIF and Digital Object Viewers</h2>
+    <p>Digital PUL uses <a href="https://iiif.io/">IIIF</a> (International Image Interoperability Framework)
+    to share our digital objects. This allows our content to viewed with several different interoperable
+    viewers, including <a href="http://projectmirador.org/">Mirador</a> and
+    <a href="https://universalviewer.io/">Universal Viewer</a>.</p>
+  </div>
+
+  <div class="col-xs-12 col-md-10">
+    <h2>Drag and Drop</h2>
+    <p>When you see the <%= link_to image_tag("iiif.png", alt: "IIIF"), request_url %> icon, you can drag the
+    icon into a compatible IIIF viewer to load the object in that viewer.  For example, you can open the
+    <a href="http://projectmirador.org/demo/">Mirador Viewer</a> in another window, and drag the IIIF icon
+    from Digital PUL (or many other IIIF-enabled sites) to load objects and compare them side-by-side.</p>
+
+    <p>Sites that support IIIF drag and drop include
+      <a href="http://digital.bodleian.ox.ac.uk/inquire/Discover/Search/#/?p=c+,t+ox%5C:collection:Oriental*,rsrs+0,rsps+10,fa+,so+ox%3Asort%5Easc,scids+,pid+,vi+">Digital Bodleian</a>,
+      <a href="http://www.e-codices.unifr.ch/en/searchresult/list/one/kba/0016-1">e-codices</a>,
+      <a href="http://www.getty.edu/art/collection/objects/826/vincent-van-gogh-irises-dutch-1889/">The J. Paul Getty Museum</a>,
+      <a href="https://searchworks.stanford.edu/catalog?f%5Biiif_resources%5D%5B%5D=available">Stanford SearchWorks</a>, and
+      <a href="http://collections.britishart.yale.edu/vufind/Record/1665373">Yale Center for British Art</a>.
+    </p>
+  </div>
+</div>
