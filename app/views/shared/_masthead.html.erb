@@ -7,6 +7,7 @@
     <span class='background-container-gradient'></span>
   <% end %>
 
+  <% if current_exhibit || content_for?(:masthead) %>
   <div class="container site-title-container">
     <div class="site-title h1">
       <% if content_for? :masthead %>
@@ -16,14 +17,10 @@
         <% if current_exhibit.subtitle.present? %>
           <small dir='<%= current_exhibit.subtitle.dir %>'><%= current_exhibit.subtitle %></small>
         <% end %>
-      <% else %>
-        <%= application_name %>
-        <% if current_site.subtitle.present? %>
-          <small><%= current_site.subtitle %></small>
-        <% end %>
       <% end %>
     </div>
   </div>
+  <% end %>
 
   <%= render 'shared/exhibit_navbar' %>
 </div>
