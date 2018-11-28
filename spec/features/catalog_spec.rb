@@ -53,7 +53,7 @@ RSpec.feature 'Catalog', type: :feature do
       sign_in user
       document.make_public! exhibit
       document.reindex
-      Blacklight.default_index.connection.commit
+      index.commit
     end
 
     scenario 'user searches for a collections with a keyword' do
@@ -71,7 +71,7 @@ RSpec.feature 'Catalog', type: :feature do
         )
         document2.make_private!(exhibit2)
         document2.save
-        Blacklight.default_index.connection.commit
+        index.commit
       end
 
       scenario 'user searches for a collections with a keyword in quotes' do
@@ -85,5 +85,41 @@ RSpec.feature 'Catalog', type: :feature do
       expect(page).to have_link 'Home', href: '/exhibit-a'
       expect(page).to have_css '#documents .document h3.index_title', text: id
     end
+  end
+
+  context 'when searching across a catalog with many languages' do
+    let(:languages) {
+      [
+        'Language 1',
+        'Language 2',
+        'Language 3',
+        'Language 4',
+        'Language 5',
+        'Language 6',
+        'Language 7',
+        'Language 8',
+        'Language 9',
+        'Language 10',
+        'Language 11'
+      ]
+    }
+
+    before do
+      index.add(id: '1',
+                full_title_ssim: ['Test Item'],
+                readonly_title_ssim: ['Test Item'],
+                spotlight_resource_type_ssim: ['iiif_resources'],
+                readonly_language_ssim: languages)
+      index.commit
+    end
+
+    it 'renders the languages facet with a more facets link' do
+      visit main_app.search_catalog_path(q: '')
+      expect(page).to have_link("more", href: '/catalog/facet/readonly_language_ssim')
+    end
+  end
+
+  def index
+    Blacklight.default_index.connection
   end
 end
