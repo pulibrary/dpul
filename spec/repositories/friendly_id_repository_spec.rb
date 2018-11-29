@@ -14,6 +14,7 @@ RSpec.describe FriendlyIdRepository, vcr: { cassette_name: "all_collections", al
     end
     before do
       resource.reindex
+      Blacklight.default_index.connection.commit
     end
 
     context "when an exhibit isn't passed" do

@@ -8,6 +8,7 @@ RSpec.describe CatalogController do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
       resource = IIIFResource.new url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
+      Blacklight.default_index.connection.commit
 
       get :index, params: { q: "", exhibit_id: exhibit.id }
 
@@ -43,6 +44,7 @@ RSpec.describe CatalogController do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: false
         resource = IIIFResource.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
+        Blacklight.default_index.connection.commit
         sign_in user
 
         get :index, params: { q: "", exhibit_id: exhibit.id }
@@ -85,6 +87,7 @@ RSpec.describe CatalogController do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
       resource = IIIFResource.new url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
+      Blacklight.default_index.connection.commit
 
       get :index, params: { q: "Scanned Resource", exhibit_id: exhibit.id }
 

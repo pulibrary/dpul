@@ -40,6 +40,7 @@ RSpec.describe FiggyEventProcessor, vcr: { cassette_name: "figgy_events", allow_
     it "deletes that resource" do
       exhibit = FactoryBot.create(:exhibit, slug: "first")
       IIIFResource.new(url: url, exhibit: exhibit).save_and_index
+      Blacklight.default_index.connection.commit
 
       expect(processor.process).to eq true
 
@@ -54,6 +55,7 @@ RSpec.describe FiggyEventProcessor, vcr: { cassette_name: "figgy_events", allow_
       IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
       expect(processor.process).to eq true
+      Blacklight.default_index.connection.commit
       resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
 
       expect(resource["full_title_tesim"]).to eq ["Updated Record"]
@@ -95,6 +97,7 @@ RSpec.describe FiggyEventProcessor, vcr: { cassette_name: "figgy_events", allow_
       it "marks it as public" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
+        Blacklight.default_index.connection.commit
         resource_id = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first["access_identifier_ssim"].first
         document = SolrDocument.find(resource_id)
         document.make_private!(exhibit)
@@ -128,6 +131,7 @@ RSpec.describe FiggyEventProcessor, vcr: { cassette_name: "figgy_events", allow_
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
         expect(processor.process).to eq true
+        Blacklight.default_index.connection.commit
 
         expect(IIIFResource.joins(:exhibit).where("spotlight_exhibits.slug" => "banana").length).to eq 1
         expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 1
