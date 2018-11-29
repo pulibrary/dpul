@@ -1,6 +1,7 @@
 require "pry-byebug"
 require "simplecov"
 require "capybara/rspec"
+require 'capybara-screenshot/rspec'
 require "selenium-webdriver"
 require 'webmock/rspec'
 
@@ -13,7 +14,10 @@ SimpleCov.start('rails') do
   add_filter '/spec'
 end
 
-Capybara.register_driver :headless_chrome do |app|
+# This driver uses headless chrome but we call it
+# :selenium to conform to a capybara-screenshot convention
+# see https://github.com/mattheworiordan/capybara-screenshot/issues/211
+Capybara.register_driver :selenium do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
     chromeOptions: { args: %w[headless disable-gpu disable-setuid-sandbox window-size=7680,4320] }
   )
@@ -26,7 +30,7 @@ Capybara.register_driver :headless_chrome do |app|
                                  desired_capabilities: capabilities,
                                  http_client: http_client)
 end
-Capybara.javascript_driver = :headless_chrome
+Capybara.javascript_driver = :selenium
 Capybara.default_max_wait_time = 15
 
 RSpec.configure do |config|
