@@ -1,3 +1,4 @@
+<% @masthead_title = application_name %>
 <div class="<%= "col-md-#{site_sidebar? ? 9 : 12}" %>">
   <% if (current_user && current_user.exhibits.any?) || can?(:manage, Spotlight::Exhibit) %>
     <ul class="nav nav-tabs" role="tablist">

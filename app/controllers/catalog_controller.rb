@@ -81,6 +81,12 @@ class CatalogController < ApplicationController
     main_app.facet_catalog_url(*args)
   end
 
+  # search results
+  def index
+    @masthead_title = "Search Results"
+    super
+  end
+
   # get a single document from the index
   # to add responses for formats other than html or json see _Blacklight::Document::Export_
   def show
