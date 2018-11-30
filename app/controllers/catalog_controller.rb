@@ -17,7 +17,8 @@ class CatalogController < ApplicationController
   end
 
   def unique_custom_fields
-    Spotlight::CustomField.select(:field, :configuration).distinct.to_a.uniq(&:field)
+    Spotlight::CustomField.select(:field, :configuration).distinct.to_a
+                          .uniq(&:field).reject { |v| v.field == 'readonly_range-label_ssim' }
   end
 
   configure_blacklight do |config|
