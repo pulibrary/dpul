@@ -7,7 +7,7 @@
     <span class='background-container-gradient'></span>
   <% end %>
 
-  <% if current_exhibit || content_for?(:masthead) || @page_title %>
+  <% if current_exhibit || content_for?(:masthead) || @masthead_title %>
     <div class="container site-title-container">
       <div class="site-title h1">
         <% if content_for? :masthead %>
@@ -18,8 +18,8 @@
           <% if @subtitle.present? %>
             <small dir='<%= @subtitle.dir %>'><%= @subtitle %></small>
           <% end %>
-        <% elsif @page_title %>
-          <%= @page_title %>
+        <% elsif @masthead_title %>
+          <%= @masthead_title %>
         <% end %>
       </div>
     </div>
