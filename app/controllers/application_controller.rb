@@ -12,6 +12,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # Use custom error pages
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  rescue_from Blacklight::Exceptions::RecordNotFound, with: :not_found
+
+  def not_found
+    render "pages/not_found"
+  end
+
   def guest_username_authentication_key(key)
     key &&= nil unless key.to_s =~ /^guest/
     return key if key

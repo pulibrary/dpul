@@ -3,6 +3,7 @@
 class CatalogController < ApplicationController
   include Blacklight::Catalog
   before_action :search_across_settings
+  rescue_from Blacklight::Exceptions::RecordNotFound, with: :not_found
 
   def search_across_settings
     return if current_exhibit
