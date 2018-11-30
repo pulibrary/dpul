@@ -41,6 +41,7 @@ Metrics/BlockLength:
     - 'app/controllers/catalog_controller.rb'
     - 'lib/tasks/dev.rake'
     - 'spec/**/*'
+    - 'config/routes.rb'
 
 Style/BlockDelimiters:
   Exclude:
@@ -119,6 +120,14 @@ Rails/DynamicFindBy:
     - 'app/models/exhibit_proxy.rb'
     - 'app/decorators/applies_title_from_slug.rb'
     - 'app/values/manifest_metadata.rb'
+
+Rails/ExampleLength:
+  Exclude:
+    - 'spec/controllers/pomegranate/metadata_configurations_controller_spec.rb'
+    - 'spec/controllers/catalog_controller_spec.rb'
+    - 'spec/models/iiif_resource_spec.rb'
+    - 'spec/services/figgy_event_processor_spec.rb'
+    - 'spec/workers/figgy_event_handler_spec.rb'
 
 RSpec/ExampleWording:
   CustomTransform:

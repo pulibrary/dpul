@@ -10,6 +10,10 @@
       <thead>
         <tr>
           <th><%= t :'.fields.label' %></th>
+	  <th class="text-center">
+            <div>Text Area</div>
+            <%= select_deselect_button %>
+          </th>
           <th class="text-center">
             <div>
               <%= t :'.view.show', default: t(:'blacklight.search.view.show') %>

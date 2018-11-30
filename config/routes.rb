@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   mount Blacklight::Engine => '/'
   root to: 'spotlight/exhibits#index'
   resources :exhibits, path: '/', only: [:create, :destroy]
+  match ':exhibit_id/metadata_configuration', to: 'pomegranate/metadata_configurations#update', via: [:patch, :put]
 
   # root to: "catalog#index" # replaced by spotlight root path
   concern :searchable, Blacklight::Routes::Searchable.new

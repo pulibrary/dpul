@@ -14,7 +14,7 @@ RSpec.describe RTLShowPresenter do
   let(:blacklight_config) do
     double(
       show_fields: { field:
-                    double(highlight: false, accessor: nil, default: nil, field: :field, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil) },
+                    double(highlight: false, accessor: nil, default: nil, field: :field, text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil) },
       view_config: double(title_field: :title, html_title_field: nil)
     )
   end
