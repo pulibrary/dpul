@@ -16,6 +16,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-rails-console'
   gem 'capybara'
+  gem 'capybara-screenshot'
   gem 'capybara-selenium'
   gem 'coveralls', require: false
   gem 'database_cleaner'

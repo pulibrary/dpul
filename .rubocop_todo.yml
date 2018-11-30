@@ -84,6 +84,7 @@ RSpec/ExampleLength:
     - 'spec/models/iiif_resource_spec.rb'
     - 'spec/services/figgy_event_processor_spec.rb'
     - 'spec/workers/figgy_event_handler_spec.rb'
+    - 'spec/features/javascript/multi_image_select_spec.rb'
 
 # Offense count: 5
 # Configuration parameters: EnforcedStyle.
