@@ -51,6 +51,13 @@ module IiifResponses
             }
           ]
         }
+      ],
+      "structures": [
+        {
+          "@type": "sc:Range",
+          "label": "range label value",
+          "ranges": []
+        }
       ]
     }.to_json
   end

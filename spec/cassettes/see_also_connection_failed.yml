@@ -55,7 +55,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:40:49 GMT
 - request:
     method: head
@@ -112,7 +112,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:40:50 GMT
 - request:
     method: head
@@ -169,7 +169,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:40:51 GMT
 - request:
     method: head
@@ -226,7 +226,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:40:52 GMT
 - request:
     method: head
@@ -283,7 +283,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:40:53 GMT
 - request:
     method: head
@@ -340,7 +340,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:40:55 GMT
 - request:
     method: get
@@ -414,7 +414,7 @@ http_interactions:
         p. ; 22 cm."]},{"label":"Edition","value":["1st ed."]},{"label":"Call number","value":["PR6017.S5
         Z498"]},{"label":"Author","value":["Isherwood, Christopher, 1904-1986"]},{"label":"Donor","value":["Copland,
       Aaron, 1900-1990"]},{"label":"Collection","value":["Test"]}],"thumbnail":{"@id":"https://libimages1.princeton.edu/loris/plum/sb%2Fn9%2F99%2F67%2F23-intermediate_file.jp2/full/!200,150/0/default.jpg","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://libimages1.princeton.edu/loris/plum/sb%2Fn9%2F99%2F67%2F23-intermediate_file.jp2","profile":"http://iiif.io/api/image/2/level2.json"}},"seeAlso":{"@id":"http://httpstat.us/407","format":"application/ld+json"}, "rendering": {"@id": "http://arks.princeton.edu/ark:/9999/123", "format": "text/html"}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:40:56 GMT
 - request:
     method: get
@@ -480,7 +480,7 @@ http_interactions:
         of this Page"}]},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/sww72bb48n","@type":"sc:Canvas","label":"2r","images":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/annotation/sww72bb48n-image","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://libimages1.princeton.edu/loris/plum/sw%2Fw7%2F2b%2Fb4%2F8n-intermediate_file.jp2/full/!600,600/0/default.jpg","@type":"dcterms:Image","format":"image/jpeg","width":4586,"height":7200,"service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://libimages1.princeton.edu/loris/plum/sw%2Fw7%2F2b%2Fb4%2F8n-intermediate_file.jp2","profile":"http://iiif.io/api/image/2/level2.json"}},"on":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/sww72bb48n"}],"width":4586,"height":7200,"otherContent":[{"@id":"https://hydra-dev.princeton.edu/concern/container/s9w032300r/file_sets/sww72bb48n/text","@type":"sc:AnnotationList","label":"Text
         of this Page"}]},{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/sjs956f80z","@type":"sc:Canvas","label":"2v","images":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/annotation/sjs956f80z-image","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://libimages1.princeton.edu/loris/plum/sj%2Fs9%2F56%2Ff8%2F0z-intermediate_file.jp2/full/!600,600/0/default.jpg","@type":"dcterms:Image","format":"image/jpeg","width":4495,"height":7200,"service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://libimages1.princeton.edu/loris/plum/sj%2Fs9%2F56%2Ff8%2F0z-intermediate_file.jp2","profile":"http://iiif.io/api/image/2/level2.json"}},"on":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/sjs956f80z"}],"width":4495,"height":7200,"otherContent":[{"@id":"https://hydra-dev.princeton.edu/concern/container/s9w032300r/file_sets/sjs956f80z/text","@type":"sc:AnnotationList","label":"Text
         of this Page"}]}],"startCanvas":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest/canvas/sww72bb48n","viewingHint":"paged","rendering":{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/pdf/gray","label":"Download
-        as PDF","format":"application/pdf"}}],"structures":[{"@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest/range/g70272255683880","@type":"sc:Range","label":"Logical","viewingHint":"top"}],
+        as PDF","format":"application/pdf"}}],"structures":[],
         "metadata":[{"label":"Creator","value":["Isherwood, Christopher, 1904-1986"]},{"label":"Publisher","value":["New York : Farrar,
         Straus Giroux, 1976."]},{"label":"Date created","value":["1976-01-01T00:00:00Z"]},{"label":"Subject","value":["Isherwood,
         Christopher, 1904-1986","Authors, English—20th century—Biography"]},{"label":"Language","value":["eng"]},{"label":"Identifier","value":["ark:/99999/fk40p1b72m"]},{"label":"Start
@@ -488,7 +488,7 @@ http_interactions:
         p. ; 22 cm."]},{"label":"Edition","value":["1st ed."]},{"label":"Call number","value":["PR6017.S5
         Z498"]},{"label":"Author","value":["Isherwood, Christopher, 1904-1986"]},{"label":"Donor","value":["Copland,
       Aaron, 1900-1990"]},{"label":"Collection","value":["Test"]}],"thumbnail":{"@id":"https://libimages1.princeton.edu/loris/plum/sb%2Fn9%2F99%2F67%2F23-intermediate_file.jp2/full/!200,150/0/default.jpg","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://libimages1.princeton.edu/loris/plum/sb%2Fn9%2F99%2F67%2F23-intermediate_file.jp2","profile":"http://iiif.io/api/image/2/level2.json"}},"seeAlso":{"@id":"http://httpstat.us/407","format":"application/ld+json"}, "rendering": {"@id": "http://arks.princeton.edu/ark:/9999/123", "format": "text/html"}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:40:56 GMT
 - request:
     method: head
@@ -545,7 +545,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:41:02 GMT
 - request:
     method: head
@@ -602,7 +602,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:41:03 GMT
 - request:
     method: head
@@ -659,7 +659,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 18 Oct 2016 23:41:04 GMT
 - request:
     method: get
@@ -704,7 +704,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: 407 Proxy Authentication Required
-    http_version: 
+    http_version:
   recorded_at: Wed, 19 Oct 2016 00:46:27 GMT
 - request:
     method: get
@@ -749,6 +749,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: 407 Proxy Authentication Required
-    http_version: 
+    http_version:
   recorded_at: Wed, 19 Oct 2016 00:46:27 GMT
 recorded_with: VCR 3.0.3

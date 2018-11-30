@@ -93,9 +93,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     def range_labels(h)
       values = []
       (@manifest['structures'] || []).each do |s|
-        (s['ranges'] || []).each do |r|
-          values << r['label']
-        end
+        values << s['label']
       end
       h['Range label'] = values unless values.empty?
     end

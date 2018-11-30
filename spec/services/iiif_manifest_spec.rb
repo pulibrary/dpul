@@ -60,5 +60,10 @@ RSpec.describe IiifManifest do
         expect(manifest_service.to_solr["sort_author_ssi"]).to eq "John Doe"
       end
     end
+    describe 'range-label' do
+      it 'is a multi-value text field' do
+        expect(manifest_service.to_solr["readonly_range-label_tesim"]).to eq ["range label value"]
+      end
+    end
   end
 end
