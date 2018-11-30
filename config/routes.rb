@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
+  match '/404', to: 'pages#not_found', via: :all
+  match '/500', to: 'pages#internal_server_error', via: :all
   get '/viewers', to: 'pages#viewers', as: 'viewers_page'
   mount Spotlight::Engine, at: '/'
 
