@@ -111,6 +111,7 @@ Rails/TimeZone:
 
 Rails/OutputSafety:
   Exclude:
+    - 'app/processors/custom_field_rendering.rb'
     - 'app/presenters/rtl_index_presenter.rb'
     - 'app/presenters/rtl_show_presenter.rb'
 
@@ -121,7 +122,7 @@ Rails/DynamicFindBy:
     - 'app/decorators/applies_title_from_slug.rb'
     - 'app/values/manifest_metadata.rb'
 
-Rails/ExampleLength:
+RSpec/ExampleLength:
   Exclude:
     - 'spec/controllers/pomegranate/metadata_configurations_controller_spec.rb'
     - 'spec/controllers/catalog_controller_spec.rb'

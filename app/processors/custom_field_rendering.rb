@@ -16,7 +16,7 @@ class CustomFieldRendering < Blacklight::Rendering::AbstractStep
       end
     end
     options = config.separator_options || {}
-    rendered = rendered_values.to_sentence(options)
+    rendered = rendered_values.to_sentence(options).html_safe
 
     next_step(rendered)
   end
