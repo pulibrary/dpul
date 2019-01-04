@@ -14,7 +14,12 @@ RSpec.describe 'Error Pages', type: :feature do
   end
 
   context "when triggering the error" do
-    it "shows a custom 404 page" do
+    it "shows a custom 404 page for a top-level page" do
+      visit "/nonexistent"
+      expect(page).to have_selector ".site-title", text: "We Can't Find That Page"
+    end
+
+    it "shows a custom 404 page within an exhibit" do
       visit "/catalog/nonexistent"
       expect(page).to have_selector ".site-title", text: "We Can't Find That Page"
     end
