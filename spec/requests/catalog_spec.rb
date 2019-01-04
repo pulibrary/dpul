@@ -33,9 +33,7 @@ RSpec.describe "catalog paths", type: :request do
   describe "wp-login.php" do
     it "redirects to the catalog index" do
       get "/wp-login.php"
-
-      expect(response.status).to eq 301
-      expect(response).to redirect_to("/")
+      expect(response.status).to eq 404
     end
   end
 end
