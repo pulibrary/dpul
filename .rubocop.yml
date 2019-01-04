@@ -129,6 +129,7 @@ RSpec/ExampleLength:
     - 'spec/models/iiif_resource_spec.rb'
     - 'spec/services/figgy_event_processor_spec.rb'
     - 'spec/workers/figgy_event_handler_spec.rb'
+    - 'spec/requests/catalog_spec.rb'
 
 RSpec/ExampleWording:
   CustomTransform:
@@ -147,6 +148,11 @@ RSpec/DescribeClass:
     - 'spec/routing/**/*'
     - 'spec/inputs/**/*'
 
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/requests/catalog_spec.rb'
+    - 'spec/models/iiif_resource_spec.rb'
+
 Naming/FileName:
   Exclude:
     - 'Capfile'
@@ -154,6 +160,3 @@ Naming/FileName:
 RSpec/AnyInstance:
   Exclude:
     - 'spec/support/stub_iiif_response.rb'
-RSpec/MultipleExpectations:
-  Exclude:
-    - 'spec/models/iiif_resource_spec.rb'
