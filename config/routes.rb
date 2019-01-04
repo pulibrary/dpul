@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   match '/404', to: 'pages#not_found', via: :all
   match '/500', to: 'pages#internal_server_error', via: :all
   get '/viewers', to: 'pages#viewers', as: 'viewers_page'
-  get '/wp-login.php', to: redirect('/')
   mount Spotlight::Engine, at: '/'
 
   concern :exportable, Blacklight::Routes::Exportable.new

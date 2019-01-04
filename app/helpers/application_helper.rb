@@ -3,6 +3,12 @@ module ApplicationHelper
   include Spotlight::ApplicationHelper
   delegate :url, to: :request, prefix: true
 
+  def render_search_bar
+    super
+  rescue StandardError
+    render partial: 'catalog/default_search_form'
+  end
+
   def site_sidebar?
     can?(:manage, Spotlight::Site.instance) || can?(:create, Spotlight::Exhibit)
   end
