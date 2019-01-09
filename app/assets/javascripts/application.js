@@ -24,6 +24,7 @@
 //= require almond
 //= require universal_viewer
 //= require pom_boot
+//= require more_link
 
 Blacklight.onLoad(function() {
   Initializer = require('pom_boot')
