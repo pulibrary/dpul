@@ -10,7 +10,7 @@ RSpec.describe Spotlight::ReindexJob do
     allow(exhibit).to receive(:id).and_return('exhibit1')
     allow(Spotlight::Exhibit).to receive(:find).with('exhibit1').and_return(exhibit)
     allow(CollectionManifest).to receive(:find_by_slug).and_return(manifest)
-    allow(resource).to receive(:save_and_index)
+    allow(resource).to receive(:save_and_index_now)
   end
 
   it 'reindexes an exhibit' do

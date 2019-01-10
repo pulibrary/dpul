@@ -4,9 +4,9 @@ class ExhibitProxy
     @exhibit = exhibit
   end
 
-  def reindex(*_args)
-    members.each_slice(50) do |slice|
-      IIIFIngestJob.perform_later slice, exhibit
+  def reindex(log_entry = nil)
+    members.each do |member|
+      IIIFIngestJob.perform_later member, exhibit, log_entry
     end
   end
 
