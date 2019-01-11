@@ -36,6 +36,11 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     data["noid"]
   end
 
+  def save_and_index_now(*args)
+    save(*args)
+    Spotlight::ReindexJob.perform_now(self)
+  end
+
   private
 
     def set_noid

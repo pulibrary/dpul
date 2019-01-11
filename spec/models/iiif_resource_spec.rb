@@ -233,5 +233,20 @@ describe IIIFResource do
         expect { resource.save }.to raise_error(IIIFResource::InvalidIIIFManifestError, "Invalid Collection metadata found in the IIIF Manifest: #{url}")
       end
     end
+
+    describe '#save_and_index_now' do
+      let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
+      let(:resource) { described_class.new url: url, exhibit: exhibit }
+
+      before do
+        allow(Spotlight::ReindexJob).to receive(:perform_now)
+        allow(resource).to receive(:save)
+      end
+
+      it 'calls perform now on Spotlight::ReindexJob' do
+        resource.save_and_index_now
+        expect(Spotlight::ReindexJob).to have_received(:perform_now)
+      end
+    end
   end
 end
