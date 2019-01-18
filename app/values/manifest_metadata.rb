@@ -50,19 +50,19 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     end
 
     def new_values
-      values.map do |value|
-        if value["@value"]
-          value["@value"]
-        elsif key == 'Language'
-          ISO_639.find_by_code(value).try(:english_name) || value
-        elsif key == 'Memberof'
-          value['title']
-        elsif value["@id"]
-          value["@id"]
-        else
-          value
-        end
-      end
+      values.map { |value| transform_value(value) }
+    end
+
+    def transform_value(value)
+      ["@value", "pref_label"].each { |prop| return value[prop] if value[prop] }
+      return language_name(value) if key == 'Language'
+      return value['title'] if key == 'Memberof'
+      return value["@id"] if value["@id"]
+      value
+    end
+
+    def language_name(value)
+      ISO_639.find_by_code(value).try(:english_name) || value
     end
   end
   def process_values(input_hash)
