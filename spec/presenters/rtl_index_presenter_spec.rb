@@ -16,7 +16,8 @@ RSpec.describe RTLIndexPresenter do
   let(:blacklight_config) do
     double(
       index: index_config,
-      index_fields: { field: field_config }
+      index_fields: { field: field_config },
+      facet_fields: { "exhibit_tags" => double(field: "tags_ssim") }
     )
   end
 
@@ -52,6 +53,21 @@ RSpec.describe RTLIndexPresenter do
 
       it 'renders the display title field' do
         expect(presenter.label(:title)).to eq 'a different title'
+      end
+    end
+
+    context 'when an override field exists' do
+      let(:index_config) { double(title_field: 'title', display_title_field: 'alternate_title') }
+      let(:document) do
+        {
+          title: title,
+          alternate_title: alternate_title,
+          "override-title_ssim": ["Test"]
+        }
+      end
+
+      it 'renders it' do
+        expect(presenter.label(:title)).to eq "Test"
       end
     end
 

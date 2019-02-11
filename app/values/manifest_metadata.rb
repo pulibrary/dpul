@@ -65,6 +65,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       ISO_639.find_by_code(value).try(:english_name) || value
     end
   end
+
   def process_values(input_hash)
     h = Hash[input_hash.map do |key, values|
       Value.new(key, values).to_pair

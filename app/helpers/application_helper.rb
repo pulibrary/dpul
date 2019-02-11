@@ -27,7 +27,7 @@ module ApplicationHelper
   def text_area?(field, exhibit)
     index_field_config = exhibit.blacklight_config.index_fields[field.field]
 
-    index_field_config.text_area == "1"
+    index_field_config.respond_to?(:text_area) && index_field_config.text_area == "1"
   end
 
   def text_area_value(field, sidecar)
