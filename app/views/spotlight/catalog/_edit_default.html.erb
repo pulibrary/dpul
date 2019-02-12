@@ -25,7 +25,8 @@
           <% else %>
             <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field? %>
           <% end %>
-          <% unless field.configured_to_display? %>
+          <%# Don't show a warning for the override title - it should never display in the show fields. %>
+          <% unless field.slug == "override-title_ssim" || field.configured_to_display? %>
             <p class="bg-warning help-block">
               <%= t(:'.blank_field_warning_html',
                     link: link_to(t(:'spotlight.configuration.sidebar.metadata'), spotlight.edit_exhibit_metadata_configuration_path(current_exhibit))) %>

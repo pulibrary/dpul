@@ -25,7 +25,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   end
 
   def header
-    fields = Array.wrap(view_config.title_field)
+    fields = Array.wrap(title_field)
     f = fields.detect { |field| @document.has? field }
     f ||= @configuration.document_model.unique_key
     @document[f].to_sentence(field_config(f).separator_options)
@@ -33,10 +33,27 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   end
 
   def heading
-    fields = Array.wrap(view_config.title_field)
+    fields = Array.wrap(title_field)
     f = fields.detect { |field| document.has? field }
     f ||= configuration.document_model.unique_key
     field_values(field_config(f), value: document[f].map(&:html_safe))
+  end
+
+  # Automatically display the override title if it's present.
+  def title_field
+    if @document.has?(override_title_field) && @document[override_title_field].present?
+      override_title_field
+    else
+      view_config.title_field
+    end
+  end
+
+  def exhibit_prefix
+    @exhibit_prefix ||= configuration.facet_fields["exhibit_tags"].field.gsub("tags_ssim", "")
+  end
+
+  def override_title_field
+    :"#{exhibit_prefix}override-title_ssim"
   end
 
   def html_title

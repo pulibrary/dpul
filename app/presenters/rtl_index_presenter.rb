@@ -26,11 +26,20 @@ class RTLIndexPresenter < ::Blacklight::IndexPresenter
       default_title_field = @configuration.index.title_field.to_sym
       display_title_field = @configuration.index.display_title_field.to_sym
 
+      # When asked for a title, display the override title if it's present.
       if field == default_title_field && @document.key?(display_title_field)
-        @document[display_title_field]
+        @document[override_title_field] || @document[display_title_field]
       else
         @document[field]
       end
+    end
+
+    def exhibit_prefix
+      @exhibit_prefix ||= configuration.facet_fields["exhibit_tags"].field.gsub("tags_ssim", "")
+    end
+
+    def override_title_field
+      :"#{exhibit_prefix}override-title_ssim"
     end
 
     def label_value(value, config)
