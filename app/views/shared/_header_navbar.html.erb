@@ -1,17 +1,9 @@
-<header role="banner">
-  <div class="l-branding__pul">
-    <div class="container">
-      <div class="logo__pul col-xs-12 col-sm-6">
-        <a href="https://library.princeton.edu" title="Princeton University Library">
-           <%= image_tag("pul-logo-new.svg") %>
-        </a>
-        <%=link_to header_title, root_path, :class => "site-title" %>
-      </div>
-      <div class="pull-right menu--level-1 col-xs-12 col-sm-6">
-        <ul>
-          <%= render partial: '/user_util_links' %>
-        </ul>
-      </div>
+<header class="lux">
+  <library-header app-name="<%= application_name %>" app-url="<%= root_path %>">
+    <div class="pull-right menu--level-1 col-xs-12 col-sm-6">
+      <ul>
+        <%= render partial: '/user_util_links' %>
+      </ul>
     </div>
-  </div>
+  </library-header>
 </header>

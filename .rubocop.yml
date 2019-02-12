@@ -17,6 +17,8 @@ AllCops:
     - 'vendor/**/*'
     - 'bin/*'
     - 'config/deploy.rb'
+    - 'config/environments/**/*'
+    - 'node_modules/**/*'
 
 Lint/UnusedBlockArgument:
   Exclude:

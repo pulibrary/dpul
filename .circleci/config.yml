@@ -8,6 +8,7 @@ jobs:
       - image: circleci/ruby:2.3.7-node-browsers
         environment:
           RAILS_ENV: test
+          NODE_ENV: test
           POMEGRANATE_DB_HOST: localhost
           POMEGRANATE_DB_USERNAME: pomegranate
           POMEGRANATE_DB_PASSWORD: ""
@@ -17,14 +18,28 @@ jobs:
       - type: cache-restore
         name: Restore bundle cache
         key: pomegranate-{{ checksum "Gemfile.lock" }}
+      - type: cache-restore
+        name: Restore Yarn cache
+        key: pomegranate-yarn-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install NPM dependencies via Yarn
+          command: yarn install --frozen-lockfile
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       # Cache Dependencies
+      - type: cache-save
+        name: Save Yarn package cache
+        key: pomegranate-yarn-{{ checksum "yarn.lock" }}
+        paths:
+          - ~/.cache/yarn
       - type: cache-save
         name: Store bundle cache
         key: pomegranate-{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
+      - run:
+          name: Compile the Webpack bundles
+          command: bundle exec rails webpacker:compile
       - persist_to_workspace:
           root: '~/pomegranate'
           paths: '*'

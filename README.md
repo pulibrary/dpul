@@ -13,12 +13,13 @@ A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton U
 git clone git@github.com:pulibrary/pomegranate.git
 cd pomegranate
 bundle install
+yarn install
 bundle exec rake db:create
 bundle exec rake db:migrate
 bundle exec rake pomegranate:development
 ```
 
-After setup, run Pomegranate locally with `rails s`.
+After setup, run Pomegranate locally with `bundle exec foreman start`.
 
 ### Importing Data:
 
