@@ -34,6 +34,7 @@ end
 
 group :development do
   gem 'foreman'
+  gem 'puma'
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end

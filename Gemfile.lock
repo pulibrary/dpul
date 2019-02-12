@@ -364,6 +364,7 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     public_suffix (2.0.5)
+    puma (3.12.0)
     rack (2.0.6)
     rack-protection (1.5.5)
       rack
@@ -626,6 +627,7 @@ DEPENDENCIES
   pry-rails
   pul-assets!
   pul_uv_rails!
+  puma
   rack (>= 2.0.6)
   rails (~> 5.0)
   rails-controller-testing
