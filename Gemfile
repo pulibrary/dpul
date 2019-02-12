@@ -32,6 +32,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'foreman'
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end
@@ -70,6 +71,7 @@ gem 'sprockets', '~> 3.7'
 gem 'sprockets-es6'
 gem 'sprockets-rails'
 gem 'string_rtl'
+gem 'webpacker', '~> 3.5'
 
 # PUL Assets
 gem 'dalli'

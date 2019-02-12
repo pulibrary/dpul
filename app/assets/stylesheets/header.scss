@@ -2,6 +2,36 @@
 @import "variables/typography";
 @import "variables/colors";
 
+header.lux {
+  .lux-library-header {
+    background: $brand-black;
+
+    .lux-header-content {
+      padding: 8px 15px;
+
+      .lux-library-contact[data-v-5dc06ba0] {
+        margin-right: 0.4rem;
+
+        svg[aria-labelledby="logo-library"] {
+          height: 36px;
+        }
+      }
+
+      .lux-app-name[data-v-102d12b5]:not(:empty) {
+        font-size: 1.6em;
+        height: inherit;
+        letter-spacing: inherit;
+
+        margin-left: 1rem;
+        padding-left: 1rem;
+        line-height: 36px;
+        font-family: "Source Sans Pro", "DejaVu", "HelveticaNeue", Arial, sans-serif;
+        border-left-color: #746d54;
+      }
+    }
+  }
+}
+
 .logo__pul {
   height: 40px;
   display: inline-block;
