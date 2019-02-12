@@ -2,6 +2,32 @@ require 'rails_helper'
 
 RSpec.describe CatalogController do
   let(:user) { nil }
+  context "with full-text search" do
+    before do
+      VCR.turn_off!
+    end
+    let(:user) { FactoryBot.create(:site_admin) }
+    it "searches" do
+      WebMock.disable_net_connect!(allow_localhost: true)
+      url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
+      stub_manifest(url: url, fixture: 'full_text_manifest.json')
+      stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
+      stub_file_set_text(id: "48fdf2bb-f378-4511-97e1-5bf20113aea7", text: "Testing")
+      stub_file_set_text(id: "276126f9-1cd3-4092-ab7d-616525293b6a", text: "More searchable text")
+      stub_file_set_text(id: "38532b98-6f0b-4823-aff9-b59e3f0ef6eb", text: "Searching even more")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+      resource = IIIFResource.new(url: url, exhibit: exhibit)
+      resource.save_and_index
+      Blacklight.default_index.connection.commit
+
+      get :index, params: { q: "More searchable text", exhibit_id: exhibit.id }
+
+      expect(document_ids.length).to eq 1
+    end
+    after do
+      VCR.turn_on!
+    end
+  end
   context "with mvw", vcr: { cassette_name: 'mvw', allow_playback_repeats: true } do
     let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
     it "hides scanned resources with parents" do

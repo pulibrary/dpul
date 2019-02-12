@@ -1,0 +1,120 @@
+{  
+  "@context":"https://bibdata.princeton.edu/context.json",
+  "@id":"https://figgy.princeton.edu/catalog/e41da87f-84af-4f50-ab69-781576cf82db",
+  "edm_rights":{  
+    "@id":"http://rightsstatements.org/vocab/CNE/1.0/",
+    "@type":"dcterms:RightsStatement",
+    "pref_label":"Copyright Not Evaluated"
+  },
+  "memberOf":[  
+    {  
+      "@id":"https://figgy.princeton.edu/catalog/592196d5-a914-40e8-af18-64d5f5adbb44",
+      "@type":"pcdm:Collection",
+      "barcode":"32101089002065",
+      "label":"Box 4",
+      "box_number":"4"
+    }
+  ],
+  "@type":"pcdm:Object",
+  "title":"Derechos y Democracia: Centro Internacional de Derechos Humanos y Desarrollo Democrático.",
+  "publisher":[  
+    "Centro Internacional de Derechos Humanos y Desarrollo Democrático (Derechos y Democracia)"
+  ],
+  "barcode":"32101089002065",
+  "local_identifier":[  
+    "070f8"
+  ],
+  "label":"Folder 300",
+  "is_part_of":"Latin American Ephemera",
+  "coverage":[  
+    {  
+      "@id":"https://figgy.princeton.edu/catalog/431d426a-93a7-4440-a35d-3d4c51d39b2f",
+      "@type":"skos:Concept",
+      "pref_label":"Latin America",
+      "in_scheme":{  
+        "@id":"https://figgy.princeton.edu/ns/lAEGeographicAreas",
+        "@type":"skos:ConceptScheme",
+        "pref_label":"LAE Geographic Areas"
+      },
+      "exact_match":{  
+        "@id":"http://id.loc.gov/vocabulary/geographicAreas/cl"
+      }
+    }
+  ],
+  "dcterms_type":[  
+    {  
+      "@id":"https://figgy.princeton.edu/catalog/42754ac7-7723-4219-81eb-11085946fdca",
+      "@type":"skos:Concept",
+      "pref_label":"Pamphlets",
+      "in_scheme":{  
+        "@id":"https://figgy.princeton.edu/ns/lAEGenres",
+        "@type":"skos:ConceptScheme",
+        "pref_label":"LAE Genres"
+      },
+      "exact_match":{  
+        "@id":"http://id.loc.gov/vocabulary/graphicMaterials/tgm007415"
+      }
+    }
+  ],
+  "origin_place":[  
+    {  
+      "@id":"https://figgy.princeton.edu/catalog/0b3805e6-3ff3-45f6-9f32-490822d98c0e",
+      "@type":"skos:Concept",
+      "pref_label":"Canada",
+      "in_scheme":{  
+        "@id":"https://figgy.princeton.edu/ns/lAEGeographicAreas",
+        "@type":"skos:ConceptScheme",
+        "pref_label":"LAE Geographic Areas"
+      },
+      "exact_match":{  
+        "@id":"http://id.loc.gov/vocabulary/geographicAreas/n-cn"
+      }
+    }
+  ],
+  "language":[  
+    {  
+      "@id":"https://figgy.princeton.edu/catalog/1bb6e264-8b3a-452c-9bc5-10e1c4c98c3e",
+      "@type":"skos:Concept",
+      "pref_label":"Spanish",
+      "in_scheme":{  
+        "@id":"https://figgy.princeton.edu/ns/lAELanguages",
+        "@type":"skos:ConceptScheme",
+        "pref_label":"LAE Languages"
+      },
+      "exact_match":{  
+        "@id":"http://id.loc.gov/vocabulary/iso639-1/es"
+      }
+    }
+  ],
+  "subject":[  
+    {  
+      "@id":"https://figgy.princeton.edu/catalog/cea3510b-6c33-4540-8274-e2e6b297d88c",
+      "@type":"skos:Concept",
+      "pref_label":"Civil rights--Government policy",
+      "in_scheme":{  
+        "@id":"https://figgy.princeton.edu/ns/lAESubjects/humanAndCivilRights",
+        "@type":"skos:ConceptScheme",
+        "pref_label":"Human and civil rights"
+      }
+    }
+  ],
+  "category":[  
+    {  
+      "@id":"https://figgy.princeton.edu/catalog/2bbc258e-f5ef-4878-a7de-6ae893af8571",
+      "@type":"skos:ConceptScheme",
+      "pref_label":"Human and civil rights"
+    }
+  ],
+  "height":[  
+    "22"
+  ],
+  "width":[  
+    "10"
+  ],
+  "sort_title":[  
+    "derechos y democracia: centro internacional de derechos humanos y desarrollo democrático."
+  ],
+  "created":"10/15/17 01:23:05 PM UTC",
+  "modified":"06/14/18 05:27:57 PM UTC",
+  "folder_number":"300"
+}

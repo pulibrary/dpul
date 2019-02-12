@@ -6,6 +6,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     add_sort_title
     add_sort_date
     add_sort_author
+    add_full_text
     super
   end
 
@@ -94,5 +95,26 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
       "Override Title",
       "Title"
     ]
+  end
+
+  def add_full_text
+    return if manifest["sequences"].blank?
+    text = manifest["sequences"]
+           .flat_map { |x| x["canvases"] }.compact
+           .flat_map { |x| x["rendering"] }.compact
+           .select { |x| x["format"] == "text/plain" }
+           .map { |x| x["@id"] }
+           .map { |x| get_text(x) }
+           .compact
+    solr_hash["full_text_tesim"] = text
+  end
+
+  def get_text(url)
+    return unless url
+    response = Faraday.get(url)
+    raise Faraday::Error::ConnectionFailed, response.status unless response.status == 200
+    response.body.force_encoding("UTF-8")
+  rescue Faraday::Error::ConnectionFailed, Faraday::TimeoutError => e
+    Rails.logger.warn("HTTP GET for #{jsonld_url} failed with #{e}")
   end
 end
