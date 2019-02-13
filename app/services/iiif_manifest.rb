@@ -106,7 +106,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
            .map { |x| x["@id"] }.compact
     return if text.empty?
     manifest_id = manifest["@id"].match(/.*\/(.*)\/manifest/)[1]
-    text = Array(FiggyGraphql.get_ocr_content_for_id(id: manifest_id)).map { |x| x.to_s.force_encoding('UTF-8') }
+    text = Array(FiggyGraphql.get_ocr_content_for_id(id: manifest_id)).map { |x| x.to_s.dup.force_encoding('UTF-8') }
     solr_hash["full_text_tesim"] = text
   end
 end

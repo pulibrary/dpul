@@ -12,7 +12,7 @@ RSpec.describe FiggyGraphql do
                       )
                     ))
   end
-  let(:ocr_content) { ["Content"] }
+  let(:ocr_content) { ["Content".freeze] }
 
   before do
     allow(GraphQL::Client).to receive(:load_schema).and_return(schema)
