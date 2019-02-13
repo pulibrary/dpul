@@ -12,7 +12,7 @@ module StubbedManifestsHelper
   end
 
   def stub_ocr_content(id:, text:)
-    allow(IiifManifest::FiggyGraphql).to receive(:get_ocr_content_for_id).with(id: id).and_return([text])
+    allow(FiggyGraphql).to receive(:get_ocr_content_for_id).with(id: id).and_return([text])
   end
 end
 RSpec.configure do |config|
