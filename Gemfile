@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'coffee-rails'
+gem 'graphql-client'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'

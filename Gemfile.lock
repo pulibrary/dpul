@@ -258,6 +258,10 @@ GEM
     github-markup (2.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    graphql (1.8.15)
+    graphql-client (0.14.0)
+      activesupport (>= 3.0, < 6.0)
+      graphql (~> 1.6)
     hashdiff (0.3.7)
     hashie (3.5.7)
     honeybadger (2.7.2)
@@ -611,6 +615,7 @@ DEPENDENCIES
   factory_bot_rails
   foreman
   friendly_id!
+  graphql-client
   honeybadger (~> 2.0)
   iiif-presentation
   iso-639
