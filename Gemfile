@@ -27,6 +27,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
   gem 'sqlite3'
+  gem 'sshkit', '~> 1.18'
   gem 'vcr'
   gem 'webmock', require: false
 end
@@ -71,7 +72,7 @@ gem 'sprockets', '~> 3.7'
 gem 'sprockets-es6'
 gem 'sprockets-rails'
 gem 'string_rtl'
-gem 'webpacker', '~> 3.5'
+gem 'webpacker', '>= 4.0.x'
 
 # PUL Assets
 gem 'dalli'
