@@ -32,4 +32,25 @@ describe ApplicationHelper, type: :helper do
       expect(output).to eq(data: data)
     end
   end
+
+  describe '#header_title' do
+    let(:current_site) { instance_double(Spotlight::Site) }
+
+    before do
+      allow(helper).to receive(:current_site).and_return(current_site)
+    end
+    it 'delegates to the site title attribute for the Spotlight::Site' do
+      allow(current_site).to receive(:title).and_return('Test Site Title')
+
+      expect(helper.header_title).to eq 'Test Site Title'
+    end
+    context 'when the Spotlight::Site title cannot be retrieved' do
+      before do
+        allow(current_site).to receive(:title).and_return(nil)
+      end
+      it 'accesses the Blacklight application name' do
+        expect(helper.header_title).to eq 'Digital PUL'
+      end
+    end
+  end
 end
