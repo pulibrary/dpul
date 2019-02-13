@@ -6,6 +6,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     add_sort_title
     add_sort_date
     add_sort_author
+    add_full_text
     super
   end
 
@@ -94,5 +95,18 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
       "Override Title",
       "Title"
     ]
+  end
+
+  def add_full_text
+    return if manifest["sequences"].blank?
+    text = manifest["sequences"]
+           .flat_map { |x| x["canvases"] }.compact
+           .flat_map { |x| x["rendering"] }.compact
+           .select { |x| x["format"] == "text/plain" }
+           .map { |x| x["@id"] }.compact
+    return if text.empty?
+    manifest_id = manifest["@id"].match(/.*\/(.*)\/manifest/)[1]
+    text = Array(FiggyGraphql.get_ocr_content_for_id(id: manifest_id)).map { |x| x.to_s.dup.force_encoding('UTF-8') }
+    solr_hash["full_text_tesim"] = text
   end
 end

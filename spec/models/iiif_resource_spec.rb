@@ -1,8 +1,34 @@
 require 'rails_helper'
 
 describe IIIFResource do
+  context "when ingesting a manifest with full text" do
+    before do
+      VCR.turn_off!
+    end
+    it "indexes the full text into a TESIM field" do
+      WebMock.disable_net_connect!(allow_localhost: true)
+      url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
+      stub_manifest(url: url, fixture: 'full_text_manifest.json')
+      stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
+      stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      resource.save
+      resource.reindex
+
+      solr = Blacklight.default_index.connection
+      solr.commit
+      solr_doc = solr.select(q: "*:*")["response"]["docs"].first
+
+      expect(solr_doc["full_text_tesim"]).not_to be_blank
+    end
+    after do
+      VCR.turn_on!
+    end
+  end
   context 'with recorded http interactions', vcr: { cassette_name: 'all_collections', allow_playback_repeats: true } do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
+
     it 'ingests a iiif manifest' do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
@@ -30,6 +56,7 @@ describe IIIFResource do
     end
     context "when given a MVW", vcr: { cassette_name: 'mvw' } do
       let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
+
       it "ingests both items as individual solr records, marking the child" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
         resource = described_class.new url: url, exhibit: exhibit
@@ -56,6 +83,7 @@ describe IIIFResource do
     end
     context "when given an unreachable seeAlso url", vcr: { cassette_name: 'see_also_connection_failed', allow_playback_repeats: true } do
       let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest" }
+
       it "ingests a iiif manifest using the metadata pool, excludes range labels when missing" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
         resource = described_class.new url: url, exhibit: exhibit

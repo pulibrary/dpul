@@ -2,6 +2,30 @@ require 'rails_helper'
 
 RSpec.describe CatalogController do
   let(:user) { nil }
+  context "with full-text search" do
+    before do
+      VCR.turn_off!
+    end
+    let(:user) { FactoryBot.create(:site_admin) }
+    it "searches" do
+      WebMock.disable_net_connect!(allow_localhost: true)
+      url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
+      stub_manifest(url: url, fixture: 'full_text_manifest.json')
+      stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
+      stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+      resource = IIIFResource.new(url: url, exhibit: exhibit)
+      resource.save_and_index
+      Blacklight.default_index.connection.commit
+
+      get :index, params: { q: "More searchable text", exhibit_id: exhibit.id }
+
+      expect(document_ids.length).to eq 1
+    end
+    after do
+      VCR.turn_on!
+    end
+  end
   context "with mvw", vcr: { cassette_name: 'mvw', allow_playback_repeats: true } do
     let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
     it "hides scanned resources with parents" do
