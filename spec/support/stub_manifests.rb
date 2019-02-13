@@ -11,9 +11,8 @@ module StubbedManifestsHelper
       .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "metadata", "#{id}.json")), headers: { 'content-type' => 'application/ld+json' })
   end
 
-  def stub_file_set_text(id:, text:)
-    stub_request(:get, "https://figgy.princeton.edu/concern/file_sets/#{id}/text")
-      .to_return(status: 200, body: text, headers: { 'content-type' => 'text/plain' })
+  def stub_ocr_content(id:, text:)
+    allow(IiifManifest::FiggyGraphql).to receive(:get_ocr_content_for_id).with(id: id).and_return([text])
   end
 end
 RSpec.configure do |config|

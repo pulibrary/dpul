@@ -103,18 +103,49 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
            .flat_map { |x| x["canvases"] }.compact
            .flat_map { |x| x["rendering"] }.compact
            .select { |x| x["format"] == "text/plain" }
-           .map { |x| x["@id"] }
-           .map { |x| get_text(x) }
-           .compact
+           .map { |x| x["@id"] }.compact
+    return if text.empty?
+    manifest_id = manifest["@id"].match(/.*\/(.*)\/manifest/)[1]
+    text = Array(FiggyGraphql.get_ocr_content_for_id(id: manifest_id)).map { |x| x.to_s.force_encoding('UTF-8') }
     solr_hash["full_text_tesim"] = text
   end
 
-  def get_text(url)
-    return unless url
-    response = Faraday.get(url)
-    raise Faraday::Error::ConnectionFailed, response.status unless response.status == 200
-    response.body.force_encoding("UTF-8")
-  rescue Faraday::Error::ConnectionFailed, Faraday::TimeoutError => e
-    Rails.logger.warn("HTTP GET for #{jsonld_url} failed with #{e}")
+  module FiggyGraphql
+    require "graphql/client"
+    require "graphql/client/http"
+    # Configure GraphQL endpoint using the basic HTTP network adapter.
+    HTTP = GraphQL::Client::HTTP.new("https://figgy.princeton.edu/graphql")
+
+    # Fetch latest schema on init, this will make a network request
+    def self.schema
+      @schema ||= GraphQL::Client.load_schema(HTTP)
+    end
+
+    def self.client
+      @client ||= GraphQL::Client.new(schema: schema, execute: HTTP)
+    end
+
+    def self.ocr_content_query
+      @ocr_content_query ||=
+        begin
+          query =
+            <<-'GRAPHQL'
+              query($id: ID!) {
+                resource(id: $id) {
+                  ocrContent
+                }
+              }
+            GRAPHQL
+          FiggyGraphql.const_set(:OCRQuery, client.parse(query))
+        end
+    end
+
+    def self.get_ocr_content_for_id(id:)
+      ocr_content_query
+      client.query(
+        FiggyGraphql::OCRQuery,
+        variables: { id: id }
+      ).data.try(:resource).try(:ocr_content)
+    end
   end
 end
