@@ -50,6 +50,30 @@ RSpec.describe ExhibitsController, vcr: { cassette_name: "all_collections", allo
     end
   end
 
+  describe '#update' do
+    let(:exhibit) { Spotlight::Exhibit.new(title: 'New Collection', published: true, slug: 'new-collection') }
+    let(:params) do
+      {
+        title: 'Some Title',
+        thumbnails_enabled: false,
+        tag_list: '2014, R. Buckminster Fuller'
+      }
+    end
+
+    before do
+      exhibit.save
+    end
+
+    it 'disables the rendering of thumbnails' do
+      exhibit.reload
+      expect(exhibit.thumbnails_enabled).to be true
+      patch :update, params: { id: exhibit, exhibit: params }
+
+      exhibit.reload
+      expect(exhibit.thumbnails_enabled).to be false
+    end
+  end
+
   describe "#destroy" do
     let(:exhibit) do
       {

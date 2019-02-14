@@ -12,6 +12,20 @@ class ExhibitsController < Spotlight::ExhibitsController
     super
   end
 
+  protected
+
+    def exhibit_params
+      params.require(:exhibit).permit(
+        :title,
+        :subtitle,
+        :description,
+        :published,
+        :tag_list,
+        :thumbnails_enabled,
+        contact_emails_attributes: %i[id email]
+      )
+    end
+
   private
 
     def find_exhibit

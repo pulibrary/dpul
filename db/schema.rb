@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180219235717) do
+ActiveRecord::Schema.define(version: 20190214151046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,21 +122,22 @@ ActiveRecord::Schema.define(version: 20180219235717) do
   end
 
   create_table "spotlight_exhibits", force: :cascade do |t|
-    t.string   "title",                          null: false
+    t.string   "title",                              null: false
     t.string   "subtitle"
     t.string   "slug"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "layout"
-    t.boolean  "published",      default: false
+    t.boolean  "published",          default: false
     t.datetime "published_at"
     t.string   "featured_image"
     t.integer  "masthead_id"
     t.integer  "thumbnail_id"
-    t.integer  "weight",         default: 50
+    t.integer  "weight",             default: 50
     t.integer  "site_id"
     t.string   "theme"
+    t.boolean  "thumbnails_enabled", default: true
     t.index ["site_id"], name: "index_spotlight_exhibits_on_site_id", using: :btree
     t.index ["slug"], name: "index_spotlight_exhibits_on_slug", unique: true, using: :btree
   end
