@@ -35,6 +35,7 @@ class RTLIndexPresenter < ::Blacklight::IndexPresenter
     end
 
     def exhibit_prefix
+      byebug
       @exhibit_prefix ||= configuration.facet_fields["exhibit_tags"].field.gsub("tags_ssim", "")
     end
 
