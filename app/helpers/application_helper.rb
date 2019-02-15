@@ -45,4 +45,18 @@ module ApplicationHelper
 
     custom_field.readonly_field
   end
+
+  # Retrieve the thumbnail using the SolrDocument
+  # @param document [SolrDocument]
+  # @param image_options [Hash]
+  # @return [Array<String>] an Array containing the URLs to the thumbnails
+  def document_thumbnail(document, image_options = {})
+    return unless !current_exhibit.nil? && current_exhibit.thumbnails_enabled
+
+    values = document.fetch(:thumbnail_ssim, nil)
+    return if values.empty?
+
+    url = values.first
+    image_tag url, image_options if url.present?
+  end
 end
