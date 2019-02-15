@@ -34,8 +34,7 @@ body {
 
 .masthead {
   margin-bottom: 0px;
-  /* override from upstream; this was prevening user dropdown from showing up */
-  z-index: 0;
+  z-index: 1;
 }
 
 #main-content {
