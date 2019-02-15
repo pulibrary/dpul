@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Catalog', type: :feature do
-  let(:exhibit) { FactoryBot.create(:exhibit) }
+  let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1') }
   let(:curator) { FactoryBot.create(:exhibit_curator, exhibit: exhibit) }
   let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
   let(:document_id) { '1r66j4408' }
