@@ -16,9 +16,8 @@ group :development, :test do
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console'
-  gem 'capybara'
+  gem 'capybara', '~> 2.0'
   gem 'capybara-screenshot'
-  gem 'capybara-selenium'
   gem 'coveralls', require: false
   gem 'database_cleaner'
   gem 'factory_bot_rails', require: false
@@ -26,11 +25,16 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem "selenium-webdriver"
   gem 'simplecov', require: false
   gem 'sqlite3'
   gem 'sshkit', '~> 1.18'
   gem 'vcr'
   gem 'webmock', require: false
+end
+
+group :test do
+  gem "chromedriver-helper"
 end
 
 group :development do
