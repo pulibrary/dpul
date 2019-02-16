@@ -155,6 +155,9 @@ RSpec/MultipleExpectations:
     - 'spec/requests/catalog_spec.rb'
     - 'spec/models/iiif_resource_spec.rb'
 
+RSpec/FilePath:
+  Enabled: false
+
 Naming/FileName:
   Exclude:
     - 'Capfile'
