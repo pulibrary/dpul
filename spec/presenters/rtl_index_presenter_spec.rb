@@ -58,6 +58,13 @@ RSpec.describe RTLIndexPresenter do
 
     context 'when an override field exists' do
       let(:index_config) { double(title_field: 'title', display_title_field: 'alternate_title') }
+      let(:blacklight_config) do
+        double(
+          index: index_config,
+          index_fields: { field: field_config },
+          facet_fields: {}
+        )
+      end
       let(:document) do
         {
           title: title,

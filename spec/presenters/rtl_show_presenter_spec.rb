@@ -46,6 +46,14 @@ RSpec.describe RTLShowPresenter do
           "override-title_ssim": ["Test"]
         )
       end
+      let(:blacklight_config) do
+        double(
+          show_fields: { field:
+                         double(highlight: false, accessor: nil, default: nil, field: :field, text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil) },
+          view_config: double(title_field: :title, html_title_field: nil),
+          facet_fields: {}
+        )
+      end
 
       it "uses it" do
         expect(presenter.header).to eq "<ul><li dir=\"ltr\">Test</li></ul>"
