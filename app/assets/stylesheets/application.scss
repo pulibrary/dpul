@@ -272,3 +272,20 @@ li {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+#exhibit-navbar {
+  background-color: rgba(0,0,0,0.25);
+  color: white;
+  li > a {
+    color: white;
+    &:hover, &:focus, &:active {
+      background-color: rgba(255,255,255,0.15);
+    }
+  }
+  li.active > a {
+    background-color: rgba(255,255,255,0.3);
+    &:hover, &:focus, &:active {
+      background-color: rgba(255,255,255,0.3);
+    }
+  }
+}
