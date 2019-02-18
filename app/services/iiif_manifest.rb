@@ -60,22 +60,25 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   end
 
   def manifest_metadata
-    metadata = metadata_class.new(manifest).to_solr
-    return {} if metadata.blank?
-    metadata = default_metadata(metadata).merge(metadata)
-    create_sidecars_for(*metadata.keys)
+    @manifest_metadata ||=
+      begin
+        metadata = metadata_class.new(manifest).to_solr
+        return {} if metadata.blank?
+        metadata = default_metadata(metadata).merge(metadata)
+        create_sidecars_for(*metadata.keys)
 
-    metadata.each_with_object({}) do |(key, value), hash|
-      next unless (field = exhibit_custom_fields[key])
-      field = BothFields.new(field)
-      hash[field.field] = value
-      hash[field.alternate_field] = value
-    end
+        metadata.each_with_object({}) do |(key, value), hash|
+          next unless (field = exhibit_custom_fields[key])
+          field = BothFields.new(field)
+          hash[field.field] = value
+          hash[field.alternate_field] = value
+        end
+      end
   end
 
   # When importing a IIIF Resource the first time, create an "Override Title" field.
   def default_metadata(metadata)
-    return {} if metadata["Title"].blank?
+    return {} if metadata["Title"].blank? || sidecar.data["override-title_ssim"].present?
     {
       "Override Title" => nil
     }
