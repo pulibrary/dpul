@@ -26,6 +26,37 @@ describe IIIFResource do
       VCR.turn_on!
     end
   end
+  context "when provided an override title" do
+    before do
+      VCR.turn_off!
+    end
+    after do
+      VCR.turn_on!
+    end
+    it "doesn't get overridden" do
+      WebMock.disable_net_connect!(allow_localhost: true)
+      url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
+      stub_manifest(url: url, fixture: 'full_text_manifest.json')
+      stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
+      stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      resource.save
+      resource.reindex
+      sidecar = resource.solr_document_sidecars[0]
+      sidecar.data["override-title_tesim"] = "Test"
+      sidecar.data["override-title_ssim"] = "Test"
+      sidecar.save!
+      resource = described_class.find(resource.id)
+      resource.reindex
+
+      solr = Blacklight.default_index.connection
+      solr.commit
+      solr_doc = solr.select(q: "*:*")["response"]["docs"].first
+
+      expect(solr_doc["exhibit_exhibit-a_override-title_ssim"]).to eq ["Test"]
+    end
+  end
   context 'with recorded http interactions', vcr: { cassette_name: 'all_collections', allow_playback_repeats: true } do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
 
