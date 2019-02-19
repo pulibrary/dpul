@@ -4,12 +4,16 @@ module Features
     # Use this in feature tests
     def sign_in(who = :user)
       user = if who.instance_of?(User)
-               who.username
+               who.uid
              else
-               FactoryBot.create(:user).username
+               FactoryBot.create(:user).uid
              end
+      OmniAuth.config.test_mode = true
       OmniAuth.config.add_mock(:cas, uid: user)
       visit user_cas_omniauth_authorize_path
     end
   end
+end
+RSpec.configure do |config|
+  config.include Features::SessionHelpers, type: :feature
 end
