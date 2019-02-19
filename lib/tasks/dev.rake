@@ -8,7 +8,7 @@ if Rails.env.development? || Rails.env.test?
       manifest = args[:manifest]
       exhibit_slug = args[:exhibit]
       exhibit = Spotlight::Exhibit.find_by(slug: exhibit_slug)
-      iiif_resource = IIIFResource.find_or_initialize_by(url: manifest, exhibit: exhibit)
+      iiif_resource = IIIFResource.find_by(url: manifest, exhibit: exhibit)
       iiif_resource.save_and_index_now
       puts "Reindexed the document for #{manifest}"
     end
@@ -26,6 +26,7 @@ if Rails.env.development? || Rails.env.test?
         next unless sidecar.data != valid_data
         sidecar.data = valid_data
         sidecar.save
+        sidecar.resource.reindex_later
         puts "Updated the SolrDocumentSidecar for #{sidecar.document_id}"
       end
     end
