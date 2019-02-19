@@ -1,0 +1,7 @@
+{  
+  "@context":"http://iiif.io/api/presentation/2/context.json",
+  "@id":"https://hydra-dev.princeton.edu/collections/manifest",
+  "@type":"sc:Manifest",
+  "label":"Figgy Collections",
+  "description":"All collections which are a part of Figgy."
+}

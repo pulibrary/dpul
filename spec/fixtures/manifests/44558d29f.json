@@ -1,0 +1,75 @@
+{  
+  "@context":"http://iiif.io/api/presentation/2/context.json",
+  "@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest",
+  "@type":"sc:Manifest",
+  "label":"L''ordine dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita di nostro signore Papa Pio Sesto",
+  "description":"First",
+  "viewingHint":"paged",
+  "viewingDirection":"left-to-right",
+  "sequences":[  
+    {  
+      "@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest/sequence/normal",
+      "@type":"sc:Sequence",
+      "canvases":[  
+        {  
+          "@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest/canvas/tq57nr024",
+          "@type":"sc:Canvas",
+          "label":"Front Cover",
+          "images":[  
+            {  
+              "@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest/annotation/tq57nr024-image",
+              "@type":"oa:Annotation",
+              "motivation":"sc:painting",
+              "resource":{  
+                "@id":"https://hydra-dev.princeton.edu/loris/tq%2F57%2Fnr%2F02%2F4-intermediate_file.jp2/full/!200,200/0/default.jpg",
+                "@type":"dcterms:Image",
+                "format":"image/jpeg",
+                "width":5007,
+                "height":7200,
+                "service":{  
+                  "@context":"http://iiif.io/api/image/2/context.json",
+                  "@id":"https://hydra-dev.princeton.edu/loris/tq%2F57%2Fnr%2F02%2F4-intermediate_file.jp2",
+                  "profile":"http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "on":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest/canvas/tq57nr024"
+            }
+          ],
+          "width":5007,
+          "height":7200
+        }
+      ],
+      "viewingHint":"paged"
+    }
+  ],
+  "metadata":[  
+    {  
+      "label":"Creator",
+      "value":[  
+        {  
+          "@value":"Antolini, Giovanni Antonio, 1754-1842."
+        }
+      ]
+    },
+    {  
+      "label":"Date created",
+      "value":[  
+        {  
+          "@value":"1785"
+        }
+      ]
+    }
+  ],
+  "thumbnail":{  
+    "@id":"https://hydra-dev.princeton.edu/loris/tq%2F57%2Fnr%2F02%2F4-intermediate_file.jp2/full/100,/0/default.jpg",
+    "service":{  
+      "@context":"http://iiif.io/api/image/2/context.json",
+      "@id":"https://hydra-dev.princeton.edu/loris/tq%2F57%2Fnr%2F02%2F4-intermediate_file.jp2",
+      "profile":"http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "rendering":{  
+    "@id":"http://arks.princeton.edu/ark:/88435/7w62fb79e",
+    "format":"text/html"
+  }
+}

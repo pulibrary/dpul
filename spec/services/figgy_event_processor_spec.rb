@@ -1,6 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe FiggyEventProcessor, vcr: { cassette_name: "figgy_events", allow_playback_repeats: true } do
+RSpec.describe FiggyEventProcessor do
+  before do
+    stub_manifest(url: url, fixture: "1r66j1149.json")
+    stub_metadata(id: "1234567")
+  end
+
   subject(:processor) { described_class.new(event) }
   let(:event) do
     {
@@ -54,6 +59,7 @@ RSpec.describe FiggyEventProcessor, vcr: { cassette_name: "figgy_events", allow_
       exhibit = FactoryBot.create(:exhibit, slug: "first")
       IIIFResource.new(url: url, exhibit: exhibit).save_and_index
 
+      stub_manifest(url: url, fixture: "1r66j1149-updated.json")
       expect(processor.process).to eq true
       Blacklight.default_index.connection.commit
       resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
@@ -83,14 +89,12 @@ RSpec.describe FiggyEventProcessor, vcr: { cassette_name: "figgy_events", allow_
       it "marks it as non-public" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
+        stub_manifest(url: url, fixture: "1r66j1149.json", status: 401)
 
-        # swap casseette to make the resource inaccessible
-        VCR.use_cassette('figgy_events_no_permission') do
-          expect(processor.process).to eq true
-          Blacklight.default_index.connection.commit
-          resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
-          expect(resource["exhibit_first_public_bsi"]).to eq false
-        end
+        expect(processor.process).to eq true
+        Blacklight.default_index.connection.commit
+        resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
+        expect(resource["exhibit_first_public_bsi"]).to eq false
       end
     end
     context "when it's private and then is made accessible" do

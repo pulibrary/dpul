@@ -1,0 +1,43 @@
+{  
+  "@context":"http://iiif.io/api/presentation/2/context.json",
+  "@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest",
+  "@type":"sc:Manifest",
+  "label":"Updated Record",
+  "viewingHint":"individuals",
+  "viewingDirection":"left-to-right",
+  "service":{  
+    "@context":"http://iiif.io/api/auth/0/context.json",
+    "@id":"https://hydra-dev.princeton.edu/users/auth/cas",
+    "label":"Login to Figgy using CAS",
+    "profile":"http://iiif.io/api/auth/0/login",
+    "service":{  
+      "hsh":null
+    }
+  },
+  "structures":[  
+    {  
+      "@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest/range/g70272255683880",
+      "@type":"sc:Range",
+      "label":"Logical",
+      "viewingHint":"top"
+    }
+  ],
+  "metadata":[  
+    {  
+      "label":"Date created",
+      "value":[  
+        {  
+          "@value":"1976"
+        }
+      ]
+    }
+  ],
+  "seeAlso":{  
+    "@id":"https://figgy.princeton.edu/catalog/1234567.jsonld",
+    "format":"application/ld+json"
+  },
+  "rendering":{  
+    "@id":"http://arks.princeton.edu/ark:88435/7w62fb79g",
+    "format":"text/html"
+  }
+}

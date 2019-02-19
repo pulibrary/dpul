@@ -1,6 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe ExternalManifest, vcr: { cassette_name: "all_collections" } do
+RSpec.describe ExternalManifest do
+  before do
+    stub_collections(fixture: "collections.json")
+  end
   describe ".load" do
     subject(:manifest) { described_class.load(manifest_url) }
     let(:manifest_url) { "https://hydra-dev.princeton.edu/iiif/collections" }
