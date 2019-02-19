@@ -54,6 +54,20 @@ describe ApplicationHelper, type: :helper do
     end
   end
 
+  describe '#application_name' do
+    let(:current_site) { instance_double(Spotlight::Site) }
+
+    before do
+      allow(helper).to receive(:current_site).and_return(current_site)
+      allow(current_site).to receive(:title).and_return('Test Site Title')
+    end
+
+    it 'delegates to the #application_name for the Spotlight::Site' do
+      expect(helper.application_name).to eq 'Test Site Title'
+      expect(helper.application_name).to eq helper.header_title
+    end
+  end
+
   describe '#document_thumbnail' do
     let(:exhibit) { instance_double(Spotlight::Exhibit) }
     let(:document) { instance_double(SolrDocument) }
