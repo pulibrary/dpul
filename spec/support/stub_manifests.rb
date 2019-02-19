@@ -1,9 +1,9 @@
 module StubbedManifestsHelper
-  def stub_manifest(url:, fixture:)
+  def stub_manifest(url:, fixture:, status: 200)
     stub_request(:head, url)
-      .to_return(status: 200, body: "", headers: { 'content-type' => 'application/ld+json' })
+      .to_return(status: status, body: "", headers: { 'content-type' => 'application/ld+json' })
     stub_request(:get, url)
-      .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "manifests", fixture)), headers: { 'content-type' => 'application/ld+json' })
+      .to_return(status: status, body: File.read(Rails.root.join("spec", "fixtures", "manifests", fixture)), headers: { 'content-type' => 'application/ld+json' })
   end
 
   def stub_metadata(id:, status: 200)
