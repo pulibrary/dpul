@@ -1,0 +1,62 @@
+{  
+  "@context":"http://iiif.io/api/presentation/2/context.json",
+  "@id":"https://hydra-dev.princeton.edu/collections/manifest",
+  "@type":"sc:Collection",
+  "label":"Figgy Collections",
+  "description":"All collections which are a part of Figgy.",
+  "viewingHint":"individuals",
+  "structures":[  
+    {  
+      "@id":"https://hydra-dev.princeton.edu/collections/manifest/range/g70272257673280",
+      "@type":"sc:Range",
+      "label":"Logical",
+      "viewingHint":"top"
+    }
+  ],
+  "collections":[  
+    {  
+      "@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest",
+      "@type":"sc:Collection",
+      "label":"princeton",
+      "viewingHint":"individuals",
+      "structures":[  
+        {  
+          "@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest/range/g70272079000020",
+          "@type":"sc:Range",
+          "label":"Logical",
+          "viewingHint":"top"
+        }
+      ],
+      "metadata":[  
+        {  
+          "label":"Exhibit",
+          "value":[  
+            "princeton-best"
+          ]
+        }
+      ]
+    },
+    {  
+      "@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest",
+      "@type":"sc:Collection",
+      "label":"Test Collection 2",
+      "viewingHint":"individuals",
+      "structures":[  
+        {  
+          "@id":"https://hydra-dev.princeton.edu/collections/6969z0774/manifest/range/g70272258112340",
+          "@type":"sc:Range",
+          "label":"Logical",
+          "viewingHint":"top"
+        }
+      ],
+      "metadata":[  
+        {  
+          "label":"Exhibit",
+          "value":[  
+            "test-collection-2"
+          ]
+        }
+      ]
+    }
+  ]
+}
