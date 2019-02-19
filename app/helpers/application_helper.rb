@@ -19,6 +19,7 @@ module ApplicationHelper
   def header_title
     site_title || t("blacklight.application_name")
   end
+  alias application_name header_title
 
   def current_year
     Date.today.year
