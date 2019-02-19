@@ -1,13 +1,6 @@
 require 'rails_helper'
 
 describe IIIFResource do
-  before do
-    VCR.turn_off!
-    WebMock.disable_net_connect!(allow_localhost: true)
-  end
-  after do
-    VCR.turn_on!
-  end
   context "when ingesting a manifest with full text" do
     it "indexes the full text into a TESIM field" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'

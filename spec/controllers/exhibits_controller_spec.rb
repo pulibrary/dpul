@@ -4,8 +4,6 @@ RSpec.describe ExhibitsController do
   before do
     allow(Spotlight::DefaultThumbnailJob).to receive(:perform_later)
     sign_in FactoryBot.create(:site_admin)
-    VCR.turn_off!
-    WebMock.disable_net_connect!(allow_localhost: true)
     stub_collections(fixture: "collections.json")
     stub_manifest(url: "https://hydra-dev.princeton.edu/collections/2b88qc199/manifest", fixture: "2b88qc199.json")
     stub_manifest(url: "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest", fixture: "1r66j1149.json")
@@ -13,9 +11,6 @@ RSpec.describe ExhibitsController do
     stub_manifest(url: "https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest", fixture: "44558d29f.json")
   end
 
-  after do
-    VCR.turn_on!
-  end
   describe "#create" do
     context "when given just a slug" do
       let(:exhibit) do

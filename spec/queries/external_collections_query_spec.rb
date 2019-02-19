@@ -2,13 +2,6 @@ require 'rails_helper'
 
 RSpec.describe ExternalCollectionsQuery do
   subject(:query) { described_class }
-  before do
-    VCR.turn_off!
-    WebMock.disable_net_connect!(allow_localhost: true)
-  end
-  after do
-    VCR.turn_on!
-  end
   context "when collections are enabled" do
     before do
       stub_collections(fixture: "collections.json")

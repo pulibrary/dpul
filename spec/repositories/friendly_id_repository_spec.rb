@@ -6,13 +6,8 @@ RSpec.describe FriendlyIdRepository do
   let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
   let(:resource) { IIIFResource.create(url: url, exhibit: exhibit) }
   before do
-    VCR.turn_off!
-    WebMock.disable_net_connect!(allow_localhost: true)
     stub_manifest(url: url, fixture: "1r66j1149.json")
     stub_metadata(id: "1234567")
-  end
-  after do
-    VCR.turn_on!
   end
 
   describe "#find" do

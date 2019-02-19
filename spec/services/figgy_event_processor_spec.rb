@@ -2,15 +2,10 @@ require 'rails_helper'
 
 RSpec.describe FiggyEventProcessor do
   before do
-    VCR.turn_off!
-    WebMock.disable_net_connect!(allow_localhost: true)
     stub_manifest(url: url, fixture: "1r66j1149.json")
     stub_metadata(id: "1234567")
   end
 
-  after do
-    VCR.turn_on!
-  end
   subject(:processor) { described_class.new(event) }
   let(:event) do
     {

@@ -29,7 +29,6 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'sqlite3'
   gem 'sshkit', '~> 1.18'
-  gem 'vcr'
   gem 'webmock', require: false
 end
 

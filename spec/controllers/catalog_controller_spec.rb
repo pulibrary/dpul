@@ -2,13 +2,6 @@ require 'rails_helper'
 
 RSpec.describe CatalogController do
   let(:user) { nil }
-  before do
-    VCR.turn_off!
-    WebMock.disable_net_connect!(allow_localhost: true)
-  end
-  after do
-    VCR.turn_on!
-  end
   context "with full-text search" do
     let(:user) { FactoryBot.create(:site_admin) }
     it "searches" do
