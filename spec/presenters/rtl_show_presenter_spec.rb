@@ -1,15 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe RTLShowPresenter do
-  subject(:presenter) { described_class.new(document, double(blacklight_config: blacklight_config)) }
+  subject(:presenter) { described_class.new(document, view_context) }
 
   let(:document) do
     SolrDocument.new(
       field: ["بي"],
       special: ["Traité sur l'art de la charpente : théorique et pratique"],
-      title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"]
+      title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
+      readonly_collections_ssim: [exhibit.title.to_s]
     )
   end
+  let(:view_context) { double(blacklight_config: blacklight_config) }
+  let(:exhibit) { FactoryBot.create(:exhibit) }
   let(:cc_config) { CatalogController.new.blacklight_config }
   let(:blacklight_config) do
     double(
@@ -29,6 +32,12 @@ RSpec.describe RTLShowPresenter do
     context "when given a string with special characters" do
       it "renders it without escaping them" do
         expect(presenter.field_value(:special)).to eq "<ul><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
+      end
+    end
+    context "when given a collection field" do
+      it "renders links to each collection" do
+        allow(view_context).to receive(:exhibit_root_path).with(exhibit).and_return("/#{exhibit.slug}")
+        expect(presenter.field_value(:readonly_collections_ssim)).to eq "<ul><li dir=\"ltr\"><a href=\"/#{exhibit.slug}\">#{exhibit.title}</a></li></ul>"
       end
     end
   end
