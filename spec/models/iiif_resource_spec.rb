@@ -1,12 +1,15 @@
 require 'rails_helper'
 
 describe IIIFResource do
+  before do
+    VCR.turn_off!
+    WebMock.disable_net_connect!(allow_localhost: true)
+  end
+  after do
+    VCR.turn_on!
+  end
   context "when ingesting a manifest with full text" do
-    before do
-      VCR.turn_off!
-    end
     it "indexes the full text into a TESIM field" do
-      WebMock.disable_net_connect!(allow_localhost: true)
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
       stub_manifest(url: url, fixture: 'full_text_manifest.json')
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
@@ -22,19 +25,9 @@ describe IIIFResource do
 
       expect(solr_doc["full_text_tesim"]).not_to be_blank
     end
-    after do
-      VCR.turn_on!
-    end
   end
   context "when provided an override title" do
-    before do
-      VCR.turn_off!
-    end
-    after do
-      VCR.turn_on!
-    end
     it "doesn't get overridden" do
-      WebMock.disable_net_connect!(allow_localhost: true)
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
       stub_manifest(url: url, fixture: 'full_text_manifest.json')
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
@@ -57,10 +50,12 @@ describe IIIFResource do
       expect(solr_doc["exhibit_exhibit-a_override-title_ssim"]).to eq ["Test"]
     end
   end
-  context 'with recorded http interactions', vcr: { cassette_name: 'all_collections', allow_playback_repeats: true } do
+  context 'with recorded http interactions' do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
 
     it 'ingests a iiif manifest' do
+      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_metadata(id: "12345678")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
       expect(resource.save).to be true
@@ -76,6 +71,8 @@ describe IIIFResource do
       expect(solr_doc["readonly_description_ssim"]).to eq ["First", "Second"]
     end
     it 'indexes collections' do
+      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_metadata(id: "12345678")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
       expect(resource.save).to be true
@@ -85,8 +82,16 @@ describe IIIFResource do
       resource.document_builder.to_solr { |x| solr_doc = x }
       expect(solr_doc["readonly_collections_tesim"]).to eq ["East Asian Library Digital Bookshelf"]
     end
-    context "when given a MVW", vcr: { cassette_name: 'mvw' } do
+    context "when given a MVW" do
       let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
+      before do
+        stub_manifest(url: url, fixture: "mvw.json")
+        stub_manifest(
+          url: "https://hydra-dev.princeton.edu/concern/scanned_resources/k35694439/manifest",
+          fixture: "vol1.json"
+        )
+        stub_metadata(id: "12345678")
+      end
 
       it "ingests both items as individual solr records, marking the child" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
@@ -112,8 +117,12 @@ describe IIIFResource do
         expect(scanned_resource_doc["full_image_url_ssm"]).to eq ["https://libimages1.princeton.edu/loris/plum/hq%2F37%2Fvn%2F61%2F6-intermediate_file.jp2/full/!600,600/0/default.jpg"]
       end
     end
-    context "when given an unreachable seeAlso url", vcr: { cassette_name: 'see_also_connection_failed', allow_playback_repeats: true } do
+    context "when given an unreachable seeAlso url" do
       let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest" }
+      before do
+        stub_manifest(url: url, fixture: "s9w032300r.json")
+        stub_metadata(id: "12345678", status: 407)
+      end
 
       it "ingests a iiif manifest using the metadata pool, excludes range labels when missing" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A'

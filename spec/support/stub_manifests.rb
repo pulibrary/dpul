@@ -6,9 +6,9 @@ module StubbedManifestsHelper
       .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "manifests", fixture)), headers: { 'content-type' => 'application/ld+json' })
   end
 
-  def stub_metadata(id:)
+  def stub_metadata(id:, status: 200)
     stub_request(:get, "https://figgy.princeton.edu/catalog/#{id}.jsonld")
-      .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "metadata", "#{id}.json")), headers: { 'content-type' => 'application/ld+json' })
+      .to_return(status: status, body: File.read(Rails.root.join("spec", "fixtures", "metadata", "#{id}.json")), headers: { 'content-type' => 'application/ld+json' })
   end
 
   def stub_ocr_content(id:, text:)
