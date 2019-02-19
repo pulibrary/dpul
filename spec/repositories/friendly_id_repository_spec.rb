@@ -1,10 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe FriendlyIdRepository, vcr: { cassette_name: "all_collections", allow_playback_repeats: true } do
+RSpec.describe FriendlyIdRepository do
   let(:repository) { described_class.new(CatalogController.new.blacklight_config) }
   let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
   let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
   let(:resource) { IIIFResource.create(url: url, exhibit: exhibit) }
+  before do
+    VCR.turn_off!
+    WebMock.disable_net_connect!(allow_localhost: true)
+    stub_manifest(url: url, fixture: "1r66j1149.json")
+    stub_metadata(id: "1234567")
+  end
+  after do
+    VCR.turn_on!
+  end
 
   describe "#find" do
     let(:manifest) do
