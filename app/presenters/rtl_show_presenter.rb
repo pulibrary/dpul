@@ -1,5 +1,6 @@
 class RTLShowPresenter < ::Blacklight::ShowPresenter
   include ActionView::Helpers::TagHelper
+  include ActionView::Helpers::UrlHelper
   include ActionView::Context
 
   def field_value_separator
@@ -16,12 +17,19 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   #   @options opts [String] :value
   def field_value(field, options = {})
     tags = super.split(field_value_separator).collect do |value|
+      value = collection_value(value) if field.to_s.include?("readonly_collections_ssim")
       content_tag(:li, value.html_safe, dir: value.dir)
     end
 
     content_tag(:ul) do
       safe_join tags
     end
+  end
+
+  def collection_value(value)
+    collection = Spotlight::Exhibit.where(title: value).first
+    return value unless collection
+    link_to collection.title, view_context.exhibit_root_path(collection)
   end
 
   def header

@@ -82,7 +82,7 @@ RSpec.feature 'Catalog', type: :feature do
 
     scenario 'user browses all collections' do
       visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
-      expect(page).to have_link 'Home', href: '/exhibit-a'
+      expect(page).to have_link 'Home', href: "/#{exhibit.slug}"
       expect(page).to have_css '#documents .document h3.index_title', text: id
     end
   end
