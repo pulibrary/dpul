@@ -2,13 +2,16 @@ require 'rails_helper'
 
 RSpec.describe CatalogController do
   let(:user) { nil }
+  before do
+    VCR.turn_off!
+    WebMock.disable_net_connect!(allow_localhost: true)
+  end
+  after do
+    VCR.turn_on!
+  end
   context "with full-text search" do
-    before do
-      VCR.turn_off!
-    end
     let(:user) { FactoryBot.create(:site_admin) }
     it "searches" do
-      WebMock.disable_net_connect!(allow_localhost: true)
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
       stub_manifest(url: url, fixture: 'full_text_manifest.json')
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
@@ -22,12 +25,17 @@ RSpec.describe CatalogController do
 
       expect(document_ids.length).to eq 1
     end
-    after do
-      VCR.turn_on!
-    end
   end
-  context "with mvw", vcr: { cassette_name: 'mvw', allow_playback_repeats: true } do
+  context "with mvw" do
     let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
+    before do
+      stub_manifest(url: url, fixture: "mvw.json")
+      stub_manifest(
+        url: "https://hydra-dev.princeton.edu/concern/scanned_resources/k35694439/manifest",
+        fixture: "vol1.json"
+      )
+      stub_metadata(id: "12345678")
+    end
     it "hides scanned resources with parents" do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
       resource = IIIFResource.new url: url, exhibit: exhibit
