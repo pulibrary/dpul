@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Catalog', type: :feature, js: true do
-  let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1') }
-  let(:curator) { FactoryBot.create(:exhibit_curator, exhibit: exhibit) }
+  let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
   let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
   let(:document_id) { '1r66j4408' }
   let(:id) { Digest::MD5.hexdigest("#{exhibit.id}-#{document_id}") }
