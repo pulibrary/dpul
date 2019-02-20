@@ -132,6 +132,7 @@ RSpec/ExampleLength:
     - 'spec/services/figgy_event_processor_spec.rb'
     - 'spec/workers/figgy_event_handler_spec.rb'
     - 'spec/requests/catalog_spec.rb'
+    - 'spec/features/catalog_show_spec.rb'
 
 RSpec/ExampleWording:
   CustomTransform:
@@ -165,3 +166,4 @@ Naming/FileName:
 RSpec/AnyInstance:
   Exclude:
     - 'spec/support/stub_iiif_response.rb'
+    - 'spec/features/catalog_show_spec.rb'
