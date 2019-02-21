@@ -167,3 +167,6 @@ RSpec/AnyInstance:
   Exclude:
     - 'spec/support/stub_iiif_response.rb'
     - 'spec/features/catalog_show_spec.rb'
+RSpec/NestedGroups:
+  Exclude:
+    - 'spec/models/iiif_resource_spec.rb'

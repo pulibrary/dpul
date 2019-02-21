@@ -309,5 +309,49 @@ describe IIIFResource do
         expect(Spotlight::ReindexJob).to have_received(:perform_now)
       end
     end
+
+    describe '#reindex' do
+      let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
+      let(:resource) { described_class.new url: url, exhibit: exhibit }
+      let(:blacklight_solr) { instance_double(RSolr::Client) }
+      let(:data) { resource.document_builder.documents_to_index.to_a }
+
+      before do
+        stub_manifest(
+          url: url,
+          fixture: "vol1.json"
+        )
+        allow(blacklight_solr).to receive(:update)
+        allow(resource).to receive(:blacklight_solr).and_return(blacklight_solr)
+        resource.reindex
+      end
+
+      # JSON-serialization does not preserve the order of properties, so this
+      # cannot be tested
+      it 'reindexes by directly updating Solr' do
+        expect(blacklight_solr).to have_received(:update).with(
+          hash_including(headers: { 'Content-Type' => 'application/json' })
+        )
+      end
+
+      context 'when a Solr error is encountered' do
+        let(:request) { double }
+        let(:response) { double }
+        let(:rsolr_error) { RSolr::Error::Http.new(request, response) }
+        let(:ids) do
+          docs = resource.document_builder.documents_to_index
+          docs.map { |document| document[:id] }
+        end
+        let(:error_message) { "Failed to update Solr for the following documents: #{ids.join(', ')}" }
+
+        before do
+          allow(blacklight_solr).to receive(:update).and_raise(rsolr_error)
+        end
+
+        it 'logs an error' do
+          expect { resource.reindex }.to raise_error(IIIFResource::IndexingError, error_message)
+        end
+      end
+    end
   end
 end
