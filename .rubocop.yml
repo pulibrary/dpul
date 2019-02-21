@@ -133,6 +133,7 @@ RSpec/ExampleLength:
     - 'spec/workers/figgy_event_handler_spec.rb'
     - 'spec/requests/catalog_spec.rb'
     - 'spec/features/catalog_show_spec.rb'
+    - 'spec/features/**/*.rb'
 
 RSpec/ExampleWording:
   CustomTransform:

@@ -19,14 +19,14 @@
         <div class="form-group">
           <%= d.label field.field, field.label %>
           <% if field.readonly_field? %>
-            <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field?, name: nil%>
+            <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field?%>
 	  <% elsif text_area?(field, current_exhibit) %>
 	    <%= d.text_area_without_bootstrap field.field, value: text_area_value(field, f.object.sidecar(current_exhibit)), class: 'js-st-instance', data: { 'block-types': Spotlight::Engine.config.sir_trevor_widgets } %>
           <% else %>
             <%= d.text_field_without_bootstrap field.field, value: document.sidecar(current_exhibit).data[field.field.to_s], class: 'form-control', readonly: field.readonly_field? %>
           <% end %>
           <%# Don't show a warning for the override title - it should never display in the show fields. %>
-          <% unless field.slug == "override-title_ssim" || field.configured_to_display? %>
+          <% unless field.field == "override-title_ssim" || field.configured_to_display? %>
             <p class="bg-warning help-block">
               <%= t(:'.blank_field_warning_html',
                     link: link_to(t(:'spotlight.configuration.sidebar.metadata'), spotlight.edit_exhibit_metadata_configuration_path(current_exhibit))) %>
