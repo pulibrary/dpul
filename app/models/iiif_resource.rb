@@ -4,6 +4,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
   before_save :set_noid
 
   class InvalidIIIFManifestError < TypeError; end
+  class IndexingError < StandardError; end
 
   def iiif_manifests
     @iiif_manifests ||= validate_iiif_manifest_collections!
@@ -61,9 +62,10 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
 
       blacklight_solr.update data: documents.to_json,
                              headers: { 'Content-Type' => 'application/json' }
-    rescue RSolr::Error::Http => rsolr_error
-      Rails.logger.error "Failed to update Solr for the following documents: #{document_ids.join(', ')}"
-      raise rsolr_error
+    rescue RSolr::Error::Http
+      error_message = "Failed to update Solr for the following documents: #{document_ids.join(', ')}"
+      Rails.logger.error error_message
+      raise IndexingError, error_message
     end
 
     # Override hard commit after indexing every document, for performance.

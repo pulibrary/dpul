@@ -342,15 +342,14 @@ describe IIIFResource do
           docs = resource.document_builder.documents_to_index
           docs.map { |document| document[:id] }
         end
+        let(:error_message) { "Failed to update Solr for the following documents: #{ids.join(', ')}" }
 
         before do
-          allow(Rails.logger).to receive(:error)
           allow(blacklight_solr).to receive(:update).and_raise(rsolr_error)
         end
 
         it 'logs an error' do
-          expect { resource.reindex }.to raise_error(rsolr_error)
-          expect(Rails.logger).to have_received(:error).with("Failed to update Solr for the following documents: #{ids.join(', ')}")
+          expect { resource.reindex }.to raise_error(IIIFResource::IndexingError, error_message)
         end
       end
     end
