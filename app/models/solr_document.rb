@@ -27,4 +27,25 @@ class SolrDocument
   def to_param
     first("access_identifier_ssim") || id
   end
+
+  # Overridden so that saving doesn't empty out readonly fields.
+  def update(current_exhibit, new_attributes)
+    attributes = new_attributes.stringify_keys
+
+    custom_data = attributes.delete('sidecar')
+    tags = attributes.delete('exhibit_tag_list')
+    resource_attributes = attributes.delete('uploaded_resource')
+    # This part was added
+    if custom_data
+      sidecar = sidecar(current_exhibit)
+      custom_data["data"] = sidecar.data.merge(custom_data["data"])
+      sidecar.update(custom_data)
+    end
+    # End additions
+
+    # Note: this causes a save
+    current_exhibit.tag(sidecar(current_exhibit), with: tags, on: :tags) if tags
+
+    update_exhibit_resource(resource_attributes) if uploaded_resource?
+  end
 end
