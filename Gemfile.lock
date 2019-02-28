@@ -118,7 +118,7 @@ GEM
       io-like (~> 0.3.0)
     arel (7.1.4)
     ast (2.4.0)
-    autoprefixer-rails (6.7.6)
+    autoprefixer-rails (9.4.9)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -150,9 +150,9 @@ GEM
       bootstrap-sass (~> 3.0)
       rails
       ruby-oembed
-    bootstrap-sass (3.3.7)
+    bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+      sassc (>= 2.0.0)
     bootstrap_form (2.7.0)
     bourbon (4.2.7)
       sass (~> 3.4)
@@ -466,13 +466,16 @@ GEM
     ruby-progressbar (1.8.1)
     rubyzip (1.2.2)
     safe_yaml (1.0.4)
-    sass (3.4.23)
+    sass (3.4.25)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.0.1)
+      ffi (~> 1.9)
+      rake
     sassy-maps (0.4.0)
       sass (~> 3.3)
     sdoc (0.4.2)
