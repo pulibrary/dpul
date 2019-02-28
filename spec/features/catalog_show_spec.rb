@@ -33,10 +33,10 @@ RSpec.describe 'Catalog', type: :feature, js: true do
           'test collection 2'
         ],
         readonly_description_ssim: [
-          "panoramic" * 50
+          "panoramic" * 150
         ],
         'exhibit_exhibit-title-1_readonly_description_ssim': [
-          "panoramic" * 50
+          "panoramic" * 150
         ],
         'content_metadata_iiif_manifest_field_ssi': [
           'http://images.institution.edu'
