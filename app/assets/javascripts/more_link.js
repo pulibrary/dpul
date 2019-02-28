@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var value_id = $("#content").data("id");
-    var limitCharacters = 300;
+    var limitCharacters = 1200;
     var dl_children = $("#doc_"+value_id).find('ul');
     dl_children.each(function(i, item){
         var char_length = $(this).text().length;
