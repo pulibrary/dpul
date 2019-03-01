@@ -40,6 +40,7 @@ body {
 #main-content {
   background-color: $white;
   padding-top: 15px;
+  min-height: calc(100vh - 350px);
 }
 
 .viewer {
