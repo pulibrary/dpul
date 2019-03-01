@@ -36,7 +36,7 @@ RSpec.describe RTLShowPresenter do
     end
     context "when given a collection field" do
       it "renders links to each collection" do
-        allow(view_context).to receive(:exhibit_root_path).with(exhibit).and_return("/#{exhibit.slug}")
+        allow(view_context).to receive(:exhibit_path).with(exhibit).and_return("/#{exhibit.slug}")
         expect(presenter.field_value(:readonly_collections_ssim)).to eq "<ul><li dir=\"ltr\"><a href=\"/#{exhibit.slug}\">#{exhibit.title}</a></li></ul>"
       end
     end
