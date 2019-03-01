@@ -353,5 +353,23 @@ describe IIIFResource do
         end
       end
     end
+
+    describe "#reindex" do
+      context 'when the resource has a search service' do
+        let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
+        let(:resource) { described_class.new url: url, exhibit: exhibit }
+        let(:id) { "c7f0bb99-3721-4171-8a84-0256941e8298" }
+        let(:url) { "https://figgy.princeton.edu/concern/scanned_resources/#{id}/manifest" }
+        before do
+          stub_manifest(url: url, fixture: "search_service.json")
+          stub_metadata(id: id)
+          stub_ocr_content(id: id, text: "text")
+        end
+
+        it 'indexes successfully' do
+          expect { resource.reindex }.not_to raise_error
+        end
+      end
+    end
   end
 end
