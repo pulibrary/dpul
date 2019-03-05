@@ -80,7 +80,7 @@ RSpec.describe RTLShowPresenter do
           field: ["بي"],
           special: ["Traité sur l'art de la charpente : théorique et pratique"],
           title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
-          "override-title_ssim": ["Test"]
+          "override-title_ssim": ["<i>Test</i>"]
         )
       end
 

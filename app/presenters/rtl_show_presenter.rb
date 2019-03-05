@@ -70,7 +70,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   end
 
   def html_title
-    super.split("<br />").map(&:html_safe).join(", ")
+    super.split("<br />").map(&:html_safe).join(", ").gsub(/<.*?>/, "")
   end
 
   def field_config(field)
