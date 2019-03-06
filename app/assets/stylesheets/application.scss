@@ -162,7 +162,6 @@ li[dir=rtl] {
     // transform:perspective(800px) rotateY(-180deg);
   }
 }
-body { -webkit-perspective: 800px; -moz-perspective: 800px; -o-perspective: 800px; perspective: 800px; }
 
 .card-backing {
   box-shadow: $exhibit-card-shadow;
