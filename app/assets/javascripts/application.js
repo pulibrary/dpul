@@ -25,6 +25,7 @@
 //= require universal_viewer
 //= require pom_boot
 //= require more_link
+//= require back_to_top
 
 Blacklight.onLoad(function() {
   Initializer = require('pom_boot')
