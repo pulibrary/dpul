@@ -95,4 +95,19 @@ describe ApplicationHelper, type: :helper do
       end
     end
   end
+
+  describe '#universal_viewer_url' do
+    let(:document) { instance_double(SolrDocument) }
+    let(:manifest_url) { 'https://figgy.princeton.edu/concern/scanned_resources/c321a5f1-26e4-46ec-9a19-7c3351eaf308/manifest' }
+    let(:config_url) { "https://figgy.princeton.edu/viewer/exhibit/config?manifest=#{manifest_url}" }
+
+    before do
+      allow(document).to receive(:manifest).and_return(manifest_url)
+      assign(:document, document)
+    end
+
+    it "generates the URL for an embedded installation of the Universal Viewer" do
+      expect(helper.universal_viewer_url).to eq "https://figgy.princeton.edu/uv/uv#?manifest=#{CGI.escape(manifest_url)}&config=#{CGI.escape(config_url)}"
+    end
+  end
 end

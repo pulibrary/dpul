@@ -58,13 +58,6 @@ GIT
       normalize-rails (~> 3.0.3)
       susy (~> 2.2.12)
 
-GIT
-  remote: git://github.com/pulibrary/pul_uv_rails.git
-  revision: e3dd14a13aa8468751dd5d870b3647bafc0db9ff
-  branch: master
-  specs:
-    pul_uv_rails (2.0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -636,7 +629,6 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   pul-assets!
-  pul_uv_rails!
   puma
   rack (>= 2.0.6)
   rails (~> 5.0)
