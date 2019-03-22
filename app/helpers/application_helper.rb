@@ -60,4 +60,34 @@ module ApplicationHelper
     url = values.first
     image_tag url, image_options if url.present?
   end
+
+  # Generate the URL for the Universal Viewer to view the content for the
+  # document manifest
+  # @return [String]
+  delegate :url, to: :universal_viewer, prefix: true
+
+  private
+
+    # Generate the URL for the configuration for the UV
+    # @return [String]
+    def universal_viewer_config_url
+      url_base = Pomegranate.config["external_universal_viewer_config_url"]
+      "#{url_base}?manifest=#{@document.manifest}"
+    end
+
+    # Generate the URL for the UV viewer
+    # @return [String]
+    def universal_viewer_installation_url
+      Pomegranate.config["external_universal_viewer_url"]
+    end
+
+    # Construct the object used to handle Universal Viewer installations
+    # @return [UniversalViewer]
+    def universal_viewer
+      UniversalViewer.new(
+        universal_viewer_installation_url,
+        manifest: @document.manifest,
+        config: universal_viewer_config_url
+      )
+    end
 end

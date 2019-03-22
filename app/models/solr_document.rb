@@ -48,4 +48,11 @@ class SolrDocument
 
     update_exhibit_resource(resource_attributes) if uploaded_resource?
   end
+
+  # Retrieve the IIIF manifest URL from the configured field
+  # @return [String]
+  def manifest
+    values = fetch(Spotlight::Engine.config.iiif_manifest_field, nil)
+    values.first
+  end
 end
