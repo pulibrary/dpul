@@ -12,4 +12,10 @@ RSpec.describe "exhibit routing" do
       expect(get("/catalog")).to route_to controller: "catalog", action: "index"
     end
   end
+
+  describe "PATCH /site" do
+    it "routes to the site controller" do
+      expect(patch("/site")).to route_to controller: "spotlight/sites", action: "update"
+    end
+  end
 end

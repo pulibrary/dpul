@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.configure do
+  # Implements fix described in https://github.com/roidrage/lograge/issues/92
   class ActionDispatch::Http::UploadedFile
     def as_json(_options = nil)
       %w[headers].each_with_object({}) do |attr, hash|
