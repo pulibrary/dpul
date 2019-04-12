@@ -14,6 +14,11 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
   root to: 'spotlight/exhibits#index'
+  resource :site, only: [:edit, :update], controller: 'spotlight/sites' do
+    collection do
+      get '/tags', to: 'sites#tags'
+    end
+  end
   resources :exhibits, path: '/', only: [:create, :update, :destroy]
   match ':exhibit_id/metadata_configuration', to: 'pomegranate/metadata_configurations#update', via: [:patch, :put]
 
