@@ -73,16 +73,28 @@ describe ApplicationHelper, type: :helper do
     let(:document) { instance_double(SolrDocument) }
     let(:thumbnail_url) { 'https://images.institution.edu/image-server/prefix/id%2Fintermediate_file.jp2/full/!200,150/0/default.jpg' }
     let(:output) { helper.document_thumbnail(document) }
+    let(:manifest) {
+      "https://repository.institution.edu/concern/scanned_resources/cfd8cb11-660f-4f12-92f6-fb2b22995028/manifest"
+    }
 
     before do
       allow(helper).to receive(:current_exhibit).and_return(exhibit)
       allow(document).to receive(:fetch).with(:thumbnail_ssim, nil).and_return([thumbnail_url])
+      allow(document).to receive(:manifest).and_return(manifest)
+      assign(:document, document)
+      allow(exhibit).to receive(:thumbnails_enabled).and_return(true)
     end
 
     it 'generates an <img> element for SolrDocument thumbnails when Exhibits are configured to display them' do
-      allow(exhibit).to receive(:thumbnails_enabled).and_return(true)
-
       expect(output).to eq("<img src=\"#{thumbnail_url}\" alt=\"Default\" />")
+    end
+
+    context 'when the document cannot be retrieved' do
+      let(:document) { nil }
+
+      it 'does not generate any markup' do
+        expect(output).to be nil
+      end
     end
 
     context 'when thumbnails are disabled for the exhibit' do

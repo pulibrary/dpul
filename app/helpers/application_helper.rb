@@ -1,7 +1,7 @@
 module ApplicationHelper
   include Blacklight::BlacklightHelperBehavior
   include Spotlight::ApplicationHelper
-  delegate :url, to: :request, prefix: true
+  delegate :url, to: :universal_viewer, prefix: true
 
   def render_search_bar
     super
@@ -52,7 +52,7 @@ module ApplicationHelper
   # @param image_options [Hash]
   # @return [Array<String>] an Array containing the URLs to the thumbnails
   def document_thumbnail(document, image_options = {})
-    return unless !current_exhibit.nil? && current_exhibit.thumbnails_enabled
+    return unless !current_exhibit.nil? && current_exhibit.thumbnails_enabled && !universal_viewer.nil?
 
     values = document.fetch(:thumbnail_ssim, nil)
     return if values.empty?
@@ -60,11 +60,6 @@ module ApplicationHelper
     url = values.first
     image_tag url, image_options if url.present?
   end
-
-  # Generate the URL for the Universal Viewer to view the content for the
-  # document manifest
-  # @return [String]
-  delegate :url, to: :universal_viewer, prefix: true
 
   private
 
@@ -84,6 +79,8 @@ module ApplicationHelper
     # Construct the object used to handle Universal Viewer installations
     # @return [UniversalViewer]
     def universal_viewer
+      return if @document.nil?
+
       UniversalViewer.new(
         universal_viewer_installation_url,
         manifest: @document.manifest,
