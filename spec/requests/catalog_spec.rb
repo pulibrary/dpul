@@ -36,4 +36,17 @@ RSpec.describe "catalog paths", type: :request do
       expect(response.status).to eq 404
     end
   end
+  describe "catalog item" do
+    context "when the item does not exist" do
+      it "returns a 404 status code response" do
+        get "/catalog/no-exist"
+        expect(response.status).to eq 404
+      end
+
+      it "returns a 404 status code response for JSON views" do
+        get "/catalog/no-exist", format: :json
+        expect(response.status).to eq 404
+      end
+    end
+  end
 end

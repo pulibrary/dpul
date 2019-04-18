@@ -17,7 +17,10 @@ class ApplicationController < ActionController::Base
   rescue_from Blacklight::Exceptions::RecordNotFound, with: :not_found
 
   def not_found
-    render "pages/not_found", status: 404
+    respond_to do |format|
+      format.html { render "pages/not_found", status: 404 }
+      format.all { head 404 }
+    end
   end
 
   def guest_username_authentication_key(key)

@@ -171,6 +171,18 @@ RSpec.describe CatalogController do
     expect(assigns[:document].id).to eq "1"
   end
 
+  context "when the item does not exist" do
+    it "returns a 404 status code response" do
+      get :show, params: { id: "no-exist" }
+      expect(response.status).to eq 404
+    end
+
+    it "returns a 404 status code response for JSON views" do
+      get :show, params: { id: "no-exist" }, format: :json
+      expect(response.status).to eq 404
+    end
+  end
+
   def document_ids
     assigns[:document_list].map do |x|
       x["id"]
