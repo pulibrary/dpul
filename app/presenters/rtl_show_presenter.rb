@@ -53,7 +53,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
 
   # Automatically display the override title if it's present.
   def title_field
-    if @document.has?(override_title_field) && @document[override_title_field].present?
+    if @document.has?(override_title_field) && Array.wrap(@document[override_title_field]).first.present?
       override_title_field
     else
       view_config.title_field

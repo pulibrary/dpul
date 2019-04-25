@@ -43,6 +43,15 @@ RSpec.describe RTLShowPresenter do
   end
 
   describe "#heading" do
+    let(:blacklight_config) do
+      double(
+        show_fields: { field:
+                       double(highlight: false, accessor: nil, default: nil, field: :field, text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil) },
+        view_config: double(title_field: :title, html_title_field: nil),
+        facet_fields: {}
+      )
+    end
+
     it "returns multiple titles appropriately" do
       expect(presenter.header).to eq "<ul><li dir=\"rtl\">بي</li><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
     end
@@ -55,17 +64,23 @@ RSpec.describe RTLShowPresenter do
           "override-title_ssim": ["Test"]
         )
       end
-      let(:blacklight_config) do
-        double(
-          show_fields: { field:
-                         double(highlight: false, accessor: nil, default: nil, field: :field, text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil) },
-          view_config: double(title_field: :title, html_title_field: nil),
-          facet_fields: {}
-        )
-      end
 
       it "uses it" do
         expect(presenter.header).to eq "<ul><li dir=\"ltr\">Test</li></ul>"
+      end
+    end
+    context "when there's a blank override title" do
+      let(:document) do
+        SolrDocument.new(
+          field: ["بي"],
+          special: ["Traité sur l'art de la charpente : théorique et pratique"],
+          title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
+          "override-title_ssim": [""]
+        )
+      end
+
+      it "uses the default title" do
+        expect(presenter.header).to eq "<ul><li dir=\"rtl\">بي</li><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
       end
     end
   end
@@ -86,6 +101,33 @@ RSpec.describe RTLShowPresenter do
 
       it "uses it" do
         expect(presenter.html_title).to eq "Test"
+      end
+    end
+    context "when there's a blank override title" do
+      let(:document) do
+        SolrDocument.new(
+          field: ["بي"],
+          special: ["Traité sur l'art de la charpente : théorique et pratique"],
+          title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
+          "override-title_ssim": [""]
+        )
+      end
+
+      it "uses the default title" do
+        expect(presenter.html_title).to eq "بي, Traité sur l'art de la charpente : théorique et pratique"
+      end
+    end
+    context "when there's no override title" do
+      let(:document) do
+        SolrDocument.new(
+          field: ["بي"],
+          special: ["Traité sur l'art de la charpente : théorique et pratique"],
+          title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"]
+        )
+      end
+
+      it "uses the default title" do
+        expect(presenter.html_title).to eq "بي, Traité sur l'art de la charpente : théorique et pratique"
       end
     end
   end
