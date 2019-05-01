@@ -28,7 +28,7 @@ class RTLIndexPresenter < ::Blacklight::IndexPresenter
 
       # When asked for a title, display the override title if it's present.
       if field == default_title_field && @document.key?(display_title_field)
-        @document[override_title_field] || @document[display_title_field]
+        Array(@document[override_title_field]).first.present? ? @document[override_title_field] : @document[display_title_field]
       else
         @document[field]
       end
