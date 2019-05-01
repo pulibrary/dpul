@@ -33,7 +33,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "chromedriver-helper"
+  gem 'webdrivers', '~> 3.0'
 end
 
 group :development do

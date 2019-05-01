@@ -78,6 +78,28 @@ RSpec.describe RTLIndexPresenter do
       end
     end
 
+    context "when there's a blank override title" do
+      let(:index_config) { double(title_field: 'title', display_title_field: 'alternate_title') }
+      let(:blacklight_config) do
+        double(
+          index: index_config,
+          index_fields: { field: field_config },
+          facet_fields: {}
+        )
+      end
+      let(:document) do
+        {
+          title: title,
+          alternate_title: alternate_title,
+          "override-title_ssim": [""]
+        }
+      end
+
+      it "uses the default title" do
+        expect(presenter.label(:title)).to eq alternate_title.first
+      end
+    end
+
     context 'when passed a string' do
       it 'renders the string as the label' do
         label_value = 'a string'
