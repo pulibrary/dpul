@@ -1,0 +1,34 @@
+{  
+  "@context":"http://bibdata.princeton.edu/context.json",
+  "@id":"http://bibdata.princeton.edu/bibliographic/1234567",
+  "title":[  
+    "Christopher and his kind, 1929-1939"
+  ],
+  "description":[  
+    "First",
+    "Second"
+  ],
+  "language":"eng",
+  "call_number":"PR6017.S5 Z498",
+  "extent":"339 p. ; 22 cm.",
+  "edition":"1st ed.",
+  "format":"Book",
+  "genre":"Biography",
+  "publisher":"New York : Farrar, Straus Giroux, 1976.",
+  "subject":[  
+    "Isherwood, Christopher, 1904-1986",
+    "Authors, English—20th century—Biography"
+  ],
+  "donor":[  
+    "Copland, Aaron, 1900-1990"
+  ],
+  "author":"Isherwood, Christopher, 1904-1986",
+  "created":"1976-01-01T00:00:00Z",
+  "date":"1976",
+  "memberOf":[  
+    {  
+      "@id":"https://plum.princeton.edu/collections/pw9505t09q",
+      "title":"East Asian Library Digital Bookshelf"
+    }
+  ]
+}

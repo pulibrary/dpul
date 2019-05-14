@@ -33,6 +33,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Exclude:
     - 'app/controllers/catalog_controller.rb'
+    - 'app/services/iiif_manifest.rb'
 
 Metrics/MethodLength:
   Enabled: false
