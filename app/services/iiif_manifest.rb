@@ -2,7 +2,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   def to_solr
     add_noid
     # this is called in super, but idempotent so safe to call here also; we need the metadata
-    add_metadata
+    solr_hash.merge!(manifest_metadata)
     add_sort_title
     add_sort_date
     add_sort_author
@@ -57,6 +57,14 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     else
       /.*\/(.*)\/manifest/.match(url)[1]
     end
+  end
+
+  def add_metadata
+    solr_hash.merge!(manifest_metadata)
+    sidecar.data = sidecar.data.reject do |k, _v|
+      k.to_s.start_with?("readonly")
+    end
+    sidecar.update(data: sidecar.data.merge(manifest_metadata))
   end
 
   def manifest_metadata

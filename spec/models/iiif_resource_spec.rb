@@ -63,6 +63,32 @@ describe IIIFResource do
       expect(solr_doc["readonly_created_ssim"]).to eq ["1976-01-01T00:00:00Z"]
       expect(solr_doc["readonly_description_ssim"]).to eq ["First", "Second"]
     end
+    it "removes old metadata" do
+      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      # Stub metadata with a record which has a creator
+      stub_metadata(id: "12345678")
+
+      # Index record with creator.
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      resource.save_and_index
+
+      # Stub metadata with a record which has no creator and reindex.
+      stub_metadata(id: "12345678", fixture: "12345678-changed")
+      resource = described_class.find(resource.id)
+      resource.save_and_index
+
+      solr_doc = nil
+      Blacklight.default_index.connection.commit
+      resource.document_builder.to_solr { |x| solr_doc = x }
+      solr_doc = SolrDocument.find(solr_doc[:id])
+      # Ensure SolrDocument atomic index happens, so it takes into account any
+      # potentially stale metadata.
+      solr_doc.reindex
+      solr_doc = SolrDocument.find(solr_doc[:id])
+
+      expect(solr_doc["readonly_creator_tesim"]).to eq nil
+    end
     it 'indexes collections' do
       stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678")
