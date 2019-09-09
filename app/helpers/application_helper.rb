@@ -52,7 +52,7 @@ module ApplicationHelper
   # @param image_options [Hash]
   # @return [Array<String>] an Array containing the URLs to the thumbnails
   def document_thumbnail(document, image_options = {})
-    return unless !current_exhibit.nil? && current_exhibit.thumbnails_enabled && !universal_viewer.nil?
+    return unless !current_exhibit.nil? && current_exhibit.thumbnails_enabled && !universal_viewer(document).nil?
 
     values = document.fetch(:thumbnail_ssim, nil)
     return if values.empty?
@@ -65,9 +65,9 @@ module ApplicationHelper
 
     # Generate the URL for the configuration for the UV
     # @return [String]
-    def universal_viewer_config_url
+    def universal_viewer_config_url(document = @document)
       url_base = Pomegranate.config["external_universal_viewer_config_url"]
-      "#{url_base}?manifest=#{@document.manifest}"
+      "#{url_base}?manifest=#{document.manifest}"
     end
 
     # Generate the URL for the UV viewer
@@ -78,13 +78,13 @@ module ApplicationHelper
 
     # Construct the object used to handle Universal Viewer installations
     # @return [UniversalViewer]
-    def universal_viewer
-      return if @document.nil?
+    def universal_viewer(document = @document)
+      return if document.nil?
 
       UniversalViewer.new(
         universal_viewer_installation_url,
-        manifest: @document.manifest,
-        config: universal_viewer_config_url
+        manifest: document.manifest,
+        config: universal_viewer_config_url(document)
       )
     end
 end

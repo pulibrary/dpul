@@ -97,6 +97,13 @@ describe ApplicationHelper, type: :helper do
       end
     end
 
+    context "when @document isn't set" do
+      it "works" do
+        assign(:document, nil)
+        expect(output).to eq("<img src=\"#{thumbnail_url}\" alt=\"Default\" />")
+      end
+    end
+
     context 'when thumbnails are disabled for the exhibit' do
       before do
         allow(exhibit).to receive(:thumbnails_enabled).and_return(false)
