@@ -65,9 +65,9 @@ module ApplicationHelper
 
     # Generate the URL for the configuration for the UV
     # @return [String]
-    def universal_viewer_config_url
+    def universal_viewer_config_url(document = @document)
       url_base = Pomegranate.config["external_universal_viewer_config_url"]
-      "#{url_base}?manifest=#{@document.manifest}"
+      "#{url_base}?manifest=#{document.manifest}"
     end
 
     # Generate the URL for the UV viewer
@@ -84,7 +84,7 @@ module ApplicationHelper
       UniversalViewer.new(
         universal_viewer_installation_url,
         manifest: document.manifest,
-        config: universal_viewer_config_url
+        config: universal_viewer_config_url(document)
       )
     end
 end
