@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'coffee-rails'
 gem 'graphql-client'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'
-gem 'rails', '~> 5.0'
+gem 'rails', '~> 5.1'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
@@ -49,7 +48,7 @@ end
 
 gem 'almond-rails', '~> 0.1'
 gem 'bixby'
-gem 'blacklight', '6.14.1'
+gem 'blacklight', '~> 6.14'
 gem 'blacklight-gallery', '>= 0.3.0'
 gem 'blacklight-oembed'
 gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: "master"
