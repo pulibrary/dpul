@@ -13,6 +13,17 @@ Rails.application.routes.draw do
   end
 
   mount Blacklight::Engine => '/'
+
+  concern :exportable, Blacklight::Routes::Exportable.new
+
+  resources :bookmarks do
+    concerns :exportable
+
+    collection do
+      delete 'clear'
+    end
+  end
+
   root to: 'spotlight/exhibits#index'
   resource :site, only: [:edit, :update], controller: 'spotlight/sites' do
     collection do
@@ -34,18 +45,8 @@ Rails.application.routes.draw do
   get '/viewers', to: 'pages#viewers', as: 'viewers_page'
   mount Spotlight::Engine, at: '/'
 
-  concern :exportable, Blacklight::Routes::Exportable.new
-
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
     concerns :exportable
-  end
-
-  resources :bookmarks do
-    concerns :exportable
-
-    collection do
-      delete 'clear'
-    end
   end
 
   # Dynamic robots.txt
