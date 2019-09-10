@@ -1,6 +1,8 @@
 
 module Pomegranate
   class MetadataConfigurationsController < Spotlight::MetadataConfigurationsController
+    delegate :edit_exhibit_metadata_configuration_path, to: :spotlight
+
     private
 
       def exhibit_configuration_index_params

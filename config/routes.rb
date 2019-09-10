@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
   end
   resources :exhibits, path: '/', only: [:create, :update, :destroy]
-  match ':exhibit_id/metadata_configuration', to: 'pomegranate/metadata_configurations#update', via: [:patch, :put]
+  match '/:exhibit_id/metadata_configuration', to: 'pomegranate/metadata_configurations#update', via: [:patch, :put]
 
   # root to: "catalog#index" # replaced by spotlight root path
   concern :searchable, Blacklight::Routes::Searchable.new
