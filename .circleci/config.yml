@@ -37,9 +37,6 @@ jobs:
         key: pomegranate-{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
-      - run:
-          name: Compile the Webpack bundles
-          command: bundle exec rails webpacker:compile
       - persist_to_workspace:
           root: '~/pomegranate'
           paths: '*'
