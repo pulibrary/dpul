@@ -317,7 +317,7 @@ GEM
     modernizr-rails (2.7.1)
     msgpack (1.2.4)
     multi_json (1.12.1)
-    multipart-post (2.0.0)
+    multipart-post (2.1.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (5.1.0)
@@ -410,6 +410,7 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
+    retriable (3.1.2)
     riiif (1.1.0)
       railties (>= 4.2, < 6)
     roar (1.1.0)
@@ -451,8 +452,8 @@ GEM
       rubocop (>= 0.52.1)
     ruby-oembed (0.10.1)
     ruby-prof (0.16.2)
-    ruby-progressbar (1.8.1)
-    rubyzip (1.2.2)
+    ruby-progressbar (1.10.1)
+    rubyzip (1.2.4)
     safe_yaml (1.0.4)
     sass (3.4.25)
     sass-rails (5.0.6)
@@ -503,8 +504,9 @@ GEM
       concurrent-ruby (~> 1.0)
       serverengine (~> 2.0.5)
       thor
-    solr_wrapper (0.18.1)
+    solr_wrapper (2.1.0)
       faraday
+      retriable
       ruby-progressbar
       rubyzip
     spring (2.0.0)

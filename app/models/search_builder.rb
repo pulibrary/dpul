@@ -19,6 +19,7 @@ class SearchBuilder < Blacklight::SearchBuilder
   # @param solr_params [Blacklight::Solr::Request] the Solr query parameters being modified
   def join_from_parent(solr_params)
     parent_query = solr_params[:q]
+    solr_params[:defType] = "lucene"
     solr_params[:q] = JoinChildrenQuery.new(parent_query).to_s
   end
 end
