@@ -17,7 +17,7 @@ module ApplicationHelper
   #   otherwise use the val from the blacklight locale file.
   #   We need this because application_name helper changes to include exhibit titles
   def header_title
-    site_title || t("blacklight.application_name")
+    current_site.title || t("blacklight.application_name")
   end
   alias application_name header_title
 
