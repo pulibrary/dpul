@@ -77,6 +77,7 @@ RSpec.describe ExhibitsController do
 
       exhibit.reload
       expect(exhibit.thumbnails_enabled).to be false
+      expect(response).to redirect_to "/#{exhibit.slug}/edit"
     end
   end
 
