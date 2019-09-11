@@ -1,4 +1,5 @@
 class ExhibitsController < Spotlight::ExhibitsController
+  delegate :_routes, to: :spotlight
   prepend_before_action :find_exhibit
   after_action :ingest_members, only: :create
 
