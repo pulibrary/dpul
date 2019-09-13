@@ -61,6 +61,12 @@ module ApplicationHelper
     image_tag url, image_options if url.present?
   end
 
+  # Gives the bookmarks path by document id instead of access id
+  # Use as an alternative to bookmark_path
+  def bookmarks_id_path(document)
+    Pathname.new('/').join("bookmarks", document.id).to_s
+  end
+
   private
 
     # Generate the URL for the configuration for the UV
