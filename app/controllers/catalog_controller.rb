@@ -64,6 +64,9 @@ class CatalogController < ApplicationController
     config.add_index_field 'readonly_collections_ssim', label: 'Collections'
     config.index.thumbnail_method = :document_thumbnail
 
+    # The embed view doesn't look good, so remove it.
+    config.view.delete(:embed)
+
     config.add_facet_fields_to_solr_request!
     config.add_field_configuration_to_solr_request!
     config.response_model = AdjustedGroupedResponse
