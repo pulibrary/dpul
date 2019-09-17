@@ -2,7 +2,7 @@ class FiggyEventHandler
   include Sneakers::Worker
   from_queue :"pomegranate_#{Rails.env}",
              WORKER_OPTIONS.merge(
-               arguments: { 'x-dead-letter-exchange': 'pomegranate-retry' }
+               arguments: { 'x-dead-letter-exchange': "pomegranate_#{Rails.env}-retry" }
              )
 
   def work(msg)
