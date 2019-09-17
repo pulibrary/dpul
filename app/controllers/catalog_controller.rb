@@ -11,6 +11,9 @@ class CatalogController < ApplicationController
 
     blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language', limit: 10
     blacklight_config.add_facet_field 'readonly_subject_ssim', label: 'Subject', limit: 10
+    [:embed, :gallery, :masonry, :slideshow].each do |view|
+      blacklight_config.view.delete(view)
+    end
     unique_custom_fields.each do |field|
       blacklight_config.add_show_field field.field, label: field.configuration["label"]
     end
