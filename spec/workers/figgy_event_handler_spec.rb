@@ -35,5 +35,8 @@ RSpec.describe FiggyEventHandler do
       expect(FiggyEventProcessor).to have_received(:new).with(msg)
       expect(handler).to have_received(:ack!)
     end
+    it "is configured to use an environment specific deadletter queue" do
+      expect(described_class.queue_opts[:arguments][:"x-dead-letter-exchange"]).to eq "pomegranate_test-retry"
+    end
   end
 end
