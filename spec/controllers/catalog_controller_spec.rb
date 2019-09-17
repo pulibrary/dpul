@@ -132,6 +132,8 @@ RSpec.describe CatalogController do
 
     get :index, params: { search_field: "all_fields" }
 
+    expect(assigns[:blacklight_config].view.keys).to contain_exactly :list, :atom, :rss
+
     expect(document_ids.length).to eq 1
     expect(assigns[:response][:response][:numFound]).to eq 1
     expect(assigns[:response]["facet_counts"]["facet_fields"]).to include "readonly_language_ssim" => []
