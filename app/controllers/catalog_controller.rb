@@ -75,8 +75,6 @@ class CatalogController < ApplicationController
     config.response_model = AdjustedGroupedResponse
     config.show.document_presenter_class = RTLShowPresenter
     config.index.document_presenter_class = RTLIndexPresenter
-    config.navbar.partials = []
-    config.index.document_actions.delete(:bookmark)
     config.repository_class = ::FriendlyIdRepository
     config.http_method = :post
   end

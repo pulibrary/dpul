@@ -18,6 +18,9 @@
       <% end %>
 
       <li>
+        <%= render partial: 'blacklight/nav/bookmark' %>
+      </li>
+      <li>
         <%= link_to t('spotlight.header_links.logout'), main_app.destroy_user_session_path %>
       </li>
     </ul>
