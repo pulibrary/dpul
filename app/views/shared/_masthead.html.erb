@@ -15,11 +15,19 @@
         <% elsif current_exhibit %>
           <%= current_exhibit.title %>
           <% @subtitle ||= current_exhibit.subtitle %>
+          <div class="site-subtitle">
+          <% if @subtitle.present? %>
+              <small dir='<%= @subtitle.dir %>'><%= @subtitle %></small>
+          <% end %>
+          </div>
+        <% elsif @masthead_title %>
+          <%= @masthead_title %>
+          <% @subtitle ||= current_site.subtitle %>
+          <div class="site-subtitle">
           <% if @subtitle.present? %>
             <small dir='<%= @subtitle.dir %>'><%= @subtitle %></small>
           <% end %>
-        <% elsif @masthead_title %>
-          <%= @masthead_title %>
+        </div>
         <% end %>
       </div>
     </div>

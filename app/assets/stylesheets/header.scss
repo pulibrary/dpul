@@ -350,3 +350,11 @@ header.lux {
     }
   }
 }
+
+.site-subtitle {
+  min-height: 35px;
+}
+.masthead > .site-title-container > .site-title.h1 {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
