@@ -20,6 +20,10 @@
           <% end %>
         <% elsif @masthead_title %>
           <%= @masthead_title %>
+          <% @subtitle ||= current_site.subtitle %>
+          <% if @subtitle.present? %>
+            <small dir='<%= @subtitle.dir %>'><%= @subtitle %></small>
+          <% end %>
         <% end %>
       </div>
     </div>
