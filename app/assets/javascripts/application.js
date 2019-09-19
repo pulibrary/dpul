@@ -26,6 +26,7 @@
 //= require pom_boot
 //= require more_link
 //= require back_to_top
+//= require sir_trevor/blocks/recent_items
 
 Blacklight.onLoad(function() {
   Initializer = require('pom_boot')

@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="thumbnail">
+    <%= link_to_document document, image_tag(thumbnail_url(document).to_s.gsub(/full\/.*\/0/,"full/!400,400/0")) %>
+    <div class="card-header">
+      <%= render_index_document document %> 
+    </div>
+  </div>
+</div>
