@@ -26,6 +26,7 @@ RSpec.describe 'Bookmarks', type: :feature, js: true do
 
       visit "/bookmarks"
       expect(page).to have_content "1 entry found"
+      expect(page).to have_link "CSV"
 
       visit "/catalog?search_field=all_fields&q="
       expect(page).to have_content "In Bookmarks"
