@@ -1,30 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'Bookmarks', type: :feature, js: true do
-  let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title', slug: 'exhibit-title') }
-  let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
   let(:id) { "67890" }
-  let(:id2) { "12345" }
-  let(:access_id) { '1r66j4408' }
-  let(:access_id2) { '2r66j4408' }
-  let(:document) { SolrDocument.new(id: id) }
-  let(:document2) { SolrDocument.new(id: id2) }
+  let(:document) { FactoryBot.build(:document, id: id) }
 
   before do
-    sign_in admin
-    Spotlight::SolrDocumentSidecar.create!(
-      document: document2, exhibit: exhibit,
-      data: { "access_identifier_ssim" => [access_id2] }
+    FactoryBot.create(
+      :sidecar,
+      document: document,
+      with_indexed_document: true
     )
-    Spotlight::SolrDocumentSidecar.create!(
-      document: document, exhibit: exhibit,
-      data: { "access_identifier_ssim" => [access_id] }
+    FactoryBot.create(
+      :sidecar,
+      with_indexed_document: true
     )
-
-    document.make_public! exhibit
-    document2.make_public! exhibit
-    document.reindex
-    document2.reindex
     Blacklight.default_index.connection.commit
   end
 
