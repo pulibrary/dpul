@@ -23,6 +23,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_exhibit
+    super
+  rescue ActiveRecord::RecordNotFound
+    nil
+  end
+
   def guest_username_authentication_key(key)
     key &&= nil unless key.to_s =~ /^guest/
     return key if key

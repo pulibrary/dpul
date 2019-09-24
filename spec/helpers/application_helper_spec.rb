@@ -86,7 +86,7 @@ describe ApplicationHelper, type: :helper do
     end
 
     it 'generates an <img> element for SolrDocument thumbnails when Exhibits are configured to display them' do
-      expect(output).to eq("<img src=\"#{thumbnail_url}\" alt=\"Default\" />")
+      expect(output).to eq("<img src=\"#{thumbnail_url}\" />")
     end
 
     context 'when the document cannot be retrieved' do
@@ -100,7 +100,7 @@ describe ApplicationHelper, type: :helper do
     context "when @document isn't set" do
       it "works" do
         assign(:document, nil)
-        expect(output).to eq("<img src=\"#{thumbnail_url}\" alt=\"Default\" />")
+        expect(output).to eq("<img src=\"#{thumbnail_url}\" />")
       end
     end
 

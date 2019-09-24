@@ -46,7 +46,7 @@ RSpec.describe CatalogController do
         resource = IIIFResource.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
 
-        get :index, params: { q: "", exhibit_id: exhibit.id }
+        get :index, params: { q: "" }
 
         expect(document_ids).to eq []
       end
@@ -59,7 +59,7 @@ RSpec.describe CatalogController do
         document.save
         Blacklight.default_index.connection.commit
 
-        get :index, params: { q: "", exhibit_id: exhibit.id }
+        get :index, params: { q: "" }
 
         expect(document_ids).to eq []
       end

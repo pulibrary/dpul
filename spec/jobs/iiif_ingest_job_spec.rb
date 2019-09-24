@@ -13,14 +13,14 @@ describe IIIFIngestJob do
   end
 
   it 'ingests a single url' do
-    expect(IIIFResource).to receive(:new).with(url: url1, exhibit_id: exhibit.id).and_return(resource)
+    expect(IIIFResource).to receive(:new).with("type" => "IIIFResource", url: url1, exhibit_id: exhibit.id).and_return(resource)
 
     described_class.new.perform(url1, exhibit, log_entry)
   end
 
   it 'ingests each of an array of urls' do
-    expect(IIIFResource).to receive(:new).with(url: url1, exhibit_id: exhibit.id).and_return(resource)
-    expect(IIIFResource).to receive(:new).with(url: url2, exhibit_id: exhibit.id).and_return(resource)
+    expect(IIIFResource).to receive(:new).with("type" => "IIIFResource", url: url1, exhibit_id: exhibit.id).and_return(resource)
+    expect(IIIFResource).to receive(:new).with("type" => "IIIFResource", url: url2, exhibit_id: exhibit.id).and_return(resource)
 
     described_class.new.perform([url1, url2], exhibit, log_entry)
   end

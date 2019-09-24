@@ -75,8 +75,8 @@ RSpec.describe ExhibitsController do
       expect(exhibit.thumbnails_enabled).to be true
       patch :update, params: { id: exhibit, exhibit: params }
 
-      exhibit.reload
-      expect(exhibit.thumbnails_enabled).to be false
+      expect(exhibit.reload.thumbnails_enabled).to be false
+      expect(response).to redirect_to "/#{exhibit.slug}/edit"
     end
   end
 
