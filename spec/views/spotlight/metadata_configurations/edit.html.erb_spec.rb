@@ -13,11 +13,10 @@ describe 'spotlight/metadata_configurations/edit', type: :view do
     )
     Spotlight::CustomField.create!(exhibit: exhibit, slug: "one", field: "one", label: "one", field_type: "vocab", readonly_field: false)
     Spotlight::CustomField.create!(exhibit: exhibit, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: true)
+    render
   end
 
   it "displays only writeable custom fields" do
-    render
-
     within "#exhibit-specific-fields" do
       expect(rendered).to have_content "one"
       expect(rendered).not_to have_content "two"
