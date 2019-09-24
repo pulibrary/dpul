@@ -21,6 +21,7 @@ describe 'spotlight/metadata_configurations/edit', type: :view do
     within "#exhibit-specific-fields" do
       expect(rendered).to have_content "one"
       expect(rendered).not_to have_content "two"
+      expect(rendered).to have_selector "th", text: "Text Area"
     end
   end
 end
