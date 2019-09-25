@@ -1,6 +1,7 @@
 class RTLShowPresenter < ::Blacklight::ShowPresenter
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::UrlHelper
+  include ActionView::Helpers::SanitizeHelper
   include ActionView::Context
 
   def field_value_separator
@@ -18,7 +19,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   def field_value(field, options = {})
     tags = super.split(field_value_separator).collect do |value|
       value = collection_value(value) if field.to_s.include?("readonly_collections_ssim")
-      content_tag(:li, value.html_safe, dir: value.dir)
+      content_tag(:li, value.html_safe, dir: strip_tags(value).dir)
     end
 
     content_tag(:ul) do

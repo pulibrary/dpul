@@ -16,5 +16,6 @@
     <% available_view_fields.keys.each do |type| %>
       <td class="checkbox-cell text-center"><%= field.check_box type, inline: true, checked: config.send(type), label: "" %></td>
     <% end %>
+    <td class="checkbox-cell text-center"><%= field.check_box :link_to_search, {inline: true, checked: config.link_to_search.present?, label: ""}, config.field, false%></td>
   <% end %>
 </tr>
