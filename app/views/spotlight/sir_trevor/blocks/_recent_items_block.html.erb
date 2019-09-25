@@ -1,0 +1,9 @@
+<h1>Recent Additions</h1>
+<div class="content-block documents">
+  <% recent_items_block.with_solr_helper(self) %>
+  <%- if recent_items_block.documents.present? %>
+    <div class="cards">
+      <%= render collection: recent_items_block.documents, as: :document, partial: 'spotlight/sir_trevor/blocks/recent_item' %>
+    </div>
+  <% end %>
+</div>
