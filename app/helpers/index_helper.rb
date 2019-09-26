@@ -1,19 +1,12 @@
 module IndexHelper
   def render_index_document(document)
     field = field_from document: document
-    span = []
-    if !field.is_a?(Array)
-      span << content_tag(:span, style: 'display: block;', dir: field.dir) do
-        link_to(field, url_for_document(document), document_link_params(document, {}))
-      end
-    else
-      field.each do |value|
-        span << content_tag(:span, style: 'display: block;', dir: value.dir) do
-          link_to(value, url_for_document(document), document_link_params(document, {}))
-        end
+    spans = Array.wrap(field).map do |value|
+      content_tag(:span, style: 'display: block;', dir: value.dir) do
+        link_to(value, url_for_document(document), document_link_params(document, {}))
       end
     end
-    safe_join span
+    safe_join spans
   end
 
   # Ensures that only a single string is passed from the IndexPresenter
