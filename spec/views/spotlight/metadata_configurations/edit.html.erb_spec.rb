@@ -21,6 +21,7 @@ describe 'spotlight/metadata_configurations/edit', type: :view do
       expect(rendered).to have_content "one"
       expect(rendered).not_to have_content "two"
       expect(rendered).to have_selector "th", text: "Text Area"
+      expect(rendered).to have_selector "th", text: "Link to Search"
     end
   end
 end

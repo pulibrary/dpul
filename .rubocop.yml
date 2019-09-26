@@ -117,6 +117,7 @@ Rails/OutputSafety:
     - 'app/processors/custom_field_rendering.rb'
     - 'app/presenters/rtl_index_presenter.rb'
     - 'app/presenters/rtl_show_presenter.rb'
+    - 'spec/presenters/rtl_show_presenter_spec.rb'
 
 Rails/DynamicFindBy:
   Exclude:
@@ -135,6 +136,7 @@ RSpec/ExampleLength:
     - 'spec/requests/catalog_spec.rb'
     - 'spec/features/catalog_show_spec.rb'
     - 'spec/features/**/*.rb'
+    - 'spec/views/**/*.rb'
 
 RSpec/ExampleWording:
   CustomTransform:

@@ -23,6 +23,26 @@ RSpec.describe RTLShowPresenter do
     )
   end
 
+  describe "link_to_search" do
+    let(:view_context) { double(blacklight_config: blacklight_config, search_state: double(reset: double(add_facet_params: true)), search_action_path: "/exhibit/catalog") }
+    let(:blacklight_config) do
+      double(
+        show_fields: { field:
+                       double(highlight: false, accessor: nil, default: nil, field: :field, text_area: false, helper_method: nil, link_to_search: "field", itemprop: nil, separator_options: nil, :separator_options= => nil) },
+        view_config: double(title_field: :title, html_title_field: nil),
+        facet_fields: { "exhibit_tags" => double(field: "tags_ssim") }
+      )
+    end
+
+    before do
+      allow(view_context).to receive(:link_to).with("بي", "/exhibit/catalog").and_return("<a link>بي</a link>".html_safe)
+    end
+
+    it "links each individual property" do
+      expect(presenter.field_value(:field)).to eq "<ul><li dir=\"rtl\"><a link>بي</a link></li></ul>"
+    end
+  end
+
   describe "#field_value" do
     context "when given a RTL string" do
       it "renders it as a RTL list item" do
