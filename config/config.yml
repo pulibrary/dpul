@@ -23,6 +23,8 @@ production:
 staging:
   <<: *defaults
   all_collection_manifest_url: <%= ENV["POMEGRANATE_COLLECTIONS_URL"] %>
+  external_universal_viewer_url: <%= ENV["POMEGRANATE_COLLECTIONS_URL"].to_s.gsub(/edu\/.*/, "edu/uv/uv") %>
+  external_universal_viewer_config_url: <%= ENV["POMEGRANATE_COLLECTIONS_URL"].to_s.gsub(/edu\/.*/, "edu/viewer/exhibit/config") %>
   events:
     server: <%= ENV["POMEGRANATE_RABBITMQ_URL"] %>
     exchange: <%= ENV["POMEGRANATE_RABBITMQ_EXCHANGE"] %>
