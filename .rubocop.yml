@@ -137,6 +137,7 @@ RSpec/ExampleLength:
     - 'spec/features/catalog_show_spec.rb'
     - 'spec/features/**/*.rb'
     - 'spec/views/**/*.rb'
+    - 'spec/controllers/bookmarks_controller_spec.rb'
 
 RSpec/ExampleWording:
   CustomTransform:
