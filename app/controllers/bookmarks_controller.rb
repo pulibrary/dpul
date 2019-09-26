@@ -5,6 +5,11 @@ require 'csv'
 class BookmarksController < CatalogController
   include Blacklight::Bookmarks
 
+  def index
+    blacklight_config.add_show_tools_partial(:csv, partial: 'csv_link')
+    super
+  end
+
   def csv
     fetch_bookmarked_documents
     send_data csv_output, type: 'text/csv', filename: "bookmarks-#{Time.zone.today}.csv"
