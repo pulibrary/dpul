@@ -22,14 +22,26 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
       current_search_session: {}
     )
 
+    # Modified Date is 1976-01-03
+    FactoryBot.create(
+      :iiif_resource,
+      url: "https://hydra-dev.princeton.edu/concern/scanned_resources/e41da87f-84af-4f50-ab69-781576cf82db/manifest",
+      exhibit: exhibit,
+      manifest_fixture: "full_text_manifest.json",
+      source_metadata_identifier: "e41da87f-84af-4f50-ab69-781576cf82db",
+      stubbed_ocr_content: "More searchable text",
+      spec: self
+    )
+    # Modified Date is 1976-01-02
     FactoryBot.create(
       :iiif_resource,
       url: "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest",
       exhibit: exhibit,
-      manifest_fixture: "1r66j1149-expanded.json",
-      source_metadata_identifier: "12345678",
+      manifest_fixture: "1r66j1149.json",
+      source_metadata_identifier: "1234567",
       spec: self
     )
+    # Modified Date isn't defined
     FactoryBot.create(
       :iiif_resource,
       url: "https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest",
@@ -42,8 +54,8 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
   it 'renders a set of recent items' do
     render partial: p, locals: { recent_items_block: block }
 
-    expect(rendered).to have_selector ".card", count: 2
-    # Assert first document is the newest indexed one.
-    expect(rendered).to have_selector ".card:nth-child(1)", text: "L''ordine dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita di nostro signore Papa Pio Sesto"
+    expect(rendered).to have_selector ".card", count: 3
+    # Assert first document is the most recently modified one.
+    expect(rendered).to have_selector ".card:nth-child(1)", text: "Derechos y Democracia: Centro Internacional de Derechos Humanos y Desarrollo Democrático."
   end
 end
