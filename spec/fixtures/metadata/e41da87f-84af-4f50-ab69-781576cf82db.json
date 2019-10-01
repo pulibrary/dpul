@@ -116,5 +116,7 @@
   ],
   "created":"10/15/17 01:23:05 PM UTC",
   "modified":"06/14/18 05:27:57 PM UTC",
-  "folder_number":"300"
+  "folder_number":"300",
+  "system_created_at": "1976-01-01T00:00:00Z",
+  "system_updated_at": "1976-01-03T00:00:00Z"
 }
