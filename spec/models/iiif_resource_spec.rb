@@ -19,6 +19,25 @@ describe IIIFResource do
       expect(solr_doc["full_text_tesim"]).not_to be_blank
     end
   end
+  context "when ingesting a manifest with a system_created_at/updated_at" do
+    let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
+    it "indexes it into a system_created_at_ssi and makes no CustomField" do
+      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_metadata(id: "12345678")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      expect(resource.save).to be true
+
+      solr_doc = nil
+      Blacklight.default_index.connection.commit
+      resource.document_builder.to_solr { |x| solr_doc = x }
+      expect(exhibit.custom_fields.where(slug: "system-created-at").size).to eq 0
+      expect(exhibit.custom_fields.where(slug: "system-updated-at").size).to eq 0
+      expect(solr_doc["readonly_system-created-at_ssim"]).to be_nil
+      expect(solr_doc["system_created_at_dtsi"]).to eq "2019-01-01T00:00:00Z"
+      expect(solr_doc["system_updated_at_dtsi"]).to eq "2019-01-02T00:00:00Z"
+    end
+  end
   context "when provided an override title" do
     it "doesn't get overridden" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'

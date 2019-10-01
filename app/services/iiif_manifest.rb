@@ -7,11 +7,20 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     add_sort_date
     add_sort_author
     add_full_text
+    add_timestamps
     super
   end
 
   def add_noid
     solr_hash["access_identifier_ssim"] = [noid]
+  end
+
+  # created_at/updated_at are stashed by store_timestamps so that CustomFields
+  # do not get created for them, but there's access to those values for
+  # indexing.
+  def add_timestamps
+    solr_hash["system_created_at_dtsi"] = @created_at
+    solr_hash["system_updated_at_dtsi"] = @updated_at
   end
 
   def add_sort_title
@@ -67,12 +76,19 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     sidecar.update(data: sidecar.data.merge(manifest_metadata))
   end
 
+  def store_timestamps(metadata)
+    @created_at ||= Array(metadata["System created at"]).first
+    @updated_at ||= Array(metadata["System updated at"]).first
+    metadata.except("System created at", "System updated at")
+  end
+
   def manifest_metadata
     @manifest_metadata ||=
       begin
         metadata = metadata_class.new(manifest).to_solr
         return {} if metadata.blank?
         metadata = default_metadata(metadata).merge(metadata)
+        metadata = store_timestamps(metadata)
         create_sidecars_for(*metadata.keys)
 
         metadata.each_with_object({}) do |(key, value), hash|
