@@ -138,6 +138,7 @@ RSpec/ExampleLength:
     - 'spec/features/**/*.rb'
     - 'spec/views/**/*.rb'
     - 'spec/controllers/bookmarks_controller_spec.rb'
+    - 'spec/services/date_sort_migration_spec.rb'
 
 RSpec/ExampleWording:
   CustomTransform:
@@ -160,6 +161,7 @@ RSpec/MultipleExpectations:
   Exclude:
     - 'spec/requests/catalog_spec.rb'
     - 'spec/models/iiif_resource_spec.rb'
+    - 'spec/services/date_sort_migration_spec.rb'
 
 RSpec/FilePath:
   Enabled: false
