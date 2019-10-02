@@ -15,12 +15,12 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     solr_hash["access_identifier_ssim"] = [noid]
   end
 
-  # created_at/updated_at are stashed by store_timestamps so that CustomFields
+  # created_at/updated_at are stashed by exclude_system_metadata! so that CustomFields
   # do not get created for them, but there's access to those values for
   # indexing.
   def add_timestamps
-    solr_hash["system_created_at_dtsi"] = @created_at
-    solr_hash["system_updated_at_dtsi"] = @updated_at
+    solr_hash["system_created_at_dtsi"] = Array(excluded_metadata["System created at"]).first
+    solr_hash["system_updated_at_dtsi"] = Array(excluded_metadata["System updated at"]).first
   end
 
   def add_sort_title
@@ -76,10 +76,21 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     sidecar.update(data: sidecar.data.merge(manifest_metadata))
   end
 
-  def store_timestamps(metadata)
-    @created_at ||= Array(metadata["System created at"]).first
-    @updated_at ||= Array(metadata["System updated at"]).first
-    metadata.except("System created at", "System updated at")
+  def exclude_system_metadata!(metadata)
+    excluded_metadata_keys.each do |excluded_key|
+      excluded_metadata[excluded_key] = metadata.delete(excluded_key)
+    end
+  end
+
+  def excluded_metadata
+    @excluded_metadata ||= {}
+  end
+
+  def excluded_metadata_keys
+    [
+      "System created at",
+      "System updated at"
+    ]
   end
 
   def manifest_metadata
@@ -88,7 +99,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
         metadata = metadata_class.new(manifest).to_solr
         return {} if metadata.blank?
         metadata = default_metadata(metadata).merge(metadata)
-        metadata = store_timestamps(metadata)
+        exclude_system_metadata!(metadata)
         create_sidecars_for(*metadata.keys)
 
         metadata.each_with_object({}) do |(key, value), hash|
