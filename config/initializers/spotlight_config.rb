@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Spotlight::Engine.config.thumbnail_field = :thumbnail_ssim
 Spotlight::Engine.config.default_browse_index_view_type = :list
 Spotlight::Engine.config.upload_fields = []

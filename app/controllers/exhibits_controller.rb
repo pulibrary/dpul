@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExhibitsController < Spotlight::ExhibitsController
   delegate :_routes, to: :spotlight
   prepend_before_action :find_exhibit

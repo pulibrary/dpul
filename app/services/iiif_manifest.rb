@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class IiifManifest < ::Spotlight::Resources::IiifManifest
   def to_solr
     add_noid

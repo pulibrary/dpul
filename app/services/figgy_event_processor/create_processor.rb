@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FiggyEventProcessor
   class CreateProcessor < Processor
     def process

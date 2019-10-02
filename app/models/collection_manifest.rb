@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CollectionManifest < IIIF::Presentation::Collection
   def self.find_by_slug(slug)
     result = ExternalCollectionsQuery.all.find do |manifest|

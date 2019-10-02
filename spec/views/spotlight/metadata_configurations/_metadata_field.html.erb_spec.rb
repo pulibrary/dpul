@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FiggyEventProcessor
   attr_reader :event
   def initialize(event)

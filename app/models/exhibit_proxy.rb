@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExhibitProxy
   attr_reader :exhibit
   def initialize(exhibit)

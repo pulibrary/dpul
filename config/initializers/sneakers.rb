@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sneakers'
 require 'sneakers/handlers/maxretry'
 require_relative 'pom_config'

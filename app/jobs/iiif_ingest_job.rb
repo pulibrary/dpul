@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class IIIFIngestJob < ActiveJob::Base
   # Ingest one or more IIIF manfiest URLs.  Each manifest is ingested as its
   # own resource.

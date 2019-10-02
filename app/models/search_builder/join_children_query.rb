@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SearchBuilder
   # Models Solr join queries for retrieving Documents modeling children of collections
   class JoinChildrenQuery

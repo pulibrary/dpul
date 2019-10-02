@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   include Blacklight::BlacklightHelperBehavior
   include Spotlight::ApplicationHelper

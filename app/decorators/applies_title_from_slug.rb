@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AppliesTitleFromSlug < SimpleDelegator
   include GlobalID::Identification
   delegate :class, to: :__getobj__
