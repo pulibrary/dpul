@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RTLIndexPresenter < ::Blacklight::IndexPresenter
   # Override the IndexPresenter label method to render
   # the label as an Array if it's multivalued.

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RecentItemsBlock < SirTrevorRails::Blocks::SolrDocumentsBlock
   def documents
     search_results.last

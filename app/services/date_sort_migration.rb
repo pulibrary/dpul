@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DateSortMigration
   def self.run
     Spotlight::Exhibit.all.each do |exhibit|
@@ -22,7 +24,9 @@ class DateSortMigration
     return fields unless fields[bump].keys.map(&:to_sym).include?(:weight)
     weight = fields[bump][:weight]
     new_weight = (weight.to_i + 1).to_s
-    next_bump = fields.find{|field_key, field_config| field_config[:weight] == new_weight}&.first
+    next_bump = fields.find do |_field_key, field_config|
+      field_config[:weight] == new_weight
+    end&.first
     fields[bump][:weight] = new_weight
     fields = re_weight(fields, bump: next_bump) if next_bump
     fields

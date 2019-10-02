@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Class for extending the default Blacklight builder for Solr queries
 # @see https://github.com/projectblacklight/blacklight/wiki/Extending-or-Modifying-Blacklight-Search-Behavior
 class SearchBuilder < Blacklight::SearchBuilder

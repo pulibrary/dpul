@@ -1,4 +1,6 @@
 
+# frozen_string_literal: true
+
 module Pomegranate
   class MetadataConfigurationsController < Spotlight::MetadataConfigurationsController
     delegate :_routes, to: :spotlight

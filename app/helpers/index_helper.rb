@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module IndexHelper
   # generally spotlight asks the controller for the exhibit context you're in
   # but in bookmarks the exhibit context will vary between documents

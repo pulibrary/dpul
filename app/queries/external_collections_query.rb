@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExternalCollectionsQuery
   class << self
     def all

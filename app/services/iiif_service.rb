@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class IiifService < ::Spotlight::Resources::IiifService
   def self.iiif_response(url)
     resp = Faraday.get(url)

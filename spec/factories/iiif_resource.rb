@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :iiif_resource, class: IIIFResource do
     transient do

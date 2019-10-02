@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Joins values using configured value or linebreak
 class CustomFieldRendering < Blacklight::Rendering::AbstractStep
   include ActionView::Helpers::TextHelper

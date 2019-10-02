@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # pulled and pared down from spotlight
 # https://github.com/projectblacklight/spotlight/blob/b4608610ed0405f1d8ed4d6c9c17a02b06b9bcf6/spec/support/stub_iiif_response.rb
 require 'fixtures/iiif_responses'

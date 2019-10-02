@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AdjustedGroupedResponse < Blacklight::Solr::Response
   def initialize(*args)
     data = FacetCount.new(args.first)

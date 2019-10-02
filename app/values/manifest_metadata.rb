@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   def jsonld_url
     return unless @manifest["see_also"]

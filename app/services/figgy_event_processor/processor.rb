@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FiggyEventProcessor
   class Processor
     attr_reader :event

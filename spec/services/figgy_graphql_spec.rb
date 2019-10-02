@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe FiggyGraphql do
@@ -12,7 +14,7 @@ RSpec.describe FiggyGraphql do
                       )
                     ))
   end
-  let(:ocr_content) { ["Content".freeze] }
+  let(:ocr_content) { ["Content"] }
 
   before do
     allow(GraphQL::Client).to receive(:load_schema).and_return(schema)

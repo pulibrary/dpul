@@ -7,7 +7,7 @@ Rails:
 
 AllCops:
   DisplayCopNames: true
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.4.3
   Include:
     - '**/Rakefile'
     - '**/config.ru'

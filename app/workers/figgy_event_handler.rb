@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FiggyEventHandler
   include Sneakers::Worker
   from_queue :"pomegranate_#{Rails.env}",

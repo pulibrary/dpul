@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiggyGraphql
   require "graphql/client"
   require "graphql/client/http"

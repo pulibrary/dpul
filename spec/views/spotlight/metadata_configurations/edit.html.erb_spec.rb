@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'spotlight/metadata_configurations/edit', type: :view do

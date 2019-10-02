@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module StubbedManifestsHelper
   def stub_manifest(url:, fixture:, status: 200)
     stub_request(:head, url)

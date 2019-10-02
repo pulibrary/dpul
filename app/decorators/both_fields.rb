@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Decorates a Custom Field to give an accessor for the alternate suffix.
 class BothFields < SimpleDelegator
   def alternate_field

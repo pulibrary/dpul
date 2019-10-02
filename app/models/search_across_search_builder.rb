@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SearchAcrossSearchBuilder < ::SearchBuilder
   self.default_processor_chain += [:hide_unpublished_exhibit_records, :hide_private_exhibit_records]
 
