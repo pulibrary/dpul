@@ -2,7 +2,9 @@
 
 class RecentItemsBlock < SirTrevorRails::Blocks::SolrDocumentsBlock
   def documents
-    search_results.last
+    search_results.last.select do |doc|
+      doc.has? Spotlight::Engine.config.thumbnail_field
+    end
   end
 
   def search_results
