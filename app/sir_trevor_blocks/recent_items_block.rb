@@ -10,6 +10,6 @@ class RecentItemsBlock < SirTrevorRails::Blocks::SolrDocumentsBlock
   end
 
   def user_query
-    Blacklight::SearchState.new({ sort: "system_updated_at_dtsi DESC", rows: 9 }, blacklight_config).to_h
+    Blacklight::SearchState.new({ sort: "system_updated_at_dtsi DESC", rows: 10 }, blacklight_config).to_h
   end
 end
