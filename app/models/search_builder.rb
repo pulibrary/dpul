@@ -24,4 +24,8 @@ class SearchBuilder < Blacklight::SearchBuilder
     solr_params[:defType] = "lucene"
     solr_params[:q] = JoinChildrenQuery.new(parent_query).to_s
   end
+
+  def exclude_null_thumbnail(solr_params)
+    solr_params[:fq] << "thumbnail_ssim:*"
+  end
 end
