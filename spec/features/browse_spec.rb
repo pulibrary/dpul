@@ -172,6 +172,10 @@ RSpec.describe 'Browsing exhibits', type: :feature do
       it 'hides the privately accessible items and updates for deleted items' do
         expect(page).to have_css '.item-count', text: '1 item'
       end
+
+      it 'presents the bookmark action' do
+        expect(page).to have_content "Bookmark"
+      end
     end
   end
 end
