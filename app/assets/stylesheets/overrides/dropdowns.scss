@@ -227,3 +227,8 @@
   padding-top: 6px;
   padding-bottom: 6px;
 }
+
+/* remove ie11 built-in dropdown arrow */
+select::-ms-expand {
+  display: none;
+}
