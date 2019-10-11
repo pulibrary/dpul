@@ -210,5 +210,25 @@
 
 .search-btn,
 .search_field {
-  height: 40px;
+  height: auto;
+}
+
+.input-group-addon {
+  padding: 0;
+  border-color: rgb(224, 221, 211);
+}
+
+/* because the search_field as it existed had a background, the carat didn't
+ * show up. This will be used in its place so the carat shows. */
+.search_field_with_carat {
+  height: 32px;
+  margin: 0;
+  border: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* remove ie11 built-in dropdown arrow */
+select::-ms-expand {
+  display: none;
 }

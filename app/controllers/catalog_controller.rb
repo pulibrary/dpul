@@ -57,7 +57,10 @@ class CatalogController < ApplicationController
     config.index.title_field = 'full_title_tesim'
     config.index.display_title_field = 'readonly_title_tesim'
 
-    config.add_search_field 'all_fields', label: 'Everything'
+    config.add_search_field 'all_fields', label: 'Keyword'
+    config.add_search_field 'title', label: 'Title'
+    config.add_search_field 'publisher', label: 'Publisher'
+    config.add_search_field 'subject', label: 'Subject'
 
     config.add_sort_field 'relevance', sort: 'score desc', label: 'Relevance'
     config.add_sort_field 'sort_title', sort: 'sort_title_ssi asc, sort_date_ssi desc', label: 'Title'

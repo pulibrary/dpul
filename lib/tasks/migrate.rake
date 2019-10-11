@@ -5,4 +5,9 @@ namespace :migrate do
   task date_sort: :environment do
     DateSortMigration.run
   end
+
+  desc "Migrate all_fields search field label from Everything to Keyword"
+  task all_fields_label: :environment do
+    AllFieldsLabelMigration.run
+  end
 end
