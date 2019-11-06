@@ -1,6 +1,6 @@
 defaults: &defaults
   all_collection_manifest_url: "https://figgy.princeton.edu/iiif/collections"
-  external_universal_viewer_url: "https://figgy.princeton.edu/uv/uv"
+  external_universal_viewer_url: "https://figgy.princeton.edu/viewer"
   external_universal_viewer_config_url: "https://figgy.princeton.edu/viewer/exhibit/config"
   events:
     server: 'amqp://localhost:5672'
@@ -23,7 +23,7 @@ production:
 staging:
   <<: *defaults
   all_collection_manifest_url: <%= ENV["POMEGRANATE_COLLECTIONS_URL"] %>
-  external_universal_viewer_url: <%= ENV["POMEGRANATE_COLLECTIONS_URL"].to_s.gsub(/edu\/.*/, "edu/uv/uv") %>
+  external_universal_viewer_url: <%= ENV["POMEGRANATE_COLLECTIONS_URL"].to_s.gsub(/edu\/.*/, "edu/viewer") %>
   external_universal_viewer_config_url: <%= ENV["POMEGRANATE_COLLECTIONS_URL"].to_s.gsub(/edu\/.*/, "edu/viewer/exhibit/config") %>
   events:
     server: <%= ENV["POMEGRANATE_RABBITMQ_URL"] %>

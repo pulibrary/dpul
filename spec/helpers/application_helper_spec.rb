@@ -128,7 +128,7 @@ describe ApplicationHelper, type: :helper do
     end
 
     it "generates the URL for an embedded installation of the Universal Viewer" do
-      expect(helper.universal_viewer_url).to eq "https://figgy.princeton.edu/uv/uv#?manifest=#{CGI.escape(manifest_url)}&config=#{CGI.escape(config_url)}"
+      expect(helper.universal_viewer_url).to eq "https://figgy.princeton.edu/viewer#?manifest=#{CGI.escape(manifest_url)}&config=#{CGI.escape(config_url)}"
     end
   end
 end
