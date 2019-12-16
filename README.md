@@ -33,16 +33,16 @@ After setup, run Pomegranate locally with `bundle exec foreman start`.
 
 ```sh
 bundle exec rake pomegranate:test
-bundle exec rspec spec
+bundle exec rspec
 ```
 
 ### Auto-update from [Figgy](https://github.com/pulibrary/figgy)
 
-Plum announces events to a durable RabbitMQ fanout exchange. In order to use them, do the
+Figgy announces events to a durable RabbitMQ fanout exchange. In order to use them, do the
 following:
 
 1. Configure the `events` settings in `config/config.yml`
 2. Run `WORKERS=FiggyEventHandler rake sneakers:run`
 
-This will subscribe to the plum events and update the pomegranate records when they're
+This will subscribe to the events and update the pomegranate records when they're
 created, updated, or deleted.
