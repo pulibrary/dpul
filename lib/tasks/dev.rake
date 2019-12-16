@@ -57,7 +57,7 @@ if Rails.env.development? || Rails.env.test?
 
     desc "Start solr server for development."
     task :development do
-      SolrWrapper.wrap(managed: true, verbose: true, port: 8983, instance_dir: 'tmp/blacklight-core', persist: false, download_dir: 'tmp') do |solr|
+      SolrWrapper.wrap(managed: true, verbose: true, port: 8983, instance_dir: 'tmp/blacklight-core', persist: true, download_dir: 'tmp') do |solr|
         solr.with_collection(name: "blacklight-core", dir: Rails.root.join("solr", "config").to_s) do
           puts "Setup solr"
           puts "Solr running at http://localhost:8983/solr/blacklight-core/, ^C to exit"
