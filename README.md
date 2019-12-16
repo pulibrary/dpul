@@ -18,7 +18,17 @@ bundle exec rake db:create
 bundle exec rake db:migrate
 ```
 
-After setup, run Pomegranate locally with `bundle exec foreman start`.
+After setup, run Pomegranate locally either with
+
+`bundle exec foreman start`
+
+to run everything at once, or, in separate terminal windows:
+
+```
+bundle exec rake pomegranate:development
+bin/rails s
+bin/webpack-dev-server
+```
 
 ### Importing Data:
 
