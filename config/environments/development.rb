@@ -41,4 +41,7 @@ config.webpacker.check_yarn_integrity = true
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Use sidekiq in development so your front-end doesn't get tied up
+  config.active_job.queue_adapter = :sidekiq
 end

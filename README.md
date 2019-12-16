@@ -18,7 +18,12 @@ bundle exec rake db:create
 bundle exec rake db:migrate
 ```
 
-After setup, run Pomegranate locally with `bundle exec foreman start`.
+After setup, run Pomegranate locally either with
+
+`bundle exec foreman start`
+
+to run everything at once, or, in separate terminal windows run each command
+listed in `Procfile`
 
 ### Importing Data:
 
@@ -27,22 +32,23 @@ After setup, run Pomegranate locally with `bundle exec foreman start`.
 3. Click "Create a New Collection"
 4. Select a small collection and hit "Save"
   - To find a small collection: go to Figgy, submit a blank search, open the facet collection and click 'more', and page to the low-count collections 
-5. Wait for import (this will take a while since it's happening in foreground on dev)
+5. Either wait for a solr commit or manually commit in the rails console with
+   `Blacklight.default_index.connection.commit`
 
 ### Running Tests
 
 ```sh
 bundle exec rake pomegranate:test
-bundle exec rspec spec
+bundle exec rspec
 ```
 
 ### Auto-update from [Figgy](https://github.com/pulibrary/figgy)
 
-Plum announces events to a durable RabbitMQ fanout exchange. In order to use them, do the
+Figgy announces events to a durable RabbitMQ fanout exchange. In order to use them, do the
 following:
 
 1. Configure the `events` settings in `config/config.yml`
 2. Run `WORKERS=FiggyEventHandler rake sneakers:run`
 
-This will subscribe to the plum events and update the pomegranate records when they're
+This will subscribe to the events and update the pomegranate records when they're
 created, updated, or deleted.
