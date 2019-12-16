@@ -22,13 +22,8 @@ After setup, run Pomegranate locally either with
 
 `bundle exec foreman start`
 
-to run everything at once, or, in separate terminal windows:
-
-```
-bundle exec rake pomegranate:development
-bin/rails s
-bin/webpack-dev-server
-```
+to run everything at once, or, in separate terminal windows run each command
+listed in `Procfile`
 
 ### Importing Data:
 
@@ -37,7 +32,8 @@ bin/webpack-dev-server
 3. Click "Create a New Collection"
 4. Select a small collection and hit "Save"
   - To find a small collection: go to Figgy, submit a blank search, open the facet collection and click 'more', and page to the low-count collections 
-5. Wait for import (this will take a while since it's happening in foreground on dev)
+5. Either wait for a solr commit or manually commit in the rails console with
+   `Blacklight.default_index.connection.commit`
 
 ### Running Tests
 
