@@ -7,6 +7,15 @@
 
 A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton University Library.
 
+## Dependencies
+
+* Ruby
+* Nodejs
+* Java (to run Solr server)
+* (Postgres (for OSX dev systems, install via homebrew)
+* Redis (install via homebrew and run via `homebrew services`)
+
+
 ## Setup
 
 ```sh
