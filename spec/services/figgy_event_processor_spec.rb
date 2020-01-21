@@ -88,15 +88,17 @@ RSpec.describe FiggyEventProcessor do
       end
     end
     context "when it's no longer accessible" do
-      it "marks it as non-public" do
+      it "deletes it from solr, but leaves it in the DB" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
-        IIIFResource.new(url: url, exhibit: exhibit).save_and_index
+        iiif_resource = IIIFResource.new(url: url, exhibit: exhibit)
+        iiif_resource.save_and_index
         stub_manifest(url: url, fixture: "1r66j1149.json", status: 401)
 
         expect(processor.process).to eq true
         Blacklight.default_index.connection.commit
         resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
-        expect(resource["exhibit_first_public_bsi"]).to eq false
+        expect(resource).to eq nil
+        expect(iiif_resource.reload.id).not_to be_blank
       end
     end
     context "when it's private and then is made accessible" do
@@ -105,9 +107,7 @@ RSpec.describe FiggyEventProcessor do
         IIIFResource.new(url: url, exhibit: exhibit).save_and_index
         Blacklight.default_index.connection.commit
         resource_id = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first["access_identifier_ssim"].first
-        document = SolrDocument.find(resource_id)
-        document.make_private!(exhibit)
-        document.save
+        Blacklight.default_index.connection.delete_by_id(resource_id)
         Blacklight.default_index.connection.commit
 
         expect(processor.process).to eq true

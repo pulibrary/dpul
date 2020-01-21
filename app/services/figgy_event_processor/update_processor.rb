@@ -11,30 +11,13 @@ class FiggyEventProcessor
 
     def delete_old_resources
       delete_resources.each do |resource|
-        resource.document_builder.to_solr.map { |x| x[:id] }.each do |id|
-          index.delete_by_id id.to_s
-        end
         resource.destroy
       end
     end
 
     def update_existing_resources
       IIIFResource.where(url: manifest_url).each do |resource|
-        begin
-          # Make solr document private if it's no longer valid.
-          next if resource.exhibit.blank?
-          document = SolrDocument.find(resource.noid, exhibit: resource.exhibit)
-          resource.save_and_index
-          if resource.document_builder.documents_to_index.to_a.empty?
-            document.make_private!(resource.exhibit)
-          else
-            document.make_public!(resource.exhibit)
-          end
-
-          document.save
-        rescue Blacklight::Exceptions::RecordNotFound
-          Rails.logger.warn("Unable to find Solr record: #{resource.noid}")
-        end
+        resource.save_and_index
       end
     end
 
