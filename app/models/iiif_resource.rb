@@ -66,7 +66,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     # resource so we can keep the hidden fields that might have been set up in
     # DPUL, but we also don't want them to show up in search results.
     def remove_hidden_solr_records
-      return unless iiif_manifests.to_a.blank?
+      return if iiif_manifests.to_a.present?
       doc = SolrDocument.find(noid, exhibit: exhibit)
       solr.delete_by_id(doc.id, params: { softCommit: true })
     end

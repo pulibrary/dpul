@@ -10,15 +10,11 @@ class FiggyEventProcessor
     end
 
     def delete_old_resources
-      delete_resources.each do |resource|
-        resource.destroy
-      end
+      delete_resources.each(&:destroy)
     end
 
     def update_existing_resources
-      IIIFResource.where(url: manifest_url).each do |resource|
-        resource.save_and_index
-      end
+      IIIFResource.where(url: manifest_url).each(&:save_and_index)
     end
 
     def create_new_resources
