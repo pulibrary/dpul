@@ -349,6 +349,10 @@ describe IIIFResource do
       before do
         allow(Spotlight::ReindexJob).to receive(:perform_now)
         allow(resource).to receive(:save)
+        stub_manifest(
+          url: url,
+          fixture: "vol1.json"
+        )
       end
 
       it 'calls perform now on Spotlight::ReindexJob' do

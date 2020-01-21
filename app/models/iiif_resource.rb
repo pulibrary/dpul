@@ -39,12 +39,37 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     data["noid"]
   end
 
+  # We have to override both save_and_index and save_and_index_now instead of
+  # just reindex because they call `save && reindex`, and sometimes there's
+  # nothing new to save so it returns false - yet we still want it to remove
+  # hidden solr records.
+  def save_and_index(*args)
+    remove_hidden_solr_records
+    super
+  end
+
   def save_and_index_now(*args)
     save(*args)
+    remove_hidden_solr_records
     Spotlight::ReindexJob.perform_now(self)
   end
 
+  def reindex(*args)
+    return if exhibit.nil?
+    super
+  end
+
   private
+
+    # Hidden solr records are records for resources in Figgy which have been
+    # given a status such as "Takedown" or "Private". We don't want to delete the
+    # resource so we can keep the hidden fields that might have been set up in
+    # DPUL, but we also don't want them to show up in search results.
+    def remove_hidden_solr_records
+      return if iiif_manifests.to_a.present?
+      doc = SolrDocument.find(noid, exhibit: exhibit)
+      solr.delete_by_id(doc.id, params: { softCommit: true })
+    end
 
     def set_noid
       data["noid"] = iiif_manifests.first.noid

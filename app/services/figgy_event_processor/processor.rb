@@ -24,9 +24,5 @@ class FiggyEventProcessor
       def event_type
         event["event"]
       end
-
-      def index
-        Blacklight.default_index.connection
-      end
   end
 end
