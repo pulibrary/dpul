@@ -82,7 +82,7 @@ gem 'webpacker', '>= 4.0.x'
 # PUL Assets
 gem 'dalli'
 gem 'honeybadger', '~> 2.0'
-gem 'nokogiri', '~> 1.8.1'
+gem 'nokogiri', '~> 1.10.7'
 gem 'pul-assets', github: 'pulibrary/pul_assets'
 gem 'ruby-prof', require: false
 gem 'rubyzip', '>= 1.2.2'
