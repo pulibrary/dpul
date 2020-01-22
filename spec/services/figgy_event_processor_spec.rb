@@ -101,6 +101,22 @@ RSpec.describe FiggyEventProcessor do
         expect(iiif_resource.reload.id).not_to be_blank
       end
     end
+    context "when it's no longer accessible but wasn't in solr" do
+      let(:logger) { instance_double(ActiveSupport::Logger) }
+      before do
+        allow(logger).to receive(:debug)
+        allow(logger).to receive(:info)
+        allow(Rails).to receive(:logger).and_return(logger)
+      end
+      it "logs the noid" do
+        exhibit = FactoryBot.create(:exhibit, slug: "first")
+        iiif_resource = IIIFResource.create(url: url, exhibit: exhibit)
+        stub_manifest(url: url, fixture: "1r66j1149.json", status: 401)
+
+        expect(processor.process).to eq true
+        expect(logger).to have_received(:debug).with("No solr record for #{iiif_resource.noid} to delete.")
+      end
+    end
     context "when it's private and then is made accessible" do
       it "marks it as public" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
