@@ -18,6 +18,11 @@ Figgy will send create/update/delete messages to a fanout RabbitMQ Exchange.
 Pomegranate will register a durable queue which listens to that exchange and
 process messages using [Sneakers](https://github.com/jondot/sneakers).
 
+The message will contain the following information:
+ * Collection slugs the object is a member of
+ * Manifest URL of the object
+ * change event (create / update / delete)
+
 ## Consequences
 
 * If Sneakers workers stop processing, then new documents don't make it in to
