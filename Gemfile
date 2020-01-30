@@ -55,7 +55,7 @@ gem 'blacklight-gallery', '>= 0.3.0'
 gem 'blacklight-oembed'
 gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: "master"
 gem 'ddtrace'
-gem 'devise', '~> 4.6.0'
+gem 'devise', '~> 4.7.1'
 gem 'devise-guests', '~> 0.3'
 gem 'devise_invitable'
 gem 'friendly_id', github: 'norman/friendly_id'
