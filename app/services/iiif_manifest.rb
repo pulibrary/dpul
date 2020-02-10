@@ -58,8 +58,9 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   end
 
   def ark_url
-    return unless manifest["rendering"] && manifest["rendering"]["@id"]
-    manifest["rendering"]["@id"]
+    first_rendering = Array.wrap(manifest["rendering"]).first
+    return unless first_rendering && first_rendering["@id"]
+    first_rendering["@id"]
   end
 
   def noid

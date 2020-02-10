@@ -2,8 +2,11 @@
 
 class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   def jsonld_url
-    return unless @manifest["see_also"]
-    json_ld_see_also = Array.wrap(@manifest["see_also"]).find { |v| v["format"] == "application/ld+json" }
+    # IIIF 3 manifests will have it in seeAlso, it's in see_also for
+    # IIIF::Presentation manifests.
+    see_also = @manifest["see_also"] || @manifest["seeAlso"]
+    return unless see_also
+    json_ld_see_also = Array.wrap(see_also).find { |v| v["format"] == "application/ld+json" }
     return unless json_ld_see_also
     json_ld_see_also["@id"]
   end
