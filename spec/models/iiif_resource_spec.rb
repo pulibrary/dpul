@@ -21,6 +21,28 @@ describe IIIFResource do
       expect(solr_doc["sort_date_ssi"]).not_to be_blank
     end
   end
+  context "when indexing a NetID only Recording IIIF v3 manifest" do
+    it "uses an auth token if configured" do
+      allow(Pomegranate.config).to receive(:[]).and_call_original
+      allow(Pomegranate.config).to receive(:[]).with("manifest_authorization_token").and_return("123456")
+      url = 'https://figgy-staging.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest'
+      # Stub with the auth token - webmock will error if that's not the request we
+      # sent.
+      stub_manifest(url: "#{url}?auth_token=123456", fixture: 'recording_manifest.json')
+      stub_metadata(id: "ea3a706e-dd01-478c-a428-2ef99762e392")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      resource.save
+      resource.reindex
+
+      solr = Blacklight.default_index.connection
+      solr.commit
+      solr_doc = solr.select(q: "*:*")["response"]["docs"].first
+
+      expect(solr_doc["full_title_tesim"]).to eq ['Concert, 2001, October 19 and 20']
+      expect(solr_doc["sort_date_ssi"]).not_to be_blank
+    end
+  end
   context "when ingesting a manifest with full text" do
     it "indexes the full text into a TESIM field" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'

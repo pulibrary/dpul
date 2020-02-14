@@ -39,6 +39,11 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     data["noid"]
   end
 
+  def url
+    return super if Pomegranate.config["manifest_authorization_token"].blank?
+    "#{super}?auth_token=#{Pomegranate.config['manifest_authorization_token']}"
+  end
+
   # We have to override both save_and_index and save_and_index_now instead of
   # just reindex because they call `save && reindex`, and sometimes there's
   # nothing new to save so it returns false - yet we still want it to remove
