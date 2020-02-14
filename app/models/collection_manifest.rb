@@ -10,7 +10,9 @@ class CollectionManifest < IIIF::Presentation::Collection
   end
 
   def id
-    self['@id']
+    id = self['@id']
+    return id if Pomegranate.config["manifest_authorization_token"].blank?
+    "#{id}?auth_token=#{Pomegranate.config['manifest_authorization_token']}"
   end
 
   def slug

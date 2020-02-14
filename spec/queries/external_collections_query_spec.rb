@@ -12,6 +12,11 @@ RSpec.describe ExternalCollectionsQuery do
       it "queries figgy for all collections" do
         expect(query.all.map(&:slug)).to eq ["princeton-best", "test-collection-2"]
       end
+      it "includes the configured auth token in the id" do
+        allow(Pomegranate.config).to receive(:[]).and_call_original
+        allow(Pomegranate.config).to receive(:[]).with("manifest_authorization_token").and_return("123456")
+        expect(query.all.first.id).to eq "https://hydra-dev.princeton.edu/collections/2b88qc199/manifest?auth_token=123456"
+      end
     end
 
     describe ".uncreated" do
