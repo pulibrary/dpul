@@ -8,7 +8,8 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     return unless see_also
     json_ld_see_also = Array.wrap(see_also).find { |v| v["format"] == "application/ld+json" }
     return unless json_ld_see_also
-    json_ld_see_also["@id"]
+    return json_ld_see_also["@id"] if Pomegranate.config["manifest_authorization_token"].blank?
+    "#{json_ld_see_also['@id']}?auth_token=#{Pomegranate.config['manifest_authorization_token']}"
   end
 
   def jsonld_response

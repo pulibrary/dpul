@@ -29,7 +29,7 @@ describe IIIFResource do
       # Stub with the auth token - webmock will error if that's not the request we
       # sent.
       stub_manifest(url: "#{url}?auth_token=123456", fixture: 'recording_manifest.json')
-      stub_metadata(id: "ea3a706e-dd01-478c-a428-2ef99762e392")
+      stub_metadata(id: "ea3a706e-dd01-478c-a428-2ef99762e392", auth_token: "123456")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
       resource.save
