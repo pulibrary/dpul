@@ -40,8 +40,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
   end
 
   def url
-    return super if Pomegranate.config["manifest_authorization_token"].blank?
-    "#{super}?auth_token=#{Pomegranate.config['manifest_authorization_token']}"
+    AuthorizedUrl.new(url: super).to_s
   end
 
   # We have to override both save_and_index and save_and_index_now instead of

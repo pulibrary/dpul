@@ -10,9 +10,7 @@ class CollectionManifest < IIIF::Presentation::Collection
   end
 
   def id
-    id = self['@id']
-    return id if Pomegranate.config["manifest_authorization_token"].blank?
-    "#{id}?auth_token=#{Pomegranate.config['manifest_authorization_token']}"
+    AuthorizedUrl.new(url: self['@id']).to_s
   end
 
   def slug
