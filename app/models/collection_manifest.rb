@@ -9,8 +9,12 @@ class CollectionManifest < IIIF::Presentation::Collection
     CollectionManifest.new(ExternalManifest.load(result.id).send(:data))
   end
 
+  # Overwriting this method isn't the best, as it's not an accurate
+  # representation of what comes through, but Spotlight's indexer calls #id in
+  # multiple places to ask for the manifest, and we need to make sure the auth
+  # token is included.
   def id
-    self['@id']
+    AuthorizedUrl.new(url: self['@id']).to_s
   end
 
   def slug

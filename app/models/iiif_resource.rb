@@ -39,6 +39,13 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     data["noid"]
   end
 
+  # This is overridden because Spotlight calls it in multiple places to query
+  # for the manifest and it needs our auth token. This will not persist the auth
+  # token to the database, but will only append it on read.
+  def url
+    AuthorizedUrl.new(url: super).to_s
+  end
+
   # We have to override both save_and_index and save_and_index_now instead of
   # just reindex because they call `save && reindex`, and sometimes there's
   # nothing new to save so it returns false - yet we still want it to remove

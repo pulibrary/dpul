@@ -8,8 +8,10 @@ module StubbedManifestsHelper
       .to_return(status: status, body: File.read(Rails.root.join("spec", "fixtures", "manifests", fixture)), headers: { 'content-type' => 'application/ld+json' })
   end
 
-  def stub_metadata(id:, status: 200, fixture: nil)
-    stub_request(:get, "https://figgy.princeton.edu/catalog/#{id}.jsonld")
+  def stub_metadata(id:, status: 200, fixture: nil, auth_token: nil)
+    url = "https://figgy.princeton.edu/catalog/#{id}.jsonld"
+    url += "?auth_token=#{auth_token}" if auth_token
+    stub_request(:get, url)
       .to_return(status: status, body: File.read(Rails.root.join("spec", "fixtures", "metadata", "#{fixture || id}.json")), headers: { 'content-type' => 'application/ld+json' })
   end
 
