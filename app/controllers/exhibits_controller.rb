@@ -25,6 +25,7 @@ class ExhibitsController < Spotlight::ExhibitsController
         :published,
         :tag_list,
         :thumbnails_enabled,
+        :condensed_viewer,
         contact_emails_attributes: %i[id email]
       )
     end
