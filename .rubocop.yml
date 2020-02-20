@@ -139,6 +139,7 @@ RSpec/ExampleLength:
     - 'spec/views/**/*.rb'
     - 'spec/controllers/bookmarks_controller_spec.rb'
     - 'spec/services/date_sort_migration_spec.rb'
+    - 'spec/controllers/exhibits_controller_spec.rb'
 
 RSpec/ExampleWording:
   CustomTransform:

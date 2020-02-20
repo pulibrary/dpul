@@ -11,5 +11,10 @@
   .logo {
     float: right;
   }
+  &.condensed {
+    iframe {
+      height: 450px;
+    }
+  }
 }
 
