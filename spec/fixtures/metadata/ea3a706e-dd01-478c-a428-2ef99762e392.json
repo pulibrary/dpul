@@ -47,6 +47,12 @@
             "title": "Performance Ensembles"
         }
     ],
+    "electronic_locations": [
+      {
+        "@id": "http://lib-dbserver.princeton.edu/music/programs/2015-04-24-25.pdf",
+        "label": "Program."
+      }
+    ],
     "system_created_at": "2020-02-06T00:02:47Z",
     "system_updated_at": "2020-02-07T18:31:35Z"
 }

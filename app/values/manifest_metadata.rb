@@ -60,10 +60,16 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
 
     def transform_value(value)
       ["@value", "pref_label"].each { |prop| return value[prop] if value[prop] }
+      return electronic_location_link(value) if key == 'Electronic locations'
       return language_name(value) if key == 'Language'
       return value['title'] if key == 'Memberof'
       return value["@id"] if value["@id"]
       value
+    end
+
+    def electronic_location_link(value)
+      return value unless value.is_a?(Hash)
+      "<a href='#{value['@id']}'>#{value['label']}</a>"
     end
 
     def language_name(value)
