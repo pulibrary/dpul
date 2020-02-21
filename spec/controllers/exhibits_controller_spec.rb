@@ -64,7 +64,8 @@ RSpec.describe ExhibitsController do
       {
         title: 'Some Title',
         thumbnails_enabled: false,
-        tag_list: '2014, R. Buckminster Fuller'
+        tag_list: '2014, R. Buckminster Fuller',
+        condensed_viewer: true
       }
     end
 
@@ -72,12 +73,14 @@ RSpec.describe ExhibitsController do
       exhibit.save
     end
 
-    it 'disables the rendering of thumbnails' do
+    it 'disables the rendering of thumbnails and condenses the viewer' do
       exhibit.reload
       expect(exhibit.thumbnails_enabled).to be true
+      expect(exhibit.condensed_viewer).to be false
       patch :update, params: { id: exhibit, exhibit: params }
 
       expect(exhibit.reload.thumbnails_enabled).to be false
+      expect(exhibit.condensed_viewer).to be true
       expect(response).to redirect_to "/#{exhibit.slug}/edit"
     end
   end

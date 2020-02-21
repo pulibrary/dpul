@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_222459) do
+ActiveRecord::Schema.define(version: 2020_02_20_193547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_222459) do
     t.integer "site_id"
     t.string "theme"
     t.boolean "thumbnails_enabled", default: true
+    t.boolean "condensed_viewer", default: false
     t.index ["site_id"], name: "index_spotlight_exhibits_on_site_id"
     t.index ["slug"], name: "index_spotlight_exhibits_on_slug", unique: true
   end

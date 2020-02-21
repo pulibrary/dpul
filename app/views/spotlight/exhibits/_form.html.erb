@@ -15,6 +15,9 @@
   <%= f.form_group :thumbnails_enabled, label: { text: 'Display thumbnails?', class: nil }, help: nil do %>
     <%= f.check_box :thumbnails_enabled, value: f.object.thumbnails_enabled, label: "" %>
   <% end %>
+  <%= f.form_group :condensed_viewer, label: { text: 'Condense Viewer?', class: nil }, help: nil do %>
+    <%= f.check_box :condensed_viewer, value: f.object.condensed_viewer, label: "" %>
+  <% end %>
   <%= f.form_group :published, label: { text: nil, class: nil }, help: nil do %>
     <%= f.check_box :published, label: "" %>
     <p class="help-block"><%= t(:'.fields.published.help_block') %></p>
