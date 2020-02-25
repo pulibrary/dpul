@@ -20,7 +20,7 @@ jobs:
         key: pomegranate-{{ checksum "Gemfile.lock" }}
       - type: cache-restore
         name: Restore Yarn cache
-        key: pomegranate-yarn-{{ checksum "yarn.lock" }}
+        key: pomegranate-yarn-{{ checksum "yarn.lock" }}-1
       - run:
           name: Install NPM dependencies via Yarn
           command: yarn install --frozen-lockfile
@@ -31,7 +31,7 @@ jobs:
       # Cache Dependencies
       - type: cache-save
         name: Save Yarn package cache
-        key: pomegranate-yarn-{{ checksum "yarn.lock" }}
+        key: pomegranate-yarn-{{ checksum "yarn.lock" }}-1
         paths:
           - ~/.cache/yarn
       - type: cache-save
