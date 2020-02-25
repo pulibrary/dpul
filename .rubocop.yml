@@ -178,3 +178,6 @@ RSpec/NestedGroups:
 Naming/MemoizedInstanceVariableName:
   Exclude:
     - 'app/controllers/exhibits_controller.rb'
+Security/Open:
+  Exclude:
+    - 'app/models/external_manifest.rb'
