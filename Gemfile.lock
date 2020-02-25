@@ -1,13 +1,14 @@
 GIT
-  remote: git://github.com/norman/friendly_id.git
-  revision: 8c9036ff568738aa004ec9f593661f072fd6cc5b
+  remote: https://github.com/norman/friendly_id.git
+  revision: 984dac788d106faf60313cd0e51593474a513078
   specs:
-    friendly_id (5.2.5)
+    friendly_id (5.3.0)
       activerecord (>= 4.0.0)
 
 GIT
-  remote: git://github.com/projectblacklight/spotlight.git
+  remote: https://github.com/projectblacklight/spotlight.git
   revision: 505a3f049ca0c463199ceced65ddab7a9fb1de7e
+  ref: 505a3f049ca0c463199ceced65ddab7a9fb1de7e
   branch: master
   specs:
     blacklight-spotlight (2.8.0)
@@ -49,12 +50,13 @@ GIT
       underscore-rails (~> 1.6)
 
 GIT
-  remote: git://github.com/pulibrary/pul_assets.git
-  revision: 84dc633f5ff39167b4f7e7acf2517fffda630f0f
+  remote: https://github.com/pulibrary/pul_assets.git
+  revision: 0947abe3d47e0e1581fdbdeea25b28bc47cae29a
   specs:
     pul-assets (0.2.2)
       bourbon (~> 4.2.6)
       breakpoint (~> 2.7.0)
+      jquery-datatables-rails (~> 3.4.0)
       jquery-tablesorter (~> 1.20.5)
       modernizr-rails (~> 2.7.1)
       normalize-rails (~> 3.0.3)
@@ -104,8 +106,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (6.0.0)
-      activerecord (~> 5.0)
+    acts-as-taggable-on (6.5.0)
+      activerecord (>= 5.0, < 6.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.3.1)
@@ -155,14 +157,14 @@ GEM
       sass (~> 3.4)
       thor (~> 0.19)
     breadcrumbs_on_rails (3.0.1)
-    breakpoint (2.7.0)
+    breakpoint (2.7.1)
       sass (~> 3.3)
       sassy-maps (< 1.0.0)
     builder (3.2.4)
     bunny (2.14.3)
       amq-protocol (~> 2.3, >= 2.3.0)
     byebug (9.0.6)
-    cancancan (3.0.1)
+    cancancan (3.0.2)
     capistrano (3.11.0)
       airbrussh (>= 1.0.0)
       i18n
@@ -188,7 +190,7 @@ GEM
     capybara-screenshot (1.0.22)
       capybara (>= 1.0, < 4)
       launchy
-    carrierwave (2.0.1)
+    carrierwave (2.1.0)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
       addressable (~> 2.6)
@@ -242,7 +244,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.13.1)
+    faraday_middleware (0.14.0)
       faraday (>= 0.7.4, < 1.0)
     ffi (1.11.1)
     foreman (0.85.0)
@@ -259,7 +261,7 @@ GEM
     honeybadger (2.7.2)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    i18n-active_record (0.2.2)
+    i18n-active_record (0.3.0)
       i18n (>= 0.5.0)
     iiif-image-api (0.1.0)
       activesupport (<= 6)
@@ -269,12 +271,17 @@ GEM
       json
     iiif_manifest (1.0.1)
       activesupport (>= 4)
-    image_processing (1.9.3)
+    image_processing (1.10.3)
       mini_magick (>= 4.9.5, < 5)
-      ruby-vips (>= 2.0.13, < 3)
+      ruby-vips (>= 2.0.17, < 3)
     iso-639 (0.2.8)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    jquery-datatables-rails (3.4.0)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      sass-rails
     jquery-rails (4.3.5)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -316,13 +323,13 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (0.8.2)
     mimemagic (0.3.3)
-    mini_magick (4.9.5)
+    mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     modernizr-rails (2.7.1)
     msgpack (1.2.4)
-    multi_json (1.13.1)
+    multi_json (1.14.1)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     net-scp (1.2.1)
@@ -332,8 +339,8 @@ GEM
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     normalize-rails (3.0.3)
-    oauth2 (1.4.1)
-      faraday (>= 0.8, < 0.16.0)
+    oauth2 (1.4.4)
+      faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
@@ -466,7 +473,7 @@ GEM
     ruby-oembed (0.12.0)
     ruby-prof (0.16.2)
     ruby-progressbar (1.8.1)
-    ruby-vips (2.0.15)
+    ruby-vips (2.0.17)
       ffi (~> 1.9)
     rubyzip (1.3.0)
     safe_yaml (1.0.5)
@@ -495,7 +502,7 @@ GEM
       rack-protection (>= 1.5.0)
       redis (~> 3.2, >= 3.2.1)
     sigdump (0.2.4)
-    signet (0.11.0)
+    signet (0.12.0)
       addressable (~> 2.3)
       faraday (~> 0.9)
       jwt (>= 1.5, < 3.0)
@@ -505,9 +512,9 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    sir_trevor_rails (0.5.1)
+    sir_trevor_rails (0.6.1)
       multi_json (~> 1.0)
-      rails (>= 3, < 6)
+      rails (>= 3, < 7)
       redcarpet (>= 2.0.1, < 4)
       twitter-text (~> 1.4)
     sitemap_generator (5.2.0)
@@ -544,7 +551,7 @@ GEM
     sshkit-interactive (0.2.0)
       sshkit (~> 1.9)
     string_rtl (0.1.0)
-    susy (2.2.12)
+    susy (2.2.14)
       sass (>= 3.3.0, < 3.5)
     term-ansicolor (1.6.0)
       tins (~> 1.0)
@@ -676,4 +683,4 @@ DEPENDENCIES
   webpacker (>= 4.0.x)
 
 BUNDLED WITH
-   1.17.3
+   2.1.4
