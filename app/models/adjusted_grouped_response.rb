@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# After the grouping that happens during search, the facet counts are wrong. We
+# adjust them to reflect actual counts for the result set.
 class AdjustedGroupedResponse < Blacklight::Solr::Response
   def initialize(*args)
     data = FacetCount.new(args.first)
