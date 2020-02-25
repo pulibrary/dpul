@@ -5,7 +5,8 @@ class DateSortMigration
     Spotlight::Exhibit.all.each do |exhibit|
       exhibit_config = Spotlight::BlacklightConfiguration.where(exhibit: exhibit.id).first
       sort_fields = exhibit_config.sort_fields
-      next unless sort_fields.keys.include? "sort_date"
+      next unless sort_fields.key?("sort_date")
+
       sort_fields["sort_date_desc"] = sort_fields["sort_date"].deep_dup
       sort_fields["sort_date_desc"][:label] = "Date Descending"
       sort_fields["sort_date_asc"] = sort_fields["sort_date"].deep_dup
@@ -22,6 +23,7 @@ class DateSortMigration
   # maintaining relative order otherwise
   def self.re_weight(fields, bump:)
     return fields unless fields[bump].keys.map(&:to_sym).include?(:weight)
+
     weight = fields[bump][:weight]
     new_weight = (weight.to_i + 1).to_s
     next_bump = fields.find do |_field_key, field_config|

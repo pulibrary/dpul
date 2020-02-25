@@ -51,11 +51,13 @@ RSpec.describe RTLShowPresenter do
         expect(presenter.field_value(:field)).to eq "<ul><li dir=\"rtl\">بي</li></ul>"
       end
     end
+
     context "when given a string with special characters" do
       it "renders it without escaping them" do
         expect(presenter.field_value(:special)).to eq "<ul><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
       end
     end
+
     context "when given a collection field" do
       it "renders links to each collection" do
         allow(view_context).to receive(:exhibit_path).with(exhibit).and_return("/#{exhibit.slug}")
@@ -91,6 +93,7 @@ RSpec.describe RTLShowPresenter do
         expect(presenter.header).to eq "<ul><li dir=\"ltr\">Test</li></ul>"
       end
     end
+
     context "when there's a blank override title" do
       let(:document) do
         SolrDocument.new(
@@ -125,6 +128,7 @@ RSpec.describe RTLShowPresenter do
         expect(presenter.html_title).to eq "Test"
       end
     end
+
     context "when there's a blank override title" do
       let(:document) do
         SolrDocument.new(
@@ -139,6 +143,7 @@ RSpec.describe RTLShowPresenter do
         expect(presenter.html_title).to eq "بي, Traité sur l'art de la charpente : théorique et pratique"
       end
     end
+
     context "when there's no override title" do
       let(:document) do
         SolrDocument.new(

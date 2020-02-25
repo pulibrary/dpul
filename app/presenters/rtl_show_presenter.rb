@@ -32,6 +32,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   def collection_value(value)
     collection = Spotlight::Exhibit.where(title: value).first
     return value unless collection
+
     unless view_context.respond_to?(:exhibit_path)
       Rails.logger.error "Failed to render the link to the collection #{value} for #{collection.id}"
       return value
@@ -65,6 +66,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
 
   def exhibit_prefix
     return nil if configuration.facet_fields["exhibit_tags"].blank?
+
     @exhibit_prefix ||= configuration.facet_fields["exhibit_tags"].field.gsub("tags_ssim", "")
   end
 

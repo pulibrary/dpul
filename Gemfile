@@ -49,7 +49,7 @@ group :production, :test do
 end
 
 gem 'almond-rails', '~> 0.1'
-gem 'bixby'
+gem 'bixby', '2.0.0'
 gem 'blacklight', '~> 6.14'
 gem 'blacklight-gallery', '>= 0.3.0'
 gem 'blacklight-oembed'

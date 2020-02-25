@@ -41,11 +41,13 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
 
   def full_image_url
     return super unless manifest['thumbnail'] && manifest['thumbnail']['service'] && manifest['thumbnail']['service']['@id']
+
     "#{manifest['thumbnail']['service']['@id']}/full/!600,600/0/default.jpg"
   end
 
   def json_ld_value(value)
     return value['@value'] if value.is_a?(Hash)
+
     if value.is_a?(Array)
       english_values = value.select { |v| v['@language'] == default_json_ld_language }.map { |x| x.try(:[], '@value') || value }
       return english_values if english_values.present?
@@ -60,6 +62,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   def ark_url
     first_rendering = Array.wrap(manifest["rendering"]).first
     return unless first_rendering && first_rendering["@id"]
+
     first_rendering["@id"]
   end
 
@@ -101,12 +104,14 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
       begin
         metadata = metadata_class.new(manifest).to_solr
         return {} if metadata.blank?
+
         metadata = default_metadata(metadata).merge(metadata)
         exclude_system_metadata!(metadata)
         create_sidecars_for(*metadata.keys)
 
         metadata.each_with_object({}) do |(key, value), hash|
           next unless (field = exhibit_custom_fields[key])
+
           field = BothFields.new(field)
           hash[field.field] = value
           hash[field.alternate_field] = value
@@ -117,6 +122,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   # When importing a IIIF Resource the first time, create an "Override Title" field.
   def default_metadata(metadata)
     return {} if metadata["Title"].blank? || sidecar.data["override-title_ssim"].present?
+
     {
       "Override Title" => nil
     }
@@ -140,12 +146,14 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
 
   def add_full_text
     return if manifest["sequences"].blank?
+
     text = manifest["sequences"]
            .flat_map { |x| x["canvases"] }.compact
            .flat_map { |x| x["rendering"] }.compact
            .select { |x| x["format"] == "text/plain" }
            .map { |x| x["@id"] }.compact
     return if text.empty?
+
     manifest_id = manifest["@id"].match(/.*\/(.*)\/manifest/)[1]
     text = Array(FiggyGraphql.get_ocr_content_for_id(id: manifest_id)).map { |x| x.to_s.dup.force_encoding('UTF-8') }
     solr_hash["full_text_tesim"] = text

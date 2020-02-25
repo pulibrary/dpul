@@ -20,6 +20,7 @@ FactoryBot.define do
         evaluator.spec.stub_ocr_content(id: evaluator.source_metadata_identifier, text: evaluator.stubbed_ocr_content) if evaluator.source_metadata_identifier && evaluator.stubbed_ocr_content
       end
     end
+
     after(:create) do |resource, evaluator|
       resource.save_and_index
       Blacklight.default_index.connection.commit

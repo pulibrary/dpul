@@ -6,15 +6,19 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     # IIIF::Presentation manifests.
     see_also = @manifest["see_also"] || @manifest["seeAlso"]
     return unless see_also
+
     json_ld_see_also = Array.wrap(see_also).find { |v| v["format"] == "application/ld+json" }
     return unless json_ld_see_also
+
     AuthorizedUrl.new(url: json_ld_see_also["@id"]).to_s
   end
 
   def jsonld_response
     return unless jsonld_url
+
     response = Faraday.get(jsonld_url)
     raise Faraday::Error::ConnectionFailed, response.status unless response.status == 200
+
     response.body
   rescue Faraday::Error::ConnectionFailed, Faraday::TimeoutError => e
     Rails.logger.warn("HTTP GET for #{jsonld_url} failed with #{e}")
@@ -64,11 +68,13 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       return language_name(value) if key == 'Language'
       return value['title'] if key == 'Memberof'
       return value["@id"] if value["@id"]
+
       value
     end
 
     def electronic_location_link(value)
       return value unless value.is_a?(Hash)
+
       "<a href='#{value['@id']}'>#{value['label']}</a>"
     end
 
@@ -97,16 +103,17 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   # from.
   def manifest_fields
     return [] if jsonld_metadata
+
     super
   end
 
   private
 
-    def range_labels(h)
+    def range_labels(hsh)
       values = []
       (@manifest['structures'] || []).each do |s|
         values << s['label']
       end
-      h['Range label'] = values unless values.empty?
+      hsh['Range label'] = values unless values.empty?
     end
 end

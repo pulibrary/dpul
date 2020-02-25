@@ -12,6 +12,7 @@ RSpec.describe BothFields do
         expect(decorator.alternate_field).to eq "test_ssim"
       end
     end
+
     context "when given a ssim field" do
       let(:field_name) { "test_ssim" }
       it "returns _tesim" do

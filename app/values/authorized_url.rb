@@ -12,6 +12,7 @@ class AuthorizedUrl
 
   def to_s
     return url if auth_token.blank?
+
     "#{url}?auth_token=#{auth_token}"
   end
 

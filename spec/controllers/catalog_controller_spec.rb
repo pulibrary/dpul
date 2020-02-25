@@ -22,6 +22,7 @@ RSpec.describe CatalogController do
       expect(assigns[:blacklight_config].view.keys).not_to include :embed
     end
   end
+
   context "with mvw" do
     let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
     before do
@@ -32,6 +33,7 @@ RSpec.describe CatalogController do
       )
       stub_metadata(id: "12345678")
     end
+
     it "hides scanned resources with parents" do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
       resource = IIIFResource.new url: url, exhibit: exhibit
@@ -66,6 +68,7 @@ RSpec.describe CatalogController do
         expect(document_ids).to eq []
       end
     end
+
     context "when signed in as a site admin" do
       let(:user) { FactoryBot.create(:site_admin) }
       it "doesn't hide resources from un-published exhibits" do
@@ -111,6 +114,7 @@ RSpec.describe CatalogController do
         expect(document_ids).not_to be_empty
       end
     end
+
     it "returns MVW from metadata found in volume" do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
       resource = IIIFResource.new url: url, exhibit: exhibit
@@ -122,6 +126,7 @@ RSpec.describe CatalogController do
       expect(document_ids).to eq [resource.document_builder.to_solr.to_a.first[:id]]
     end
   end
+
   it "can search across, and hides duplicates" do
     index.add(id: "1",
               "#{Spotlight::Engine.config.iiif_manifest_field}": "manifest",

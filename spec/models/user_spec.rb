@@ -29,6 +29,7 @@ RSpec.describe User do
       expect(user.roles).to eq []
     end
   end
+
   it "can invite users" do
     expect { described_class.invite!(email: 'a-user-that-does-not-exist@princeton.edu', skip_invitation: true) }.not_to raise_error
     expect(described_class.last.provider).to eq "cas"

@@ -21,6 +21,7 @@ describe IIIFResource do
       expect(solr_doc["sort_date_ssi"]).not_to be_blank
     end
   end
+
   context "when indexing a NetID only Recording IIIF v3 manifest" do
     it "uses an auth token if configured" do
       allow(Pomegranate.config).to receive(:[]).and_call_original
@@ -44,6 +45,7 @@ describe IIIFResource do
       expect(solr_doc["readonly_electronic-locations_ssim"]).to eq ["<a href='http://lib-dbserver.princeton.edu/music/programs/2015-04-24-25.pdf'>Program.</a>"]
     end
   end
+
   context "when ingesting a manifest with full text" do
     it "indexes the full text into a TESIM field" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
@@ -62,6 +64,7 @@ describe IIIFResource do
       expect(solr_doc["full_text_tesim"]).not_to be_blank
     end
   end
+
   context "when ingesting a manifest with a system_created_at/updated_at" do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
     it "indexes it into a system_created_at_ssi and makes no CustomField" do
@@ -81,6 +84,7 @@ describe IIIFResource do
       expect(solr_doc["system_updated_at_dtsi"]).to eq "2019-01-02T00:00:00Z"
     end
   end
+
   context "when provided an override title" do
     it "doesn't get overridden" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
@@ -105,6 +109,7 @@ describe IIIFResource do
       expect(solr_doc["exhibit_exhibit-a_override-title_ssim"]).to eq ["Test"]
     end
   end
+
   context 'with recorded http interactions' do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
 
@@ -198,6 +203,7 @@ describe IIIFResource do
         expect(scanned_resource_doc["full_image_url_ssm"]).to eq ["https://libimages1.princeton.edu/loris/plum/hq%2F37%2Fvn%2F61%2F6-intermediate_file.jp2/full/!600,600/0/default.jpg"]
       end
     end
+
     context "when given an unreachable seeAlso url" do
       let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest" }
       before do

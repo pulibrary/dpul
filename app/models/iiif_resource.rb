@@ -63,6 +63,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
 
   def reindex(*args)
     return if exhibit.nil?
+
     super
   end
 
@@ -74,6 +75,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     # DPUL, but we also don't want them to show up in search results.
     def remove_hidden_solr_records
       return if iiif_manifests.to_a.present?
+
       doc = SolrDocument.find(noid, exhibit: exhibit)
       solr.delete_by_id(doc.id, params: { softCommit: true })
     rescue Blacklight::Exceptions::RecordNotFound

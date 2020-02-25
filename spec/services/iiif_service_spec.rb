@@ -20,6 +20,10 @@ describe IiifService do
       allow(Faraday).to receive(:get).and_return(http_response)
     end
 
+    after do
+      WebMock.enable!
+    end
+
     it 'retrieves the Manifest from the IIIF service' do
       expect(response).not_to be_empty
       expect { JSON.parse(response) }.not_to raise_error
@@ -51,10 +55,6 @@ describe IiifService do
         expect(response).to eq "{}"
         expect(logger).to have_received(:warn).with("HTTP GET for #{url} failed with timeout")
       end
-    end
-
-    after do
-      WebMock.enable!
     end
   end
 end

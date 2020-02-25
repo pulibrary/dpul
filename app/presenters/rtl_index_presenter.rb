@@ -38,6 +38,7 @@ class RTLIndexPresenter < ::Blacklight::IndexPresenter
 
     def exhibit_prefix
       return nil if configuration.facet_fields["exhibit_tags"].blank?
+
       @exhibit_prefix ||= configuration.facet_fields["exhibit_tags"].field.gsub("tags_ssim", "")
     end
 

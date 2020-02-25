@@ -29,6 +29,7 @@ RSpec.describe FiggyGraphql do
       data
     )
   end
+
   after do
     described_class.instance_variable_set(:@schema, nil)
     described_class.instance_variable_set(:@client, nil)

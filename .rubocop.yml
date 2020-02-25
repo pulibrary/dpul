@@ -7,10 +7,7 @@ Rails:
 
 AllCops:
   DisplayCopNames: true
-  TargetRubyVersion: 2.4.3
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
+  TargetRubyVersion: 2.6.5
   Exclude:
     - 'db/**/*'
     - 'script/**/*'
@@ -178,3 +175,6 @@ RSpec/AnyInstance:
 RSpec/NestedGroups:
   Exclude:
     - 'spec/models/iiif_resource_spec.rb'
+Naming/MemoizedInstanceVariableName:
+  Exclude:
+    - 'app/controllers/exhibits_controller.rb'

@@ -13,6 +13,7 @@ class AppliesTitleFromSlug < SimpleDelegator
     __getobj__.slug = slug
     __getobj__.title = title
     return false unless valid?
+
     super
   end
 
