@@ -24,6 +24,8 @@ jobs:
       - run:
           name: Install NPM dependencies via Yarn
           command: yarn install --frozen-lockfile
+      # Install Bundler
+      - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       # Cache Dependencies
@@ -52,6 +54,8 @@ jobs:
     steps:
       - attach_workspace:
           at: '~/pomegranate'
+      # Install Bundler
+      - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake rubocop
@@ -74,6 +78,8 @@ jobs:
           at: '~/pomegranate'
       # Wait for DB
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      # Install Bundler
+      - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run:
@@ -102,6 +108,8 @@ jobs:
           at: '~/pomegranate'
       # Wait for DB
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      # Install Bundler
+      - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run:
