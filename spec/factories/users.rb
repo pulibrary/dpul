@@ -10,7 +10,7 @@ FactoryBot.define do
     uid do |user|
       user.username
     end
-    provider "cas"
+    provider { "cas" }
 
     factory :site_admin do
       after(:create) do |user, _evaluator|

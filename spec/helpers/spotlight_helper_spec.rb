@@ -10,6 +10,7 @@ describe SpotlightHelper do
       include ActionView::Helpers::TagHelper
     end
   end
+
   after do
     Object.send(:remove_const, :TestingHelper)
   end

@@ -12,6 +12,7 @@ RSpec.describe "catalog paths", type: :request do
       expect(response.content_type).to eq "application/xml"
     end
   end
+
   describe "Apple touch icons" do
     it "routes to the static PNG assets" do
       get "/apple-touch-icon.png"
@@ -32,12 +33,14 @@ RSpec.describe "catalog paths", type: :request do
       expect(response.body).not_to be_empty
     end
   end
+
   describe "wp-login.php" do
     it "redirects to the catalog index" do
       get "/wp-login.php"
       expect(response.status).to eq 404
     end
   end
+
   describe "catalog item" do
     context "when the item does not exist" do
       it "returns a 404 status code response" do

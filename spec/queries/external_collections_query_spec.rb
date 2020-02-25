@@ -8,6 +8,7 @@ RSpec.describe ExternalCollectionsQuery do
     before do
       stub_collections(fixture: "collections.json")
     end
+
     describe ".all" do
       it "queries figgy for all collections" do
         expect(query.all.map(&:slug)).to eq ["princeton-best", "test-collection-2"]
@@ -31,10 +32,12 @@ RSpec.describe ExternalCollectionsQuery do
       end
     end
   end
+
   context "when no collections are returned" do
     before do
       stub_collections(fixture: "no_collections.json")
     end
+
     it "returns an empty set" do
       expect(query.all).to eq []
     end

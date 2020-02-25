@@ -12,6 +12,7 @@ RSpec.describe FiggyEventHandler do
       allow(handler).to receive(:ack!)
       allow(handler).to receive(:reject!)
     end
+
     let(:msg) do
       {
         "event" => "CREATED"

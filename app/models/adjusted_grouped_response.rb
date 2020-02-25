@@ -15,6 +15,7 @@ class AdjustedGroupedResponse < Blacklight::Solr::Response
 
     def field
       return nil unless data.try(:[], "facet_counts").try(:[], "facet_fields")
+
       data["facet_counts"]["facet_fields"][identifying_facet]
     end
 

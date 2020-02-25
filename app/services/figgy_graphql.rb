@@ -25,7 +25,7 @@ module FiggyGraphql
                   ocrContent
                 }
               }
-        GRAPHQL
+          GRAPHQL
         FiggyGraphql.const_set(:OCRQuery, client.parse(query))
       end
   end

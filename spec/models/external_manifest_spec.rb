@@ -6,6 +6,7 @@ RSpec.describe ExternalManifest do
   before do
     stub_collections(fixture: "collections.json")
   end
+
   describe ".load" do
     subject(:manifest) { described_class.load(manifest_url) }
     let(:manifest_url) { "https://hydra-dev.princeton.edu/iiif/collections" }

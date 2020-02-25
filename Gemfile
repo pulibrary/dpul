@@ -49,16 +49,15 @@ group :production, :test do
 end
 
 gem 'almond-rails', '~> 0.1'
-gem 'bixby'
+gem 'bixby', '2.0.0'
 gem 'blacklight', '~> 6.14'
 gem 'blacklight-gallery', '>= 0.3.0'
 gem 'blacklight-oembed'
-gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: "master"
+gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch: "master", ref: "505a3f049ca0c463199ceced65ddab7a9fb1de7e"
 gem 'ddtrace'
 gem 'devise', '~> 4.7.1'
 gem 'devise-guests', '~> 0.3'
 gem 'devise_invitable'
-gem 'friendly_id', github: 'norman/friendly_id'
 gem 'iiif-presentation'
 gem 'iso-639'
 gem 'lograge'

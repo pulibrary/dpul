@@ -31,12 +31,12 @@ RSpec.describe IiifManifest do
         allow(Faraday).to receive(:get).and_return(response)
       end
 
-      it 'populates the metadata with the remote values' do
-        expect(manifest_service.to_solr['sort_title_ssi']).to eq "Test Manifest 1"
-      end
-
       after do
         WebMock.enable!
+      end
+
+      it 'populates the metadata with the remote values' do
+        expect(manifest_service.to_solr['sort_title_ssi']).to eq "Test Manifest 1"
       end
     end
   end
@@ -62,6 +62,7 @@ RSpec.describe IiifManifest do
         expect(manifest_service.to_solr["sort_author_ssi"]).to eq "John Doe"
       end
     end
+
     describe 'range-label' do
       it 'is a multi-value text field' do
         expect(manifest_service.to_solr["readonly_range-label_tesim"]).to eq ["range label value"]

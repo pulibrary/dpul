@@ -12,6 +12,7 @@ describe ApplicationHelper, type: :helper do
     allow(field).to receive(:field).and_return("foo_tesim")
     allow(exhibit).to receive_messages(blacklight_config: blacklight_config)
   end
+
   describe '#text_area?' do
     let(:output) { helper.text_area?(field, exhibit) }
 
@@ -30,6 +31,7 @@ describe ApplicationHelper, type: :helper do
     before do
       allow(sidecar).to receive(:data).and_return('foo_tesim' => { data: data })
     end
+
     it "normalizes the text area value" do
       expect(output).to eq(data: data)
     end
@@ -41,6 +43,7 @@ describe ApplicationHelper, type: :helper do
     before do
       allow(helper).to receive(:current_site).and_return(current_site)
     end
+
     it 'delegates to the site title attribute for the Spotlight::Site' do
       allow(current_site).to receive(:title).and_return('Test Site Title')
 
@@ -50,6 +53,7 @@ describe ApplicationHelper, type: :helper do
       before do
         allow(current_site).to receive(:title).and_return(nil)
       end
+
       it 'accesses the Blacklight application name' do
         expect(helper.header_title).to eq 'Digital PUL'
       end

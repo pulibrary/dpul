@@ -9,6 +9,7 @@ class CatalogController < ApplicationController
 
   def search_across_settings
     return if current_exhibit
+
     blacklight_config.add_index_field 'readonly_creator_ssim', label: 'Creator'
 
     blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language', limit: 10
@@ -93,6 +94,7 @@ class CatalogController < ApplicationController
   # https://github.com/projectblacklight/spotlight/blob/v1.4.1/app/controllers/concerns/spotlight/controller.rb#L63
   def search_facet_url(*args)
     return super if current_exhibit
+
     main_app.facet_catalog_url(*args)
   end
 

@@ -19,6 +19,7 @@ describe IndexHelper do
       include ActionView::Context
     end
   end
+
   after do
     Object.send(:remove_const, :TestingHelper)
   end

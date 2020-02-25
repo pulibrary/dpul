@@ -24,6 +24,7 @@ if Rails.env.development? || Rails.env.test?
           k.include?('references') && v.include?('iiif_manifest_paths')
         end
         next unless sidecar.data != valid_data
+
         sidecar.data = valid_data
         sidecar.save
         sidecar.resource.reindex_later

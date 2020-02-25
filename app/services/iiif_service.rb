@@ -29,6 +29,7 @@ class IiifService < ::Spotlight::Resources::IiifService
   class ManifestParser
     def self.parse(json)
       return IIIF::Service.parse(json.to_json) unless json["@context"]&.include?("http://iiif.io/api/presentation/3/context.json")
+
       IIIF3Manifest.new(json)
     end
 

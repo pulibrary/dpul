@@ -29,6 +29,7 @@ RSpec.describe ExhibitsController do
         expect(last_exhibit.slug).to eq "princeton-best"
       end
     end
+
     context "when not given a slug" do
       render_views
       let(:exhibit) do
@@ -43,6 +44,7 @@ RSpec.describe ExhibitsController do
         expect(assigns["exhibit"].errors.messages[:slug]).to eq ["can't be blank"]
       end
     end
+
     context "when given no params" do
       let(:exhibit) do
         {

@@ -6,6 +6,7 @@ class CollectionManifest < IIIF::Presentation::Collection
       manifest.slug == slug
     end
     return nil if result.nil?
+
     CollectionManifest.new(ExternalManifest.load(result.id).send(:data))
   end
 

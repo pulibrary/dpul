@@ -7,6 +7,7 @@ class ExhibitsController < Spotlight::ExhibitsController
 
   def ingest_members
     return unless @exhibit.persisted?
+
     ExhibitProxy.new(@exhibit).reindex
   end
 

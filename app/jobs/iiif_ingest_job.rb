@@ -9,6 +9,7 @@ class IIIFIngestJob < ActiveJob::Base
     end
 
     return unless log_entry
+
     # Lock the row to prevent multiple workers from overwriting each other's increments.
     # This worked, but it's reporting complete before the objects are reindexed.
     # app/models/spotlight/resource.rb:55 has a null reindexing_log_entry.

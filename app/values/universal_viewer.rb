@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 # Class modeling URLs for Universal Viewer installations
