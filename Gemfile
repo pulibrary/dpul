@@ -82,6 +82,6 @@ gem 'webpacker', '>= 4.0.x'
 gem 'dalli'
 gem 'honeybadger', '~> 2.0'
 gem 'nokogiri', '~> 1.10.7'
-gem 'pul-assets', github: 'pulibrary/pul_assets'
+gem 'pul-assets', github: 'pulibrary/pul_assets', ref: '84dc633f5ff39167b4f7e7acf2517fffda630f0f'
 gem 'ruby-prof', require: false
 gem 'rubyzip', '>= 1.2.2'
