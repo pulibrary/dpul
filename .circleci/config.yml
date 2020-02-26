@@ -5,7 +5,7 @@ jobs:
     working_directory: ~/pomegranate
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: circleci/ruby:2.4.5-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
         environment:
           RAILS_ENV: test
           NODE_ENV: test
@@ -20,7 +20,20 @@ jobs:
         key: pomegranate-{{ checksum "Gemfile.lock" }}
       - type: cache-restore
         name: Restore Yarn cache
-        key: pomegranate-yarn-{{ checksum "yarn.lock" }}
+        key: pomegranate-yarn-{{ checksum "yarn.lock" }}-1
+      - run:
+          name: Install node@8.17.0 (need right version for `yarn`)
+          command: |
+            set +e
+            touch $BASH_ENV
+            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
+            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+            echo 'nvm install v8.17.0' >> $BASH_ENV
+            echo 'nvm alias default v8.17.0' >> $BASH_ENV
+      - run:
+          name: Check current version of node
+          command: node -v
       - run:
           name: Install NPM dependencies via Yarn
           command: yarn install --frozen-lockfile
@@ -31,7 +44,7 @@ jobs:
       # Cache Dependencies
       - type: cache-save
         name: Save Yarn package cache
-        key: pomegranate-yarn-{{ checksum "yarn.lock" }}
+        key: pomegranate-yarn-{{ checksum "yarn.lock" }}-1
         paths:
           - ~/.cache/yarn
       - type: cache-save
@@ -45,7 +58,7 @@ jobs:
   rubocop:
     working_directory: ~/pomegranate
     docker:
-      - image: circleci/ruby:2.4.5-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
         environment:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
@@ -60,36 +73,6 @@ jobs:
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake rubocop
   test:
-    working_directory: ~/pomegranate
-    docker:
-      - image: circleci/ruby:2.4.5-node-browsers
-        environment:
-          RAILS_ENV: test
-          POMEGRANATE_DB_HOST: localhost
-          POMEGRANATE_DB_USERNAME: pomegranate
-          POMEGRANATE_DB_PASSWORD: ""
-      - image: postgres:10.3
-        environment:
-          POSTGRES_DB: dpul_test
-          POSTGRES_USER: pomegranate
-          POSTGRES_PASSWORD: ""
-    steps:
-      - attach_workspace:
-          at: '~/pomegranate'
-      # Wait for DB
-      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
-      # Install Bundler
-      - run: gem install bundler -v '~> 2.0'
-      # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
-      - run:
-          command: bundle exec rake pomegranate:test
-          background: true
-      - run: bin/jetty_wait
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:migrate
-      - run: bundle exec rspec spec
-  test_2_6:
     working_directory: ~/pomegranate
     docker:
       - image: circleci/ruby:2.6-node-browsers
@@ -108,6 +91,19 @@ jobs:
           at: '~/pomegranate'
       # Wait for DB
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run:
+          name: Install node@8.17.0 (need right version for `yarn`)
+          command: |
+            set +e
+            touch $BASH_ENV
+            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
+            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+            echo 'nvm install v8.17.0' >> $BASH_ENV
+            echo 'nvm alias default v8.17.0' >> $BASH_ENV
+      - run:
+          name: Check current version of node
+          command: node -v
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
@@ -128,8 +124,5 @@ workflows:
           requires:
             - build
       - test:
-          requires:
-            - build
-      - test_2_6:
           requires:
             - build
