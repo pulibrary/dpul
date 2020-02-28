@@ -43,6 +43,8 @@ class CatalogController < ApplicationController
     config.browse.document_actions = config.index.document_actions
 
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
+    # Group records by manifest in order to display a single result for a given
+    # resource in 'search across'
     config.default_solr_params = {
       qt: 'search',
       rows: 10,
