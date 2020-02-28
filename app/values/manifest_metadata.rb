@@ -31,7 +31,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   end
 
   def jsonld_delete_keys
-    %w(@context @id)
+    %w(@context @id @type)
   end
 
   def jsonld_metadata_hash
