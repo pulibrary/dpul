@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_193547) do
+ActiveRecord::Schema.define(version: 2020_02_28_182712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_193547) do
     t.string "field_type"
     t.boolean "readonly_field", default: false
     t.boolean "is_multiple", default: false
+    t.index ["field_type"], name: "index_spotlight_custom_fields_on_field_type"
   end
 
   create_table "spotlight_exhibits", id: :serial, force: :cascade do |t|
