@@ -25,8 +25,15 @@ class User < ActiveRecord::Base
 
   def set_cas_defaults
     self.provider = "cas"
-    self.username = email.gsub(/@.*/, '')
+    self.username = default_username
     self.uid = username
+  end
+
+  def default_username
+    username, domain = email.split('@')
+    return username if domain == "princeton.edu"
+
+    email
   end
 
   def self.from_omniauth(access_token)
@@ -34,8 +41,14 @@ class User < ActiveRecord::Base
       user.uid = access_token.uid
       user.provider = access_token.provider
       user.username = access_token.uid
-      user.email = "#{access_token.uid}@princeton.edu"
+      user.email = initialize_email(access_token.uid)
     end
+  end
+
+  def self.initialize_email(uid)
+    return uid if /@/.match?(uid)
+
+    "#{uid}@princeton.edu"
   end
 
   # No reason to ever send invites, because of CAS.
