@@ -327,7 +327,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (5.1.0)
     nio4r (2.5.2)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     normalize-rails (3.0.3)
     oauth2 (1.4.4)
@@ -631,7 +631,7 @@ DEPENDENCIES
   jquery-rails
   lograge
   logstash-event
-  nokogiri (~> 1.10.7)
+  nokogiri (~> 1.10.8)
   omniauth (~> 1.8.1)
   omniauth-cas
   open_uri_redirections
