@@ -56,6 +56,10 @@ RSpec.describe User do
       it "doesn't make them an administrator" do
         expect(user.roles).to eq []
       end
+      it "can be called twice" do
+        user
+        described_class.from_omniauth(token)
+      end
     end
   end
 
