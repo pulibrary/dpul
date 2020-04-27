@@ -46,13 +46,13 @@ Rails.application.routes.draw do
   match '/404', to: 'pages#not_found', via: :all
   match '/500', to: 'pages#internal_server_error', via: :all
   get '/viewers', to: 'pages#viewers', as: 'viewers_page'
+  # Dynamic robots.txt
+  get '/robots.:format' => 'pages#robots'
   mount Spotlight::Engine, at: '/'
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
     concerns :exportable
   end
 
-  # Dynamic robots.txt
-  get '/robots.:format' => 'pages#robots'
   mount Riiif::Engine => '/images', as: 'riiif'
 end
