@@ -1,6 +1,7 @@
 <% if Rails.env.production? %>
-  User-Agent: *
-  Allow: /
+  User-agent: *
+  Crawl-delay: 10
+  Disallow: /*?
 <% else %>
   User-Agent: *
   Disallow: /
