@@ -28,7 +28,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
       url: "https://hydra-dev.princeton.edu/concern/scanned_resources/e41da87f-84af-4f50-ab69-781576cf82db/manifest",
       exhibit: exhibit,
       manifest_fixture: "full_text_manifest.json",
-      source_metadata_identifier: "e41da87f-84af-4f50-ab69-781576cf82db",
+      figgy_uuid: "e41da87f-84af-4f50-ab69-781576cf82db",
       stubbed_ocr_content: "More searchable text",
       spec: self
     )
@@ -38,7 +38,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
       url: "https://figgy-staging.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest",
       exhibit: exhibit,
       manifest_fixture: "map.json",
-      source_metadata_identifier: "fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f",
+      figgy_uuid: "fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f",
       spec: self
     )
     # Modified Date isn't defined; has thumbnail
@@ -55,7 +55,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
       url: "https://figgy.princeton.edu/concern/scanned_resources/965238bf-7850-4ae2-8830-f709c0f1b732/manifest",
       exhibit: exhibit,
       manifest_fixture: "no_thumbnail.json",
-      source_metadata_identifier: "965238bf-7850-4ae2-8830-f709c0f1b732",
+      figgy_uuid: "965238bf-7850-4ae2-8830-f709c0f1b732",
       spec: self
     )
   end
