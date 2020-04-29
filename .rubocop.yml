@@ -27,6 +27,10 @@ Metrics/LineLength:
 Metrics/AbcSize:
   Enabled: false
 
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'app/values/manifest_metadata.rb'
+
 Metrics/ClassLength:
   Exclude:
     - 'app/controllers/catalog_controller.rb'

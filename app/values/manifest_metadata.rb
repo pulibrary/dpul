@@ -53,6 +53,8 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     def new_key
       if key == 'Memberof'
         'Collections'
+      elsif key == "Link to catalog"
+        "View in catalog"
       else
         key
       end
@@ -68,8 +70,13 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       return language_name(value) if key == 'Language'
       return value['title'] if key == 'Memberof'
       return value["@id"] if value["@id"]
+      return link_to_catalog(value) if key == "Link to catalog"
 
       value
+    end
+
+    def link_to_catalog(value)
+      "<a href='#{value}'>#{value}</a>"
     end
 
     def electronic_location_link(value)
