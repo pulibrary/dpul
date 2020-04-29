@@ -53,6 +53,8 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     def new_key
       if key == 'Memberof'
         'Collections'
+      elsif key == "Link to catalog"
+        "View in catalog"
       else
         key
       end

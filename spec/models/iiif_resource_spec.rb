@@ -130,7 +130,7 @@ describe IIIFResource do
       expect(solr_doc["readonly_created_ssim"]).to eq ["1976-01-01T00:00:00Z"]
       expect(solr_doc["readonly_description_ssim"]).to eq ["First", "Second"]
       expect(solr_doc["readonly_description_ssim"]).to eq ["First", "Second"]
-      expect(solr_doc["readonly_link-to-catalog_ssim"]).to eq ["<a href='https://catalog.princeton.edu/12345678'>https://catalog.princeton.edu/12345678</a>"]
+      expect(solr_doc["readonly_view-in-catalog_ssim"]).to eq ["<a href='https://catalog.princeton.edu/12345678'>https://catalog.princeton.edu/12345678</a>"]
     end
 
     it "removes old metadata" do
