@@ -32,6 +32,7 @@
       "title":"East Asian Library Digital Bookshelf"
     }
   ],
+  "link_to_catalog":"https://catalog.princeton.edu/12345678",
   "system_created_at":"2019-01-01T00:00:00Z",
   "system_updated_at":"2019-01-02T00:00:00Z"
 }

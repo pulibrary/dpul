@@ -113,7 +113,7 @@ describe IIIFResource do
   context 'with recorded http interactions' do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
 
-    it 'ingests a iiif manifest' do
+    it 'ingests a iiif manifest with metadata from jsonld' do
       stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
@@ -129,7 +129,10 @@ describe IIIFResource do
       expect(Spotlight::CustomField.last.field_type).to eq 'vocab'
       expect(solr_doc["readonly_created_ssim"]).to eq ["1976-01-01T00:00:00Z"]
       expect(solr_doc["readonly_description_ssim"]).to eq ["First", "Second"]
+      expect(solr_doc["readonly_description_ssim"]).to eq ["First", "Second"]
+      expect(solr_doc["readonly_link-to-catalog_ssim"]).to eq ["<a href='https://catalog.princeton.edu/12345678'>https://catalog.princeton.edu/12345678</a>"]
     end
+
     it "removes old metadata" do
       stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
       # Stub metadata with a record which has a creator
@@ -156,6 +159,7 @@ describe IIIFResource do
 
       expect(solr_doc["readonly_creator_tesim"]).to eq nil
     end
+
     it 'indexes collections' do
       stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678")
@@ -168,6 +172,7 @@ describe IIIFResource do
       resource.document_builder.to_solr { |x| solr_doc = x }
       expect(solr_doc["readonly_collections_tesim"]).to eq ["East Asian Library Digital Bookshelf"]
     end
+
     context "when given a MVW" do
       let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
       before do
