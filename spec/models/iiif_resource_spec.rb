@@ -173,6 +173,25 @@ describe IIIFResource do
       expect(solr_doc["readonly_collections_tesim"]).to eq ["East Asian Library Digital Bookshelf"]
     end
 
+    context 'with a finding aid object' do
+      let(:id) { '82177270-5bbe-466a-85e1-e988a0f7a4f0' }
+      let(:url) { "https://figgy.princeton.edu/concern/scanned_resources/#{id}/manifest" }
+
+      it 'ingests a link to the finding aid' do
+        stub_manifest(url: url, fixture: 'archival_resource.json')
+        stub_metadata(id: id)
+        stub_ocr_content(id: id, text: "text")
+        exhibit = Spotlight::Exhibit.create title: 'Archival Exhibit'
+        resource = described_class.new url: url, exhibit: exhibit
+        expect(resource.save).to be true
+
+        solr_doc = nil
+        Blacklight.default_index.connection.commit
+        resource.document_builder.to_solr { |x| solr_doc = x }
+        expect(solr_doc["readonly_view-in-finding-aid_ssim"]).to eq ["<a href='https://findingaids.princeton.edu/collections/MC051/c05105'>https://findingaids.princeton.edu/collections/MC051/c05105</a>"]
+      end
+    end
+
     context "when given a MVW" do
       let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
       before do

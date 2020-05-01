@@ -55,6 +55,8 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
         'Collections'
       elsif key == "Link to catalog"
         "View in catalog"
+      elsif key == "Link to finding aid"
+        "View in finding aid"
       else
         key
       end
@@ -64,16 +66,18 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       values.map { |value| transform_value(value) }
     end
 
+    # rubocop:disable Metrics/PerceivedComplexity
     def transform_value(value)
       ["@value", "pref_label"].each { |prop| return value[prop] if value[prop] }
       return electronic_location_link(value) if key == 'Electronic locations'
       return language_name(value) if key == 'Language'
       return value['title'] if key == 'Memberof'
       return value["@id"] if value["@id"]
-      return link_to_catalog(value) if key == "Link to catalog"
+      return link_to_catalog(value) if key == "Link to catalog" || key == "Link to finding aid"
 
       value
     end
+    # rubocop:enable Metrics/PerceivedComplexity
 
     def link_to_catalog(value)
       "<a href='#{value}'>#{value}</a>"
