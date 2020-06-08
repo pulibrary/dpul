@@ -94,6 +94,12 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
       document_builder.documents_to_index.to_a.map { |y| y[:id] }
     end
 
+    # If the document is being reindexed, it will have a noid. Reporting the
+    # noid makes it easier to find
+    def document_ids_with_noids
+      document_builder.documents_to_index.to_a.map { |y| "(id: #{y[:id]}, noid: #{noid})" }
+    end
+
     def write_to_index(batch)
       documents = documents_that_have_ids(batch)
       return unless write? && documents.present?
@@ -101,7 +107,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
       blacklight_solr.update data: documents.to_json,
                              headers: { 'Content-Type' => 'application/json' }
     rescue RSolr::Error::Http
-      error_message = "Failed to update Solr for the following documents: #{document_ids.join(', ')}"
+      error_message = "Failed to update Solr for the following documents: #{document_ids_with_noids.join(', ')}"
       Rails.logger.error error_message
       raise IndexingError, error_message
     end

@@ -460,17 +460,15 @@ describe IIIFResource do
         let(:request) { double }
         let(:response) { double }
         let(:rsolr_error) { RSolr::Error::Http.new(request, response) }
-        let(:ids) do
-          docs = resource.document_builder.documents_to_index
-          docs.map { |document| document[:id] }
-        end
-        let(:error_message) { "Failed to update Solr for the following documents: #{ids.join(', ')}" }
-
-        before do
-          allow(blacklight_solr).to receive(:update).and_raise(rsolr_error)
-        end
 
         it 'logs an error' do
+          # Save it first to ensure the noid is in place to be reported
+          resource.save_and_index
+          resource_id = resource.document_builder.documents_to_index.first[:id]
+          ids = "(id: #{resource_id}, noid: #{resource.noid})"
+          error_message = "Failed to update Solr for the following documents: #{ids}"
+
+          allow(blacklight_solr).to receive(:update).and_raise(rsolr_error)
           expect { resource.reindex }.to raise_error(IIIFResource::IndexingError, error_message)
         end
       end
