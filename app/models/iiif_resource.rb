@@ -106,9 +106,10 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
 
       blacklight_solr.update data: documents.to_json,
                              headers: { 'Content-Type' => 'application/json' }
-    rescue RSolr::Error::Http
+    rescue RSolr::Error::Http => e
       error_message = "Failed to update Solr for the following documents: #{document_ids_with_noids.join(', ')}"
       Rails.logger.error error_message
+      Rails.logger.error "RSolr error message: #{e.message}"
       raise IndexingError, error_message
     end
 

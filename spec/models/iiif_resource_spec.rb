@@ -460,6 +460,9 @@ describe IIIFResource do
         let(:request) { double }
         let(:response) { double }
         let(:rsolr_error) { RSolr::Error::Http.new(request, response) }
+        before do
+          allow(rsolr_error).to receive(:message).and_return("solr mad")
+        end
 
         it 'logs an error' do
           # Save it first to ensure the noid is in place to be reported
