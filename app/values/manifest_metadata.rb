@@ -31,7 +31,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   end
 
   def jsonld_delete_keys
-    %w(@context @id @type)
+    %w[@context @id @type]
   end
 
   def jsonld_metadata_hash
@@ -74,10 +74,19 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       return value['title'] if key == 'Memberof'
       return value["@id"] if value["@id"]
       return link_to_catalog(value) if key == "Link to catalog" || key == "Link to finding aid"
+      return actors(value) if key == "Actor"
 
       value
     end
     # rubocop:enable Metrics/PerceivedComplexity
+
+    # string and rdf literal values will have been transformed by the general
+    # clause; only grouping values should get here
+    def actors(value)
+      return value unless value["grouping"]
+
+      value["grouping"].map { |h| h["@value"] }.join(", ")
+    end
 
     def link_to_catalog(value)
       "<a href='#{value}'>#{value}</a>"
