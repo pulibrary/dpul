@@ -85,6 +85,23 @@ describe IIIFResource do
     end
   end
 
+  context "when ingesting a resource with actor groupings" do
+    it "indexes all the values" do
+      url = 'https://figgy.princeton.edu/concern/scanned_resources/e9f4cdc7-173d-4bc8-befe-f786de455f11/manifest'
+      stub_manifest(url: url, fixture: 'actor_groupings.json')
+      stub_metadata(id: "e9f4cdc7-173d-4bc8-befe-f786de455f11")
+
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      resource.save_and_index
+
+      solr = Blacklight.default_index.connection
+      solr.commit
+      solr_doc = solr.select(q: "*:*")["response"]["docs"].first
+      expect(solr_doc["readonly_actor_ssim"]).to eq ["Milījī, Maḥmūd, محمود المليجي", "هدى سلطان"]
+    end
+  end
+
   context "when provided an override title" do
     it "doesn't get overridden" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
