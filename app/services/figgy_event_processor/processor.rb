@@ -18,7 +18,8 @@ class FiggyEventProcessor
       end
 
       def collection_slugs
-        event["collection_slugs"]
+        # it can be nil in the event, ensure it always returns an array
+        Array.wrap(event["collection_slugs"])
       end
 
       def event_type

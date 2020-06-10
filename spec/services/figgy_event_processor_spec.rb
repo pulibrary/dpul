@@ -108,6 +108,20 @@ RSpec.describe FiggyEventProcessor do
       end
     end
 
+    context "when there are no collection_slugs in the event" do
+      let(:event) do
+        {
+          "id" => "1r66j1149",
+          "event" => type,
+          "manifest_url" => url
+        }
+      end
+
+      it "doesn't blow up" do
+        expect(processor.process).to eq true
+      end
+    end
+
     context "when it's no longer accessible" do
       it "deletes it from solr, but leaves it in the DB" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
