@@ -19,6 +19,7 @@ RSpec.describe FiggyEventProcessor do
   end
   let(:collection_slugs) { ["first"] }
   let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest" }
+
   context "when given an unknown event" do
     let(:type) { "AWFULBADTHINGSHAPPENED" }
     it "returns false" do
@@ -46,15 +47,30 @@ RSpec.describe FiggyEventProcessor do
         "manifest_url" => "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest"
       }
     end
-    it "deletes that resource" do
-      exhibit = FactoryBot.create(:exhibit, slug: "first")
-      IIIFResource.new(url: url, exhibit: exhibit).save_and_index
-      Blacklight.default_index.connection.commit
 
-      expect(processor.process).to eq true
+    context "when the resource has an exhibit" do
+      it "deletes that resource" do
+        exhibit = FactoryBot.create(:exhibit, slug: "first")
+        IIIFResource.new(url: url, exhibit: exhibit).save_and_index
+        Blacklight.default_index.connection.commit
 
-      expect(IIIFResource.all.length).to eq 0
-      expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 0
+        expect(processor.process).to eq true
+
+        expect(IIIFResource.all.length).to eq 0
+        expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 0
+      end
+    end
+
+    context "when the resource has no exhibit" do
+      it "deletes that resource" do
+        IIIFResource.new(url: url).save_and_index
+        Blacklight.default_index.connection.commit
+        expect(IIIFResource.all.length).to eq 1
+
+        expect(processor.process).to eq true
+        expect(IIIFResource.all.length).to eq 0
+        expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 0
+      end
     end
   end
 

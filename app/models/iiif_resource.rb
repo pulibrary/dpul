@@ -32,6 +32,8 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
   end
 
   def cleanup_solr
+    return unless document_model
+
     solr.delete_by_id(document_ids, params: { softCommit: true })
   end
 
