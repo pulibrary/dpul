@@ -23,6 +23,7 @@ Sneakers.logger.level = Logger::INFO
 
 WORKER_OPTIONS = {
   ack: true,
+  durable: Pomegranate.config["event_queue"]["durable"],
   threads: 5,
   prefetch: 10,
   timeout_job_after: 60,
