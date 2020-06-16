@@ -18,6 +18,7 @@ RSpec.describe FiggyEventHandler do
         "event" => "CREATED"
       }
     end
+
     it "sends the message to the FiggyEventProcessor as a hash" do
       figgy_event_processor = instance_double(FiggyEventProcessor, process: true)
       allow(FiggyEventProcessor).to receive(:new).and_return(figgy_event_processor)
@@ -28,6 +29,7 @@ RSpec.describe FiggyEventHandler do
       expect(FiggyEventProcessor).to have_received(:new).with(msg)
       expect(handler).to have_received(:ack!)
     end
+
     it "acknowleges the message if the event is unknown" do
       figgy_event_processor = instance_double(FiggyEventProcessor, process: false)
       allow(FiggyEventProcessor).to receive(:new).and_return(figgy_event_processor)
@@ -38,8 +40,13 @@ RSpec.describe FiggyEventHandler do
       expect(FiggyEventProcessor).to have_received(:new).with(msg)
       expect(handler).to have_received(:ack!)
     end
+
     it "is configured to use an environment specific deadletter queue" do
       expect(described_class.queue_opts[:arguments][:"x-dead-letter-exchange"]).to eq "pomegranate_test-retry"
+    end
+
+    it "defaults to a durable queue" do
+      expect(described_class.queue_opts[:durable]).to eq true
     end
   end
 end
