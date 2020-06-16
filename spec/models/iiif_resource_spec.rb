@@ -67,6 +67,7 @@ describe IIIFResource do
 
   context "when ingesting a manifest with a system_created_at/updated_at" do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
+
     it "indexes it into a system_created_at_ssi and makes no CustomField" do
       stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678")
@@ -124,6 +125,26 @@ describe IIIFResource do
       solr_doc = solr.select(q: "*:*")["response"]["docs"].first
 
       expect(solr_doc["exhibit_exhibit-a_override-title_ssim"]).to eq ["Test"]
+    end
+  end
+
+  context "when re-indexing an existing resource" do
+    let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
+
+    it "doesn't create duplicate custom fields" do
+      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_metadata(id: "12345678")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      resource.save_and_index
+
+      custom_field_count = Spotlight::CustomField.all.size
+      custom_field = Spotlight::CustomField.where(slug: "call-number").first
+      custom_field.exhibit.blacklight_configuration.index_fields = { custom_field.field => { "label" => "Test Label" } }
+      custom_field.exhibit.save
+
+      10.times { resource.reload.save_and_index }
+      expect(Spotlight::CustomField.all.size).to eq custom_field_count
     end
   end
 
@@ -211,6 +232,7 @@ describe IIIFResource do
 
     context "when given a MVW" do
       let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
+
       before do
         stub_manifest(url: url, fixture: "mvw.json")
         stub_manifest(
@@ -247,6 +269,7 @@ describe IIIFResource do
 
     context "when given an unreachable seeAlso url" do
       let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest" }
+
       before do
         stub_manifest(url: url, fixture: "s9w032300r.json")
         stub_metadata(id: "12345678", status: 407)
@@ -477,6 +500,7 @@ describe IIIFResource do
         let(:request) { double }
         let(:response) { double }
         let(:rsolr_error) { RSolr::Error::Http.new(request, response) }
+
         before do
           allow(rsolr_error).to receive(:message).and_return("solr mad")
         end
@@ -500,6 +524,7 @@ describe IIIFResource do
         let(:resource) { described_class.new url: url, exhibit: exhibit }
         let(:id) { "c7f0bb99-3721-4171-8a84-0256941e8298" }
         let(:url) { "https://figgy.princeton.edu/concern/scanned_resources/#{id}/manifest" }
+
         before do
           stub_manifest(url: url, fixture: "search_service.json")
           stub_metadata(id: id)
