@@ -21,7 +21,7 @@ RSpec.describe "pages/robots.text.erb" do
     end
 
     it "slows down spiders and disallows indexing anything with a query-string" do
-      expect(response).to include "Disallow: /*?"
+      expect(response).to include "Disallow: /*?*"
       expect(response).to include "Crawl-delay: 10"
     end
   end
