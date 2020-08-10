@@ -641,7 +641,7 @@ DEPENDENCIES
   pul-assets!
   puma
   rack (>= 2.0.6)
-  rails (~> 5.1)
+  rails (~> 5.2)
   rails-controller-testing
   redis-namespace
   riiif
