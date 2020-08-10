@@ -6,7 +6,7 @@ gem 'graphql-client'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'
-gem 'rails', '~> 5.1'
+gem 'rails', '~> 5.2'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
