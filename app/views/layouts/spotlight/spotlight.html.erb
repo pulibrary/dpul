@@ -32,7 +32,7 @@
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <%= render partial: 'shared/matomo' %>
+    <%= render 'shared/analytics' if Rails.env.production? %>
   </head>
   <body class="<%= render_body_class %>">
     <%= render partial: 'shared/announcements' %>
@@ -53,7 +53,6 @@
       </div>
     </main>
 
-    <%= render partial: 'shared/matomo_noscript' %>
     <%= render :partial => 'shared/footer' %>
   </body>
 </html>
