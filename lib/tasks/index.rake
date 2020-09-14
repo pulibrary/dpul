@@ -19,3 +19,10 @@ namespace :reindex do
     puts "Reindexed the document for #{manifest}"
   end
 end
+
+namespace :index do
+  desc 'Commit the index'
+  task commit: :environment do
+    Blacklight.default_index.connection.commit
+  end
+end
