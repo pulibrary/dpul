@@ -1,48 +1,4 @@
 GIT
-  remote: https://github.com/projectblacklight/spotlight.git
-  revision: 505a3f049ca0c463199ceced65ddab7a9fb1de7e
-  ref: 505a3f049ca0c463199ceced65ddab7a9fb1de7e
-  branch: master
-  specs:
-    blacklight-spotlight (2.8.0)
-      acts-as-taggable-on (>= 5.0, < 7)
-      almond-rails (~> 0.1)
-      autoprefixer-rails
-      blacklight (~> 6.20)
-      blacklight-oembed (>= 0.0.3)
-      bootstrap_form (~> 2.2)
-      breadcrumbs_on_rails (~> 3.0)
-      cancancan
-      carrierwave
-      clipboard-rails (~> 1.5)
-      devise (>= 3.0)
-      devise_invitable (~> 1.6)
-      faraday
-      faraday_middleware
-      friendly_id (~> 5.2)
-      github-markup
-      i18n
-      i18n-active_record
-      iiif-presentation
-      iiif_manifest
-      leaflet-rails
-      legato
-      mini_magick
-      nokogiri
-      oauth2
-      openseadragon
-      paper_trail (~> 10.0)
-      rails (~> 5.1)
-      riiif (~> 2.0)
-      roar (~> 1.1)
-      roar-rails
-      signet
-      sir_trevor_rails (~> 0.5)
-      sprockets-es6
-      tophat
-      underscore-rails (~> 1.6)
-
-GIT
   remote: https://github.com/pulibrary/pul_assets.git
   revision: 84dc633f5ff39167b4f7e7acf2517fffda630f0f
   ref: 84dc633f5ff39167b4f7e7acf2517fffda630f0f
@@ -142,6 +98,43 @@ GEM
       bootstrap-sass (~> 3.0)
       rails
       ruby-oembed
+    blacklight-spotlight (2.9.0)
+      acts-as-taggable-on (>= 5.0, < 7)
+      almond-rails (~> 0.1)
+      autoprefixer-rails
+      blacklight (~> 6.20)
+      blacklight-oembed (>= 0.0.3)
+      bootstrap_form (~> 2.2)
+      breadcrumbs_on_rails (~> 3.0)
+      cancancan
+      carrierwave
+      clipboard-rails (~> 1.5)
+      devise (>= 3.0)
+      devise_invitable (~> 1.6)
+      faraday
+      faraday_middleware
+      friendly_id (~> 5.2)
+      github-markup
+      i18n
+      i18n-active_record
+      iiif-presentation
+      iiif_manifest
+      leaflet-rails
+      legato
+      mini_magick
+      nokogiri
+      oauth2
+      openseadragon
+      paper_trail (~> 10.0)
+      rails (~> 5.1)
+      riiif (~> 2.0)
+      roar (~> 1.1)
+      roar-rails
+      signet
+      sir_trevor_rails (~> 0.5)
+      sprockets-es6
+      tophat
+      underscore-rails (~> 1.6)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
@@ -157,7 +150,7 @@ GEM
     bunny (2.14.3)
       amq-protocol (~> 2.3, >= 2.3.0)
     byebug (9.0.6)
-    cancancan (3.0.2)
+    cancancan (3.1.0)
     capistrano (3.11.0)
       airbrussh (>= 1.0.0)
       i18n
@@ -210,7 +203,7 @@ GEM
     ddtrace (0.11.2)
       msgpack
     debug_inspector (0.0.2)
-    declarative (0.0.10)
+    declarative (0.0.20)
     declarative-option (0.1.0)
     deprecation (1.0.0)
       activesupport
@@ -226,7 +219,7 @@ GEM
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
     diff-lcs (1.2.5)
-    diffy (3.3.0)
+    diffy (3.4.0)
     docile (1.1.5)
     erubi (1.9.0)
     execjs (2.7.0)
@@ -242,7 +235,7 @@ GEM
     ffi (1.11.1)
     foreman (0.85.0)
       thor (~> 0.19.1)
-    friendly_id (5.3.0)
+    friendly_id (5.4.0)
       activerecord (>= 4.0.0)
     github-markup (3.0.4)
     globalid (0.4.2)
@@ -256,7 +249,7 @@ GEM
     honeybadger (2.7.2)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    i18n-active_record (0.3.0)
+    i18n-active_record (0.4.0)
       i18n (>= 0.5.0)
     iiif-image-api (0.1.0)
       activesupport (<= 6)
@@ -266,7 +259,7 @@ GEM
       json
     iiif_manifest (1.0.1)
       activesupport (>= 4)
-    image_processing (1.10.3)
+    image_processing (1.11.0)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     iso-639 (0.2.8)
@@ -280,7 +273,7 @@ GEM
     jquery-tablesorter (1.20.8)
       railties (>= 3.2, < 6)
     json (1.8.6)
-    jwt (2.2.1)
+    jwt (2.2.2)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -295,7 +288,7 @@ GEM
     kaminari-core (1.2.1)
     launchy (2.4.3)
       addressable (~> 2.3)
-    leaflet-rails (1.5.1)
+    leaflet-rails (1.7.0)
       rails (>= 4.2.0)
     legato (0.7.0)
       multi_json
@@ -320,7 +313,7 @@ GEM
     minitest (5.14.1)
     modernizr-rails (2.7.1)
     msgpack (1.2.4)
-    multi_json (1.14.1)
+    multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     net-scp (1.2.1)
@@ -571,7 +564,7 @@ GEM
     underscore-rails (1.8.3)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.6)
+    unf_ext (0.0.7.7)
     unicode-display_width (1.4.1)
     warden (1.2.8)
       rack (>= 2.0.6)
@@ -607,7 +600,7 @@ DEPENDENCIES
   blacklight (~> 6.14)
   blacklight-gallery (>= 0.3.0)
   blacklight-oembed
-  blacklight-spotlight!
+  blacklight-spotlight (= 2.9.0)
   byebug
   capistrano-passenger
   capistrano-rails
