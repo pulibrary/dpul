@@ -92,11 +92,10 @@ if Rails.env.development? || Rails.env.test?
     end
 
     namespace :development do
-      desc "Delete all development metadata, index, and original/derivative data"
+      desc "Delete development database and index data"
       task all: :environment do
-        seeder = DataSeeder.new
-        seeder.wipe_metadata!
-        seeder.wipe_files!
+        Blacklight.default_index.connection.delete_by_query("*:*", params: { softCommit: true })
+        Rake::Task['db:reset'].invoke
       end
     end
   end
