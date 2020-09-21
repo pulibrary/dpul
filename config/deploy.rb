@@ -1,8 +1,8 @@
 set :application, 'pomegranate'
 set :repo_url, 'https://github.com/pulibrary/pomegranate.git'
 
-# Default branch is :master
-set :branch, ENV['BRANCH'] || 'master'
+# Default branch is :main
+set :branch, ENV['BRANCH'] || 'main'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
