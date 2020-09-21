@@ -1,7 +1,7 @@
 # Pomegranate
 
 [![Circle CI](https://circleci.com/gh/pulibrary/pomegranate.svg?style=svg)](https://circleci.com/gh/pulibrary/pomegranate)
-[![Coverage Status](https://coveralls.io/repos/github/pulibrary/pomegranate/badge.svg?branch=master)](https://coveralls.io/github/pulibrary/pomegranate?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/pulibrary/pomegranate/badge.svg?branch=main)](https://coveralls.io/github/pulibrary/pomegranate?branch=main)
 [![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=plastic)](./LICENSE)
 
 A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton University Library.
