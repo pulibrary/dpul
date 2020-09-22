@@ -85,14 +85,24 @@ describe ApplicationHelper, type: :helper do
 
     before do
       allow(helper).to receive(:current_exhibit).and_return(exhibit)
-      allow(document).to receive(:fetch).with(:thumbnail_ssim, nil).and_return([thumbnail_url])
-      allow(document).to receive(:manifest).and_return(manifest)
-      assign(:document, document)
       allow(exhibit).to receive(:thumbnails_enabled).and_return(true)
     end
 
-    it 'generates an <img> element for SolrDocument thumbnails when Exhibits are configured to display them' do
-      expect(output).to eq("<img src=\"#{thumbnail_url}\" />")
+    context 'when document is found' do
+      before do
+        allow(document).to receive(:fetch).with(:thumbnail_ssim, nil).and_return([thumbnail_url])
+        allow(document).to receive(:manifest).and_return(manifest)
+      end
+
+      it 'generates an <img> element for SolrDocument thumbnails when Exhibits are configured to display them' do
+        assign(:document, document)
+        expect(output).to eq("<img src=\"#{thumbnail_url}\" />")
+      end
+
+      it 'generates an <img> element even when @document is not assigned' do
+        assign(:document, nil)
+        expect(output).to eq("<img src=\"#{thumbnail_url}\" />")
+      end
     end
 
     context 'when the document cannot be retrieved' do
@@ -100,13 +110,6 @@ describe ApplicationHelper, type: :helper do
 
       it 'does not generate any markup' do
         expect(output).to be nil
-      end
-    end
-
-    context "when @document isn't set" do
-      it "works" do
-        assign(:document, nil)
-        expect(output).to eq("<img src=\"#{thumbnail_url}\" />")
       end
     end
 
