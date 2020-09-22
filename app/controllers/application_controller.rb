@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   include Spotlight::Controller
 
   before_action :set_paper_trail_whodunnit
+  # this action will be removed in Blacklight 7
+  #   skipping it now suppresses a deprecation warning
+  skip_after_action :discard_flash_if_xhr
 
   layout 'blacklight'
 
