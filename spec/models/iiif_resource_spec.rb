@@ -128,6 +128,23 @@ describe IIIFResource do
     end
   end
 
+  context "when there's an existing broken Spotlight::CustomField Override Title" do
+    let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
+    it "doesn't make another" do
+      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_metadata(id: "12345678")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      resource.save_and_index
+      Spotlight::CustomField.create(exhibit: exhibit, field: "override-title_ssim", label: "Override Title", slug: "override-title_ssim")
+
+      custom_field_count = Spotlight::CustomField.all.size
+
+      5.times { resource.reload.save_and_index }
+      expect(Spotlight::CustomField.all.size).to eq custom_field_count
+    end
+  end
+
   context "when re-indexing an existing resource" do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
 

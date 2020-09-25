@@ -128,6 +128,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     }
   end
 
+  # { "Override Title" => nil, "Title" => "Awesome Title", "Date" => "date" }
   def create_sidecars_for(*keys)
     missing_keys(keys).each do |k|
       readonly = k != "Override Title"
@@ -141,7 +142,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   # by the user in the blacklight configuration. Without this you'll end up with
   # proliferation of duplicate Spotlight::CustomFields.
   def missing_keys(keys)
-    custom_field_slugs = exhibit_custom_fields.values.map(&:slug)
+    custom_field_slugs = exhibit.custom_fields.pluck(:slug)
     keys.reject do |key|
       custom_field_slugs.include?(key.parameterize)
     end
