@@ -53,11 +53,13 @@ describe ExhibitProxy do
         expect(IIIFResource.all.count).to eq 2
         expect(Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["numFound"]).to eq 2
 
-        # second index uses the manifest with 1
+        # second index uses the manifest with 1 item
         described_class.new(exhibit).reindex
         Blacklight.default_index.connection.commit
         expect(IIIFResource.all.count).to eq 2
-        expect(Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["numFound"]).to eq 1
+        response = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]
+        expect(response["numFound"]).to eq 1
+        expect(response["docs"].first["content_metadata_iiif_manifest_field_ssi"]).to eq "https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest"
       end
     end
   end

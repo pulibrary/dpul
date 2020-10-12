@@ -7,6 +7,7 @@ class ExhibitProxy
   end
 
   def reindex(log_entry = nil)
+    members_to_remove_from_index.each(&:remove_from_solr)
     members.each do |member|
       IIIFIngestJob.perform_later member, exhibit, log_entry
     end
@@ -20,6 +21,23 @@ class ExhibitProxy
     DummyDocumentBuilder.new(members)
   end
 
+  # resource urls pulled from the manifest
+  def members
+    collection_manifest.manifests.map { |x| x['@id'] }
+  end
+
+  # resources pulled from the database
+  def persisted_members
+    IIIFResource.where(exhibit_id: exhibit.id)
+  end
+
+  # resources that are in the database but not in the manfiest
+  def members_to_remove_from_index
+    persisted_members.reject { |m| members.include?(m.url) }
+  end
+
+  def waiting!; end
+
   class DummyDocumentBuilder
     attr_reader :members
     def initialize(members)
@@ -29,12 +47,5 @@ class ExhibitProxy
     def documents_to_index
       members
     end
-  end
-
-  def members
-    collection_manifest.manifests.map { |x| x['@id'] }
-  end
-
-  def waiting!
   end
 end
