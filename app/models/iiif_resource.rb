@@ -69,6 +69,13 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     super
   end
 
+  def remove_from_solr
+    doc = SolrDocument.find(noid, exhibit: exhibit)
+    solr.delete_by_id(doc.id, params: { softCommit: true })
+  rescue Blacklight::Exceptions::RecordNotFound
+    Rails.logger.debug "No solr record for #{noid} to delete."
+  end
+
   private
 
     # Hidden solr records are records for resources in Figgy which have been
@@ -78,10 +85,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     def remove_hidden_solr_records
       return if iiif_manifests.to_a.present?
 
-      doc = SolrDocument.find(noid, exhibit: exhibit)
-      solr.delete_by_id(doc.id, params: { softCommit: true })
-    rescue Blacklight::Exceptions::RecordNotFound
-      Rails.logger.debug "No solr record for #{noid} to delete."
+      remove_from_solr
     end
 
     def set_noid

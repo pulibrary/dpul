@@ -1,0 +1,31 @@
+{  
+  "@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest",
+  "@type":"sc:Collection",
+  "label":"princeton",
+  "viewingHint":"individuals",
+  "structures":[  
+    {  
+      "@id":"https://hydra-dev.princeton.edu/collections/2b88qc199/manifest/range/g70272079000020",
+      "@type":"sc:Range",
+      "label":"Logical",
+      "viewingHint":"top"
+    }
+  ],
+  "metadata":[  
+    {  
+      "label":"Exhibit",
+      "value":[  
+        "princeton-best"
+      ]
+    }
+  ],
+  "manifests":[  
+    {  
+      "@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest",
+      "@type":"sc:Manifest",
+      "label":"L''ordine dorico ossia il tempio d''Ercole nella città di Cori umiliato alla santita di nostro signore Papa Pio Seso",
+      "viewingHint":"paged",
+      "viewingDirection":"left-to-right"
+    }
+  ]
+}
