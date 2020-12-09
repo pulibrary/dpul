@@ -27,7 +27,8 @@ class ExhibitsController < Spotlight::ExhibitsController
         :tag_list,
         :thumbnails_enabled,
         :condensed_viewer,
-        contact_emails_attributes: %i[id email]
+        contact_emails_attributes: %i[id email],
+        languages_attributes: %i[id public]
       )
     end
 
