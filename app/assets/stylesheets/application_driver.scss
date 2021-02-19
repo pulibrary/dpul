@@ -31,3 +31,7 @@
 @import 'overrides/browse_category';
 @import 'overrides/browse_q';
 @import 'local';
+
+#main-content {
+  background-color: red !important;
+}
