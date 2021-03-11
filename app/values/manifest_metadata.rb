@@ -68,7 +68,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
 
     # rubocop:disable Metrics/PerceivedComplexity
     def transform_value(value)
-      ["@value", "pref_label"].each { |prop| return value[prop] if value[prop] }
+      ["@value", "pref_label", "skos:prefLabel"].each { |prop| return value[prop] if value[prop] }
       return electronic_location_link(value) if key == 'Electronic locations'
       return language_name(value) if key == 'Language'
       return value['title'] if key == 'Memberof'

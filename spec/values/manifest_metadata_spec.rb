@@ -11,6 +11,18 @@ RSpec.describe ManifestMetadata do
   let(:lang_code) { { "Language" => "en" } }
   let(:member) { { "Memberof" => { "title" => "Member Title" } } }
   let(:id_value) { { "Title" => { "@id" => "1234" } } }
+  let(:date_range_value) do
+    { "date_range" => [
+      {
+        "@type" => "edm:TimeSpan",
+        "begin" => ["1992"],
+        "end" => ["1993"],
+        "skos:prefLabel" => "approximately 1992-1993",
+        "crm:P79_beginning_is_qualified_by" => "approximate",
+        "crm:P80_end_is_qualified_by" => "approximate"
+      }
+    ] }
+  end
 
   describe "#process_values" do
     it "doesn't modify a plain value" do
@@ -21,6 +33,9 @@ RSpec.describe ManifestMetadata do
     end
     it "uses pref_label if present" do
       expect(metadata.process_values(pref_value)).to eq("Title" => ["Pref Label Text"])
+    end
+    it "uses skos:prefLabel if present" do
+      expect(metadata.process_values(date_range_value)).to eq("date_range" => ["approximately 1992-1993"])
     end
     it "looks up language code labels" do
       expect(metadata.process_values(lang_code)).to eq("Language" => ["English"])
