@@ -1,10 +1,10 @@
-# Pomegranate
+# DPUL
 
-[![Circle CI](https://circleci.com/gh/pulibrary/pomegranate.svg?style=svg)](https://circleci.com/gh/pulibrary/pomegranate)
-[![Coverage Status](https://coveralls.io/repos/github/pulibrary/pomegranate/badge.svg?branch=main)](https://coveralls.io/github/pulibrary/pomegranate?branch=main)
+[![Circle CI](https://circleci.com/gh/pulibrary/dpul.svg?style=svg)](https://circleci.com/gh/pulibrary/dpul)
 [![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=plastic)](./LICENSE)
 
-A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton University Library.
+A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton University Library,
+formerly known as Pomegranate, but renamed to the offical brand: Digital PUL.
 
 ## Dependencies
 
@@ -18,15 +18,15 @@ A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton U
 ## Setup
 
 ```sh
-git clone git@github.com:pulibrary/pomegranate.git
-cd pomegranate
+git clone git@github.com:pulibrary/dpul.git
+cd dpul
 bundle install
 yarn install
 bundle exec rake db:create
 bundle exec rake db:migrate
 ```
 
-After setup, run Pomegranate locally either with
+After setup, run DPUL locally either with
 
 `bundle exec foreman start`
 
@@ -58,5 +58,5 @@ following:
 1. Configure the `events` settings in `config/config.yml`
 2. Run `WORKERS=FiggyEventHandler rake sneakers:run`
 
-This will subscribe to the events and update the pomegranate records when they're
+This will subscribe to the events and update the DPUL records when they're
 created, updated, or deleted.
