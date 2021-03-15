@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Used for reindexing an exhibit. This object caches a members list
+# so should always be re-instantiated before use.
 class ExhibitProxy
   attr_reader :exhibit
   def initialize(exhibit)
@@ -23,7 +25,7 @@ class ExhibitProxy
 
   # resource urls pulled from the manifest
   def members
-    collection_manifest.manifests.map { |x| x['@id'] }
+    @members ||= collection_manifest.manifests.map { |x| x['@id'] }
   end
 
   # resources pulled from the database
