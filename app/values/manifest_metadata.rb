@@ -75,6 +75,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       return value["@id"] if value["@id"]
       return link_to_catalog(value) if key == "Link to catalog" || key == "Link to finding aid"
       return actors(value) if key == "Actor"
+      return value.downcase if key.casecmp("keywords").zero?
 
       value
     end
