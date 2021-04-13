@@ -23,6 +23,15 @@ RSpec.describe ManifestMetadata do
       }
     ] }
   end
+  let(:keywords_value) do
+    {
+      "keywords" => [
+        "Christianity",
+        "people's movement",
+        "liberation theology"
+      ]
+    }
+  end
 
   describe "#process_values" do
     it "doesn't modify a plain value" do
@@ -45,6 +54,9 @@ RSpec.describe ManifestMetadata do
     end
     it "uses @id as a last resort" do
       expect(metadata.process_values(id_value)).to eq("Title" => ["1234"])
+    end
+    it "downcases keywords for consistent storage" do
+      expect(metadata.process_values(keywords_value)).to eq("keywords" => ["christianity", "people's movement", "liberation theology"])
     end
   end
 end

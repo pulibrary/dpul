@@ -307,7 +307,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.8.2)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.11.0)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -666,4 +668,4 @@ DEPENDENCIES
   webpacker (>= 4.0.x)
 
 BUNDLED WITH
-   2.1.4
+   2.2.6
