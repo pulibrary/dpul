@@ -1,4 +1,15 @@
 # frozen_string_literal: true
+if Rails.env.development? || Rails.env.test? || Rails.env.staging?
+  namespace :dpul do
+    namespace :delete do
+      desc 'Delete all exhibits'
+      task exhibits: :environment do
+        Spotlight::Exhibit.all.each(&:destroy)
+      end
+    end
+  end
+end
+
 if Rails.env.development? || Rails.env.test?
   require "factory_bot"
 
