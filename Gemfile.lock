@@ -312,7 +312,7 @@ GEM
       rake
     mini_magick (4.11.0)
     mini_mime (1.0.2)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.5.0)
     minitest (5.14.3)
     modernizr-rails (2.7.1)
     msgpack (1.2.4)
@@ -323,8 +323,9 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (5.1.0)
     nio4r (2.5.2)
-    nokogiri (1.10.8)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.0)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     normalize-rails (3.0.3)
     oauth2 (1.4.4)
       faraday (>= 0.8, < 2.0)
@@ -363,6 +364,7 @@ GEM
     public_suffix (4.0.6)
     puma (4.3.5)
       nio4r (~> 2.0)
+    racc (1.5.2)
     rack (2.1.4)
     rack-protection (2.0.8.1)
       rack
@@ -628,7 +630,7 @@ DEPENDENCIES
   jquery-rails
   lograge
   logstash-event
-  nokogiri (~> 1.10.8)
+  nokogiri (~> 1.11.0)
   omniauth (~> 1.8.1)
   omniauth-cas
   open_uri_redirections
