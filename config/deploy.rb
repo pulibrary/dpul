@@ -32,17 +32,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'vendor/bundle', 'public/u
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-end
-
 namespace :sneakers do
   task :restart do
     on roles(:worker) do
@@ -69,7 +58,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :rake, 'cache:clear'
+          execute :rake, 'dpul:cache:clear'
         end
       end
     end

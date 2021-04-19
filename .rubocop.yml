@@ -45,6 +45,7 @@ Metrics/BlockLength:
     - 'app/controllers/catalog_controller.rb'
     - 'lib/tasks/dev.rake'
     - 'spec/**/*'
+    - 'lib/tasks/**/*'
     - 'config/routes.rb'
 
 Style/BlockDelimiters:
