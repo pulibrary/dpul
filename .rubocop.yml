@@ -17,6 +17,13 @@ AllCops:
     - 'config/environments/**/*'
     - 'node_modules/**/*'
 
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
+
 Lint/UnusedBlockArgument:
   Exclude:
     - 'spec/**/*'
