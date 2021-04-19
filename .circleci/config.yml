@@ -109,7 +109,7 @@ jobs:
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run:
-          command: bundle exec rake pomegranate:test
+          command: bundle exec rake dpul:test
           background: true
       - run: bin/jetty_wait
       - run: bundle exec rake db:create
