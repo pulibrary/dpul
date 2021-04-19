@@ -2,26 +2,7 @@
 if Rails.env.development? || Rails.env.test?
   require "factory_bot"
 
-  namespace :pomegranate do
-    desc 'Clear the SolrDocumentSidecar reference fields'
-    task :sidecar_clean_references, [:exhibit] => [:environment] do |_t, args|
-      exhibit_slug = args[:exhibit]
-      exhibit = Spotlight::Exhibit.find_by(slug: exhibit_slug)
-      sidecars = Spotlight::SolrDocumentSidecar.where(exhibit: exhibit)
-      sidecars.each do |sidecar|
-        sidecar.data
-        valid_data = sidecar.data.reject do |k, v|
-          k.include?('references') && v.include?('iiif_manifest_paths')
-        end
-        next unless sidecar.data != valid_data
-
-        sidecar.data = valid_data
-        sidecar.save
-        sidecar.resource.reindex_later
-        puts "Updated the SolrDocumentSidecar for #{sidecar.document_id}"
-      end
-    end
-
+  namespace :dpul do
     desc 'Make first user a site admin'
     task site_admin: :environment do
       user = User.first
@@ -73,6 +54,25 @@ if Rails.env.development? || Rails.env.test?
   end
 
   namespace :clean do
+    desc 'Clear the SolrDocumentSidecar reference fields'
+    task :sidecar_references, [:exhibit] => [:environment] do |_t, args|
+      exhibit_slug = args[:exhibit]
+      exhibit = Spotlight::Exhibit.find_by(slug: exhibit_slug)
+      sidecars = Spotlight::SolrDocumentSidecar.where(exhibit: exhibit)
+      sidecars.each do |sidecar|
+        sidecar.data
+        valid_data = sidecar.data.reject do |k, v|
+          k.include?('references') && v.include?('iiif_manifest_paths')
+        end
+        next unless sidecar.data != valid_data
+
+        sidecar.data = valid_data
+        sidecar.save
+        sidecar.resource.reindex_later
+        puts "Updated the SolrDocumentSidecar for #{sidecar.document_id}"
+      end
+    end
+
     namespace :test do
       desc "Cleanup test servers"
       task :solr do
