@@ -1,18 +1,22 @@
-development: &default
+default: &default
   adapter: postgresql
+  encoding: unicode
+
+development: &development
+  <<: *default
+  host: <%= ENV["lando_dpul_development_db_conn_host"] || ENV["POMEGRANATE_DB_HOST"] || "localhost" %>
+  port: <%= ENV["lando_dpul_development_db_conn_port"] || "5432" %>
+  username: <%= ENV["lando_dpul_development_db_creds_user"] || ENV["POMEGRANATE_DB_USERNAME"] %>
+  password: <%= ENV["lando_dpul_development_db_creds_password"] || ENV["POMEGRANATE_DB_PASSWORD"] %>
   database: dpul_development
-  encoding: utf8
-  min_messages: warning
-  pool: <%= Integer(ENV.fetch("DB_POOL", 30)) %>
-  reaping_frequency: <%= Integer(ENV.fetch("DB_REAPING_FREQUENCY", 10)) %>
-  timeout: 5000
 
 test:
   <<: *default
-  host: <%= ENV["POMEGRANATE_DB_HOST"] %>
+  host: <%= ENV["lando_dpul_test_db_conn_host"] || ENV["POMEGRANATE_DB_HOST"] || "localhost" %>
+  port: <%= ENV["lando_dpul_test_db_conn_port"] || "5432" %>
+  username: <%= ENV["lando_dpul_test_db_creds_user"] || ENV["POMEGRANATE_DB_USERNAME"] %>
+  password: <%= ENV["lando_dpul_test_db_creds_password"] || ENV["POMEGRANATE_DB_PASSWORD"] %>
   database: dpul_test
-  username: <%= ENV["POMEGRANATE_DB_USERNAME"] %>
-  password: <%= ENV["POMEGRANATE_DB_PASSWORD"] %>
 
 production: &deploy
   <<: *default

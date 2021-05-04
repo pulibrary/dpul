@@ -26,12 +26,14 @@ bundle exec rake db:create
 bundle exec rake db:migrate
 ```
 
-After setup, run DPUL locally either with
+After setup, start solr, postgresql and redis with:
 
-`bundle exec foreman start`
+`bundle exec rake servers:start`
 
-to run everything at once, or, in separate terminal windows run each command
-listed in `Procfile`
+Then, start webpack-dev-server, sidekiq and rails, each in their own terminal window:
+`bin/webpack-dev-server`
+`bundle exec sidekiq`
+`bin/rails s -p 3000`
 
 ### Importing Data:
 
@@ -39,14 +41,13 @@ listed in `Procfile`
 2. Run `rake dpul:site_admin`
 3. Click "Create a New Collection"
 4. Select a small collection and hit "Save"
-  - To find a small collection: go to Figgy, submit a blank search, open the facet collection and click 'more', and page to the low-count collections 
+  - To find a small collection: go to Figgy, submit a blank search, open the facet collection and click 'more', and page to the low-count collections
 5. Either wait for a solr commit or manually commit in the rails console with
    `Blacklight.default_index.connection.commit`
 
 ### Running Tests
 
 ```sh
-bundle exec rake dpul:test
 bundle exec rspec
 ```
 
