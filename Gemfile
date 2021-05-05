@@ -38,7 +38,6 @@ group :test do
 end
 
 group :development do
-  gem 'foreman'
   gem 'puma'
   gem 'web-console', '~> 2.0'
 end
@@ -70,7 +69,6 @@ gem 'rsolr', '~> 1.0.6'
 gem 'sidekiq', '< 6'
 gem 'sitemap_generator'
 gem 'sneakers'
-gem 'solr_wrapper'
 gem 'sprockets', '~> 3.7'
 gem 'sprockets-es6'
 gem 'sprockets-rails'

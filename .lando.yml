@@ -1,0 +1,27 @@
+name: dpul
+services:
+  dpul_development_db:
+    type: postgres:10
+    portforward: true
+    creds:
+      database: dpul_development
+  dpul_test_db:
+    type: postgres:10
+    portforward: true
+    creds:
+      database: dpul_test
+  dpul_development_solr:
+    type: solr:7
+    portforward: true
+    core: blacklight-core
+    config:
+      dir: solr/config
+  dpul_test_solr:
+    type: solr:7
+    portforward: true
+    core: blacklight-core-test
+    config:
+      dir: solr/config
+  dpul_redis:
+    type: redis:6
+    portforward: true

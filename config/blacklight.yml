@@ -2,22 +2,22 @@
 # each environment can have a jetty_path with absolute or relative
 # (to app root) path to a jetty/solr install. This is used
 # by the rake tasks that start up solr automatically for testing
-# and by rake solr:marc:index.  
+# and by rake solr:marc:index.
 #
 # jetty_path is not used by a running Blacklight application
 # at all. In general you do NOT need to deploy solr in Jetty, you can deploy it
-# however you want.  
+# however you want.
 # jetty_path is only required for rake tasks that need to know
-# how to start up solr, generally for automated testing. 
+# how to start up solr, generally for automated testing.
 
 development:
   adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
+  url: <%= ENV['SOLR_URL'] || "http://#{ENV['lando_dpul_development_solr_conn_host']}:#{ENV['lando_dpul_development_solr_conn_port']}/solr/blacklight-core" %>
 test:
   adapter: "solr"
-  url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8984}/solr/blacklight-core-test" %>
+  url: <%= ENV['SOLR_URL'] || "http://#{ENV['lando_dpul_test_solr_conn_host']}:#{ENV['lando_dpul_test_solr_conn_port']}/solr/blacklight-core-test" %>
 production: &production
   adapter: solr
   url: <%= ENV['POMEGRANATE_SOLR_URL'] || "http://127.0.0.1:8980/solr/blacklight-core" %>
-staging: 
+staging:
   <<: *production
