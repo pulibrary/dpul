@@ -18,7 +18,7 @@ formerly known as Pomegranate, but renamed to the offical brand: Digital PUL.
 ## Initial Setup
 
 ```sh
-git clone git clone git@github.com:pulibrary/dpul.git
+git clone git@github.com:pulibrary/dpul.git
 cd dpul
 bundle install
 yarn install
