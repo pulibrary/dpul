@@ -28,9 +28,6 @@ Remember you'll need to run `bundle install` and `yarn install` on an ongoing ba
 
 ## Setup server
 
-You can either run Solr/Postgres locally or spin them up in Docker containers
-with Lando.
-
 ### Lando
 
 Lando will automatically set up docker images for Solr and Postgres which match
