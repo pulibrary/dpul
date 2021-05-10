@@ -22,8 +22,6 @@ git clone git@github.com:pulibrary/dpul.git
 cd dpul
 bundle install
 yarn install
-bundle exec rake db:create
-bundle exec rake db:migrate
 ```
 
 After setup, start solr, postgresql and redis with:
@@ -31,9 +29,9 @@ After setup, start solr, postgresql and redis with:
 `bundle exec rake servers:start`
 
 Then, start webpack-dev-server, sidekiq and rails, each in their own terminal window:
-`bin/webpack-dev-server`
-`bundle exec sidekiq`
-`bin/rails s -p 3000`
+* `bin/webpack-dev-server`
+* `bundle exec sidekiq`
+* `bin/rails s -p 3000`
 
 ### Importing Data:
 
