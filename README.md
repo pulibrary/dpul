@@ -15,23 +15,38 @@ formerly known as Pomegranate, but renamed to the offical brand: Digital PUL.
 * Redis (install via homebrew and run via `homebrew services`)
 
 
-## Setup
+## Initial Setup
 
 ```sh
-git clone git@github.com:pulibrary/dpul.git
+git clone git clone git@github.com:pulibrary/dpul.git
 cd dpul
 bundle install
 yarn install
 ```
 
-After setup, start solr, postgresql and redis with:
+Remember you'll need to run `bundle install` and `yarn install` on an ongoing basis as dependencies are updated.
 
-`bundle exec rake servers:start`
+## Setup server
 
-Then, start webpack-dev-server, sidekiq and rails, each in their own terminal window:
-* `bin/webpack-dev-server`
-* `bundle exec sidekiq`
-* `bin/rails s -p 3000`
+You can either run Solr/Postgres locally or spin them up in Docker containers
+with Lando.
+
+### Lando
+
+Lando will automatically set up docker images for Solr and Postgres which match
+the versions we use in Production. The ports will not collide with any other
+projects you're using Solr/Postgres for, and you can easily clean up with `lando
+destroy` or turn off all services with `lando poweroff`.
+
+1. Install Lando DMG from <https://github.com/lando/lando/releases>
+1. `rake servers:start`
+
+1. For test:
+   - In a separate terminal: `bundle exec rspec`
+1. For development:
+   - In a separate terminal: `foreman start`
+     - Or run services separately as shown in <https://github.com/pulibrary/dpul/blob/main/Procfile>
+   - Access DPUL at <http://localhost:3000/>
 
 ### Importing Data:
 
