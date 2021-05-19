@@ -245,7 +245,7 @@ GEM
       graphql (~> 1.6)
     hashdiff (1.0.0)
     hashie (3.5.7)
-    honeybadger (2.7.2)
+    honeybadger (4.8.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     i18n-active_record (0.4.0)
@@ -608,7 +608,7 @@ DEPENDENCIES
   devise_invitable
   factory_bot_rails
   graphql-client
-  honeybadger (~> 2.0)
+  honeybadger
   iiif-presentation
   iso-639
   jbuilder (~> 2.0)
