@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
   # Use custom error pages
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from Blacklight::Exceptions::RecordNotFound, with: :not_found
+  rescue_from ActionView::MissingTemplate, with: :not_found
 
   def not_found
     respond_to do |format|
