@@ -6,6 +6,8 @@ gem 'graphql-client'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'
+# Locking rails at 5.2.4.5 until we can handle this upgrade: https://github.com/rails/rails/releases/tag/v5.2.4.6
+# The problem is CVE-2021-22885 and we should fix it upsteam.
 gem 'rails', '5.2.4.5'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
@@ -63,6 +65,7 @@ gem 'omniauth', '~> 1.8.1'
 gem 'omniauth-cas'
 gem 'open_uri_redirections'
 gem 'redis-namespace'
+# Upgrading past redis 3.3.5 currently breaks deploy. Test any upgrades here carefully.
 gem 'redis', '3.3.5'
 gem 'riiif'
 gem 'rsolr', '~> 1.0.6'
