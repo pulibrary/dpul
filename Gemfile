@@ -6,7 +6,9 @@ gem 'graphql-client'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'
-gem 'rails', '~> 5.2'
+# Locking rails at 5.2.4.5 until we can handle this upgrade: https://github.com/rails/rails/releases/tag/v5.2.4.6
+# The problem is CVE-2021-22885 and we should fix it upsteam.
+gem 'rails', '5.2.4.5'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
