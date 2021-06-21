@@ -2,6 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/pulibrary/dpul.svg?style=svg)](https://circleci.com/gh/pulibrary/dpul)
 [![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=plastic)](./LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/pulibrary/dpul/badge.svg?branch=main)](https://coveralls.io/github/pulibrary/dpul?branch=main)
 
 A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton University Library,
 formerly known as Pomegranate, but renamed to the offical brand: Digital PUL.

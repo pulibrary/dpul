@@ -6,6 +6,9 @@ require "capybara/rspec"
 require 'capybara-screenshot/rspec'
 require "selenium-webdriver"
 require 'webmock/rspec'
+require 'coveralls'
+
+Coveralls.wear!
 
 if ENV['CI']
   require 'coveralls'

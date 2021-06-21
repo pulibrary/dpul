@@ -120,7 +120,8 @@ jobs:
             curl -H 'Content-type: application/json' http://localhost:8984/api/collections/ -d '{create: {name: blacklight-core-test, config: dpul, numShards: 1}}'
       - run: bundle exec rake db:create
       - run: bundle exec rake db:migrate
-      - run: bundle exec rspec spec
+      - run: COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN bundle exec rspec spec
+      
 workflows:
   version: 2
   build_accept_deploy:
