@@ -128,6 +128,13 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     super
   end
 
+  # Override label method so it returns multiple values
+  def label
+    return unless manifest.try(:label)
+
+    Array(json_ld_value(manifest.label)).map { |v| html_sanitize(v) }
+  end
+
   private
 
     def range_labels(hsh)
