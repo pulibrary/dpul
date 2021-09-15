@@ -22,6 +22,6 @@ services:
     core: blacklight-core-test
     config:
       dir: solr/config
-  dpul_redis:
+  redis:
     type: redis:6
     portforward: true
