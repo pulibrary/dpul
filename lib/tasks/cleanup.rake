@@ -13,10 +13,11 @@ namespace :dpul do
       end
 
       dup_sets.each do |ds|
+        puts "solr document: #{ds.first.document_id}"
         # for each set, if any sidecar has resource_id nil, delete that sidecar
         linked_sidecars = ds.reject { |sidecar| sidecar.resource_id.nil? }
         ds.select { |sidecar| sidecar.resource_id.nil? }.each do |sidecar|
-          puts "deleting sidecar #{sidecar.id}"
+          puts " deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
           # sidecar.destroy
         end
 
@@ -32,9 +33,13 @@ namespace :dpul do
         # when resource is deleted?)
         sidecars_to_delete.each do |sidecar|
           r = Spotlight::Resource.find(sidecar.resource_id)
-          puts "deleting resource #{r.id}"
+          puts " deleting resource #{r.id}, sidecar last updated at #{sidecar.updated_at}"
           # r.destroy
         end
+        sidecar_to_keep = linked_sidecars.find do |sidecar|
+          sidecar.resource_id == good_resource_id
+        end
+        puts " keeping sidecar last updated at #{sidecar_to_keep.updated_at}"
       end
     end
   end
