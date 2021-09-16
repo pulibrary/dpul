@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable
 namespace :dpul do
   namespace :cleanup do
     desc "delete duplicate sidecars"
@@ -51,15 +52,17 @@ namespace :dpul do
 
         sidecars_to_delete = ds - [sidecar_to_keep]
         sidecars_to_delete.each do |sidecar|
+          alternative_deletes << sidecar.id
           if sidecar.resource_id
-            r = Spotlight::Resource.find(sidecar.resource_id)
-            # puts "  deleting resource #{r.id}, sidecar last updated at #{sidecar.updated_at}"
-            # r.destroy
+            if Spotlight::Resource.where(id: sidecar.resource_id).present?
+              r = Spotlight::Resource.find(sidecar.resource_id)
+              # puts "  deleting resource #{r.id}, sidecar last updated at #{sidecar.updated_at}"
+              # r.destroy
+            end
           else # sidecar resource_id was nil
             # puts "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
             # sidecar.destroy
           end
-          alternative_deletes << sidecar.id
         end
       end; nil
       puts "kept: #{alternative_keeps}"
@@ -104,10 +107,15 @@ namespace :dpul do
         # delete the other resource and sidecar (which may happen automatically
         # when resource is deleted?)
         sidecars_to_delete.each do |sidecar|
-          r = Spotlight::Resource.find(sidecar.resource_id)
-          # puts " deleting resource #{r.id}, sidecar last updated at #{sidecar.updated_at}"
           original_deletes << sidecar.id
-          # r.destroy
+          if Spotlight::Resource.where(id: sidecar.resource_id).present?
+            r = Spotlight::Resource.find(sidecar.resource_id)
+            # puts " deleting resource #{r.id}, sidecar last updated at #{sidecar.updated_at}"
+            # r.destroy
+          else # sidecar resource_id was nil
+            # puts "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
+            # sidecar.destroy
+          end
         end
       end; nil
       puts "kept: #{original_keeps}"
@@ -116,3 +124,4 @@ namespace :dpul do
     end
   end
 end
+# rubocop:enable
