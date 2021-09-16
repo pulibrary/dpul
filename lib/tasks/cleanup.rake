@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable
 namespace :dpul do
   namespace :cleanup do
     desc "delete duplicate sidecars"
@@ -70,4 +69,3 @@ namespace :dpul do
     end
   end
 end
-# rubocop:enable
