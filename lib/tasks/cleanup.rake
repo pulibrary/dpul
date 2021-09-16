@@ -29,14 +29,14 @@ namespace :dpul do
               # the resource referenced doesn't exist any longer
               if Spotlight::Resource.where(id: sidecar.resource_id).empty?
                 logger.info "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
-                # sidecar.destroy
+                sidecar.destroy
               else # sidecar resource id was a real resource
                 logger.info "  keeping sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
               end
             else
               # resource_id was nil
               logger.info "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
-              # sidecar.destroy
+              sidecar.destroy
             end
           end
           next
@@ -56,14 +56,14 @@ namespace :dpul do
             if Spotlight::Resource.where(id: sidecar.resource_id).present?
               r = Spotlight::Resource.find(sidecar.resource_id)
               logger.info "  deleting resource #{r.id}, sidecar last updated at #{sidecar.updated_at}"
-              # r.destroy
+              r.destroy
             else # the resource didn't exist
               logger.info "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
-              # sidecar.destroy
+              sidecar.destroy
             end
           else # sidecar resource_id was nil
             logger.info "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
-            # sidecar.destroy
+            sidecar.destroy
           end
         end
       end
