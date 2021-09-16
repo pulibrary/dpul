@@ -8,9 +8,8 @@ require "selenium-webdriver"
 require 'webmock/rspec'
 require 'coveralls'
 
-Coveralls.wear!
-
 if ENV['CI']
+  Coveralls.wear!
   require 'coveralls'
   SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 end
