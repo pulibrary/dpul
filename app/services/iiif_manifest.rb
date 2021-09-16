@@ -45,16 +45,6 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     "#{manifest['thumbnail']['service']['@id']}/full/!600,600/0/default.jpg"
   end
 
-  def json_ld_value(value)
-    return value['@value'] if value.is_a?(Hash)
-
-    if value.is_a?(Array)
-      english_values = value.select { |v| v['@language'] == default_json_ld_language }.map { |x| x.try(:[], '@value') || value }
-      return english_values if english_values.present?
-    end
-    value
-  end
-
   def compound_id
     Digest::MD5.hexdigest("#{exhibit.id}-#{noid}")
   end
