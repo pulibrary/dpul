@@ -13,8 +13,6 @@ namespace :dpul do
         Spotlight::SolrDocumentSidecar.where(exhibit_id: exhibit_id, document_id: document_id).to_a
       end
 
-      alternative_deletes = []
-      alternative_keeps = []
       # alternative strategy
       dup_sets.each do |ds|
         puts "solr document: #{ds.first.document_id}"
@@ -29,12 +27,14 @@ namespace :dpul do
             if sidecar.resource_id
               # the resource referenced doesn't exist any longer
               if Spotlight::Resource.where(id: sidecar.resource_id).empty?
-                alternative_deletes << sidecar.id
+                puts "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
                 # sidecar.destroy
+              else # sidecar resource id was a real resource
+                puts "  keeping sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
               end
             else
               # resource_id was nil
-              alternative_deletes << sidecar.id
+              puts "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
               # sidecar.destroy
             end
           end
@@ -47,79 +47,25 @@ namespace :dpul do
         # see for example
         # https://github.com/pulibrary/dpul/blob/09547ac7e7d9a21dc5b8dbc5437039e936e0d76f/app/views/spotlight/catalog/_edit_default.html.erb#L7
         sidecar_to_keep = document.sidecar(ds.first.exhibit_id)
-        # puts "  keeping sidecar #{sidecar_to_keep.id} last updated at #{sidecar_to_keep.updated_at}"
-        alternative_keeps << sidecar_to_keep.id
+        puts "  keeping sidecar #{sidecar_to_keep.id} last updated at #{sidecar_to_keep.updated_at}"
 
         sidecars_to_delete = ds - [sidecar_to_keep]
         sidecars_to_delete.each do |sidecar|
-          alternative_deletes << sidecar.id
           if sidecar.resource_id
             if Spotlight::Resource.where(id: sidecar.resource_id).present?
               r = Spotlight::Resource.find(sidecar.resource_id)
-              # puts "  deleting resource #{r.id}, sidecar last updated at #{sidecar.updated_at}"
+              puts "  deleting resource #{r.id}, sidecar last updated at #{sidecar.updated_at}"
               # r.destroy
+            else # the resource didn't exist
+              puts "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
+              # sidecar.destroy
             end
           else # sidecar resource_id was nil
-            # puts "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
+            puts "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
             # sidecar.destroy
           end
         end
       end; nil
-      puts "kept: #{alternative_keeps}"
-      puts "deleted: #{alternative_deletes}"
-
-      # Original strategy
-
-      original_deletes = []
-      original_keeps = []
-      dup_sets.each do |ds|
-        # puts "solr document: #{ds.first.document_id}"
-        # for each set, if any sidecar has resource_id nil, delete that sidecar
-        linked_sidecars = ds.reject { |sidecar| sidecar.resource_id.nil? }
-        ds.select { |sidecar| sidecar.resource_id.nil? }.each do |sidecar|
-          # puts " deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
-          original_deletes << sidecar.id
-          # sidecar.destroy
-        end
-
-        # otherwise, get the solr document and see which resource_id it references
-        if linked_sidecars.count == 1
-          original_keeps << linked_sidecars.first.id
-        end
-        next unless linked_sidecars.count > 1
-
-        doc = repo.search(q: "id:#{linked_sidecars.first.document_id}")["response"]["docs"].first
-        good_resource_id = doc["spotlight_resource_id_ssim"].first.split("/").last
-
-        sidecar_to_keep = linked_sidecars.find do |sidecar|
-          sidecar.resource_id.to_s == good_resource_id.to_s
-        end
-        if sidecar_to_keep
-          # puts " keeping sidecar #{sidecar_to_keep.id} last updated at #{sidecar_to_keep.updated_at}"
-          original_keeps << sidecar_to_keep.id
-        end
-
-        sidecars_to_delete = linked_sidecars.reject do |sidecar|
-          sidecar.resource_id.to_s == good_resource_id.to_s
-        end
-        # puts "  sidecars to delete: #{sidecars_to_delete.map(&:id)}"
-
-        # delete the other resource and sidecar (which may happen automatically
-        # when resource is deleted?)
-        sidecars_to_delete.each do |sidecar|
-          original_deletes << sidecar.id
-          if Spotlight::Resource.where(id: sidecar.resource_id).present?
-            r = Spotlight::Resource.find(sidecar.resource_id)
-            # puts " deleting resource #{r.id}, sidecar last updated at #{sidecar.updated_at}"
-            # r.destroy
-          else # sidecar resource_id was nil
-            # puts "  deleting sidecar #{sidecar.id}, last updated at #{sidecar.updated_at}"
-            # sidecar.destroy
-          end
-        end
-      end; nil
-      puts "kept: #{original_keeps}"
-      puts "deleted: #{original_deletes}"
 
     end
   end
