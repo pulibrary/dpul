@@ -128,6 +128,17 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     super
   end
 
+  # Override label method so it returns multiple values
+  # We need to have multiple titles for multi-volume works
+  #
+  # See upstream code at
+  # https://github.com/projectblacklight/spotlight/blob/v2.13.0/app/models/spotlight/resources/iiif_manifest.rb#L187-L191
+  def label
+    return unless manifest.try(:label)
+
+    Array(json_ld_value(manifest.label)).map { |v| html_sanitize(v) }
+  end
+
   private
 
     def range_labels(hsh)
