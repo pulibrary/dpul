@@ -29,6 +29,7 @@ class CatalogController < ApplicationController
   end
 
   configure_blacklight do |config|
+    config.raw_endpoint.enabled = true
     config.show.oembed_field = :oembed_url_ssm
     config.show.partials.insert(1, :oembed)
     config.view.gallery.partials = [:index_header, :index]

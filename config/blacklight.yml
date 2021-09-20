@@ -16,8 +16,9 @@ development:
 test:
   adapter: "solr"
   url: <%= ENV['SOLR_URL'] || "http://#{ENV['lando_dpul_test_solr_conn_host']}:#{ENV['lando_dpul_test_solr_conn_port']}/solr/blacklight-core-test" %>
-production: &production
+production:
   adapter: solr
   url: <%= ENV['POMEGRANATE_SOLR_URL'] || "http://127.0.0.1:8980/solr/blacklight-core" %>
 staging:
-  <<: *production
+  adapter: solr
+  url: <%= ENV['POMEGRANATE_SOLR_URL'] || "http://127.0.0.1:8980/solr/blacklight-core" %>

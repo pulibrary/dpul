@@ -4,7 +4,7 @@
 # @see https://github.com/projectblacklight/blacklight/wiki/Extending-or-Modifying-Blacklight-Search-Behavior
 class SearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
-  include Spotlight::AccessControlsEnforcementSearchBuilder
+  include Spotlight::SearchBuilder
 
   # Names for methods invoked when the Solr query is being built
   self.default_processor_chain += %i(hide_parented_resources join_from_parent)
