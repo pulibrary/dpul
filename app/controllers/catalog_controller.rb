@@ -119,11 +119,15 @@ class CatalogController < ApplicationController
   # get a single document from the index
   # to add responses for formats other than html or json see _Blacklight::Document::Export_
   def show
-    @response, @document = fetch params[:id], exhibit: @exhibit
+    @response, @document = search_service.fetch params[:id], exhibit: @exhibit
     respond_to do |format|
       format.html { setup_next_and_previous_documents }
       format.json { render json: { response: { document: @document } } }
       additional_export_formats(@document, format)
     end
+
+    authenticate_user! && authorize!(:curate, current_exhibit) if @document.private? current_exhibit
+
+    add_document_breadcrumbs(@document)
   end
 end
