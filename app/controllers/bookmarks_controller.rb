@@ -11,17 +11,11 @@ class BookmarksController < CatalogController
   end
 
   def csv
-    fetch_bookmarked_documents
+    _, @documents = action_documents
     send_data csv_output, type: 'text/csv', filename: "bookmarks-#{Time.zone.today}.csv"
   end
 
   private
-
-    def fetch_bookmarked_documents
-      bookmarks = token_or_current_or_guest_user.bookmarks
-      bookmark_ids = bookmarks.collect { |b| b.document_id.to_s }
-      _, @documents = fetch(bookmark_ids, rows: bookmark_ids.length)
-    end
 
     def csv_output
       CSV.generate(csv_bom, headers: true) do |csv|
