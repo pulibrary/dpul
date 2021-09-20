@@ -56,6 +56,15 @@ class CatalogController < ApplicationController
       'group.facet': true
     }
 
+    config.fetch_many_document_params = {
+      fl: '*',
+      group: true,
+      'group.main': true,
+      'group.limit': 1,
+      'group.field': Spotlight::Engine.config.iiif_manifest_field,
+      'group.facet': true
+    }
+
     config.document_solr_path = 'get'
     config.document_unique_id_param = 'ids'
 
