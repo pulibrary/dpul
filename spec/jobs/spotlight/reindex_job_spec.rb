@@ -37,12 +37,12 @@ RSpec.describe Spotlight::ReindexJob do
     let(:resource1) { instance_double(IIIFResource, reindex: true) }
     let(:resource2) { instance_double(IIIFResource, reindex: true) }
     let(:resources) { [resource1, resource2] }
-    let(:builder) { instance_double(Spotlight::SolrDocumentBuilder) }
+    let(:builder) { double("Spotlight::SolrDocumentBuilder") }
 
     before do
       allow(builder).to receive(:documents_to_index).and_return([0])
-      allow(resource1).to receive(:document_builder).and_return(builder)
-      allow(resource2).to receive(:document_builder).and_return(builder)
+      # allow(resource1).to receive(:document_builder).and_return(builder)
+      # allow(resource2).to receive(:document_builder).and_return(builder)
       allow(log_entry).to receive(:update)
     end
 

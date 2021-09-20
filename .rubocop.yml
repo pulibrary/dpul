@@ -194,3 +194,6 @@ Naming/MemoizedInstanceVariableName:
 Security/Open:
   Exclude:
     - 'app/models/external_manifest.rb'
+Lint/UnusedMethodArgument:
+  Exclude:
+    - 'app/jobs/spotlight/reindex_job.rb'
