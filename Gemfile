@@ -49,6 +49,7 @@ end
 
 gem 'almond-rails', '~> 0.1'
 gem 'bixby', '2.0.0'
+gem 'bootstrap', '~> 4.0'
 gem 'blacklight', '~> 7.18'
 gem 'blacklight-gallery'
 gem 'blacklight-oembed'

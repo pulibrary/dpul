@@ -631,6 +631,7 @@ DEPENDENCIES
   blacklight-gallery
   blacklight-oembed
   blacklight-spotlight (= 3.0.3)
+  bootstrap (~> 4.0)
   byebug
   capistrano-passenger
   capistrano-rails

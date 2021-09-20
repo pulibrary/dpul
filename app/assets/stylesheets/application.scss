@@ -3,8 +3,6 @@
 */
 @import 'utils/variables__bootstrap'; // pul bootstrap variables override
 
-@import 'bootstrap-sprockets';
-
 @import 'bootstrap';
 
 @import 'blacklight/blacklight';
@@ -12,7 +10,6 @@
 @import 'application_variables';
 @import 'spotlight/variables_bootstrap';
 @import 'variables/variables_bootstrap';
-@import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'sir-trevor/main';
 @import 'leaflet';
@@ -171,8 +168,9 @@ li[dir=rtl] {
   .card-title {
     border-bottom: 1px dotted $exhibit-card-border;
     line-height: $headings-line-height;
-    margin-bottom: $padding-base-vertical;
-    padding-bottom: $padding-base-vertical;
+    // TODO: Update for Bootstrap 4
+    // margin-bottom: $padding-base-vertical;
+    // padding-bottom: $padding-base-vertical;
   }
 
   .subtitle {
@@ -182,7 +180,8 @@ li[dir=rtl] {
   }
 
   .description {
-    font-size: $font-size-h6;
+    // TODO: Update for Bootstrap 4
+    // font-size: $font-size-h6;
   }
 
   .visit-exhibit {
@@ -201,23 +200,25 @@ li[dir=rtl] {
   }
 
   .card-title {
-    padding-left: $padding-small-horizontal;
-    padding-right: $padding-small-horizontal;
-    padding-top: $padding-large-vertical;
+    // TODO: Update for Bootstrap 4
+    // padding-left: $padding-small-horizontal;
+    // padding-right: $padding-small-horizontal;
+    // padding-top: $padding-large-vertical;
   }
 
-  .unpublished {
-    @extend .center-block;
-
-    font-size: $font-size-base;
-    margin-top: -1em;
-    position: relative;
-    width: 15ch;
-
-    + .card-title {
-      padding-top: 0;
-    }
-  }
+  // TODO: Update for Bootstrap 4
+  // .unpublished {
+  //   @extend .center-block;
+  //
+  //   font-size: $font-size-base;
+  //   margin-top: -1em;
+  //   position: relative;
+  //   width: 15ch;
+  //
+  //   + .card-title {
+  //     padding-top: 0;
+  //   }
+  // }
 }
 
 .edit-tags .twitter-typeahead input {
