@@ -73,6 +73,15 @@ module Spotlight
 
     private
 
+      ## Princeton Update
+      # Overrode this to do find_or_initialize_by - this may be broken upstream.
+      def find_or_initialize_job_tracker
+        JobTracker.find_or_initialize_by(job_id: job_id) do |tracker|
+          tracker.job_class = self.class.name
+          tracker.status = 'enqueued'
+        end
+      end
+
       def commit
         Blacklight.default_index.connection.commit
       end
@@ -83,6 +92,9 @@ module Spotlight
         @job_data ||= { Spotlight::Engine.config.job_tracker_id_field => job_tracker.top_level_job_tracker.job_id }
       end
 
+      ## Princeton Update
+      # Reindexing an exhibit should mean re-fetching all resources that are
+      # part of the collection. ExhibitProxy enables this.
       def resource_list(exhibit_or_resources, start: nil, finish: nil)
         if exhibit_or_resources.is_a?(Spotlight::Exhibit)
           [ExhibitProxy.new(exhibit_or_resources)]

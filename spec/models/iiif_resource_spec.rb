@@ -75,9 +75,8 @@ describe IIIFResource do
       resource = described_class.new url: url, exhibit: exhibit
       expect(resource.save).to be true
 
-      solr_doc = nil
+      solr_doc = resource.solr_documents.first
       Blacklight.default_index.connection.commit
-      resource.document_builder.to_solr { |x| solr_doc = x }
       expect(exhibit.custom_fields.where(slug: "system-created-at").size).to eq 0
       expect(exhibit.custom_fields.where(slug: "system-updated-at").size).to eq 0
       expect(solr_doc["readonly_system-created-at_ssim"]).to be_nil
@@ -175,9 +174,8 @@ describe IIIFResource do
       resource = described_class.new url: url, exhibit: exhibit
       expect(resource.save).to be true
 
-      solr_doc = nil
       Blacklight.default_index.connection.commit
-      resource.document_builder.to_solr { |x| solr_doc = x }
+      solr_doc = resource.solr_documents.first
       expect(solr_doc["full_title_tesim"]).to eq ['Christopher and his kind, 1929-1939']
       expect(solr_doc["readonly_created_tesim"]).to eq ["1976-01-01T00:00:00Z"]
       expect(solr_doc["readonly_range-label_tesim"]).to eq ["Chapter 1", "Chapter 2"]
@@ -203,9 +201,8 @@ describe IIIFResource do
       resource = described_class.find(resource.id)
       resource.save_and_index
 
-      solr_doc = nil
       Blacklight.default_index.connection.commit
-      resource.document_builder.to_solr { |x| solr_doc = x }
+      solr_doc = resource.solr_documents.first
       solr_doc = SolrDocument.find(solr_doc[:id])
       # Ensure SolrDocument atomic index happens, so it takes into account any
       # potentially stale metadata.
@@ -222,9 +219,8 @@ describe IIIFResource do
       resource = described_class.new url: url, exhibit: exhibit
       expect(resource.save).to be true
 
-      solr_doc = nil
       Blacklight.default_index.connection.commit
-      resource.document_builder.to_solr { |x| solr_doc = x }
+      solr_doc = resource.solr_documents.first
       expect(solr_doc["readonly_collections_tesim"]).to eq ["East Asian Library Digital Bookshelf"]
     end
 
@@ -240,9 +236,8 @@ describe IIIFResource do
         resource = described_class.new url: url, exhibit: exhibit
         expect(resource.save).to be true
 
-        solr_doc = nil
+        solr_doc = resource.solr_documents.first
         Blacklight.default_index.connection.commit
-        resource.document_builder.to_solr { |x| solr_doc = x }
         expect(solr_doc["readonly_view-in-finding-aid_ssim"]).to eq ["<a href='https://findingaids.princeton.edu/collections/MC051/c05105'>https://findingaids.princeton.edu/collections/MC051/c05105</a>"]
       end
     end
@@ -464,36 +459,13 @@ describe IIIFResource do
           url
         ).to_return(headers: { 'Content-Type' => 'application/json; charset=utf-8' })
       end
-
-      it "raises an error" do
-        expect { resource.save }.to raise_error(IIIFResource::InvalidIIIFManifestError, "Invalid Collection metadata found in the IIIF Manifest: #{url}")
-      end
-    end
-
-    describe '#save_and_index_now' do
-      let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
-      let(:resource) { described_class.new url: url, exhibit: exhibit }
-
-      before do
-        allow(Spotlight::ReindexJob).to receive(:perform_now)
-        allow(resource).to receive(:save)
-        stub_manifest(
-          url: url,
-          fixture: "vol1.json"
-        )
-      end
-
-      it 'calls perform now on Spotlight::ReindexJob' do
-        resource.save_and_index_now
-        expect(Spotlight::ReindexJob).to have_received(:perform_now)
-      end
     end
 
     describe '#reindex' do
       let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
       let(:resource) { described_class.new url: url, exhibit: exhibit }
       let(:blacklight_solr) { instance_double(RSolr::Client) }
-      let(:data) { resource.document_builder.documents_to_index.to_a }
+      let(:data) { resource.solr_documents }
 
       before do
         stub_manifest(
@@ -501,13 +473,15 @@ describe IIIFResource do
           fixture: "vol1.json"
         )
         allow(blacklight_solr).to receive(:update)
-        allow(resource).to receive(:blacklight_solr).and_return(blacklight_solr)
+        allow(blacklight_solr).to receive(:commit)
         resource.reindex
       end
 
       # JSON-serialization does not preserve the order of properties, so this
       # cannot be tested
-      it 'reindexes by directly updating Solr' do
+      it 'reindexes by calling a solr loader' do
+        allow_any_instance_of(Spotlight::Etl::SolrLoader).to receive(:blacklight_solr).and_return(blacklight_solr)
+        resource.reindex
         expect(blacklight_solr).to have_received(:update).with(
           hash_including(headers: { 'Content-Type' => 'application/json' })
         )
@@ -519,18 +493,18 @@ describe IIIFResource do
         let(:rsolr_error) { RSolr::Error::Http.new(request, response) }
 
         before do
-          allow(rsolr_error).to receive(:message).and_return("solr mad")
+          allow(rsolr_error).to receive(:to_s).and_return("solr mad")
         end
 
         it 'logs an error' do
           # Save it first to ensure the noid is in place to be reported
           resource.save_and_index
-          resource_id = resource.document_builder.documents_to_index.first[:id]
-          ids = "(id: #{resource_id}, noid: #{resource.noid})"
-          error_message = "Failed to update Solr for the following documents: #{ids}"
 
+          allow_any_instance_of(Spotlight::Etl::SolrLoader).to receive(:blacklight_solr).and_return(blacklight_solr)
           allow(blacklight_solr).to receive(:update).and_raise(rsolr_error)
-          expect { resource.reindex }.to raise_error(IIIFResource::IndexingError, error_message)
+          resource.save_and_index_now
+
+          expect(Spotlight::JobTracker.last.events.where(type: "error").first.data[:message]).to eq "solr mad"
         end
       end
     end

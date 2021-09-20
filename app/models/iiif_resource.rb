@@ -9,7 +9,15 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
   class IndexingError < StandardError; end
 
   def iiif_manifests
-    @iiif_manifests ||= validate_iiif_manifest_collections!
+    @iiif_manifests ||= ::IiifService.parse(url)
+  end
+
+  def solr_documents
+    solr_documents = []
+    indexing_pipeline.call(Spotlight::Etl::Context.new(self)) do |data|
+      solr_documents << data
+    end
+    solr_documents
   end
 
   def validate_iiif_manifest_collections!
