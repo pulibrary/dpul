@@ -15,7 +15,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   #
   #   Allow an extention point where information in the document
   #   may drive the value of the field
-  #   @param [String] field
+  #   @param [Configuration::Field] field_config
   #   @param [Hash] options
   #   @options opts [String] :value
   def field_value(field, options = {})
@@ -45,7 +45,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
     f = fields.detect { |field| @document.has? field }
     f ||= @configuration.document_model.unique_key
     @document[f].to_sentence(field_config(f).separator_options)
-    field_value(f, value: @document[f].map(&:html_safe))
+    field_value(field_config(f), value: @document[f].map(&:html_safe))
   end
 
   def heading
