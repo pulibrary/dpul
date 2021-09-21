@@ -33,8 +33,8 @@ RSpec.describe BookmarksController do
         spec: self
       )
 
-      document_id = iiif_resource.document_builder.documents_to_index.first[:id]
-      document_id2 = iiif_resource2.document_builder.documents_to_index.first[:id]
+      document_id = iiif_resource.solr_documents.first[:id]
+      document_id2 = iiif_resource2.solr_documents.first[:id]
 
       admin.bookmarks.create!([{ document_id: document_id, document_type: "SolrDocument" }])
       admin.bookmarks.create!([{ document_id: document_id2, document_type: "SolrDocument" }])

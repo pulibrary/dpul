@@ -41,8 +41,6 @@ RSpec.describe Spotlight::ReindexJob do
 
     before do
       allow(builder).to receive(:documents_to_index).and_return([0])
-      # allow(resource1).to receive(:document_builder).and_return(builder)
-      # allow(resource2).to receive(:document_builder).and_return(builder)
       allow(log_entry).to receive(:update)
     end
 

@@ -24,7 +24,7 @@ RSpec.describe 'Bookmarks', type: :feature, js: true do
   end
 
   let(:exhibit) { FactoryBot.create(:exhibit) }
-  let(:solr_id) { iiif_resource1.document_builder.documents_to_index.first[:id] }
+  let(:solr_id) { iiif_resource1.solr_documents.first[:id] }
   let(:title) { "Plan de Paris : commencé de l'année 1734" }
 
   context "when checking the bookmark box" do
