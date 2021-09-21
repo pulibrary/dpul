@@ -15,6 +15,10 @@ class ExhibitProxy
     end
   end
 
+  def estimated_size
+    members.size
+  end
+
   def collection_manifest
     CollectionManifest.find_by_slug(exhibit.slug)
   end
