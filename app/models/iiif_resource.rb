@@ -105,13 +105,13 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     end
 
     def document_ids
-      document_builder.documents_to_index.to_a.map { |y| y[:id] }
+      solr_documents.map { |y| y[:id] }
     end
 
     # If the document is being reindexed, it will have a noid. Reporting the
     # noid makes it easier to find
     def document_ids_with_noids
-      document_builder.documents_to_index.to_a.map { |y| "(id: #{y[:id]}, noid: #{noid})" }
+      solr_documents.map { |y| "(id: #{y[:id]}, noid: #{noid})" }
     end
 
     def write_to_index(batch)
