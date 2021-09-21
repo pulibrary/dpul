@@ -18,7 +18,7 @@ group :development, :test do
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console'
-  gem 'capybara', '~> 2.0'
+  gem 'capybara'
   gem 'capybara-screenshot'
   gem 'coveralls', require: false
   gem 'database_cleaner'
