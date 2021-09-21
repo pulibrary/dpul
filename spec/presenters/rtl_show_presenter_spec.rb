@@ -19,9 +19,9 @@ RSpec.describe RTLShowPresenter do
   let(:blacklight_config) do
     double(
       show_fields: {
-        field: double(highlight: false, accessor: nil, default: nil, field: :field, text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil)
+        field: double(highlight: false, accessor: nil, default: nil, field: "field", text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil)
       },
-      view_config: double(title_field: :title, html_title_field: nil),
+      view_config: double(title_field: "title", html_title_field: nil),
       facet_fields: { "exhibit_tags" => double(field: "tags_ssim") }
     )
   end
@@ -31,9 +31,9 @@ RSpec.describe RTLShowPresenter do
     let(:blacklight_config) do
       double(
         show_fields: {
-          field: double(highlight: false, accessor: nil, default: nil, field: :field, text_area: false, helper_method: nil, link_to_search: "field", itemprop: nil, separator_options: nil, :separator_options= => nil)
+          field: double(highlight: false, accessor: nil, default: nil, field: "field", text_area: false, helper_method: nil, link_to_search: "field", itemprop: nil, separator_options: nil, :separator_options= => nil)
         },
-        view_config: double(title_field: :title, html_title_field: nil),
+        view_config: double(title_field: "title", html_title_field: nil),
         facet_fields: { "exhibit_tags" => double(field: "tags_ssim") }
       )
     end
@@ -75,9 +75,10 @@ RSpec.describe RTLShowPresenter do
   describe "#heading" do
     let(:blacklight_config) do
       double(
-        show_fields: { field:
-                       double(highlight: false, accessor: nil, default: nil, field: :field, text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil) },
-        view_config: double(title_field: :title, html_title_field: nil),
+        show_fields: {
+          field: double(highlight: false, accessor: nil, default: nil, field: "field", text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil)
+        },
+        view_config: double(title_field: "title", html_title_field: nil),
         facet_fields: {}
       )
     end
