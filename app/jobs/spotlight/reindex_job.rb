@@ -7,7 +7,11 @@ module Spotlight
     queue_as :default
 
     include Spotlight::JobTracking
-    with_job_tracking(resource: ->(job) { job.exhibit })
+    # Princeton Update
+    # We have tests that save resources that have no exhibit. If there's no
+    # exhibit, this would error.
+    with_job_tracking(resource: ->(job) { job.exhibit || Array(job.arguments.first).first })
+    # End Princeton Update
 
     include Spotlight::LimitConcurrency
 
@@ -81,6 +85,7 @@ module Spotlight
           tracker.status = 'enqueued'
         end
       end
+      ## End Princeton update.
 
       def commit
         Blacklight.default_index.connection.commit
