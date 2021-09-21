@@ -3,19 +3,9 @@
 class IIIFIngestJob < ActiveJob::Base
   # Ingest one or more IIIF manfiest URLs.  Each manifest is ingested as its
   # own resource.
-  def perform(urls, exhibit, log_entry = nil)
+  def perform(urls, exhibit)
     Array.wrap(urls).each do |url|
       ingest url, exhibit
-    end
-
-    return unless log_entry
-
-    # Lock the row to prevent multiple workers from overwriting each other's increments.
-    # This worked, but it's reporting complete before the objects are reindexed.
-    # app/models/spotlight/resource.rb:55 has a null reindexing_log_entry.
-    log_entry.with_lock do
-      previous = log_entry.items_reindexed_count || 0
-      log_entry.update(items_reindexed_count: previous + Array.wrap(urls).size)
     end
   end
 
