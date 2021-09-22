@@ -19,31 +19,22 @@ RSpec.describe RTLShowPresenter do
   let(:blacklight_config) do
     double(
       show_fields: {
-        field: double(highlight: false, accessor: nil, default: nil, field: "field", text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil)
+        field: double(highlight: false, accessor: nil, default: nil, field: "field", text_area: false, helper_method: nil, link_to_facet: nil, itemprop: nil, separator_options: nil, :separator_options= => nil)
       },
       view_config: double(title_field: "title", html_title_field: nil),
       facet_fields: { "exhibit_tags" => double(field: "tags_ssim") }
     )
   end
 
-  describe "link_to_search" do
+  describe "link_to_facet" do
     let(:view_context) { double(blacklight_config: blacklight_config, search_state: double(reset: double(add_facet_params: true)), search_action_path: "/exhibit/catalog") }
-    let(:blacklight_config) do
-      double(
-        show_fields: {
-          field: double(highlight: false, accessor: nil, default: nil, field: "field", text_area: false, helper_method: nil, link_to_search: "field", itemprop: nil, separator_options: nil, :separator_options= => nil)
-        },
-        view_config: double(title_field: "title", html_title_field: nil),
-        facet_fields: { "exhibit_tags" => double(field: "tags_ssim") }
-      )
-    end
 
     before do
       allow(view_context).to receive(:link_to).with("بي", "/exhibit/catalog").and_return("<a link>بي</a link>".html_safe)
     end
 
     it "links each individual property" do
-      field = presenter.field_config("field")
+      field = Blacklight::Configuration::Field.new(field: "field", link_to_facet: "field")
       expect(presenter.field_value(field)).to eq "<ul><li dir=\"rtl\"><a link>بي</a link></li></ul>"
     end
   end
@@ -51,14 +42,15 @@ RSpec.describe RTLShowPresenter do
   describe "#field_value" do
     context "when given a RTL string" do
       it "renders it as a RTL list item" do
-        field = presenter.field_config("field")
+        field = Blacklight::Configuration::Field.new(field: "field")
         expect(presenter.field_value(field)).to eq "<ul><li dir=\"rtl\">بي</li></ul>"
       end
     end
 
     context "when given a string with special characters" do
       it "renders it without escaping them" do
-        field = presenter.field_config("special")
+        field = Blacklight::Configuration::Field.new(field: "special")
+
         expect(presenter.field_value(field)).to eq "<ul><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
       end
     end
@@ -66,7 +58,7 @@ RSpec.describe RTLShowPresenter do
     context "when given a collection field" do
       it "renders links to each collection" do
         allow(view_context).to receive(:exhibit_path).with(exhibit).and_return("/#{exhibit.slug}")
-        field = presenter.field_config("readonly_collections_ssim")
+        field = Blacklight::Configuration::Field.new(field: "readonly_collections_ssim")
         expect(presenter.field_value(field)).to eq "<ul><li dir=\"ltr\"><a href=\"/#{exhibit.slug}\">#{exhibit.title}</a></li></ul>"
       end
     end
@@ -76,7 +68,7 @@ RSpec.describe RTLShowPresenter do
     let(:blacklight_config) do
       double(
         show_fields: {
-          field: double(highlight: false, accessor: nil, default: nil, field: "field", text_area: false, helper_method: nil, link_to_search: nil, itemprop: nil, separator_options: nil, :separator_options= => nil)
+          field: double(highlight: false, accessor: nil, default: nil, field: "field", text_area: false, helper_method: nil, link_to_facet: nil, itemprop: nil, separator_options: nil, :separator_options= => nil)
         },
         view_config: double(title_field: "title", html_title_field: nil),
         facet_fields: {}
