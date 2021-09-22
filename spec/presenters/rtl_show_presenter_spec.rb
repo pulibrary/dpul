@@ -15,7 +15,6 @@ RSpec.describe RTLShowPresenter do
   end
   let(:view_context) { double(blacklight_config: blacklight_config) }
   let(:exhibit) { FactoryBot.create(:exhibit) }
-  let(:cc_config) { CatalogController.new.blacklight_config }
   let(:blacklight_config) do
     double(
       show_fields: {
@@ -50,7 +49,6 @@ RSpec.describe RTLShowPresenter do
     context "when given a string with special characters" do
       it "renders it without escaping them" do
         field = Blacklight::Configuration::Field.new(field: "special")
-
         expect(presenter.field_value(field)).to eq "<ul><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
       end
     end

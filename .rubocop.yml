@@ -150,6 +150,7 @@ RSpec/ExampleLength:
     - 'spec/services/date_sort_migration_spec.rb'
     - 'spec/controllers/exhibits_controller_spec.rb'
     - 'spec/models/exhibit_proxy_spec.rb'
+    - 'spec/jobs/spotlight/reindex_job_spec.rb'
 
 RSpec/ExampleWording:
   CustomTransform:
@@ -189,6 +190,11 @@ RSpec/AnyInstance:
 RSpec/NestedGroups:
   Exclude:
     - 'spec/models/iiif_resource_spec.rb'
+RSpec/VerifiedDoubles:
+  Exclude:
+    - 'spec/jobs/spotlight/reindex_job_spec.rb'
+    - 'spec/presenters/rtl_index_presenter_spec.rb'
+    - 'spec/presenters/rtl_show_presenter_spec.rb'
 Naming/MemoizedInstanceVariableName:
   Exclude:
     - 'app/controllers/exhibits_controller.rb'
