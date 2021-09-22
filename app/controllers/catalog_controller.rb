@@ -125,9 +125,5 @@ class CatalogController < ApplicationController
       format.json { render json: { response: { document: @document } } }
       additional_export_formats(@document, format)
     end
-
-    authenticate_user! && authorize!(:curate, current_exhibit) if @document.private? current_exhibit
-
-    add_document_breadcrumbs(@document)
   end
 end
