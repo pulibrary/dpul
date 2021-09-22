@@ -102,12 +102,12 @@ class CatalogController < ApplicationController
   end
 
   # Overrides the spotlight search_facet_url method to use
-  # facet_catalog_url named route instead of catalog_facet_url.
-  # https://github.com/projectblacklight/spotlight/blob/v1.4.1/app/controllers/concerns/spotlight/controller.rb#L63
-  def search_facet_url(*args)
+  # facet_catalog_path named route instead of catalog_facet_path.
+  # https://github.com/projectblacklight/spotlight/blob/v3.0.3/app/controllers/concerns/spotlight/controller.rb#L78
+  def search_facet_path(*args)
     return super if current_exhibit
 
-    main_app.facet_catalog_url(*args)
+    main_app.facet_catalog_path(*args)
   end
 
   # search results
