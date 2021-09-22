@@ -52,7 +52,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
     fields = Array.wrap(title_field)
     f = fields.detect { |field| document.has? field }
     f ||= configuration.document_model.unique_key
-    field_values(field_config(f), value: document[f].map(&:html_safe))
+    field_value(field_config(f), value: document[f].map(&:html_safe))
   end
 
   # Automatically display the override title if it's present.
@@ -75,7 +75,11 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   end
 
   def html_title
-    super.split("<br />").map(&:html_safe).join(", ").gsub(/<.*?>/, "")
+    # Insert field_value_separator between tags
+    value = super.gsub("li><li", "li>#{field_value_separator}<li")
+
+    # Split on seperator and remove markup
+    value.split(field_value_separator).map(&:html_safe).join(", ").gsub(/<.*?>/, "")
   end
 
   def field_config(field)
