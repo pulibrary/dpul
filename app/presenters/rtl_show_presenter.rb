@@ -75,11 +75,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   end
 
   def html_title
-    # Insert field_value_separator between tags
-    value = super.gsub("li><li", "li>#{field_value_separator}<li")
-
-    # Split on seperator and remove markup
-    value.split(field_value_separator).map(&:html_safe).join(", ").gsub(/<.*?>/, "")
+    super.split(/<\/li><li.*?>/).map(&:html_safe).join(", ").gsub(/<.*?>/, "")
   end
 
   def field_config(field)
