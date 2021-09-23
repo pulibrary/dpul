@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class RecentItemsBlock < SirTrevorRails::Blocks::SolrDocumentsBlock
-  include Blacklight::RequestBuilders
   delegate :blacklight_config, to: :solr_helper
 
   def documents

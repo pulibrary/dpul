@@ -10,10 +10,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
   let(:exhibit) { FactoryBot.create(:exhibit) }
 
   before do
-    # Include the search helper so the block can run a scoped query. Normally
-    # the view has access to this from the controller, but this test uses an
-    # anonymous controller.
-    view.class.include Blacklight::SearchHelper
+    allow(view.main_app).to receive(:track_test_path).and_return('/track')
     allow(view).to receive_messages(recent_items_block: block)
     allow(view).to receive_messages(
       blacklight_config: CatalogController.blacklight_config,
