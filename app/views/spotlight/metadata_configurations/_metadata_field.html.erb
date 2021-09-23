@@ -11,11 +11,13 @@
         <%= field.hidden_field :label, value: index_field_label(nil, key), class: 'form-control input-sm', data: {:"edit-field-target" => 'true'} %>
       </div>
     </td>
+    <% # Customized - add text area option %>
     <td class="checkbox-cell text-center"><%= field.check_box :text_area, inline: true, checked: config.text_area == "1", label: "", disabled: readonly?(key) %></td>
     <td class="checkbox-cell text-center"><%= field.check_box :show, inline: true, checked: config.show, label: "" %></td>
     <% available_view_fields.keys.each do |type| %>
       <td class="checkbox-cell text-center"><%= field.check_box type, inline: true, checked: config.send(type), label: "" %></td>
     <% end %>
+    <% # Customized - add link to search option %>
     <td class="checkbox-cell text-center"><%= field.check_box :link_to_search, {inline: true, checked: config.link_to_search.present?, label: ""}, config.field, false%></td>
   <% end %>
 </tr>
