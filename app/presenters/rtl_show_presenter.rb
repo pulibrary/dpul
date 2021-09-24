@@ -33,10 +33,6 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
     collection = Spotlight::Exhibit.where(title: value).first
     return value unless collection
 
-    unless view_context.respond_to?(:exhibit_path)
-      Rails.logger.error "Failed to render the link to the collection #{value} for #{collection.id}"
-      return value
-    end
     link_to collection.title, view_context.exhibit_path(collection)
   end
 
