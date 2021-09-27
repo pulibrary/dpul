@@ -48,9 +48,9 @@ class RTLIndexPresenter < ::Blacklight::IndexPresenter
 
     def label_value(value, config)
       if value.is_a?(Array) && value.count > 1
-        value.collect { |v| field_values(config, value: v.html_safe) }
+        value.collect { |v| field_value(config, value: v.html_safe) }
       else
-        field_values(config, value: Array.wrap(value).map(&:html_safe))
+        field_value(config, value: Array.wrap(value).map(&:html_safe))
       end
     end
 end
