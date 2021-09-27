@@ -194,7 +194,7 @@ RSpec.describe CatalogController do
   end
 
   def document_ids
-    assigns[:document_list].map do |x|
+    assigns[:response].documents.map do |x|
       x["id"]
     end
   end
