@@ -32,13 +32,13 @@ class CatalogController < ApplicationController
     config.raw_endpoint.enabled = true
     config.show.oembed_field = :oembed_url_ssm
     config.show.partials.insert(1, :oembed)
-    config.view.gallery.partials = [:index_header, :index]
-    config.view.masonry.partials = [:index]
-    config.view.slideshow.partials = [:index]
+    config.view.gallery(partials: [:index_header, :index])
+    config.view.masonry(partials: [:index])
+    config.view.slideshow(partials: [:index])
 
     config.show.tile_source_field = :tile_source_ssim
     config.show.partials.insert(1, :universal_viewer)
-    config.view.embed.partials = ['universal_viewer']
+    config.view.embed(partials: ['universal_viewer'])
 
     # Make browse results doc actions consistent with search result doc actions
     config.browse.document_actions = config.index.document_actions
