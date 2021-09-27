@@ -26,6 +26,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # This override keeps various layout templates from erroring when they check
+  # whether there's an exhibit selected
   def current_exhibit
     super
   rescue ActiveRecord::RecordNotFound
