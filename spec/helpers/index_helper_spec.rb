@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe IndexHelper do
   let(:helper) { TestingHelper.new }
-  let(:index_presenter) { instance_double('RTLIndexPresenter', class: RTLIndexPresenter) }
+  let(:document_presenter) { instance_double('RTLIndexPresenter', class: RTLIndexPresenter) }
   let(:document) do
     {
       title: 'title',
@@ -30,9 +30,9 @@ describe IndexHelper do
     let(:label) { 'title' }
 
     before do
-      allow(helper).to receive(:index_presenter).and_return(index_presenter)
+      allow(helper).to receive(:document_presenter).and_return(document_presenter)
       allow(helper).to receive(:document_show_link_field).and_return(:full_title_tesim)
-      allow(index_presenter).to receive(:label).and_return(label)
+      allow(document_presenter).to receive(:label).and_return(label)
     end
 
     it 'retrieves the label using the title' do
@@ -50,11 +50,11 @@ describe IndexHelper do
 
   describe '#render_index_document' do
     before do
-      allow(helper).to receive(:index_presenter).and_return(index_presenter)
+      allow(helper).to receive(:document_presenter).and_return(document_presenter)
       allow(helper).to receive(:document_show_link_field).and_return(:title)
       allow(helper).to receive(:url_for_document).and_return('link')
       allow(helper).to receive(:document_link_params).and_return({})
-      allow(index_presenter).to receive(:label).and_return(label)
+      allow(document_presenter).to receive(:label).and_return(label)
     end
 
     context 'when given a ltr label' do
