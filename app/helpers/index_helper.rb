@@ -39,7 +39,6 @@ module IndexHelper
 
   # Ensures that only a single string is passed from the IndexPresenter
   # @param current_presenter [Class]
-  # @param show_link_field [Symbol]
   # @return [String]
   def index_masonry_document_label(document)
     field = field_from document: document
@@ -49,6 +48,6 @@ module IndexHelper
   private
 
     def field_from(document:)
-      index_presenter(document).label(document_show_link_field(document))
+      document_presenter(document).label(document_show_link_field(document))
     end
 end

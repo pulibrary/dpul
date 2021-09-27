@@ -10,6 +10,8 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
   let(:exhibit) { FactoryBot.create(:exhibit) }
 
   before do
+    allow(controller).to receive(:view_context).and_return(view)
+    allow(controller).to receive(:action_name).and_return('index')
     allow(view.main_app).to receive(:track_test_path).and_return('/track')
     allow(view).to receive_messages(recent_items_block: block)
     allow(view).to receive_messages(
