@@ -32,7 +32,7 @@ RSpec.describe 'Bookmarks', type: :feature, js: true do
       iiif_resource1
       iiif_resource2
       visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
-      bookmark_box = "toggle_bookmark_#{solr_id}"
+      bookmark_box = "toggle-bookmark_#{solr_id}"
       check bookmark_box
       expect(page).to have_content "In Bookmarks"
 

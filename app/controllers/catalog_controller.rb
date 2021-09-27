@@ -43,6 +43,8 @@ class CatalogController < ApplicationController
     # Make browse results doc actions consistent with search result doc actions
     config.browse.document_actions = config.index.document_actions
 
+    config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     # Group records by manifest in order to display a single result for a given
     # resource in 'search across'
