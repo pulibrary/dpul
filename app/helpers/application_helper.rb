@@ -95,4 +95,13 @@ module ApplicationHelper
         config: universal_viewer_config_url(document)
       )
     end
+
+    # Replace deprecated #should_autofocus_on_search_box?
+    # method until we update views to use components.
+    # https://github.com/projectblacklight/blacklight/blob/v7.19.2/app/helpers/blacklight/catalog_helper_behavior.rb#L213
+    def autofocus_on_search_box?
+      controller.is_a?(Blacklight::Catalog) &&
+        action_name == "index" &&
+        !has_search_parameters?
+    end
 end
