@@ -37,17 +37,9 @@ module IndexHelper
     [spotlight, exhibit, document]
   end
 
-  # Ensures that only a single string is passed from the IndexPresenter
-  # @param current_presenter [Class]
-  # @return [String]
-  def index_masonry_document_label(document)
-    field = field_from document: document
-    Array.wrap(field).first
-  end
-
   private
 
     def field_from(document:)
-      document_presenter(document).label(document_show_link_field(document))
+      document_presenter(document).heading
     end
 end
