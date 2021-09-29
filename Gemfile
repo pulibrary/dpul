@@ -71,6 +71,8 @@ gem 'redis-namespace'
 gem 'redis', '3.3.5'
 gem 'riiif'
 gem 'rsolr', '~> 1.0.6'
+# Required by blacklight-oembed
+gem 'ruby2_keywords'
 gem 'sidekiq', '< 6'
 gem 'sitemap_generator'
 gem 'sneakers'
