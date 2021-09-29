@@ -22,7 +22,10 @@ namespace :dpul do
       # Default to today
       date = ENV["DATE"] || Date.current.to_s
 
+      puts "Restoring postgres from current production state"
       restore_postgres(date: date)
+
+      puts "Restoring Solr from production backup."
       restore_solr(date: date)
     end
 
@@ -43,7 +46,9 @@ namespace :dpul do
 
     def restore_postgres(date:)
       # This will break when staging and production are on two different
-      # postgres servers.
+      # postgres servers. We can fix this in the future if we can make
+      # database.yml not use the same env variables for prod, and give the
+      # staging machines the prod credential environment variables.
       dump_connection = connection_string(env: "production")
       restore_connection = connection_string(env: Rails.env)
 
@@ -73,10 +78,12 @@ namespace :dpul do
         filename = "dpul_production_replication_#{date}.sql"
         download_location = File.join(download_dir, filename)
 
+        puts "Dumping state of production database"
         `pg_dump -Fc #{dump_connection} > #{download_location}`
         unzipped_location = download_location
       end
 
+      puts "Restoring state of production database"
       `pg_restore --clean --no-owner -d #{restore_connection} #{unzipped_location}`
     end
   end
