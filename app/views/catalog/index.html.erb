@@ -1,7 +1,5 @@
-<div id="sidebar" class="<%= sidebar_classes %>">
+<% content_for(:sidebar) do %>
   <%= render 'search_sidebar' %>
-</div>
+<% end %>
 
-<div id="content" class="<%= main_content_classes %>">
-  <%= render 'search_results' %>
-</div>
+<%= render 'search_results' %>
