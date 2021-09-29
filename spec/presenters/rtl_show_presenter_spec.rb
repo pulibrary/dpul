@@ -9,12 +9,10 @@ RSpec.describe RTLShowPresenter do
     SolrDocument.new(
       field: ["بي"],
       special: ["Traité sur l'art de la charpente : théorique et pratique"],
-      title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
-      readonly_collections_ssim: [exhibit.title.to_s]
+      title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"]
     )
   end
   let(:view_context) { double(blacklight_config: blacklight_config) }
-  let(:exhibit) { FactoryBot.create(:exhibit) }
   let(:blacklight_config) do
     double(
       show_fields: {
@@ -50,14 +48,6 @@ RSpec.describe RTLShowPresenter do
       it "renders it without escaping them" do
         field = Blacklight::Configuration::Field.new(field: "special")
         expect(presenter.field_value(field)).to eq "<ul><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
-      end
-    end
-
-    context "when given a collection field" do
-      it "renders links to each collection" do
-        allow(view_context).to receive(:exhibit_path).with(exhibit).and_return("/#{exhibit.slug}")
-        field = Blacklight::Configuration::Field.new(field: "readonly_collections_ssim")
-        expect(presenter.field_value(field)).to eq "<ul><li dir=\"ltr\"><a href=\"/#{exhibit.slug}\">#{exhibit.title}</a></li></ul>"
       end
     end
   end

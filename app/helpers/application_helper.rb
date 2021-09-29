@@ -104,4 +104,17 @@ module ApplicationHelper
         action_name == "index" &&
         !has_search_parameters?
     end
+
+    # Render collection values as a list of links
+    def collection_links(args)
+      tags = args[:value].collect do |value|
+        collection = Spotlight::Exhibit.where(title: value).first
+        value = link_to collection.title, exhibit_path(collection) if collection
+        content_tag(:li, value, dir: strip_tags(value).dir)
+      end
+
+      content_tag(:ul) do
+        safe_join tags
+      end
+    end
 end

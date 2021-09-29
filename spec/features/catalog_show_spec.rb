@@ -26,7 +26,7 @@ RSpec.describe 'Catalog', type: :feature, js: true do
         access_identifier_ssim: [
           "1r66j4408"
         ],
-        readonly_collections_tesim: [
+        readonly_collections_ssim: [
           'test collection 1',
           'test collection 2'
         ],
