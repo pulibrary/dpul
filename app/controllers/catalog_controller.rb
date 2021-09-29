@@ -87,7 +87,7 @@ class CatalogController < ApplicationController
 
     config.add_facet_field 'spotlight_resource_type_ssim'
     config.add_facet_field 'readonly_collections_ssim', label: 'Collections', limit: 10
-    config.add_index_field 'readonly_collections_ssim', label: 'Collections'
+    config.add_index_field 'readonly_collections_ssim', label: 'Collections', helper_method: :collection_links
     config.index.thumbnail_method = :document_thumbnail
 
     # The embed view doesn't look good, so remove it.
