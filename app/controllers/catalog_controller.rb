@@ -32,9 +32,22 @@ class CatalogController < ApplicationController
     config.raw_endpoint.enabled = true
     config.show.oembed_field = :oembed_url_ssm
     config.show.partials.insert(1, :oembed)
-    config.view.gallery(partials: [:index_header, :index])
-    config.view.masonry(partials: [:index])
-    config.view.slideshow(partials: [:index])
+    # Default Configurations
+    config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+
+    config.add_results_collection_tool(:sort_widget)
+    config.add_results_collection_tool(:per_page_widget)
+    config.add_results_collection_tool(:view_type_group)
+
+    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+
+    config.view.gallery!.document_component = Blacklight::Gallery::DocumentComponent
+    # config.view.gallery.classes = 'row-cols-2 row-cols-md-3'
+    config.view.masonry!.document_component = Blacklight::Gallery::DocumentComponent
+    config.view.slideshow!.document_component = Blacklight::Gallery::SlideshowComponent
+    config.view.gallery!(partials: [:index_header, :index])
+    config.view.masonry!(partials: [:index])
+    config.view.slideshow!(partials: [:index])
 
     config.show.tile_source_field = :tile_source_ssim
     config.show.partials.insert(1, :universal_viewer)

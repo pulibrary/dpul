@@ -119,6 +119,11 @@ RSpec.feature 'Catalog', type: :feature do
       visit main_app.search_catalog_path(q: '')
       expect(page).to have_link("more", href: '/catalog/facet/readonly_language_ssim')
     end
+    it "displays a sort", js: true do
+      visit main_app.search_catalog_path(q: '')
+
+      expect(page).to have_selector "#sort-dropdown"
+    end
   end
 
   def index
