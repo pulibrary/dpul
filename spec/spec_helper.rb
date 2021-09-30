@@ -6,13 +6,6 @@ require "capybara/rspec"
 require 'capybara-screenshot/rspec'
 require "selenium-webdriver"
 require 'webmock/rspec'
-require 'coveralls'
-
-if ENV['CI']
-  Coveralls.wear!
-  require 'coveralls'
-  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-end
 
 SimpleCov.start('rails') do
   add_filter 'app/mailers/application_mailer.rb'
