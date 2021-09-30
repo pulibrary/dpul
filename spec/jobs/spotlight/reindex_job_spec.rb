@@ -54,4 +54,17 @@ RSpec.describe Spotlight::ReindexJob do
     expect(resources.first).to have_received(:reindex)
     expect(resources.last).to have_received(:reindex)
   end
+
+  context 'when there is an error' do
+    it 'logs the error in the job tracker' do
+      allow(iiif_resource1).to receive(:reindex).and_raise StandardError
+      allow(IIIFResource).to receive(:new).and_return(resource)
+
+      described_class.perform_now(iiif_resource1)
+
+      job_tracker = Spotlight::JobTracker.last
+      event = job_tracker.events.last
+      expect(event[:data][:errors]).to eq 1
+    end
+  end
 end
