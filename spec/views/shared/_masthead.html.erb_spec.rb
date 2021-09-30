@@ -16,7 +16,7 @@ describe 'shared/_masthead', type: :view do
 
   it 'has the site title and subtitle' do
     render
-    expect(rendered).to have_selector '.h1', text: exhibit.title
+    expect(rendered).to have_selector '.site-title', text: exhibit.title
     expect(rendered).to have_selector 'small', text: exhibit.subtitle
   end
 
@@ -36,7 +36,7 @@ describe 'shared/_masthead', type: :view do
     let(:subtitle) { "Stuff" }
 
     before do
-      site = instance_double(Spotlight::Site, subtitle: subtitle)
+      site = instance_double(Spotlight::Site, subtitle: subtitle, title: "Title")
       allow(view).to receive(:current_site).and_return(site)
       assign(:masthead_title, "Title")
     end
@@ -44,7 +44,7 @@ describe 'shared/_masthead', type: :view do
     it "renders the site subtitle and title" do
       render
       expect(rendered).to have_selector 'small', text: subtitle
-      expect(rendered).to have_selector '.h1', text: "Title"
+      expect(rendered).to have_selector '.site-title', text: "Title"
     end
   end
 end
