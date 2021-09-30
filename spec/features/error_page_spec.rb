@@ -13,6 +13,10 @@ RSpec.describe 'Error Pages', type: :feature do
       visit "/500"
       expect(page).to have_selector ".site-title", text: "Server Error"
     end
+    it "has search across" do
+      visit "/500"
+      expect(page).to have_selector ".search-query-form"
+    end
   end
 
   context "when triggering the error" do

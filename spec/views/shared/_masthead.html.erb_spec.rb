@@ -8,8 +8,10 @@ describe 'shared/_masthead', type: :view do
 
   before do
     stub_template 'shared/_exhibit_navbar.html.erb' => 'navbar'
+    stub_template 'catalog/_search_form.html.erb' => 'search'
     allow(view).to receive_messages(current_exhibit: exhibit,
                                     current_masthead: masthead,
+                                    blacklight_config: CatalogController.blacklight_config,
                                     resource_masthead?: false,
                                     render_breadcrumbs: false)
   end
