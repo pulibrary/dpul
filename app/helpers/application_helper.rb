@@ -11,10 +11,6 @@ module ApplicationHelper
     render partial: 'catalog/default_search_form'
   end
 
-  def site_sidebar?
-    can?(:manage, Spotlight::Site.instance) || can?(:create, Spotlight::Exhibit)
-  end
-
   # site_title pulls from the db if configured through the UI.
   #   otherwise use the val from the blacklight locale file.
   #   We need this because application_name helper changes to include exhibit titles
@@ -22,10 +18,6 @@ module ApplicationHelper
     current_site.title || t("blacklight.application_name")
   end
   alias application_name header_title
-
-  def current_year
-    Date.today.year
-  end
 
   def text_area?(field, exhibit)
     index_field_config = exhibit.blacklight_config.index_fields[field.field]

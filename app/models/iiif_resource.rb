@@ -20,25 +20,6 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     solr_documents
   end
 
-  def validate_iiif_manifest_collections!
-    iiif_manifests = ::IiifService.parse(url)
-
-    # Check for valid metadata
-    iiif_manifests.to_a.each do |iiif_manifest|
-      iiif_manifest.with_exhibit(exhibit)
-
-      next unless iiif_manifest.as_json.key?("manifest") &&
-                  iiif_manifest.as_json["manifest"].key?("data") &&
-                  iiif_manifest.as_json["manifest"]["data"].key?("metadata")
-
-      collection_metadata = iiif_manifest.as_json["manifest"]["data"]["metadata"].select { |metadata| metadata["label"] == "Collections" }
-      invalid_collection_metadata = collection_metadata.select { |metadata| metadata["value"].first.is_a?(Hash) }
-      raise(InvalidIIIFManifestError, "Invalid Collection metadata found in the IIIF Manifest: #{url}") unless invalid_collection_metadata.empty?
-    end
-
-    @iiif_manifests = iiif_manifests
-  end
-
   def cleanup_solr
     return unless document_model
 
@@ -106,25 +87,6 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
 
     def document_ids
       solr_documents.map { |y| y[:id] }
-    end
-
-    # If the document is being reindexed, it will have a noid. Reporting the
-    # noid makes it easier to find
-    def document_ids_with_noids
-      solr_documents.map { |y| "(id: #{y[:id]}, noid: #{noid})" }
-    end
-
-    def write_to_index(batch)
-      documents = documents_that_have_ids(batch)
-      return unless write? && documents.present?
-
-      blacklight_solr.update data: documents.to_json,
-                             headers: { 'Content-Type' => 'application/json' }
-    rescue RSolr::Error::Http => e
-      error_message = "Failed to update Solr for the following documents: #{document_ids_with_noids.join(', ')}"
-      Rails.logger.error error_message
-      Rails.logger.error "RSolr error message: #{e.message}"
-      raise IndexingError, error_message
     end
 
     # Override hard commit after indexing every document, for performance.
