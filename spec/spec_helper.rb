@@ -15,7 +15,8 @@ if ENV['CI']
 end
 
 SimpleCov.start('rails') do
-  add_filter '/spec'
+  add_filter 'app/mailers/application_mailer.rb'
+  add_filter 'spec'
 end
 
 RSpec.configure do |config|
