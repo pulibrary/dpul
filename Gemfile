@@ -20,7 +20,6 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'capybara'
   gem 'capybara-screenshot'
-  gem 'coveralls', require: false
   gem 'database_cleaner'
   gem 'factory_bot_rails', require: false
   gem 'pry-byebug'
