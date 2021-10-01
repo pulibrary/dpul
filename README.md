@@ -75,9 +75,8 @@ created, updated, or deleted.
 
 ## Replicate database and solr index from production to staging
 
-1. SSH to the staging machine as the system user
-1. Stop nginx
-1. As deploy user, `cd /opt/dpul/currnt`
-1. Run the rake task `DATE=2021-09-23 bundle exec rake dpul:replicate:prod`
-   * Note you can't use any date after 9/23 until #1023 is resolved
-1. Start nginx back up
+* Note you can't use any date after 9/23 until #1023 is resolved
+
+```
+ssh pulsys@dpul-staging1 'sudo service nginx stop' && bundle exec cap staging replicate:prod && ssh pulsys@dpul-staging1 'sudo service nginx start'
+```
