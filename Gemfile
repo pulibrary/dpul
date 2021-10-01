@@ -58,6 +58,7 @@ gem 'devise', '~> 4.7.1'
 gem 'devise-guests', '~> 0.3'
 gem 'devise_invitable'
 gem 'faraday', '< 1'
+gem 'google-cloud-storage', group: :staging
 gem 'iiif-presentation'
 gem 'iso-639'
 gem 'lograge'

@@ -72,3 +72,11 @@ following:
 
 This will subscribe to the events and update the DPUL records when they're
 created, updated, or deleted.
+
+## Replicate database and solr index from production to staging
+
+* Note you can't use any date after 9/23 until #1023 is resolved
+
+```
+ssh pulsys@dpul-staging1 'sudo service nginx stop' && bundle exec cap staging replicate:prod && ssh pulsys@dpul-staging1 'sudo service nginx start'
+```
