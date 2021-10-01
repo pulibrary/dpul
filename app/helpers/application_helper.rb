@@ -88,15 +88,6 @@ module ApplicationHelper
       )
     end
 
-    # Replace deprecated #should_autofocus_on_search_box?
-    # method until we update views to use components.
-    # https://github.com/projectblacklight/blacklight/blob/v7.19.2/app/helpers/blacklight/catalog_helper_behavior.rb#L213
-    def autofocus_on_search_box?
-      controller.is_a?(Blacklight::Catalog) &&
-        action_name == "index" &&
-        !has_search_parameters?
-    end
-
     # Render collection values as a list of links
     def collection_links(args)
       tags = args[:value].collect do |value|
