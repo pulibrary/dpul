@@ -1,39 +1,47 @@
+<% if show_contact_form? %>
+  <div id="report-problem-form">
+    <%= render 'spotlight/shared/report_a_problem' %>
+  </div>
+<% end %>
 
-<%= render 'spotlight/shared/report_a_problem' if show_contact_form? %>
+<%- masthead_navbar = capture do %>
+  <% if content_for? :masthead_navbar %>
+    <%= content_for :masthead_navbar %>
+  <% elsif current_exhibit %>
+    <%= render 'shared/exhibit_navbar' %>
+  <% else %>
+    <%= render 'shared/site_navbar' %>
+  <% end %>
+<% end %>
 
-<div class="masthead <%= 'image-masthead' if current_masthead %> <%= 'resource-masthead' if resource_masthead? %>">
+<header class="masthead <%= 'image-masthead' if current_masthead %> <%= 'resource-masthead' if resource_masthead? %>" role="banner">
   <% if current_masthead %>
     <span class='background-container' style="background-image: url('<%= current_masthead.iiif_url %>')"></span>
     <span class='background-container-gradient'></span>
   <% end %>
 
-  <% if current_exhibit || content_for?(:masthead) || @masthead_title %>
-    <div class="container site-title-container">
-      <div class="site-title h1">
-        <% if content_for? :masthead %>
-          <%= content_for :masthead %>
-        <% elsif current_exhibit %>
-          <%= current_exhibit.title %>
-          <% @subtitle ||= current_exhibit.subtitle %>
-          <div class="site-subtitle">
-          <% if @subtitle.present? %>
-              <small dir='<%= @subtitle.dir %>'><%= @subtitle %></small>
-          <% end %>
-          </div>
-        <% elsif @masthead_title %>
-          <%= @masthead_title %>
-          <% @subtitle ||= current_site.subtitle %>
-          <div class="site-subtitle">
-          <% if @subtitle.present? %>
-            <small dir='<%= @subtitle.dir %>'><%= @subtitle %></small>
-          <% end %>
-        </div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+  <%= masthead_navbar if resource_masthead? %>
 
-  <%= render 'shared/exhibit_navbar' %>
-</div>
+  <div class="container site-title-container">
+    <div class="site-title-wrapper">
+      <% if content_for? :masthead %>
+        <h1 class="site-title h2">
+          <%= content_for :masthead %>
+        </h1>
+      <% else %>
+        <h1 class="site-title h2">
+          <%= masthead_heading_content %>
+        </h1>
+        <% # Princeton Customization - add dir class to subtitle for RTL %>
+        <% if masthead_subheading_content %>
+          <small dir='<%= masthead_subheading_content.dir %>'><%= masthead_subheading_content %></small>
+        <% end %>
+        <% # End Princeton Customization %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= masthead_navbar unless resource_masthead? %>
+</header>
 
 <%= render 'shared/breadcrumbs' unless resource_masthead? %>
