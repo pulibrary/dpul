@@ -85,10 +85,12 @@ after 'deploy:published', 'sidekiq:restart'
 namespace :replicate do
   desc "Replicate production database and index to staging"
   task :prod do
-    rake = fetch(:rake, 'rake')
-    abort unless rails_env == 'staging'
-    date = "2021-09-23" || ENV['DATE']
+    on roles(:web) do
+      rails_env = fetch(:rails_env).to_s
+      abort unless rails_env == 'staging'
+      date = "2021-09-23" || ENV['DATE']
 
-    run "cd '#{current_path}' && DATE=#{date} #{rake} dpul:replicate:prod"
+      execute "cd '#{current_path}' && DATE=#{date} bundle exec rake dpul:replicate:prod"
+    end
   end
 end
