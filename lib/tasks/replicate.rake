@@ -2,8 +2,6 @@
 
 namespace :dpul do
   namespace :replicate do
-    desc "Replicate production database and index to staging"
-
     # @return [String] Connection string for postgres for the given environment.
     def connection_string(env:)
       db_conf = Rails.configuration.database_configuration[env]
@@ -16,6 +14,7 @@ namespace :dpul do
       "postgresql://#{userspec}@#{host}:#{port}/#{db_name}"
     end
 
+    desc "Replicate production database, index, and uploaded files to staging"
     task prod: :environment do
       abort "this task can only be run on staging" unless Rails.env.staging?
 
@@ -85,6 +84,9 @@ namespace :dpul do
 
       puts "Restoring state of production database"
       `pg_restore --clean --no-owner -d #{restore_connection} #{unzipped_location}`
+
+      puts "Replicating uploaded images from production to staging"
+      FileUtils.cp_r('/mnt/shared_data/dpul_production/.', '/mnt/shared_data/dpul_staging')
     end
   end
 end
