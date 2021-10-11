@@ -1,10 +1,17 @@
 @import "variables/typography";
 
 .site-title-container {
-  font-family: $font-site-title;
+  font-family: $font-secondary;
 }
 
 #exhibit-navbar {
   background-color: rgba(0,0,0,0.25);
   color: white;
+}
+
+// we all prefered the look of the navbar without these styles,
+// but this is what makes it match the spotlight 2.x version of dpul
+.image-masthead .exhibit-navbar .navbar-nav .nav-link {
+  font-family: $font-secondary;
+  text-transform: none;
 }
