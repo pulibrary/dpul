@@ -7,14 +7,7 @@ html, body {
 }
 
 #main-container {
-  min-height: calc(100vh - 400px);
-}
-.wrapper {
-  padding-bottom: 300px;
-}
-.footer {
-  height: 50px;
-  margin-top: -300px;
+  min-height: calc(100vh - 300px);
 }
 
 li {
