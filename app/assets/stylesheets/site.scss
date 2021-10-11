@@ -1,4 +1,5 @@
 // site-wide styles
+@import 'variables/typography';
 
 html, body {
   height: 100%;
@@ -14,4 +15,12 @@ html, body {
 .footer {
   height: 50px;
   margin-top: -300px;
+}
+
+li {
+  font-family: $font-sans;
+}
+
+.exhibit-card {
+  font-family: $font-primary;
 }
