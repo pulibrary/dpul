@@ -64,6 +64,17 @@ RSpec.describe RTLShowPresenter do
       field_presenters = presenter.field_presenters.to_a
       expect(field_presenters[0].render).to eq '<ul><li dir="ltr">1</li><li dir="ltr">2</li></ul>'
     end
+    it "returns presenters that render values as a sentence for search results" do
+      exhibit = FactoryBot.create(:exhibit)
+      exhibit.blacklight_config.add_index_field "readonly_bla_ssim"
+      presenter = described_class.new(
+        SolrDocument.new("readonly_bla_ssim" => ["1", "2"]),
+        double(should_render_field?: true, action_name: "index"),
+        exhibit.blacklight_config
+      )
+      field_presenters = presenter.field_presenters.to_a
+      expect(field_presenters[0].render).to eq '1 and 2'
+    end
   end
 
   describe "#heading" do
