@@ -90,7 +90,7 @@ namespace :replicate do
       abort unless rails_env == 'staging'
       date = "2021-09-23" || ENV['DATE']
 
-      execute "cd '#{current_path}' && DATE=#{date} bundle exec rake dpul:replicate:prod"
+      execute "cd '#{current_path}' && DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rake db:drop && bundle exec rake db:create && DATE=#{date} bundle exec rake dpul:replicate:prod && bundle exec rake db:migrate"
     end
   end
 end

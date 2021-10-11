@@ -4,7 +4,15 @@ require 'i18n/backend/active_record'
 
 Translation = I18n::Backend::ActiveRecord::Translation
 
-if Translation.table_exists?
+# Guard to prevent errors when running rake db:create
+# Important when running replicate:prod cap task
+def database_exist?
+  return true if ActiveRecord::Base.connection
+rescue ActiveRecord::NoDatabaseError
+  false
+end
+
+if database_exist? && Translation.table_exists?
   ##
   # Sets up the new Spotlight Translation backend, backed by ActiveRecord. To
   # turn on the ActiveRecord backend, uncomment the following lines.
