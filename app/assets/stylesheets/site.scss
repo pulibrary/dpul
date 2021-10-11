@@ -4,6 +4,7 @@
 html, body {
   height: 100%;
   margin: 0;
+  font-family: $font-primary;
 }
 
 #main-container {
@@ -14,6 +15,6 @@ li {
   font-family: $font-sans;
 }
 
-.exhibit-card {
-  font-family: $font-primary;
+h1, h2, h3, h4, h3, .facets, .facets-heading {
+  font-family: $font-secondary;
 }
