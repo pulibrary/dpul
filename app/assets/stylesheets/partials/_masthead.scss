@@ -1,3 +1,9 @@
+@import "variables/typography";
+
+.site-title-container {
+  font-family: $font-site-title;
+}
+
 #exhibit-navbar {
   background-color: rgba(0,0,0,0.25);
   color: white;
