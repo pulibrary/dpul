@@ -75,6 +75,17 @@ RSpec.describe RTLShowPresenter do
       field_presenters = presenter.field_presenters.to_a
       expect(field_presenters[0].render).to eq '1 and 2'
     end
+    it "returns presenters that can handle text areas" do
+      exhibit = FactoryBot.create(:exhibit)
+      exhibit.blacklight_config.add_index_field "readonly_bla_ssim", text_area: "1"
+      presenter = described_class.new(
+        SolrDocument.new("readonly_bla_ssim" => ["{\"data\":[{\"type\":\"text\",\"data\":{\"text\":\"testing note\",\"format\":\"html\"}}]}"]),
+        double(should_render_field?: true, action_name: "index"),
+        exhibit.blacklight_config
+      )
+      field_presenters = presenter.field_presenters.to_a
+      expect(field_presenters[0].render).to eq 'testing note'
+    end
   end
 
   describe "#heading" do
