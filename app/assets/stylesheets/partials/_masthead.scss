@@ -15,3 +15,13 @@
   font-family: $font-secondary;
   text-transform: none;
 }
+
+.site-title-wrapper small {
+  min-height: 35px;
+}
+
+.site-title-wrapper small[dir=rtl] {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: right;
+}
