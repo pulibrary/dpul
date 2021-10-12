@@ -77,16 +77,6 @@ module Spotlight
 
     private
 
-      ## Princeton Update
-      # Overrode this to do find_or_initialize_by - this may be broken upstream.
-      def find_or_initialize_job_tracker
-        JobTracker.find_or_initialize_by(job_id: job_id) do |tracker|
-          tracker.job_class = self.class.name
-          tracker.status = 'enqueued'
-        end
-      end
-      ## End Princeton update.
-
       def commit
         Blacklight.default_index.connection.commit
       end
