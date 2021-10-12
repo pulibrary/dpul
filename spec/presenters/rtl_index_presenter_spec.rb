@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe RTLIndexPresenter do
-  subject(:presenter) { described_class.new(document, double(blacklight_config: blacklight_config)) }
+  subject(:presenter) { described_class.new(document, double(blacklight_config: blacklight_config, action_name: "index")) }
 
   let(:document) do
     {

@@ -10,24 +10,6 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
     tag('br')
   end
 
-  ##
-  # Render the show field value for a document
-  #
-  #   Allow an extention point where information in the document
-  #   may drive the value of the field
-  #   @param [Configuration::Field] field_config
-  #   @param [Hash] options
-  #   @options opts [String] :value
-  def field_value(field, options = {})
-    tags = super.split(field_value_separator).collect do |value|
-      content_tag(:li, value.html_safe, dir: strip_tags(value).dir)
-    end
-
-    content_tag(:ul) do
-      safe_join tags
-    end
-  end
-
   def header
     fields = Array.wrap(title_field)
     f = fields.detect { |field| @document.has? field }

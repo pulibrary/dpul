@@ -127,6 +127,7 @@ Rails/OutputSafety:
     - 'app/presenters/rtl_index_presenter.rb'
     - 'app/presenters/rtl_show_presenter.rb'
     - 'spec/presenters/rtl_show_presenter_spec.rb'
+    - 'app/processors/list_rendering.rb'
 
 Rails/DynamicFindBy:
   Exclude:
@@ -136,21 +137,7 @@ Rails/DynamicFindBy:
     - 'app/values/manifest_metadata.rb'
 
 RSpec/ExampleLength:
-  Exclude:
-    - 'spec/controllers/pomegranate/metadata_configurations_controller_spec.rb'
-    - 'spec/controllers/catalog_controller_spec.rb'
-    - 'spec/models/iiif_resource_spec.rb'
-    - 'spec/services/figgy_event_processor_spec.rb'
-    - 'spec/workers/figgy_event_handler_spec.rb'
-    - 'spec/requests/catalog_spec.rb'
-    - 'spec/features/catalog_show_spec.rb'
-    - 'spec/features/**/*.rb'
-    - 'spec/views/**/*.rb'
-    - 'spec/controllers/bookmarks_controller_spec.rb'
-    - 'spec/services/date_sort_migration_spec.rb'
-    - 'spec/controllers/exhibits_controller_spec.rb'
-    - 'spec/models/exhibit_proxy_spec.rb'
-    - 'spec/jobs/spotlight/reindex_job_spec.rb'
+  Enabled: false
 
 RSpec/ExampleWording:
   CustomTransform:
