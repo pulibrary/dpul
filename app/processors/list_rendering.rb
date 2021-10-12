@@ -10,7 +10,7 @@ class ListRendering < Blacklight::Rendering::AbstractStep
 
   def render
     # If it's a text area, don't make it a list.
-    if config.text_area == "1" || context.try(:action_name) != "show"
+    if config.text_area == "1" || context.try(:action_name) != "show" || context.try(:controller_name) != "catalog"
       # Index page should use join step.
       join_result = Blacklight::Rendering::Join.new(values, config, document, context, options, [Blacklight::Rendering::Terminator]).render
       next_step(join_result)
