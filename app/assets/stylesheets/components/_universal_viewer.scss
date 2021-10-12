@@ -1,6 +1,9 @@
 .uv__overlay {
   background:transparent;
   z-index: 1000;
+  height: 60em;
+  padding-top: 1em;
+  padding-bottom: 3em;
 
   iframe {
     width: 100%;
@@ -17,4 +20,3 @@
     }
   }
 }
-
