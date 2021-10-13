@@ -50,6 +50,7 @@ class CatalogController < ApplicationController
     config.view.slideshow!(partials: [:index])
 
     config.show.tile_source_field = :tile_source_ssim
+    config.index.tile_source_field = :tile_source_ssim
     config.show.partials.insert(1, :universal_viewer)
     config.view.embed(partials: ['universal_viewer'])
 
