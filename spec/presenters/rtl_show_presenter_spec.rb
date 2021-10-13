@@ -12,7 +12,7 @@ RSpec.describe RTLShowPresenter do
       title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"]
     )
   end
-  let(:view_context) { double(blacklight_config: blacklight_config, action_name: "show") }
+  let(:view_context) { double(blacklight_config: blacklight_config, action_name: "show", controller_name: "catalog") }
   let(:blacklight_config) do
     double(
       show_fields: {
@@ -24,7 +24,7 @@ RSpec.describe RTLShowPresenter do
   end
 
   describe "link_to_facet" do
-    let(:view_context) { double(blacklight_config: blacklight_config, action_name: "show", search_state: double(reset: double(add_facet_params: true)), search_action_path: "/exhibit/catalog") }
+    let(:view_context) { double(blacklight_config: blacklight_config, action_name: "show", controller_name: "catalog", search_state: double(reset: double(add_facet_params: true)), search_action_path: "/exhibit/catalog") }
 
     before do
       allow(view_context).to receive(:link_to).with("بي", "/exhibit/catalog").and_return("<a link>بي</a link>".html_safe)
@@ -58,7 +58,7 @@ RSpec.describe RTLShowPresenter do
       exhibit.blacklight_config.add_index_field "readonly_bla_ssim"
       presenter = described_class.new(
         SolrDocument.new("readonly_bla_ssim" => ["1", "2"]),
-        double(should_render_field?: true, action_name: "show"),
+        double(should_render_field?: true, action_name: "show", controller_name: "catalog"),
         exhibit.blacklight_config
       )
       field_presenters = presenter.field_presenters.to_a
@@ -69,7 +69,7 @@ RSpec.describe RTLShowPresenter do
       exhibit.blacklight_config.add_index_field "readonly_bla_ssim"
       presenter = described_class.new(
         SolrDocument.new("readonly_bla_ssim" => ["1", "2"]),
-        double(should_render_field?: true, action_name: "index"),
+        double(should_render_field?: true, action_name: "index", controller_name: "catalog"),
         exhibit.blacklight_config
       )
       field_presenters = presenter.field_presenters.to_a
@@ -80,7 +80,7 @@ RSpec.describe RTLShowPresenter do
       exhibit.blacklight_config.add_index_field "readonly_bla_ssim", text_area: "1"
       presenter = described_class.new(
         SolrDocument.new("readonly_bla_ssim" => ["{\"data\":[{\"type\":\"text\",\"data\":{\"text\":\"testing note\",\"format\":\"html\"}}]}"]),
-        double(should_render_field?: true, action_name: "index"),
+        double(should_render_field?: true, action_name: "index", controller_name: "catalog"),
         exhibit.blacklight_config
       )
       field_presenters = presenter.field_presenters.to_a
