@@ -33,3 +33,7 @@ ul {
   padding-bottom: 6rem;
   min-height: 3.75em;
 }
+
+.input-group:not(.has-validation) > .custom-select:not(:last-child) {
+    width: 15%;
+}
