@@ -3,30 +3,34 @@
 .quote {
   padding: 2em 2.5em;
   margin: 2em 0 2.5em;
-  position: relative;
   background: $light-gray;
+  position: relative;
 
   &:before {
     font-family: $font-secondary;
     content: "“";
     position: absolute;
-    top: 35px;
+    top: -70px;
     left: -20px;
     font-size: 10em;
     color: $gray-light;
     font-weight: normal;
+    width: 0;
+    height: 0;
   }
 
   &:after {
       font-family: $font-secondary;
       content: "”";
       position: absolute;
-      bottom: -110px;
+      bottom: -20px;
       line-height: 100px;
-      right: -32px;
+      right: 90px;
       font-size: 20em;
       color: $gray-light;
       font-weight: normal;
+      width: 0;
+      height: 0;
     }
 
   &__content {
