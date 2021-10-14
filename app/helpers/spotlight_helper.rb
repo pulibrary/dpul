@@ -12,6 +12,6 @@ module SpotlightHelper
     tag = options.fetch(:tag, :h4)
     document ||= @document
 
-    content_tag(tag, presenter(document).header, itemprop: "name")
+    content_tag(tag, presenter(document).heading, itemprop: "name")
   end
 end
