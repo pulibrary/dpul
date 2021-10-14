@@ -1,4 +1,4 @@
-.cards {
+.recent-item-cards {
   margin: 0.5em 0;
   padding: 0;
   -moz-column-gap: 0.5em;
@@ -6,7 +6,7 @@
   column-gap: 0.5em;
 }
 
-.cards .card {
+.recent-item-cards .recent-item-card {
   display: inline-block;
   padding: 1em;
   margin: 0 0 0.5em;
@@ -21,12 +21,12 @@
   }
 }
 
-.cards .card img {
+.recent-item-cards .recent-item-card img {
   width: 100%;
 }
 
 @media only screen and (min-width: 70em) {
-  .cards {
+  .recent-item-cards {
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
@@ -34,7 +34,7 @@
 }
 
 @media only screen and (min-width: 54em) {
-  .cards {
+  .recent-item-cards {
     -moz-column-count: 3;
     -webkit-column-count: 3;
     column-count: 3;
@@ -42,18 +42,18 @@
 }
 
 @media only screen and (min-width: 44em) {
-  .cards {
+  .recent-item-cards {
     -moz-column-count: 4;
     -webkit-column-count: 4;
     column-count: 4;
   }
 }
 
-.cards {
+.recent-item-cards {
   @include clearfix;
 }
 
-.card {
+.recent-item-card {
   $base-spacing: 1.4em;
   $card-background-color: white;
   $card-border-color: #ddd;
@@ -82,18 +82,18 @@
     background: $card-image-background;
   }
 
-  .card-header {
+  .recent-item-card-header {
     padding-top: 0.7em;
   }
 
   &:hover {
     background-color: $card-hover-background;
 
-    .card-image img {
+    .recent-item-card-image img {
       background: $card-image-hover-background;
     }
 
-    .card-header {
+    .recent-item-card-header {
       background-color: $card-hover-background;
     }
   }
@@ -101,7 +101,7 @@
   &:active {
     background-color: $card-background;
 
-    .card-header {
+    .recent-item-card-header {
       background-color: $card-background;
     }
   }

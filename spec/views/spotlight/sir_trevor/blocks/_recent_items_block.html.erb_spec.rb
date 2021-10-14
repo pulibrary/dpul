@@ -62,8 +62,8 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
   it 'renders a set of recent items that have thunbnails' do
     render partial: p, locals: { recent_items_block: block }
 
-    expect(rendered).to have_selector ".card", count: 3
+    expect(rendered).to have_selector ".recent-item-card", count: 3
     # Assert first document is the most recently modified one.
-    expect(rendered).to have_selector ".card:nth-child(1)", text: "Derechos y Democracia: Centro Internacional de Derechos Humanos y Desarrollo Democrático."
+    expect(rendered).to have_selector ".recent-item-card:nth-child(1)", text: "Derechos y Democracia: Centro Internacional de Derechos Humanos y Desarrollo Democrático."
   end
 end
