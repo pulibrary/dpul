@@ -8,10 +8,10 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
     RecentItemsBlock.new({ type: 'block', data: {} }, view)
   end
   let(:exhibit) { FactoryBot.create(:exhibit) }
+  let(:search_service) { Blacklight::SearchService.new(config: CatalogController.blacklight_config) }
 
   before do
-    allow(controller).to receive(:view_context).and_return(view)
-    allow(controller).to receive(:action_name).and_return('index')
+    allow(controller).to receive(:search_service).and_return(search_service)
     allow(view.main_app).to receive(:track_test_path).and_return('/track')
     allow(view).to receive_messages(recent_items_block: block)
     allow(view).to receive_messages(
