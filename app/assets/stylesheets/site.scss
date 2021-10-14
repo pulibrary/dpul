@@ -37,3 +37,7 @@ ul {
 .input-group:not(.has-validation) > .custom-select:not(:last-child) {
     width: 15%;
 }
+
+#content img {
+  max-width: 100%;
+}
