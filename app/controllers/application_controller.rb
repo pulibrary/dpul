@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
   include Spotlight::Controller
+  include Spotlight::Concerns::ApplicationController
 
   before_action :set_paper_trail_whodunnit
 

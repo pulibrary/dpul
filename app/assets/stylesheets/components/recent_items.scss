@@ -1,0 +1,108 @@
+.cards {
+  margin: 0.5em 0;
+  padding: 0;
+  -moz-column-gap: 0.5em;
+  -webkit-column-gap: 0.5em;
+  column-gap: 0.5em;
+}
+
+.cards .card {
+  display: inline-block;
+  padding: 1em;
+  margin: 0 0 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  .thumbnail {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+}
+
+.cards .card img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 70em) {
+  .cards {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media only screen and (min-width: 54em) {
+  .cards {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 44em) {
+  .cards {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+}
+
+.cards {
+  @include clearfix;
+}
+
+.card {
+  $base-spacing: 1.4em;
+  $card-background-color: white;
+  $card-border-color: #ddd;
+  $card-border: none;//1px solid $card-border-color;
+  $card-background: lighten($card-background-color,2);
+  $card-header-background: $card-background;
+  $card-hover-background: lighten($card-background, 5);
+  $card-image-background: #DBD199;
+  $card-image-hover-background: lighten($card-image-background, 5);
+
+  @include transition (all 0.2s ease-in-out);
+  background-color: $card-background;
+  border: $card-border;
+  margin-bottom: $base-spacing*1.5;
+  padding: 0 1em;
+  cursor: pointer;
+  position: relative;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+    @include transition (all 0.2s ease-in-out);
+    background: $card-image-background;
+  }
+
+  .card-header {
+    padding-top: 0.7em;
+  }
+
+  &:hover {
+    background-color: $card-hover-background;
+
+    .card-image img {
+      background: $card-image-hover-background;
+    }
+
+    .card-header {
+      background-color: $card-hover-background;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
+}
