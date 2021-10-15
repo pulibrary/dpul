@@ -1,0 +1,11 @@
+// Increase exhibit masthead title sizes
+.masthead .site-title-wrapper {
+  // Original value: 2rem.
+  .site-title {
+      font-size: 2.25rem;
+    }
+  // Original value: 1.0125rem
+  small {
+    font-size: 1.463rem;
+  }
+}
