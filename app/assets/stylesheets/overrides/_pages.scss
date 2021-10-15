@@ -1,0 +1,13 @@
+#sidebar {
+  // Exhibit content page list
+  ol.sidenav {
+    // Non-active headings gray
+    li h2 a {
+      color: #666d78;
+    }
+    // Active headings bold
+    li.active h2 {
+      font-weight: bold;
+    }
+  }
+}
