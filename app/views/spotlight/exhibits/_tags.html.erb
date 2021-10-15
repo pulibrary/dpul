@@ -1,0 +1,9 @@
+<% if tags.any? %>
+  <ul class="nav nav-pills tags">
+    <%= nav_link t('.all'), exhibits_path, active: params[:tag].blank? %>
+
+    <% tags.sort_by(&:name).each do |tag| %>
+      <%= nav_link tag.name, exhibits_path(tag: tag.name), active: params[:tag] == tag.name %>
+    <% end %>
+  </ul>
+<% end %>
