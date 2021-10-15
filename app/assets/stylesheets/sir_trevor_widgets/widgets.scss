@@ -1,0 +1,12 @@
+// Add border to widget text area
+.st-block [contenteditable="true"],
+.st-block [contenteditable="true"]:active,
+.st-block [contenteditable="true"]:focus,
+.st-block input[type="text"],
+.st-block input[type="text"]:active,
+.st-block input[type="text"]:focus,
+.st-block textarea,
+.st-block textarea:hover,
+.st-block textarea:active {
+  border: 0.1em solid #d4d4d4;
+}
