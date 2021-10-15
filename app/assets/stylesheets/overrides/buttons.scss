@@ -1,0 +1,48 @@
+@import "variables/colors";
+// Dropdown arrow/caret
+button, a.button, input[type="reset"], input[type="submit"], input[type="button"] {
+    -webkit-appearance: none;
+    border-radius: 4px;
+    background: $blue-dark;
+    background-clip: padding-box;
+    border: 1px solid $light-gray;
+    cursor: pointer;
+    color: $white;
+    display: inline-block;
+    outline: 0;
+    overflow: visible;
+    margin: 0;
+    padding: 1em;
+    text-shadow: 0;
+    text-decoration: none;
+    vertical-align: top;
+    font: bold 1em $font-sans;
+    font-weight: 900;
+}
+
+.btn-primary, .expanded-add-button .input-field input[type='submit'], .st-block-controls__button {
+    background-color: $blue-dark;
+    border: 1px solid $blue-dark;
+}
+
+.btn-outline-secondary, .st-block-controls__button {
+    color: #6c757d;
+    border-color: #6c757d;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    background-color: $light-gray;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+ul.sidenav li .btn-outline-secondary {
+  width: 100%;
+}
+
+ul.sidenav li {
+  width: 100%;
+}
