@@ -89,31 +89,37 @@ RSpec.describe RTLShowPresenter do
   end
 
   describe "#heading" do
-    let(:blacklight_config) do
-      double(
-        show_fields: {
-          field: double(highlight: false, accessor: nil, default: nil, field: "field", text_area: false, helper_method: nil, link_to_facet: nil, itemprop: nil, separator_options: nil, :separator_options= => nil)
-        },
-        view_config: double(title_field: "title", html_title_field: nil),
-        facet_fields: {}
+    let(:presenter) do
+      described_class.new(
+        document,
+        double(should_render_field?: true, action_name: "show", controller_name: "catalog"),
+        CatalogController.blacklight_config
+      )
+    end
+
+    let(:document) do
+      SolrDocument.new(
+        field: ["بي"],
+        special: ["Traité sur l'art de la charpente : théorique et pratique"],
+        full_title_tesim: ["بي", "Traité sur l'art de la charpente : théorique et pratique"]
       )
     end
 
     it "returns multiple titles appropriately" do
-      expect(presenter.header).to eq "<ul><li dir=\"rtl\">بي</li><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
+      expect(presenter.heading).to eq "<ul><li dir=\"rtl\">بي</li><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
     end
     context "when there's an override title" do
       let(:document) do
         SolrDocument.new(
           field: ["بي"],
           special: ["Traité sur l'art de la charpente : théorique et pratique"],
-          title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
+          full_title_tesim: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
           "override-title_ssim": ["Test"]
         )
       end
 
       it "uses it" do
-        expect(presenter.header).to eq "<ul><li dir=\"ltr\">Test</li></ul>"
+        expect(presenter.heading).to eq "<ul><li dir=\"ltr\">Test</li></ul>"
       end
     end
 
@@ -122,18 +128,34 @@ RSpec.describe RTLShowPresenter do
         SolrDocument.new(
           field: ["بي"],
           special: ["Traité sur l'art de la charpente : théorique et pratique"],
-          title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
+          full_title_tesim: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
           "override-title_ssim": [""]
         )
       end
 
       it "uses the default title" do
-        expect(presenter.header).to eq "<ul><li dir=\"rtl\">بي</li><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
+        expect(presenter.heading).to eq "<ul><li dir=\"rtl\">بي</li><li dir=\"ltr\">Traité sur l'art de la charpente : théorique et pratique</li></ul>"
       end
     end
   end
 
   describe "#html_title" do
+    let(:presenter) do
+      described_class.new(
+        document,
+        double(should_render_field?: true, action_name: "show", controller_name: "catalog"),
+        CatalogController.blacklight_config
+      )
+    end
+
+    let(:document) do
+      SolrDocument.new(
+        field: ["بي"],
+        special: ["Traité sur l'art de la charpente : théorique et pratique"],
+        full_title_tesim: ["بي", "Traité sur l'art de la charpente : théorique et pratique"]
+      )
+    end
+
     it "returns multiple titles appropriately" do
       expect(presenter.html_title).to eq "بي, Traité sur l'art de la charpente : théorique et pratique"
     end
@@ -142,7 +164,7 @@ RSpec.describe RTLShowPresenter do
         SolrDocument.new(
           field: ["بي"],
           special: ["Traité sur l'art de la charpente : théorique et pratique"],
-          title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
+          full_title_tesim: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
           "override-title_ssim": ["<i>Test</i>"]
         )
       end
@@ -157,7 +179,7 @@ RSpec.describe RTLShowPresenter do
         SolrDocument.new(
           field: ["بي"],
           special: ["Traité sur l'art de la charpente : théorique et pratique"],
-          title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
+          full_title_tesim: ["بي", "Traité sur l'art de la charpente : théorique et pratique"],
           "override-title_ssim": [""]
         )
       end
@@ -172,7 +194,7 @@ RSpec.describe RTLShowPresenter do
         SolrDocument.new(
           field: ["بي"],
           special: ["Traité sur l'art de la charpente : théorique et pratique"],
-          title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"]
+          full_title_tesim: ["بي", "Traité sur l'art de la charpente : théorique et pratique"]
         )
       end
 

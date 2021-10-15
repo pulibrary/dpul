@@ -1,3 +1,5 @@
 <%# Princeton customization to add Dashboard button for easy access %>
-<%= exhibit_edit_link @page, class: 'edit-button pull-right btn btn-primary' %>
-<%= link_to t('spotlight.dashboards.show.header'), spotlight.exhibit_dashboard_path(@page.exhibit), class: 'pull-right btn btn-default' %>
+<div class='float-right'>
+  <%= exhibit_edit_link @page, class: 'edit-button btn btn-primary' %>
+  <%= link_to t('spotlight.dashboards.show.header'), spotlight.exhibit_dashboard_path(@page.exhibit), class: 'btn btn-outline-secondary' %>
+</div>

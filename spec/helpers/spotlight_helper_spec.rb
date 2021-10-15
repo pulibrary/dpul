@@ -20,7 +20,7 @@ describe SpotlightHelper do
 
     before do
       allow(helper).to receive(:presenter).and_return(presenter)
-      allow(presenter).to receive(:header).and_return('title')
+      allow(presenter).to receive(:heading).and_return('title')
     end
 
     it 'returns a single ltr span tag' do

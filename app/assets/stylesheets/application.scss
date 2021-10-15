@@ -15,13 +15,17 @@
 @import 'leaflet-areaselect';
 @import 'spotlight/spotlight';
 
+@import "components/font-face";
 @import "components/universal_viewer";
 @import "components/back_to_top";
+@import "components/recent_items";
 @import "partials/masthead";
 @import "partials/breadcrumbs";
 @import "partials/about_pages";
 @import "overrides/carousel";
 @import "overrides/buttons";
+@import "overrides/masonry";
 @import "sir_trevor_widgets/quote";
+@import "sir_trevor_widgets/widgets";
 @import "partials/gallery";
 @import "site";
