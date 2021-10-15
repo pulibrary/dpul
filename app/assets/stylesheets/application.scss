@@ -2,6 +2,8 @@
 *= require bootstrap-tagsinput
 */
 
+@import 'variables/variables_bootstrap';
+
 @import 'bootstrap';
 
 @import 'blacklight/blacklight';
@@ -9,7 +11,6 @@
 
 @import 'application_variables';
 @import 'spotlight/variables_bootstrap';
-@import 'variables/variables_bootstrap';
 @import 'sir-trevor/main';
 @import 'leaflet';
 @import 'leaflet-areaselect';
