@@ -20,7 +20,7 @@ button, a.button, input[type="reset"], input[type="submit"], input[type="button"
     font-weight: 900;
 }
 
-.btn, .expanded-add-button .input-field input[type='submit'], .st-block-controls__button {
+.btn-primary, .expanded-add-button .input-field input[type='submit'], .st-block-controls__button {
     background-color: $blue-dark;
     border: 1px solid $blue-dark;
 }
@@ -32,7 +32,7 @@ button, a.button, input[type="reset"], input[type="submit"], input[type="button"
     font-size: 1rem;
     background-color: $light-gray;
     padding: 0.375rem 0.75rem;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 900;
     line-height: 1.5;
     border-radius: 0.25rem;
