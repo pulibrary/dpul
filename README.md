@@ -78,5 +78,5 @@ created, updated, or deleted.
 * Note you can't use any date after 9/23 until #1023 is resolved
 
 ```
-ssh pulsys@dpul-staging1 'sudo service nginx stop' && bundle exec cap staging replicate:prod && ssh pulsys@dpul-staging1 'sudo service nginx start'
+ssh pulsys@dpul-staging1 'sudo service nginx stop' && bundle exec cap staging replicate:to_staging && ssh pulsys@dpul-staging1 'sudo service nginx start'
 ```
