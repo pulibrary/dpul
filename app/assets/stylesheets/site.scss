@@ -15,8 +15,12 @@ li {
   font-family: $font-sans;
 }
 
-h1, h2, h3, h4, h3, .facets, .facets-heading {
+h1, h2, h3, h4, h5, h6 .facets, .facets-heading {
   font-family: $font-secondary;
+}
+
+h1, h2, h3, h4, h5, h6, .st__content-block, .content-block {
+  margin: 1em 0 0.5em;
 }
 
 h1 {
