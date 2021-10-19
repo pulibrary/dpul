@@ -14,24 +14,10 @@ namespace :dpul do
       "postgresql://#{userspec}@#{host}:#{port}/#{db_name}"
     end
 
-    desc "Replicate production database, index, and uploaded files to staging"
-    task prod: :environment do
-      abort "this task can only be run on staging" unless Rails.env.staging?
-
-      # Default to today
-      date = ENV["DATE"] || Date.current.to_s
-
-      puts "Restoring postgres from current production state"
-      restore_postgres(date: date)
-
-      puts "Restoring Solr from production backup."
-      restore_solr(date: date)
-    end
-
-    def restore_solr(date:)
+    def replicate_solr(date:)
       date = date.delete("-")
-
       solr_url, collection = solr_connection_info
+
       `curl "#{solr_url}/admin/collections?action=DELETE&name=#{collection}"`
       `curl "#{solr_url}/admin/collections?action=RESTORE&name=dpul-production-#{date}.bk&collection=#{collection}&location=/mnt/solr_backup/solr7/production/#{date}"`
     end
@@ -43,13 +29,8 @@ namespace :dpul do
       [connection.join("/"), collection]
     end
 
-    def restore_postgres(date:)
-      # This will break when staging and production are on two different
-      # postgres servers. We can fix this in the future if we can make
-      # database.yml not use the same env variables for prod, and give the
-      # staging machines the prod credential environment variables.
+    def dump_postgres(date:)
       dump_connection = connection_string(env: "production")
-      restore_connection = connection_string(env: Rails.env)
 
       download_from_cloud = false
       download_dir = Rails.root.join("tmp")
@@ -73,20 +54,72 @@ namespace :dpul do
         # unzip it
         `bunzip2 #{download_location}` # this takes a minute
         unzipped_location = download_location[0..-5] # strip `.bz2`
+        return unzipped_location
+
       else # get it from the prod database
         filename = "dpul_production_replication_#{date}.sql"
         download_location = File.join(download_dir, filename)
 
-        puts "Dumping state of production database"
         `pg_dump -Fc #{dump_connection} > #{download_location}`
-        unzipped_location = download_location
+        return download_location
       end
+    end
 
-      puts "Restoring state of production database"
-      `pg_restore --clean --no-owner -d #{restore_connection} #{unzipped_location}`
+    def load_postgres(dump_file:)
+      load_connection = connection_string(env: Rails.env)
+
+      `pg_restore --clean --no-owner -d #{load_connection} #{dump_file}`
+    end
+
+    def replicate_uploaded_images
+      FileUtils.cp_r('/mnt/shared_data/dpul_production/.', '/mnt/shared_data/dpul_staging')
+    end
+
+    desc "Replicate production database, index, and uploaded files to staging"
+    task to_staging: :environment do
+      # This will break when staging and production are on two different
+      # postgres servers. We can fix this in the future if we can make
+      # database.yml not use the same env variables for prod, and give the
+      # staging machines the prod credential environment variables.
+      # Or, we can get the desired dump format on google cloud and pull from there
+      abort "this task can only be run on staging" unless Rails.env.staging?
+
+      # Default to today
+      date = ENV["DATE"] || Date.current.to_s
+
+      puts "Dumping state of production database"
+      dump_file = dump_postgres(date: date)
+
+      puts "Loading postgres to staging"
+      load_postgres(dump_file: dump_file)
+
+      puts "Replicating Solr from production backup."
+      replicate_solr(date: date)
 
       puts "Replicating uploaded images from production to staging"
-      FileUtils.cp_r('/mnt/shared_data/dpul_production/.', '/mnt/shared_data/dpul_staging')
+      replicate_uploaded_images
+    end
+
+    desc "Dump production database"
+    task dump_prod: :environment do
+      abort "this task can only be run on staging" unless Rails.env.staging?
+
+      # Default to today
+      date = ENV["DATE"] || Date.current.to_s
+
+      puts "Dumping postgres from current production state"
+      dump_file = dump_postgres(date: date)
+      puts "Saved production dump at #{dump_file}"
+    end
+
+    desc "Load production database to development. You can generate a dump file by running the dump_prod task on the staging machine, then scp it to your machine."
+    task load_db: :environment do
+      dump_file = ENV["DUMP_FILE"]
+      abort "usage: DUMP_FILE=[filename] rake dpul:replicate:prod:dev" unless dump_file
+      abort "this task can only be run in development" unless Rails.env.development?
+
+      puts "Loading postgres to development"
+      load_postgres(dump_file: dump_file)
     end
   end
 end
