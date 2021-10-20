@@ -117,7 +117,7 @@ en:
       exhibit_card_back:
         visit_exhibit: "Visit collection"
       new:
-        header: Create a new collection
+        page_title: Create a new collection
       import:
         instructions: You can import a collection JSON file exported from this application to use that data file to define this collection.
       export:
@@ -182,9 +182,7 @@ en:
             label: "From this collection"
             help: "To find an image, start typing the title of a collection item."
     sites:
-      new:
-        section: Manage collections
-        page_title: Create a new collection
+      home: Collections
       edit:
         section: Manage collections
       edit_exhibits:
