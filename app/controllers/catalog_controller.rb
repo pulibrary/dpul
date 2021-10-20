@@ -85,7 +85,8 @@ class CatalogController < ApplicationController
     config.document_unique_id_param = 'ids'
 
     # solr field configuration for search results/index views
-    config.index.title_field = ::Blacklight::Configuration::Field.new(field: Spotlight::Engine.config.iiif_title_fields, accessor: :title_or_override_title)
+    config.index.title_field = FieldStringifier.new(::Blacklight::Configuration::Field.new(field: Spotlight::Engine.config.iiif_title_fields, accessor: :title_or_override_title))
+
     config.index.display_title_field = 'readonly_title_tesim'
 
     config.add_search_field 'all_fields', label: 'Keyword'
