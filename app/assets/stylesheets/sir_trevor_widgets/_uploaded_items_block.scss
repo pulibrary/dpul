@@ -1,0 +1,4 @@
+// Force block to fill a column without wrapping.
+.content-block > .text-col.col-md-6 {
+  display: inline-block;
+}
