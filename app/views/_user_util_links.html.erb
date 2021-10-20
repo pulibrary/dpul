@@ -1,12 +1,12 @@
 <menu-bar type="main-menu" :menu-items="[
+<% if current_exhibit && current_exhibit.languages.accessible_by(current_ability).any? %>
+  {name: '<%= Spotlight::Language.new(locale: I18n.locale).to_native %>', component: '<%= Spotlight::Language.new(locale: I18n.locale).to_native %>', href: '#', children: [
+    <% locale_selecter_dropown_options.each do |language| %>
+      {name: '<%= language.to_native %>', component: '<%= language.to_native %>', href: '<%= current_page_for_locale(language.locale) %>'},
+    <% end %>
+  ]},
+<% end %>
 <% if current_user %>
-  <% if current_exhibit && current_exhibit.languages.accessible_by(current_ability).any? %>
-    {name: '<%= Spotlight::Language.new(locale: I18n.locale).to_native %>', component: '<%= Spotlight::Language.new(locale: I18n.locale).to_native %>', href: '#', children: [
-      <% locale_selecter_dropown_options.each do |language| %>
-        {name: '<%= language.to_native %>', component: '<%= language.to_native %>', href: '<%= current_page_for_locale(language.locale) %>'},
-      <% end %>
-    ]},
-  <% end %>
     {name: '<%= current_user.to_s %>', component: 'current_user', children: [
           <% if current_exhibit and can? :curate, current_exhibit %>
           {name: '<%= t('spotlight.dashboards.show.header') %>', component: 'current_exhibit', href: '<%= spotlight.exhibit_dashboard_path(current_exhibit) %>'},
