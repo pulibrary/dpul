@@ -1,0 +1,10 @@
+es:
+  spotlight:
+    curation:
+      nav:
+        home: "Inicio"
+  main_navigation:
+    browse:
+      label: "Explorar"
+    about:
+      label: "Acerca de"
