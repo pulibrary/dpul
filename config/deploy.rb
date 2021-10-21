@@ -88,7 +88,7 @@ namespace :replicate do
     on roles(:web) do
       rails_env = fetch(:rails_env).to_s
       abort unless rails_env == 'staging'
-      date = "2021-09-23" || ENV['DATE']
+      date = ENV["DATE"] || Date.current.to_s
 
       execute "cd '#{current_path}' && DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rake db:drop && bundle exec rake db:create && DATE=#{date} bundle exec rake dpul:replicate:to_staging && bundle exec rake db:migrate"
     end

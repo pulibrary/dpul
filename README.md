@@ -75,7 +75,7 @@ created, updated, or deleted.
 
 ## Replicate database and solr index from production to staging
 
-* Note you can't use any date after 9/23 until #1023 is resolved
+* Note it will default to today's backups unless you supply an env var like `DATE=2021-10-21`
 
 ```
 ssh pulsys@dpul-staging1 'sudo service nginx stop' && bundle exec cap staging replicate:to_staging && ssh pulsys@dpul-staging1 'sudo service nginx start'
