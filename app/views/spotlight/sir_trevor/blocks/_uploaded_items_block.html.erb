@@ -1,0 +1,36 @@
+<div class="content-block item-text row d-block clearfix">
+  <div class="items-col spotlight-flexbox <%= 'col-md-6' if uploaded_items_block.text? %> col-12 <%= uploaded_items_block.content_align == 'right'  ? 'float-right' : 'float-left'  %> uploaded-items-block">
+    <% if uploaded_items_block.files.present? %>
+      <% uploaded_items_block.files.each do |file| %>
+        <div class="box" data-id="<%= file[:id] %>">
+          <div class="contents">
+            <% if file[:link].present? %>
+              <%= link_to file[:link], rel: 'ugc' do %>
+                <%= image_tag file[:url], class: 'img-thumbnail', alt: file[:caption] %>
+              <% end %>
+            <% else %>
+              <%= image_tag file[:url], class: 'img-thumbnail', alt: '', role: 'presentation' %>
+            <% end %>
+            <% if file[:caption].present? %>
+              <div class="caption">
+                <%= file[:caption] %>
+              </div>
+            <% end %>
+
+            <% if uploaded_items_block.zpr_link? %>
+              <%= button_tag t('.zpr_link_html', title: file[:caption]), class: 'btn btn-secondary zpr-link', data: { 'iiif-tilesource' => { type: 'image', url: file[:url] }.to_json } %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if uploaded_items_block.text? %>
+    <%- # Customized just to remove mw-100 from here. %>
+    <div class="text-col col-md-6">
+      <%= content_tag(:h3, uploaded_items_block.title) if uploaded_items_block.title.present? %>
+      <%= sir_trevor_markdown uploaded_items_block.text %>
+    </div>
+  <% end %>
+</div>
