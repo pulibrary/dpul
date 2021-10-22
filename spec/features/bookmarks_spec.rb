@@ -39,6 +39,8 @@ RSpec.describe 'Bookmarks', type: :feature, js: true do
       visit "/bookmarks"
       expect(page).to have_content "1 entry found"
       expect(page).to have_link "CSV"
+      expect(page).to have_link "Email"
+      expect(page).to have_link "Cite"
 
       page.click_on title
       expect(page).to have_current_path spotlight.exhibit_solr_document_path(exhibit, iiif_resource1.noid)
