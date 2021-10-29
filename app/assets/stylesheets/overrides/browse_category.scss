@@ -8,13 +8,19 @@
 
     .title {
       display: block;
-      max-height: calc(1.75rem * 1.2 * 3); /* font size * line-height * # of lines */
+      max-height: calc(1.75rem * 1.2 * 4); /* font size * line-height * # of lines */
       overflow: hidden;
     }
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .text-overlay .browse-category-title .title {
+    max-height: calc(1.5rem * 1.2 * 4);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .text-overlay .browse-category-title .title {
     max-height: calc(1.5rem * 1.2 * 3);
   }
