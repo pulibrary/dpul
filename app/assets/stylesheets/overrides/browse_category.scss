@@ -1,5 +1,6 @@
-.browse-category, .browse-landing .category .image-overlay, .browse-landing .category .text-overlay {
-  box-shadow: inset 0 0 1px 250px rgba(196,194,194,0.2);
+.text-overlay {
+  /* Old style that washes out the background image of a browse category */
+  /* box-shadow: inset 0 0 1px 250px rgba(196,194,194,0.2); */
 
   .browse-category-title {
     margin-top: auto;
@@ -14,13 +15,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199.98px) {
-  .browse-category-title .title {
+  .text-overlay .browse-category-title .title {
     max-height: calc(1.5rem * 1.2 * 3);
   }
 }
-
-// @media screen and (max-width: 767.98px) {
-//   .browse-category-title .title {
-//     max-height: calc(1.75rem * 1.2 * 3);
-//   }
-// }
