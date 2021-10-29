@@ -32,9 +32,3 @@
     font-size: 1.25rem;
   }
 }
-
-@include media-breakpoint-down(md) {
-  .browse-landing .text-overlay .browse-category-title {
-    font-size: 1.5rem;
-  }
-}
