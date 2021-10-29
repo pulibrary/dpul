@@ -1,4 +1,4 @@
-.text-overlay {
+.browse-landing .text-overlay {
   /* Old style that washes out the background image of a browse category */
   /* box-shadow: inset 0 0 1px 250px rgba(196,194,194,0.2); */
 
@@ -16,25 +16,25 @@
 }
 
 @include media-breakpoint-between(md, xl) {
-  .text-overlay .browse-category-title {
+  .browse-landing .text-overlay .browse-category-title {
     font-size: 1.25rem;
   }
 }
 
 @include media-breakpoint-between(lg, xl) {
-  .text-overlay .browse-category-title .title {
+  .browse-landing .text-overlay .browse-category-title .title {
     max-height: calc(1.25rem * 1.2 * 5);
   }
 }
 
 @include media-breakpoint-between(md, lg) {
-  .text-overlay .browse-category-title .title {
+  .browse-landing .text-overlay .browse-category-title .title {
     max-height: calc(1.25rem * 1.2 * 4);
   }
 }
 
 @include media-breakpoint-down(md) {
-  .text-overlay .browse-category-title {
+  .browse-landing .text-overlay .browse-category-title {
     font-size: 1.5rem;
   }
 }
