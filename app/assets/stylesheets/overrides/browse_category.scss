@@ -15,13 +15,7 @@
   }
 }
 
-@include media-breakpoint-between(md, xl) {
-  .browse-landing .text-overlay .browse-category-title {
-    font-size: 1.25rem;
-  }
-}
-
-@include media-breakpoint-between(lg, xl) {
+@include media-breakpoint-down(xl) {
   .browse-landing .text-overlay .browse-category-title .title {
     max-height: calc(1.25rem * 1.2 * 5);
   }
@@ -30,6 +24,12 @@
 @include media-breakpoint-between(md, lg) {
   .browse-landing .text-overlay .browse-category-title .title {
     max-height: calc(1.25rem * 1.2 * 4);
+  }
+}
+
+@include media-breakpoint-down(xl) {
+  .browse-landing .text-overlay .browse-category-title {
+    font-size: 1.25rem;
   }
 }
 
