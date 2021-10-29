@@ -3,14 +3,22 @@
   /* box-shadow: inset 0 0 1px 250px rgba(196,194,194,0.2); */
 
   .browse-category-title {
-    font-size: 1.5rem;
     margin-top: auto;
     margin-bottom: auto;
 
     .title {
       display: block;
-      max-height: calc(1.5rem * 1.2 * 5); /* font size * line-height * # of lines */
       overflow: hidden;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .browse-landing .text-overlay .browse-category-title {
+    font-size: 1.5rem;
+
+    .title {
+      max-height: calc(1.5rem * 1.2 * 5); /* font size * line-height * # of lines */
     }
   }
 }
