@@ -13,17 +13,11 @@
   }
 }
 
-@include media-breakpoint-up(xl) {
-  .browse-landing .text-overlay .browse-category-title {
-    font-size: 1.5rem;
-
-    .title {
-      max-height: calc(1.5rem * 1.2 * 5); /* font size * line-height * # of lines */
-    }
-  }
-}
-
 @include media-breakpoint-down(xl) {
+  .browse-landing .text-overlay .browse-category-title {
+    font-size: 1.25rem;
+  }
+
   .browse-landing .text-overlay .browse-category-title .title {
     max-height: calc(1.25rem * 1.2 * 5);
   }
@@ -35,8 +29,12 @@
   }
 }
 
-@include media-breakpoint-down(xl) {
+@include media-breakpoint-up(xl) {
   .browse-landing .text-overlay .browse-category-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+
+    .title {
+      max-height: calc(1.5rem * 1.2 * 5); /* font size * line-height * # of lines */
+    }
   }
 }
