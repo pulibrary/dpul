@@ -1,3 +1,40 @@
-.browse-category, .browse-landing .category .image-overlay, .browse-landing .category .text-overlay {
-	box-shadow: inset 0 0 1px 250px rgba(196,194,194,0.2)
+.browse-landing .text-overlay {
+  /* washes out the background image of a browse category */
+  box-shadow: inset 0 0 1px 250px rgba(196,194,194,0.2);
+
+  .browse-category-title {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    .title {
+      display: block;
+      overflow: hidden;
+    }
+  }
+}
+
+@include media-breakpoint-down(xl) {
+  .browse-landing .text-overlay .browse-category-title {
+    font-size: 1.25rem;
+  }
+
+  .browse-landing .text-overlay .browse-category-title .title {
+    max-height: calc(1.25rem * 1.2 * 5);
+  }
+}
+
+@include media-breakpoint-between(md, lg) {
+  .browse-landing .text-overlay .browse-category-title .title {
+    max-height: calc(1.25rem * 1.2 * 4);
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .browse-landing .text-overlay .browse-category-title {
+    font-size: 1.5rem;
+
+    .title {
+      max-height: calc(1.5rem * 1.2 * 5); /* font size * line-height * # of lines */
+    }
+  }
 }
