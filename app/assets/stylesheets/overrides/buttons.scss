@@ -12,7 +12,8 @@ button, a.button, input[type="reset"], input[type="submit"], input[type="button"
     outline: 0;
     overflow: visible;
     margin: 0;
-    padding: 1em;
+    padding: 0.5em;
+    line-height: 1;
     text-shadow: 0;
     text-decoration: none;
     vertical-align: top;
@@ -23,6 +24,7 @@ button, a.button, input[type="reset"], input[type="submit"], input[type="button"
 .btn-primary, .expanded-add-button .input-field input[type='submit'], .st-block-controls__button {
     background-color: $blue-dark;
     border: 1px solid $blue-dark;
+    
 }
 
 .btn-outline-secondary, .st-block-controls__button {
