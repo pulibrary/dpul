@@ -1,6 +1,6 @@
 .browse-landing .text-overlay {
-  /* Old style that washes out the background image of a browse category */
-  /* box-shadow: inset 0 0 1px 250px rgba(196,194,194,0.2); */
+  /* washes out the background image of a browse category */
+  box-shadow: inset 0 0 1px 250px rgba(196,194,194,0.2);
 
   .browse-category-title {
     margin-top: auto;
