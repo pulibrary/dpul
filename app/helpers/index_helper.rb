@@ -34,7 +34,11 @@ module IndexHelper
   def contextual_url_for_document(document, exhibit)
     return nil if document.nil?
 
-    [spotlight, exhibit, document]
+    if exhibit
+      [spotlight, exhibit, document]
+    else
+      [main_app, document]
+    end
   end
 
   private

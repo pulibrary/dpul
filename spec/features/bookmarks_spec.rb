@@ -47,6 +47,12 @@ RSpec.describe 'Bookmarks', type: :feature, js: true do
 
       visit "/catalog?search_field=all_fields&q="
       expect(page).to have_content "In Bookmarks"
+
+      # Exhibit was destroyed, leaving an orphaned Resource.
+      # @TODO Make this case impossible to reach.
+      exhibit.destroy
+      visit "/bookmarks"
+      expect(page).to have_content "1 entry found"
     end
   end
 end
