@@ -1,4 +1,14 @@
 .exhibit-card {
-  padding-bottom: 6rem;
-  min-height: 3.75em;
+  padding-bottom: 4.125rem;
+
+  .card-title {
+    -webkit-line-clamp: 2;
+    margin-top: 6px;
+    font-size: 16px;
+  }
+
+  .card-img-overlay {
+    background: rgba($light, $exhibit-card-overlay-opacity);
+    min-height: 4.125rem;
+  }
 }
