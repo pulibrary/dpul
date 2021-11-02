@@ -4,12 +4,13 @@
       <% uploaded_items_block.files.each do |file| %>
         <div class="box" data-id="<%= file[:id] %>">
           <div class="contents">
+            <%# Customized these image_tags to use a different class on these images, no border %>
             <% if file[:link].present? %>
               <%= link_to file[:link], rel: 'ugc' do %>
-                <%= image_tag file[:url], class: 'img-thumbnail', alt: file[:caption] %>
+                <%= image_tag file[:url], class: 'img-uploaded', alt: file[:caption] %>
               <% end %>
             <% else %>
-              <%= image_tag file[:url], class: 'img-thumbnail', alt: '', role: 'presentation' %>
+              <%= image_tag file[:url], class: 'img-uploaded', alt: '', role: 'presentation' %>
             <% end %>
             <% if file[:caption].present? %>
               <div class="caption">
