@@ -5,13 +5,11 @@ class ApplicationController < ActionController::Base
   # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
   include Spotlight::Controller
+  include Spotlight::Concerns::ApplicationController
 
   before_action :set_paper_trail_whodunnit
-  # this action will be removed in Blacklight 7
-  #   skipping it now suppresses a deprecation warning
-  skip_after_action :discard_flash_if_xhr
 
-  layout 'blacklight'
+  layout 'spotlight/spotlight'
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -29,6 +27,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # This override keeps various layout templates from erroring when they check
+  # whether there's an exhibit selected
   def current_exhibit
     super
   rescue ActiveRecord::RecordNotFound

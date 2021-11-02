@@ -2,7 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/pulibrary/dpul.svg?style=svg)](https://circleci.com/gh/pulibrary/dpul)
 [![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=plastic)](./LICENSE)
-[![Coverage Status](https://coveralls.io/repos/github/pulibrary/dpul/badge.svg?branch=main)](https://coveralls.io/github/pulibrary/dpul?branch=main)
+![Coverage Status](https://img.shields.io/badge/coverage-100%25-green.svg)
 
 A [Spotlight](https://github.com/sul-dlss/spotlight) application for Princeton University Library,
 formerly known as Pomegranate, but renamed to the offical brand: Digital PUL.
@@ -72,3 +72,11 @@ following:
 
 This will subscribe to the events and update the DPUL records when they're
 created, updated, or deleted.
+
+## Replicate database and solr index from production to staging
+
+* Note it will default to today's backups unless you supply an env var like `DATE=2021-10-21`
+
+```
+ssh pulsys@dpul-staging1 'sudo service nginx stop' && bundle exec cap staging replicate:to_staging && ssh pulsys@dpul-staging1 'sudo service nginx start'
+```

@@ -1,6 +1,11 @@
-$font-serif: 'Droid Serif', Georgia, Times, serif !default;
-$font-sans: 'Dejavu Sans', Helvetica, sans-serif !default;
-$font-mono: 'Lucida Console', Monaco, monospace !default;
-$text-color: #000 !default;
+// used for body text, cards, buttons
+$font-primary: "DejaVu Sans", "HelveticaNeue", Arial, sans-serif;
 
+// used for masthead title and other headers
+$font-secondary: Georgia, Times, 'Times New Roman', serif;
+
+// used for lists and tabs -- was font-sans in pul_assets
+$font-sans: "DejaVu Sans", "Arial Unicode MS", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
+$text-color: #000 !default;
 $text-small: 12px;

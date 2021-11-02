@@ -34,21 +34,16 @@ module IndexHelper
   def contextual_url_for_document(document, exhibit)
     return nil if document.nil?
 
-    [spotlight, exhibit, document]
-  end
-
-  # Ensures that only a single string is passed from the IndexPresenter
-  # @param current_presenter [Class]
-  # @param show_link_field [Symbol]
-  # @return [String]
-  def index_masonry_document_label(document)
-    field = field_from document: document
-    Array.wrap(field).first
+    if exhibit
+      [spotlight, exhibit, document]
+    else
+      [main_app, document]
+    end
   end
 
   private
 
     def field_from(document:)
-      index_presenter(document).label(document_show_link_field(document))
+      document_presenter(document).heading
     end
 end

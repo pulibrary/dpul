@@ -8,12 +8,11 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
     RecentItemsBlock.new({ type: 'block', data: {} }, view)
   end
   let(:exhibit) { FactoryBot.create(:exhibit) }
+  let(:search_service) { Blacklight::SearchService.new(config: CatalogController.blacklight_config) }
 
   before do
-    # Include the search helper so the block can run a scoped query. Normally
-    # the view has access to this from the controller, but this test uses an
-    # anonymous controller.
-    view.class.include Blacklight::SearchHelper
+    allow(controller).to receive(:search_service).and_return(search_service)
+    allow(view.main_app).to receive(:track_test_path).and_return('/track')
     allow(view).to receive_messages(recent_items_block: block)
     allow(view).to receive_messages(
       blacklight_config: CatalogController.blacklight_config,
@@ -63,8 +62,8 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
   it 'renders a set of recent items that have thunbnails' do
     render partial: p, locals: { recent_items_block: block }
 
-    expect(rendered).to have_selector ".card", count: 3
+    expect(rendered).to have_selector ".recent-item-card", count: 3
     # Assert first document is the most recently modified one.
-    expect(rendered).to have_selector ".card:nth-child(1)", text: "Derechos y Democracia: Centro Internacional de Derechos Humanos y Desarrollo Democrático."
+    expect(rendered).to have_selector ".recent-item-card:nth-child(1)", text: "Derechos y Democracia: Centro Internacional de Derechos Humanos y Desarrollo Democrático."
   end
 end

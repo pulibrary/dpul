@@ -8,11 +8,15 @@ class ExhibitProxy
     @exhibit = exhibit
   end
 
-  def reindex(log_entry = nil)
+  def reindex(*_args)
     members_to_remove_from_index.each(&:remove_from_solr)
     members.each do |member|
-      IIIFIngestJob.perform_later member, exhibit, log_entry
+      IIIFIngestJob.perform_later member, exhibit
     end
+  end
+
+  def estimated_size
+    members.size
   end
 
   def collection_manifest

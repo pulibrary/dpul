@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class RecentItemsBlock < SirTrevorRails::Blocks::SolrDocumentsBlock
-  include Blacklight::RequestBuilders
   delegate :blacklight_config, to: :solr_helper
 
   def documents
@@ -13,10 +12,16 @@ class RecentItemsBlock < SirTrevorRails::Blocks::SolrDocumentsBlock
   end
 
   def search_response
-    builder = SearchBuilder.new(solr_helper).with(search_params)
-    builder = builder.append :exclude_null_thumbnail
+    repository.search(search_builder)
+  end
 
-    repository.search(builder)
+  def search_service
+    solr_helper.controller.send(:search_service)
+  end
+
+  def search_builder
+    builder = search_service.search_builder.with(search_params)
+    builder.append :exclude_null_thumbnail
   end
 
   def search_params

@@ -5070,7 +5070,7 @@ loglevel@^1.6.8:
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.7.1.tgz#005fde2f5e6e47068f935ff28573e125ef72f197"
   integrity sha512-Hesni4s5UkWkwCGJMQGAh71PaLUmKFM60dHvq0zi/vDhhrzuk+4GgNbTXJ12YYQJn6ZKBDNIjYcuQGKudvqrIw==
 
-loose-envify@^1.0.0:
+loose-envify@^1.0.0, loose-envify@^1.2.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -5107,10 +5107,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-lux-design-system@^2.0.3:
-  version "2.16.6"
-  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-2.16.6.tgz#d8053bb3de6eae6ce6c8c14bdb27916621560503"
-  integrity sha512-jfhN/p60wbGyBIpJHjVNPNJGRG+dICYC2sPlxnF52nZSvrD5SdRe6vzo1NSWMB46ITu42SuZMeHm0HnkfxIc2A==
+lux-design-system@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-3.1.4.tgz#80edf2b23e7df7f41607e2242ce7af6c577b533a"
+  integrity sha512-x6/7qcVW/JiQJzeNsbpaKLxRcD8jLqIwo3jnU6VCCFW88FPqfWC2QKX4oqTulilwtxffYSqcfYDCn2iA0JWehA==
   dependencies:
     lodash "^4.17.11"
     mini-css-extract-plugin "^0.4.5"
@@ -5122,6 +5122,8 @@ lux-design-system@^2.0.3:
     tinycolor2 "^1.4.1"
     v-calendar "^0.9.7"
     vue "^2.5.18"
+    vue-cookies "^1.7.4"
+    vue-focus "^2.1.0"
     vue-lodash "^2.0.0"
     vue-meta "^1.5.6"
     vue-router "^3.0.2"
@@ -8781,6 +8783,18 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+
+vue-cookies@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/vue-cookies/-/vue-cookies-1.7.4.tgz#d241d0a0431da0795837651d10b4d73e7c8d3e8d"
+  integrity sha512-mOS5Btr8V9zvAtkmQ7/TfqJIropOx7etDAgBywPCmHjvfJl2gFbH2XgoMghleLoyyMTi5eaJss0mPN7arMoslA==
+
+vue-focus@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vue-focus/-/vue-focus-2.1.0.tgz#7a0337ce9074d5ef03d15a4b5b862cf45e5e04e3"
+  integrity sha1-egM3zpB01e8D0VpLW4Ys9F5eBOM=
+  dependencies:
+    loose-envify "^1.2.0"
 
 vue-hot-reload-api@^2.2.0:
   version "2.3.4"

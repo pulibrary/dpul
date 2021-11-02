@@ -32,7 +32,7 @@ RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view 
     allow(view).to receive(:index_field_label).with(nil, 'two').and_return 'Some label'
     render partial: p, locals: { key: 'two', config: facet_field, f: builder }
 
-    expect(rendered).to have_selector '.import-tooltip'
+    expect(rendered).not_to have_selector '.import-tooltip'
   end
 
   it "renders a field to set link_to_search" do

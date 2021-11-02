@@ -7,6 +7,8 @@ class BookmarksController < CatalogController
 
   def index
     blacklight_config.add_show_tools_partial(:csv, partial: 'csv_link')
+    blacklight_config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
+    blacklight_config.add_show_tools_partial(:citation)
     super
   end
 

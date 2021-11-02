@@ -1,0 +1,46 @@
+// site-wide styles
+@import 'variables/typography';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: $font-primary;
+}
+
+#main-container {
+  min-height: calc(100vh - 300px);
+}
+
+li {
+  font-family: $font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 .facets, .facets-heading {
+  font-family: $font-secondary;
+}
+
+h1, h2, h3, h4, h5, h6, .st__content-block, .content-block {
+  margin: 1em 0 0.5em;
+}
+
+h1 {
+  font-size: 2.074em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-group:not(.has-validation) > .custom-select:not(:last-child) {
+    width: 15%;
+}
+
+#content img {
+  max-width: 100%;
+}
+
+.form-select.search-field {
+  background-color: $light;
+}

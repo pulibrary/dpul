@@ -42,7 +42,7 @@ RSpec.describe CatalogController do
 
       get :index, params: { q: "", exhibit_id: exhibit.id }
 
-      expect(document_ids).to eq [resource.document_builder.to_solr.to_a.first[:id]]
+      expect(document_ids).to eq [resource.solr_documents.first[:id]]
     end
     context "when not signed in" do
       it "hides resources which are in un-published exhibits" do
@@ -123,7 +123,7 @@ RSpec.describe CatalogController do
 
       get :index, params: { q: "Scanned Resource", exhibit_id: exhibit.id }
 
-      expect(document_ids).to eq [resource.document_builder.to_solr.to_a.first[:id]]
+      expect(document_ids).to eq [resource.solr_documents.first[:id]]
     end
   end
 
@@ -194,7 +194,7 @@ RSpec.describe CatalogController do
   end
 
   def document_ids
-    assigns[:document_list].map do |x|
+    assigns[:response].documents.map do |x|
       x["id"]
     end
   end

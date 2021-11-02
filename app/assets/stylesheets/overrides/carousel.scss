@@ -1,0 +1,29 @@
+@import "variables/colors";
+.carousel {
+  .row {
+    background: $black;
+  }
+  .carousel-indicators li {
+    max-width: 90%;
+    width: 90%;
+    border-width: 0px;
+    &.active {
+      border-width: 0px;
+      background-color: $gray-dark;
+      &:nth-child(odd) {
+        background-color: $gray-dark;
+      }
+      &:hover, &:focus {
+        border-width: 0px;
+        background-color: $gray-dark;
+      }
+    }
+    &:hover, &:focus {
+      border-width: 0px;
+      background-color: $yellow-light;
+    }
+    &:nth-child(odd) {
+      background-color: $gray-lightest;
+    }
+  }
+}

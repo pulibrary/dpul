@@ -173,7 +173,7 @@ RSpec.describe 'Browsing exhibits', type: :feature do
         expect(page).to have_css '.item-count', text: '1 item'
       end
 
-      it 'presents the bookmark action' do
+      it 'presents the bookmark action', js: true do
         expect(page).to have_content "Bookmark"
       end
     end

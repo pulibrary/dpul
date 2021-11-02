@@ -34,6 +34,12 @@ Rails.application.routes.draw do
     end
   end
   resources :exhibits, path: '/', only: [:create, :update, :destroy]
+
+  # Override the Spotlight bulk actions routes to use local BulkActionsController
+  post '/:exhibit_id/bulk_actions/change_visibility', as: "change_visibility_exhibit_bulk_actions", to: 'bulk_actions#change_visibility'
+  post '/:exhibit_id/bulk_actions/add_tags', as: "add_tags_exhibit_bulk_actions", to: 'bulk_actions#add_tags'
+  post '/:exhibit_id/bulk_actions/remove_tags', as: "remove_tags_exhibit_bulk_actions", to: 'bulk_actions#remove_tags'
+
   match '/:exhibit_id/metadata_configuration', to: 'pomegranate/metadata_configurations#update', via: [:patch, :put]
 
   # root to: "catalog#index" # replaced by spotlight root path

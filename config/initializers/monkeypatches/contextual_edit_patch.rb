@@ -3,11 +3,11 @@
 Rails.application.config.to_prepare do
   module ContextualEditPatch
     def edit
-      @response, @document = fetch params[:id], exhibit: @exhibit
+      @response, @document = search_service.fetch params[:id], exhibit: @exhibit
     end
 
     def update
-      @response, @document = fetch params[:id], exhibit: @exhibit
+      @response, @document = search_service.fetch params[:id], exhibit: @exhibit
       @document.update(current_exhibit, solr_document_params)
       @document.save
 

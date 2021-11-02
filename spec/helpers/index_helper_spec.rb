@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe IndexHelper do
   let(:helper) { TestingHelper.new }
-  let(:index_presenter) { instance_double('RTLIndexPresenter', class: RTLIndexPresenter) }
+  let(:document_presenter) { instance_double('RTLIndexPresenter', class: RTLIndexPresenter) }
   let(:document) do
     {
       title: 'title',
@@ -24,41 +24,16 @@ describe IndexHelper do
     Object.send(:remove_const, :TestingHelper)
   end
 
-  describe '#index_masonry_document_label' do
-    subject(:output) { helper.index_masonry_document_label(document) }
-
-    let(:label) { 'title' }
-
-    before do
-      allow(helper).to receive(:index_presenter).and_return(index_presenter)
-      allow(helper).to receive(:document_show_link_field).and_return(:full_title_tesim)
-      allow(index_presenter).to receive(:label).and_return(label)
-    end
-
-    it 'retrieves the label using the title' do
-      expect(output).to eq 'title'
-    end
-
-    context 'when multiple titles exist' do
-      let(:label) { ['title1', 'title2'] }
-
-      it 'retrieves the label using only the first title' do
-        expect(output).to eq 'title1'
-      end
-    end
-  end
-
   describe '#render_index_document' do
     before do
-      allow(helper).to receive(:index_presenter).and_return(index_presenter)
-      allow(helper).to receive(:document_show_link_field).and_return(:title)
+      allow(helper).to receive(:document_presenter).and_return(document_presenter)
       allow(helper).to receive(:url_for_document).and_return('link')
       allow(helper).to receive(:document_link_params).and_return({})
-      allow(index_presenter).to receive(:label).and_return(label)
+      allow(document_presenter).to receive(:heading).and_return(heading)
     end
 
-    context 'when given a ltr label' do
-      let(:label) { 'title' }
+    context 'when given a ltr heading' do
+      let(:heading) { 'title' }
 
       it 'returns a single ltr span tag' do
         tag = helper.render_index_document(document)
@@ -66,8 +41,8 @@ describe IndexHelper do
       end
     end
 
-    context 'when given a rtl label' do
-      let(:label) { 'تضيح المقال' }
+    context 'when given a rtl heading' do
+      let(:heading) { 'تضيح المقال' }
 
       it 'returns a single rtl span tag' do
         tag = helper.render_index_document(document)
@@ -76,7 +51,7 @@ describe IndexHelper do
     end
 
     context 'when given a multivalued title' do
-      let(:label) { ['تضيح المقال', 'title'] }
+      let(:heading) { ['تضيح المقال', 'title'] }
 
       it 'returns multiple span tags' do
         tag = helper.render_index_document(document)

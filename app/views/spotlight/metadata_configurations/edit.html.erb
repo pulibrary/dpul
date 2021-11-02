@@ -1,8 +1,10 @@
-<%= render 'spotlight/shared/exhibit_sidebar' %>
-<div id="content" class="col-md-9">
+<% content_for(:sidebar) do %>
+  <%= render 'spotlight/shared/exhibit_sidebar' %>
+<% end %>
+
 <%= configuration_page_title %>
 <%= bootstrap_form_for @blacklight_configuration, url: spotlight.exhibit_metadata_configuration_path(@exhibit), layout: :horizontal, label_col: 'col-md-3 col-sm-3', control_col: 'col-md-5 col-sm-5' do |f| %>
-    <h3><%= t(:'.order_header') %></h3>
+    <h2><%= t(:'.order_header') %></h2>
 
     <p class="instructions"><%= t :'.instructions' %></p>
 
@@ -10,10 +12,12 @@
       <thead>
         <tr>
           <th><%= t :'.field.label' %></th>
+          <% # Princeton Customization - add text area header  %>
           <th class="text-center">
             <div>Text Area</div>
             <%= select_deselect_button %>
           </th>
+          <% # End Princeton Customization %>
           <th class="text-center">
             <div>
               <%= t :'.view.show' %>
@@ -28,10 +32,12 @@
               <%= select_deselect_button %>
             </th>
           <% end %>
+          <% # Princeton Customization - add link to search header %>
           <th class="text-center">
             <div>Link to Search</div>
             <%= select_deselect_button %>
           </th>
+          <% # End Princeton Customization %>
         </tr>
       </thead>
       <tbody class="metadata_fields dd dd-list" data-behavior="nestable" data-max-depth="1" data-list-node-name="tbody" data-item-node-name="tr" data-expand-btn-HTML=" " data-collapse-btn-HTML=" ">
@@ -51,18 +57,19 @@
 <% end %>
 
 
-    <h3><%= t(:'.exhibit_specific.header') %></h3>
+    <h2 class="mt-4"><%= t(:'.exhibit_specific.header') %></h2>
     <p class="instructions"><%= t(:'.exhibit_specific.instructions') %></p>
 
     <table class="table table-striped" id="exhibit-specific-fields">
       <tbody>
+        <% # Princeton customization - only allow edit of writeable fields. %>
         <% @exhibit.custom_fields.writeable.each do |field| %>
           <tr>
             <td>
               <div class="field-label"><%= field.label %></div>
               <div class="actions">
-                <%= exhibit_edit_link field, class: 'btn btn-link' %> &middot;
-                <%= exhibit_delete_link field, class: 'btn btn-link' %>
+                <%= exhibit_edit_link field %> &middot;
+                <%= exhibit_delete_link field %>
               </div>
             </td>
             <td class="field-description">
@@ -76,4 +83,3 @@
 
 
 <%= exhibit_create_link Spotlight::CustomField.new, class: 'btn btn-primary' %>
-</div>

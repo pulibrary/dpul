@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class IiifManifest < ::Spotlight::Resources::IiifManifest
-  def to_solr
+  def to_solr(exhibit: nil)
+    @exhibit ||= exhibit
     add_noid
     # this is called in super, but idempotent so safe to call here also; we need the metadata
     solr_hash.merge!(manifest_metadata)

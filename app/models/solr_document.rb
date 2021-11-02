@@ -56,4 +56,24 @@ class SolrDocument
     values = fetch(Spotlight::Engine.config.iiif_manifest_field, nil)
     values.first
   end
+
+  def title_or_override_title(field)
+    override_title = fetch(override_title_field, []).select(&:present?)
+    # Replicate heading functionality in presenter. Return override title,
+    # title, or ID in that order.
+    override_title.presence || fetch(field, []).select(&:present?).presence || id
+  end
+
+  def override_title_field
+    [exhibit_prefix, "override-title_ssim"].select(&:present?).join("_")
+  end
+
+  # Use the public key to figure out the exhibit prefix for this document.
+  # @example
+  #   document.keys # => ["exhibit_test_public_bsi"]
+  #   document.exhibit_prefix # => "exhibit_test"
+  def exhibit_prefix
+    public_key = keys.map(&:to_s).find { |key| key.end_with?("public_bsi") } || ""
+    public_key.split("_")[0..1].join("_")
+  end
 end

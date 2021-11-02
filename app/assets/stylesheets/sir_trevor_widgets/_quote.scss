@@ -1,0 +1,48 @@
+// blockquote
+@import "variables/colors";
+.quote {
+  padding: 2em 2.5em;
+  margin: 2em 0 2.5em;
+  background: $light-gray;
+  position: relative;
+
+  &:before {
+    font-family: $font-secondary;
+    content: "“";
+    position: absolute;
+    top: -70px;
+    left: -20px;
+    font-size: 10em;
+    color: $gray-light;
+    font-weight: normal;
+    width: 0;
+    height: 0;
+  }
+
+  &:after {
+      font-family: $font-secondary;
+      content: "”";
+      position: absolute;
+      bottom: -20px;
+      line-height: 100px;
+      right: 90px;
+      font-size: 20em;
+      color: $gray-light;
+      font-weight: normal;
+      width: 0;
+      height: 0;
+    }
+
+  &__content {
+    font-family: $font-secondary;
+    font-size: 1.15rem;
+    line-height: 1.6rem;
+  }
+
+  cite,
+  &__cite {
+    color: $dark-gray;
+    font-size: 0.9rem;
+    font-style: normal;
+  }
+}

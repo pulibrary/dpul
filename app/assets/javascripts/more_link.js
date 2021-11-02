@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    var value_id = $("#content").data("id");
+    var value_id = $("#document").data("document-id");
     var limitCharacters = 1200;
-    var dl_children = $("#doc_"+value_id).find('ul');
+    var dl_children = $("#doc_"+value_id).find('dd');
     dl_children.each(function(i, item){
         var char_length = $(this).text().length;
         if (char_length > limitCharacters) {

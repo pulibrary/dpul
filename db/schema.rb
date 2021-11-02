@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_14_174938) do
+ActiveRecord::Schema.define(version: 2021_09_20_165118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,14 @@ ActiveRecord::Schema.define(version: 2021_09_14_174938) do
     t.datetime "updated_at"
   end
 
+  create_table "spotlight_bulk_updates", force: :cascade do |t|
+    t.string "file", null: false
+    t.bigint "exhibit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exhibit_id"], name: "index_spotlight_bulk_updates_on_exhibit_id"
+  end
+
   create_table "spotlight_contact_emails", id: :serial, force: :cascade do |t|
     t.integer "exhibit_id"
     t.string "email", default: "", null: false
@@ -133,6 +141,19 @@ ActiveRecord::Schema.define(version: 2021_09_14_174938) do
     t.index ["exhibit_id"], name: "index_spotlight_custom_search_fields_on_exhibit_id"
   end
 
+  create_table "spotlight_events", force: :cascade do |t|
+    t.bigint "exhibit_id"
+    t.string "resource_type", null: false
+    t.bigint "resource_id", null: false
+    t.string "type"
+    t.string "collation_key"
+    t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exhibit_id"], name: "index_spotlight_events_on_exhibit_id"
+    t.index ["resource_type", "resource_id"], name: "index_spotlight_events_on_resource_type_and_resource_id"
+  end
+
   create_table "spotlight_exhibits", id: :serial, force: :cascade do |t|
     t.string "title", null: false
     t.string "subtitle"
@@ -151,8 +172,10 @@ ActiveRecord::Schema.define(version: 2021_09_14_174938) do
     t.string "theme"
     t.boolean "thumbnails_enabled", default: true
     t.boolean "condensed_viewer", default: false
+    t.index ["masthead_id"], name: "index_spotlight_exhibits_on_masthead_id"
     t.index ["site_id"], name: "index_spotlight_exhibits_on_site_id"
     t.index ["slug"], name: "index_spotlight_exhibits_on_slug", unique: true
+    t.index ["thumbnail_id"], name: "index_spotlight_exhibits_on_thumbnail_id"
   end
 
   create_table "spotlight_featured_images", id: :serial, force: :cascade do |t|
@@ -181,6 +204,46 @@ ActiveRecord::Schema.define(version: 2021_09_14_174938) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["exhibit_id"], name: "index_spotlight_filters_on_exhibit_id"
+  end
+
+  create_table "spotlight_groups", force: :cascade do |t|
+    t.string "slug"
+    t.text "title"
+    t.bigint "exhibit_id"
+    t.integer "weight", default: 50
+    t.boolean "published"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exhibit_id"], name: "index_spotlight_groups_on_exhibit_id"
+  end
+
+  create_table "spotlight_groups_members", id: false, force: :cascade do |t|
+    t.bigint "group_id"
+    t.string "member_type"
+    t.bigint "member_id"
+    t.index ["group_id"], name: "index_spotlight_groups_members_on_group_id"
+    t.index ["member_type", "member_id"], name: "index_spotlight_groups_members_on_member_type_and_member_id"
+  end
+
+  create_table "spotlight_job_trackers", force: :cascade do |t|
+    t.string "on_type", null: false
+    t.bigint "on_id", null: false
+    t.string "resource_type", null: false
+    t.bigint "resource_id", null: false
+    t.string "job_id"
+    t.string "job_class"
+    t.string "parent_job_id"
+    t.string "parent_job_class"
+    t.string "status"
+    t.bigint "user_id"
+    t.text "log"
+    t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_spotlight_job_trackers_on_job_id"
+    t.index ["on_type", "on_id"], name: "index_spotlight_job_trackers_on_on_type_and_on_id"
+    t.index ["resource_type", "resource_id"], name: "index_spotlight_job_trackers_on_resource_type_and_resource_id"
+    t.index ["user_id"], name: "index_spotlight_job_trackers_on_user_id"
   end
 
   create_table "spotlight_languages", id: :serial, force: :cascade do |t|
@@ -239,6 +302,7 @@ ActiveRecord::Schema.define(version: 2021_09_14_174938) do
     t.index ["locale"], name: "index_spotlight_pages_on_locale"
     t.index ["parent_page_id"], name: "index_spotlight_pages_on_parent_page_id"
     t.index ["slug", "scope"], name: "index_spotlight_pages_on_slug_and_scope", unique: true
+    t.index ["thumbnail_id"], name: "index_spotlight_pages_on_thumbnail_id"
   end
 
   create_table "spotlight_reindexing_log_entries", id: :serial, force: :cascade do |t|
@@ -293,8 +357,11 @@ ActiveRecord::Schema.define(version: 2021_09_14_174938) do
     t.integer "thumbnail_id"
     t.string "default_index_view_type"
     t.boolean "search_box", default: false
+    t.string "subtitle"
     t.index ["exhibit_id"], name: "index_spotlight_searches_on_exhibit_id"
+    t.index ["masthead_id"], name: "index_spotlight_searches_on_masthead_id"
     t.index ["slug", "scope"], name: "index_spotlight_searches_on_slug_and_scope", unique: true
+    t.index ["thumbnail_id"], name: "index_spotlight_searches_on_thumbnail_id"
   end
 
   create_table "spotlight_sites", id: :serial, force: :cascade do |t|

@@ -14,8 +14,9 @@
 //= require jquery
 //= require jquery_ujs
 // Required by Blacklight
+//= require popper
+//= require bootstrap
 //= require blacklight/blacklight
-//= require pul-assets
 //= require 'blacklight_oembed/jquery.oembed.js'
 //= require blacklight_gallery
 //= require openseadragon

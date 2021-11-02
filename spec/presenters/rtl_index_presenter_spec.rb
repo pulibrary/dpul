@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe RTLIndexPresenter do
-  subject(:presenter) { described_class.new(document, double(blacklight_config: blacklight_config)) }
+  subject(:presenter) { described_class.new(document, double(blacklight_config: blacklight_config, action_name: "index", controller_name: "catalog")) }
 
   let(:document) do
     {
@@ -59,46 +59,26 @@ RSpec.describe RTLIndexPresenter do
     end
 
     context 'when an override field exists' do
-      let(:index_config) { double(title_field: 'title', display_title_field: 'alternate_title') }
-      let(:blacklight_config) do
-        double(
-          index: index_config,
-          index_fields: { field: field_config },
-          facet_fields: {}
-        )
-      end
-      let(:document) do
-        {
-          title: title,
-          alternate_title: alternate_title,
-          "override-title_ssim": ["Test"]
-        }
-      end
-
       it 'renders it' do
-        expect(presenter.label(:title)).to eq "Test"
+        exhibit = FactoryBot.create(:exhibit)
+        presenter = described_class.new(
+          SolrDocument.new(full_title_tesim: title, "exhibit_test_override-title_ssim": ["Test"], "exhibit_test_public_bsi": false),
+          double(document_index_view_type: :current_view, should_render_field?: true, action_name: "index", controller_name: "catalog"),
+          exhibit.blacklight_config
+        )
+        expect(presenter.heading).to eq "Test"
       end
     end
 
     context "when there's a blank override title" do
-      let(:index_config) { double(title_field: 'title', display_title_field: 'alternate_title') }
-      let(:blacklight_config) do
-        double(
-          index: index_config,
-          index_fields: { field: field_config },
-          facet_fields: {}
-        )
-      end
-      let(:document) do
-        {
-          title: title,
-          alternate_title: alternate_title,
-          "override-title_ssim": [""]
-        }
-      end
-
       it "uses the default title" do
-        expect(presenter.label(:title)).to eq alternate_title.first
+        exhibit = FactoryBot.create(:exhibit)
+        presenter = described_class.new(
+          SolrDocument.new(full_title_tesim: title, "exhibit_test_override-title_ssim": [""], "exhibit_test_public_bsi": false),
+          double(document_index_view_type: :current_view, should_render_field?: true, action_name: "index", controller_name: "catalog"),
+          exhibit.blacklight_config
+        )
+        expect(presenter.heading).to eq title.first
       end
     end
 

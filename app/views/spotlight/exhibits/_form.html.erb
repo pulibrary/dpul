@@ -1,30 +1,31 @@
-
 <%= bootstrap_form_for @exhibit, url: ((spotlight.exhibit_path(@exhibit) if @exhibit.persisted?) || spotlight.exhibits_path), layout: :horizontal, label_col: 'col-md-2', control_col: 'col-md-10', html: {class: "row"} do |f| %>
-<div class="row col-md-12">
-  <%= f.text_field :title %>
+<div class="col-md-12">
+  <%= f.text_field :title, disabled: !default_language?, help: !default_language? ? t('.uneditable_non_default_language') : '' %>
   <%= f.text_field :subtitle %>
   <%= f.text_area :description %>
   <%= f.text_field :tag_list, value: f.object.tag_list.to_s %>
-  <%= f.form_group(:contact_emails, label: { text: nil, class: nil }, help: nil) do %>
+  <%= f.form_group(:contact_emails, label: { text: nil, class: nil, for: 'exhibit_contact_email_0' }, help: nil) do %>
     <%= f.fields_for :contact_emails do |contact| %>
       <%= render partial: 'contact', locals: {exhibit: @exhibit, contact: contact} %>
     <% end %>
-    <span id='another-email' class="btn btn-sm btn-info"><%= t('.add_contact_email_button') %></span>
-    <p class="help-block"><%= t(:'.fields.contact_emails.help_block') %></p>
+    <button id='another-email' class="btn btn-sm btn-info"><%= t('.add_contact_email_button') %></button>
+    <small class="form-text text-muted"><%= t(:'.fields.contact_emails.help_block') %></small>
   <% end %>
-  <%= f.form_group :thumbnails_enabled, label: { text: 'Display thumbnails?', class: nil }, help: nil do %>
+  <% # Princeton Customizations %>
+  <%= f.form_group :thumbnails_enabled, label: { text: 'Display thumbnails?', class: 'pt-0' }, help: nil do %>
     <%= f.check_box :thumbnails_enabled, value: f.object.thumbnails_enabled, label: "" %>
   <% end %>
-  <%= f.form_group :condensed_viewer, label: { text: 'Condense Viewer?', class: nil }, help: nil do %>
+  <%= f.form_group :condensed_viewer, label: { text: 'Condense Viewer?', class: 'pt-0' }, help: nil do %>
     <%= f.check_box :condensed_viewer, value: f.object.condensed_viewer, label: "" %>
   <% end %>
-  <%= f.form_group :published, label: { text: nil, class: nil }, help: nil do %>
+  <% # End Princeton Customizations %>
+  <%= f.form_group :published, label: { text: nil, class: 'pt-0' }, help: nil do %>
     <%= f.check_box :published, label: "" %>
-    <p class="help-block"><%= t(:'.fields.published.help_block') %></p>
+    <small class="form-text text-muted"><%= t(:'.fields.published.help_block') %></small>
   <% end %>
-  
+
   <div class="form-actions">
-    
+
     <div class="primary-actions">
       <%= f.submit nil, class: 'btn btn-primary' %>
     </div>

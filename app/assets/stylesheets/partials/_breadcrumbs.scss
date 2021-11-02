@@ -1,0 +1,7 @@
+.breadcrumbs-container {
+  .breadcrumb li.breadcrumb-item .truncated-value {
+    max-width: 30ex;
+    display: inline-block;
+    width: unset;
+  }
+}

@@ -81,3 +81,16 @@ after 'deploy:published', 'sneakers:restart'
 after 'deploy:starting', 'sidekiq:quiet'
 after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:published', 'sidekiq:restart'
+
+namespace :replicate do
+  desc "Replicate production database and index to staging"
+  task :to_staging do
+    on roles(:web) do
+      rails_env = fetch(:rails_env).to_s
+      abort unless rails_env == 'staging'
+      date = ENV["DATE"] || Date.current.to_s
+
+      execute "cd '#{current_path}' && DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rake db:drop && bundle exec rake db:create && DATE=#{date} bundle exec rake dpul:replicate:to_staging && bundle exec rake db:migrate"
+    end
+  end
+end

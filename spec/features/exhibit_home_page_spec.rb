@@ -23,7 +23,7 @@ RSpec.feature 'Exhibit Home Page', type: :feature do
       visit spotlight.exhibit_root_path exhibit
       expect(page).not_to have_link 'Dashboard'
       expect(page).not_to have_link 'Edit'
-      expect(page).to have_selector ".site-title small[dir='rtl']"
+      expect(page).to have_selector ".site-title-wrapper small[dir='rtl']"
     end
   end
 end

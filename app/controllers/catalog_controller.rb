@@ -29,16 +29,32 @@ class CatalogController < ApplicationController
   end
 
   configure_blacklight do |config|
+    config.raw_endpoint.enabled = true
     config.show.oembed_field = :oembed_url_ssm
     config.show.partials.insert(1, :oembed)
-    config.view.gallery.partials = [:index_header, :index]
-    config.view.masonry.partials = [:index]
-    config.view.slideshow.partials = [:index]
+    # Default Configurations
+    config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+
+    config.add_results_collection_tool(:sort_widget)
+    config.add_results_collection_tool(:per_page_widget)
+    config.add_results_collection_tool(:view_type_group)
+
+    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+
+    config.view.gallery!.document_component = Blacklight::Gallery::DocumentComponent
+    # config.view.gallery.classes = 'row-cols-2 row-cols-md-3'
+    config.view.masonry!.document_component = Blacklight::Gallery::DocumentComponent
+    config.view.slideshow!.document_component = Blacklight::Gallery::SlideshowComponent
+    config.view.gallery!(partials: [:index_header, :index])
+    config.view.masonry!(partials: [:index])
+    config.view.slideshow!(partials: [:index])
 
     config.show.tile_source_field = :tile_source_ssim
+    config.index.tile_source_field = :tile_source_ssim
     config.show.partials.insert(1, :universal_viewer)
-    config.view.embed.partials = ['universal_viewer']
+    config.view.embed(partials: ['universal_viewer'])
 
+    config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
     # Make browse results doc actions consistent with search result doc actions
     config.browse.document_actions = config.index.document_actions
 
@@ -69,7 +85,8 @@ class CatalogController < ApplicationController
     config.document_unique_id_param = 'ids'
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'full_title_tesim'
+    config.index.title_field = FieldStringifier.new(::Blacklight::Configuration::Field.new(field: Spotlight::Engine.config.iiif_title_fields, accessor: :title_or_override_title))
+
     config.index.display_title_field = 'readonly_title_tesim'
 
     config.add_search_field 'all_fields', label: 'Keyword'
@@ -85,7 +102,7 @@ class CatalogController < ApplicationController
 
     config.add_facet_field 'spotlight_resource_type_ssim'
     config.add_facet_field 'readonly_collections_ssim', label: 'Collections', limit: 10
-    config.add_index_field 'readonly_collections_ssim', label: 'Collections'
+    config.add_index_field 'readonly_collections_ssim', label: 'Collections', helper_method: :collection_links
     config.index.thumbnail_method = :document_thumbnail
 
     # The embed view doesn't look good, so remove it.
@@ -101,12 +118,12 @@ class CatalogController < ApplicationController
   end
 
   # Overrides the spotlight search_facet_url method to use
-  # facet_catalog_url named route instead of catalog_facet_url.
-  # https://github.com/projectblacklight/spotlight/blob/v1.4.1/app/controllers/concerns/spotlight/controller.rb#L63
-  def search_facet_url(*args)
+  # facet_catalog_path named route instead of catalog_facet_path.
+  # https://github.com/projectblacklight/spotlight/blob/v3.0.3/app/controllers/concerns/spotlight/controller.rb#L78
+  def search_facet_path(*args)
     return super if current_exhibit
 
-    main_app.facet_catalog_url(*args)
+    main_app.facet_catalog_path(*args)
   end
 
   # search results
@@ -118,7 +135,7 @@ class CatalogController < ApplicationController
   # get a single document from the index
   # to add responses for formats other than html or json see _Blacklight::Document::Export_
   def show
-    @response, @document = fetch params[:id], exhibit: @exhibit
+    @response, @document = search_service.fetch params[:id], exhibit: @exhibit
     respond_to do |format|
       format.html { setup_next_and_previous_documents }
       format.json { render json: { response: { document: @document } } }

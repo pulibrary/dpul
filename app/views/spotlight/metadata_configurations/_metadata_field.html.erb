@@ -4,18 +4,20 @@
       <%= field.hidden_field :weight, 'data-property' => 'weight' %>
       <div class="handle-wrap" data-in-place-edit-target=".edit-in-place" data-in-place-edit-field-target="[data-edit-field-target='true']">
         <div class="dd-handle dd3-handle"><%= t :drag %></div>
-        <a href="#edit-in-place" class="field-label edit-in-place"><%= index_field_label(nil, key) %></a>
+        <a href="#edit-in-place" class="field-label edit-in-place"><%= config.display_label %></a>
         <%- if readonly?(key) %>
           <span class="import-tooltip glyphicon glyphicon-import" title="Imported from Figgy" data-toggle="tooltip"></span>
         <% end %>
-        <%= field.hidden_field :label, value: index_field_label(nil, key), class: 'form-control input-sm', data: {:"edit-field-target" => 'true'} %>
+        <%= field.hidden_field :label, value: config.display_label, class: 'form-control input-sm', data: {:"edit-field-target" => 'true'} %>
       </div>
     </td>
+    <% # Customized - add text area option %>
     <td class="checkbox-cell text-center"><%= field.check_box :text_area, inline: true, checked: config.text_area == "1", label: "", disabled: readonly?(key) %></td>
     <td class="checkbox-cell text-center"><%= field.check_box :show, inline: true, checked: config.show, label: "" %></td>
     <% available_view_fields.keys.each do |type| %>
       <td class="checkbox-cell text-center"><%= field.check_box type, inline: true, checked: config.send(type), label: "" %></td>
     <% end %>
+    <% # Customized - add link to search option %>
     <td class="checkbox-cell text-center"><%= field.check_box :link_to_search, {inline: true, checked: config.link_to_search.present?, label: ""}, config.field, false%></td>
   <% end %>
 </tr>

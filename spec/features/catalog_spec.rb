@@ -58,6 +58,12 @@ RSpec.feature 'Catalog', type: :feature do
       index.commit
     end
 
+    scenario 'user tries autocomplete' do
+      visit spotlight.autocomplete_exhibit_catalog_path(exhibit_id: exhibit.id, q: " ", format: "json")
+
+      expect(JSON.parse(page.body)["docs"].length).to eq 1
+    end
+
     scenario 'user searches for a collections with a keyword' do
       visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: id)
       expect(page).to have_css '#documents .document h3.index_title', text: id
@@ -118,6 +124,11 @@ RSpec.feature 'Catalog', type: :feature do
     it 'renders the languages facet with a more facets link' do
       visit main_app.search_catalog_path(q: '')
       expect(page).to have_link("more", href: '/catalog/facet/readonly_language_ssim')
+    end
+    it "displays a sort", js: true do
+      visit main_app.search_catalog_path(q: '')
+
+      expect(page).to have_selector "#sort-dropdown"
     end
   end
 

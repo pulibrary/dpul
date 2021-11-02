@@ -26,7 +26,7 @@ RSpec.describe 'Catalog', type: :feature, js: true do
         access_identifier_ssim: [
           "1r66j4408"
         ],
-        readonly_collections_tesim: [
+        readonly_collections_ssim: [
           'test collection 1',
           'test collection 2'
         ],
@@ -66,28 +66,6 @@ RSpec.describe 'Catalog', type: :feature, js: true do
     visit spotlight.exhibit_solr_document_path(exhibit, document_id)
     expect(page).to have_link 'test collection 1', href: '/test-collection-1'
     expect(page).to have_link 'test collection 2', href: '/test-collection-2'
-  end
-
-  context 'when the view_context is not available' do
-    # Ensures that this not a double
-    let(:view_context) { Object.new }
-    let(:collection1) { Spotlight::Exhibit.create!(title: 'test collection 1') }
-    let(:collection2) { Spotlight::Exhibit.create!(title: 'test collection 2') }
-
-    before do
-      allow(Rails.logger).to receive(:error)
-      allow_any_instance_of(RTLShowPresenter).to receive(:view_context).and_return(view_context)
-    end
-
-    it 'does not render the collection titles as links and logs an error' do
-      visit spotlight.exhibit_solr_document_path(exhibit, document_id)
-      expect(page).not_to have_link 'test collection 1'
-      expect(page).not_to have_link 'test collection 2'
-      expect(page).to have_content 'test collection 1'
-      expect(page).to have_content 'test collection 2'
-      expect(Rails.logger).to have_received(:error).with("Failed to render the link to the collection test collection 1 for #{collection1.id}")
-      expect(Rails.logger).to have_received(:error).with("Failed to render the link to the collection test collection 2 for #{collection2.id}")
-    end
   end
 
   def index

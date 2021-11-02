@@ -1,4 +1,3 @@
 <div class="uv__overlay<%= " condensed" if current_exhibit&.condensed_viewer %>" onClick="style.pointerEvents='none'">
   <iframe allowfullscreen="true" src="<%= universal_viewer_url %>"></iframe>
-  <%= link_to image_tag("iiif.png", class: "logo", alt: "IIIF Drag and Drop"), universal_viewer_url %>
 </div>
