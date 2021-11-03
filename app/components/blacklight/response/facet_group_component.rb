@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # this replicates upstream file in order to override the ViewComponent erb
 
 module Blacklight
