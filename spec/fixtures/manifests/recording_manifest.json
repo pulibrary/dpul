@@ -6,12 +6,12 @@
     "type": "Manifest",
     "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest",
     "label": {
-        "@none": [
+        "eng": [
             "Concert, 2001, October 19 and 20"
         ]
     },
     "summary": {
-        "@none": [
+        "eng": [
             "Digital Audio Tape (DAT).",
             "A complete program is available in Mendel Music Library."
         ]
@@ -19,67 +19,67 @@
     "metadata": [
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Author"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "Princeton University. Orchestra"
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Contents"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "Overture to Hansel and Gretel (1893) / E. Humperdinck -- Symphonic dances (1940) / S. Rachmaninoff -- Appalachian spring (1943) / A. Copland."
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Extent"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "1 sound cassette."
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Identifier"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "ark:/99999/fk4x36481t"
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Part Of"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "puo"
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Title"
                 ]
             },
@@ -87,60 +87,60 @@
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Contributor"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "Friends of Music at Princeton"
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Creator"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "Princeton University. Orchestra"
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Date"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "2001"
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Language"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "Undetermined"
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Local Identifier"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "1248",
                     "8331"
                 ]
@@ -148,36 +148,36 @@
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Publisher"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "2001."
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Source Metadata Identifier"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "3757856"
                 ]
             }
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Call Number"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "DAT- 2001-10-19",
                     "DAT- 2001-10-20"
                 ]
@@ -185,12 +185,12 @@
         },
         {
             "label": {
-                "@none": [
+                "eng": [
                     "Member Of Collections"
                 ]
             },
             "value": {
-                "@none": [
+                "eng": [
                     "Performance Ensembles"
                 ]
             }
@@ -202,7 +202,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/74714a3c-1d70-4753-ac44-fa4e929eacbf",
             "label": {
-                "@none": [
+                "eng": [
                     "Overture to Hansel and Gretel"
                 ]
             },
@@ -220,7 +220,7 @@
                                 "duration": 506.011,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "Overture to Hansel and Gretel"
                                     ]
                                 }
@@ -246,7 +246,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/d9621bab-69cd-4869-8ab2-0755183a9ae1",
             "label": {
-                "@none": [
+                "eng": [
                     "I. Non allegro"
                 ]
             },
@@ -264,7 +264,7 @@
                                 "duration": 675.921,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "I. Non allegro"
                                     ]
                                 }
@@ -290,7 +290,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/741be008-f5de-4312-8b09-9d4b93bf14b8",
             "label": {
-                "@none": [
+                "eng": [
                     "II. Andante con moto"
                 ]
             },
@@ -308,7 +308,7 @@
                                 "duration": 549.24,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "II. Andante con moto"
                                     ]
                                 }
@@ -334,7 +334,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/87b9ca2f-3380-4506-ac5c-a4bd8ea4a120",
             "label": {
-                "@none": [
+                "eng": [
                     "III. Lento assai - Allegro vivace"
                 ]
             },
@@ -352,7 +352,7 @@
                                 "duration": 768.145,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "III. Lento assai - Allegro vivace"
                                     ]
                                 }
@@ -378,7 +378,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/e0609427-4554-4090-86c7-aefc0ebc0e93",
             "label": {
-                "@none": [
+                "eng": [
                     "Appalachian Spring"
                 ]
             },
@@ -396,7 +396,7 @@
                                 "duration": 1510.0,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "Appalachian Spring"
                                     ]
                                 }
@@ -422,7 +422,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/431e0aa7-5d64-402e-9060-9094b4bf4032",
             "label": {
-                "@none": [
+                "eng": [
                     "Hansel und Gretel"
                 ]
             },
@@ -440,7 +440,7 @@
                                 "duration": 507.345,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "Hansel und Gretel"
                                     ]
                                 }
@@ -466,7 +466,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/4b70c38a-6ce1-474f-8569-73ffb1320037",
             "label": {
-                "@none": [
+                "eng": [
                     "I. Non allegro"
                 ]
             },
@@ -484,7 +484,7 @@
                                 "duration": 693.825,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "I. Non allegro"
                                     ]
                                 }
@@ -510,7 +510,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/181358ff-9708-4c8a-941e-f318f5e424a8",
             "label": {
-                "@none": [
+                "eng": [
                     "II. Andante con moto"
                 ]
             },
@@ -528,7 +528,7 @@
                                 "duration": 578.462,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "II. Andante con moto"
                                     ]
                                 }
@@ -554,7 +554,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/f90ef79c-6abe-4ef4-a182-de5a214f42ea",
             "label": {
-                "@none": [
+                "eng": [
                     "III. Lento assai - Allegro vivace"
                 ]
             },
@@ -572,7 +572,7 @@
                                 "duration": 827.662,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "III. Lento assai - Allegro vivace"
                                     ]
                                 }
@@ -598,7 +598,7 @@
             "type": "Canvas",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/canvas/b6ee500f-8e2f-417f-9038-3b18c2f867c5",
             "label": {
-                "@none": [
+                "eng": [
                     "Appalacian Spring"
                 ]
             },
@@ -616,7 +616,7 @@
                                 "duration": 1600.06,
                                 "format": "application/vnd.apple.mpegurl",
                                 "label": {
-                                    "@none": [
+                                    "eng": [
                                         "Appalacian Spring"
                                     ]
                                 }
@@ -656,7 +656,7 @@
             "type": "Range",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/rbc498c32-4115-449d-ac65-cd35adac36a1",
             "label": {
-                "@none": [
+                "eng": [
                     "2001-10-20"
                 ]
             },
@@ -666,7 +666,7 @@
                     "type": "Range",
                     "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/redb628e0-4cf4-4bc8-9adc-16affacd0946",
                     "label": {
-                        "@none": [
+                        "eng": [
                             "Hansel und Gretel, overture"
                         ]
                     },
@@ -675,7 +675,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/rcd313a84-218b-4ce1-8876-fd76896664d2",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "Overture to Hansel and Gretel"
                                 ]
                             },
@@ -693,7 +693,7 @@
                     "type": "Range",
                     "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r857ebd7d-72ae-400d-99ad-2ab5e47ce973",
                     "label": {
-                        "@none": [
+                        "eng": [
                             "Symphonic dances"
                         ]
                     },
@@ -702,7 +702,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/ra602a193-d1bb-429f-a597-b33887266bc4",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "I. Non allegro"
                                 ]
                             },
@@ -718,7 +718,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/re63ccd9a-f553-4a3c-9b9a-0155dc0b85c2",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "II. Andante con moto"
                                 ]
                             },
@@ -734,7 +734,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/rc20bb834-e80d-489c-a583-2af0bba1947b",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "III. Lento assai - Allegro vivace"
                                 ]
                             },
@@ -752,7 +752,7 @@
                     "type": "Range",
                     "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r31dd5624-beae-4e36-b765-45a72971f985",
                     "label": {
-                        "@none": [
+                        "eng": [
                             "Appalachain spring"
                         ]
                     },
@@ -761,7 +761,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r152a0b2d-1822-4d99-b7e1-2fab52bfdabc",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "Appalachian Spring"
                                 ]
                             },
@@ -781,7 +781,7 @@
             "type": "Range",
             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r3123f617-4586-497d-af5f-bdbce6e32dab",
             "label": {
-                "@none": [
+                "eng": [
                     "2001-10-19"
                 ]
             },
@@ -791,7 +791,7 @@
                     "type": "Range",
                     "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r68c095e5-a6f4-4430-92e8-7ef2ef7bfc07",
                     "label": {
-                        "@none": [
+                        "eng": [
                             "Hansel und Gretel: Overture"
                         ]
                     },
@@ -800,7 +800,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r07dfe531-8b91-4c7f-a58a-a8333cca6feb",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "Hansel und Gretel"
                                 ]
                             },
@@ -818,7 +818,7 @@
                     "type": "Range",
                     "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/re0949782-8e04-4fa7-9f89-d60829194d81",
                     "label": {
-                        "@none": [
+                        "eng": [
                             "Symphonic Dances"
                         ]
                     },
@@ -827,7 +827,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r56ace64e-1e73-49ca-bb1d-84e9353dacda",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "I. Non allegro"
                                 ]
                             },
@@ -843,7 +843,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r96f109e3-cd7c-4d9b-af9d-d96a68063ce7",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "II. Andante con moto"
                                 ]
                             },
@@ -859,7 +859,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r08a12ce5-6f32-4197-b9f9-6b09643d9b34",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "III. Lento assai - Allegro vivace"
                                 ]
                             },
@@ -877,7 +877,7 @@
                     "type": "Range",
                     "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r5cd49c66-2f0d-4145-93ca-493abff039c0",
                     "label": {
-                        "@none": [
+                        "eng": [
                             "Appalacian Spring"
                         ]
                     },
@@ -886,7 +886,7 @@
                             "type": "Range",
                             "id": "https://figgy.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest/range/r09117ad6-3d34-4e87-9e4b-df2ed1304803",
                             "label": {
-                                "@none": [
+                                "eng": [
                                     "Appalacian Spring"
                                 ]
                             },

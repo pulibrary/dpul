@@ -37,7 +37,7 @@ class IiifService < ::Spotlight::Resources::IiifService
     # of it, so a simple wrapper with a label for a manifest gets us there.
     class IIIF3Manifest < SimpleDelegator
       def label
-        Array.wrap(__getobj__["label"]).first["@none"]
+        __getobj__["label"].flat_map { |_k, v| v }
       end
     end
   end
