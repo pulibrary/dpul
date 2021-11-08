@@ -41,6 +41,11 @@ class CatalogController < ApplicationController
 
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
 
+    # Override default bulk_actions config so the change_visibilty option is hidden
+    config.bulk_actions ||= Blacklight::NestedOpenStructWithHashAccess.new(Blacklight::Configuration::ToolConfig)
+    config.bulk_actions.add_tags!
+    config.bulk_actions.remove_tags!
+
     config.view.gallery!.document_component = Blacklight::Gallery::DocumentComponent
     # config.view.gallery.classes = 'row-cols-2 row-cols-md-3'
     config.view.masonry!.document_component = Blacklight::Gallery::DocumentComponent

@@ -15,10 +15,14 @@ describe 'Bulk actions', type: :feature do
     Blacklight.default_index.connection.commit
   end
 
-  it 'adding tags', js: true do
+  it 'only allows adding and removing tags', js: true do
     visit spotlight.search_exhibit_catalog_path(exhibit, q: 'dq287tq6352')
 
     click_button 'Bulk actions'
+
+    expect(page).to have_link("Remove tags")
+    expect(page).not_to have_link("Change item visibility")
+
     click_link 'Add tags'
     expect(page).to have_css 'h4', text: 'Add tags', visible: true
     within '#add-tags-modal' do
