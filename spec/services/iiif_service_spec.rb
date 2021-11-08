@@ -8,6 +8,7 @@ describe IiifService do
 
     let(:url) { 'http://to-manifest1' }
     let(:http_response) { instance_double(Faraday::Response) }
+    let(:http_client) { instance_double(Faraday::Connection) }
     let(:logger) { instance_double(ActiveSupport::Logger) }
     let(:manifest_fixture) { test_manifest1 }
 
@@ -17,7 +18,8 @@ describe IiifService do
       allow(http_response).to receive(:success?).and_return(true)
       # Return the default fixture as the remotely referenced JSON-LD expression
       allow(http_response).to receive(:body).and_return(manifest_fixture)
-      allow(Faraday).to receive(:get).and_return(http_response)
+      allow(Spotlight::Resources::IiifService).to receive(:http_client).and_return(http_client)
+      allow(http_client).to receive(:get).and_return(http_response)
     end
 
     after do
@@ -46,7 +48,7 @@ describe IiifService do
 
     context 'when the request times out' do
       before do
-        allow(Faraday).to receive(:get).and_raise(Faraday::TimeoutError)
+        allow(http_client).to receive(:get).and_raise(Faraday::TimeoutError)
         allow(logger).to receive(:warn)
         allow(Rails).to receive(:logger).and_return(logger)
       end

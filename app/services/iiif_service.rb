@@ -2,7 +2,7 @@
 
 class IiifService < ::Spotlight::Resources::IiifService
   def self.iiif_response(url)
-    resp = Faraday.get(url)
+    resp = Spotlight::Resources::IiifService.http_client.get(url)
     if resp.success?
       resp.body
     else
