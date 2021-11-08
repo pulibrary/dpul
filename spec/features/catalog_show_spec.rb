@@ -42,6 +42,12 @@ RSpec.describe 'Catalog', type: :feature, js: true do
         ],
         'content_metadata_iiif_manifest_field_ssi': [
           'http://images.institution.edu'
+        ],
+        "exhibit_exhibit-title-1_readonly_author_ssim": [
+          "Vasi"
+        ],
+        "readonly_author_tesim": [
+          "Vasi"
         ]
       }
     )
@@ -66,6 +72,16 @@ RSpec.describe 'Catalog', type: :feature, js: true do
     visit spotlight.exhibit_solr_document_path(exhibit, document_id)
     expect(page).to have_link 'test collection 1', href: '/test-collection-1'
     expect(page).to have_link 'test collection 2', href: '/test-collection-2'
+  end
+
+  it "renders the correct facet link" do
+    # the value of link_to_facet into the configuration needs to match the field name
+    exhibit.blacklight_configuration.index_fields["readonly_author_ssim"] = { "label" => "Author", "link_to_facet" => "readonly_author_ssim", "list" => true, "show" => true, "enabled" => true }
+    exhibit.blacklight_configuration.save
+    Spotlight::CustomField.create!(exhibit: exhibit, slug: 'author', field: 'readonly_author_ssim', configuration: { "label" => "Author" }, field_type: 'vocab', readonly_field: true)
+
+    visit spotlight.exhibit_solr_document_path(exhibit, document_id)
+    expect(page).to have_link 'Vasi', href: '/exhibit-title-1/catalog?f%5Breadonly_author_ssim%5D%5B%5D=Vasi'
   end
 
   def index

@@ -18,6 +18,6 @@
       <td class="checkbox-cell text-center"><%= field.check_box type, inline: true, checked: config.send(type), label: "" %></td>
     <% end %>
     <% # Customized - add link to facet option %>
-    <td class="checkbox-cell text-center"><%= field.check_box :link_to_facet, {inline: true, checked: config.link_to_facet.present?, label: ""}, config.field, false%></td>
+    <td class="checkbox-cell text-center"><%= field.check_box :link_to_facet, {inline: true, checked: config.link_to_facet.present?, label: ""}, config.key, false%></td>
   <% end %>
 </tr>

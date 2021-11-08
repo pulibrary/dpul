@@ -16,7 +16,7 @@ RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view 
     )
   end
 
-  let(:facet_field) { Blacklight::Configuration::FacetField.new }
+  let(:facet_field) { exhibit.blacklight_configuration.blacklight_config.index_fields["two"] }
   let(:builder) { ActionView::Helpers::FormBuilder.new 'z', nil, view, {} }
 
   it 'renders a tooltip for imported fields' do
@@ -40,6 +40,6 @@ RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view 
     allow(view).to receive(:index_field_label).with(nil, 'two').and_return 'Some label'
     render partial: p, locals: { key: 'two', config: facet_field, f: builder }
 
-    expect(rendered).to have_selector "input[type=checkbox][name='z[two][link_to_facet]']"
+    expect(rendered).to have_selector "input[type=checkbox][name='z[two][link_to_facet]'][value='two']"
   end
 end
