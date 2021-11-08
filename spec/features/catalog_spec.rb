@@ -48,7 +48,7 @@ RSpec.feature 'Catalog', type: :feature do
     )
   end
 
-  context 'logged in as a site admin.' do
+  context 'logged in as a site admin' do
     let(:user) { FactoryBot.create(:site_admin, exhibit: exhibit) }
 
     before do
@@ -93,6 +93,14 @@ RSpec.feature 'Catalog', type: :feature do
       expect(page).to have_link 'Home', href: "/#{exhibit.slug}"
       expect(page).to have_css '#documents .document h3.index_title', text: id
     end
+
+    it "complies with WCAG", js: true do
+      pending("fix accessibility violations")
+      visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
+      expect(page).to be_axe_clean
+        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
+        .excluding(".tt-hint") # Issue is in typeahead.js library
+    end
   end
 
   context 'when searching across a catalog with many languages' do
@@ -125,10 +133,18 @@ RSpec.feature 'Catalog', type: :feature do
       visit main_app.search_catalog_path(q: '')
       expect(page).to have_link("more", href: '/catalog/facet/readonly_language_ssim')
     end
+
     it "displays a sort", js: true do
       visit main_app.search_catalog_path(q: '')
-
       expect(page).to have_selector "#sort-dropdown"
+    end
+
+    it "complies with WCAG", js: true do
+      pending("fix accessibility violations")
+      visit main_app.search_catalog_path(q: '')
+      expect(page).to be_axe_clean
+        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
+        .excluding(".tt-hint") # Issue is in typeahead.js library
     end
   end
 

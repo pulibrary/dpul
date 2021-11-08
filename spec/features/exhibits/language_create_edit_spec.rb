@@ -11,6 +11,13 @@ describe 'Language', type: :feature do
     visit spotlight.edit_exhibit_path(exhibit)
   end
 
+  it "complies with WCAG", js: true do
+    pending("fix accessibility violations")
+    expect(page).to be_axe_clean
+      .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
+      .excluding(".tt-hint") # Issue is in typeahead.js library
+  end
+
   describe 'creation' do
     it 'successfully adds languages' do
       within '#language' do

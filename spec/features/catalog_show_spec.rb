@@ -68,6 +68,14 @@ RSpec.describe 'Catalog', type: :feature, js: true do
     expect(page).to have_link 'test collection 2', href: '/test-collection-2'
   end
 
+  it "complies with WCAG" do
+    pending("fix accessibility violations")
+    visit spotlight.exhibit_solr_document_path(exhibit, document_id)
+    expect(page).to be_axe_clean
+      .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
+      .excluding(".tt-hint") # Issue is in typeahead.js library
+  end
+
   def index
     Blacklight.default_index.connection
   end

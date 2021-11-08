@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Catalog Edit', type: :feature do
+RSpec.describe 'Catalog Edit', type: :feature, js: true do
   let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
   let(:different_exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 2', slug: 'exhibit-title-2') }
   let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
@@ -81,6 +81,14 @@ RSpec.describe 'Catalog Edit', type: :feature do
     expect(page).to have_field "Collections", with: "test collection 1 test collection 2"
     expect(page).to have_content "test collection 1"
     expect(page).to have_content "Test Override Title"
+  end
+
+  it "complies with WCAG" do
+    pending("fix accessibility violations")
+    visit "/#{exhibit.slug}/catalog/#{document_id}/edit"
+    expect(page).to be_axe_clean
+      .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
+      .excluding(".tt-hint") # Issue is in typeahead.js library
   end
 
   def index
