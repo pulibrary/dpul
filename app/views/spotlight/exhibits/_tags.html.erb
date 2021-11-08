@@ -4,7 +4,7 @@ as overriding css text-align properties would create a confusing/false class nam
   <ul class="nav nav-pills tags">
     <%= nav_link t('.all'), exhibits_path, active: params[:tag].blank? %>
 
-    <% tags.sort_by(&:name).each do |tag| %>
+    <% tags.sort_by { |tag| tag.name.downcase }.each do |tag| %>
       <%= nav_link tag.name, exhibits_path(tag: tag.name), active: params[:tag] == tag.name %>
     <% end %>
   </ul>
