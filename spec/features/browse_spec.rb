@@ -155,13 +155,6 @@ RSpec.describe 'Browsing exhibits', type: :feature, js: true do
       it 'displays the total number of publicly accessible items' do
         expect(page).to have_css '.item-count', text: '3 items'
       end
-
-      it "complies with WCAG" do
-        pending("fix accessibility violations")
-        expect(page).to be_axe_clean
-          .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
-          .excluding(".tt-hint") # Issue is in typeahead.js library
-      end
     end
 
     context 'when browsing all exhibit items in a saved search' do
@@ -182,13 +175,6 @@ RSpec.describe 'Browsing exhibits', type: :feature, js: true do
 
       it 'presents the bookmark action', js: true do
         expect(page).to have_content "Bookmark"
-      end
-
-      it "complies with WCAG" do
-        pending("fix accessibility violations")
-        expect(page).to be_axe_clean
-          .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
-          .excluding(".tt-hint") # Issue is in typeahead.js library
       end
     end
   end

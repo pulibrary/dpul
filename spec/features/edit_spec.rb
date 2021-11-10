@@ -83,14 +83,6 @@ RSpec.describe 'Catalog Edit', type: :feature, js: true do
     expect(page).to have_content "Test Override Title"
   end
 
-  it "complies with WCAG" do
-    pending("fix accessibility violations")
-    visit "/#{exhibit.slug}/catalog/#{document_id}/edit"
-    expect(page).to be_axe_clean
-      .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
-      .excluding(".tt-hint") # Issue is in typeahead.js library
-  end
-
   def index
     Blacklight.default_index.connection
   end

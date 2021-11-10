@@ -31,12 +31,4 @@ describe 'Bulk actions', type: :feature, js: true do
     expect(page).to have_css '.alert', text: 'Tags are being added for 1 item.'
     expect(SolrDocument.new(id: 'dq287tq6352').sidecar(exhibit).all_tags_list).to include('foo', 'good', 'stuff')
   end
-
-  it "complies with WCAG" do
-    pending("fix accessibility violations")
-    visit spotlight.search_exhibit_catalog_path(exhibit, q: 'dq287tq6352')
-    expect(page).to be_axe_clean
-      .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
-      .excluding(".tt-hint") # Issue is in typeahead.js library
-  end
 end

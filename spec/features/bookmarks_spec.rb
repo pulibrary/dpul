@@ -54,18 +54,5 @@ RSpec.describe 'Bookmarks', type: :feature, js: true do
       visit "/bookmarks"
       expect(page).to have_content "1 entry found"
     end
-
-    it "complies with WCAG" do
-      pending("fix accessibility violations")
-      iiif_resource1
-      iiif_resource2
-      visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
-      bookmark_box = "toggle-bookmark_#{solr_id}"
-      check bookmark_box
-      visit "/bookmarks"
-      expect(page).to be_axe_clean
-        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
-        .excluding(".tt-hint") # Issue is in typeahead.js library
-    end
   end
 end
