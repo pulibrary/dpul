@@ -68,5 +68,18 @@ RSpec.describe IiifManifest do
         expect(manifest_service.to_solr["readonly_range-label_tesim"]).to eq ["range label value"]
       end
     end
+
+    describe 'multi-volume work manifest' do
+      let(:manifest_fixture) { test_manifest_mvw }
+      let(:member_manifest_fixture) { test_manifest1 }
+
+      before do
+        stub_iiif_response_for_url("uri://for-manifest1/manifest", member_manifest_fixture)
+      end
+
+      it 'has the correct image urls' do
+        expect(manifest_service.to_solr[:tile_source_ssim]).to eq ["uri://to-image-service/info.json"]
+      end
+    end
   end
 end

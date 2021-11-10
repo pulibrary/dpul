@@ -55,6 +55,10 @@ Metrics/BlockLength:
     - 'lib/tasks/**/*'
     - 'config/routes.rb'
 
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/fixtures/iiif_responses.rb'
+
 Style/BlockDelimiters:
   Exclude:
     - 'spec/**/*'
