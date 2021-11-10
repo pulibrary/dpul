@@ -80,4 +80,46 @@ module IiifResponses
     values['see_also'] = value
     values.to_json
   end
+
+  def test_manifest_mvw
+    {
+      "@id": 'uri://for-manifest_mvw/manifest',
+      "@type": 'sc:Collection',
+      "label": 'Test Manifest MVW',
+      "attribution": 'Attribution Data',
+      "description": 'A test IIIF MVW manifest',
+      "license": 'http://www.example.org/license.html',
+      "metadata": [
+        {
+          "label": 'Author',
+          "value": 'John Doe'
+        },
+        {
+          "label": 'Author',
+          "value": 'Jane Doe'
+        },
+        {
+          "label": 'Another Field',
+          "value": 'Some data'
+        },
+        {
+          "label": 'Date',
+          "value": '1929'
+        }
+      ],
+      "thumbnail": {
+        "@id": 'uri://to-thumbnail'
+      },
+      "manifests": [
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@type": "sc:Manifest",
+          "@id": "uri://for-manifest1/manifest",
+          "label": [
+            "01"
+          ]
+        }
+      ]
+    }.to_json
+  end
 end

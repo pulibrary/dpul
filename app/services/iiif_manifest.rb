@@ -46,6 +46,16 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     "#{manifest['thumbnail']['service']['@id']}/full/!600,600/0/default.jpg"
   end
 
+  # Override resources method to handle multi-volume work manifests
+  # See: https://github.com/projectblacklight/spotlight/blob/v3.2.0/app/models/spotlight/resources/iiif_manifest.rb#L137
+  def resources
+    if manifest.is_a? IIIF::Presentation::Collection
+      @resources ||= manifest.manifests.flat_map { |m| IiifService.parse(m['@id']).first.resources }
+    else
+      super
+    end
+  end
+
   def compound_id
     Digest::MD5.hexdigest("#{exhibit.id}-#{noid}")
   end
