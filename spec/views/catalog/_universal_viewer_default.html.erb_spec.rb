@@ -30,6 +30,7 @@ describe 'catalog/_universal_viewer_default', type: :view do
     it "doesn't display a condensed viewer" do
       expect(rendered).to have_selector ".uv__overlay"
       expect(rendered).not_to have_selector ".uv__overlay.condensed"
+      expect(rendered).to have_xpath("//iframe[@title]")
     end
   end
 end
