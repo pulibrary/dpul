@@ -4,6 +4,7 @@ export default class Initializer {
     this.initialize_blacklight_oembed()
     this.universal_viewer = new UniversalViewer
     this.initialize_tooltips()
+    this.bindPageModifier()
   }
 
   initialize_blacklight_oembed() {
@@ -12,5 +13,17 @@ export default class Initializer {
 
   initialize_tooltips() {
     $('[data-toggle="tooltip"]').tooltip()
+  }
+
+  // Updates page display for embed widget.
+  // TODO: Remove when fixed in Spotlight
+  bindPageModifier() {
+    const pictureElement = $("picture")
+    if(pictureElement.length == 0) return
+    pictureElement.data("osdViewer").addHandler("page", this.updatePage)
+  }
+
+  updatePage(data) {
+    $("#osd-page").text(data.page + 1)
   }
 }
