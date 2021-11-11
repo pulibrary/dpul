@@ -4,11 +4,23 @@
   }
 }
 
-.bookmarks-thumbnail-container .index-document-functions{
+.documents-list .document .index-document-functions {
   margin-top: -0.5em;
+  margin-bottom: 0rem;
 }
 
 .toggle-bookmark {
+  margin-left: -2.5em;
   text-align:right;
-  margin-left: -1em;
+  @media (min-width: breakpoint-min(sm)) {
+    text-align:right;
+    margin-left: -1em;
+  }
+}
+
+#documents.documents-list .document-thumbnail img {
+  max-width: 75px;
+  @media (min-width: breakpoint-min(sm)) {
+    max-width: 100px;
+  }
 }
