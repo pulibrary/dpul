@@ -1,0 +1,18 @@
+<div class='row title-metadata-container'>
+  <div class="col-9">
+    <h3 class="index_title document-title-heading">
+      <% if counter = document_counter_with_offset(document_counter) %>
+        <span class="document-counter">
+          <%= t('blacklight.search.documents.counter', counter: counter) %>
+        </span>
+      <% end %>
+      <%= link_to_document document, counter: counter %>
+    </h3>
+    <%= render(Blacklight::DocumentMetadataComponent.new(fields: document_presenter(document).field_presenters)) %>
+  </div>
+
+  <div class='bookmarks-thumbnail-container col-3'>
+    <%= render_index_doc_actions document, wrapping_class: "index-document-functions" %>
+    <%= render_document_partial(document, 'thumbnail', document_counter: document_counter) %>
+  </div>
+</div>

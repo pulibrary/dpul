@@ -53,6 +53,7 @@ class CatalogController < ApplicationController
     config.view.gallery!(partials: [:index_header, :index])
     config.view.masonry!(partials: [:index])
     config.view.slideshow!(partials: [:index])
+    config.view.list.partials = [:index_document]
 
     config.show.tile_source_field = :tile_source_ssim
     config.index.tile_source_field = :tile_source_ssim
