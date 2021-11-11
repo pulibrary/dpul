@@ -33,3 +33,9 @@ Blacklight.onLoad(function() {
   Initializer = require('pom_boot')
   window.pom = new Initializer()
 })
+
+// work around for https://bugs.chromium.org/p/chromium/issues/detail?id=1262589&q=contenteditable&can=1
+if (navigator.userAgentData && navigator.userAgentData.brands &&
+    Boolean(navigator.userAgentData.brands.find(function(b) { return b.brand === 'Chromium' && parseFloat(b.version, 10) >= 95 && parseFloat(b.version, 10) < 97; }))) {
+  SirTrevor.Blocks.Text.prototype.editorHTML = "<div class=\"st-text-block\" spellcheck=\"false\" contenteditable=\"true\"></div>";
+}
