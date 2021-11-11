@@ -24,6 +24,6 @@ export default class Initializer {
   }
 
   updatePage(data) {
-    $("#osd-page").text(data.page)
+    $("#osd-page").text(data.page + 1)
   }
 }

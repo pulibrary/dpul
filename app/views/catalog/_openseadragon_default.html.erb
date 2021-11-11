@@ -36,7 +36,7 @@
           <% osd_config = osd_config_referencestrip.merge(osd_config) %>
             <a id="osd-previous"><%= blacklight_icon('chevron_left') %></a>
             <%- # Princeton Customization - add firstPage label and a space. %>
-            <span id="osd-page"><%= firstPage %></span>&nbsp;of <%= count %>
+            <span id="osd-page"><%= firstPage+1 %></span>&nbsp;of <%= count %>
             <a id="osd-next"><%= blacklight_icon('chevron_right') %></a>
         <% end %>
       </div>
