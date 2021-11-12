@@ -15,8 +15,9 @@ class ExhibitProxy
     end
   end
 
-  def estimated_size
-    members.size
+  # Map all of the members to IIIFResource objects
+  def resources
+    @resources ||= members.map { |url| IIIFResource.find_or_initialize_by(url: url, exhibit_id: exhibit.id) }
   end
 
   def collection_manifest

@@ -7,19 +7,16 @@ module Spotlight
     queue_as :default
 
     include Spotlight::JobTracking
+    include ::JobTracking
     # Princeton Update
     # We have tests that save resources that have no exhibit. If there's no
     # exhibit, this would error.
     with_job_tracking(resource: ->(job) { job.exhibit || Array(job.arguments.first).first })
-    # End Princeton Update
 
     include Spotlight::LimitConcurrency
 
     before_perform do |job|
-      pagination = job.arguments.last.slice(:start, :finish) if job.arguments.last.is_a? Hash
-      pagination ||= {}
-
-      progress.total = resource_list(job.arguments.first, **pagination).sum(&:estimated_size)
+      progress.total = resource_list(job.arguments.first).count
     end
 
     after_perform do
@@ -28,7 +25,7 @@ module Spotlight
 
     after_perform :commit
 
-    def perform(exhibit_or_resources, start: nil, finish: nil, **)
+    def perform(exhibit_or_resources, **)
       errors = 0
 
       error_handler = lambda do |pipeline, exception, _data|
@@ -43,10 +40,12 @@ module Spotlight
         errors += 1
       end
 
-      resource_list(exhibit_or_resources, start: start, finish: finish).each do |resource|
-        resource.reindex(touch: false, commit: false, job_tracker: job_tracker, additional_data: job_data, on_error: error_handler) do |*|
-          progress&.increment
-        end
+      resource_list(exhibit_or_resources).each do |resource|
+        resource.reindex(touch: false, commit: false, job_tracker: job_tracker, additional_data: job_data, on_error: error_handler)
+
+        # Increment progress outside of the reindex callback otherwise the count
+        # is off. Not sure why.
+        progress&.increment
       rescue StandardError => e
         error_handler.call(Struct.new(:source).new(resource), e, nil)
       end
@@ -90,7 +89,7 @@ module Spotlight
       ## Princeton Update
       # Reindexing an exhibit should mean re-fetching all resources that are
       # part of the collection. ExhibitProxy enables this.
-      def resource_list(exhibit_or_resources, start: nil, finish: nil)
+      def resource_list(exhibit_or_resources)
         if exhibit_or_resources.is_a?(Spotlight::Exhibit)
           [ExhibitProxy.new(exhibit_or_resources)]
         elsif exhibit_or_resources.is_a?(Enumerable)
