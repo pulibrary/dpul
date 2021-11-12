@@ -28,8 +28,8 @@ button, a.button, input[type="reset"], input[type="submit"], input[type="button"
 }
 
 .btn-outline-secondary, .st-block-controls__button {
-    color: #6c757d;
-    border-color: #6c757d;
+    color: $dark-gray;
+    border-color: $dark-gray;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     background-color: $light-gray;
