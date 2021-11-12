@@ -1,0 +1,70 @@
+{
+    "link_to_finding_aid": "https://findingaids.princeton.edu/collections/C0108/c02210",
+    "created": [
+        "1936-1936"
+    ],
+    "date_created": [
+        "1936"
+    ],
+    "extent": [
+        "1 box"
+    ],
+    "identifier": [
+        "ark:/88435/w0892h43k"
+    ],
+    "title": [
+        {
+            "@value": "Inventories, Order Records, Clients",
+            "@language": "eng"
+        }
+    ],
+    "creator": [
+        "Beach, Sylvia."
+    ],
+    "language": [
+        "English"
+    ],
+    "publisher": [
+        "Beach, Sylvia."
+    ],
+    "container": [
+        "Box 69, Folder 3-5"
+    ],
+    "@context": [
+        "https://bibdata.princeton.edu/context.json",
+        {
+            "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+            "latitude": {
+                "@id": "wgs84:lat"
+            },
+            "longitude": {
+                "@id": "wgs84:lon"
+            }
+        }
+    ],
+    "@id": "https://figgy.princeton.edu/catalog/5ff6b111-b6f8-412d-b830-b12d073fb0d9",
+    "edm_rights": {
+        "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+        "@type": "dcterms:RightsStatement",
+        "pref_label": "No Known Copyright"
+    },
+    "memberOf": [
+        {
+            "@id": "https://figgy.princeton.edu/catalog/4878fdfe-989a-4824-b723-e09e51b57500",
+            "@type": "pcdm:Collection",
+            "title": "Treasures of the Manuscripts Division"
+        },
+        {
+            "@id": "https://figgy.princeton.edu/catalog/a980b0dd-1c92-40cd-8897-56e1ab18f3b5",
+            "@type": "pcdm:Collection",
+            "title": "Shakespeare and Company"
+        },
+        {
+            "@id": "https://figgy.princeton.edu/catalog/f8201b0f-7ea2-4166-b6b2-033e0de9a6bd",
+            "@type": "pcdm:Collection",
+            "title": "Sylvia Beach Papers C0108"
+        }
+    ],
+    "system_created_at": "2018-05-15T13:15:02Z",
+    "system_updated_at": "2021-10-27T01:27:03Z"
+}

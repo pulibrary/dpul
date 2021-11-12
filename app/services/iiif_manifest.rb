@@ -33,7 +33,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   end
 
   def add_sort_date
-    solr_hash['sort_date_ssi'] = Array.wrap(solr_hash['readonly_date_ssim']).first
+    solr_hash['sort_date_ssi'] = Array.wrap(solr_hash['readonly_date_ssim']).first || Array.wrap(solr_hash['readonly_date-created_ssim']).first
   end
 
   def add_sort_author
