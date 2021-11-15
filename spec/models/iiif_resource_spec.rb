@@ -186,6 +186,18 @@ describe IIIFResource do
       expect(solr_doc["readonly_view-in-catalog_ssim"]).to eq ["<a href='https://catalog.princeton.edu/12345678'>https://catalog.princeton.edu/12345678</a>"]
     end
 
+    it "ingests finding aids metadata dates" do
+      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_metadata(id: "12345678", fixture: "findingaids-date")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      expect(resource.save).to be true
+
+      Blacklight.default_index.connection.commit
+      solr_doc = resource.solr_documents.first
+      expect(solr_doc["sort_date_ssi"]).to eq "1936"
+    end
+
     it "removes old metadata" do
       stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
       # Stub metadata with a record which has a creator
