@@ -2,7 +2,7 @@
   <div class="thumbnail">
     <%= link_to_document document, image_tag(document[:thumbnail_ssim].first.to_s.gsub(/full\/.*\/0/,"full/!400,400/0"), skip_pipeline: true) %>
     <div class="recent-item-card-header">
-      <%= render_index_document document %>
+      <%= render_index_document_title_heading document %>
     </div>
   </div>
 </div>

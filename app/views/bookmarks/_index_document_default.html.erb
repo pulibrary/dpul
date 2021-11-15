@@ -3,7 +3,7 @@
 <div class='row'>
   <div class="title-metadata-container col-9">
     <h3 class="index_title document-title-heading">
-      <%= render_index_document_title_heading(document, counter: document_counter) %>
+      <%= render_index_document_title_heading(document, counter: document_counter, exhibit_context: true) %>
 
     </h3>
     <%= render(Blacklight::DocumentMetadataComponent.new(fields: document_presenter(document).field_presenters)) %>

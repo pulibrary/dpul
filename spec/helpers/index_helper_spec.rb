@@ -24,7 +24,7 @@ describe IndexHelper do
     Object.send(:remove_const, :TestingHelper)
   end
 
-  describe '#render_index_document' do
+  describe '#render_index_document_title_heading' do
     before do
       allow(helper).to receive(:document_presenter).and_return(document_presenter)
       allow(helper).to receive(:url_for_document).and_return('link')
@@ -36,8 +36,8 @@ describe IndexHelper do
       let(:heading) { 'title' }
 
       it 'returns a single ltr span tag' do
-        tag = helper.render_index_document(document)
-        expect(tag).to eq '<span style="display: block;" dir="ltr"><a href="link">title</a></span>'
+        tag = helper.render_index_document_title_heading(document)
+        expect(tag).to eq '<span style="display: block;"><span dir="ltr"><a href="link">title</a></span></span>'
       end
     end
 
@@ -45,8 +45,8 @@ describe IndexHelper do
       let(:heading) { 'تضيح المقال' }
 
       it 'returns a single rtl span tag' do
-        tag = helper.render_index_document(document)
-        expect(tag).to eq '<span style="display: block;" dir="rtl"><a href="link">تضيح المقال</a></span>'
+        tag = helper.render_index_document_title_heading(document)
+        expect(tag).to eq '<span style="display: block;"><span dir="rtl"><a href="link">تضيح المقال</a></span></span>'
       end
     end
 
@@ -54,9 +54,9 @@ describe IndexHelper do
       let(:heading) { ['تضيح المقال', 'title'] }
 
       it 'returns multiple span tags' do
-        tag = helper.render_index_document(document)
-        expect(tag).to eq '<span style="display: block;" dir="rtl"><a href="link">تضيح المقال</a></span>'\
-                          '<span style="display: block;" dir="ltr"><a href="link">title</a></span>'
+        tag = helper.render_index_document_title_heading(document)
+        expect(tag).to eq '<span style="display: block;"><span dir="rtl"><a href="link">تضيح المقال</a></span></span>'\
+                          '<span style="display: block;"><span dir="ltr"><a href="link">title</a></span></span>'
       end
     end
   end
