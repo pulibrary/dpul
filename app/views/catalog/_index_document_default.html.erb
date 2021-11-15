@@ -6,7 +6,9 @@
           <%= t('blacklight.search.documents.counter', counter: counter) %>
         </span>
       <% end %>
-      <%= link_to_document document, counter: counter %>
+      <!-- <%= link_to_document document, counter: counter %> -->
+      <%= render_index_document(document) %>
+
     </h3>
     <%= render(Blacklight::DocumentMetadataComponent.new(fields: document_presenter(document).field_presenters)) %>
   </div>

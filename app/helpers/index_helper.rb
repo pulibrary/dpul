@@ -3,12 +3,12 @@
 module IndexHelper
   # generally spotlight asks the controller for the exhibit context you're in
   # but in bookmarks the exhibit context will vary between documents
-  # so we have to specify that we want it
-  def render_index_document(document, exhibit_context: false)
+  # so we have to retrieve it
+  def render_index_document(document, counter: '')
     field = field_from document: document
     spans = Array.wrap(field).map do |value|
       content_tag(:span, style: 'display: block;', dir: value.dir) do
-        if exhibit_context
+        if controller_name == "bookmarks"
           contextual_label_link(value, document)
         else
           label_link(value, document)

@@ -61,26 +61,6 @@ module ApplicationHelper
     Pathname.new('/').join("bookmarks", document.id).to_s
   end
 
-  # Princeton override to ensure bookmarks link to the item in exhibit context
-  # On the bookmark page you don't have current_exhibit, so find the right
-  # exhibit
-  def url_for_document(document)
-    return nil if document.nil?
-
-    exhibit =
-      if current_exhibit
-        current_exhibit
-      elsif document["spotlight_exhibit_slugs_ssim"].present?
-        Spotlight::Exhibit.where(slug: document["spotlight_exhibit_slugs_ssim"].first).first
-      end
-
-    if exhibit
-      [spotlight, exhibit, document]
-    else
-      document
-    end
-  end
-
   private
 
     # Generate the URL for the configuration for the UV

@@ -93,6 +93,13 @@ RSpec.feature 'Catalog', type: :feature do
       expect(page).to have_link 'Home', href: "/#{exhibit.slug}"
       expect(page).to have_css '#documents .document h3.index_title', text: id
     end
+
+    scenario "cross-collection search links to the search result with no exhibit context" do
+      visit main_app.search_catalog_path(q: '')
+
+      expect(page).not_to have_link id, href: "/slug-1/catalog/#{id}"
+      expect(page).to have_link id, href: "/catalog/#{id}"
+    end
   end
 
   context 'when searching across a catalog with many languages' do
@@ -125,6 +132,7 @@ RSpec.feature 'Catalog', type: :feature do
       visit main_app.search_catalog_path(q: '')
       expect(page).to have_link("more", href: '/catalog/facet/readonly_language_ssim')
     end
+
     it "displays a sort", js: true do
       visit main_app.search_catalog_path(q: '')
 
