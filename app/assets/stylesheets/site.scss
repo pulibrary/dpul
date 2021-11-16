@@ -21,13 +21,14 @@ h1, h2, h3, h4, h5, h6 .facets, .facets-heading {
 }
 
 h1, h2, h3, h4, h5, h6, .st__content-block, .content-block {
-  margin: 1em 0 0.5em;
+  margin: 1em 0 1em;
 }
 
 h1 {
   font-size: 2.074em;
 }
 
+// don't style lists on the show page
 .document ul {
   list-style-type: none;
   margin: 0;
@@ -44,4 +45,12 @@ h1 {
 
 .form-select.search-field {
   background-color: $light;
+}
+
+.documents-list .document .document-thumbnail {
+  padding-left: 1rem;
+}
+
+.title-metadata-container {
+  overflow: auto;
 }
