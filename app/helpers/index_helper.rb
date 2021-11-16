@@ -36,7 +36,6 @@ module IndexHelper
     # generate a title link with or without exhibit context
     def title_link(value, document, exhibit_context)
       content_tag(:span, dir: value.dir) do
-        # if controller_name == "bookmarks"
         if exhibit_context
           contextual_label_link(value, document)
         else
