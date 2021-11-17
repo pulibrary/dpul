@@ -16,9 +16,8 @@ describe Spotlight::ReindexExhibitJob do
     clear_enqueued_jobs
   end
 
-  with_queue_adapter :test
-
   it 'runs the index job inline' do
+    stub_manifest(url: url1, fixture: 'full_text_manifest.json')
     allow(Spotlight::ReindexJob).to receive(:perform_later)
     described_class.perform_now(exhibit)
 

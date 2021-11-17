@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Spotlight::ReindexJob do
+  with_queue_adapter :inline
   let(:url1) { 'http://example.com/1/manifest' }
   let(:exhibit) { Spotlight::Exhibit.new }
   let(:resource) { IIIFResource.new url: nil, exhibit: exhibit }
