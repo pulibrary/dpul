@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe 'Bulk actions', type: :feature, js: true do
+describe 'Bulk actions', type: :feature do
   let(:exhibit) { FactoryBot.create(:exhibit) }
   let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
 

@@ -48,7 +48,7 @@ RSpec.feature 'Catalog', type: :feature do
     )
   end
 
-  context 'logged in as a site admin' do
+  context 'logged in as a site admin.' do
     let(:user) { FactoryBot.create(:site_admin, exhibit: exhibit) }
 
     before do
@@ -125,9 +125,9 @@ RSpec.feature 'Catalog', type: :feature do
       visit main_app.search_catalog_path(q: '')
       expect(page).to have_link("more", href: '/catalog/facet/readonly_language_ssim')
     end
-
     it "displays a sort", js: true do
       visit main_app.search_catalog_path(q: '')
+
       expect(page).to have_selector "#sort-dropdown"
     end
   end

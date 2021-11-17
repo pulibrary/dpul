@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Browsing exhibits', type: :feature, js: true do
+RSpec.describe 'Browsing exhibits', type: :feature do
   let(:exhibit) { FactoryBot.create(:exhibit) }
   let(:user) { FactoryBot.create(:user, exhibit: exhibit) }
   let(:id) { 'd279a557a62937a8895eebbca2d4744c' }

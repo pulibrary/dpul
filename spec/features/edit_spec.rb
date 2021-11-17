@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Catalog Edit', type: :feature, js: true do
+RSpec.describe 'Catalog Edit', type: :feature do
   let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
   let(:different_exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 2', slug: 'exhibit-title-2') }
   let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }

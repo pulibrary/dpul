@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Error Pages', type: :feature, js: true do
+RSpec.describe 'Error Pages', type: :feature do
   context "when visiting the pages directly" do
     it "shows a custom 404 page" do
       visit "/404"
@@ -13,7 +13,6 @@ RSpec.describe 'Error Pages', type: :feature, js: true do
       visit "/500"
       expect(page).to have_selector ".site-title", text: "Server Error"
     end
-
     it "has search across" do
       visit "/500"
       expect(page).to have_selector ".search-query-form"

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Exhibit Home Page', type: :feature, js: true do
+RSpec.feature 'Exhibit Home Page', type: :feature do
   let(:exhibit) { FactoryBot.create(:exhibit, subtitle: "بي") }
 
   context 'a logged in site admin' do

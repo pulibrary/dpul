@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Home Page', type: :feature, js: true do
+RSpec.feature 'Home Page', type: :feature do
   context 'a logged in site admin' do
     let(:user) { FactoryBot.create(:site_admin) }
 
