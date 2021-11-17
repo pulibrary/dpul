@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe "accessibility", type: :feature, js: true do
-  context "bookmarks page" do
+  context "when visiting bookmarks page" do
     let(:iiif_resource1) do FactoryBot.create(
       :iiif_resource,
       url: "https://figgy.princeton.edu/concern/scanned_resources/beaec815-6a34-4519-8ce8-40a89d3b1956/manifest",
@@ -43,7 +43,7 @@ describe "accessibility", type: :feature, js: true do
     end
   end
 
-  context "browsing exhibit items page" do
+  context "when browsing exhibit items page" do
     let(:exhibit) { FactoryBot.create(:exhibit) }
     let(:user) { FactoryBot.create(:site_admin, exhibit: exhibit) }
     let(:id) { 'd279a557a62937a8895eebbca2d4744c' }
@@ -105,7 +105,7 @@ describe "accessibility", type: :feature, js: true do
     end
   end
 
-  context "bulk actions page" do
+  context "when visiting bulk actions page" do
     let(:exhibit) { FactoryBot.create(:exhibit) }
     let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
 
@@ -126,7 +126,7 @@ describe "accessibility", type: :feature, js: true do
     end
   end
 
-  context "catalog show page" do
+  context "when visiting catalog show page" do
     let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
     let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
     let(:document_id) { '1r66j4408' }
@@ -189,7 +189,7 @@ describe "accessibility", type: :feature, js: true do
     end
   end
 
-  context "catalog page" do
+  context "when visiting catalog page" do
     let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit A') }
     let(:user) { FactoryBot.create(:site_admin, exhibit: exhibit) }
     let(:id) { 'd279a557a62937a8895eebbca2d4744c' }
@@ -236,7 +236,7 @@ describe "accessibility", type: :feature, js: true do
       )
     end
 
-    context "search exhibit catalog path" do
+    context "with search exhibit catalog path" do
       it "complies with WCAG" do
         pending("fix accessibility violations")
 
@@ -284,7 +284,7 @@ describe "accessibility", type: :feature, js: true do
     end
   end
 
-  context "edit page" do
+  context "when visiting edit page" do
     let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
     let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
     let(:id) { Digest::MD5.hexdigest("#{exhibit.id}-#{document_id}") }
@@ -336,8 +336,8 @@ describe "accessibility", type: :feature, js: true do
     end
   end
 
-  context "error page" do
-    context "404 error" do
+  context "when visiting error page" do
+    context "with 404 error" do
       it "complies with WCAG" do
         visit "/404"
         expect(page).to be_axe_clean
@@ -346,7 +346,7 @@ describe "accessibility", type: :feature, js: true do
       end
     end
 
-    context "500 error" do
+    context "with 500 error" do
       it "complies with WCAG" do
         visit "/500"
         expect(page).to be_axe_clean
@@ -355,7 +355,7 @@ describe "accessibility", type: :feature, js: true do
       end
     end
 
-    context "nonexistent page" do
+    context "with nonexistent page" do
       it "complies with WCAG" do
         visit "/catalog/nonexistent"
         expect(page).to be_axe_clean
@@ -365,7 +365,7 @@ describe "accessibility", type: :feature, js: true do
     end
   end
 
-  context "exhibit home page" do
+  context "when visiting exhibit home page" do
     let(:exhibit) { FactoryBot.create(:exhibit, subtitle: "بي") }
     let(:user) { FactoryBot.create(:site_admin) }
 
@@ -392,7 +392,7 @@ describe "accessibility", type: :feature, js: true do
     end
   end
 
-  context "language create edit page" do
+  context "when visiting language create edit page" do
     let(:exhibit) { FactoryBot.create(:exhibit) }
     let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
 
@@ -408,7 +408,7 @@ describe "accessibility", type: :feature, js: true do
     end
   end
 
-  context "sign in page" do
+  context "when visiting sign in page" do
     context "when logged in as site admin" do
       let(:user) { FactoryBot.create(:site_admin) }
 
