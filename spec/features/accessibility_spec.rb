@@ -28,8 +28,6 @@ describe "accessibility", type: :feature, js: true do
     let(:title) { "Plan de Paris : commencé de l'année 1734" }
 
     it "complies with WCAG" do
-      pending("fix accessibility violations")
-
       iiif_resource1
       iiif_resource2
       visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
@@ -40,6 +38,7 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
+        .skipping(:"duplicate-id") # See issue: -----
     end
   end
 
@@ -91,8 +90,6 @@ describe "accessibility", type: :feature, js: true do
     end
 
     it "complies with WCAG" do
-      pending("fix accessibility violations")
-
       sign_in user
       document.make_public! exhibit
       document.reindex
@@ -102,6 +99,7 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
+        .skipping(:"color-contrast") # See issue: -----
     end
   end
 
@@ -110,8 +108,6 @@ describe "accessibility", type: :feature, js: true do
     let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
 
     it "complies with WCAG" do
-      pending("fix accessibility violations")
-
       sign_in admin
       d = SolrDocument.new(id: 'dq287tq6352')
       exhibit.tag(d.sidecar(exhibit), with: ['foo'], on: :tags)
@@ -123,6 +119,9 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
+        .skipping(:"color-contrast") # See issue: -----
+        .skipping(:"duplicate-id-aria") # See issue: -----
+        .skipping(:"duplicate-id") # See issue: -----
     end
   end
 
@@ -179,13 +178,13 @@ describe "accessibility", type: :feature, js: true do
     end
 
     it "complies with WCAG" do
-      pending("fix accessibility violations")
-
       visit spotlight.exhibit_solr_document_path(exhibit, document_id)
 
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
+        .skipping(:"color-contrast") # See issue: -----
+        .skipping(:"frame-title") # See issue: -----
     end
   end
 
@@ -238,8 +237,6 @@ describe "accessibility", type: :feature, js: true do
 
     context "with search exhibit catalog path" do
       it "complies with WCAG" do
-        pending("fix accessibility violations")
-
         sign_in user
         document.make_public! exhibit
         document.reindex
@@ -249,6 +246,9 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .skipping(:"color-contrast") # See issue: -----
+          .skipping(:"duplicate-id-aria") # See issue: -----
+          .skipping(:"duplicate-id") # See issue: -----
       end
     end
 
@@ -263,8 +263,6 @@ describe "accessibility", type: :feature, js: true do
       }
 
       it "complies with WCAG" do
-        pending("fix accessibility violations")
-
         index.add(id: '1',
                   full_title_ssim: ['Test Item'],
                   readonly_title_ssim: ['Test Item'],
@@ -276,6 +274,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .skipping(:"color-contrast") # See issue: -----
       end
     end
 
@@ -326,13 +325,13 @@ describe "accessibility", type: :feature, js: true do
     end
 
     it "complies with WCAG" do
-      pending("fix accessibility violations")
-
       visit "/#{exhibit.slug}/catalog/#{document_id}/edit"
 
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
+        .skipping(:"color-contrast") # See issue: -----
+        .skipping(:"frame-title") # See issue: -----
     end
   end
 
@@ -371,14 +370,13 @@ describe "accessibility", type: :feature, js: true do
 
     context "when logged in as a site admin" do
       it "complies with WCAG" do
-        pending("fix accessibility violations")
-
         sign_in user
         visit spotlight.exhibit_root_path exhibit
 
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .skipping(:"color-contrast") # See issue: -----
       end
     end
 
@@ -397,14 +395,14 @@ describe "accessibility", type: :feature, js: true do
     let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
 
     it "complies with WCAG" do
-      pending("fix accessibility violations")
-
       login_as admin
       visit spotlight.edit_exhibit_path(exhibit)
 
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
+        .skipping(:"color-contrast") # See issue: -----
+        .skipping(:"duplicate-id") # See issue: -----
     end
   end
 
@@ -413,14 +411,13 @@ describe "accessibility", type: :feature, js: true do
       let(:user) { FactoryBot.create(:site_admin) }
 
       it "complies with WCAG" do
-        pending("fix accessibility violations")
-
         sign_in user
         visit root_path
 
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .skipping(:"color-contrast") # See issue: -----
       end
     end
 
