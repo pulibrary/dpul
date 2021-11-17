@@ -24,6 +24,7 @@ module Spotlight
 
       # Enqueue a reindex job for each member resource
       exhibit.resources.each do |resource|
+        resource.save unless resource.persisted?
         Spotlight::ReindexJob.perform_later(resource, reports_on: job_tracker)
       end
 
