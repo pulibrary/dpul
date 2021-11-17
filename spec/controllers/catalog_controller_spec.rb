@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe CatalogController do
+  with_queue_adapter :inline
   let(:user) { nil }
   context "with full-text search" do
     let(:user) { FactoryBot.create(:site_admin) }

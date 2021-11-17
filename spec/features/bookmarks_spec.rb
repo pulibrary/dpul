@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Bookmarks', type: :feature, js: true do
+  with_queue_adapter :inline
   let(:iiif_resource1) do FactoryBot.create(
     :iiif_resource,
     url: "https://figgy.princeton.edu/concern/scanned_resources/beaec815-6a34-4519-8ce8-40a89d3b1956/manifest",

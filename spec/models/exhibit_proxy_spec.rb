@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 describe ExhibitProxy do
+  with_queue_adapter :inline
   describe '#document_builder' do
     subject(:exhibit_proxy) { described_class.new(exhibit) }
 

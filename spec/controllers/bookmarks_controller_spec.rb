@@ -3,6 +3,7 @@
 require "rails_helper"
 
 RSpec.describe BookmarksController do
+  with_queue_adapter :inline
   describe "#csv" do
     # test expectations
     let(:headers) { "ID,Title,Creator,Date,Subject,Coverage,Location,Language" }

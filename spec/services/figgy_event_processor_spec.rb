@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe FiggyEventProcessor do
+  with_queue_adapter :inline
   subject(:processor) { described_class.new(event) }
   before do
     stub_manifest(url: url, fixture: "1r66j1149.json")

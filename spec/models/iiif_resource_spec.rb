@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 describe IIIFResource do
+  with_queue_adapter :inline
   context "when indexing a Recording IIIF v3 manifest" do
     it "indexes succesfully" do
       url = 'https://figgy-staging.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest'
