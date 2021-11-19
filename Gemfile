@@ -83,10 +83,8 @@ gem 'sprockets-rails'
 gem 'string_rtl'
 gem 'webpacker', '>= 4.0.x'
 
-# PUL Assets
 gem 'dalli'
 gem 'honeybadger'
 gem 'nokogiri', '~> 1.11.4'
-# gem 'pul-assets', git: 'git@github.com:pulibrary/pul_assets.git', branch: 'main'
 gem 'ruby-prof', require: false
 gem 'rubyzip', '>= 1.2.2'
