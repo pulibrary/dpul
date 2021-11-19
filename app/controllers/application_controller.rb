@@ -21,9 +21,14 @@ class ApplicationController < ActionController::Base
   rescue_from ActionView::MissingTemplate, with: :not_found
 
   def not_found
-    respond_to do |format|
-      format.html { render "pages/not_found", status: 404 }
-      format.all { head 404 }
+    # Error on exhibit when resource is requested on a nonexistent exhibit
+    if params[:id] && params[:exhibit_id] && @exhibit.nil?
+      redirect_to "/#{params[:exhibit_id]}"
+    else
+      respond_to do |format|
+        format.html { render "pages/not_found", status: 404 }
+        format.all { head 404 }
+      end
     end
   end
 
