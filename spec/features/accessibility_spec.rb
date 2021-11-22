@@ -40,7 +40,6 @@ describe "accessibility", type: :feature, js: true do
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
         .skipping(:"duplicate-id") # See issue: -----
-        .skipping(:"color-contrast") # See issue: -----
     end
   end
 
@@ -121,7 +120,7 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
-        .skipping(:"color-contrast") # See issue: -----
+        .skipping(:"color-contrast") # See issue: ----- 
         .skipping(:"duplicate-id-aria") # See issue: -----
         .skipping(:"duplicate-id") # See issue: -----
     end
@@ -186,7 +185,6 @@ describe "accessibility", type: :feature, js: true do
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
         .skipping(:"color-contrast") # See issue: -----
-        .skipping(:"frame-title") # See issue: -----
     end
   end
 
@@ -248,7 +246,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
-          .skipping(:"color-contrast") # See issue: -----
+          .skipping(:"color-contrast") # See issue: ----- 
           .skipping(:"duplicate-id-aria") # See issue: -----
           .skipping(:"duplicate-id") # See issue: -----
       end
@@ -276,7 +274,6 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
-          .skipping(:"color-contrast") # See issue: -----
       end
     end
 
@@ -333,7 +330,6 @@ describe "accessibility", type: :feature, js: true do
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
         .skipping(:"color-contrast") # See issue: -----
-        .skipping(:"frame-title") # See issue: -----
     end
   end
 
@@ -378,7 +374,6 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
-          .skipping(:"color-contrast") # See issue: -----
       end
     end
 
@@ -419,7 +414,6 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
-          .skipping(:"color-contrast") # See issue: -----
       end
     end
 
