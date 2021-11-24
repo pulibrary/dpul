@@ -34,4 +34,14 @@ RSpec.describe "Errors", type: :request do
       expect(response.status).to eq 404
     end
   end
+
+  describe "resource is requested on a nonexistent exhibit" do
+    it "redirects to exhibit page and returns a 404" do
+      get "/not_an_exhibit/catalog/ab32bcd8-8586-4c38-8da2-0aaf33d17f57"
+
+      expect(response).to redirect_to("/not_an_exhibit")
+      follow_redirect!
+      expect(response.status).to eq 404
+    end
+  end
 end
