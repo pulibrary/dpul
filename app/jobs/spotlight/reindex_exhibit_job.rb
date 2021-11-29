@@ -25,7 +25,9 @@ module Spotlight
       # Enqueue a reindex job for each member resource
       exhibit.resources.each do |resource|
         resource.save unless resource.persisted?
-        Spotlight::ReindexJob.perform_later(resource, reports_on: job_tracker)
+        # Don't reindex invalid resources - these are usually ones which are
+        # private and the app can't download manifests for.
+        Spotlight::ReindexJob.perform_later(resource, reports_on: job_tracker) if resource.valid?
       end
 
       job_tracker.update(status: 'in_progress')
