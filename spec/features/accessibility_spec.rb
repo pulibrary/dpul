@@ -39,7 +39,6 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
-        .skipping(:"duplicate-id") # See issue: #1227
     end
   end
 
