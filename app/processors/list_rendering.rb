@@ -9,9 +9,8 @@ class ListRendering < Blacklight::Rendering::AbstractStep
   include ActionView::Helpers::TextHelper
 
   def render
-    # If it's a text area, don't make it a list.
-    if config.text_area == "1" || context.try(:action_name) != "show" || context.try(:controller_name) != "catalog"
-      # Index page should use join step.
+    # If it's a text area or a slideshow, don't make it a list.
+    if config.text_area == "1" || context.try(:controller_name) != "catalog"
       join_result = Blacklight::Rendering::Join.new(values, config, document, context, options, [Blacklight::Rendering::Terminator]).render
       next_step(join_result)
     else

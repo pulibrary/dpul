@@ -7,7 +7,7 @@ module IndexHelper
   def render_index_document_title_heading(document, counter: nil, exhibit_context: false)
     field = field_from document: document
     title_links = Array.wrap(field).map.with_index do |value, i|
-      content_tag(:span, style: 'display: block;') do
+      content_tag(:span) do
         safe_join [counter_string(counter, i), title_link(value, document, exhibit_context)]
       end
     end
