@@ -37,7 +37,7 @@ describe IndexHelper do
 
       it 'returns a single ltr span tag' do
         tag = helper.render_index_document_title_heading(document)
-        expect(tag).to eq '<span style="display: block;"><span dir="ltr"><a href="link">title</a></span></span>'
+        expect(tag).to eq '<span><span dir="ltr"><a href="link">title</a></span></span>'
       end
     end
 
@@ -46,7 +46,7 @@ describe IndexHelper do
 
       it 'returns a single rtl span tag' do
         tag = helper.render_index_document_title_heading(document)
-        expect(tag).to eq '<span style="display: block;"><span dir="rtl"><a href="link">تضيح المقال</a></span></span>'
+        expect(tag).to eq '<span><span dir="rtl"><a href="link">تضيح المقال</a></span></span>'
       end
     end
 
@@ -55,8 +55,8 @@ describe IndexHelper do
 
       it 'returns multiple span tags' do
         tag = helper.render_index_document_title_heading(document)
-        expect(tag).to eq '<span style="display: block;"><span dir="rtl"><a href="link">تضيح المقال</a></span></span>'\
-                          '<span style="display: block;"><span dir="ltr"><a href="link">title</a></span></span>'
+        expect(tag).to eq '<span><span dir="rtl"><a href="link">تضيح المقال</a></span></span>'\
+                          '<span><span dir="ltr"><a href="link">title</a></span></span>'
       end
     end
   end

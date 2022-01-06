@@ -76,7 +76,7 @@ RSpec.describe RTLIndexPresenter do
           double(document_index_view_type: :current_view, should_render_field?: true, action_name: "index", controller_name: "catalog"),
           exhibit.blacklight_config
         )
-        expect(presenter.heading).to eq "Test"
+        expect(presenter.heading).to eq '<ul><li dir="ltr">Test</li></ul>'
       end
     end
 
@@ -88,7 +88,7 @@ RSpec.describe RTLIndexPresenter do
           double(document_index_view_type: :current_view, should_render_field?: true, action_name: "index", controller_name: "catalog"),
           exhibit.blacklight_config
         )
-        expect(presenter.heading).to eq title.first
+        expect(presenter.heading).to eq "<ul><li dir=\"rtl\">#{title.first}</li></ul>"
       end
     end
 

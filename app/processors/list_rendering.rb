@@ -9,8 +9,7 @@ class ListRendering < Blacklight::Rendering::AbstractStep
   include ActionView::Helpers::TextHelper
 
   def render
-    # If it's a text area or a slideshow, don't make it a list.
-    if config.text_area == "1" || context.try(:controller_name) != "catalog"
+    if use_join(config, context)
       join_result = Blacklight::Rendering::Join.new(values, config, document, context, options, [Blacklight::Rendering::Terminator]).render
       next_step(join_result)
     else
@@ -19,5 +18,14 @@ class ListRendering < Blacklight::Rendering::AbstractStep
       end
       next_step("<ul>#{values.join('')}</ul>").html_safe
     end
+  end
+
+  # If it's a text area or a slideshow, or a non-title index field,
+  # don't make it a list.
+  def use_join(config, context)
+    return true if config.text_area == "1"
+    return true if context.try(:action_name) != "show" && config.field != "full_title_tesim"
+
+    context.try(:controller_name) != "catalog"
   end
 end
