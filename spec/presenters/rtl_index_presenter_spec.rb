@@ -40,6 +40,16 @@ RSpec.describe RTLIndexPresenter do
       it 'renders as an Array' do
         expect(presenter.label(:title)).to match_array ['تضيح المقال', 'Tawḍīḥ al-maqāl']
       end
+
+      it 'renders heading as multiline' do
+        exhibit = FactoryBot.create(:exhibit)
+        presenter = described_class.new(
+          SolrDocument.new(full_title_tesim: title),
+          double(document_index_view_type: :current_view, should_render_field?: true, action_name: "index", controller_name: "catalog"),
+          exhibit.blacklight_config
+        )
+        expect(presenter.heading).to eq '<ul><li dir="rtl">تضيح المقال</li><li dir="ltr">Tawḍīḥ al-maqāl</li></ul>'
+      end
     end
 
     context "when given a title with special characters" do
@@ -66,7 +76,7 @@ RSpec.describe RTLIndexPresenter do
           double(document_index_view_type: :current_view, should_render_field?: true, action_name: "index", controller_name: "catalog"),
           exhibit.blacklight_config
         )
-        expect(presenter.heading).to eq "Test"
+        expect(presenter.heading).to eq '<ul><li dir="ltr">Test</li></ul>'
       end
     end
 
@@ -78,7 +88,7 @@ RSpec.describe RTLIndexPresenter do
           double(document_index_view_type: :current_view, should_render_field?: true, action_name: "index", controller_name: "catalog"),
           exhibit.blacklight_config
         )
-        expect(presenter.heading).to eq title.first
+        expect(presenter.heading).to eq "<ul><li dir=\"rtl\">#{title.first}</li></ul>"
       end
     end
 
