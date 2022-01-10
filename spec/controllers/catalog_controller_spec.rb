@@ -151,22 +151,47 @@ RSpec.describe CatalogController do
 
   describe '#index' do
     before do
-      index.add(id: '3',
-                full_title_ssim: ['Item B'],
-                readonly_title_ssim: ['Item B'],
-                spotlight_resource_type_ssim: ['iiif_resources'],
-                readonly_collections_ssim: ['Collection A', 'Collection B'])
+      index.add(
+        id: '3',
+        full_title_ssim: ['Item B'],
+        readonly_title_ssim: ['Item B'],
+        spotlight_resource_type_ssim: ['iiif_resources'],
+        readonly_collections_ssim: ['Collection A', 'Collection B'],
+        readonly_collections_tesim: ['Collection A', 'Collection B'],
+        readonly_creator_ssim: ['Creator', 'Creator2'],
+        readonly_publisher_ssim: ['Publisher'],
+        readonly_format_ssim: ['Visual material']
+      )
       index.commit
+    end
 
-      get :index, params: { q: '' }
+    context "when using the JSON endpoint" do
+      render_views
+      it "returns all the values necessary for bento search" do
+        get :index, params: { q: '', format: :json }
+
+        json = JSON.parse(response.body)
+        record = json["data"][0]
+        attributes = record["attributes"]
+
+        expect(attributes["readonly_creator_ssim"]["attributes"]["value"]).to eq "Creator and Creator2"
+        expect(attributes["readonly_title_ssim"]["attributes"]["value"]).to eq "Item B"
+        expect(attributes["readonly_publisher_ssim"]["attributes"]["value"]).to eq "Publisher"
+        expect(attributes["readonly_format_ssim"]["attributes"]["value"]).to eq "Visual material"
+        expect(attributes["readonly_collections_tesim"]["attributes"]["value"]).to eq "Collection A and Collection B"
+      end
     end
 
     it 'facets upon collections' do
+      get :index, params: { q: '' }
+
       expect(assigns[:response][:facet_counts][:facet_fields]).not_to be_empty
       expect(assigns[:response][:facet_counts][:facet_fields]).to include readonly_collections_ssim: ['Collection A', 1, 'Collection B', 1]
     end
 
     it 'indexes collections' do
+      get :index, params: { q: '' }
+
       expect(assigns[:response][:response][:docs]).not_to be_empty
       expect(assigns[:response][:response][:docs].first).to include readonly_collections_ssim: ['Collection A', 'Collection B']
     end

@@ -11,6 +11,11 @@ class CatalogController < ApplicationController
     return if current_exhibit
 
     blacklight_config.add_index_field 'readonly_creator_ssim', label: 'Creator'
+    # show: false is used to add results to the JSON endpoint for bento search.
+    blacklight_config.add_index_field 'readonly_title_ssim', label: 'Title', show: false
+    blacklight_config.add_index_field 'readonly_publisher_ssim', label: 'Publisher', show: false
+    blacklight_config.add_index_field 'readonly_format_ssim', label: 'Format', show: false
+    blacklight_config.add_index_field 'readonly_collections_tesim', label: 'Collections', show: false
 
     blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language', limit: 10
     blacklight_config.add_facet_field 'readonly_subject_ssim', label: 'Subject', limit: 10
