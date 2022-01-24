@@ -99,7 +99,7 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
-        .skipping(:"color-contrast") # See issue: #1217
+        .excluding(".nav-link") # Color constrast valid, but test fails because of navbar's transparency and no img loading
     end
   end
 
@@ -119,7 +119,7 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
-        .skipping(:"color-contrast") # See issue: #1217
+        .excluding(".nav-link") # Color constrast valid, but test fails because of navbar's transparency and no img loading
         .skipping(:"duplicate-id-aria") # See issue: #1264
         .skipping(:"duplicate-id") # See issue: #1227
     end
