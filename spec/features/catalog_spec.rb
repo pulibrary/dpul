@@ -53,6 +53,11 @@ RSpec.feature 'Catalog', type: :feature do
 
     before do
       sign_in user
+
+      Spotlight::SolrDocumentSidecar.create!(
+        document: document, exhibit: exhibit,
+        data: { 'full_title_tesim' => ['First', 'Second'] }
+      )
       document.make_public! exhibit
       document.reindex
       index.commit
@@ -62,17 +67,22 @@ RSpec.feature 'Catalog', type: :feature do
       visit spotlight.autocomplete_exhibit_catalog_path(exhibit_id: exhibit.id, q: " ", format: "json")
 
       expect(JSON.parse(page.body)["docs"].length).to eq 1
+      doc = JSON.parse(page.body)["docs"].first
+      # Autocomplete should have a title with no HTML. If there's HTML it breaks
+      # the SirTrevor widgets.
+      expect(doc["title"]).to eq "First, Second"
     end
 
     scenario 'user searches for a collections with a keyword' do
       visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: id)
-      expect(page).to have_css '#documents .document h3.index_title', text: id
+      expect(page).to have_css '#documents .document h3.index_title', text: 'First'
     end
 
     context 'when the document has metadata attributes with quotes' do
       before do
         exhibit2 = Spotlight::Exhibit.create title: 'Exhibit B', published: true
         document2 = SolrDocument.new(id: 'd279a557a62937a8895eebbca2d4744c', exhibit: exhibit)
+        Spotlight::SolrDocumentSidecar.delete_all
         Spotlight::SolrDocumentSidecar.create!(
           document: document2, exhibit: exhibit2,
           data: { 'full_title_tesim' => ['"title1"'] }
@@ -91,14 +101,14 @@ RSpec.feature 'Catalog', type: :feature do
     scenario 'user browses all collections' do
       visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
       expect(page).to have_link 'Home', href: "/#{exhibit.slug}"
-      expect(page).to have_css '#documents .document h3.index_title', text: id
+      expect(page).to have_css '#documents .document h3.index_title', text: 'First'
     end
 
     scenario "cross-collection search links to the search result with no exhibit context" do
       visit main_app.search_catalog_path(q: '')
 
       expect(page).not_to have_link id, href: "/slug-1/catalog/#{id}"
-      expect(page).to have_link id, href: "/catalog/#{id}"
+      expect(page).to have_link 'First', href: "/catalog/#{id}"
     end
   end
 
