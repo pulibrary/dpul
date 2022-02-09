@@ -28,6 +28,16 @@ RSpec.describe "Errors", type: :request do
     end
   end
 
+  # Riiif::ImageNotFoundError
+  describe "Riiif image not found" do
+    it "renders a 404 page" do
+      params = { id: "123", region: "1,2,3,4", size: "400,400", rotation: "0" }
+      get "/images/#{params[:id]}/#{params[:region]}/#{params[:size]}/#{params[:rotation]}/non_existent.jpg"
+
+      expect(response.status).to eq(404)
+    end
+  end
+
   describe "json requests for the main page" do
     it "returns a 404 status code response" do
       get "/", params: { format: :json }

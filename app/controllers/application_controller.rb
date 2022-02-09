@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from Blacklight::Exceptions::RecordNotFound, with: :not_found
   rescue_from ActionView::MissingTemplate, with: :not_found
+  rescue_from Riiif::ImageNotFoundError, with: :not_found
 
   def not_found
     # Error on exhibit when resource is requested on a nonexistent exhibit
