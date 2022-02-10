@@ -39,7 +39,8 @@ RSpec.describe FriendlyIdRepository do
     context "when an exhibit is passed" do
       it "generates a compound id" do
         allow(repository).to receive(:search)
-        output = repository.find(manifest.noid, exhibit: exhibit)
+        allow(repository.blacklight_config).to receive(:current_exhibit).and_return(exhibit)
+        output = repository.find(manifest.noid)
         expect(output["response"]["docs"].first["id"]).to eq manifest.compound_id
         expect(repository).not_to have_received(:search)
       end
