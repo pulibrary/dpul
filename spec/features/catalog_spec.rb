@@ -153,4 +153,29 @@ RSpec.feature 'Catalog', type: :feature do
   def index
     Blacklight.default_index.connection
   end
+
+  context "when a resource belongs to 2 different exhibits" do
+    it "retrieves the correct solr document for each" do
+      url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
+      stub_manifest(url: url, fixture: 'full_text_manifest.json')
+      stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
+      stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true, slug: "exhibit_a"
+      resource = IIIFResource.new(url: url, exhibit: exhibit)
+      resource.save_and_index_now
+
+      exhibit2 = Spotlight::Exhibit.create title: 'Exhibit B', published: true, slug: "exhibit_b"
+      resource2 = IIIFResource.new(url: url, exhibit: exhibit2)
+      resource2.save_and_index_now
+      Blacklight.default_index.connection.commit
+
+      visit spotlight.raw_exhibit_catalog_path(exhibit, id: resource.noid)
+      json = JSON.parse(page.body)
+      expect(json.keys).to include "exhibit_exhibit_a_public_bsi"
+
+      visit spotlight.raw_exhibit_catalog_path(exhibit2, id: resource.noid)
+      json = JSON.parse(page.body)
+      expect(json.keys).to include "exhibit_exhibit_b_public_bsi"
+    end
+  end
 end
