@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Uses the slug to get the title from a collection manifest.
 class AppliesTitleFromSlug < SimpleDelegator
   include GlobalID::Identification
   delegate :class, to: :__getobj__
