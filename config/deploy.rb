@@ -81,6 +81,8 @@ after 'deploy:published', 'sneakers:restart'
 after 'deploy:starting', 'sidekiq:quiet'
 after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:published', 'sidekiq:restart'
+require 'date'
+require 'active_support/core_ext/date'
 
 namespace :replicate do
   desc "Replicate production database and index to staging"
