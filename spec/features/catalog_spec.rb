@@ -167,6 +167,10 @@ RSpec.feature 'Catalog', type: :feature do
       exhibit2 = Spotlight::Exhibit.create title: 'Exhibit B', published: true, slug: "exhibit_b"
       resource2 = IIIFResource.new(url: url, exhibit: exhibit2)
       resource2.save_and_index_now
+      resource2.reload
+      resource2.solr_document_sidecars.first.data["override-title_ssim"] = "Testing this title"
+      resource2.solr_document_sidecars.first.save
+      resource2.save_and_index_now
       Blacklight.default_index.connection.commit
 
       visit spotlight.raw_exhibit_catalog_path(exhibit, id: resource.noid)
@@ -176,6 +180,9 @@ RSpec.feature 'Catalog', type: :feature do
       visit spotlight.raw_exhibit_catalog_path(exhibit2, id: resource.noid)
       json = JSON.parse(page.body)
       expect(json.keys).to include "exhibit_exhibit_b_public_bsi"
+
+      visit spotlight.exhibit_solr_document_path(exhibit2, id: resource2.noid)
+      expect(page).to have_content "Testing this title"
     end
   end
 end
