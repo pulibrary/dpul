@@ -154,32 +154,35 @@ RSpec.feature 'Catalog', type: :feature do
     Blacklight.default_index.connection
   end
 
-  context "when a resource belongs to 2 different exhibits" do
-    it "retrieves the correct solr document for each" do
+  context "when a resource belongs to 2 different exhibits and the exhibits have two-word slugs" do
+    it "retrieves the correct solr document for each and override titles work" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
       stub_manifest(url: url, fixture: 'full_text_manifest.json')
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
       stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
-      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true, slug: "exhibit_a"
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true, slug: "cute_kitties"
       resource = IIIFResource.new(url: url, exhibit: exhibit)
       resource.save_and_index_now
 
-      exhibit2 = Spotlight::Exhibit.create title: 'Exhibit B', published: true, slug: "exhibit_b"
+      exhibit2 = Spotlight::Exhibit.create title: 'Exhibit B', published: true, slug: "cute_puppies"
       resource2 = IIIFResource.new(url: url, exhibit: exhibit2)
       resource2.save_and_index_now
       resource2.reload
-      resource2.solr_document_sidecars.first.data["override-title_ssim"] = "Testing this title"
-      resource2.solr_document_sidecars.first.save
+      sidecar = resource2.solr_document_sidecars.first
+      sidecar.data["override-title_ssim"] = "Testing this title"
+      sidecar.save
+      resource2.reload
       resource2.save_and_index_now
       Blacklight.default_index.connection.commit
 
       visit spotlight.raw_exhibit_catalog_path(exhibit, id: resource.noid)
       json = JSON.parse(page.body)
-      expect(json.keys).to include "exhibit_exhibit_a_public_bsi"
+      expect(json.keys).to include "exhibit_cute_kitties_public_bsi"
 
       visit spotlight.raw_exhibit_catalog_path(exhibit2, id: resource.noid)
       json = JSON.parse(page.body)
-      expect(json.keys).to include "exhibit_exhibit_b_public_bsi"
+      expect(json.keys).to include "exhibit_cute_puppies_public_bsi"
+      expect(json.keys).to include "exhibit_cute_puppies_override-title_ssim"
 
       visit spotlight.exhibit_solr_document_path(exhibit2, id: resource2.noid)
       expect(page).to have_content "Testing this title"

@@ -27,4 +27,20 @@ RSpec.describe SolrDocument do
       expect(solr_document.manifest).to eq "https://figgy.princeton.edu/concern/scanned_resources/c321a5f1-26e4-46ec-9a19-7c3351eaf308/manifest"
     end
   end
+
+  describe "#title_or_override_title" do
+    context "when the exhibit has a two word slug" do
+      let(:hsh) do
+        {
+          "exhibit_cute_puppies_public_bsi" => "true",
+          "exhibit_cute_puppies_title_ssim" => "bad title",
+          "exhibit_cute_puppies_override-title_ssim" => "good title"
+        }
+      end
+
+      it "returns the override title if defined" do
+        expect(solr_document.title_or_override_title("exhibit_cute_puppies_title_ssim")).to eq ["good title"]
+      end
+    end
+  end
 end
