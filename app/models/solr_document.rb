@@ -57,6 +57,7 @@ class SolrDocument
     values.first
   end
 
+  # @param field [String]
   def title_or_override_title(field)
     override_title = fetch(override_title_field, []).select(&:present?)
     # Replicate heading functionality in presenter. Return override title,
@@ -74,6 +75,6 @@ class SolrDocument
   #   document.exhibit_prefix # => "exhibit_test"
   def exhibit_prefix
     public_key = keys.map(&:to_s).find { |key| key.end_with?("public_bsi") } || ""
-    public_key.split("_")[0..1].join("_")
+    public_key.gsub("_public_bsi", "")
   end
 end
