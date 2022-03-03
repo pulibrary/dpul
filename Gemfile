@@ -85,6 +85,6 @@ gem 'webpacker', '>= 4.0.x'
 
 gem 'dalli'
 gem 'honeybadger'
-gem 'nokogiri', '~> 1.11.4'
+gem 'nokogiri', '~> 1.13.2'
 gem 'ruby-prof', require: false
 gem 'rubyzip', '>= 1.2.2'
