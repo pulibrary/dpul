@@ -46,7 +46,7 @@ RSpec.describe FiggyEventHandler do
     end
 
     it "defaults to a durable queue" do
-      expect(described_class.queue_opts[:durable]).to eq true
+      expect(described_class.queue_opts[:queue_options][:durable]).to eq true
     end
   end
 end
