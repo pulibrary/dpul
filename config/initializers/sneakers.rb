@@ -6,7 +6,10 @@ require_relative 'pom_config'
 Sneakers.configure(
   amqp: Pomegranate.config["events"]["server"],
   exchange: Pomegranate.config["events"]["exchange"],
-  exchange_type: :fanout,
+  exchange_options: {
+    type: :fanout,
+    durable: true
+  },
   handler: Sneakers::Handlers::Maxretry,
   before_fork: lambda {
     ActiveSupport.on_load(:active_record) do
@@ -23,7 +26,9 @@ Sneakers.logger.level = Logger::INFO
 
 WORKER_OPTIONS = {
   ack: true,
-  durable: Pomegranate.config["event_queue"]["durable"],
+  queue_options: {
+    durable: Pomegranate.config["event_queue"]["durable"]
+  },
   threads: 5,
   prefetch: 10,
   timeout_job_after: 60,
