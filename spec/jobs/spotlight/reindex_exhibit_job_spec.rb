@@ -10,6 +10,7 @@ describe Spotlight::ReindexExhibitJob do
 
   before do
     allow(CollectionManifest).to receive(:find_by_slug).and_return(manifest)
+    allow(Spotlight::UpdateJobTrackersJob).to receive(:perform_now).and_call_original
   end
 
   after do
@@ -28,14 +29,14 @@ describe Spotlight::ReindexExhibitJob do
 
     described_class.perform_now(exhibit)
 
-    expect(Spotlight::UpdateJobTrackersJob).to have_been_enqueued.exactly(:once)
+    expect(Spotlight::UpdateJobTrackersJob).to have_received(:perform_now).exactly(:once)
     expect(Spotlight::ReindexJob).to have_been_enqueued.exactly(:once)
   end
   it "skips over resources which there's no permission for" do
     stub_manifest(url: url1, fixture: 'full_text_manifest.json', status: 403)
     described_class.perform_now(exhibit)
 
-    expect(Spotlight::UpdateJobTrackersJob).not_to have_been_enqueued
+    expect(Spotlight::UpdateJobTrackersJob).not_to have_received(:perform_now)
     expect(Spotlight::ReindexJob).not_to have_been_enqueued
   end
 end
