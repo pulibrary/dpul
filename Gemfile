@@ -15,6 +15,8 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug'
+  # see comment in spec/requests/pages_spec
+  gem 'cancancan', '3.1.0'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console'
