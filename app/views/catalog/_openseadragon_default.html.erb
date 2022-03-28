@@ -11,7 +11,7 @@
   }
 
   # Princeton Customization - set configurded first page.
-  firstPage = Array(image).index { |tile_source| tile_source.start_with?(block.item.first.last["iiif_tilesource_base"]) }
+  firstPage = Array(image).index { |tile_source| tile_source.to_s.start_with?(block.item.first.last["iiif_tilesource_base"].to_s) }
 
   osd_config_referencestrip = {
     showReferenceStrip:             true,
