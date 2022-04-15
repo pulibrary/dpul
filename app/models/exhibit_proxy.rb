@@ -40,7 +40,7 @@ class ExhibitProxy
 
   # resources that are in the database but not in the manfiest
   def members_to_remove_from_index
-    persisted_members.reject { |m| members.include?(m.url) }
+    persisted_members.reject { |m| members.include?(m.bare_url) }
   end
 
   def waiting!; end
