@@ -14,7 +14,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
 
   def solr_documents
     solr_documents = []
-    indexing_pipeline.call(Spotlight::Etl::Context.new(self)) do |data|
+    document_building_pipeline.call(Spotlight::Etl::Context.new(self)) do |data|
       solr_documents << data
     end
     solr_documents
@@ -91,4 +91,14 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
 
     # Override hard commit after indexing every document, for performance.
     def commit; end
+
+    # Does everything the indexing pipeline does except doesn't load the data
+    # into solr (or anywhere else)
+    def document_building_pipeline
+      @document_building_pipeline ||= Spotlight::Etl::Pipeline.new do |pipeline|
+        pipeline.sources = indexing_pipeline.sources
+        pipeline.transforms = indexing_pipeline.transforms
+        pipeline.loaders = []
+      end
+    end
 end
