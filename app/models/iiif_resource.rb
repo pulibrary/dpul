@@ -65,6 +65,11 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     Rails.logger.debug "No solr record for #{noid} to delete."
   end
 
+  # strips query strings (in particular there might be an auth token)
+  def bare_url
+    url.split("?").first
+  end
+
   private
 
     # Hidden solr records are records for resources in Figgy which have been

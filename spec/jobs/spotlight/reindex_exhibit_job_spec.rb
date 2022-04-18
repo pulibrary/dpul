@@ -24,6 +24,7 @@ describe Spotlight::ReindexExhibitJob do
 
     expect(Spotlight::ReindexJob).to have_received(:perform_later).once
   end
+
   it "works for resources which aren't persisted yet" do
     stub_manifest(url: url1, fixture: 'full_text_manifest.json')
 
@@ -32,6 +33,7 @@ describe Spotlight::ReindexExhibitJob do
     expect(Spotlight::UpdateJobTrackersJob).to have_received(:perform_now).exactly(:once)
     expect(Spotlight::ReindexJob).to have_been_enqueued.exactly(:once)
   end
+
   it "skips over resources which there's no permission for" do
     stub_manifest(url: url1, fixture: 'full_text_manifest.json', status: 403)
     described_class.perform_now(exhibit)
