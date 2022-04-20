@@ -2,9 +2,13 @@
   // Exhibit content page list
   ol.sidenav {
     // Non-active headings gray
-    li h2 a {
+    li h2 {
       color: #666d78;
     }
+    a {
+      color: #666d78 !important; 
+    }
+
     // Active headings bold
     li.active h2 {
       font-weight: bold;
