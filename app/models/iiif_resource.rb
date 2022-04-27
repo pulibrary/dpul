@@ -61,6 +61,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
   def remove_from_solr
     doc = SolrDocument.find(noid, exhibit: exhibit)
     solr.delete_by_id(doc.id, params: { softCommit: true })
+    doc.delete_sidecar
   rescue Blacklight::Exceptions::RecordNotFound
     Rails.logger.debug "No solr record for #{noid} to delete."
   end

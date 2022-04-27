@@ -50,6 +50,11 @@ class SolrDocument
     update_exhibit_resource(resource_attributes) if uploaded_resource?
   end
 
+  # Deletes the sidecar associated with the resource
+  def delete_sidecar
+    
+  end
+
   # Retrieve the IIIF manifest URL from the configured field
   # @return [String]
   def manifest
