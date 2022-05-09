@@ -65,7 +65,7 @@ RSpec.describe Spotlight::ReindexJob do
 
       job_tracker = Spotlight::JobTracker.last
       event = job_tracker.events.last
-      expect(event[:data][:errors].count).to eq 1
+      expect(event[:data][:errors]).to eq 1
     end
   end
 end
