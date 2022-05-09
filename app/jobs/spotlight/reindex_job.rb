@@ -26,7 +26,8 @@ module Spotlight
     after_perform :commit
 
     def perform(exhibit_or_resources, **)
-      errors = 0
+      # make this a unique array of job ids
+      errors = []
 
       error_handler = lambda do |pipeline, exception, _data|
         job_tracker.append_log_entry(
@@ -37,7 +38,7 @@ module Spotlight
           resource_id: (pipeline.source.id if pipeline.source.respond_to?(:id))
         )
         mark_job_as_failed!
-        errors += 1
+        errors |= [job_id]
       end
 
       resource_list(exhibit_or_resources).each do |resource|
@@ -48,19 +49,20 @@ module Spotlight
         progress&.increment
       rescue StandardError => e
         error_handler.call(Struct.new(:source).new(resource), e, nil)
+        raise e
+      ensure
+        job_tracker.append_log_entry(
+          type: :summary,
+          exhibit: exhibit,
+          message: I18n.t(
+            'spotlight.job_trackers.show.messages.status.in_progress',
+            progress: progress.progress,
+            total: progress.total,
+            errors: (I18n.t('spotlight.job_trackers.show.messages.errors', count: errors.count) if errors.present?)
+          ),
+          progress: progress.progress, total: progress.total, errors: errors
+        )
       end
-
-      job_tracker.append_log_entry(
-        type: :summary,
-        exhibit: exhibit,
-        message: I18n.t(
-          'spotlight.job_trackers.show.messages.status.in_progress',
-          progress: progress.progress,
-          total: progress.total,
-          errors: (I18n.t('spotlight.job_trackers.show.messages.errors', count: errors) if errors.positive?)
-        ),
-        progress: progress.progress, total: progress.total, errors: errors
-      )
     end
 
     def exhibit

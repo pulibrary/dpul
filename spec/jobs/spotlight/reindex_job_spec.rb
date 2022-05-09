@@ -57,15 +57,15 @@ RSpec.describe Spotlight::ReindexJob do
   end
 
   context 'when there is an error' do
-    it 'logs the error in the job tracker' do
+    it 'logs the error in the job tracker and raises it so sidekiq can retry' do
       allow(iiif_resource1).to receive(:reindex).and_raise StandardError
       allow(IIIFResource).to receive(:new).and_return(resource)
 
-      described_class.perform_now(iiif_resource1)
+      expect { described_class.perform_now(iiif_resource1) }.to raise_error(StandardError)
 
       job_tracker = Spotlight::JobTracker.last
       event = job_tracker.events.last
-      expect(event[:data][:errors]).to eq 1
+      expect(event[:data][:errors].count).to eq 1
     end
   end
 end
