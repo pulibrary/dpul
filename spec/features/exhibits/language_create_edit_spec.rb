@@ -12,7 +12,7 @@ describe 'Language', type: :feature do
   end
 
   describe 'creation' do
-    it 'successfully adds languages' do
+    it 'successfully adds languages', js: true do
       within '#language' do
         select 'Albanian'
         click_button 'Add language'
