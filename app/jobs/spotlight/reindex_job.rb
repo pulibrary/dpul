@@ -50,7 +50,6 @@ module Spotlight
         progress&.increment
       rescue StandardError => e
         error_handler.call(Struct.new(:source).new(resource), e, nil)
-        raise e
       ensure
         job_tracker.append_log_entry(
           type: :summary,
