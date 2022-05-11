@@ -39,6 +39,7 @@ module Spotlight
         )
         mark_job_as_failed!
         errors |= [job_id]
+        raise exception
       end
 
       resource_list(exhibit_or_resources).each do |resource|
