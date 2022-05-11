@@ -6,7 +6,7 @@ gem 'graphql-client'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'
-gem 'rails', '6.0.5'
+gem 'rails', '~> 6.1.6'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
@@ -14,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug'
   # see comment in spec/requests/pages_spec
-  gem 'cancancan', '3.1.0'
+  gem 'cancancan'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console'
@@ -44,7 +44,7 @@ group :development do
 end
 
 group :production, :test do
-  gem 'pg', '~> 0.20'
+  gem 'pg'
 end
 
 gem 'almond-rails', '~> 0.1'
