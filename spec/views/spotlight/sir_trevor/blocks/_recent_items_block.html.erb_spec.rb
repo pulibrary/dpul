@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view do
   with_queue_adapter :inline
-  let(:p) { 'spotlight/sir_trevor/blocks/recent_items_block.html.erb' }
+  let(:p) { 'spotlight/sir_trevor/blocks/recent_items_block' }
   let(:block) do
     RecentItemsBlock.new({ type: 'block', data: {} }, view)
   end
