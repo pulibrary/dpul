@@ -80,7 +80,7 @@ gem 'sneakers'
 gem 'sprockets', '~> 3.7'
 gem 'sprockets-es6'
 gem 'string_rtl'
-gem 'webpacker', '>= 4.0.x'
+gem 'webpacker', '6.0.0.pre.2'
 
 gem 'dalli'
 gem 'honeybadger'
