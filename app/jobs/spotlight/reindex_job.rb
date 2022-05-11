@@ -39,6 +39,7 @@ module Spotlight
         )
         mark_job_as_failed!
         errors |= [job_id]
+        raise exception
       end
 
       resource_list(exhibit_or_resources).each do |resource|
@@ -49,7 +50,6 @@ module Spotlight
         progress&.increment
       rescue StandardError => e
         error_handler.call(Struct.new(:source).new(resource), e, nil)
-        raise e
       ensure
         job_tracker.append_log_entry(
           type: :summary,

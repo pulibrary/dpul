@@ -349,13 +349,13 @@ describe IIIFResource do
           allow(rsolr_error).to receive(:to_s).and_return("solr mad")
         end
 
-        it 'logs an error' do
+        it 'logs an error and raises' do
           # Save it first to ensure the noid is in place to be reported
           resource.save_and_index
 
           allow_any_instance_of(Spotlight::Etl::SolrLoader).to receive(:blacklight_solr).and_return(blacklight_solr)
           allow(blacklight_solr).to receive(:update).and_raise(rsolr_error)
-          resource.save_and_index_now
+          expect { resource.save_and_index_now }.to raise_error(RSolr::Error::Http)
 
           expect(Spotlight::JobTracker.last.events.where(type: "error").first.data[:message]).to eq "solr mad"
         end
