@@ -49,10 +49,10 @@ end
 
 gem 'almond-rails', '~> 0.1'
 gem 'bixby', '2.0.0'
-gem 'blacklight', '~> 7.18'
+gem 'blacklight', '~> 7.18', '< 7.25'
 gem 'blacklight-gallery'
 gem 'blacklight-oembed'
-gem 'blacklight-spotlight', '3.0.3'
+gem 'blacklight-spotlight', '~> 3.0'
 gem 'bootstrap', '~> 4.0'
 gem 'ddtrace'
 gem 'devise', '~> 4.7.1'

@@ -27,6 +27,8 @@ en:
         create: "Create Collection"
         destroy: "Delete this collection"
     submit:
+      spotlight/language:
+        create: "Add language"
       exhibit:
         created: "The Collection was created."
         updated: "The Collection was successfully updated."
