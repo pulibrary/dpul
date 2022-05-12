@@ -4,8 +4,8 @@ require 'rails_helper'
 
 # This tests a regression introduced in cancancan 3.2.0.
 # See issue: https://github.com/CanCanCommunity/cancancan/issues/677
-# We think by the time we upgrade cancan again there may be a released fix.
-# If at that point things are still broken we can try this monkey patch
+# There was no released fix when we needed to upgrade CanCanCan, so this is
+# monkeypatched in config/initializers/cancancan_monkeypatch.rb, copied from
 # https://github.com/sul-dlss/exhibits/commit/298653db0e5cd32f0fa5ffcf5612b0e858124ef9
 RSpec.describe "Pages requests", type: :request do
   context "with a user who is an admin on an exhibit" do

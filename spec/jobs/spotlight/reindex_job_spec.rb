@@ -42,7 +42,7 @@ RSpec.describe Spotlight::ReindexJob do
 
     described_class.perform_now(exhibit)
 
-    expect(IIIFResource).to have_received(:new).with("type" => "IIIFResource", url: url1, exhibit_id: exhibit.id)
+    expect(IIIFResource).to have_received(:new).with(url: url1, exhibit_id: exhibit.id)
   end
 
   it 'can reindex multiple IIIF Resources' do

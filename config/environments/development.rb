@@ -45,4 +45,5 @@ config.webpacker.check_yarn_integrity = true
   # Use sidekiq in development so your front-end doesn't get tied up
   config.active_job.queue_adapter = :sidekiq
   config.i18n.fallbacks = true
+  config.log_level = :debug
 end

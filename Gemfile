@@ -6,9 +6,7 @@ gem 'graphql-client'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'
-# Locking rails at 5.2.4.5 until we can handle this upgrade: https://github.com/rails/rails/releases/tag/v5.2.4.6
-# The problem is CVE-2021-22885 and we should fix it upsteam.
-gem 'rails', '5.2.4.5'
+gem 'rails', '~> 6.1.6'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
@@ -16,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug'
   # see comment in spec/requests/pages_spec
-  gem 'cancancan', '3.1.0'
+  gem 'cancancan'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console'
@@ -46,15 +44,15 @@ group :development do
 end
 
 group :production, :test do
-  gem 'pg', '~> 0.20'
+  gem 'pg'
 end
 
 gem 'almond-rails', '~> 0.1'
 gem 'bixby', '2.0.0'
-gem 'blacklight', '~> 7.18'
+gem 'blacklight', '~> 7.18', '< 7.25'
 gem 'blacklight-gallery'
 gem 'blacklight-oembed'
-gem 'blacklight-spotlight', '3.0.3'
+gem 'blacklight-spotlight', '~> 3.0'
 gem 'bootstrap', '~> 4.0'
 gem 'ddtrace'
 gem 'devise', '~> 4.7.1'
@@ -81,7 +79,6 @@ gem 'sitemap_generator'
 gem 'sneakers'
 gem 'sprockets', '~> 3.7'
 gem 'sprockets-es6'
-gem 'sprockets-rails'
 gem 'string_rtl'
 gem 'webpacker', '>= 4.0.x'
 

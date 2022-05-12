@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view do
   with_queue_adapter :inline
-  let(:p) { 'spotlight/sir_trevor/blocks/recent_items_block.html.erb' }
+  let(:p) { 'spotlight/sir_trevor/blocks/recent_items_block' }
   let(:block) do
     RecentItemsBlock.new({ type: 'block', data: {} }, view)
   end
@@ -13,7 +13,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
 
   before do
     allow(controller).to receive(:search_service).and_return(search_service)
-    allow(view.main_app).to receive(:track_test_path).and_return('/track')
+    allow(view.main_app).to receive(:track__path).and_return('/track')
     allow(view).to receive_messages(recent_items_block: block)
     allow(view).to receive_messages(
       blacklight_config: CatalogController.blacklight_config,
