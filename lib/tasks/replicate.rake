@@ -75,6 +75,10 @@ namespace :dpul do
       FileUtils.cp_r('/mnt/shared_data/dpul_production/.', '/mnt/shared_data/dpul_staging')
     end
 
+    # Before running this task turn off nginx and sidekiq-workers on all staging
+    # boxes. This prevents existing db connections from creating table entries
+    # during restore. After running the task, you may need to clear your browser
+    # cache if you see errors.
     desc "Replicate production database, index, and uploaded files to staging"
     task to_staging: :environment do
       # This will break when staging and production are on two different
