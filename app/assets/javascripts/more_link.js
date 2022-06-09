@@ -9,8 +9,8 @@ $(document).ready(function() {
            var hiddenCharacters = $(this).text().substr(limitCharacters, char_length - limitCharacters );
            var html_ul_li =
            displayedCharacters +
-           '<span class="morecontent">' + hiddenCharacters + 
-           '</span>&nbsp;&nbsp;<span><a href="" class="morelink">' + " ... More" + '</a></span>';
+           '<span class="morecontent">' + hiddenCharacters +
+           '</span>&nbsp;&nbsp;<span><a href="" class="morelink">' + " ... Less" + '</a></span>';
            $(this).html(html_ul_li);
            $(".morecontent span").hide();
         }
@@ -19,10 +19,10 @@ $(document).ready(function() {
      $(".morelink").click(function(){
         if($(this).hasClass("less")) {
             $(this).removeClass("less");
-            $(this).html(" ... More");
+            $(this).html(" ... Less");
         } else {
             $(this).addClass("less");
-            $(this).html(" ... Less");
+            $(this).html(" ... More");
         }
         $(this).parent().prev().toggle();
         $(this).prev().toggle();
