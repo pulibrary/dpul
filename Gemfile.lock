@@ -240,7 +240,7 @@ GEM
       actionmailer (>= 5.0)
       devise (>= 4.6)
     diff-lcs (1.4.4)
-    diffy (3.4.0)
+    diffy (3.4.2)
     digest-crc (0.5.1)
     docile (1.4.0)
     dumb_delegator (1.0.0)
