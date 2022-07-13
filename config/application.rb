@@ -31,5 +31,7 @@ module Pomegranate
 
     config.autoload_paths += %W(#{Rails.root}/app/workers)
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    config.active_record.yaml_column_permitted_classes = [Symbol, Date, Time, Hash, HashWithIndifferentAccess]
   end
 end
