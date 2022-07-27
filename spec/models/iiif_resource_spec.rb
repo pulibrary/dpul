@@ -43,7 +43,7 @@ describe IIIFResource do
 
       expect(solr_doc["full_title_tesim"]).to eq ['Concert, 2001, October 19 and 20']
       expect(solr_doc["sort_date_ssi"]).not_to be_blank
-      expect(solr_doc["readonly_electronic-locations_ssim"]).to eq ["<a href='http://lib-dbserver.princeton.edu/music/programs/2015-04-24-25.pdf'>Program.</a>"]
+      expect(solr_doc["readonly_available-online_ssim"]).to eq ["<a href='http://lib-dbserver.princeton.edu/music/programs/2015-04-24-25.pdf'>Program.</a>"]
     end
   end
 

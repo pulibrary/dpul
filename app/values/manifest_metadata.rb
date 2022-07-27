@@ -40,6 +40,13 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   end
 
   class Value
+    KEY_MAP = {
+      "Memberof" => "Collections",
+      "Link to catalog" => "View in catalog",
+      "Link to finding aid" => "View in finding aid",
+      "Electronic locations" => "Available online"
+    }.freeze
+
     attr_reader :key, :values
     def initialize(key, values)
       @key = key
@@ -51,15 +58,9 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     end
 
     def new_key
-      if key == 'Memberof'
-        'Collections'
-      elsif key == "Link to catalog"
-        "View in catalog"
-      elsif key == "Link to finding aid"
-        "View in finding aid"
-      else
-        key
-      end
+      return key unless KEY_MAP.key?(key)
+
+      KEY_MAP[key]
     end
 
     def new_values
