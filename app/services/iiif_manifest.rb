@@ -22,8 +22,8 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   # do not get created for them, but there's access to those values for
   # indexing.
   def add_timestamps
-    solr_hash["system_created_at_dtsi"] = Array(excluded_metadata["System created at"][:values]).first
-    solr_hash["system_updated_at_dtsi"] = Array(excluded_metadata["System updated at"][:values]).first
+    solr_hash["system_created_at_dtsi"] = Array(excluded_metadata["System created at"]&.fetch(:values)).first
+    solr_hash["system_updated_at_dtsi"] = Array(excluded_metadata["System updated at"]&.fetch(:values)).first
   end
 
   def add_sort_title

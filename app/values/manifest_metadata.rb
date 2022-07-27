@@ -37,20 +37,20 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   def jsonld_metadata_hash
     jsonld_metadata.each_with_object({}) do |(k, v), h|
       next if jsonld_delete_keys.include?(k)
-
-      h[k.to_s.humanize] = {
-        slug: k.dasherize,
-        values: v
-      }
+      #
+      # h[k.to_s.humanize] = {
+      #   slug: k.dasherize,
+      #   values: v
+      # }
     end
   end
 
   class Value
     attr_reader :key, :slug, :values
-    def initialize(key, values)
+    def initialize(key, slug, values)
       @key = key
-      @slug = values[:slug]
-      @values = Array.wrap(values[:values])
+      @slug = slug
+      @values = Array.wrap(values)
     end
 
     def to_pair
@@ -133,7 +133,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
 
   def metadata_hash
     if jsonld_metadata
-      process_values(jsonld_metadata_hash)
+      process_jsonld_values(jsonld_metadata_hash)
     else
       process_values(super)
     end
