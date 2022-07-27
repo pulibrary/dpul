@@ -45,6 +45,25 @@ describe IIIFResource do
       expect(solr_doc["sort_date_ssi"]).not_to be_blank
       expect(solr_doc["readonly_electronic-locations_ssim"]).to eq ["<a href='http://lib-dbserver.princeton.edu/music/programs/2015-04-24-25.pdf'>Program.</a>"]
     end
+
+    it "indexes electronic location with a different custom field name" do
+      id = "ea3a706e-dd01-478c-a428-2ef99762e392"
+      url = "https://figgy-staging.princeton.edu/concern/scanned_resources/#{id}/manifest"
+      stub_manifest(url: url, fixture: 'recording_manifest.json')
+      stub_metadata(id: id)
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      Spotlight::CustomField.create(exhibit: exhibit, field: "readonly_electronic-locations_ssim", label: "Program PDF", slug: "electronic-locations")
+      resource = described_class.new url: url, exhibit: exhibit
+      resource.save
+      resource.reindex
+
+      solr = Blacklight.default_index.connection
+      solr.commit
+      solr_doc = solr.select(q: "*:*")["response"]["docs"].first
+
+      expect(solr_doc["full_title_tesim"]).to eq ['Concert, 2001, October 19 and 20']
+      expect(solr_doc["readonly_electronic-locations_ssim"]).to eq ["<a href='http://lib-dbserver.princeton.edu/music/programs/2015-04-24-25.pdf'>Program.</a>"]
+    end
   end
 
   context "when ingesting a manifest with full text" do

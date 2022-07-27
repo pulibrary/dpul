@@ -35,19 +35,26 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
   end
 
   def jsonld_metadata_hash
-    jsonld_metadata.delete_if { |k, _v| jsonld_delete_keys.include?(k) }
-                   .transform_keys { |k| k.to_s.humanize }
+    jsonld_metadata.each_with_object({}) do |(k, v), h|
+      next if jsonld_delete_keys.include?(k)
+
+      h[k.to_s.humanize] = {
+        slug: k.dasherize,
+        values: v
+      }
+    end
   end
 
   class Value
-    attr_reader :key, :values
+    attr_reader :key, :slug, :values
     def initialize(key, values)
       @key = key
-      @values = Array.wrap(values)
+      @slug = values[:slug]
+      @values = Array.wrap(values[:values])
     end
 
     def to_pair
-      [new_key, new_values]
+      [new_key, { slug: new_slug, values: new_values }]
     end
 
     def new_key
@@ -59,6 +66,18 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
         "View in finding aid"
       else
         key
+      end
+    end
+
+    def new_slug
+      if slug == 'memberOf'
+        'collections'
+      elsif slug == "link-to-catalog"
+        "view-in-catalog"
+      elsif slug == "link-to-finding-aid"
+        "view-in-finding-aid"
+      else
+        slug
       end
     end
 
@@ -146,6 +165,6 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       (@manifest['structures'] || []).each do |s|
         values << s['label']
       end
-      hsh['Range label'] = values unless values.empty?
+      hsh['Range label'] = { slug: "range-label", values: values } unless values.empty?
     end
 end

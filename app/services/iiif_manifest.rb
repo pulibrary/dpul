@@ -22,8 +22,8 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   # do not get created for them, but there's access to those values for
   # indexing.
   def add_timestamps
-    solr_hash["system_created_at_dtsi"] = Array(excluded_metadata["System created at"]).first
-    solr_hash["system_updated_at_dtsi"] = Array(excluded_metadata["System updated at"]).first
+    solr_hash["system_created_at_dtsi"] = Array(excluded_metadata["System created at"][:values]).first
+    solr_hash["system_updated_at_dtsi"] = Array(excluded_metadata["System updated at"][:values]).first
   end
 
   def add_sort_title
@@ -110,14 +110,21 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
         exclude_system_metadata!(metadata)
         create_sidecars_for(*metadata.keys)
 
-        metadata.each_with_object({}) do |(key, value), hash|
-          next unless (field = exhibit_custom_fields[key])
+        metadata.each_with_object({}) do |(_key, value), hash|
+          field = custom_metadata_fields[value[:slug]]
+          next unless field
 
           field = BothFields.new(field)
-          hash[field.field] = value
-          hash[field.alternate_field] = value
+          hash[field.field] = value[:values]
+          hash[field.alternate_field] = value[:values]
         end
       end
+  end
+
+  def custom_metadata_fields
+    @custom_metadata_fields ||= exhibit.custom_fields.each_with_object({}) do |field, hash|
+      hash[field.slug] = field
+    end
   end
 
   # When importing a IIIF Resource the first time, create an "Override Title" field.
@@ -125,7 +132,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     return {} if metadata["Title"].blank? || sidecar.data["override-title_ssim"].present?
 
     {
-      "Override Title" => nil
+      "Override Title" => { slug: "override-title", values: nil }
     }
   end
 
