@@ -29,7 +29,8 @@ jobs:
           install-yarn: true
           node-version: '14.19.0'
       # Install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set --local path "vendor/bundle"
+      - run: bundle install
       - run:
           name: Install NPM dependencies via Yarn
           command: yarn install --frozen-lockfile
@@ -62,7 +63,8 @@ jobs:
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set --local path "vendor/bundle"
+      - run: bundle install
       - run: bundle exec rake rubocop
   test:
     working_directory: ~/dpul
@@ -94,7 +96,8 @@ jobs:
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set --local path "vendor/bundle"
+      - run: bundle install
       - run:
           name: Load config into solr
           command: |
