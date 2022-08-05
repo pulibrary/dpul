@@ -234,7 +234,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-guests (0.7.0)
+    devise-guests (0.8.1)
       devise
     devise_invitable (2.0.6)
       actionmailer (>= 5.0)
@@ -680,7 +680,7 @@ DEPENDENCIES
   database_cleaner
   ddtrace
   devise (~> 4.7.1)
-  devise-guests (~> 0.3)
+  devise-guests (~> 0.8)
   devise_invitable
   factory_bot_rails
   faraday (< 1)
