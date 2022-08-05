@@ -57,7 +57,7 @@ gem 'bootstrap', '~> 4.0'
 gem 'bundler', '2.3.18'
 gem 'ddtrace'
 gem 'devise', '~> 4.7.1'
-gem 'devise-guests', '~> 0.3'
+gem 'devise-guests', '~> 0.8'
 gem 'devise_invitable'
 gem 'faraday', '< 1'
 gem 'google-cloud-storage', group: :staging
