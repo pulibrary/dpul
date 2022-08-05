@@ -1,11 +1,14 @@
 ---
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.2.5
+  node: circleci/node@5.0.2
 jobs:
   build:
-    working_directory: ~/pomegranate
+    working_directory: ~/dpul
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: circleci/ruby:2.7-node-browsers
+      - image: cimg/ruby:2.7.5-browsers
         environment:
           RAILS_ENV: test
           NODE_ENV: test
@@ -13,52 +16,41 @@ jobs:
           POMEGRANATE_DB_USERNAME: pomegranate
           POMEGRANATE_DB_PASSWORD: ""
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
-      # Restore Cached Dependencies
-      - type: cache-restore
-        name: Restore bundle cache
-        key: pomegranate-{{ checksum "Gemfile.lock" }}
-      - type: cache-restore
-        name: Restore Yarn cache
-        key: pomegranate-yarn-{{ checksum "yarn.lock" }}-1
-      - run:
-          name: Install node@lts/erbium (need right version for `yarn`)
-          command: |
-            set +e
-            touch $BASH_ENV
-            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
-            echo 'nvm install lts/erbium' >> $BASH_ENV
-            echo 'nvm alias default lts/erbium' >> $BASH_ENV
-      - run:
-          name: Check current version of node
-          command: node -v
+      - restore_cache:
+          keys:
+            - dpul-{{ checksum "Gemfile.lock" }}
+            - dpul-yarn-{{ checksum "yarn.lock" }}
+      # Install bundler / yarn
+      - run: gem install bundler -v '~> 2.0'
+      - node/install:
+          install-yarn: true
+          node-version: '14.19.0'
+      # Install dependencies
+      - run: bundle install --path vendor/bundle
       - run:
           name: Install NPM dependencies via Yarn
           command: yarn install --frozen-lockfile
-      # Install Bundler
-      - run: gem install bundler -v '~> 2.0'
-      # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
       # Cache Dependencies
-      - type: cache-save
-        name: Save Yarn package cache
-        key: pomegranate-yarn-{{ checksum "yarn.lock" }}-1
-        paths:
-          - ~/.cache/yarn
-      - type: cache-save
-        name: Store bundle cache
-        key: pomegranate-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor/bundle
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: dpul-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - save_cache:
+          name: Save bundle cache
+          key: dpul-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - persist_to_workspace:
-          root: '~/pomegranate'
+          root: '~/dpul'
           paths: '*'
   rubocop:
-    working_directory: ~/pomegranate
+    working_directory: ~/dpul
     docker:
-      - image: circleci/ruby:2.7-node-browsers
+      - image: cimg/ruby:2.7.5-browsers
         environment:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
@@ -66,16 +58,16 @@ jobs:
           POMEGRANATE_DB_PASSWORD: ""
     steps:
       - attach_workspace:
-          at: '~/pomegranate'
+          at: '~/dpul'
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake rubocop
   test:
-    working_directory: ~/pomegranate
+    working_directory: ~/dpul
     docker:
-      - image: circleci/ruby:2.7-node-browsers
+      - image: cimg/ruby:2.7.5-browsers
         environment:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
@@ -90,23 +82,15 @@ jobs:
       - image: solr:7.7-alpine
         command: bin/solr -cloud -noprompt -f -p 8984
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - attach_workspace:
-          at: '~/pomegranate'
+          at: '~/dpul'
       # Wait for DB
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
-      - run:
-          name: Install node@lts/erbium (need right version for `yarn`)
-          command: |
-            set +e
-            touch $BASH_ENV
-            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
-            echo 'nvm install lts/erbium' >> $BASH_ENV
-            echo 'nvm alias default lts/erbium' >> $BASH_ENV
-      - run:
-          name: Check current version of node
-          command: node -v
+      - node/install:
+          install-yarn: true
+          node-version: '14.19.0'
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
@@ -114,7 +98,7 @@ jobs:
       - run:
           name: Load config into solr
           command: |
-            cd ~/pomegranate/solr/config
+            cd ~/dpul/solr/config
             zip -1 -r solr_config.zip ./*
             curl -H "Content-type:application/octet-stream" --data-binary @solr_config.zip "http://localhost:8984/solr/admin/configs?action=UPLOAD&name=dpul"
             curl -H 'Content-type: application/json' http://localhost:8984/api/collections/ -d '{create: {name: blacklight-core-test, config: dpul, numShards: 1}}'
@@ -127,6 +111,22 @@ jobs:
 workflows:
   version: 2
   build_accept_deploy:
+    jobs:
+      - build
+      - rubocop:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
     jobs:
       - build
       - rubocop:
