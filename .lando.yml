@@ -11,13 +11,19 @@ services:
     creds:
       database: dpul_test
   dpul_development_solr:
-    type: solr:7
+    type: solr:custom
+    overrides:
+      image: pulibrary/ci-solr:8.4-v1.0.0
+      command: server/scripts/lando-start.sh
     portforward: true
     core: blacklight-core
     config:
       dir: solr/config
   dpul_test_solr:
-    type: solr:7
+    type: solr:custom
+    overrides:
+      image: pulibrary/ci-solr:8.4-v1.0.0
+      command: server/scripts/lando-start.sh
     portforward: true
     core: blacklight-core-test
     config:
