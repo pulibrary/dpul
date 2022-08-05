@@ -72,7 +72,7 @@ gem 'redis-namespace'
 # Upgrading past redis 3.3.5 currently breaks deploy. Test any upgrades here carefully.
 gem 'redis', '3.3.5'
 gem 'riiif'
-gem 'rsolr', '~> 1.0.6'
+gem 'rsolr', '~> 2.0'
 # Required by blacklight-oembed
 gem 'ruby2_keywords'
 gem 'sidekiq', '< 6'

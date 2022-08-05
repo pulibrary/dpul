@@ -341,9 +341,7 @@ describe IIIFResource do
       end
 
       context 'when a Solr error is encountered' do
-        let(:request) { double }
-        let(:response) { double }
-        let(:rsolr_error) { RSolr::Error::Http.new(request, response) }
+        let(:rsolr_error) { RSolr::Error::Http.new(nil, nil) }
 
         before do
           allow(rsolr_error).to receive(:to_s).and_return("solr mad")

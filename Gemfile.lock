@@ -485,8 +485,9 @@ GEM
       roar (~> 1.1.0)
       test_xml (>= 0.1.6)
       uber (< 0.2.0)
-    rsolr (1.0.13)
+    rsolr (2.5.0)
       builder (>= 2.1.2)
+      faraday (>= 0.9, < 3, != 2.0.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -707,7 +708,7 @@ DEPENDENCIES
   redis (= 3.3.5)
   redis-namespace
   riiif
-  rsolr (~> 1.0.6)
+  rsolr (~> 2.0)
   rspec-rails
   ruby-prof
   ruby2_keywords
