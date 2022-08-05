@@ -1,0 +1,17 @@
+<% if can? :manage, Spotlight::Resource.new(exhibit: current_exhibit) %>
+  <div data-behavior='progress-panel' data-monitor-url="<%= monitor_exhibit_resources_path(current_exhibit) %>">
+    <%= render 'reindex_progress_panel' %>
+  </div>
+  <div class="add-items-nav clearfix">
+    <div class="float-right">
+      <%# template override to add csrf token %>
+      <%# upstream at https://github.com/projectblacklight/spotlight/blob/ebed5d6cd5413427d431e2db0705745ce648fff6/app/views/spotlight/catalog/_admin_header.html.erb %>
+      <%= form_with(url: reindex_all_exhibit_resources_path(current_exhibit)) do |form| %>
+        <%= form.submit(t(".reindex"), class: "btn btn-secondary") %>
+      <% end %>
+      <% if Spotlight::Engine.config.resource_partials.any? %>
+        <%= link_to t('.new_resource'), new_exhibit_resource_path(current_exhibit), class: 'button btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
