@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   mount Blacklight::Oembed::Engine, at: 'oembed'
 
-  require 'sidekiq/web'
+  require 'sidekiq/pro/web'
   authenticate :user do
     mount Sidekiq::Web => '/sidekiq'
   end

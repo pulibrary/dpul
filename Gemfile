@@ -40,11 +40,15 @@ end
 
 group :development do
   gem 'puma'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 4.0'
 end
 
 group :production, :test do
   gem 'pg'
+end
+
+source "https://gems.contribsys.com/" do
+  gem "sidekiq-pro"
 end
 
 gem 'almond-rails', '~> 0.1'
@@ -70,7 +74,7 @@ gem 'omniauth-cas'
 gem 'open_uri_redirections'
 gem 'redis-namespace'
 # Upgrading past redis 3.3.5 currently breaks deploy. Test any upgrades here carefully.
-gem 'redis', '3.3.5'
+gem 'redis', '~> 4.1.0'
 gem 'riiif'
 gem 'rsolr', '~> 2.0'
 # Required by blacklight-oembed
