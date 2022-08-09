@@ -14,7 +14,7 @@ jobs:
           NODE_ENV: test
           POMEGRANATE_DB_HOST: localhost
           POMEGRANATE_DB_USERNAME: pomegranate
-          POMEGRANATE_DB_PASSWORD: ""
+          POMEGRANATE_DB_PASSWORD: dpul
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
@@ -56,7 +56,7 @@ jobs:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
           POMEGRANATE_DB_USERNAME: pomegranate
-          POMEGRANATE_DB_PASSWORD: ""
+          POMEGRANATE_DB_PASSWORD: dpul
     steps:
       - attach_workspace:
           at: '~/dpul'
@@ -74,13 +74,13 @@ jobs:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
           POMEGRANATE_DB_USERNAME: pomegranate
-          POMEGRANATE_DB_PASSWORD: ""
+          POMEGRANATE_DB_PASSWORD: dpul
           SOLR_URL: http://solr:SolrRocks@localhost:8983/solr/blacklight-core-test
-      - image: postgres:10.3
+      - image: postgres:13.6
         environment:
           POSTGRES_DB: dpul_test
           POSTGRES_USER: pomegranate
-          POSTGRES_PASSWORD: ""
+          POSTGRES_PASSWORD: dpul
       - image: pulibrary/ci-solr:8.4-v1.0.0
         command: server/scripts/ci-start.sh
     steps:
