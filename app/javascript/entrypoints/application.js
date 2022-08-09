@@ -22,6 +22,7 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 import Vue from 'vue/dist/vue.esm'
 import system from 'lux-design-system'
 import 'lux-design-system/dist/system/system.css'
+import Initializer from '../dpul/pom_boot'
 
 Vue.use(system)
 
@@ -32,4 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
       el: elements[i]
     })
   }
+
+  window.pom = new Initializer()
 })
