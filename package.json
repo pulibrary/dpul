@@ -1,9 +1,5 @@
 {
   "dependencies": {
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "caniuse-lite": "^1.0.30000936",
     "css-loader": "^2.1.0",
     "lux-design-system": "^3.1.5",
