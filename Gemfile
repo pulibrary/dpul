@@ -51,7 +51,6 @@ source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
 end
 
-gem 'almond-rails', '~> 0.1'
 gem 'bixby', '2.0.0'
 gem 'blacklight', '~> 7.18', '< 7.25'
 gem 'blacklight-gallery'
@@ -85,7 +84,7 @@ gem 'sneakers'
 gem 'sprockets', '~> 3.7'
 gem 'sprockets-es6'
 gem 'string_rtl'
-gem 'webpacker', '>= 4.0.x'
+gem 'vite_rails'
 
 gem 'dalli'
 gem 'honeybadger'

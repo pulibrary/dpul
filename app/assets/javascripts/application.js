@@ -21,21 +21,4 @@
 //= require blacklight_gallery
 //= require openseadragon
 //= require spotlight
-// ES6 modules
-//= require almond
-//= require universal_viewer
-//= require pom_boot
-//= require more_link
-//= require back_to_top
 //= require sir_trevor/blocks/recent_items
-
-Blacklight.onLoad(function() {
-  Initializer = require('pom_boot')
-  window.pom = new Initializer()
-})
-
-// work around for https://bugs.chromium.org/p/chromium/issues/detail?id=1262589&q=contenteditable&can=1
-if (navigator.userAgentData && navigator.userAgentData.brands &&
-    Boolean(navigator.userAgentData.brands.find(function(b) { return b.brand === 'Chromium' && parseFloat(b.version, 10) >= 95 && parseFloat(b.version, 10) < 97; }))) {
-  SirTrevor.Blocks.Text.prototype.editorHTML = "<div class=\"st-text-block\" spellcheck=\"false\" contenteditable=\"true\"></div>";
-}

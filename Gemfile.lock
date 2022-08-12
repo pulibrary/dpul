@@ -76,8 +76,6 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
-    almond-rails (0.3.0)
-      rails (>= 4.2)
     amq-protocol (2.3.2)
     ast (2.4.2)
     autoprefixer-rails (10.4.7.0)
@@ -251,6 +249,7 @@ GEM
     diffy (3.4.0)
     digest-crc (0.5.1)
     docile (1.4.0)
+    dry-cli (0.7.0)
     dumb_delegator (1.0.0)
     erubi (1.10.0)
     execjs (2.8.1)
@@ -555,7 +554,6 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    semantic_range (3.0.0)
     serverengine (2.1.1)
       sigdump (~> 0.2.2)
     set (1.0.1)
@@ -641,6 +639,13 @@ GEM
       axiom-types (~> 0.1)
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
+    vite_rails (3.0.10)
+      railties (>= 5.1, < 8)
+      vite_ruby (~> 3.0)
+    vite_ruby (3.2.0)
+      dry-cli (~> 0.7.0)
+      rack-proxy (~> 0.6, >= 0.6.1)
+      zeitwerk (~> 2.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -656,11 +661,6 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    webpacker (6.0.0.pre.2)
-      activesupport (>= 5.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 5.2)
-      semantic_range (>= 2.3.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -672,7 +672,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  almond-rails (~> 0.1)
   axe-core-rspec
   bixby (= 2.0.0)
   blacklight (~> 7.18, < 7.25)
@@ -738,10 +737,10 @@ DEPENDENCIES
   string_rtl
   turbolinks
   uglifier (>= 1.3.0)
+  vite_rails
   web-console (~> 4.0)
   webdrivers (~> 3.0)
   webmock
-  webpacker (>= 4.0.x)
 
 BUNDLED WITH
-   2.3.18
+   2.3.17

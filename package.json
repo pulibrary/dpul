@@ -1,22 +1,15 @@
 {
   "dependencies": {
-    "@rails/webpacker": "https://github.com/rails/webpacker",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "caniuse-lite": "^1.0.30000936",
     "css-loader": "^2.1.0",
     "lux-design-system": "^3.1.5",
     "postcss-cssnext": "^3.1.0",
     "vue": "^2.6.5",
     "vue-loader": "14.2.2",
-    "vue-template-compiler": "^2.6.5",
-    "webpack": "^4.29.3"
+    "vue-template-compiler": "^2.6.5"
   },
   "devDependencies": {
-    "@webpack-cli/serve": "^1.5.2",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^3.1.14"
+    "vite": "^3.0.0",
+    "vite-plugin-ruby": "^3.1.0"
   }
 }
