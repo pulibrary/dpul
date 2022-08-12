@@ -12,9 +12,8 @@ formerly known as Pomegranate, but renamed to the offical brand: Digital PUL.
 * Ruby
 * Nodejs
 * Java (to run Solr server)
-* (Postgres (for OSX dev systems, install via homebrew)
-* Redis (install via homebrew and run via `homebrew services`)
-
+* Postgres
+* Redis
 
 ## Initial Setup
 
@@ -39,12 +38,18 @@ destroy` or turn off all services with `lando poweroff`.
 1. Install Lando DMG from <https://github.com/lando/lando/releases>
 1. `rake servers:start`
 
-1. For test:
-   - In a separate terminal: `bundle exec rspec`
-1. For development:
-   - In a separate terminal: `foreman start`
-     - Or run services separately as shown in <https://github.com/pulibrary/dpul/blob/main/Procfile>
-   - Access DPUL at <http://localhost:3000/>
+### Running Tests
+
+```sh
+bundle exec rspec
+```
+
+## Running in Development
+
+1. Either run `foreman start` in its own terminal or run
+   each service listed in the [Procfile](https://github.com/pulibrary/dpul/blob/main/Procfile) in its own terminal. Running each separately makes for easier debugging.
+1. Access DPUL at <http://localhost:3000/>
+
 
 ### Importing Data:
 
@@ -55,12 +60,6 @@ destroy` or turn off all services with `lando poweroff`.
   - To find a small collection: go to Figgy, submit a blank search, open the facet collection and click 'more', and page to the low-count collections
 5. Either wait for a solr commit or manually commit in the rails console with
    `Blacklight.default_index.connection.commit`
-
-### Running Tests
-
-```sh
-bundle exec rspec
-```
 
 ### Auto-update from [Figgy](https://github.com/pulibrary/figgy)
 
