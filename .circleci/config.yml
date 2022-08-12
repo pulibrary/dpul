@@ -24,7 +24,7 @@ jobs:
             - dpul-{{ checksum "Gemfile.lock" }}
             - dpul-yarn-{{ checksum "yarn.lock" }}
       # Install bundler / yarn
-      - run: gem install bundler -v '~> 2.0'
+      - run: gem install bundler -v '2.3.18'
       - node/install:
           install-yarn: true
           node-version: '14.19.0'
