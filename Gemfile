@@ -79,6 +79,7 @@ gem 'rsolr', '~> 2.0'
 # Required by blacklight-oembed
 gem 'ruby2_keywords'
 gem 'sidekiq', '< 6'
+gem 'sir_trevor_rails'
 gem 'sitemap_generator'
 gem 'sneakers'
 gem 'sprockets', '~> 3.7'
