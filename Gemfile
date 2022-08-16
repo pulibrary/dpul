@@ -71,6 +71,7 @@ gem 'logstash-event'
 gem 'omniauth', '~> 1.8.1'
 gem 'omniauth-cas'
 gem 'open_uri_redirections'
+gem 'redcarpet', '~> 3.5.1'
 gem 'redis-namespace'
 # Upgrading past redis 3.3.5 currently breaks deploy. Test any upgrades here carefully.
 gem 'redis', '~> 4.1.0'
