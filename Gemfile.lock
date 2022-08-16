@@ -483,10 +483,10 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rbtree (0.4.5)
-    redcarpet (3.0.0)
-    redis (4.1.4)
-    redis-namespace (1.8.2)
-      redis (>= 3.0.4)
+    redcarpet (3.5.1)
+    redis (4.5.1)
+    redis-namespace (1.9.0)
+      redis (>= 4)
     regexp_parser (2.5.0)
     representable (3.2.0)
       declarative (< 0.1.0)
@@ -574,11 +574,11 @@ GEM
     serverengine (2.1.1)
       sigdump (~> 0.2.2)
     set (1.0.2)
-    sidekiq (5.2.9)
+    sidekiq (5.2.10)
       connection_pool (~> 2.2, >= 2.2.2)
       rack (~> 2.0)
       rack-protection (>= 1.5.0)
-      redis (>= 3.3.5, < 4.2)
+      redis (~> 4.5, < 4.6.0)
     sigdump (0.2.4)
     signet (0.17.0)
       addressable (~> 2.8)
@@ -737,7 +737,8 @@ DEPENDENCIES
   rack (>= 2.0.6)
   rails (~> 6.1.6)
   rails-controller-testing
-  redis (~> 4.1.0)
+  redcarpet (~> 3.5.1)
+  redis (~> 4.5)
   redis-namespace
   riiif
   rsolr (~> 2.0)
@@ -747,7 +748,7 @@ DEPENDENCIES
   rubyzip (>= 1.2.2)
   sass-rails (~> 5.0)
   selenium-webdriver
-  sidekiq (< 6)
+  sidekiq (~> 5.2.10, < 6)
   sidekiq-pro!
   simplecov
   sir_trevor_rails
