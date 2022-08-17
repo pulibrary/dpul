@@ -3,10 +3,10 @@
     "caniuse-lite": "^1.0.30000936",
     "css-loader": "^2.1.0",
     "lux-design-system": "^3.1.5",
-    "postcss-cssnext": "^3.1.0",
+    "postcss-preset-env": "^7.8.0",
     "vue": "^2.6.5",
-    "vue-loader": "14.2.2",
-    "vue-template-compiler": "^2.6.5"
+    "vue-loader": "17.0.0",
+    "vue-template-compiler": "^2.7.8"
   },
   "devDependencies": {
     "vite": "^3.0.0",
