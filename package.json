@@ -2,7 +2,7 @@
   "dependencies": {
     "caniuse-lite": "^1.0.30000936",
     "css-loader": "^2.1.0",
-    "lux-design-system": "^3.1.5",
+    "lux-design-system": "^4.0.1",
     "postcss-preset-env": "^7.8.0",
     "vue": "^2.6.5",
     "vue-loader": "17.0.0",

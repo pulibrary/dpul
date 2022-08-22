@@ -18,6 +18,6 @@
           {name: '<%= t('spotlight.header_links.logout')%>', component: 'Logout', href: '<%= main_app.destroy_user_session_path %>'},
         ]},
 <% else %>
-    {name: '<%= t('spotlight.header_links.login')%>', component: 'Login', href: '<%= main_app.new_user_session_path %>'},
+    {name: '<%= t('spotlight.header_links.login')%>', component: 'Login', href: '<%= main_app.new_user_session_path %>', method: 'post'},
 <% end %>
 ]"></menu-bar>
