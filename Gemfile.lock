@@ -313,7 +313,7 @@ GEM
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
     hashdiff (1.0.1)
-    hashie (3.5.7)
+    hashie (5.0.0)
     honeybadger (4.12.1)
     httpclient (2.8.3)
     i18n (1.12.0)
@@ -404,8 +404,8 @@ GEM
       rack (>= 1.2, < 3)
       rash_alt (>= 0.4, < 1)
       version_gem (~> 1.1)
-    omniauth (1.8.1)
-      hashie (>= 3.4.6, < 3.6.0)
+    omniauth (1.9.2)
+      hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
     omniauth-cas (2.0.0)
       addressable (~> 2.3)
@@ -730,7 +730,7 @@ DEPENDENCIES
   lograge
   logstash-event
   nokogiri (~> 1.13.2)
-  omniauth (~> 1.8.1)
+  omniauth
   omniauth-cas
   omniauth-rails_csrf_protection
   open_uri_redirections
