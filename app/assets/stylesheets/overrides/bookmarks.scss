@@ -4,6 +4,10 @@
   }
 }
 
+.documents-list .document {
+  padding-top: 0;
+}
+
 .documents-list .document .index-document-functions {
   margin-top: -0.5em;
   margin-bottom: 0rem;
@@ -23,4 +27,8 @@
   @media (min-width: breakpoint-min(sm)) {
     max-width: 100px;
   }
+}
+
+.bookmarks-thumbnail-container {
+  padding-top: 0.25rem;
 }
