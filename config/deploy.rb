@@ -32,6 +32,15 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'vendor/bundle', 'public/u
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+desc "Write the current version to public/version.txt"
+task :write_version do
+  on roles(:app), in: :sequence do
+    within repo_path do
+      execute :echo, "dpul `git describe --all --always --long --abbrev=40 HEAD` `date +\"%F %T %Z\"` > #{release_path}/public/version.txt"
+    end
+  end
+end
+
 namespace :sneakers do
   task :restart do
     on roles(:worker) do
