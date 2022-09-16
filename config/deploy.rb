@@ -90,6 +90,7 @@ after 'deploy:published', 'sneakers:restart'
 after 'deploy:starting', 'sidekiq:quiet'
 after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:published', 'sidekiq:restart'
+after 'deploy:published', 'write_version'
 require 'date'
 require 'active_support/core_ext/date'
 
