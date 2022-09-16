@@ -36,7 +36,7 @@ desc "Write the current version to public/version.txt"
 task :write_version do
   on roles(:app), in: :sequence do
     within repo_path do
-      execute :echo, "dpul `git describe --all --always --long --abbrev=40 HEAD` `date +\"%F %T %Z\"` > #{release_path}/public/version.txt"
+      execute :tail, "-n1 ../revisions.log > #{release_path}/public/version.txt"
     end
   end
 end
