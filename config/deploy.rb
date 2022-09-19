@@ -40,6 +40,7 @@ task :write_version do
     end
   end
 end
+after 'deploy:log_revision', 'write_version'
 
 namespace :sneakers do
   task :restart do
@@ -90,7 +91,6 @@ after 'deploy:published', 'sneakers:restart'
 after 'deploy:starting', 'sidekiq:quiet'
 after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:published', 'sidekiq:restart'
-after 'deploy:published', 'write_version'
 require 'date'
 require 'active_support/core_ext/date'
 
