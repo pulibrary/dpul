@@ -27,7 +27,7 @@ jobs:
       - run: gem install bundler -v '2.3.18'
       - node/install:
           install-yarn: true
-          node-version: '14.19.0'
+          node-version: '16.15.0'
       # Install dependencies
       - run: bundle config set --local path "vendor/bundle"
       - run: bundle install
@@ -92,7 +92,7 @@ jobs:
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       - node/install:
           install-yarn: true
-          node-version: '14.19.0'
+          node-version: '16.15.0'
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
