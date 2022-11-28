@@ -52,7 +52,7 @@ class IIIFResource < Spotlight::Resources::IiifHarvester
     Spotlight::ReindexJob.perform_now(self)
   end
 
-  def reindex(*args)
+  def reindex(*args, **kwargs)
     return if exhibit.nil?
 
     super

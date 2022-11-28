@@ -94,3 +94,6 @@ gem 'honeybadger'
 gem 'nokogiri', '~> 1.13.2'
 gem 'ruby-prof', require: false
 gem 'rubyzip', '>= 1.2.2'
+
+# Added for Ruby 3.1 support
+gem "net-smtp", require: false
