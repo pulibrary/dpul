@@ -8,7 +8,7 @@ jobs:
     working_directory: ~/dpul
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: cimg/ruby:2.7.5-browsers
+      - image: cimg/ruby:3.1.0-browsers
         environment:
           RAILS_ENV: test
           NODE_ENV: test
@@ -51,7 +51,7 @@ jobs:
   rubocop:
     working_directory: ~/dpul
     docker:
-      - image: cimg/ruby:2.7.5-browsers
+      - image: cimg/ruby:3.1.0-browsers
         environment:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
@@ -69,7 +69,7 @@ jobs:
   test:
     working_directory: ~/dpul
     docker:
-      - image: cimg/ruby:2.7.5-browsers
+      - image: cimg/ruby:3.1.0-browsers
         environment:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
