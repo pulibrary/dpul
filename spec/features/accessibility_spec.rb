@@ -185,6 +185,7 @@ describe "accessibility", type: :feature, js: true do
         .excluding(".tt-hint") # Issue is in typeahead.js library
         .skipping(:"duplicate-id") # See issue #1336
         .skipping(:"color-contrast") # See issue: #1265
+        .skipping(:"link-in-text-block") # see #1413
     end
   end
 
@@ -350,6 +351,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .skipping(:"link-in-text-block") # see #1413
       end
     end
 
@@ -375,6 +377,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .skipping(:"link-in-text-block") # see #1413
       end
     end
 
@@ -384,6 +387,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .skipping(:"link-in-text-block") # see #1413
       end
     end
   end
@@ -415,6 +419,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .skipping(:"link-in-text-block") # see #1413
       end
     end
 
@@ -424,6 +429,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .skipping(:"link-in-text-block") # see #1413
       end
     end
   end
