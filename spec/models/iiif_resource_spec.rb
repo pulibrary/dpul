@@ -7,7 +7,7 @@ describe IIIFResource do
   context "when indexing a Recording IIIF v3 manifest" do
     it "indexes succesfully" do
       url = 'https://figgy-staging.princeton.edu/concern/scanned_resources/ea3a706e-dd01-478c-a428-2ef99762e392/manifest'
-      stub_manifest(url: url, fixture: 'recording_manifest.json')
+      stub_manifest(url:, fixture: 'recording_manifest.json')
       stub_metadata(id: "ea3a706e-dd01-478c-a428-2ef99762e392")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
@@ -50,7 +50,7 @@ describe IIIFResource do
   context "when ingesting a manifest with full text" do
     it "indexes the full text into a TESIM field" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
-      stub_manifest(url: url, fixture: 'full_text_manifest.json')
+      stub_manifest(url:, fixture: 'full_text_manifest.json')
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
       stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
@@ -70,7 +70,7 @@ describe IIIFResource do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
 
     it "indexes it into a system_created_at_ssi and makes no CustomField" do
-      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_manifest(url:, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
@@ -89,7 +89,7 @@ describe IIIFResource do
   context "when ingesting a resource with actor groupings" do
     it "indexes all the values" do
       url = 'https://figgy.princeton.edu/concern/scanned_resources/e9f4cdc7-173d-4bc8-befe-f786de455f11/manifest'
-      stub_manifest(url: url, fixture: 'actor_groupings.json')
+      stub_manifest(url:, fixture: 'actor_groupings.json')
       stub_metadata(id: "e9f4cdc7-173d-4bc8-befe-f786de455f11")
 
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
@@ -106,7 +106,7 @@ describe IIIFResource do
   context "when provided an override title" do
     it "doesn't get overridden" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
-      stub_manifest(url: url, fixture: 'full_text_manifest.json')
+      stub_manifest(url:, fixture: 'full_text_manifest.json')
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
       stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
@@ -131,12 +131,12 @@ describe IIIFResource do
   context "when there's an existing broken Spotlight::CustomField Override Title" do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
     it "doesn't make another" do
-      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_manifest(url:, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
       resource.save_and_index
-      Spotlight::CustomField.create(exhibit: exhibit, field: "override-title_ssim", label: "Override Title", slug: "override-title_ssim")
+      Spotlight::CustomField.create(exhibit:, field: "override-title_ssim", label: "Override Title", slug: "override-title_ssim")
 
       custom_field_count = Spotlight::CustomField.all.size
 
@@ -149,7 +149,7 @@ describe IIIFResource do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
 
     it "doesn't create duplicate custom fields" do
-      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_manifest(url:, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
@@ -169,7 +169,7 @@ describe IIIFResource do
     let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
 
     it 'ingests a iiif manifest with metadata from jsonld' do
-      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_manifest(url:, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
@@ -188,7 +188,7 @@ describe IIIFResource do
     end
 
     it "ingests finding aids metadata dates" do
-      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_manifest(url:, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678", fixture: "findingaids-date")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
@@ -200,7 +200,7 @@ describe IIIFResource do
     end
 
     it "removes old metadata" do
-      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_manifest(url:, fixture: '1r66j1149-expanded.json')
       # Stub metadata with a record which has a creator
       stub_metadata(id: "12345678")
 
@@ -226,7 +226,7 @@ describe IIIFResource do
     end
 
     it 'indexes collections' do
-      stub_manifest(url: url, fixture: '1r66j1149-expanded.json')
+      stub_manifest(url:, fixture: '1r66j1149-expanded.json')
       stub_metadata(id: "12345678")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
       resource = described_class.new url: url, exhibit: exhibit
@@ -242,9 +242,9 @@ describe IIIFResource do
       let(:url) { "https://figgy.princeton.edu/concern/scanned_resources/#{id}/manifest" }
 
       it 'ingests a link to the finding aid' do
-        stub_manifest(url: url, fixture: 'archival_resource.json')
-        stub_metadata(id: id)
-        stub_ocr_content(id: id, text: "text")
+        stub_manifest(url:, fixture: 'archival_resource.json')
+        stub_metadata(id:)
+        stub_ocr_content(id:, text: "text")
         exhibit = Spotlight::Exhibit.create title: 'Archival Exhibit'
         resource = described_class.new url: url, exhibit: exhibit
         expect(resource.save).to be true
@@ -259,7 +259,7 @@ describe IIIFResource do
       let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
 
       before do
-        stub_manifest(url: url, fixture: "mvw.json")
+        stub_manifest(url:, fixture: "mvw.json")
         stub_manifest(
           url: "https://hydra-dev.princeton.edu/concern/scanned_resources/k35694439/manifest",
           fixture: "vol1.json"
@@ -296,7 +296,7 @@ describe IIIFResource do
       let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/s9w032300r/manifest" }
 
       before do
-        stub_manifest(url: url, fixture: "s9w032300r.json")
+        stub_manifest(url:, fixture: "s9w032300r.json")
         stub_metadata(id: "12345678", status: 407)
       end
 
@@ -316,13 +316,13 @@ describe IIIFResource do
 
     describe '#reindex' do
       let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
-      let(:resource) { described_class.new url: url, exhibit: exhibit }
+      let(:resource) { described_class.new url:, exhibit: }
       let(:blacklight_solr) { instance_double(RSolr::Client) }
       let(:data) { resource.solr_documents }
 
       before do
         stub_manifest(
-          url: url,
+          url:,
           fixture: "vol1.json"
         )
         allow(blacklight_solr).to receive(:update)
@@ -363,14 +363,14 @@ describe IIIFResource do
     describe "#reindex" do
       context 'when the resource has a search service' do
         let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
-        let(:resource) { described_class.new url: url, exhibit: exhibit }
+        let(:resource) { described_class.new url:, exhibit: }
         let(:id) { "c7f0bb99-3721-4171-8a84-0256941e8298" }
         let(:url) { "https://figgy.princeton.edu/concern/scanned_resources/#{id}/manifest" }
 
         before do
-          stub_manifest(url: url, fixture: "search_service.json")
-          stub_metadata(id: id)
-          stub_ocr_content(id: id, text: "text")
+          stub_manifest(url:, fixture: "search_service.json")
+          stub_metadata(id:)
+          stub_ocr_content(id:, text: "text")
         end
 
         it 'indexes successfully' do

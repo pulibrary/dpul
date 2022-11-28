@@ -4,12 +4,12 @@ require 'rails_helper'
 
 RSpec.describe 'Catalog', type: :feature, js: true do
   let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
-  let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
+  let(:admin) { FactoryBot.create(:exhibit_admin, exhibit:) }
   let(:document_id) { '1r66j4408' }
   let(:id) { Digest::MD5.hexdigest("#{exhibit.id}-#{document_id}") }
   let(:document) do
     SolrDocument.new(
-      id: id
+      id:
     )
   end
   let(:collection1) { Spotlight::Exhibit.create!(title: 'test collection 1') }
@@ -18,7 +18,7 @@ RSpec.describe 'Catalog', type: :feature, js: true do
   before do
     sign_in admin
     Spotlight::SolrDocumentSidecar.create!(
-      document: document, exhibit: exhibit,
+      document:, exhibit:,
       data: {
         full_title_tesim: [
           'test item'
@@ -56,10 +56,10 @@ RSpec.describe 'Catalog', type: :feature, js: true do
     document.reindex
     Blacklight.default_index.connection.commit
 
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: 'collections', field: 'readonly_collections_ssim', configuration: { "label" => "Collections" }, field_type: 'vocab', readonly_field: true)
+    Spotlight::CustomField.create!(exhibit:, slug: 'collections', field: 'readonly_collections_ssim', configuration: { "label" => "Collections" }, field_type: 'vocab', readonly_field: true)
     collection1
     collection2
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: 'description', field: 'readonly_description_ssim', configuration: { "label" => "Description" }, field_type: 'vocab', readonly_field: true)
+    Spotlight::CustomField.create!(exhibit:, slug: 'description', field: 'readonly_description_ssim', configuration: { "label" => "Description" }, field_type: 'vocab', readonly_field: true)
   end
 
   it 'will add a ... More link in the field' do
@@ -78,7 +78,7 @@ RSpec.describe 'Catalog', type: :feature, js: true do
     # the value of link_to_facet into the configuration needs to match the field name
     exhibit.blacklight_configuration.index_fields["readonly_author_ssim"] = { "label" => "Author", "link_to_facet" => "readonly_author_ssim", "list" => true, "show" => true, "enabled" => true }
     exhibit.blacklight_configuration.save
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: 'author', field: 'readonly_author_ssim', configuration: { "label" => "Author" }, field_type: 'vocab', readonly_field: true)
+    Spotlight::CustomField.create!(exhibit:, slug: 'author', field: 'readonly_author_ssim', configuration: { "label" => "Author" }, field_type: 'vocab', readonly_field: true)
 
     visit spotlight.exhibit_solr_document_path(exhibit, document_id)
     expect(page).to have_link 'Vasi', href: '/exhibit-title-1/catalog?f%5Breadonly_author_ssim%5D%5B%5D=Vasi'

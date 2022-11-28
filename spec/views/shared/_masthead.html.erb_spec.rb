@@ -38,7 +38,7 @@ describe 'shared/_masthead', type: :view do
     let(:subtitle) { "Stuff" }
 
     before do
-      site = instance_double(Spotlight::Site, subtitle: subtitle, title: "Title")
+      site = instance_double(Spotlight::Site, subtitle:, title: "Title")
       allow(view).to receive(:current_site).and_return(site)
       assign(:masthead_title, "Title")
     end

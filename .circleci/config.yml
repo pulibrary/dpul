@@ -65,7 +65,7 @@ jobs:
       # Bundle install dependencies
       - run: bundle config set --local path "vendor/bundle"
       - run: bundle install
-      - run: bundle exec rake rubocop
+      - run: bundle exec rubocop
   test:
     working_directory: ~/dpul
     docker:

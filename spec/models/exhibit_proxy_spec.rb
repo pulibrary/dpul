@@ -36,8 +36,8 @@ describe ExhibitProxy do
         headers = { 'content-type' => 'application/ld+json' }
         stub_request(:get, url)
           .to_return(
-            { status: 200, body: body1, headers: headers },
-            { status: 200, body: body2, headers: headers }
+            { status: 200, body: body1, headers: },
+            { status: 200, body: body2, headers: }
           )
         stub_manifest(url: "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest", fixture: "1r66j1149.json")
         stub_metadata(id: "1234567")
@@ -71,7 +71,7 @@ describe ExhibitProxy do
         headers = { 'content-type' => 'application/ld+json' }
         stub_request(:get, "https://hydra-dev.princeton.edu/collections/2b88qc199/manifest")
           .to_return(
-            status: 200, body: body, headers: headers
+            status: 200, body:, headers:
           )
         stub_manifest(url: "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest", fixture: "1r66j1149.json")
         stub_manifest(url: "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest?auth_token=12345", fixture: "1r66j1149.json")

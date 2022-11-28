@@ -35,7 +35,7 @@ module ApplicationHelper
   end
 
   def readonly?(field)
-    custom_field = Spotlight::CustomField.find_by(field: field)
+    custom_field = Spotlight::CustomField.find_by(field:)
     return true if custom_field.nil?
 
     custom_field.readonly_field

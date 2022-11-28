@@ -10,7 +10,7 @@ namespace :dpul do
       dups = Spotlight::SolrDocumentSidecar.select(:exhibit_id, :document_id).group(:exhibit_id, :document_id).having("count(*) > 1").size.keys
 
       dup_sets = dups.map do |exhibit_id, document_id|
-        Spotlight::SolrDocumentSidecar.where(exhibit_id: exhibit_id, document_id: document_id).to_a
+        Spotlight::SolrDocumentSidecar.where(exhibit_id:, document_id:).to_a
       end
 
       # alternative strategy

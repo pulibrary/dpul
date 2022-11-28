@@ -28,7 +28,7 @@ module IndexHelper
       counter = document_counter_with_offset(counter)
       content_tag(
         :span,
-        t('blacklight.search.documents.counter', counter: counter),
+        t('blacklight.search.documents.counter', counter:),
         class: ["document-counter"]
       )
     end

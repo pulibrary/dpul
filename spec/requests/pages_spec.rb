@@ -11,8 +11,8 @@ RSpec.describe "Pages requests", type: :request do
   context "with a user who is an admin on an exhibit" do
     it "can access all the pages when fetching pages.json (and therefore autocomplete the pages widget)" do
       exhibit = FactoryBot.create(:exhibit)
-      user = FactoryBot.create(:exhibit_admin, exhibit: exhibit)
-      FactoryBot.create(:feature_page, exhibit: exhibit)
+      user = FactoryBot.create(:exhibit_admin, exhibit:)
+      FactoryBot.create(:feature_page, exhibit:)
 
       sign_in user
       get "/#{exhibit.slug}/pages.json"

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe IiifManifest do
-  let(:manifest_service) { described_class.new(url: url, manifest: manifest, collection: collection) }
+  let(:manifest_service) { described_class.new(url:, manifest:, collection:) }
   let(:url) { 'uri://some_id/manifest' }
   let(:collection) { instance_double(Spotlight::Resources::IiifManifest) }
   let(:manifest_fixture) { test_manifest1 }

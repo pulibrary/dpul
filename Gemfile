@@ -51,7 +51,7 @@ source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
 end
 
-gem 'bixby', '2.0.0'
+gem 'bixby', '~> 5.0'
 gem 'blacklight', '~> 7.18', '< 7.25'
 gem 'blacklight-gallery'
 gem 'blacklight-oembed'

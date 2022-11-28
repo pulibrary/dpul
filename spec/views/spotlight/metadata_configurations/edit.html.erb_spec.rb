@@ -13,8 +13,8 @@ describe 'spotlight/metadata_configurations/edit', type: :view do
       available_view_fields: { some_view_type: 1, another_view_type: 2 },
       select_deselect_button: nil
     )
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: "one", field: "one", label: "one", field_type: "vocab", readonly_field: false)
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: true)
+    Spotlight::CustomField.create!(exhibit:, slug: "one", field: "one", label: "one", field_type: "vocab", readonly_field: false)
+    Spotlight::CustomField.create!(exhibit:, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: true)
     render
   end
 

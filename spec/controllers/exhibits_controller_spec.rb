@@ -21,7 +21,7 @@ RSpec.describe ExhibitsController do
         }
       end
       it "works and pulls the title" do
-        post :create, params: { exhibit: exhibit }
+        post :create, params: { exhibit: }
 
         expect(response).not_to render_template "new"
         last_exhibit = Spotlight::Exhibit.last
@@ -38,7 +38,7 @@ RSpec.describe ExhibitsController do
         }
       end
       it "renders an error" do
-        post :create, params: { exhibit: exhibit }
+        post :create, params: { exhibit: }
 
         expect(response).to render_template "new"
         expect(assigns["exhibit"].errors.messages[:slug]).to eq ["can't be blank"]
@@ -52,7 +52,7 @@ RSpec.describe ExhibitsController do
         }
       end
       it "renders an error" do
-        post :create, params: { exhibit: exhibit }
+        post :create, params: { exhibit: }
 
         expect(response).to render_template "new"
         expect(assigns["exhibit"].errors.messages[:slug]).to eq ["can't be blank"]
@@ -95,7 +95,7 @@ RSpec.describe ExhibitsController do
     end
     context "when there are resources in the index" do
       it "destroys them from solr" do
-        post :create, params: { exhibit: exhibit }
+        post :create, params: { exhibit: }
 
         exhibit = assigns(:exhibit)
         controller.instance_variable_set(:@exhibit, nil)

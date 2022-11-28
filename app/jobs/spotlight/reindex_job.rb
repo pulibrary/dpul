@@ -32,7 +32,7 @@ module Spotlight
       error_handler = lambda do |pipeline, exception, _data|
         job_tracker.append_log_entry(
           type: :error,
-          exhibit: exhibit,
+          exhibit:,
           message: exception.to_s,
           backtrace: exception.backtrace.first(5).join("\n"),
           resource_id: (pipeline.source.id if pipeline.source.respond_to?(:id))
@@ -43,7 +43,7 @@ module Spotlight
       end
 
       resource_list(exhibit_or_resources).each do |resource|
-        resource.reindex(touch: false, commit: false, job_tracker: job_tracker, additional_data: job_data, on_error: error_handler)
+        resource.reindex(touch: false, commit: false, job_tracker:, additional_data: job_data, on_error: error_handler)
 
         # Increment progress outside of the reindex callback otherwise the count
         # is off. Not sure why.
@@ -53,7 +53,7 @@ module Spotlight
       ensure
         job_tracker.append_log_entry(
           type: :summary,
-          exhibit: exhibit,
+          exhibit:,
           message: I18n.t(
             'spotlight.job_trackers.show.messages.status.in_progress',
             progress: progress.progress,

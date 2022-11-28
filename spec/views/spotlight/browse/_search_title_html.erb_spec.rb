@@ -16,7 +16,7 @@ RSpec.describe 'spotlight/browse/_search_title', type: :view do
     let(:rights) { 'http://rightsstatements.org/vocab/NKC/1.0/' }
     let(:document) do
       SolrDocument.new(
-        id: id,
+        id:,
         readonly_title_tesim: [
           title
         ],
@@ -151,7 +151,7 @@ RSpec.describe 'spotlight/browse/_search_title', type: :view do
     end
 
     it 'displays the total number of exhibit items' do
-      render partial: 'spotlight/browse/search_title', locals: { search: search }
+      render partial: 'spotlight/browse/search_title', locals: { search: }
       expect(response).to have_css '.item-count', text: '3 items'
     end
 

@@ -6,12 +6,7 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 10
-Capybara/FeatureMethods:
-  Exclude:
-    - 'spec/features/catalog_spec.rb'
-    - 'spec/features/exhibit_home_page_spec.rb'
-    - 'spec/features/sign_in_spec.rb'
+require: rubocop-rails
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -35,10 +30,22 @@ Layout/EmptyLines:
   Exclude:
     - 'Gemfile'
 
+Lint/MissingSuper:
+  Exclude:
+    - 'app/services/figgy_event_processor/unknown_event.rb'
+    - 'app/components/blacklight/response/facet_group_component.rb'
+
 # Offense count: 1
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
   Max: 44
+
+# Offense count: 10
+RSpec/Capybara:
+  Exclude:
+    - 'spec/features/catalog_spec.rb'
+    - 'spec/features/exhibit_home_page_spec.rb'
+    - 'spec/features/sign_in_spec.rb'
 
 # Offense count: 6
 # Configuration parameters: Prefixes.
@@ -164,6 +171,10 @@ Rails/LexicallyScopedActionFilter:
   Exclude:
     - 'app/controllers/exhibits_controller.rb'
 
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'app/jobs/spotlight/reindex_job.rb'
+
 # Offense count: 1
 # Cop supports --auto-correct.
 Security/YAMLLoad:
@@ -228,5 +239,5 @@ Style/SymbolArray:
 # Offense count: 216
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
-Metrics/LineLength:
+Layout/LineLength:
   Max: 199

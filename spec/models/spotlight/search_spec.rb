@@ -12,7 +12,7 @@ describe Spotlight::Search, type: :model do
   let(:rights) { 'http://rightsstatements.org/vocab/NKC/1.0/' }
   let(:document) do
     SolrDocument.new(
-      id: id,
+      id:,
       readonly_title_tesim: [
         title
       ],

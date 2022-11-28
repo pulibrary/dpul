@@ -4,13 +4,13 @@ require 'rails_helper'
 
 RSpec.describe 'Browsing exhibits', type: :feature do
   let(:exhibit) { FactoryBot.create(:exhibit) }
-  let(:user) { FactoryBot.create(:user, exhibit: exhibit) }
+  let(:user) { FactoryBot.create(:user, exhibit:) }
   let(:id) { 'd279a557a62937a8895eebbca2d4744c' }
   let(:title) { 'Panoramic alphabet of peace' }
   let(:rights) { 'http://rightsstatements.org/vocab/NKC/1.0/' }
   let(:document) do
     SolrDocument.new(
-      id: id,
+      id:,
       readonly_title_tesim: [
         title
       ],
@@ -145,7 +145,7 @@ RSpec.describe 'Browsing exhibits', type: :feature do
   end
 
   context 'when logged in as a site admin.' do
-    let(:user) { FactoryBot.create(:site_admin, exhibit: exhibit) }
+    let(:user) { FactoryBot.create(:site_admin, exhibit:) }
 
     context 'when browsing all exhibit items' do
       before do

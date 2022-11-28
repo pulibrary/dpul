@@ -44,7 +44,7 @@ class SolrDocument
     end
     # End additions
 
-    # Note: this causes a save
+    # NOTE: this causes a save
     current_exhibit.tag(sidecar(current_exhibit), with: tags, on: :tags) if tags
 
     update_exhibit_resource(resource_attributes) if uploaded_resource?
