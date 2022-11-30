@@ -20,7 +20,7 @@ RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view 
   let(:builder) { ActionView::Helpers::FormBuilder.new 'z', nil, view, {} }
 
   it 'renders a tooltip for imported fields' do
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: true)
+    Spotlight::CustomField.create!(exhibit:, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: true)
     allow(view).to receive(:index_field_label).with(nil, 'two').and_return 'Some label'
     render partial: p, locals: { key: 'two', config: facet_field, f: builder }
 
@@ -28,7 +28,7 @@ RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view 
   end
 
   it "doesn't render a tooltip for writeable fields" do
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: false)
+    Spotlight::CustomField.create!(exhibit:, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: false)
     allow(view).to receive(:index_field_label).with(nil, 'two').and_return 'Some label'
     render partial: p, locals: { key: 'two', config: facet_field, f: builder }
 
@@ -36,7 +36,7 @@ RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view 
   end
 
   it "renders a field to set link_to_facet" do
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: false)
+    Spotlight::CustomField.create!(exhibit:, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: false)
     allow(view).to receive(:index_field_label).with(nil, 'two').and_return 'Some label'
     render partial: p, locals: { key: 'two', config: facet_field, f: builder }
 

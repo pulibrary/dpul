@@ -15,7 +15,7 @@ if Rails.env.development? || Rails.env.test?
 
   namespace :servers do
     desc "Start solr and postgres servers using lando."
-    task :start do
+    task start: :environment do
       system("lando start")
       system("rake db:create")
       system("rake db:migrate")
@@ -23,7 +23,7 @@ if Rails.env.development? || Rails.env.test?
     end
 
     desc "Stop lando solr and postgres servers."
-    task :stop do
+    task stop: :environment do
       system("lando stop")
     end
   end
@@ -42,7 +42,7 @@ if Rails.env.development? || Rails.env.test?
     task :sidecar_references, [:exhibit] => [:environment] do |_t, args|
       exhibit_slug = args[:exhibit]
       exhibit = Spotlight::Exhibit.find_by(slug: exhibit_slug)
-      sidecars = Spotlight::SolrDocumentSidecar.where(exhibit: exhibit)
+      sidecars = Spotlight::SolrDocumentSidecar.where(exhibit:)
       sidecars.each do |sidecar|
         sidecar.data
         valid_data = sidecar.data.reject do |k, v|

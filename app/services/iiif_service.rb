@@ -15,7 +15,7 @@ class IiifService < ::Spotlight::Resources::IiifService
   end
 
   def create_iiif_manifest(manifest, collection = nil)
-    IiifManifest.new(url: manifest['@id'] || manifest['id'], manifest: manifest, collection: collection)
+    IiifManifest.new(url: manifest['@id'] || manifest['id'], manifest:, collection:)
   end
 
   def object

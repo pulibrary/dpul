@@ -9,11 +9,11 @@ RSpec.describe CatalogController do
     let(:user) { FactoryBot.create(:site_admin) }
     it "searches" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
-      stub_manifest(url: url, fixture: 'full_text_manifest.json')
+      stub_manifest(url:, fixture: 'full_text_manifest.json')
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
       stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
-      resource = IIIFResource.new(url: url, exhibit: exhibit)
+      resource = IIIFResource.new(url:, exhibit:)
       resource.save_and_index
       Blacklight.default_index.connection.commit
 
@@ -27,7 +27,7 @@ RSpec.describe CatalogController do
   context "with mvw" do
     let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
     before do
-      stub_manifest(url: url, fixture: "mvw.json")
+      stub_manifest(url:, fixture: "mvw.json")
       stub_manifest(
         url: "https://hydra-dev.princeton.edu/concern/scanned_resources/k35694439/manifest",
         fixture: "vol1.json"
@@ -99,9 +99,9 @@ RSpec.describe CatalogController do
       end
       it "permits queries with quotes" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
-        document = SolrDocument.new(id: 'd279a557a62937a8895eebbca2d4744c', exhibit: exhibit)
+        document = SolrDocument.new(id: 'd279a557a62937a8895eebbca2d4744c', exhibit:)
         Spotlight::SolrDocumentSidecar.create!(
-          document: document, exhibit: exhibit,
+          document:, exhibit:,
           data: { 'full_title_tesim' => ['"title1"'] }
         )
 

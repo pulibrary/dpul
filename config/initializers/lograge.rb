@@ -3,8 +3,8 @@ Rails.application.configure do
   # Implements fix described in https://github.com/roidrage/lograge/issues/92
   class ActionDispatch::Http::UploadedFile
     def as_json(_options = nil)
-      %w[headers].each_with_object({}) do |attr, hash|
-        hash[attr] = send(attr).force_encoding('utf-8')
+      %w[headers].index_with do |attr|
+        send(attr).force_encoding('utf-8')
       end
     end
   end

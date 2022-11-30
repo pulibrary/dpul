@@ -6,9 +6,9 @@ RSpec.describe FriendlyIdRepository do
   let(:repository) { described_class.new(CatalogController.new.blacklight_config) }
   let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
   let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
-  let(:resource) { IIIFResource.create(url: url, exhibit: exhibit) }
+  let(:resource) { IIIFResource.create(url:, exhibit:) }
   before do
-    stub_manifest(url: url, fixture: "1r66j1149.json")
+    stub_manifest(url:, fixture: "1r66j1149.json")
     stub_metadata(id: "1234567")
   end
 

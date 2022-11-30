@@ -7,7 +7,7 @@ class RTLShowPresenter < ::Blacklight::ShowPresenter
   include ActionView::Context
 
   def field_value_separator
-    tag('br')
+    tag.br
   end
 
   def html_title

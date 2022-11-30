@@ -10,7 +10,7 @@ RSpec.describe FiggyGraphql do
     instance_double(GraphQL::Client::Response,
                     data: OpenStruct.new(
                       resource: OpenStruct.new(
-                        ocr_content: ocr_content
+                        ocr_content:
                       )
                     ))
   end

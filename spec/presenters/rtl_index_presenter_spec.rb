@@ -3,12 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe RTLIndexPresenter do
-  subject(:presenter) { described_class.new(document, double(blacklight_config: blacklight_config, action_name: "index", controller_name: "catalog")) }
+  subject(:presenter) { described_class.new(document, double(blacklight_config:, action_name: "index", controller_name: "catalog")) }
 
   let(:document) do
     {
-      title: title,
-      alternate_title: alternate_title
+      title:,
+      alternate_title:
     }
   end
   let(:title) { ['تضيح المقال'] }

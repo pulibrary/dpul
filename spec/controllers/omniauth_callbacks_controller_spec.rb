@@ -9,8 +9,8 @@ RSpec.describe Users::OmniauthCallbacksController do
     let(:last_name) { 'LastName' }
     let(:uid) { '12345678901234' }
     let(:omniauth_response) do
-      OmniAuth::AuthHash.new(provider: 'barcode', uid: uid, info:
-        { last_name: last_name })
+      OmniAuth::AuthHash.new(provider: 'barcode', uid:, info:
+        { last_name: })
     end
 
     it 'last_name is mapped to username property' do

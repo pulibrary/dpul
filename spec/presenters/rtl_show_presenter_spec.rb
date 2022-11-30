@@ -12,7 +12,7 @@ RSpec.describe RTLShowPresenter do
       title: ["بي", "Traité sur l'art de la charpente : théorique et pratique"]
     )
   end
-  let(:view_context) { double(blacklight_config: blacklight_config, action_name: "show", controller_name: "catalog") }
+  let(:view_context) { double(blacklight_config:, action_name: "show", controller_name: "catalog") }
   let(:blacklight_config) do
     double(
       show_fields: {
@@ -24,7 +24,7 @@ RSpec.describe RTLShowPresenter do
   end
 
   describe "link_to_facet" do
-    let(:view_context) { double(blacklight_config: blacklight_config, action_name: "show", controller_name: "catalog", search_state: double(reset: double(add_facet_params: true)), search_action_path: "/exhibit/catalog") }
+    let(:view_context) { double(blacklight_config:, action_name: "show", controller_name: "catalog", search_state: double(reset: double(add_facet_params: true)), search_action_path: "/exhibit/catalog") }
 
     before do
       allow(view_context).to receive(:link_to).with("بي", "/exhibit/catalog").and_return("<a link>بي</a link>".html_safe)

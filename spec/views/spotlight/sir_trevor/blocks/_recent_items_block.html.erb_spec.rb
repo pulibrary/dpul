@@ -26,7 +26,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
     FactoryBot.create(
       :iiif_resource,
       url: "https://hydra-dev.princeton.edu/concern/scanned_resources/e41da87f-84af-4f50-ab69-781576cf82db/manifest",
-      exhibit: exhibit,
+      exhibit:,
       manifest_fixture: "full_text_manifest.json",
       figgy_uuid: "e41da87f-84af-4f50-ab69-781576cf82db",
       stubbed_ocr_content: "More searchable text",
@@ -36,7 +36,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
     FactoryBot.create(
       :iiif_resource,
       url: "https://figgy-staging.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest",
-      exhibit: exhibit,
+      exhibit:,
       manifest_fixture: "map.json",
       figgy_uuid: "fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f",
       spec: self
@@ -45,7 +45,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
     FactoryBot.create(
       :iiif_resource,
       url: "https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest",
-      exhibit: exhibit,
+      exhibit:,
       manifest_fixture: "44558d29f.json",
       spec: self
     )
@@ -53,7 +53,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
     FactoryBot.create(
       :iiif_resource,
       url: "https://figgy.princeton.edu/concern/scanned_resources/965238bf-7850-4ae2-8830-f709c0f1b732/manifest",
-      exhibit: exhibit,
+      exhibit:,
       manifest_fixture: "no_thumbnail.json",
       figgy_uuid: "965238bf-7850-4ae2-8830-f709c0f1b732",
       spec: self

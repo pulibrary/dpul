@@ -36,7 +36,7 @@ module JobTracking
   def initialize_job_tracker(job, resource, reports_on, user)
     resource_object = resource&.call(job)
     params = {
-      job_id: job_id,
+      job_id:,
       resource: resource_object,
       on: reports_on&.call(job) || resource_object,
       user: user&.call(job),

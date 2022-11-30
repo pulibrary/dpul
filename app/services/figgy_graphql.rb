@@ -12,7 +12,7 @@ module FiggyGraphql
   end
 
   def self.client
-    @client ||= GraphQL::Client.new(schema: schema, execute: HTTP)
+    @client ||= GraphQL::Client.new(schema:, execute: HTTP)
   end
 
   def self.ocr_content_query
@@ -34,7 +34,7 @@ module FiggyGraphql
     ocr_content_query
     client.query(
       FiggyGraphql::OCRQuery,
-      variables: { id: id }
+      variables: { id: }
     ).data.try(:resource).try(:ocr_content)
   end
 end

@@ -5,13 +5,13 @@ require 'rails_helper'
 RSpec.describe 'Catalog Edit', type: :feature do
   let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
   let(:different_exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 2', slug: 'exhibit-title-2') }
-  let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
+  let(:admin) { FactoryBot.create(:exhibit_admin, exhibit:) }
   let(:document_id) { '1r66j4408' }
   let(:id) { Digest::MD5.hexdigest("#{exhibit.id}-#{document_id}") }
   let(:id2) { Digest::MD5.hexdigest("#{different_exhibit.id}-#{document_id}") }
   let(:document) do
     SolrDocument.new(
-      id: id
+      id:
     )
   end
   let(:document2) do
@@ -43,7 +43,7 @@ RSpec.describe 'Catalog Edit', type: :feature do
       }.stringify_keys
     )
     Spotlight::SolrDocumentSidecar.create!(
-      document: document, exhibit: exhibit,
+      document:, exhibit:,
       data: {
         "override-title_ssim": nil,
         full_title_tesim: [
@@ -68,8 +68,8 @@ RSpec.describe 'Catalog Edit', type: :feature do
     document2.reindex
     Blacklight.default_index.connection.commit
 
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: 'collections', field: 'readonly_collections_ssim', configuration: { "label" => "Collections" }, field_type: 'vocab', readonly_field: true)
-    Spotlight::CustomField.create!(exhibit: exhibit, slug: 'override-title_ssim', field: 'override-title_ssim', configuration: { "label" => "Override Title" }, field_type: 'vocab', readonly_field: false)
+    Spotlight::CustomField.create!(exhibit:, slug: 'collections', field: 'readonly_collections_ssim', configuration: { "label" => "Collections" }, field_type: 'vocab', readonly_field: true)
+    Spotlight::CustomField.create!(exhibit:, slug: 'override-title_ssim', field: 'override-title_ssim', configuration: { "label" => "Override Title" }, field_type: 'vocab', readonly_field: false)
   end
 
   it "can be edited without losing data" do

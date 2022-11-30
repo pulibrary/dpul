@@ -51,7 +51,7 @@ source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
 end
 
-gem 'bixby', '2.0.0'
+gem 'bixby', '~> 5.0'
 gem 'blacklight', '~> 7.18', '< 7.25'
 gem 'blacklight-gallery'
 gem 'blacklight-oembed'
@@ -68,6 +68,7 @@ gem 'iiif-presentation'
 gem 'iso-639'
 gem 'lograge'
 gem 'logstash-event'
+gem "net-smtp", require: false
 gem 'omniauth'
 gem 'omniauth-cas'
 gem 'omniauth-rails_csrf_protection'
@@ -94,3 +95,7 @@ gem 'honeybadger'
 gem 'nokogiri', '~> 1.13.2'
 gem 'ruby-prof', require: false
 gem 'rubyzip', '>= 1.2.2'
+
+# Required for deployment under ruby 3.1
+gem "net-imap", require: false
+gem "net-pop", require: false

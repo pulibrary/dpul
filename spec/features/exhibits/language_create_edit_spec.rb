@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'Language', type: :feature do
   let(:exhibit) { FactoryBot.create(:exhibit) }
-  let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
+  let(:admin) { FactoryBot.create(:exhibit_admin, exhibit:) }
 
   before do
     login_as admin

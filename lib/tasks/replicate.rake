@@ -54,14 +54,14 @@ namespace :dpul do
         # unzip it
         `bunzip2 #{download_location}` # this takes a minute
         unzipped_location = download_location[0..-5] # strip `.bz2`
-        return unzipped_location
+        unzipped_location
 
       else # get it from the prod database
         filename = "dpul_production_replication_#{date}.sql"
         download_location = File.join(download_dir, filename)
 
         `pg_dump -Fc #{dump_connection} > #{download_location}`
-        return download_location
+        download_location
       end
     end
 
@@ -92,13 +92,13 @@ namespace :dpul do
       date = ENV["DATE"] || Date.current.to_s
 
       puts "Dumping state of production database"
-      dump_file = dump_postgres(date: date)
+      dump_file = dump_postgres(date:)
 
       puts "Loading postgres to staging"
-      load_postgres(dump_file: dump_file)
+      load_postgres(dump_file:)
 
       puts "Replicating Solr from production backup."
-      replicate_solr(date: date)
+      replicate_solr(date:)
 
       puts "Replicating uploaded images from production to staging"
       replicate_uploaded_images
@@ -112,7 +112,7 @@ namespace :dpul do
       date = ENV["DATE"] || Date.current.to_s
 
       puts "Dumping postgres from current production state"
-      dump_file = dump_postgres(date: date)
+      dump_file = dump_postgres(date:)
       puts "Saved production dump at #{dump_file}"
     end
 
@@ -123,7 +123,7 @@ namespace :dpul do
       abort "this task can only be run in development" unless Rails.env.development?
 
       puts "Loading postgres to development"
-      load_postgres(dump_file: dump_file)
+      load_postgres(dump_file:)
     end
   end
 end

@@ -5,7 +5,7 @@ module JobTrackingPatch
   # See: https://github.com/projectblacklight/spotlight/issues/2777
   # Needed for Spotlight::ReindexJob and Spotlight::ReindexExhibitJob
   def find_or_initialize_job_tracker
-    Spotlight::JobTracker.find_or_initialize_by(job_id: job_id) do |tracker|
+    Spotlight::JobTracker.find_or_initialize_by(job_id:) do |tracker|
       tracker.job_class = self.class.name
       tracker.status = 'enqueued'
     end

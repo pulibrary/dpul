@@ -10,7 +10,7 @@ describe ApplicationHelper, type: :helper do
   before do
     blacklight_config.index_fields['foo_tesim'] = OpenStruct.new('text_area' => "1")
     allow(field).to receive(:field).and_return("foo_tesim")
-    allow(exhibit).to receive_messages(blacklight_config: blacklight_config)
+    allow(exhibit).to receive_messages(blacklight_config:)
   end
 
   describe '#text_area?' do
@@ -29,11 +29,11 @@ describe ApplicationHelper, type: :helper do
     end
 
     before do
-      allow(sidecar).to receive(:data).and_return('foo_tesim' => { data: data })
+      allow(sidecar).to receive(:data).and_return('foo_tesim' => { data: })
     end
 
     it "normalizes the text area value" do
-      expect(output).to eq(data: data)
+      expect(output).to eq(data:)
     end
   end
 

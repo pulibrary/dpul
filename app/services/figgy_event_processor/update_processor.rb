@@ -19,7 +19,7 @@ class FiggyEventProcessor
 
     def create_new_resources
       new_exhibits.each do |exhibit|
-        IIIFResource.new(url: manifest_url, exhibit: exhibit).save_and_index
+        IIIFResource.new(url: manifest_url, exhibit:).save_and_index
       end
     end
 

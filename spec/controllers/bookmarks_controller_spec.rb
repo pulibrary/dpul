@@ -13,13 +13,13 @@ RSpec.describe BookmarksController do
 
     before do
       exhibit = FactoryBot.create(:exhibit, title: "Assorted items", slug: "assorted-items")
-      admin = FactoryBot.create(:exhibit_admin, exhibit: exhibit)
+      admin = FactoryBot.create(:exhibit_admin, exhibit:)
       sign_in admin
 
       iiif_resource = FactoryBot.create(
         :iiif_resource,
         url: "https://figgy.princeton.edu/concern/scanned_resources/beaec815-6a34-4519-8ce8-40a89d3b1956/manifest",
-        exhibit: exhibit,
+        exhibit:,
         manifest_fixture: "paris_map.json",
         figgy_uuid: "beaec815-6a34-4519-8ce8-40a89d3b1956",
         spec: self
@@ -28,7 +28,7 @@ RSpec.describe BookmarksController do
       iiif_resource2 = FactoryBot.create(
         :iiif_resource,
         url: "https://figgy.princeton.edu/concern/scanned_resources/0cc43bdb-ae21-47b2-90bc-bc21a18ee821/manifest",
-        exhibit: exhibit,
+        exhibit:,
         manifest_fixture: "chinese_medicine.json",
         figgy_uuid: "0cc43bdb-ae21-47b2-90bc-bc21a18ee821",
         spec: self
@@ -37,7 +37,7 @@ RSpec.describe BookmarksController do
       document_id = iiif_resource.solr_documents.first[:id]
       document_id2 = iiif_resource2.solr_documents.first[:id]
 
-      admin.bookmarks.create!([{ document_id: document_id, document_type: "SolrDocument" }])
+      admin.bookmarks.create!([{ document_id:, document_type: "SolrDocument" }])
       admin.bookmarks.create!([{ document_id: document_id2, document_type: "SolrDocument" }])
     end
 

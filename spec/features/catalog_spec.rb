@@ -9,7 +9,7 @@ RSpec.feature 'Catalog', type: :feature do
   let(:rights) { 'http://rightsstatements.org/vocab/NKC/1.0/' }
   let(:document) do
     SolrDocument.new(
-      id: id,
+      id:,
       readonly_title_tesim: [
         title
       ],
@@ -49,13 +49,13 @@ RSpec.feature 'Catalog', type: :feature do
   end
 
   context 'logged in as a site admin.' do
-    let(:user) { FactoryBot.create(:site_admin, exhibit: exhibit) }
+    let(:user) { FactoryBot.create(:site_admin, exhibit:) }
 
     before do
       sign_in user
 
       Spotlight::SolrDocumentSidecar.create!(
-        document: document, exhibit: exhibit,
+        document:, exhibit:,
         data: { 'full_title_tesim' => ['First', 'Second'] }
       )
       document.make_public! exhibit
@@ -81,7 +81,7 @@ RSpec.feature 'Catalog', type: :feature do
     context 'when the document has metadata attributes with quotes' do
       before do
         exhibit2 = Spotlight::Exhibit.create title: 'Exhibit B', published: true
-        document2 = SolrDocument.new(id: 'd279a557a62937a8895eebbca2d4744c', exhibit: exhibit)
+        document2 = SolrDocument.new(id: 'd279a557a62937a8895eebbca2d4744c', exhibit:)
         Spotlight::SolrDocumentSidecar.delete_all
         Spotlight::SolrDocumentSidecar.create!(
           document: document2, exhibit: exhibit2,
@@ -157,15 +157,15 @@ RSpec.feature 'Catalog', type: :feature do
   context "when a resource belongs to 2 different exhibits and the exhibits have two-word slugs" do
     it "retrieves the correct solr document for each and override titles work" do
       url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
-      stub_manifest(url: url, fixture: 'full_text_manifest.json')
+      stub_manifest(url:, fixture: 'full_text_manifest.json')
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
       stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true, slug: "cute_kitties"
-      resource = IIIFResource.new(url: url, exhibit: exhibit)
+      resource = IIIFResource.new(url:, exhibit:)
       resource.save_and_index_now
 
       exhibit2 = Spotlight::Exhibit.create title: 'Exhibit B', published: true, slug: "cute_puppies"
-      resource2 = IIIFResource.new(url: url, exhibit: exhibit2)
+      resource2 = IIIFResource.new(url:, exhibit: exhibit2)
       resource2.save_and_index_now
       resource2.reload
       sidecar = resource2.solr_document_sidecars.first

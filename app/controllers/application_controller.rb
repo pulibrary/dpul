@@ -27,8 +27,8 @@ class ApplicationController < ActionController::Base
       redirect_to "/#{params[:exhibit_id]}"
     else
       respond_to do |format|
-        format.html { render "pages/not_found", status: 404 }
-        format.all { head 404 }
+        format.html { render "pages/not_found", status: :not_found }
+        format.all { head :not_found }
       end
     end
   end

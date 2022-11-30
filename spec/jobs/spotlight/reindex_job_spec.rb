@@ -6,13 +6,13 @@ RSpec.describe Spotlight::ReindexJob do
   with_queue_adapter :inline
   let(:url1) { 'http://example.com/1/manifest' }
   let(:exhibit) { Spotlight::Exhibit.new }
-  let(:resource) { IIIFResource.new url: nil, exhibit: exhibit }
+  let(:resource) { IIIFResource.new url: nil, exhibit: }
   let(:manifest) { object_double(CollectionManifest.new, manifests: [{ "@id" => url1 }]) }
 
   let(:iiif_resource1) do FactoryBot.create(
     :iiif_resource,
     url: "https://figgy.princeton.edu/concern/scanned_resources/beaec815-6a34-4519-8ce8-40a89d3b1956/manifest",
-    exhibit: exhibit,
+    exhibit:,
     manifest_fixture: "paris_map.json",
     figgy_uuid: "beaec815-6a34-4519-8ce8-40a89d3b1956",
     spec: self
@@ -22,7 +22,7 @@ RSpec.describe Spotlight::ReindexJob do
   let(:iiif_resource2) do FactoryBot.create(
     :iiif_resource,
     url: "https://figgy.princeton.edu/concern/scanned_resources/0cc43bdb-ae21-47b2-90bc-bc21a18ee821/manifest",
-    exhibit: exhibit,
+    exhibit:,
     manifest_fixture: "chinese_medicine.json",
     figgy_uuid: "0cc43bdb-ae21-47b2-90bc-bc21a18ee821",
     spec: self

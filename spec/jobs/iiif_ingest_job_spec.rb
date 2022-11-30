@@ -6,7 +6,7 @@ describe IIIFIngestJob do
   let(:url1) { 'http://example.com/1/manifest' }
   let(:url2) { 'http://example.com/2/manifest' }
   let(:exhibit) { Spotlight::Exhibit.new }
-  let(:resource) { IIIFResource.new url: nil, exhibit: exhibit }
+  let(:resource) { IIIFResource.new url: nil, exhibit: }
 
   before do
     allow(exhibit).to receive(:id).and_return('exhibit1')
