@@ -68,6 +68,7 @@ gem 'iiif-presentation'
 gem 'iso-639'
 gem 'lograge'
 gem 'logstash-event'
+gem "net-smtp", require: false
 gem 'omniauth'
 gem 'omniauth-cas'
 gem 'omniauth-rails_csrf_protection'
@@ -95,7 +96,6 @@ gem 'nokogiri', '~> 1.13.2'
 gem 'ruby-prof', require: false
 gem 'rubyzip', '>= 1.2.2'
 
-# Added for Ruby 3.1 support
+# Required for deployment under ruby 3.1
 gem "net-imap", require: false
 gem "net-pop", require: false
-gem "net-smtp", require: false
