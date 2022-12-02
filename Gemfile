@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'bcrypt_pbkdf'
   gem 'byebug'
   # see comment in spec/requests/pages_spec
   gem 'cancancan'
@@ -21,6 +22,7 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'database_cleaner'
+  gem 'ed25519'
   gem 'factory_bot_rails', require: false
   gem 'pry-byebug'
   gem 'pry-rails'
