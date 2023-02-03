@@ -58,3 +58,7 @@ h1 {
 .title-metadata-container {
   overflow: auto;
 }
+
+*[dir="rtl"] {
+  text-align: right;
+}
