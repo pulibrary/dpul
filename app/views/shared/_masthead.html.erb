@@ -12,6 +12,12 @@
   <% else %>
     <%= render 'shared/site_navbar' %>
   <% end %>
+
+  <div class="container container text-right">
+      <header class="lux">
+        <%= render partial: '/user_util_links' %>
+      </header>
+  </div>
 <% end %>
 
 <header class="masthead <%= 'image-masthead' if current_masthead %> <%= 'resource-masthead' if resource_masthead? %>" role="banner">

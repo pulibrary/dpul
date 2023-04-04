@@ -26,6 +26,8 @@
     <%= render 'shared/analytics' if Rails.env.production? %>
   </head>
   <body>
+    <% I18n.with_locale(I18n.default_locale) do %>
+
     <div id="skip-link">
       <%= link_to t('blacklight.skip_links.search_field'), '#search_field', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
       <%= link_to t('blacklight.skip_links.main_content'), '#main-container', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
@@ -34,6 +36,8 @@
 
     <%= render partial: 'shared/announcements' %>
     <%= render partial: 'shared/header_navbar' %>
+  <% end %>
+
     <%= render partial: 'shared/masthead' %>
     <%= content_for?(:header_content) ? yield(:header_content) : "" %>
 
@@ -49,7 +53,9 @@
       </div>
     </main>
 
-    <%= render partial: 'shared/footer' %>
-    <%= render partial: 'shared/modal' %>
+    <% I18n.with_locale(I18n.default_locale) do %>
+      <%= render partial: 'shared/footer' %>
+      <%= render partial: 'shared/modal' %>
+    <% end %>
   </body>
 <% end %>
