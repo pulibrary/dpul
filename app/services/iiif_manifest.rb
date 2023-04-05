@@ -2,6 +2,7 @@
 
 class IiifManifest < ::Spotlight::Resources::IiifManifest
   def to_solr(exhibit: nil)
+    return {} unless url && manifest
     @exhibit ||= exhibit
     add_noid
     # this is called in super, but idempotent so safe to call here also; we need the metadata
@@ -50,7 +51,10 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   # See: https://github.com/projectblacklight/spotlight/blob/v3.2.0/app/models/spotlight/resources/iiif_manifest.rb#L137
   def resources
     if manifest.is_a? IIIF::Presentation::Collection
-      @resources ||= manifest.manifests.flat_map { |m| IiifService.parse(m['@id']).first.resources }
+      @resources ||= manifest.manifests.flat_map do |m|
+        authorized_url = AuthorizedUrl.new(url: m['@id']).to_s
+        IiifService.parse(authorized_url).first.resources
+      end
     else
       super
     end

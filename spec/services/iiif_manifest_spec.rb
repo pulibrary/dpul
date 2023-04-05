@@ -80,6 +80,21 @@ RSpec.describe IiifManifest do
       it 'has the correct image urls' do
         expect(manifest_service.to_solr[:tile_source_ssim]).to eq ["uri://to-image-service/info.json"]
       end
+
+      context 'when an auth token is specified' do
+        it 'appends the token to the request' do
+          stub_iiif_response_for_url("uri://for-manifest1/manifest?auth_token=token", member_manifest_fixture)
+          allow(Pomegranate).to receive(:config).and_return({ "manifest_authorization_token" => "token" })
+          expect(manifest_service.to_solr[:tile_source_ssim]).to eq ["uri://to-image-service/info.json"]
+        end
+      end
+    end
+
+    context 'without a url or manifest' do
+      let(:manifest_service) { described_class.new(url: nil, manifest: nil, collection:) }
+      it 'returns an empty hash' do
+        expect(manifest_service.to_solr[:tile_source_ssim]).to be_nil
+      end
     end
   end
 end
