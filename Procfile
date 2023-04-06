@@ -1,4 +1,0 @@
-# Procfile
-backend: bin/rails s -p 3000
-frontend: bin/vite dev
-sidekiq: bundle exec sidekiq
