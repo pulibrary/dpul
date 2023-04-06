@@ -12,6 +12,8 @@ class AuthorizedUrl
 
   def to_s
     return url if auth_token.blank?
+    # Return url if auth token is already part of the url
+    return url if url.include?(auth_token)
 
     "#{url}?auth_token=#{auth_token}"
   end
