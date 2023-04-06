@@ -58,5 +58,26 @@ describe IiifService do
         expect(logger).to have_received(:warn).with("HTTP GET for #{url} failed with timeout")
       end
     end
+
+    context 'when an auth token is set' do
+      before do
+        allow(Pomegranate).to receive(:config).and_return({ "manifest_authorization_token" => "token" })
+      end
+
+      it 'appends the token to the request' do
+        expect(response).not_to be_empty
+        authorized_url = url + "?auth_token=token"
+        expect(http_client).to have_received(:get).with(authorized_url)
+      end
+
+      context 'with a url that already has a token' do
+        let(:url) { 'http://to-manifest1?auth_token=token' }
+
+        it 'does not append a new auth_token' do
+          expect(response).not_to be_empty
+          expect(http_client).to have_received(:get).with(url)
+        end
+      end
+    end
   end
 end

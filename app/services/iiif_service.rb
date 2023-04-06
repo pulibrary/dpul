@@ -2,7 +2,8 @@
 
 class IiifService < ::Spotlight::Resources::IiifService
   def self.iiif_response(url)
-    resp = Spotlight::Resources::IiifService.http_client.get(url)
+    authorized_url = AuthorizedUrl.new(url:).to_s
+    resp = Spotlight::Resources::IiifService.http_client.get(authorized_url)
     if resp.success?
       resp.body
     else
