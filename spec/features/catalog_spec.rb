@@ -50,13 +50,17 @@ RSpec.feature 'Catalog', type: :feature do
 
   context 'logged in as a site admin.' do
     let(:user) { FactoryBot.create(:site_admin, exhibit:) }
+    let(:full_image_url) { "https://example.com/iiif/2/95%2F60%2F3b%2F95%2Fintermediate_file/full/!800,800/0/default.jpg" }
 
     before do
       sign_in user
 
       Spotlight::SolrDocumentSidecar.create!(
         document:, exhibit:,
-        data: { 'full_title_tesim' => ['First', 'Second'] }
+        data: {
+          'full_title_tesim' => ['First', 'Second'],
+          'full_image_url_ssm' => [full_image_url]
+        }
       )
       document.make_public! exhibit
       document.reindex
@@ -71,6 +75,10 @@ RSpec.feature 'Catalog', type: :feature do
       # Autocomplete should have a title with no HTML. If there's HTML it breaks
       # the SirTrevor widgets.
       expect(doc["title"]).to eq "First, Second"
+      # provide the full image url; the front-end javascript isn't written to
+      # get these for MVWs so we'll just index these for everything at the
+      # size the sir trevor template uses
+      expect(doc["full_image_url"]).to eq full_image_url
     end
 
     scenario 'user searches for a collections with a keyword' do

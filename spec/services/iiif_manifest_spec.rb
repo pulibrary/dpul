@@ -63,6 +63,12 @@ RSpec.describe IiifManifest do
       end
     end
 
+    describe 'full_image_url' do
+      it 'is a single-value text field' do
+        expect(manifest_service.to_solr[:full_image_url_ssm]).to eq "uri://to-thumbnail/full/!800,800/0/default.jpg"
+      end
+    end
+
     describe 'range-label' do
       it 'is a multi-value text field' do
         expect(manifest_service.to_solr["readonly_range-label_tesim"]).to eq ["range label value"]

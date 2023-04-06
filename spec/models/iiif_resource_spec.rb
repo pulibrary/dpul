@@ -288,7 +288,7 @@ describe IIIFResource do
         Blacklight.default_index.connection.commit
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Scanned Resource 1"] }
-        expect(scanned_resource_doc["full_image_url_ssm"]).to eq ["https://libimages1.princeton.edu/loris/plum/hq%2F37%2Fvn%2F61%2F6-intermediate_file.jp2/full/!600,600/0/default.jpg"]
+        expect(scanned_resource_doc["full_image_url_ssm"]).to eq ["https://libimages1.princeton.edu/loris/plum/hq%2F37%2Fvn%2F61%2F6-intermediate_file.jp2/full/!800,800/0/default.jpg"]
       end
     end
 

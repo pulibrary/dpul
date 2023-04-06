@@ -30,7 +30,11 @@ module IiifResponses
         }
       ],
       "thumbnail": {
-        "@id": 'uri://to-thumbnail'
+        "@id": 'uri://to-thumbnail',
+        "service": {
+          "@context": "http://iiif.io/api/image/2/context.json",
+          "@id": "uri://to-thumbnail"
+        }
       },
       "sequences": [
         {
