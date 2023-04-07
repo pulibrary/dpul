@@ -45,9 +45,12 @@ bundle exec rspec
 ```
 
 ## Running in Development
-
-1. Either run `foreman start` in its own terminal or run
-   each service listed in the [Procfile](https://github.com/pulibrary/dpul/blob/main/Procfile) in its own terminal. Running each separately makes for easier debugging.
+1. Run each of the services listed below in its own terminal as necessary. 
+    ```sh
+    backend: bin/rails s
+    frontend: bin/vite dev
+    sidekiq: bundle exec sidekiq
+    ```
 1. Access DPUL at <http://localhost:3000/>
 
 
