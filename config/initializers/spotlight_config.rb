@@ -11,4 +11,3 @@ Spotlight::Engine.config.sir_trevor_widgets = %w[
   FeaturedPages SolrDocuments SolrDocumentsCarousel SolrDocumentsEmbed
   SolrDocumentsFeatures SolrDocumentsGrid SearchResults RecentItems
 ]
-Spotlight::Engine.config.default_autocomplete_params = { qf: "id^1000 full_title_tesim^100 id_ng full_title_ng", fl: "id full_title_tesim thumbnail_ssim content_metadata_iiif_manifest_field_ssi full_image_url_ssm" }
