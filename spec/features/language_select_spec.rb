@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Locale Selector', js: true do
   with_queue_adapter :inline
   let(:exhibit) { FactoryBot.create(:exhibit) }
-  let!(:language_es) { FactoryBot.create(:language, exhibit: exhibit, locale: 'es', public: true) }
+  let!(:language_es) { FactoryBot.create(:language, exhibit:, locale: 'es', public: true) }
 
   before { login_as user }
 
