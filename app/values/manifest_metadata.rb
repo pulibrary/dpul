@@ -44,7 +44,8 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       "Memberof" => "Collections",
       "Link to catalog" => "View in catalog",
       "Link to finding aid" => "View in finding aid",
-      "Electronic locations" => "Available online"
+      "Electronic locations" => "Available online",
+      "EDM rights" => "Rights",
     }.freeze
 
     attr_reader :key, :values
