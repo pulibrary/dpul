@@ -11,7 +11,7 @@ RSpec.describe ManifestMetadata do
   let(:lang_code) { { "Language" => "en" } }
   let(:member) { { "Memberof" => { "title" => "Member Title" } } }
   let(:id_value) { { "Title" => { "@id" => "1234" } } }
-  let("rights") { { "Rights" => "Rights Text" } }
+  let("rights") { { "Edm rights" => "Rights Text" } }
   let(:date_range_value) do
     { "date_range" => [
       {
