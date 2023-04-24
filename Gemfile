@@ -82,7 +82,7 @@ gem 'riiif'
 gem 'rsolr', '~> 2.0'
 # Required by blacklight-oembed
 gem 'ruby2_keywords'
-gem 'sidekiq', '~> 5.2.10', '< 6'
+gem 'sidekiq', '~> 7.0.8'
 gem 'sir_trevor_rails'
 gem 'sitemap_generator'
 gem 'sneakers'
