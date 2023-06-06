@@ -97,7 +97,8 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     def electronic_location_link(value)
       return value unless value.is_a?(Hash)
 
-      "<a href='#{value['@id']}'>#{value['label']}</a>"
+      # label may or may not be an array
+      "<a href='#{value['@id']}'>#{Array.wrap(value['label']).first}</a>"
     end
 
     def language_name(value)

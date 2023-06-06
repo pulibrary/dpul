@@ -314,6 +314,25 @@ describe IIIFResource do
       end
     end
 
+    context "when the electronic resources label is an array" do
+      let(:url) { "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest" }
+
+      before do
+        stub_manifest(url:, fixture: "recording_manifest_6f42ab87.json")
+        stub_metadata(id: "6f42ab87-5930-4d08-a108-78fb0ab25755")
+      end
+
+      it "doesn't print brackets and quotes" do
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+        resource = described_class.new url: url, exhibit: exhibit
+        expect(resource.save_and_index).to be_truthy
+
+        Blacklight.default_index.connection.commit
+        docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
+        expect(docs.first["readonly_available-online_ssim"]).to eq ["<a href='https://arks.princeton.edu/ark:/88435/dc2j62sg20c'>A complete program is available in online here</a>"]
+      end
+    end
+
     describe '#reindex' do
       let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
       let(:resource) { described_class.new url:, exhibit: }
