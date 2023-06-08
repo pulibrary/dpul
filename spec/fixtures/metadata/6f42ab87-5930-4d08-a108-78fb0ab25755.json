@@ -1,0 +1,85 @@
+{
+  "link_to_catalog": "https://catalog.princeton.edu/catalog/99114274333506421",
+  "@context": [
+    "https://bibdata.princeton.edu/context.json",
+    {
+      "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "latitude": {
+        "@id": "wgs84:lat"
+      },
+      "longitude": {
+        "@id": "wgs84:lon"
+      }
+    }
+  ],
+  "@id": "https://figgy.princeton.edu/catalog/6f42ab87-5930-4d08-a108-78fb0ab25755",
+  "title": [
+    {
+      "@language": "en",
+      "@value": "[Concert, 2019, April 13] [sound recording]"
+    }
+  ],
+  "language": "en",
+  "creator": "Princeton University. Jazz Ensemble",
+  "call_number": "CD- 2019-04-13",
+  "extent": "1 sound disc : digital ; 4 3/4 in.",
+  "format": "Audio",
+  "description": [
+    "PUJE",
+    "A complete program is available online.",
+    "Order of performed works represent the actual recording and not the program."
+  ],
+  "publisher": "Princeton, NJ. : Princeton University, Dept. of Music, 2019.",
+  "alternative": "Princeton University jazz festival : Dave Holland, bass, with the Princeton University Small Jazz Group I.",
+  "contents": [
+    "Program Introduction - Rudresh Mahanthappa",
+    "Dr. Do - Right / Dave Holland",
+    "Everybody's song but my own / Kenny Wheeler",
+    "Looking up ; Professional ; Cosmosis ; Quiet fire ; Pass it on ; Dream of the the elders / Dave Holland."
+  ],
+  "contributor": [
+    "Mahanthappa, Rudresh",
+    "Holland, Dave, 1946-"
+  ],
+  "author": "Princeton University. Jazz Ensemble",
+  "created": "2019-01-01T00:00:00Z",
+  "date": "2019",
+  "identifier": [
+    "ark:/88435/1z40m196w"
+  ],
+  "location": [
+    "Mendel Music Library CD- 2019-04-13"
+  ],
+  "electronic_locations": [
+    {
+      "@id": "https://arks.princeton.edu/ark:/88435/dc2j62sg20c",
+      "label": [
+        "A complete program is available in online here"
+      ]
+    }
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "No Known Copyright"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/0e07a680-525e-4809-a71b-3ce15a343f2e",
+      "@type": "pcdm:Collection",
+      "title": "PU Jazz Ensembles"
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/aeea1349-1da4-48b2-9ce8-49da9e833db8",
+      "@type": "pcdm:Collection",
+      "title": "Performance Audio Archive Collection"
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/d01c0b70-85b2-4b86-8f8e-b0541f9bfe96",
+      "@type": "pcdm:Collection",
+      "title": "Music and Performing Arts Collections at Princeton"
+    }
+  ],
+  "system_created_at": "2020-07-24T02:03:00Z",
+  "system_updated_at": "2023-05-17T19:12:34Z"
+}

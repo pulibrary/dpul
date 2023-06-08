@@ -1,0 +1,826 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "type": "Manifest",
+  "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest",
+  "label": {
+    "eng": [
+      "[Concert, 2019, April 13] [sound recording]"
+    ]
+  },
+  "summary": {
+    "eng": [
+      "PUJE",
+      "A complete program is available online.",
+      "Order of performed works represent the actual recording and not the program."
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "eng": [
+          "Author"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Princeton University. Jazz Ensemble"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Alternative"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Princeton University jazz festival : Dave Holland, bass, with the Princeton University Small Jazz Group I."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Contents"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Program Introduction - Rudresh Mahanthappa",
+          "Dr. Do - Right / Dave Holland",
+          "Everybody's song but my own / Kenny Wheeler",
+          "Looking up ; Professional ; Cosmosis ; Quiet fire ; Pass it on ; Dream of the the elders / Dave Holland."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Extent"
+        ]
+      },
+      "value": {
+        "eng": [
+          "1 sound disc : digital ; 4 3/4 in."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Identifier"
+        ]
+      },
+      "value": {
+        "eng": [
+          "<a href='https://arks.princeton.edu/ark:/88435/dc2j62sg20c' alt='Identifier'>https://arks.princeton.edu/ark:/88435/dc2j62sg20c</a>"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Part Of"
+        ]
+      },
+      "value": {
+        "eng": [
+          "puje"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Title"
+        ]
+      },
+      "value": {
+        "en": [
+          "[Concert, 2019, April 13] [sound recording]"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Content Type"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Audio"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Contributor"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Mahanthappa, Rudresh",
+          "Holland, Dave, 1946-"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Creator"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Princeton University. Jazz Ensemble"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Date"
+        ]
+      },
+      "value": {
+        "eng": [
+          "2019"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Language"
+        ]
+      },
+      "value": {
+        "eng": [
+          "English"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Publisher"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Princeton, NJ. : Princeton University, Dept. of Music, 2019."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Call Number"
+        ]
+      },
+      "value": {
+        "eng": [
+          "CD- 2019-04-13"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Location"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Mendel Music Library CD- 2019-04-13"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Electronic Locations"
+        ]
+      },
+      "value": {
+        "eng": [
+          {
+            "id": null,
+            "internal_resource": "LabeledURI",
+            "created_at": null,
+            "updated_at": null,
+            "new_record": true,
+            "uri": {
+              "@id": "https://arks.princeton.edu/ark:/88435/dc2j62sg20c"
+            },
+            "label": "A complete program is available in online here"
+          }
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Embargo Date"
+        ]
+      },
+      "value": {
+        "eng": [
+          ""
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Member Of Collections"
+        ]
+      },
+      "value": {
+        "eng": [
+          "PU Jazz Ensembles",
+          "Performance Audio Archive Collection",
+          "Music and Performing Arts Collections at Princeton"
+        ]
+      }
+    }
+  ],
+  "rendering": [],
+  "items": [
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/ca8add95-c677-4212-978f-c405c2431d33",
+      "label": {
+        "eng": [
+          "Program Introduction - Rudresh Mahanthappa"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/ca8add95-c677-4212-978f-c405c2431d33/annotation_page/ffcd9c33-4c4c-47b3-b9b5-6da1814b456d",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/ca8add95-c677-4212-978f-c405c2431d33/file/7797ad16-6c13-4a65-96ac-fa355b8becfe",
+                "type": "Audio",
+                "duration": 100.218,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Program Introduction - Rudresh Mahanthappa"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/ca8add95-c677-4212-978f-c405c2431d33/annotation_page/ffcd9c33-4c4c-47b3-b9b5-6da1814b456d/annotation/5268bb32-c0e4-480e-8728-9cb0425da235",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/ca8add95-c677-4212-978f-c405c2431d33"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "single",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/ca8add95-c677-4212-978f-c405c2431d33/file/5f068c1e-3aa6-4107-b00c-17aafe197262",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 100.218
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/1c90df74-ac83-43cb-9a05-14101dc6c846",
+      "label": {
+        "eng": [
+          "Dr. Do - Right / Holland"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/1c90df74-ac83-43cb-9a05-14101dc6c846/annotation_page/81c43d1c-3caa-4898-ab17-1eaa0c19f8c1",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/1c90df74-ac83-43cb-9a05-14101dc6c846/file/6d5cc816-629e-414c-b2ff-1faadc7bf04f",
+                "type": "Audio",
+                "duration": 716.307,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Dr. Do - Right / Holland"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/1c90df74-ac83-43cb-9a05-14101dc6c846/annotation_page/81c43d1c-3caa-4898-ab17-1eaa0c19f8c1/annotation/2cf7758a-9178-4d1a-8819-e295ca1fa1b7",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/1c90df74-ac83-43cb-9a05-14101dc6c846"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "single",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/1c90df74-ac83-43cb-9a05-14101dc6c846/file/9f016cca-b61e-45db-8b56-781f47ed315e",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 716.307
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/692f7280-4170-4a82-8490-e0b2ad75912d",
+      "label": {
+        "eng": [
+          "Everybody's song but my own / Kenny Wheeler "
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/692f7280-4170-4a82-8490-e0b2ad75912d/annotation_page/6fc703d0-a55d-4f35-922d-9fad25b1ba58",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/692f7280-4170-4a82-8490-e0b2ad75912d/file/3035714f-0ab3-4637-8177-d6840066793f",
+                "type": "Audio",
+                "duration": 520.244,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Everybody's song but my own / Kenny Wheeler "
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/692f7280-4170-4a82-8490-e0b2ad75912d/annotation_page/6fc703d0-a55d-4f35-922d-9fad25b1ba58/annotation/5e7724bc-f7b0-4a3c-b280-c04deb52a63e",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/692f7280-4170-4a82-8490-e0b2ad75912d"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "single",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/692f7280-4170-4a82-8490-e0b2ad75912d/file/3ce16841-da86-4ae3-adf2-274395e1d92f",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 520.244
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/32f26407-0fe8-44f8-a296-0dd952b433e9",
+      "label": {
+        "eng": [
+          "Looking up / Holland "
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/32f26407-0fe8-44f8-a296-0dd952b433e9/annotation_page/312dac0e-e046-4a14-a583-ba99c659c442",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/32f26407-0fe8-44f8-a296-0dd952b433e9/file/0eb63938-0c40-4f73-943d-aca241eb414f",
+                "type": "Audio",
+                "duration": 545.868,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Looking up / Holland "
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/32f26407-0fe8-44f8-a296-0dd952b433e9/annotation_page/312dac0e-e046-4a14-a583-ba99c659c442/annotation/cdcb6407-1c5c-45bc-bfc9-1b8cc6b92d70",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/32f26407-0fe8-44f8-a296-0dd952b433e9"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "single",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/32f26407-0fe8-44f8-a296-0dd952b433e9/file/347cfd4d-1ff1-4002-a642-5e02e81c8330",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 545.868
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/a63e4dc7-b789-4f70-bcb0-79083ab1c836",
+      "label": {
+        "eng": [
+          "Processional / Holland"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/a63e4dc7-b789-4f70-bcb0-79083ab1c836/annotation_page/56b7f1ee-3ded-4243-b9c2-7f20db75890b",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/a63e4dc7-b789-4f70-bcb0-79083ab1c836/file/bbc78a58-bb11-4dbb-ac22-f1d550318b25",
+                "type": "Audio",
+                "duration": 448.194,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Processional / Holland"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/a63e4dc7-b789-4f70-bcb0-79083ab1c836/annotation_page/56b7f1ee-3ded-4243-b9c2-7f20db75890b/annotation/3d670dbc-2a0f-4b92-8d44-18f90aecd58a",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/a63e4dc7-b789-4f70-bcb0-79083ab1c836"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "single",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/a63e4dc7-b789-4f70-bcb0-79083ab1c836/file/247ff306-8b36-41d5-afbe-e4b762741eee",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 448.194
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/2ac75db3-9a62-4ebf-b490-6698589fbaef",
+      "label": {
+        "eng": [
+          " Cosmosis / Holland"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/2ac75db3-9a62-4ebf-b490-6698589fbaef/annotation_page/17e2aaf1-527c-4058-aec9-b5e5f3dad691",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/2ac75db3-9a62-4ebf-b490-6698589fbaef/file/b84861d5-a56c-46f6-8cd2-dc5ce586e387",
+                "type": "Audio",
+                "duration": 577.608,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    " Cosmosis / Holland"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/2ac75db3-9a62-4ebf-b490-6698589fbaef/annotation_page/17e2aaf1-527c-4058-aec9-b5e5f3dad691/annotation/f865ffae-1af9-4cd5-a0e0-00b1d59ec79b",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/2ac75db3-9a62-4ebf-b490-6698589fbaef"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "single",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/2ac75db3-9a62-4ebf-b490-6698589fbaef/file/e528e45c-2daf-409f-884d-1b33d74dd9ac",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 577.608
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/df7d9b48-a786-445c-83e5-f06904c1defe",
+      "label": {
+        "eng": [
+          "Quiet fire  / Holland"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/df7d9b48-a786-445c-83e5-f06904c1defe/annotation_page/5d663831-31fa-42ec-bf03-c4a2870d6865",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/df7d9b48-a786-445c-83e5-f06904c1defe/file/ae1e3d96-2a5e-4130-8a80-fb757323920f",
+                "type": "Audio",
+                "duration": 625.508,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Quiet fire  / Holland"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/df7d9b48-a786-445c-83e5-f06904c1defe/annotation_page/5d663831-31fa-42ec-bf03-c4a2870d6865/annotation/5ace37e7-7e6e-46f2-8549-f1f1888fa3af",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/df7d9b48-a786-445c-83e5-f06904c1defe"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "single",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/df7d9b48-a786-445c-83e5-f06904c1defe/file/f4182837-ac12-4bb4-bd93-269b0d898e22",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 625.508
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/819dbccf-7882-4e0d-b6b3-a3b4155c8d9d",
+      "label": {
+        "eng": [
+          "Pass It On  / Holland"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/819dbccf-7882-4e0d-b6b3-a3b4155c8d9d/annotation_page/d50aac49-e76d-4dcc-9a6f-7cc27258cf18",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/819dbccf-7882-4e0d-b6b3-a3b4155c8d9d/file/605fd3b1-5471-4593-a806-a032d607fab7",
+                "type": "Audio",
+                "duration": 857.685,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Pass It On  / Holland"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/819dbccf-7882-4e0d-b6b3-a3b4155c8d9d/annotation_page/d50aac49-e76d-4dcc-9a6f-7cc27258cf18/annotation/b583343f-aa69-4c4c-8bce-da48b23b1632",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/819dbccf-7882-4e0d-b6b3-a3b4155c8d9d"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "single",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/819dbccf-7882-4e0d-b6b3-a3b4155c8d9d/file/61f3b04c-ab39-463f-a397-6055d0ca37c2",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 857.685
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/c55cdd19-064a-453d-9050-7e2b4a51a0bc",
+      "label": {
+        "eng": [
+          "Dream of the elders / Holland"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/c55cdd19-064a-453d-9050-7e2b4a51a0bc/annotation_page/1edf29e1-7a9a-4eb1-9ab0-0c87c09312dd",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/c55cdd19-064a-453d-9050-7e2b4a51a0bc/file/b8058787-26d8-409a-ae5b-b616092fa352",
+                "type": "Audio",
+                "duration": 573.188,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Dream of the elders / Holland"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/c55cdd19-064a-453d-9050-7e2b4a51a0bc/annotation_page/1edf29e1-7a9a-4eb1-9ab0-0c87c09312dd/annotation/9b5aefb8-710f-48ec-8ec9-c876ada3fa65",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/c55cdd19-064a-453d-9050-7e2b4a51a0bc"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "single",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/c55cdd19-064a-453d-9050-7e2b4a51a0bc/file/4178aad2-05e3-4d43-8736-355410388d50",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 573.188
+    }
+  ],
+  "behavior": [
+    "auto-advance"
+  ],
+  "service": [
+    {
+      "@context": "http://universalviewer.io/context.json",
+      "profile": "http://universalviewer.io/ui-extensions-profile",
+      "disableUI": [
+        "mediaDownload"
+      ]
+    }
+  ],
+  "structures": [
+    {
+      "type": "Range",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/r595267c9-162a-44da-8eb1-f764ef5ad3b3",
+      "label": {
+        "eng": [
+          "Dave Holland, bass, with the Princeton University Small Jazz Group I"
+        ]
+      },
+      "behavior": "top",
+      "items": [
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/rf855e9c6-ad95-4594-a09d-3b5f75cb58bc",
+          "label": {
+            "eng": [
+              "Program Introduction - Rudresh Mahanthappa"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/ca8add95-c677-4212-978f-c405c2431d33#t=0,100.218",
+              "label": []
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/r666c99b2-9eb0-40b8-a74c-08b3535d4588",
+          "label": {
+            "eng": [
+              "Dr. Do - Right / Holland"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/1c90df74-ac83-43cb-9a05-14101dc6c846#t=0,716.307",
+              "label": []
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/r138c81e3-ff8f-4669-aa94-718a80ca5460",
+          "label": {
+            "eng": [
+              "Everybody's song but my own / Kenny Wheeler "
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/692f7280-4170-4a82-8490-e0b2ad75912d#t=0,520.244",
+              "label": []
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/r8a2f6ebe-f340-4bd2-82e3-b3da2bb759e6",
+          "label": {
+            "eng": [
+              "Looking up / Holland "
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/32f26407-0fe8-44f8-a296-0dd952b433e9#t=0,545.868",
+              "label": []
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/r611a6c89-0988-4050-8f41-cafd220a789e",
+          "label": {
+            "eng": [
+              "Processional / Holland"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/a63e4dc7-b789-4f70-bcb0-79083ab1c836#t=0,448.194",
+              "label": []
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/r40774ef4-e470-491c-90a5-cfb8fa844005",
+          "label": {
+            "eng": [
+              " Cosmosis / Holland"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/2ac75db3-9a62-4ebf-b490-6698589fbaef#t=0,577.608",
+              "label": []
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/r12c6d4b7-9d99-459f-ba53-9fe762cbd56c",
+          "label": {
+            "eng": [
+              "Quiet fire  / Holland"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/df7d9b48-a786-445c-83e5-f06904c1defe#t=0,625.508",
+              "label": []
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/r25ee02e4-ecf8-4c6f-b85a-749e3fea4099",
+          "label": {
+            "eng": [
+              "Pass It On  / Holland"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/819dbccf-7882-4e0d-b6b3-a3b4155c8d9d#t=0,857.685",
+              "label": []
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/range/r3d628739-ca3e-4c3e-a4b6-b7cf5643c79b",
+          "label": {
+            "eng": [
+              "Dream of the elders / Holland"
+            ]
+          },
+          "items": [
+            {
+              "type": "Canvas",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/6f42ab87-5930-4d08-a108-78fb0ab25755/manifest/canvas/c55cdd19-064a-453d-9050-7e2b4a51a0bc#t=0,573.188",
+              "label": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/6f42ab87-5930-4d08-a108-78fb0ab25755.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/99114274333506421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "license": "http://rightsstatements.org/vocab/NKC/1.0/",
+  "logo": "https://figgy.princeton.edu/assets/pul_logo_icon-5333765252f2b86e34cd7c096c97e79495fe4656c5f787c5510a84ee6b67afd8.png"
+}
