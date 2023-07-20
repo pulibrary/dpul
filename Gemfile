@@ -28,7 +28,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem "selenium-webdriver"
   gem 'simplecov', require: false
   gem 'sqlite3'
   gem 'sshkit', '~> 1.18'
@@ -37,7 +36,8 @@ end
 
 group :test do
   gem "axe-core-rspec"
-  gem 'webdrivers', '~> 3.0'
+  gem "selenium-webdriver"
+  gem 'webdrivers'
 end
 
 group :development do
