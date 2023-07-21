@@ -39,6 +39,7 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
+        .excluding(".lux-main-menu-list") # issue is upstream in lux
     end
   end
 
@@ -100,6 +101,7 @@ describe "accessibility", type: :feature, js: true do
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
         .excluding(".nav-link") # Color constrast valid, but test fails because of navbar's transparency and no img loading
+        .excluding(".lux-main-menu-list") # issue is upstream in lux
     end
   end
 
@@ -122,6 +124,7 @@ describe "accessibility", type: :feature, js: true do
         .excluding(".nav-link") # Color constrast valid, but test fails because of navbar's transparency and no img loading
         .skipping(:"duplicate-id-aria") # See issue: #1264
         .skipping(:"duplicate-id") # See issue: #1227
+        .excluding(".lux-main-menu-list") # issue is upstream in lux
     end
   end
 
@@ -186,6 +189,7 @@ describe "accessibility", type: :feature, js: true do
         .skipping(:"duplicate-id") # See issue #1336
         .skipping(:"color-contrast") # See issue: #1265
         .skipping(:"link-in-text-block") # see #1413
+        .excluding(".lux-main-menu-list") # issue is upstream in lux
     end
   end
 
@@ -250,6 +254,7 @@ describe "accessibility", type: :feature, js: true do
           .skipping(:"color-contrast") # See issue: #1265
           .skipping(:"duplicate-id-aria") # See issue: #1264
           .skipping(:"duplicate-id") # See issue: #1227
+          .excluding(".lux-main-menu-list") # issue is upstream in lux
       end
     end
 
@@ -275,6 +280,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .excluding(".lux-main-menu-list") # issue is upstream in lux
       end
     end
 
@@ -332,6 +338,7 @@ describe "accessibility", type: :feature, js: true do
         .excluding(".tt-hint") # Issue is in typeahead.js library
         .skipping(:"duplicate-id") # See issue #1336
         .skipping(:"color-contrast") # See issue: #1265
+        .excluding(".lux-main-menu-list") # issue is upstream in lux
     end
   end
 
@@ -342,6 +349,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .excluding(".lux-main-menu-list") # issue is upstream in lux
       end
     end
 
@@ -352,6 +360,7 @@ describe "accessibility", type: :feature, js: true do
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
           .skipping(:"link-in-text-block") # see #1413
+          .excluding(".lux-main-menu-list") # issue is upstream in lux
       end
     end
 
@@ -361,6 +370,7 @@ describe "accessibility", type: :feature, js: true do
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
+          .excluding(".lux-main-menu-list") # issue is upstream in lux
       end
     end
   end
@@ -378,6 +388,7 @@ describe "accessibility", type: :feature, js: true do
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
           .skipping(:"link-in-text-block") # see #1413
+          .excluding(".lux-main-menu-list") # issue is upstream in lux
       end
     end
 
@@ -388,6 +399,7 @@ describe "accessibility", type: :feature, js: true do
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
           .skipping(:"link-in-text-block") # see #1413
+          .excluding(".lux-main-menu-list") # issue is upstream in lux
       end
     end
   end
@@ -405,6 +417,7 @@ describe "accessibility", type: :feature, js: true do
         .excluding(".tt-hint") # Issue is in typeahead.js library
         .skipping(:"color-contrast") # See issue: #1265
         .skipping(:"duplicate-id") # See issue: #1227
+        .excluding(".lux-main-menu-list") # issue is upstream in lux
     end
   end
 
@@ -420,6 +433,7 @@ describe "accessibility", type: :feature, js: true do
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
           .skipping(:"link-in-text-block") # see #1413
+          .excluding(".lux-main-menu-list") # issue is upstream in lux
       end
     end
 
@@ -430,6 +444,7 @@ describe "accessibility", type: :feature, js: true do
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
           .excluding(".tt-hint") # Issue is in typeahead.js library
           .skipping(:"link-in-text-block") # see #1413
+          .excluding(".lux-main-menu-list") # issue is upstream in lux
       end
     end
   end
