@@ -37,7 +37,7 @@ end
 
 group :test do
   gem "axe-core-rspec"
-  gem 'webdrivers', '~> 3.0'
+  gem "webdrivers"
 end
 
 group :development do
