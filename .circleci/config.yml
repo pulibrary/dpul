@@ -16,7 +16,11 @@ jobs:
           POMEGRANATE_DB_USERNAME: pomegranate
           POMEGRANATE_DB_PASSWORD: dpul
     steps:
-      - browser-tools/install-chrome
+      # See: https://github.com/CircleCI-Public/browser-tools-orb/issues/90#issuecomment-1698052540
+      # https://github.com/CircleCI-Public/browser-tools-orb/issues/75
+      - run: sudo apt-get update
+      - browser-tools/install-chrome:
+          chrome-version: 116.0.5845.96
       - browser-tools/install-chromedriver
       - checkout
       - restore_cache:
@@ -84,7 +88,11 @@ jobs:
       - image: pulibrary/ci-solr:8.4-v1.0.0
         command: server/scripts/ci-start.sh
     steps:
-      - browser-tools/install-chrome
+      # See: https://github.com/CircleCI-Public/browser-tools-orb/issues/90#issuecomment-1698052540
+      # https://github.com/CircleCI-Public/browser-tools-orb/issues/75
+      - run: sudo apt-get update
+      - browser-tools/install-chrome:
+          chrome-version: 116.0.5845.96
       - browser-tools/install-chromedriver
       - attach_workspace:
           at: '~/dpul'
