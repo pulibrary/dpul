@@ -516,7 +516,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     retriable (3.1.2)
-    rexml (3.2.5)
+    rexml (3.2.6)
     riiif (2.4.0)
       deprecation (>= 1.0.0)
       iiif-image-api (>= 0.1.0)
@@ -596,7 +596,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.10.0)
+    selenium-webdriver (4.11.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
