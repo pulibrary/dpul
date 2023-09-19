@@ -29,5 +29,5 @@ services:
     config:
       dir: solr/config
   redis:
-    type: redis:6
+    type: redis:7
     portforward: true
