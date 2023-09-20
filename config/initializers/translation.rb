@@ -8,7 +8,7 @@ Translation = I18n::Backend::ActiveRecord::Translation
 # Important when running replicate:prod cap task
 def database_exist?
   return true if ActiveRecord::Base.connection
-rescue ActiveRecord::NoDatabaseError
+rescue ActiveRecord::NoDatabaseError, ActiveRecord::ConnectionNotEstablished
   false
 end
 
