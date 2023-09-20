@@ -80,7 +80,7 @@ jobs:
           POMEGRANATE_DB_USERNAME: pomegranate
           POMEGRANATE_DB_PASSWORD: dpul
           SOLR_URL: http://solr:SolrRocks@localhost:8983/solr/blacklight-core-test
-      - image: postgres:13.6
+      - image: postgres:15
         environment:
           POSTGRES_DB: dpul_test
           POSTGRES_USER: pomegranate
