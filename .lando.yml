@@ -1,7 +1,7 @@
 name: dpul
 services:
   dpul_db:
-    type: postgres:13
+    type: postgres:15
     portforward: true
   dpul_development_solr:
     type: solr:custom
