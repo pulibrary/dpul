@@ -25,8 +25,16 @@
 /public/packs
 /public/packs-test
 /node_modules
-yarn-debug.log*
-.yarn-integrity
+
+# yarn project recommendations
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+# except I also ignored .yarn/releases
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
 
 # Vite Ruby
 /public/vite*
