@@ -58,7 +58,6 @@ gem 'blacklight-gallery'
 gem 'blacklight-oembed'
 gem 'blacklight-spotlight', '~> 3.0'
 gem 'bootstrap', '~> 4.0'
-gem 'bundler', '2.3.18'
 gem 'ddtrace', require: "ddtrace/auto_instrument"
 gem 'devise', '~> 4.7.1'
 gem 'devise-guests', '~> 0.8'

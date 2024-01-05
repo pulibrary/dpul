@@ -742,7 +742,6 @@ DEPENDENCIES
   blacklight-oembed
   blacklight-spotlight (~> 3.0)
   bootstrap (~> 4.0)
-  bundler (= 2.3.18)
   byebug
   cancancan
   capistrano-passenger
