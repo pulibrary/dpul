@@ -14,10 +14,8 @@ RSpec.describe 'Catalog', type: :feature, js: true do
   end
   let(:collection1) { Spotlight::Exhibit.create!(title: 'test collection 1') }
   let(:collection2) { Spotlight::Exhibit.create!(title: 'test collection 2') }
-
-  before do
-    sign_in admin
-    Spotlight::SolrDocumentSidecar.create!(
+  let(:sidecar_data) do
+    {
       document:, exhibit:,
       data: {
         full_title_tesim: [
@@ -50,7 +48,12 @@ RSpec.describe 'Catalog', type: :feature, js: true do
           "Vasi"
         ]
       }
-    )
+    }
+  end
+
+  before do
+    sign_in admin
+    Spotlight::SolrDocumentSidecar.create!(sidecar_data)
 
     document.make_public! exhibit
     document.reindex
@@ -82,6 +85,35 @@ RSpec.describe 'Catalog', type: :feature, js: true do
 
     visit spotlight.exhibit_solr_document_path(exhibit, document_id)
     expect(page).to have_link 'Vasi', href: '/exhibit-title-1/catalog?f%5Breadonly_author_ssim%5D%5B%5D=Vasi'
+  end
+
+  context "when there are multiple descriptions" do
+    let(:sidecar_data) do
+      {
+        document:,
+        exhibit:,
+        data: {
+          full_title_tesim: [
+            'test item'
+          ],
+          'exhibit_exhibit-title-1_readonly_description_ssim': [
+            "Asra – Asra Panahi was a 15-year-old schoolgirl who died in Ardabil, a city in the northwest of Iran. She was one of several students who were beaten by security forces during a raid on her school, when they refused to sing an anthem praising the supreme leader, Ali Khamenei. She died later in hospital from her injuries, on October 13, 2022.",
+            "Berlin – The Iranian protest in Berlin, held on October 22, 2022, showcased a largest demonstration of solidarity in response to ongoing protests in Iran. With a turnout of approximately 80,000 demonstrators, this gathering represented a significant milestone, as it stood as the largest demonstration ever organized by the Iranian diaspora.",
+            "Fatemeh-Sepehri – Fatemeh Sepehri, a prominent political activist imprisoned in Iran, was arrested on September 21, 2022, during nationwide protests following the police killing of Mahsa Jina Amini's death. She criticized state religious policies and government mandates, receiving an 18-year prison sentence on charges like propaganda against the regime,insulting Khomeini and Khamenei, and colluding against national security. In 2019, she was among 14 signatories of a letter seeking Khamenei's resignation and the establishment of a secular government.",
+          ],
+          'content_metadata_iiif_manifest_field_ssi': [
+            'http://images.institution.edu'
+          ]
+        }
+      }
+    end
+
+    it "renders them each in their own list item" do
+      visit spotlight.exhibit_solr_document_path(exhibit, document_id)
+      within "dd.blacklight-readonly_description_ssim ul" do
+        expect(page).to have_content "Berlin"
+      end
+    end
   end
 
   def index
