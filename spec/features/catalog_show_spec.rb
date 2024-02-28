@@ -14,10 +14,8 @@ RSpec.describe 'Catalog', type: :feature, js: true do
   end
   let(:collection1) { Spotlight::Exhibit.create!(title: 'test collection 1') }
   let(:collection2) { Spotlight::Exhibit.create!(title: 'test collection 2') }
-
-  before do
-    sign_in admin
-    Spotlight::SolrDocumentSidecar.create!(
+  let(:sidecar_data) do
+    {
       document:, exhibit:,
       data: {
         full_title_tesim: [
@@ -50,7 +48,12 @@ RSpec.describe 'Catalog', type: :feature, js: true do
           "Vasi"
         ]
       }
-    )
+    }
+  end
+
+  before do
+    sign_in admin
+    Spotlight::SolrDocumentSidecar.create!(sidecar_data)
 
     document.make_public! exhibit
     document.reindex
@@ -82,6 +85,34 @@ RSpec.describe 'Catalog', type: :feature, js: true do
 
     visit spotlight.exhibit_solr_document_path(exhibit, document_id)
     expect(page).to have_link 'Vasi', href: '/exhibit-title-1/catalog?f%5Breadonly_author_ssim%5D%5B%5D=Vasi'
+  end
+
+  context "when there are multiple descriptions of significant length" do
+    let(:sidecar_data) do
+      {
+        document:,
+        exhibit:,
+        data: {
+          full_title_tesim: [
+            'test item'
+          ],
+          'exhibit_exhibit-title-1_readonly_description_ssim': [
+            "Asra",
+            "Berlin " * 400
+          ],
+          'content_metadata_iiif_manifest_field_ssi': [
+            'http://images.institution.edu'
+          ]
+        }
+      }
+    end
+
+    it "renders them each in their own list item" do
+      visit spotlight.exhibit_solr_document_path(exhibit, document_id)
+      within "dd.blacklight-readonly_description_ssim ul" do
+        expect(page).to have_content "Berlin"
+      end
+    end
   end
 
   def index
