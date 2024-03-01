@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount HealthMonitor::Engine, at: "/"
   mount Blacklight::Oembed::Engine, at: 'oembed'
 
   require 'sidekiq/pro/web'

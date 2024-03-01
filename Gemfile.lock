@@ -318,6 +318,8 @@ GEM
       tilt (>= 1.2)
     hashdiff (1.0.1)
     hashie (5.0.0)
+    health-monitor-rails (11.3.0)
+      railties (>= 6.1)
     honeybadger (5.0.2)
     httpclient (2.8.3)
     i18n (1.14.1)
@@ -760,6 +762,7 @@ DEPENDENCIES
   faraday (< 1)
   google-cloud-storage
   graphql-client
+  health-monitor-rails
   honeybadger
   iiif-presentation
   iso-639
