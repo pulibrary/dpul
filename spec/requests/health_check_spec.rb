@@ -9,5 +9,16 @@ RSpec.describe "Health Check", type: :request do
 
       expect(response).to be_successful
     end
+    it "errors when a service is down" do
+      allow(Blacklight.default_index.connection).to receive(:uri).and_return(URI("http://example.com/bla"))
+      stub_request(:get, "http://example.com/solr/admin/cores?action=STATUS").to_return(body: { responseHeader: { status: 500 } }.to_json, headers: { "Content-Type" => "text/json" })
+
+      get "/health.json"
+
+      expect(response).not_to be_successful
+      expect(response.status).to eq 503
+      solr_response = JSON.parse(response.body)["results"].find { |x| x["name"] == "SolrStatus" }
+      expect(solr_response["message"]).to start_with "The solr has an invalid status"
+    end
   end
 end
