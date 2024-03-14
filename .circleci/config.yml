@@ -87,6 +87,7 @@ jobs:
           POSTGRES_PASSWORD: dpul
       - image: pulibrary/ci-solr:8.4-v1.0.0
         command: server/scripts/ci-start.sh
+      - image: redis:7
     steps:
       # See: https://github.com/CircleCI-Public/browser-tools-orb/issues/90#issuecomment-1698052540
       # https://github.com/CircleCI-Public/browser-tools-orb/issues/75
