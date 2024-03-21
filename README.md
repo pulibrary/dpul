@@ -54,7 +54,7 @@ bundle exec rspec
 1. Access DPUL at <http://localhost:3000/>
 
 
-### Importing Data:
+### Importing Development Data:
 
 1. Log in once via CAS
 2. Run `rake dpul:site_admin`
@@ -74,6 +74,17 @@ following:
 
 This will subscribe to the events and update the DPUL records when they're
 created, updated, or deleted.
+
+## Reindexing production or staging
+To ensure production or staging indexes are up to date:
+
+1. ssh as the deploy user
+1. `cd /opt/dpul/current`
+1. `bundle exec rake dpul:reindex:collections`
+
+Note that this enqueues indexing for each collection, and actual indexing is run
+in via background jobs. On DPUL, indexing a collection also deletes records that
+have been removed from the collection.
 
 ## Replicate database and solr index from production to staging
 
