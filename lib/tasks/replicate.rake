@@ -19,7 +19,7 @@ namespace :dpul do
       solr_url, collection = solr_connection_info
 
       `curl "#{solr_url}/admin/collections?action=DELETE&name=#{collection}"`
-      `curl "#{solr_url}/admin/collections?action=RESTORE&name=dpul-production-#{date}.bk&collection=#{collection}&location=/mnt/solr_backup/solr7/production/#{date}"`
+      `curl "#{solr_url}/admin/collections?action=RESTORE&name=dpul-production-#{date}.bk&collection=#{collection}&location=/mnt/solr_backup/solr8/production/#{date}"`
     end
 
     def solr_connection_info
