@@ -83,7 +83,7 @@ To ensure production or staging indexes are up to date:
 1. `bundle exec rake dpul:reindex:collections`
 
 Note that this enqueues indexing for each collection, and actual indexing is run
-in via background jobs. On DPUL, indexing a collection also deletes records that
+via background jobs. On DPUL, indexing a collection also deletes records that
 have been removed from the collection.
 
 ## Replicate database and solr index from production to staging
