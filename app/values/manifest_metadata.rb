@@ -9,8 +9,9 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
 
     json_ld_see_also = Array.wrap(see_also).find { |v| v["format"] == "application/ld+json" }
     return unless json_ld_see_also
+    json_ld_url = json_ld_see_also["@id"] || json_ld_see_also["id"]
 
-    AuthorizedUrl.new(url: json_ld_see_also["@id"]).to_s
+    AuthorizedUrl.new(url: json_ld_url).to_s
   end
 
   def jsonld_response

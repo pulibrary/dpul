@@ -1,0 +1,75 @@
+{
+  "link_to_catalog": "https://catalog.princeton.edu/catalog/9937578563506421",
+  "@context": [
+    "https://bibdata.princeton.edu/context.json",
+    {
+      "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "latitude": {
+        "@id": "wgs84:lat"
+      },
+      "longitude": {
+        "@id": "wgs84:lon"
+      }
+    }
+  ],
+  "@id": "https://figgy.princeton.edu/catalog/0f28a498-3393-4d3e-907e-f3dd200fbf7f",
+  "title": [
+    {
+      "@language": "und",
+      "@value": "Concert, 2001, October 19 and 20"
+    }
+  ],
+  "language": "und",
+  "creator": "Princeton University. Orchestra",
+  "call_number": [
+    "DAT- 2001-10-19",
+    "DAT- 2001-10-20"
+  ],
+  "extent": "1 sound cassette.",
+  "format": "Audio",
+  "description": [
+    "Digital Audio Tape (DAT).",
+    "A complete program is available in Mendel Music Library."
+  ],
+  "publisher": "2001.",
+  "title_sort": "[Concert, 2001, October 19 and 20] [sound recording].",
+  "contents": "Overture to Hansel and Gretel (1893) / E. Humperdinck -- Symphonic dances (1940) / S. Rachmaninoff -- Appalachian spring (1943) / A. Copland.",
+  "contributor": [
+    "Friends of Music at Princeton"
+  ],
+  "author": "Princeton University. Orchestra",
+  "created": "2001-01-01T00:00:00Z",
+  "date": "2001",
+  "location": [
+    "RCPPK DAT- 2001-10-19",
+    "RCPPK DAT- 2001-10-20"
+  ],
+  "electronic_locations": [
+    {
+      "@id": "http://lib-dbserver.princeton.edu/music/programs/2001-10-19_20.pdf",
+      "label": "Program."
+    }
+  ],
+  "identifier": [
+    "ark:/88435/x920g337d"
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "No Known Copyright"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/aeea1349-1da4-48b2-9ce8-49da9e833db8",
+      "@type": "pcdm:Collection",
+      "title": "Performance Audio Archive Collection"
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/d01c0b70-85b2-4b86-8f8e-b0541f9bfe96",
+      "@type": "pcdm:Collection",
+      "title": "Music and Performing Arts Collections at Princeton"
+    }
+  ],
+  "system_created_at": "2020-02-18T21:19:51Z",
+  "system_updated_at": "2023-10-27T21:11:21Z"
+}

@@ -1,0 +1,946 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "type": "Manifest",
+  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest",
+  "label": {
+    "eng": [
+      "Concert, 2001, October 19 and 20"
+    ]
+  },
+  "summary": {
+    "eng": [
+      "Digital Audio Tape (DAT).",
+      "A complete program is available in Mendel Music Library."
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "eng": [
+          "Author"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Princeton University. Orchestra"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Contents"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Overture to Hansel and Gretel (1893) / E. Humperdinck -- Symphonic dances (1940) / S. Rachmaninoff -- Appalachian spring (1943) / A. Copland."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Extent"
+        ]
+      },
+      "value": {
+        "eng": [
+          "1 sound cassette."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Identifier"
+        ]
+      },
+      "value": {
+        "eng": [
+          "ark:/88435/x920g337d"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Part Of"
+        ]
+      },
+      "value": {
+        "eng": [
+          "puo"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Title"
+        ]
+      },
+      "value": {
+        "und": [
+          "Concert, 2001, October 19 and 20"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Contributor"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Friends of Music at Princeton"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Creator"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Princeton University. Orchestra"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Date"
+        ]
+      },
+      "value": {
+        "eng": [
+          "2001"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Language"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Undetermined"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Local Identifier"
+        ]
+      },
+      "value": {
+        "eng": [
+          "1248",
+          "8331"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Publisher"
+        ]
+      },
+      "value": {
+        "eng": [
+          "2001."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Call Number"
+        ]
+      },
+      "value": {
+        "eng": [
+          "DAT- 2001-10-19",
+          "DAT- 2001-10-20"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Location"
+        ]
+      },
+      "value": {
+        "eng": [
+          "RCPPK DAT- 2001-10-19",
+          "RCPPK DAT- 2001-10-20"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Electronic Locations"
+        ]
+      },
+      "value": {
+        "eng": [
+          {
+            "id": null,
+            "internal_resource": "LabeledURI",
+            "created_at": null,
+            "updated_at": null,
+            "new_record": true,
+            "uri": {
+              "@id": "http://lib-dbserver.princeton.edu/music/programs/2001-10-19_20.pdf"
+            },
+            "label": "Program."
+          }
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Member Of Collections"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Performance Audio Archive Collection",
+          "Music and Performing Arts Collections at Princeton"
+        ]
+      }
+    }
+  ],
+  "rendering": [],
+  "items": [
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/eaaaeccd-c264-4173-882e-2b7414f78dc4",
+      "label": {
+        "eng": [
+          "Overture to Hansel and Gretel"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/eaaaeccd-c264-4173-882e-2b7414f78dc4/annotation_page/e1af6e1f-f364-48ab-a15e-29e98f454364",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/eaaaeccd-c264-4173-882e-2b7414f78dc4/file/dbf7edc6-54f9-44b2-a6a3-527898a00406/stream.m3u8",
+                "type": "Audio",
+                "duration": 506.011,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Overture to Hansel and Gretel"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/eaaaeccd-c264-4173-882e-2b7414f78dc4/annotation_page/e1af6e1f-f364-48ab-a15e-29e98f454364/annotation/ba0fe9eb-21e3-47c4-b950-390267314bfd",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/eaaaeccd-c264-4173-882e-2b7414f78dc4"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "1165",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/eaaaeccd-c264-4173-882e-2b7414f78dc4/file/8b0a4a4c-c104-4adb-a52d-d914a6444cfe",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 506.011
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/28ec9199-d06d-419b-a08f-56cec758c408",
+      "label": {
+        "eng": [
+          "I. Non allegro"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/28ec9199-d06d-419b-a08f-56cec758c408/annotation_page/d0e39e9f-6360-4c09-a04b-13b05325382f",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/28ec9199-d06d-419b-a08f-56cec758c408/file/31faac0b-5cdc-413f-a79f-3bc41a57efab/stream.m3u8",
+                "type": "Audio",
+                "duration": 675.921,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "I. Non allegro"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/28ec9199-d06d-419b-a08f-56cec758c408/annotation_page/d0e39e9f-6360-4c09-a04b-13b05325382f/annotation/99d924b5-6ca1-46ac-a4a4-a781c1641df5",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/28ec9199-d06d-419b-a08f-56cec758c408"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "12593",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/28ec9199-d06d-419b-a08f-56cec758c408/file/8c0ba762-db86-4fab-828f-97293f46d8af",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 675.921
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/8c8afb22-eedf-4604-933f-fb53847ad45e",
+      "label": {
+        "eng": [
+          "II. Andante con moto"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/8c8afb22-eedf-4604-933f-fb53847ad45e/annotation_page/f31d68ac-0c6d-4ab1-a2b9-7115313d6fb6",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/8c8afb22-eedf-4604-933f-fb53847ad45e/file/c3e86887-41ee-492c-b37c-003062cc0724/stream.m3u8",
+                "type": "Audio",
+                "duration": 549.24,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "II. Andante con moto"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/8c8afb22-eedf-4604-933f-fb53847ad45e/annotation_page/f31d68ac-0c6d-4ab1-a2b9-7115313d6fb6/annotation/2ce66c9c-fc0a-4d93-86cf-7567788a5522",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/8c8afb22-eedf-4604-933f-fb53847ad45e"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "12594",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/8c8afb22-eedf-4604-933f-fb53847ad45e/file/9cbfc2fb-899a-42c7-a7f5-0a1366ce8577",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 549.24
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/bd2a9ebc-c561-40f0-b6b0-b1b026b83dac",
+      "label": {
+        "eng": [
+          "III. Lento assai - Allegro vivace"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/bd2a9ebc-c561-40f0-b6b0-b1b026b83dac/annotation_page/a3c369e9-a664-405e-a901-f1638e97e801",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/bd2a9ebc-c561-40f0-b6b0-b1b026b83dac/file/3eeb547b-411e-450e-aff8-96a44d7f2e44/stream.m3u8",
+                "type": "Audio",
+                "duration": 768.145,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "III. Lento assai - Allegro vivace"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/bd2a9ebc-c561-40f0-b6b0-b1b026b83dac/annotation_page/a3c369e9-a664-405e-a901-f1638e97e801/annotation/e6695778-c4c5-458c-bd9f-11057a299985",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/bd2a9ebc-c561-40f0-b6b0-b1b026b83dac"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "12595",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/bd2a9ebc-c561-40f0-b6b0-b1b026b83dac/file/7cb00fa1-5217-4f70-9932-94e850326b0f",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 768.145
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/cdd79a90-88d6-45cb-a0db-e6a4bc6ca59f",
+      "label": {
+        "eng": [
+          "Appalachian Spring"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/cdd79a90-88d6-45cb-a0db-e6a4bc6ca59f/annotation_page/fb4a3a95-7dbd-4e19-9ed1-7936d68f17c8",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/cdd79a90-88d6-45cb-a0db-e6a4bc6ca59f/file/1cc06f3a-d956-4328-b131-a07030b262bb/stream.m3u8",
+                "type": "Audio",
+                "duration": 549.24,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Appalachian Spring"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/cdd79a90-88d6-45cb-a0db-e6a4bc6ca59f/annotation_page/fb4a3a95-7dbd-4e19-9ed1-7936d68f17c8/annotation/f6e51419-3810-4fa2-8da3-ee67a2c0ab0b",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/cdd79a90-88d6-45cb-a0db-e6a4bc6ca59f"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "1533",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/cdd79a90-88d6-45cb-a0db-e6a4bc6ca59f/file/bb7e13e8-1a28-49e2-9e64-f8879cbb545b",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 549.24
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/587c9a10-2419-4903-936a-aed0367352e4",
+      "label": {
+        "eng": [
+          "Hansel und Gretel"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/587c9a10-2419-4903-936a-aed0367352e4/annotation_page/bb0c66f6-9b25-4ab1-80ce-10533d6f78e1",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/587c9a10-2419-4903-936a-aed0367352e4/file/b26b51ba-9666-4e38-a422-2079e7f5c669/stream.m3u8",
+                "type": "Audio",
+                "duration": 507.345,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Hansel und Gretel"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/587c9a10-2419-4903-936a-aed0367352e4/annotation_page/bb0c66f6-9b25-4ab1-80ce-10533d6f78e1/annotation/0e9d28bf-e292-4710-bb89-3c5eb3a56b49",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/587c9a10-2419-4903-936a-aed0367352e4"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "54498",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/587c9a10-2419-4903-936a-aed0367352e4/file/7b77ce2a-d666-4820-997f-c7153609add6",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 507.345
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/270920cf-afa3-484d-8d39-1c9ddbba799d",
+      "label": {
+        "eng": [
+          "I. Non allegro"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/270920cf-afa3-484d-8d39-1c9ddbba799d/annotation_page/2e2967c2-bc91-475e-bc75-739654fd2462",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/270920cf-afa3-484d-8d39-1c9ddbba799d/file/1d80f205-37b8-4768-8032-ae02b6652eb4/stream.m3u8",
+                "type": "Audio",
+                "duration": 693.825,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "I. Non allegro"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/270920cf-afa3-484d-8d39-1c9ddbba799d/annotation_page/2e2967c2-bc91-475e-bc75-739654fd2462/annotation/e93ab46c-76e9-430e-8b64-cf0b88816477",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/270920cf-afa3-484d-8d39-1c9ddbba799d"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "54499",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/270920cf-afa3-484d-8d39-1c9ddbba799d/file/dbff64a5-87d6-46e6-ba5b-967730b25746",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 693.825
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d2659dca-1f02-44e1-9178-9f722edca136",
+      "label": {
+        "eng": [
+          "II. Andante con moto"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d2659dca-1f02-44e1-9178-9f722edca136/annotation_page/c6abe6a3-b7b3-440c-ac0c-243161275e43",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/d2659dca-1f02-44e1-9178-9f722edca136/file/7667e517-93c0-4421-965d-8a270edd0a1a/stream.m3u8",
+                "type": "Audio",
+                "duration": 827.662,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "II. Andante con moto"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d2659dca-1f02-44e1-9178-9f722edca136/annotation_page/c6abe6a3-b7b3-440c-ac0c-243161275e43/annotation/8f2d3833-f2d8-4375-818d-12eead2fa304",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d2659dca-1f02-44e1-9178-9f722edca136"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "54500",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/d2659dca-1f02-44e1-9178-9f722edca136/file/70549177-0a8a-4e55-bff5-4923bdb7f0f3",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 827.662
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/13a478f5-0b20-42d7-b5dc-c0faa1113c5e",
+      "label": {
+        "eng": [
+          "III. Lento assai - Allegro vivace"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/13a478f5-0b20-42d7-b5dc-c0faa1113c5e/annotation_page/08322d51-1cac-43d5-9c04-69d5539b6101",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/13a478f5-0b20-42d7-b5dc-c0faa1113c5e/file/c93bc8b3-7763-4d13-b212-2b5c7808e9cc/stream.m3u8",
+                "type": "Audio",
+                "duration": 827.662,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "III. Lento assai - Allegro vivace"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/13a478f5-0b20-42d7-b5dc-c0faa1113c5e/annotation_page/08322d51-1cac-43d5-9c04-69d5539b6101/annotation/474de785-b2e1-4c2e-a881-dd24433dfd49",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/13a478f5-0b20-42d7-b5dc-c0faa1113c5e"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "54501",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/13a478f5-0b20-42d7-b5dc-c0faa1113c5e/file/39c2da5f-4a2f-4974-9a40-22783281c44d",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 827.662
+    },
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d3cadf93-00ec-4682-ac0a-de3e44d7c86e",
+      "label": {
+        "eng": [
+          "Appalacian Spring"
+        ]
+      },
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d3cadf93-00ec-4682-ac0a-de3e44d7c86e/annotation_page/6214b8ad-60c2-42e6-8bf8-f2b74ff05974",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://figgy.princeton.edu/downloads/d3cadf93-00ec-4682-ac0a-de3e44d7c86e/file/4a584d40-04e6-47ca-ba4f-48e7b9ba5622/stream.m3u8",
+                "type": "Audio",
+                "duration": 1600.06,
+                "format": "application/vnd.apple.mpegurl",
+                "label": {
+                  "eng": [
+                    "Appalacian Spring"
+                  ]
+                }
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d3cadf93-00ec-4682-ac0a-de3e44d7c86e/annotation_page/6214b8ad-60c2-42e6-8bf8-f2b74ff05974/annotation/499192e3-2122-41a1-bc47-772dcf197f42",
+              "target": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d3cadf93-00ec-4682-ac0a-de3e44d7c86e"
+            }
+          ]
+        }
+      ],
+      "local_identifier": "54503",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/downloads/d3cadf93-00ec-4682-ac0a-de3e44d7c86e/file/bde06a03-35e9-4934-9191-87d30405e36d",
+          "label": "Download the original file",
+          "format": "audio/x-wav"
+        }
+      ],
+      "duration": 1600.06
+    }
+  ],
+  "behavior": [
+    "auto-advance"
+  ],
+  "service": [
+    {
+      "@context": "http://universalviewer.io/context.json",
+      "profile": "http://universalviewer.io/ui-extensions-profile",
+      "disableUI": [
+        "mediaDownload"
+      ]
+    }
+  ],
+  "structures": [
+    {
+      "type": "Range",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/r57fb4035-699c-4343-b33d-694577fcd14a",
+      "label": {
+        "eng": [
+          "2001-10-20"
+        ]
+      },
+      "behavior": "top",
+      "items": [
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/rc079c98a-2ff2-4df0-8b6e-9bf83db93ae2",
+          "label": {
+            "eng": [
+              "Hansel und Gretel, overture"
+            ]
+          },
+          "items": [
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/r023cb777-8ea4-48be-97c7-d155381efd07",
+              "label": {
+                "eng": [
+                  "Overture to Hansel and Gretel"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/eaaaeccd-c264-4173-882e-2b7414f78dc4#t=0,506.011",
+                  "label": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/rf134d042-fa08-4083-9826-64b012df173e",
+          "label": {
+            "eng": [
+              "Symphonic dances"
+            ]
+          },
+          "items": [
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/r02db2c2f-b656-4b4f-a526-138c21d57437",
+              "label": {
+                "eng": [
+                  "I. Non allegro"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/28ec9199-d06d-419b-a08f-56cec758c408#t=0,675.921",
+                  "label": []
+                }
+              ]
+            },
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/r7fdfeaa9-4a4e-4fff-b272-574a46832bcc",
+              "label": {
+                "eng": [
+                  "II. Andante con moto"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/8c8afb22-eedf-4604-933f-fb53847ad45e#t=0,549.24",
+                  "label": []
+                }
+              ]
+            },
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/r77a7d6ee-a921-4fb0-b6e2-d878472e7a2a",
+              "label": {
+                "eng": [
+                  "III. Lento assai - Allegro vivace"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/bd2a9ebc-c561-40f0-b6b0-b1b026b83dac#t=0,768.145",
+                  "label": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/r525f31f1-1eb7-4e41-95a3-495228ad9a36",
+          "label": {
+            "eng": [
+              "Appalachain spring"
+            ]
+          },
+          "items": [
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/r340f8901-f069-4161-aaa9-63f6d8b2abe0",
+              "label": {
+                "eng": [
+                  "Appalachian Spring"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/cdd79a90-88d6-45cb-a0db-e6a4bc6ca59f#t=0,549.24",
+                  "label": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Range",
+      "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/re4a7c701-fd65-48b1-a7bf-36cac30fc92d",
+      "label": {
+        "eng": [
+          "2001-10-19"
+        ]
+      },
+      "behavior": "top",
+      "items": [
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/rc89fce58-7f28-4d6e-a307-b1f2bb2529d8",
+          "label": {
+            "eng": [
+              "Hansel und Gretel: Overture"
+            ]
+          },
+          "items": [
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/r1119af35-73ac-46c2-98f6-87903eff8355",
+              "label": {
+                "eng": [
+                  "Hansel und Gretel"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/587c9a10-2419-4903-936a-aed0367352e4#t=0,507.345",
+                  "label": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/rd06821bf-feae-4b84-bfd7-4a3d1bb46d44",
+          "label": {
+            "eng": [
+              "Symphonic Dances"
+            ]
+          },
+          "items": [
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/rea3fc6d2-cded-4390-8ef6-fddb3b0eab32",
+              "label": {
+                "eng": [
+                  "I. Non allegro"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/270920cf-afa3-484d-8d39-1c9ddbba799d#t=0,693.825",
+                  "label": []
+                }
+              ]
+            },
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/rd65b4b55-35e0-4053-9ce9-2022afd32cc8",
+              "label": {
+                "eng": [
+                  "II. Andante con moto"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d2659dca-1f02-44e1-9178-9f722edca136#t=0,827.662",
+                  "label": []
+                }
+              ]
+            },
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/rc56fca60-d167-4b0a-a753-438119e4b03b",
+              "label": {
+                "eng": [
+                  "III. Lento assai - Allegro vivace"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/13a478f5-0b20-42d7-b5dc-c0faa1113c5e#t=0,827.662",
+                  "label": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Range",
+          "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/re5ca71db-3977-4cee-bda7-d16f85a50e1f",
+          "label": {
+            "eng": [
+              "Appalacian Spring"
+            ]
+          },
+          "items": [
+            {
+              "type": "Range",
+              "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/range/r90c25fbe-99ce-40af-b730-f379fd29e8eb",
+              "label": {
+                "eng": [
+                  "Appalacian Spring"
+                ]
+              },
+              "items": [
+                {
+                  "type": "Canvas",
+                  "id": "https://figgy.princeton.edu/concern/scanned_resources/0f28a498-3393-4d3e-907e-f3dd200fbf7f/manifest/canvas/d3cadf93-00ec-4682-ac0a-de3e44d7c86e#t=0,1600.06",
+                  "label": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "id": "https://figgy.princeton.edu/catalog/0f28a498-3393-4d3e-907e-f3dd200fbf7f.jsonld",
+      "type": "Dataset",
+      "format": "application/ld+json"
+    },
+    {
+      "id": "https://catalog.princeton.edu/catalog/9937578563506421.marcxml",
+      "type": "Dataset",
+      "format": "text/xml"
+    }
+  ],
+  "license": "http://rightsstatements.org/vocab/NKC/1.0/",
+  "logo": [
+    {
+      "id": "https://figgy.princeton.edu/assets/pul_logo_icon-5333765252f2b86e34cd7c096c97e79495fe4656c5f787c5510a84ee6b67afd8.png",
+      "type": "Image",
+      "format": "image/png",
+      "height": 100,
+      "width": 120
+    }
+  ]
+}
