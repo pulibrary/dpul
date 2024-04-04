@@ -11,6 +11,7 @@ export default class Initializer {
     this.initializeChromeWorkaround()
     new BackToTop()
     new MoreLink()
+    this.allowAjaxCredentials()
   }
 
   initialize_blacklight_oembed() {
@@ -39,5 +40,15 @@ export default class Initializer {
         Boolean(navigator.userAgentData.brands.find(function(b) { return b.brand === 'Chromium' && parseFloat(b.version, 10) >= 95 && parseFloat(b.version, 10) < 97; }))) {
       SirTrevor.Blocks.Text.prototype.editorHTML = "<div class=\"st-text-block\" spellcheck=\"false\" contenteditable=\"true\"></div>";
     }
+  }
+
+  // Enable credentials by default for $.ajax. This enables Spotlight to query
+  // princeton only resources if the user has Figgy permissions.
+  allowAjaxCredentials() {
+    $.ajaxSetup({
+      xhrFields: {
+        withCredentials: true
+      }
+    })
   }
 }
