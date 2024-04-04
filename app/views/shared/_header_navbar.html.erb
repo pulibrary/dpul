@@ -1,6 +1,28 @@
 <header class="lux">
-  <library-header app-name="<%= application_name %>" abbr-name="DPUL" app-url="<%= "/" %>" theme="dark">
+  <lux-library-header app-name="<%= application_name %>" abbr-name="DPUL" app-url="<%= "/" %>" theme="dark">
    <%# app-url should be root_path, but is hardcoded right now to switch the locale back to english %> 
-    <%= render partial: '/user_util_links' %>
-  </library-header>
+    <lux-menu-bar type="main-menu" :menu-items="[
+    <% if current_exhibit && current_exhibit.languages.accessible_by(current_ability).any? %>
+      {name: '<%= Spotlight::Language.new(locale: I18n.locale).to_native %>', component: '<%= Spotlight::Language.new(locale: I18n.locale).to_native %>', href: '#', children: [
+        <% locale_selecter_dropown_options.each do |language| %>
+          {name: '<%= language.to_native %>', component: '<%= language.to_native %>', href: '<%= current_page_for_locale(language.locale) %>'},
+        <% end %>
+      ]},
+    <% end %>
+    <% if current_user %>
+        {name: '<%= current_user.to_s %>', component: 'current_user', children: [
+              <% if current_exhibit and can? :curate, current_exhibit %>
+              {name: '<%= t('spotlight.dashboards.show.header') %>', component: 'current_exhibit', href: '<%= spotlight.exhibit_dashboard_path(current_exhibit) %>'},
+              <% end %>
+              <% if can? :create, Spotlight::Exhibit %>
+              {name: '<%= t(:'helpers.action.spotlight/exhibit.create')%>', component: 'create_exhibit', href: '<%= spotlight.new_exhibit_path %>'},
+              <% end %>
+              {name: '<%= t('blacklight.header_links.bookmarks') %> (<%= current_or_guest_user.bookmarks.count %>)', component: 'Bookmarks', href: '<%= bookmarks_path %>'},
+              {name: '<%= t('spotlight.header_links.logout')%>', component: 'Logout', href: '<%= main_app.destroy_user_session_path %>'},
+            ]},
+    <% else %>
+        {name: '<%= t('spotlight.header_links.login')%>', component: 'Login', href: '<%= main_app.new_user_session_path %>', method: 'post'},
+    <% end %>
+    ]"></lux-menu-bar>
+  </lux-library-header>
 </header>
