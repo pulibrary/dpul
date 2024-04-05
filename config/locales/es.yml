@@ -7,6 +7,8 @@ es:
       label: "Navegación de exhibición"
     breadcrumb:
       label: "Listado de enlaces"
+    header_links:
+      logout: "logout"
   main_navigation:
     browse:
       label: "Explorar"
