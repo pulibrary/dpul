@@ -20,10 +20,10 @@
           {name: '<%= t(:'helpers.action.spotlight/exhibit.create')%>', component: 'create_exhibit', href: '<%= spotlight.new_exhibit_path %>'},
         <% end %>
         {name: '<%= t('blacklight.header_links.bookmarks') %> (<%= current_or_guest_user.bookmarks.count %>)', component: 'Bookmarks', href: '<%= bookmarks_path %>'},
-        {name: '<%= t('spotlight.header_links.logout')%>', component: 'Logout', href: '<%= main_app.destroy_user_session_path %>'},
+        {name: '<%= t('blacklight.header_links.logout')%>', component: 'Logout', href: '<%= main_app.destroy_user_session_path %>'},
         ]},
     <% else %>
-        {name: '<%= t('spotlight.header_links.login')%>', component: 'Login', href: '<%= main_app.new_user_session_path %>', method: 'post'},
+        {name: '<%= t('blacklight.header_links.login')%>', component: 'Login', href: '<%= main_app.new_user_session_path %>', method: 'post'},
     <% end %>
     ]"></lux-menu-bar>
   </lux-library-header>
