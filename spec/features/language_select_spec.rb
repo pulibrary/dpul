@@ -18,7 +18,7 @@ RSpec.describe 'Locale Selector', js: true do
       expect(page).not_to have_css('input[placeholder="Search..."]')
       expect(page).to have_css('input[placeholder="Buscar..."]')
 
-      visit "/"
+      find("a[title='Digital PUL']").click
 
       expect(page).to have_css('input[placeholder="Search..."]')
       expect(page).not_to have_css('input[placeholder="Buscar..."]')
