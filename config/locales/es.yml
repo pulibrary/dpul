@@ -3,6 +3,12 @@ es:
     curation:
       nav:
         home: "Inicio"
+    exhibitnavbar:
+      label: "Navegación de exhibición"
+    breadcrumb:
+      label: "Listado de enlaces"
+    header_links:
+      logout: "logout"
   main_navigation:
     browse:
       label: "Explorar"

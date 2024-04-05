@@ -17,22 +17,20 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 // // Import all channels.
 // const channels = import.meta.globEager('./**/*_channel.js')
 
-// Example: Import a stylesheet in app/frontend/index.css
-// import '~/index.css'
-import Vue from 'vue/dist/vue.esm'
-import system from 'lux-design-system'
-import 'lux-design-system/dist/system/system.css'
+import {createApp} from "vue";
+import lux from "lux-design-system";
+import "lux-design-system/dist/style.css";
 import Initializer from '@/dpul/pom_boot'
 
-Vue.use(system)
+const app = createApp({});
+const createMyApp = () => createApp(app);
 
-document.addEventListener('DOMContentLoaded', () => {
-  var elements = document.getElementsByClassName('lux')
-  for(var i = 0; i < elements.length; i++){
-    new Vue({
-      el: elements[i]
-    })
-  }
+document.addEventListener ('DOMContentLoaded', () => {
+      const elements = document.getElementsByClassName('lux')
+      for(let i = 0; i < elements.length; i++){
+          createMyApp().use(lux)
+          .mount(elements[i]);
+      }
 
   window.pom = new Initializer()
 })
