@@ -17,6 +17,7 @@ module Spotlight
     end
 
     def perform(exhibit, **)
+      job_tracker.update(status: 'in_progress')
       exhibit = ExhibitProxy.new(exhibit)
 
       # Remove resources not currently in collection
@@ -28,9 +29,12 @@ module Spotlight
         # Don't reindex invalid resources - these are usually ones which are
         # private and the app can't download manifests for.
         Spotlight::ReindexJob.perform_later(resource, reports_on: job_tracker) if resource.valid?
+      rescue Faraday::TimeoutError
+        # resource#valid? fetches the manifest. If this times out that doesn't
+        # mean we didn't want to index it.
+        Rails.logger.error("Network timeout indexing resource #{resource.url}")
+        job_tracker.update(status: 'failed')
       end
-
-      job_tracker.update(status: 'in_progress')
     end
 
     # Used to calculate the total number of resources in the processed by the job

@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 module Spotlight
-  ###
-  # Calls the #set_default_thumbnail method
-  # on the object passed in and calls save
-  ###
   class UpdateJobTrackersJob < Spotlight::ApplicationJob
     # Override to ensure that job is always run synchronously.
     # See: https://github.com/pulibrary/dpul/issues/1295
