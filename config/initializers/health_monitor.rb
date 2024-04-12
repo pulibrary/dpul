@@ -12,7 +12,6 @@ Rails.application.config.after_initialize do
 
     config.error_callback = proc do |e|
       Rails.logger.error "Health check failed with: #{e.message}"
-      Honeybadger.notify(e)
     end
   end
 end
