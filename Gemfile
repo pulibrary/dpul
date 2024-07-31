@@ -38,6 +38,7 @@ end
 group :test do
   gem "axe-core-rspec"
   gem "selenium-webdriver"
+  gem "timecop"
 end
 
 group :development do
