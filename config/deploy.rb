@@ -92,7 +92,6 @@ after 'deploy:starting', 'sidekiq:quiet'
 after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:published', 'sidekiq:restart'
 require 'date'
-require 'active_support/core_ext/date'
 
 namespace :replicate do
   desc "Replicate production database and index to staging"
@@ -100,7 +99,7 @@ namespace :replicate do
     on roles(:web) do
       rails_env = fetch(:rails_env).to_s
       abort unless rails_env == 'staging'
-      date = ENV["DATE"] || Date.current.to_s
+      date = ENV["DATE"] || DateTime.now.to_date
 
       execute "cd '#{current_path}' && DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rake db:drop && bundle exec rake db:create && DATE=#{date} bundle exec rake dpul:replicate:to_staging && bundle exec rake db:migrate"
     end
