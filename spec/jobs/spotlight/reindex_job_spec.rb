@@ -6,7 +6,7 @@ RSpec.describe Spotlight::ReindexJob do
   with_queue_adapter :inline
   let(:url1) { 'http://example.com/1/manifest' }
   let(:exhibit) { Spotlight::Exhibit.new }
-  let(:resource) { IIIFResource.new url: nil, exhibit: }
+  let(:resource) { IiifResource.new url: nil, exhibit: }
   let(:manifest) { object_double(CollectionManifest.new, manifests: [{ "@id" => url1 }]) }
 
   let(:iiif_resource1) do FactoryBot.create(
@@ -38,11 +38,11 @@ RSpec.describe Spotlight::ReindexJob do
   end
 
   it 'reindexes an exhibit' do
-    allow(IIIFResource).to receive(:new).and_return(resource)
+    allow(IiifResource).to receive(:new).and_return(resource)
 
     described_class.perform_now(exhibit)
 
-    expect(IIIFResource).to have_received(:new).with(url: url1, exhibit_id: exhibit.id)
+    expect(IiifResource).to have_received(:new).with(url: url1, exhibit_id: exhibit.id)
   end
 
   it 'can reindex multiple IIIF Resources' do
@@ -59,7 +59,7 @@ RSpec.describe Spotlight::ReindexJob do
   context 'when there is an error' do
     it 'logs the error in the job tracker and raises it so sidekiq can retry' do
       allow(iiif_resource1).to receive(:reindex).and_raise StandardError
-      allow(IIIFResource).to receive(:new).and_return(resource)
+      allow(IiifResource).to receive(:new).and_return(resource)
 
       expect { described_class.perform_now(iiif_resource1) }.to raise_error(StandardError)
 

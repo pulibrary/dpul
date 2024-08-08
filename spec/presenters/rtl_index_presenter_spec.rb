@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe RTLIndexPresenter do
+RSpec.describe RtlIndexPresenter do
   subject(:presenter) { described_class.new(document, double(blacklight_config:, action_name: "index", controller_name: "catalog")) }
 
   let(:document) do

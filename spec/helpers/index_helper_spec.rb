@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe IndexHelper do
   let(:helper) { TestingHelper.new }
-  let(:document_presenter) { instance_double('RTLIndexPresenter', class: RTLIndexPresenter) }
+  let(:document_presenter) { instance_double('RtlIndexPresenter', class: RtlIndexPresenter) }
   let(:document) do
     {
       title: 'title',

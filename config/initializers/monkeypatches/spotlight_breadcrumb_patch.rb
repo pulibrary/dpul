@@ -12,7 +12,7 @@ Rails.application.config.to_prepare do
         add_breadcrumb t(:'spotlight.catalog.breadcrumb.index'), search_action_url(current_search_session.query_params)
       end
 
-      add_breadcrumb RTLShowPresenter.new(document, self).html_title, polymorphic_path([current_exhibit, document])
+      add_breadcrumb RtlShowPresenter.new(document, self).html_title, polymorphic_path([current_exhibit, document])
     end
   end
 

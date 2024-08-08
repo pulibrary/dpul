@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe IIIFResource do
+describe IiifResource do
   with_queue_adapter :inline
   context "when indexing a Recording IIIF v3 manifest" do
     it "indexes succesfully" do
