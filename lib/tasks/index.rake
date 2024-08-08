@@ -15,7 +15,7 @@ namespace :dpul do
       manifest = args[:manifest]
       exhibit_slug = args[:exhibit]
       exhibit = Spotlight::Exhibit.find_by(slug: exhibit_slug)
-      iiif_resource = IIIFResource.find_or_initialize_by(url: manifest, exhibit:)
+      iiif_resource = IiifResource.find_or_initialize_by(url: manifest, exhibit:)
       iiif_resource.save_and_index_now
       puts "Reindexed the document for #{manifest}"
     end

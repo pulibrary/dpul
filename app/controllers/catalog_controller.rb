@@ -122,8 +122,8 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
     config.add_field_configuration_to_solr_request!
     config.response_model = AdjustedGroupedResponse
-    config.show.document_presenter_class = RTLShowPresenter
-    config.index.document_presenter_class = RTLIndexPresenter
+    config.show.document_presenter_class = RtlShowPresenter
+    config.index.document_presenter_class = RtlIndexPresenter
     config.repository_class = ::FriendlyIdRepository
     config.http_method = :post
   end

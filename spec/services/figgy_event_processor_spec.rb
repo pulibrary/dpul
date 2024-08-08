@@ -35,7 +35,7 @@ RSpec.describe FiggyEventProcessor do
 
       expect(processor.process).to eq true
 
-      expect(IIIFResource.where(exhibit:, url:).length).to eq 1
+      expect(IiifResource.where(exhibit:, url:).length).to eq 1
     end
   end
 
@@ -52,24 +52,24 @@ RSpec.describe FiggyEventProcessor do
     context "when the resource has an exhibit" do
       it "deletes that resource" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
-        IIIFResource.new(url:, exhibit:).save_and_index
+        IiifResource.new(url:, exhibit:).save_and_index
         Blacklight.default_index.connection.commit
 
         expect(processor.process).to eq true
 
-        expect(IIIFResource.all.length).to eq 0
+        expect(IiifResource.all.length).to eq 0
         expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 0
       end
     end
 
     context "when the resource has no exhibit" do
       it "deletes that resource" do
-        IIIFResource.new(url:).save_and_index
+        IiifResource.new(url:).save_and_index
         Blacklight.default_index.connection.commit
-        expect(IIIFResource.all.length).to eq 1
+        expect(IiifResource.all.length).to eq 1
 
         expect(processor.process).to eq true
-        expect(IIIFResource.all.length).to eq 0
+        expect(IiifResource.all.length).to eq 0
         expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 0
       end
     end
@@ -79,7 +79,7 @@ RSpec.describe FiggyEventProcessor do
     let(:type) { "UPDATED" }
     it "updates that resource" do
       exhibit = FactoryBot.create(:exhibit, slug: "first")
-      IIIFResource.new(url:, exhibit:).save_and_index
+      IiifResource.new(url:, exhibit:).save_and_index
 
       stub_manifest(url:, fixture: "1r66j1149-updated.json")
       expect(processor.process).to eq true
@@ -91,7 +91,7 @@ RSpec.describe FiggyEventProcessor do
     context "when the record is gone" do
       it "doesn't blow up" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
-        IIIFResource.new(url:, exhibit:).save_and_index
+        IiifResource.new(url:, exhibit:).save_and_index
         Blacklight.default_index.connection.delete_by_query("*:*")
         Blacklight.default_index.connection.commit
 
@@ -102,7 +102,7 @@ RSpec.describe FiggyEventProcessor do
     context "when the exhibit is gone" do
       it "doesn't blow up" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
-        IIIFResource.new(url:, exhibit:).save_and_index
+        IiifResource.new(url:, exhibit:).save_and_index
         exhibit.delete
 
         expect(processor.process).to eq true
@@ -126,7 +126,7 @@ RSpec.describe FiggyEventProcessor do
     context "when it's no longer accessible" do
       it "deletes it from solr, but leaves it in the DB" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
-        iiif_resource = IIIFResource.new(url:, exhibit:)
+        iiif_resource = IiifResource.new(url:, exhibit:)
         iiif_resource.save_and_index
         stub_manifest(url:, fixture: "1r66j1149.json", status: 401)
 
@@ -148,7 +148,7 @@ RSpec.describe FiggyEventProcessor do
 
       it "logs the noid" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
-        iiif_resource = IIIFResource.create(url:, exhibit:)
+        iiif_resource = IiifResource.create(url:, exhibit:)
         stub_manifest(url:, fixture: "1r66j1149.json", status: 401)
 
         expect(processor.process).to eq true
@@ -159,7 +159,7 @@ RSpec.describe FiggyEventProcessor do
     context "when it's private and then is made accessible" do
       it "marks it as public" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
-        IIIFResource.new(url:, exhibit:).save_and_index
+        IiifResource.new(url:, exhibit:).save_and_index
         Blacklight.default_index.connection.commit
         resource_id = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first["access_identifier_ssim"].first
         Blacklight.default_index.connection.delete_by_id(resource_id)
@@ -177,11 +177,11 @@ RSpec.describe FiggyEventProcessor do
       let(:collection_slugs) { [] }
       it "removes old ones" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
-        IIIFResource.new(url:, exhibit:).save_and_index
+        IiifResource.new(url:, exhibit:).save_and_index
 
         expect(processor.process).to eq true
 
-        expect(IIIFResource.all.length).to eq 0
+        expect(IiifResource.all.length).to eq 0
         expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 0
       end
     end
@@ -191,12 +191,12 @@ RSpec.describe FiggyEventProcessor do
       it "moves it to a new one" do
         exhibit = FactoryBot.create(:exhibit, slug: "first")
         FactoryBot.create(:exhibit, slug: "banana")
-        IIIFResource.new(url:, exhibit:).save_and_index
+        IiifResource.new(url:, exhibit:).save_and_index
 
         expect(processor.process).to eq true
         Blacklight.default_index.connection.commit
 
-        expect(IIIFResource.joins(:exhibit).where("spotlight_exhibits.slug" => "banana").length).to eq 1
+        expect(IiifResource.joins(:exhibit).where("spotlight_exhibits.slug" => "banana").length).to eq 1
         expect(Blacklight.default_index.connection.get("select")["response"]["docs"].length).to eq 1
       end
     end

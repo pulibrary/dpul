@@ -16,7 +16,7 @@ describe SpotlightHelper do
   end
 
   describe '#render_document_heading' do
-    let(:presenter) { instance_double('RTLShowPresenter', class: RTLShowPresenter) }
+    let(:presenter) { instance_double('RtlShowPresenter', class: RtlShowPresenter) }
 
     before do
       allow(helper).to receive(:presenter).and_return(presenter)

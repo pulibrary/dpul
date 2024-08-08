@@ -51,13 +51,13 @@ describe ExhibitProxy do
         # first index will use the manifest with 2 items
         described_class.new(exhibit).reindex
         Blacklight.default_index.connection.commit
-        expect(IIIFResource.all.count).to eq 2
+        expect(IiifResource.all.count).to eq 2
         expect(Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["numFound"]).to eq 2
 
         # second index uses the manifest with 1 item
         described_class.new(exhibit).reindex
         Blacklight.default_index.connection.commit
-        expect(IIIFResource.all.count).to eq 2
+        expect(IiifResource.all.count).to eq 2
         response = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]
         expect(response["numFound"]).to eq 1
         expect(response["docs"].first["content_metadata_iiif_manifest_field_ssi"]).to eq "https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest"
@@ -85,10 +85,10 @@ describe ExhibitProxy do
         # first get them in the index
         described_class.new(exhibit).reindex
         Blacklight.default_index.connection.commit
-        expect(IIIFResource.all.count).to eq 2
+        expect(IiifResource.all.count).to eq 2
         expect(Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["numFound"]).to eq 2
 
-        resource = IIIFResource.first
+        resource = IiifResource.first
         resource.url = "#{resource.url}?auth_token=12345"
         resource.save
         allow(resource).to receive(:remove_from_solr)
