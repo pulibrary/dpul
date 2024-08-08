@@ -71,7 +71,7 @@ gem 'iso-639'
 gem 'lograge'
 gem 'logstash-event'
 gem "net-smtp", require: false
-gem 'omniauth'
+gem 'omniauth', "> 1.0.0"
 gem 'omniauth-cas'
 gem 'omniauth-rails_csrf_protection'
 gem 'open_uri_redirections'
