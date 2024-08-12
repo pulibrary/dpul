@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  helper Openseadragon::OpenseadragonHelper
-  # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
   include Spotlight::Controller
+  helper Openseadragon::OpenseadragonHelper
+  # Adds a few additional behaviors into the application controller
   include Spotlight::Concerns::ApplicationController
 
   before_action :set_paper_trail_whodunnit

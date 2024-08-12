@@ -10,7 +10,7 @@ Rails.application.config.to_prepare do
         # Some of our manifests take a long time time to load.
         def self.http_client
           Faraday.new(request: { timeout: 60 }) do |b|
-            b.use FaradayMiddleware::FollowRedirects
+            b.use Faraday::FollowRedirects::Middleware
             b.adapter Faraday.default_adapter
           end
         end

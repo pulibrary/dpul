@@ -31,6 +31,7 @@ RSpec.describe Spotlight::ReindexJob do
 
   before do
     allow(exhibit).to receive(:id).and_return('exhibit1')
+    exhibit.id = "exhibit1"
     allow(exhibit).to receive(:touch)
     allow(Spotlight::Exhibit).to receive(:find).with('exhibit1').and_return(exhibit)
     allow(CollectionManifest).to receive(:find_by_slug).and_return(manifest)

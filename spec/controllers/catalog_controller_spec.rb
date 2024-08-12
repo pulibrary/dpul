@@ -20,7 +20,7 @@ RSpec.describe CatalogController do
       get :index, params: { q: "More searchable text", exhibit_id: exhibit.id }
 
       expect(document_ids.length).to eq 1
-      expect(assigns[:blacklight_config].view.keys).not_to include :embed
+      expect(controller.blacklight_config.view.keys).not_to include :embed
     end
   end
 

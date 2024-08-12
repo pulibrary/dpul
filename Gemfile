@@ -7,7 +7,7 @@ gem 'health-monitor-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.1.0'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
@@ -54,17 +54,19 @@ source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
 end
 
+gem 'acts-as-taggable-on'
 gem 'bixby', '~> 5.0'
-gem 'blacklight', '~> 7.18', '< 7.25'
+gem 'blacklight', '~> 7.18'
 gem 'blacklight-gallery', '~> 4.1.0'
 gem 'blacklight-oembed'
-gem 'blacklight-spotlight'
+gem 'blacklight-spotlight', '3.6.0.beta10'
 gem 'bootstrap', '~> 4.0'
 gem 'ddtrace', require: "ddtrace/auto_instrument"
-gem 'devise', '~> 4.8.0'
+gem 'devise', '~> 4.9.0'
 gem 'devise-guests', '~> 0.8'
 gem 'devise_invitable'
-gem 'faraday', '< 1'
+gem 'faraday', '>= 1'
+gem 'faraday-follow_redirects'
 gem 'google-cloud-storage', group: :staging
 gem 'iiif-presentation'
 gem 'iso-639'

@@ -27,7 +27,8 @@ describe 'Bulk actions', type: :feature do
     click_link 'Add tags'
     expect(page).to have_css 'h4', text: 'Add tags', visible: true
     within '#add-tags-modal' do
-      find('input#tags').set('good,stuff')
+      find('[data-autocomplete-fetched="true"]', visible: false)
+      find('.tt-input').set('good,stuff')
     end
     accept_confirm 'All items in the result set will be updated. Are you sure?' do
       click_button 'Add'

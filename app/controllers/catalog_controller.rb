@@ -4,6 +4,7 @@
 # Simplified catalog controller
 class CatalogController < ApplicationController
   include Blacklight::Catalog
+  # include Spotlight::SearchHelper
   before_action :search_across_settings
   rescue_from Blacklight::Exceptions::RecordNotFound, with: :not_found
 

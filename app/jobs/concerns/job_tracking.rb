@@ -17,12 +17,26 @@ module JobTracking
       user: ->(job) { job.arguments.last[:user] if job.arguments.last.is_a?(Hash) }
     )
       around_enqueue do |job, block|
-        job.initialize_job_tracker(job, resource, reports_on, user)
+        resource_object = resource&.call(job)
+
+        job.initialize_job_tracker!(
+          resource: resource_object,
+          on: reports_on&.call(job) || resource_object,
+          user: user&.call(job)
+        )
+
         block.call
       end
 
       around_perform do |job, block|
-        job.initialize_job_tracker(job, resource, reports_on, user)
+        resource_object = resource&.call(job)
+
+        job.initialize_job_tracker!(
+          resource: resource_object,
+          on: reports_on&.call(job) || resource_object,
+          user: user&.call(job)
+        )
+
         block.call
       ensure
         job.finalize_job_tracker!
