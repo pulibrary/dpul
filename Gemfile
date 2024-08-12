@@ -61,7 +61,7 @@ gem 'blacklight-oembed'
 gem 'blacklight-spotlight', '~> 3.0'
 gem 'bootstrap', '~> 4.0'
 gem 'ddtrace', require: "ddtrace/auto_instrument"
-gem 'devise', '~> 4.7.1'
+gem 'devise', '~> 4.8.0'
 gem 'devise-guests', '~> 0.8'
 gem 'devise_invitable'
 gem 'faraday', '< 1'
