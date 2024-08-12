@@ -56,7 +56,7 @@ end
 
 gem 'bixby', '~> 5.0'
 gem 'blacklight', '~> 7.18', '< 7.25'
-gem 'blacklight-gallery', '~> 4.4.0'
+gem 'blacklight-gallery', '~> 4.1.0'
 gem 'blacklight-oembed'
 gem 'blacklight-spotlight'
 gem 'bootstrap', '~> 4.0'
