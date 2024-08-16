@@ -10,7 +10,7 @@ gem 'rack', '>= 2.0.6'
 gem 'rails', '~> 7.1.0'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '4.1.0'
 
 group :development, :test do
   gem 'bcrypt_pbkdf'

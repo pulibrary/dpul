@@ -755,7 +755,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
-    uglifier (4.2.0)
+    uglifier (4.1.0)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -882,7 +882,7 @@ DEPENDENCIES
   string_rtl
   timecop
   turbolinks
-  uglifier (>= 1.3.0)
+  uglifier (= 4.1.0)
   vite_rails
   web-console (~> 4.0)
   webmock
