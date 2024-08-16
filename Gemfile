@@ -30,7 +30,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'simplecov', require: false
-  gem 'sqlite3'
   gem 'sshkit', '~> 1.18'
   gem 'webmock', require: false
 end
