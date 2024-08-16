@@ -54,17 +54,18 @@ source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
 end
 
+gem "acts-as-taggable-on", "~> 9.0.0"
 gem 'bixby', '~> 5.0'
 gem 'blacklight', '~> 7.18', '< 7.25'
 gem 'blacklight-gallery', '~> 4.1.0'
 gem 'blacklight-oembed'
-gem 'blacklight-spotlight'
+gem 'blacklight-spotlight', '~> 3.5.0'
 gem 'bootstrap', '~> 4.0'
 gem 'ddtrace', require: "ddtrace/auto_instrument"
 gem 'devise', '~> 4.8.0'
 gem 'devise-guests', '~> 0.8'
 gem 'devise_invitable'
-gem 'faraday', '< 1'
+gem 'faraday', '>= 1'
 gem 'google-cloud-storage', group: :staging
 gem 'iiif-presentation'
 gem 'iso-639'
