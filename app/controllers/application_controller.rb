@@ -33,6 +33,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # @todo: Remove this when we figure out why
+  # https://github.com/projectblacklight/spotlight/commit/a0356f0f583ea0ac5acdfadc410d65ee1ee43f6c
+  # broke our tests.
+  def search_state
+    @search_state ||= search_state_class.new(params, blacklight_config, self)
+  end
+
   # This override keeps various layout templates from erroring when they check
   # whether there's an exhibit selected
   def current_exhibit
