@@ -75,6 +75,7 @@ gem 'omniauth'
 gem 'omniauth-cas'
 gem 'omniauth-rails_csrf_protection'
 gem 'open_uri_redirections'
+gem 'rbtree', '>= 0.4.6'
 gem 'redcarpet', '~> 3.5.1'
 gem 'redis-namespace'
 # Upgrading past redis 3.3.5 currently breaks deploy. Test any upgrades here carefully.

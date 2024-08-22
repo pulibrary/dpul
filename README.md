@@ -20,6 +20,8 @@ formerly known as Pomegranate, but renamed to the offical brand: Digital PUL.
 ```sh
 git clone git@github.com:pulibrary/dpul.git
 cd dpul
+lpass login yournetid@princeton.edu
+bin/setup_keys
 bundle install
 yarn install
 ```
