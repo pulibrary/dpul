@@ -58,7 +58,7 @@ gem 'bixby', '~> 5.0'
 gem 'blacklight', '~> 7.18'
 gem 'blacklight-gallery', '~> 4.1.0'
 gem 'blacklight-oembed'
-gem 'blacklight-spotlight', '3.6.0.beta10'
+gem 'blacklight-spotlight', '~> 4.0.0'
 gem 'bootstrap', '~> 4.0'
 gem 'ddtrace', require: "ddtrace/auto_instrument"
 gem 'devise', '~> 4.9.0'
