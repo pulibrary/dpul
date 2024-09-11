@@ -22,7 +22,8 @@ module JobTracking
         job.initialize_job_tracker!(
           resource: resource_object,
           on: reports_on&.call(job) || resource_object,
-          user: user&.call(job)
+          user: user&.call(job),
+          data: { progress: 0, total: total_resources }
         )
 
         block.call
@@ -34,7 +35,8 @@ module JobTracking
         job.initialize_job_tracker!(
           resource: resource_object,
           on: reports_on&.call(job) || resource_object,
-          user: user&.call(job)
+          user: user&.call(job),
+          data: { progress: 0, total: total_resources }
         )
 
         block.call
@@ -43,4 +45,11 @@ module JobTracking
       end
     end
   end
+
+  private
+
+    # Get total number of resources processed by the job.
+    def total_resources
+      resource_list(arguments.first).count
+    end
 end
