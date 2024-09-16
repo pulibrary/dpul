@@ -10,7 +10,7 @@ class IiifService < ::Spotlight::Resources::IiifService
       Rails.logger.info("Failed to get #{url}")
       {}.to_json
     end
-  rescue Faraday::Error::ConnectionFailed, Faraday::TimeoutError => e
+  rescue Faraday::ConnectionFailed, Faraday::TimeoutError => e
     Rails.logger.warn("HTTP GET for #{url} failed with #{e}")
     {}.to_json
   end

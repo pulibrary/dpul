@@ -11,6 +11,22 @@ module ApplicationHelper
     render partial: 'catalog/default_search_form'
   end
 
+  ##
+  # @todo: Remove this when we figure out why
+  # https://github.com/projectblacklight/spotlight/commit/a0356f0f583ea0ac5acdfadc410d65ee1ee43f6c
+  # broke our tests.
+  # Override the Blacklight #url_for_document helper to add
+  # the current exhibit context
+  def url_for_document(document)
+    return nil if document.nil?
+
+    if current_exhibit
+      [spotlight, current_exhibit, document]
+    else
+      document
+    end
+  end
+
   # site_title pulls from the db if configured through the UI.
   #   otherwise use the val from the blacklight locale file.
   #   We need this because application_name helper changes to include exhibit titles

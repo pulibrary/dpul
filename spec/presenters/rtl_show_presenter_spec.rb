@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe RTLShowPresenter do
+RSpec.describe RtlShowPresenter do
   subject(:presenter) { described_class.new(document, view_context) }
 
   let(:document) do

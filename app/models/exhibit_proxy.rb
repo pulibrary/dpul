@@ -12,13 +12,13 @@ class ExhibitProxy
   def reindex(*_args)
     members_to_remove_from_index.each(&:remove_from_solr)
     members.each do |member|
-      IIIFIngestJob.perform_later member, exhibit
+      IiifIngestJob.perform_later member, exhibit
     end
   end
 
   # Map all of the members to IIIFResource objects
   def resources
-    @resources ||= members.map { |url| IIIFResource.find_or_initialize_by(url:, exhibit_id: exhibit.id) }
+    @resources ||= members.map { |url| IiifResource.find_or_initialize_by(url:, exhibit_id: exhibit.id) }
   end
 
   def collection_manifest
@@ -36,7 +36,7 @@ class ExhibitProxy
 
   # resources pulled from the database
   def persisted_members
-    IIIFResource.where(exhibit_id: exhibit.id)
+    IiifResource.where(exhibit_id: exhibit.id)
   end
 
   # resources that are in the database but not in the manfiest

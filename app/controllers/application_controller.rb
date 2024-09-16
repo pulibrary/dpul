@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  helper Openseadragon::OpenseadragonHelper
-  # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
   include Spotlight::Controller
+  helper Openseadragon::OpenseadragonHelper
+  # Adds a few additional behaviors into the application controller
   include Spotlight::Concerns::ApplicationController
 
   before_action :set_paper_trail_whodunnit
@@ -31,6 +31,13 @@ class ApplicationController < ActionController::Base
         format.all { head :not_found }
       end
     end
+  end
+
+  # @todo: Remove this when we figure out why
+  # https://github.com/projectblacklight/spotlight/commit/a0356f0f583ea0ac5acdfadc410d65ee1ee43f6c
+  # broke our tests.
+  def search_state
+    @search_state ||= search_state_class.new(params, blacklight_config, self)
   end
 
   # This override keeps various layout templates from erroring when they check

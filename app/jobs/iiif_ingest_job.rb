@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class IIIFIngestJob < ActiveJob::Base
+class IiifIngestJob < ActiveJob::Base
   # Ingest one or more IIIF manfiest URLs.  Each manifest is ingested as its
   # own resource.
   def perform(urls, exhibit)
@@ -11,6 +11,6 @@ class IIIFIngestJob < ActiveJob::Base
 
   # Ingest a single IIIF manifest URL as a resource.
   def ingest(url, exhibit)
-    IIIFResource.find_or_initialize_by(url:, exhibit_id: exhibit.id).save_and_index_now
+    IiifResource.find_or_initialize_by(url:, exhibit_id: exhibit.id).save_and_index_now
   end
 end

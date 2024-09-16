@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RTLIndexPresenter < ::Blacklight::IndexPresenter
+class RtlIndexPresenter < ::Blacklight::IndexPresenter
   # Override the IndexPresenter label method to render
   # the label as an Array if it's multivalued.
   def label(field_or_string_or_proc, opts = {})

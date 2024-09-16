@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class IIIFResource < Spotlight::Resources::IiifHarvester
+class IiifResource < Spotlight::Resources::IiifHarvester
   belongs_to :exhibit, class_name: 'Spotlight::Exhibit'
   after_destroy :cleanup_solr
   before_save :set_noid

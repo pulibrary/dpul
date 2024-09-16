@@ -7,10 +7,10 @@ gem 'health-monitor-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'
-gem 'rails', '~> 6.1'
+gem 'rails', '~> 7.1.0'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '4.1.0'
 
 group :development, :test do
   gem 'bcrypt_pbkdf'
@@ -30,7 +30,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'simplecov', require: false
-  gem 'sqlite3'
   gem 'sshkit', '~> 1.18'
   gem 'webmock', require: false
 end
@@ -54,24 +53,27 @@ source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
 end
 
+gem 'acts-as-taggable-on'
 gem 'bixby', '~> 5.0'
-gem 'blacklight', '~> 7.18', '< 7.25'
-gem 'blacklight-gallery'
+gem 'blacklight', '~> 7.18'
+gem 'blacklight-gallery', '~> 4.5.0'
 gem 'blacklight-oembed'
-gem 'blacklight-spotlight', '~> 3.0'
+gem 'blacklight-spotlight', '~> 4.0.0'
 gem 'bootstrap', '~> 4.0'
+gem 'bootstrap_form', '~> 4.0'
 gem 'ddtrace', require: "ddtrace/auto_instrument"
-gem 'devise', '~> 4.7.1'
+gem 'devise', '~> 4.9.0'
 gem 'devise-guests', '~> 0.8'
 gem 'devise_invitable'
-gem 'faraday', '< 1'
+gem 'faraday', '>= 1'
+gem 'faraday-follow_redirects'
 gem 'google-cloud-storage', group: :staging
 gem 'iiif-presentation'
 gem 'iso-639'
 gem 'lograge'
 gem 'logstash-event'
 gem "net-smtp", require: false
-gem 'omniauth'
+gem 'omniauth', "> 1.0.0"
 gem 'omniauth-cas'
 gem 'omniauth-rails_csrf_protection'
 gem 'open_uri_redirections'
@@ -85,7 +87,6 @@ gem 'rsolr', '~> 2.0'
 # Required by blacklight-oembed
 gem 'ruby2_keywords'
 gem 'sidekiq', '~> 7.1.3'
-gem 'sir_trevor_rails'
 gem 'sitemap_generator'
 gem 'sneakers'
 gem 'sprockets', '~> 3.7'

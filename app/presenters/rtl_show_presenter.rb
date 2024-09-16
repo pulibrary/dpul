@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RTLShowPresenter < ::Blacklight::ShowPresenter
+class RtlShowPresenter < ::Blacklight::ShowPresenter
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::SanitizeHelper

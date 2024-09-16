@@ -169,11 +169,11 @@ RSpec.feature 'Catalog', type: :feature do
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
       stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true, slug: "cute_kitties"
-      resource = IIIFResource.new(url:, exhibit:)
+      resource = IiifResource.new(url:, exhibit:)
       resource.save_and_index_now
 
       exhibit2 = Spotlight::Exhibit.create title: 'Exhibit B', published: true, slug: "cute_puppies"
-      resource2 = IIIFResource.new(url:, exhibit: exhibit2)
+      resource2 = IiifResource.new(url:, exhibit: exhibit2)
       resource2.save_and_index_now
       resource2.reload
       sidecar = resource2.solr_document_sidecars.first

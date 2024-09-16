@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :iiif_resource, class: IIIFResource do
+  factory :iiif_resource, class: IiifResource do
     transient do
       # Fixture to use for stubbing the manifest.
       manifest_fixture { nil }

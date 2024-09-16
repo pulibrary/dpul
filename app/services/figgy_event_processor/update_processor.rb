@@ -14,12 +14,12 @@ class FiggyEventProcessor
     end
 
     def update_existing_resources
-      IIIFResource.where(url: manifest_url).each(&:save_and_index)
+      IiifResource.where(url: manifest_url).each(&:save_and_index)
     end
 
     def create_new_resources
       new_exhibits.each do |exhibit|
-        IIIFResource.new(url: manifest_url, exhibit:).save_and_index
+        IiifResource.new(url: manifest_url, exhibit:).save_and_index
       end
     end
 
@@ -34,7 +34,7 @@ class FiggyEventProcessor
       end
 
       def delete_resources
-        IIIFResource.where(url: manifest_url).joins(:exhibit).where('spotlight_exhibits.slug IN (?)', delete_slugs)
+        IiifResource.where(url: manifest_url).joins(:exhibit).where('spotlight_exhibits.slug IN (?)', delete_slugs)
       end
 
       def delete_slugs
@@ -46,7 +46,7 @@ class FiggyEventProcessor
       end
 
       def existing_resources
-        IIIFResource.where(url: manifest_url)
+        IiifResource.where(url: manifest_url)
       end
   end
 end
