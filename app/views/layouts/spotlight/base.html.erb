@@ -21,6 +21,7 @@
     <%= description %>
     <%= twitter_card %>
     <%= opengraph %>
+    <%= javascript_tag "Spotlight.sirTrevorIcon = '#{asset_path('spotlight/blocks/sir-trevor-icons.svg')}'" %>
     <%= javascript_tag '$.fx.off = true;' if Rails.env.test? %>
 
     <%= render 'shared/analytics' if Rails.env.production? %>
