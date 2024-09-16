@@ -181,9 +181,9 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.16.1, < 2)
       sassc-rails (>= 2.0.0)
-    bootstrap_form (5.4.0)
-      actionpack (>= 6.1)
-      activemodel (>= 6.1)
+    bootstrap_form (4.5.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     breadcrumbs_on_rails (4.1.0)
       railties (>= 5.0)
     builder (3.3.0)
@@ -800,6 +800,7 @@ DEPENDENCIES
   blacklight-oembed
   blacklight-spotlight (~> 4.0.0)
   bootstrap (~> 4.0)
+  bootstrap_form (~> 4.0)
   byebug
   cancancan
   capistrano-passenger
