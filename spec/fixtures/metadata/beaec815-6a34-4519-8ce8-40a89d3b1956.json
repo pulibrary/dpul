@@ -1,1 +1,70 @@
-{"@context":"https://bibdata.princeton.edu/context.json","@id":"https://figgy.princeton.edu/catalog/beaec815-6a34-4519-8ce8-40a89d3b1956","title":[{"@value":"Plan de Paris : commencé de l'année 1734","@language":"fra"}],"language":"fra","creator":"Bretez, Louis, -1738","call_number":["Oversize G5834.P3A3 1739 .B6e","Electronic Resource","D Alcove 04-05 [atop]"],"extent":"1 view : cloth backing ; 193 x 251 cm.","format":"Map","type":"Aerial views","description":["Princeton copy 1 lacks all title and statements of responsibility information except for the spine title: Plans de Paris. The work is bound (57 x 45 cm.).","Princeton copy 2 is rolled map composed of sheets pieced together and backed with cloth. Maps is severely browned and somewhat fragile.","\"Avertissement -- Le plan en perspective de la ville de Paris, gravé en vingt planches, se trouvant, lorsqu'elles sont rassemblées, d'une trop grande étendue pour être aisement conservé dans les biblioteques, et ces vingt planches pouvant êtrereliées en volume...\"--leaf [1].","Bird's-eye view of Paris (walled) and surrounding faubourgs.","\"Achevé de graveur en 1739.\"","Oriented with north toward the lower left.","Originally printed on 20 sheets.","Includes text in cartouche."],"publisher":"[Paris? : s.n., 1739]","subject":"Paris (France)—Aerial views—Early works to 1800","title_sort":"Plan de Paris : commencé de l'année 1734 / dessiné et gravé sous les ordres de Messire Michel Etienne Turgot, Marquis de Sousmons ... [et al.] ; levé et dessiné par Louis Bretez ; gravé par Claude Lucas ; et écrit par Aubin.","alternative":"Plans de Paris","cartographic_scale":"Not drawn to scale.","spatial":"France","contributor":["Turgot, Michel-Etienne, 1690-1751","Lucas, Claude, active 18th century","Aubin"],"author":"Bretez, Louis, -1738","created":"1739-01-01T00:00:00Z","date":"1739","identifier":["ark:/88435/ww72bb58v"],"location":["SAX Oversize G5834.P3A3 1739 .B6e","SAX Electronic Resource","SAX D Alcove 04-05 [atop]","ELF1 Oversize G5834.P3A3 1739 .B6e","ELF1 Electronic Resource","ELF1 D Alcove 04-05 [atop]","MAP Oversize G5834.P3A3 1739 .B6e","MAP Electronic Resource","MAP D Alcove 04-05 [atop]"],"edm_rights":{"@id":"http://rightsstatements.org/vocab/NKC/1.0/","@type":"dcterms:RightsStatement","pref_label":"No Known Copyright"},"memberOf":[{"@id":"https://figgy.princeton.edu/catalog/89cbdc78-011d-40c2-9324-73ff53511a3e","@type":"pcdm:Collection","title":"Marquand Library Selections"}]}
+{
+  "@context": "https://bibdata.princeton.edu/context.json",
+  "@id": "https://figgy.princeton.edu/catalog/beaec815-6a34-4519-8ce8-40a89d3b1956",
+  "title": [
+    {
+      "@value": "Plan de Paris : commencé de l'année 1734",
+      "@language": "fra"
+    }
+  ],
+  "language": "fra",
+  "creator": "Bretez, Louis, -1738",
+  "call_number": [
+    "Oversize G5834.P3A3 1739 .B6e",
+    "Electronic Resource",
+    "D Alcove 04-05 [atop]"
+  ],
+  "extent": "1 view : cloth backing ; 193 x 251 cm.",
+  "format": "Map",
+  "type": "Aerial views",
+  "description": [
+    "Princeton copy 1 lacks all title and statements of responsibility information except for the spine title: Plans de Paris. The work is bound (57 x 45 cm.).",
+    "Princeton copy 2 is rolled map composed of sheets pieced together and backed with cloth. Maps is severely browned and somewhat fragile.",
+    "\"Avertissement -- Le plan en perspective de la ville de Paris, gravé en vingt planches, se trouvant, lorsqu'elles sont rassemblées, d'une trop grande étendue pour être aisement conservé dans les biblioteques, et ces vingt planches pouvant êtrereliées en volume...\"--leaf [1].",
+    "Bird's-eye view of Paris (walled) and surrounding faubourgs.",
+    "\"Achevé de graveur en 1739.\"",
+    "Oriented with north toward the lower left.",
+    "Originally printed on 20 sheets.",
+    "Includes text in cartouche."
+  ],
+  "publisher": "[Paris? : s.n., 1739]",
+  "subject": "Paris (France)—Aerial views—Early works to 1800",
+  "title_sort": "Plan de Paris : commencé de l'année 1734 / dessiné et gravé sous les ordres de Messire Michel Etienne Turgot, Marquis de Sousmons ... [et al.] ; levé et dessiné par Louis Bretez ; gravé par Claude Lucas ; et écrit par Aubin.",
+  "alternative": "Plans de Paris",
+  "cartographic_scale": "Not drawn to scale.",
+  "spatial": "France",
+  "contributor": [
+    "Turgot, Michel-Etienne, 1690-1751",
+    "Lucas, Claude, active 18th century",
+    "Aubin"
+  ],
+  "author": "Bretez, Louis, -1738",
+  "created": "1739-01-01T00:00:00Z",
+  "date": "1739",
+  "identifier": [
+    "ark:/88435/ww72bb58v"
+  ],
+  "location": [
+    "SAX Oversize G5834.P3A3 1739 .B6e",
+    "SAX Electronic Resource",
+    "SAX D Alcove 04-05 [atop]",
+    "ELF1 Oversize G5834.P3A3 1739 .B6e",
+    "ELF1 Electronic Resource",
+    "ELF1 D Alcove 04-05 [atop]",
+    "MAP Oversize G5834.P3A3 1739 .B6e",
+    "MAP Electronic Resource",
+    "MAP D Alcove 04-05 [atop]"
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "No Known Copyright"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/89cbdc78-011d-40c2-9324-73ff53511a3e",
+      "@type": "pcdm:Collection",
+      "title": "Marquand Library Selections"
+    }
+  ]
+}

@@ -1,1 +1,315 @@
-{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Manifest","@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest","label":["Pensylvania, Nova Jersey et Nova York cum regionibus ad fluvium Delaware in America sitis"],"description":["Relief shown pictorially.","Engraved by: Tob. Conr. Lotter.","Shows middle Atlantic colonies and badly distorted New England.","Probably issued in: Atlas novus, sive, Tabulae geographicae totius orbis."],"viewingHint":"individuals","metadata":[{"label":"Author","value":["Seutter, Matthaeus, 1678-1756"]},{"label":"Former Owner","value":["Fox, N. B.","Schmidt, Douglas M."]},{"label":"Title","value":[{"@value":"Pensylvania, Nova Jersey et Nova York cum regionibus ad fluvium Delaware in America sitis","@language":"lat"}]},{"label":"Type","value":["Maps"]},{"label":"Provenance","value":["Historic Maps copy 1 is from the estate of N. B. Fox, Princeton Class of 1899."]},{"label":"Contributor","value":["Lotter, Tobias Conrad, 1717-1777"]},{"label":"Creator","value":["Seutter, Matthaeus, 1678-1756"]},{"label":"Date","value":["1760"]},{"label":"Language","value":["Latin"]},{"label":"Publisher","value":["Augsburg : [s.n., ca. 1760]"]},{"label":"Subject","value":["Middle Atlantic States—Maps—Early works to 1800"]},{"label":"Cartographic Scale","value":["Scale [ca. 1:1,050,000]."]},{"label":"Source Acquisition","value":["Historic Maps copy 2 is gift of Douglas M. Schmidt, Princeton Class of 1981."]},{"label":"Source Metadata Identifier","value":["5939381"]},{"label":"Call Number","value":["HMC01.1308","Electronic Resource","HMC01.7031"]},{"label":"Imported Author","value":["Seutter, Matthaeus, 1678-1756"]},{"label":"Downloadable","value":["public"]},{"label":"Held By","value":["Princeton"]},{"label":"Spatial","value":["New Jersey","Pennsylvania","New York"]},{"label":"Ark","value":["http://arks.princeton.edu/ark:/99999/fk4g74ng7r"]},{"label":"Gbl Suppressed Override","value":["True"]},{"label":"Rendered Coverage","value":["\u003ctr\u003e\u003cth\u003e\u003c/th\u003e\n\u003ctd id='accordion'\u003e\u003cul class='tabular'\u003e\u003cdiv id='bbox' data-coverage='[\"northlimit=044.000136; eastlimit=-069.850163; southlimit=038.583505; westlimit=-077.725128; units=degrees; projection=EPSG:4326\"]' data-read-only='true' class='collapse in'\u003e\u003c/div\u003e\n      \u003cdiv class=\"row bbox-inputs\"\u003e\n        \u003cdiv class=\"col-md-3\"\u003e\n          \u003cdiv class=\"input-group\"\u003e\n            \u003cspan class=\"input-group-addon\"\u003e\u003cdiv\u003eNorth\u003c/div\u003e\u003c/span\u003e\n            \u003cinput readonly id=\"bbox-north\" type=\"text\" class=\"form-control bbox-input\"\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"col-md-3\"\u003e\n          \u003cdiv class=\"input-group\"\u003e\n            \u003cspan class=\"input-group-addon\"\u003e\u003cdiv\u003eEast\u003c/div\u003e\u003c/span\u003e\n            \u003cinput readonly id=\"bbox-east\" type=\"text\" class=\"form-control bbox-input\"\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"col-md-3\"\u003e\n          \u003cdiv class=\"input-group\"\u003e\n            \u003cspan class=\"input-group-addon\"\u003e\u003cdiv\u003eSouth\u003c/div\u003e\u003c/span\u003e\n            \u003cinput readonly id=\"bbox-south\" type=\"text\" class=\"form-control bbox-input\"\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"col-md-3\"\u003e\n          \u003cdiv class=\"input-group\"\u003e\n            \u003cspan class=\"input-group-addon\"\u003e\u003cdiv\u003eWest\u003c/div\u003e\u003c/span\u003e\n            \u003cinput readonly id=\"bbox-west\" type=\"text\" class=\"form-control bbox-input\"\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n      \u003c/div\u003e\n    \n      \u003ca data-toggle='collapse' data-parent='accordion' href='#bbox' class='btn btn-default'\u003e\n       Toggle Map\u003c/a\u003e\n      \u003c/ul\u003e\u003c/td\u003e\u003c/tr\u003e"]},{"label":"Member Of Collections","value":["reproduce recent items with missing thumbnail"]}],"sequences":[{"@type":"sc:Sequence","@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/sequence/normal","rendering":[{"@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/pdf","label":"Download as PDF","format":"application/pdf"}],"canvases":[{"@type":"sc:Canvas","@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/6cde3535-8474-4d7a-ba33-4542ae1c1f06","label":"PUmap_23963.tif","rendering":[{"@id":"https://figgy.princeton.edu/downloads/6cde3535-8474-4d7a-ba33-4542ae1c1f06/file/eebf9477-0059-493c-908b-28ce156cfb4e","label":"Download the original file","format":"image/tiff"}],"width":7872,"height":9215,"images":[{"@type":"oa:Annotation","motivation":"sc:painting","resource":{"@type":"dctypes:Image","@id":"https://iiif.princeton.edu/figgy/7d%2F0e%2F7c%2F7d0e7c811322400d84b0731337bcfa9f%2Fintermediate_file.jp2/full/1000,/0/default.jpg","height":9215,"width":7872,"format":"image/jpeg","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://iiif.princeton.edu/figgy/7d%2F0e%2F7c%2F7d0e7c811322400d84b0731337bcfa9f%2Fintermediate_file.jp2","profile":"http://iiif.io/api/image/2/level2.json"}},"@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/image/6cde3535-8474-4d7a-ba33-4542ae1c1f06","on":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/6cde3535-8474-4d7a-ba33-4542ae1c1f06"}]},{"@type":"sc:Canvas","@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/d6425cf7-a8a2-4a03-8673-0b2ebe561fe7","label":"PUmap_536.tif","rendering":[{"@id":"https://figgy.princeton.edu/downloads/d6425cf7-a8a2-4a03-8673-0b2ebe561fe7/file/a2cda6d5-ab34-4d4a-9ec9-7a586106de4b","label":"Download the original file","format":"image/tiff"}],"width":6899,"height":7711,"images":[{"@type":"oa:Annotation","motivation":"sc:painting","resource":{"@type":"dctypes:Image","@id":"https://iiif.princeton.edu/figgy/54%2F3a%2F44%2F543a44592c4b4ec2be5c1491b6938fd3%2Fintermediate_file.jp2/full/1000,/0/default.jpg","height":7711,"width":6899,"format":"image/jpeg","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://iiif.princeton.edu/figgy/54%2F3a%2F44%2F543a44592c4b4ec2be5c1491b6938fd3%2Fintermediate_file.jp2","profile":"http://iiif.io/api/image/2/level2.json"}},"@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/image/d6425cf7-a8a2-4a03-8673-0b2ebe561fe7","on":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/d6425cf7-a8a2-4a03-8673-0b2ebe561fe7"}]},{"@type":"sc:Canvas","@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/7328eaa4-cb00-433c-a101-48afdc13ed0e","label":"PUmap_536.tif","rendering":[{"@id":"https://figgy.princeton.edu/downloads/7328eaa4-cb00-433c-a101-48afdc13ed0e/file/faa9db9c-e88d-4735-90e6-c5889332a95c","label":"Download the original file","format":"image/tiff"}],"width":6899,"height":7711,"images":[{"@type":"oa:Annotation","motivation":"sc:painting","resource":{"@type":"dctypes:Image","@id":"https://iiif.princeton.edu/figgy_staging/98%2F89%2F64%2F98896404a99b48cfb7134fb210c131bc%2Fintermediate_file.jp2/full/1000,/0/default.jpg","height":7711,"width":6899,"format":"image/jpeg","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://iiif.princeton.edu/figgy_staging/98%2F89%2F64%2F98896404a99b48cfb7134fb210c131bc%2Fintermediate_file.jp2","profile":"http://iiif.io/api/image/2/level2.json"}},"@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/image/7328eaa4-cb00-433c-a101-48afdc13ed0e","on":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/7328eaa4-cb00-433c-a101-48afdc13ed0e"}]}],"viewingHint":"individuals"}],"structures":[{"@type":"sc:Range","@id":"https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/range/r177b09ca-a454-42cb-92a2-811c68db4f2f","label":"Logical","viewingHint":"top","ranges":[],"canvases":[]}],"seeAlso":[{"@id":"https://figgy.princeton.edu/catalog/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f.jsonld","format":"application/ld+json"},{"@id":"https://bibdata.princeton.edu/bibliographic/5939381","format":"text/xml"}],"license":"http://rightsstatements.org/vocab/NKC/1.0/","thumbnail":{"@id":"https://iiif.princeton.edu/figgy_staging/7d%2F0e%2F7c%2F7d0e7c811322400d84b0731337bcfa9f%2Fintermediate_file.jp2/full/!200,150/0/default.jpg","service":{"@context":"http://iiiif.io/api/image/2/context.json","@id":"https://iiif.princeton.edu/figgy_staging/7d%2F0e%2F7c%2F7d0e7c811322400d84b0731337bcfa9f%2Fintermediate_file.jp2","profile":"http;//iiiif.io/api/image/2/level2.json"}},"rendering":{"@id":"http://arks.princeton.edu/ark:/99999/fk4g74ng7r","format":"text/html"},"logo":"https://figgy.princeton.edu/assets/pul_logo_icon-7b5f9384dfa5ca04f4851c6ee9e44e2d6953e55f893472a3e205e1591d3b2ca6.png"}
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@type": "sc:Manifest",
+  "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest",
+  "label": [
+    "Pensylvania, Nova Jersey et Nova York cum regionibus ad fluvium Delaware in America sitis"
+  ],
+  "description": [
+    "Relief shown pictorially.",
+    "Engraved by: Tob. Conr. Lotter.",
+    "Shows middle Atlantic colonies and badly distorted New England.",
+    "Probably issued in: Atlas novus, sive, Tabulae geographicae totius orbis."
+  ],
+  "viewingHint": "individuals",
+  "metadata": [
+    {
+      "label": "Author",
+      "value": [
+        "Seutter, Matthaeus, 1678-1756"
+      ]
+    },
+    {
+      "label": "Former Owner",
+      "value": [
+        "Fox, N. B.",
+        "Schmidt, Douglas M."
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@value": "Pensylvania, Nova Jersey et Nova York cum regionibus ad fluvium Delaware in America sitis",
+          "@language": "lat"
+        }
+      ]
+    },
+    {
+      "label": "Type",
+      "value": [
+        "Maps"
+      ]
+    },
+    {
+      "label": "Provenance",
+      "value": [
+        "Historic Maps copy 1 is from the estate of N. B. Fox, Princeton Class of 1899."
+      ]
+    },
+    {
+      "label": "Contributor",
+      "value": [
+        "Lotter, Tobias Conrad, 1717-1777"
+      ]
+    },
+    {
+      "label": "Creator",
+      "value": [
+        "Seutter, Matthaeus, 1678-1756"
+      ]
+    },
+    {
+      "label": "Date",
+      "value": [
+        "1760"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "Latin"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "Augsburg : [s.n., ca. 1760]"
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Middle Atlantic States—Maps—Early works to 1800"
+      ]
+    },
+    {
+      "label": "Cartographic Scale",
+      "value": [
+        "Scale [ca. 1:1,050,000]."
+      ]
+    },
+    {
+      "label": "Source Acquisition",
+      "value": [
+        "Historic Maps copy 2 is gift of Douglas M. Schmidt, Princeton Class of 1981."
+      ]
+    },
+    {
+      "label": "Source Metadata Identifier",
+      "value": [
+        "5939381"
+      ]
+    },
+    {
+      "label": "Call Number",
+      "value": [
+        "HMC01.1308",
+        "Electronic Resource",
+        "HMC01.7031"
+      ]
+    },
+    {
+      "label": "Imported Author",
+      "value": [
+        "Seutter, Matthaeus, 1678-1756"
+      ]
+    },
+    {
+      "label": "Downloadable",
+      "value": [
+        "public"
+      ]
+    },
+    {
+      "label": "Held By",
+      "value": [
+        "Princeton"
+      ]
+    },
+    {
+      "label": "Spatial",
+      "value": [
+        "New Jersey",
+        "Pennsylvania",
+        "New York"
+      ]
+    },
+    {
+      "label": "Ark",
+      "value": [
+        "http://arks.princeton.edu/ark:/99999/fk4g74ng7r"
+      ]
+    },
+    {
+      "label": "Gbl Suppressed Override",
+      "value": [
+        "True"
+      ]
+    },
+    {
+      "label": "Rendered Coverage",
+      "value": [
+        "<tr><th></th>\n<td id='accordion'><ul class='tabular'><div id='bbox' data-coverage='[\"northlimit=044.000136; eastlimit=-069.850163; southlimit=038.583505; westlimit=-077.725128; units=degrees; projection=EPSG:4326\"]' data-read-only='true' class='collapse in'></div>\n      <div class=\"row bbox-inputs\">\n        <div class=\"col-md-3\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><div>North</div></span>\n            <input readonly id=\"bbox-north\" type=\"text\" class=\"form-control bbox-input\">\n          </div>\n        </div>\n        <div class=\"col-md-3\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><div>East</div></span>\n            <input readonly id=\"bbox-east\" type=\"text\" class=\"form-control bbox-input\">\n          </div>\n        </div>\n        <div class=\"col-md-3\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><div>South</div></span>\n            <input readonly id=\"bbox-south\" type=\"text\" class=\"form-control bbox-input\">\n          </div>\n        </div>\n        <div class=\"col-md-3\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><div>West</div></span>\n            <input readonly id=\"bbox-west\" type=\"text\" class=\"form-control bbox-input\">\n          </div>\n        </div>\n      </div>\n    \n      <a data-toggle='collapse' data-parent='accordion' href='#bbox' class='btn btn-default'>\n       Toggle Map</a>\n      </ul></td></tr>"
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "reproduce recent items with missing thumbnail"
+      ]
+    }
+  ],
+  "sequences": [
+    {
+      "@type": "sc:Sequence",
+      "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/sequence/normal",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/pdf",
+          "label": "Download as PDF",
+          "format": "application/pdf"
+        }
+      ],
+      "canvases": [
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/6cde3535-8474-4d7a-ba33-4542ae1c1f06",
+          "label": "PUmap_23963.tif",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/6cde3535-8474-4d7a-ba33-4542ae1c1f06/file/eebf9477-0059-493c-908b-28ce156cfb4e",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 7872,
+          "height": 9215,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif.princeton.edu/figgy/7d%2F0e%2F7c%2F7d0e7c811322400d84b0731337bcfa9f%2Fintermediate_file.jp2/full/1000,/0/default.jpg",
+                "height": 9215,
+                "width": 7872,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.princeton.edu/figgy/7d%2F0e%2F7c%2F7d0e7c811322400d84b0731337bcfa9f%2Fintermediate_file.jp2",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/image/6cde3535-8474-4d7a-ba33-4542ae1c1f06",
+              "on": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/6cde3535-8474-4d7a-ba33-4542ae1c1f06"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/d6425cf7-a8a2-4a03-8673-0b2ebe561fe7",
+          "label": "PUmap_536.tif",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/d6425cf7-a8a2-4a03-8673-0b2ebe561fe7/file/a2cda6d5-ab34-4d4a-9ec9-7a586106de4b",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 6899,
+          "height": 7711,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif.princeton.edu/figgy/54%2F3a%2F44%2F543a44592c4b4ec2be5c1491b6938fd3%2Fintermediate_file.jp2/full/1000,/0/default.jpg",
+                "height": 7711,
+                "width": 6899,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.princeton.edu/figgy/54%2F3a%2F44%2F543a44592c4b4ec2be5c1491b6938fd3%2Fintermediate_file.jp2",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/image/d6425cf7-a8a2-4a03-8673-0b2ebe561fe7",
+              "on": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/d6425cf7-a8a2-4a03-8673-0b2ebe561fe7"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/7328eaa4-cb00-433c-a101-48afdc13ed0e",
+          "label": "PUmap_536.tif",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/7328eaa4-cb00-433c-a101-48afdc13ed0e/file/faa9db9c-e88d-4735-90e6-c5889332a95c",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 6899,
+          "height": 7711,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif.princeton.edu/figgy_staging/98%2F89%2F64%2F98896404a99b48cfb7134fb210c131bc%2Fintermediate_file.jp2/full/1000,/0/default.jpg",
+                "height": 7711,
+                "width": 6899,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.princeton.edu/figgy_staging/98%2F89%2F64%2F98896404a99b48cfb7134fb210c131bc%2Fintermediate_file.jp2",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/image/7328eaa4-cb00-433c-a101-48afdc13ed0e",
+              "on": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/canvas/7328eaa4-cb00-433c-a101-48afdc13ed0e"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@type": "sc:Range",
+      "@id": "https://figgy.princeton.edu/concern/scanned_maps/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f/manifest/range/r177b09ca-a454-42cb-92a2-811c68db4f2f",
+      "label": "Logical",
+      "viewingHint": "top",
+      "ranges": [],
+      "canvases": []
+    }
+  ],
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/fffdaa09-b0c6-4ba3-8fe5-de6b13bd3d5f.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://bibdata.princeton.edu/bibliographic/5939381",
+      "format": "text/xml"
+    }
+  ],
+  "license": "http://rightsstatements.org/vocab/NKC/1.0/",
+  "thumbnail": {
+    "@id": "https://iiif.princeton.edu/figgy_staging/7d%2F0e%2F7c%2F7d0e7c811322400d84b0731337bcfa9f%2Fintermediate_file.jp2/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiiif.io/api/image/2/context.json",
+      "@id": "https://iiif.princeton.edu/figgy_staging/7d%2F0e%2F7c%2F7d0e7c811322400d84b0731337bcfa9f%2Fintermediate_file.jp2",
+      "profile": "http;//iiiif.io/api/image/2/level2.json"
+    }
+  },
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/99999/fk4g74ng7r",
+    "format": "text/html"
+  },
+  "logo": "https://figgy.princeton.edu/assets/pul_logo_icon-7b5f9384dfa5ca04f4851c6ee9e44e2d6953e55f893472a3e205e1591d3b2ca6.png"
+}

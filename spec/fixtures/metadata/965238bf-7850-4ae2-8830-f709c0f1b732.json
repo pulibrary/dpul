@@ -1,1 +1,49 @@
-{"@context":"https://bibdata.princeton.edu/context.json","@id":"https://figgy.princeton.edu/catalog/965238bf-7850-4ae2-8830-f709c0f1b732","title":[{"@value":"Christopher and his kind, 1929-1939","@language":"eng"}],"language":"eng","creator":"Isherwood, Christopher, 1904-1986","call_number":"PR6017.S5 Z498","extent":"339 p. ; 22 cm.","edition":"1st ed.","format":"Book","type":"Biography","publisher":"New York : Farrar, Straus Giroux, 1976.","subject":["Isherwood, Christopher, 1904-1986","Authors, English—20th century—Biography"],"title_sort":"Christopher and his kind, 1929-1939 / Christopher Isherwood.","donor":["Copland, Aaron, 1900-1990"],"author":"Isherwood, Christopher, 1904-1986","created":"1976-01-01T00:00:00Z","date":"1976","location":["F PR6017.S5 Z498"],"identifier":["ark:/99999/fk46x0mr6t"],"edm_rights":{"@id":"http://rightsstatements.org/vocab/NKC/1.0/","@type":"dcterms:RightsStatement","pref_label":"No Known Copyright"},"memberOf":[{"@id":"https://figgy.princeton.edu/catalog/dbc0287e-c524-47cd-a37c-24ec733e05e7","@type":"pcdm:Collection","title":"reproduce recent items with missing thumbnail"}],"system_created_at":"1975-10-03T19:05:41Z","system_updated_at":"1975-10-04T14:52:31Z"}
+{
+  "@context": "https://bibdata.princeton.edu/context.json",
+  "@id": "https://figgy.princeton.edu/catalog/965238bf-7850-4ae2-8830-f709c0f1b732",
+  "title": [
+    {
+      "@value": "Christopher and his kind, 1929-1939",
+      "@language": "eng"
+    }
+  ],
+  "language": "eng",
+  "creator": "Isherwood, Christopher, 1904-1986",
+  "call_number": "PR6017.S5 Z498",
+  "extent": "339 p. ; 22 cm.",
+  "edition": "1st ed.",
+  "format": "Book",
+  "type": "Biography",
+  "publisher": "New York : Farrar, Straus Giroux, 1976.",
+  "subject": [
+    "Isherwood, Christopher, 1904-1986",
+    "Authors, English—20th century—Biography"
+  ],
+  "title_sort": "Christopher and his kind, 1929-1939 / Christopher Isherwood.",
+  "donor": [
+    "Copland, Aaron, 1900-1990"
+  ],
+  "author": "Isherwood, Christopher, 1904-1986",
+  "created": "1976-01-01T00:00:00Z",
+  "date": "1976",
+  "location": [
+    "F PR6017.S5 Z498"
+  ],
+  "identifier": [
+    "ark:/99999/fk46x0mr6t"
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "No Known Copyright"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/dbc0287e-c524-47cd-a37c-24ec733e05e7",
+      "@type": "pcdm:Collection",
+      "title": "reproduce recent items with missing thumbnail"
+    }
+  ],
+  "system_created_at": "1975-10-03T19:05:41Z",
+  "system_updated_at": "1975-10-04T14:52:31Z"
+}

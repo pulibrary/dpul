@@ -1,1 +1,18 @@
-{"@context":"https://bibdata.princeton.edu/context.json","@id":"https://figgy.princeton.edu/catalog/c7f0bb99-3721-4171-8a84-0256941e8298","identifier":["ark:/88435/x920g185v"],"edm_rights":{"@id":"http://rightsstatements.org/vocab/NKC/1.0/","@type":"dcterms:RightsStatement","pref_label":"No Known Copyright"},"title":[{"@value":"Contents of All Issues","@language":"eng"}]}
+{
+  "@context": "https://bibdata.princeton.edu/context.json",
+  "@id": "https://figgy.princeton.edu/catalog/c7f0bb99-3721-4171-8a84-0256941e8298",
+  "identifier": [
+    "ark:/88435/x920g185v"
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "No Known Copyright"
+  },
+  "title": [
+    {
+      "@value": "Contents of All Issues",
+      "@language": "eng"
+    }
+  ]
+}
