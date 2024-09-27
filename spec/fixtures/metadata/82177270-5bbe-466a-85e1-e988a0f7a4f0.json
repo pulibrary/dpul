@@ -1,1 +1,28 @@
-{"@context":"https://bibdata.princeton.edu/context.json","@id":"https://figgy.princeton.edu/catalog/82177270-5bbe-466a-85e1-e988a0f7a4f0","identifier":["ark:/88435/9s161b35p"],"edm_rights":{"@id":"http://rightsstatements.org/vocab/InC-EDU/1.0/","@type":"dcterms:RightsStatement","pref_label":"In Copyright - Educational Use Permitted"},"memberOf":[{"@id":"https://figgy.princeton.edu/catalog/66b69907-a34e-4ef3-9d61-80c517ea5428","@type":"pcdm:Collection","title":"James V. Forrestal Papers MC051"}],"system_created_at":"2019-02-03T07:55:09Z","link_to_finding_aid":"https://findingaids.princeton.edu/collections/MC051/c05105","system_updated_at":"2020-04-30T23:05:52Z","title":[{"@value":"Volume X","@language":"eng"}]}
+{
+  "@context": "https://bibdata.princeton.edu/context.json",
+  "@id": "https://figgy.princeton.edu/catalog/82177270-5bbe-466a-85e1-e988a0f7a4f0",
+  "identifier": [
+    "ark:/88435/9s161b35p"
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "In Copyright - Educational Use Permitted"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/66b69907-a34e-4ef3-9d61-80c517ea5428",
+      "@type": "pcdm:Collection",
+      "title": "James V. Forrestal Papers MC051"
+    }
+  ],
+  "system_created_at": "2019-02-03T07:55:09Z",
+  "link_to_finding_aid": "https://findingaids.princeton.edu/collections/MC051/c05105",
+  "system_updated_at": "2020-04-30T23:05:52Z",
+  "title": [
+    {
+      "@value": "Volume X",
+      "@language": "eng"
+    }
+  ]
+}

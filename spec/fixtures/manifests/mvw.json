@@ -1,42 +1,42 @@
-{  
-  "@context":"http://iiif.io/api/presentation/2/context.json",
-  "@id":"https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest",
-  "@type":"sc:Collection",
-  "label":[  
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest",
+  "@type": "sc:Collection",
+  "label": [
     "MVW",
     "Second Title"
   ],
-  "viewingHint":"multi-part",
-  "service":{  
-    "@context":"http://iiif.io/api/auth/0/context.json",
-    "@id":"https://hydra-dev.princeton.edu/users/auth/cas",
-    "label":"Login to Figgy using CAS",
-    "profile":"http://iiif.io/api/auth/0/login",
-    "service":{  
-      "hsh":null
+  "viewingHint": "multi-part",
+  "service": {
+    "@context": "http://iiif.io/api/auth/0/context.json",
+    "@id": "https://hydra-dev.princeton.edu/users/auth/cas",
+    "label": "Login to Figgy using CAS",
+    "profile": "http://iiif.io/api/auth/0/login",
+    "service": {
+      "hsh": null
     }
   },
-  "manifests":[  
-    {  
-      "@id":"https://hydra-dev.princeton.edu/concern/scanned_resources/k35694439/manifest",
-      "@type":"sc:Manifest",
-      "label":"SR1",
-      "viewingHint":"individuals",
-      "viewingDirection":"left-to-right"
+  "manifests": [
+    {
+      "@id": "https://hydra-dev.princeton.edu/concern/scanned_resources/k35694439/manifest",
+      "@type": "sc:Manifest",
+      "label": "SR1",
+      "viewingHint": "individuals",
+      "viewingDirection": "left-to-right"
     }
   ],
-  "metadata":[  
-    {  
-      "label":"Identifier",
-      "value":"ark:/99999/fk44q84z58"
+  "metadata": [
+    {
+      "label": "Identifier",
+      "value": "ark:/99999/fk44q84z58"
     }
   ],
-  "seeAlso":{  
-    "@id":"https://figgy.princeton.edu/catalog/12345678.jsonld",
-    "format":"application/ld+json"
+  "seeAlso": {
+    "@id": "https://figgy.princeton.edu/catalog/12345678.jsonld",
+    "format": "application/ld+json"
   },
-  "rendering":{  
-    "@id":"http://arks.princeton.edu/ark:/99999/fk44q84z58",
-    "format":"text/html"
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/99999/fk44q84z58",
+    "format": "text/html"
   }
 }

@@ -1,58 +1,58 @@
 {
-    "@context": "https://bibdata.princeton.edu/context.json",
-    "@id": "https://figgy-staging.princeton.edu/catalog/ea3a706e-dd01-478c-a428-2ef99762e392",
-    "title": [
-        {
-            "@value": "Concert, 2001, October 19 and 20",
-            "@language": "und"
-        }
-    ],
-    "language": "und",
-    "creator": "Princeton University. Orchestra",
-    "call_number": [
-        "DAT- 2001-10-19",
-        "DAT- 2001-10-20"
-    ],
-    "extent": "1 sound cassette.",
-    "format": "Audio",
-    "description": [
-        "Digital Audio Tape (DAT).",
-        "A complete program is available in Mendel Music Library."
-    ],
-    "publisher": "2001.",
-    "title_sort": "[Concert, 2001, October 19 and 20] [sound recording].",
-    "contents": "Overture to Hansel and Gretel (1893) / E. Humperdinck -- Symphonic dances (1940) / S. Rachmaninoff -- Appalachian spring (1943) / A. Copland.",
-    "contributor": [
-        "Friends of Music at Princeton"
-    ],
-    "author": "Princeton University. Orchestra",
-    "created": "2001-01-01T00:00:00Z",
-    "date": "2001",
-    "location": [
-        "RCPPK DAT- 2001-10-19",
-        "RCPPK DAT- 2001-10-20"
-    ],
-    "identifier": [
-        "ark:/99999/fk4x36481t"
-    ],
-    "edm_rights": {
-        "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
-        "@type": "dcterms:RightsStatement",
-        "pref_label": "No Known Copyright"
-    },
-    "memberOf": [
-        {
-            "@id": "https://figgy-staging.princeton.edu/catalog/35a0bf8c-020a-428f-b9dc-c6748498ebc1",
-            "@type": "pcdm:Collection",
-            "title": "Performance Ensembles"
-        }
-    ],
-    "electronic_locations": [
-      {
-        "@id": "http://lib-dbserver.princeton.edu/music/programs/2015-04-24-25.pdf",
-        "label": "Program."
-      }
-    ],
-    "system_created_at": "2020-02-06T00:02:47Z",
-    "system_updated_at": "2020-02-07T18:31:35Z"
+  "@context": "https://bibdata.princeton.edu/context.json",
+  "@id": "https://figgy-staging.princeton.edu/catalog/ea3a706e-dd01-478c-a428-2ef99762e392",
+  "title": [
+    {
+      "@value": "Concert, 2001, October 19 and 20",
+      "@language": "und"
+    }
+  ],
+  "language": "und",
+  "creator": "Princeton University. Orchestra",
+  "call_number": [
+    "DAT- 2001-10-19",
+    "DAT- 2001-10-20"
+  ],
+  "extent": "1 sound cassette.",
+  "format": "Audio",
+  "description": [
+    "Digital Audio Tape (DAT).",
+    "A complete program is available in Mendel Music Library."
+  ],
+  "publisher": "2001.",
+  "title_sort": "[Concert, 2001, October 19 and 20] [sound recording].",
+  "contents": "Overture to Hansel and Gretel (1893) / E. Humperdinck -- Symphonic dances (1940) / S. Rachmaninoff -- Appalachian spring (1943) / A. Copland.",
+  "contributor": [
+    "Friends of Music at Princeton"
+  ],
+  "author": "Princeton University. Orchestra",
+  "created": "2001-01-01T00:00:00Z",
+  "date": "2001",
+  "location": [
+    "RCPPK DAT- 2001-10-19",
+    "RCPPK DAT- 2001-10-20"
+  ],
+  "identifier": [
+    "ark:/99999/fk4x36481t"
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "No Known Copyright"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy-staging.princeton.edu/catalog/35a0bf8c-020a-428f-b9dc-c6748498ebc1",
+      "@type": "pcdm:Collection",
+      "title": "Performance Ensembles"
+    }
+  ],
+  "electronic_locations": [
+    {
+      "@id": "http://lib-dbserver.princeton.edu/music/programs/2015-04-24-25.pdf",
+      "label": "Program."
+    }
+  ],
+  "system_created_at": "2020-02-06T00:02:47Z",
+  "system_updated_at": "2020-02-07T18:31:35Z"
 }
