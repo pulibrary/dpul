@@ -1,0 +1,2481 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@type": "sc:Manifest",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest",
+  "label": [
+    "L'autre selon Malebranche."
+  ],
+  "description": [
+    "Manuscript lecture notes for 2 seminar sessions by Jacques Derrida, including corrections.",
+    "Material may belong with the 1961-1962 \"L'Idée\" or with the undated \"L'Experience de la liberté selon Malebranche.\" Probably given at Lycée le Mans or the Sorbonne.",
+    "These seminar materials form part of the Jacques Derrida papers, physically held by Special Collections and Archives, The UC Irvine Libraries. Princeton University Library holds the exclusive rights to display the digital surrogates online."
+  ],
+  "viewingHint": "individuals",
+  "viewingDirection": "left-to-right",
+  "metadata": [
+    {
+      "label": "Author",
+      "value": [
+        "Derrida, Jacques"
+      ]
+    },
+    {
+      "label": "Host Institution",
+      "value": [
+        "Université de Paris"
+      ]
+    },
+    {
+      "label": "Alternative",
+      "value": [
+        "Jacques Derrida seminar on \"L'autre selon Malebranche\"",
+        "\"L'Autre selon Malebranche,\" 2 séances"
+      ]
+    },
+    {
+      "label": "Extent",
+      "value": [
+        "1 online resource."
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "<a href='http://arks.princeton.edu/ark:/88435/wh2471367' alt='Identifier'>http://arks.princeton.edu/ark:/88435/wh2471367</a>"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@language": "fr",
+          "@value": "L'autre selon Malebranche."
+        }
+      ]
+    },
+    {
+      "label": "Content Type",
+      "value": [
+        "Manuscript",
+        "Book"
+      ]
+    },
+    {
+      "label": "Creator",
+      "value": [
+        "Derrida, Jacques"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "French"
+      ]
+    },
+    {
+      "label": "Local Identifier",
+      "value": [
+        "msc001_b04_f01"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        " [dates not identified]"
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "manuscripts (documents)"
+      ]
+    },
+    {
+      "label": "Electronic Locations",
+      "value": [
+        {
+          "id": null,
+          "internal_resource": "LabeledURI",
+          "created_at": null,
+          "updated_at": null,
+          "new_record": true,
+          "uri": {
+            "@id": "https://catalog.princeton.edu/catalog/#view"
+          },
+          "label": "Digital content"
+        },
+        {
+          "id": null,
+          "internal_resource": "LabeledURI",
+          "created_at": null,
+          "updated_at": null,
+          "new_record": true,
+          "uri": {
+            "@id": "https://oac.cdlib.org/findaid/ark:/13030/tf3q2nb26c/dsc/#aspace_ref144_j3m"
+          },
+          "label": [
+            "oac.cdlib.org",
+            "UCI finding aid description of original"
+          ]
+        },
+        {
+          "id": null,
+          "internal_resource": "LabeledURI",
+          "created_at": null,
+          "updated_at": null,
+          "new_record": true,
+          "uri": {
+            "@id": "iiif_manifest_paths"
+          },
+          "label": [
+            "http://arks.princeton.edu/ark:/88435/wh2471367",
+            "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Claimed By",
+      "value": [
+        ""
+      ]
+    },
+    {
+      "label": "Embargo Date",
+      "value": [
+        ""
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Derrida Seminars"
+      ]
+    }
+  ],
+  "sequences": [
+    {
+      "@type": "sc:Sequence",
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/sequence/normal",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/7cf437d0-c864-4230-8e76-84d117c88763/pdf",
+          "label": "Download as PDF",
+          "format": "application/pdf"
+        }
+      ],
+      "canvases": [
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/f7c04a7d-ae05-467d-a1f7-fb24c99f4c08",
+          "label": "[image 1]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/f7c04a7d-ae05-467d-a1f7-fb24c99f4c08/file/93943417-9f2b-4008-b1a1-8eae6273b3d9",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 7557,
+          "height": 2854,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/f0%2F02%2Fb9%2Ff002b91c72a84282aa519539cf56f868%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 2854,
+                "width": 7557,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/f0%2F02%2Fb9%2Ff002b91c72a84282aa519539cf56f868%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/f7c04a7d-ae05-467d-a1f7-fb24c99f4c08",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/f7c04a7d-ae05-467d-a1f7-fb24c99f4c08"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/eb60a6f9-5ea5-4e76-97a4-811c87cf54e7",
+          "label": "[image 2]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/eb60a6f9-5ea5-4e76-97a4-811c87cf54e7/file/0a2d7f84-c81a-4f9d-9569-bdb71c8e923d",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5073,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/4a%2Fd9%2Fd7%2F4ad9d7d1fef54831a62cf5a0fa462c04%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5073,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/4a%2Fd9%2Fd7%2F4ad9d7d1fef54831a62cf5a0fa462c04%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/eb60a6f9-5ea5-4e76-97a4-811c87cf54e7",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/eb60a6f9-5ea5-4e76-97a4-811c87cf54e7"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/7b3ed0d4-ba83-43ac-aa1b-4130f7de873c",
+          "label": "[image 3]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/7b3ed0d4-ba83-43ac-aa1b-4130f7de873c/file/60d5f4ca-37c2-46d5-ba2c-d74444a8df73",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5084,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/f0%2Fbd%2F92%2Ff0bd92ef8c9b4c72b981318ef0f2a42e%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5084,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/f0%2Fbd%2F92%2Ff0bd92ef8c9b4c72b981318ef0f2a42e%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/7b3ed0d4-ba83-43ac-aa1b-4130f7de873c",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/7b3ed0d4-ba83-43ac-aa1b-4130f7de873c"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/aef6fc0b-e545-41d6-a337-58ba06b24c1e",
+          "label": "[image 4]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/aef6fc0b-e545-41d6-a337-58ba06b24c1e/file/d44b5eff-fcb7-45ce-b763-3af606e171aa",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5073,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/fe%2Fd3%2F70%2Ffed3704bdf9c4a67aa5496971dfc26d0%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5073,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/fe%2Fd3%2F70%2Ffed3704bdf9c4a67aa5496971dfc26d0%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/aef6fc0b-e545-41d6-a337-58ba06b24c1e",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/aef6fc0b-e545-41d6-a337-58ba06b24c1e"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/a79d1bd2-5f10-4031-a5d3-6ceb32d06075",
+          "label": "[image 5]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/a79d1bd2-5f10-4031-a5d3-6ceb32d06075/file/376eb7f0-bed4-470e-a1cc-54865e170be0",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5061,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/b7%2Fe5%2F30%2Fb7e53043974540148b893d7c1b624222%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5061,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/b7%2Fe5%2F30%2Fb7e53043974540148b893d7c1b624222%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/a79d1bd2-5f10-4031-a5d3-6ceb32d06075",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/a79d1bd2-5f10-4031-a5d3-6ceb32d06075"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/55bde9e4-b02c-4895-8b2b-d8c4de4ef802",
+          "label": "[image 6]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/55bde9e4-b02c-4895-8b2b-d8c4de4ef802/file/463c9274-9142-4e90-b6bf-21bfb2a1e03e",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5073,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/14%2F55%2F16%2F145516ef47d149808282c334041d183c%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5073,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/14%2F55%2F16%2F145516ef47d149808282c334041d183c%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/55bde9e4-b02c-4895-8b2b-d8c4de4ef802",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/55bde9e4-b02c-4895-8b2b-d8c4de4ef802"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/2c14468b-6def-4e34-9de4-42fd7c674520",
+          "label": "[image 7]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/2c14468b-6def-4e34-9de4-42fd7c674520/file/25b6156d-8cb4-45dc-9672-e3ed2e0a7897",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5073,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/27%2F25%2F60%2F27256084e3734563a7231a9da5d5ff42%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5073,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/27%2F25%2F60%2F27256084e3734563a7231a9da5d5ff42%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/2c14468b-6def-4e34-9de4-42fd7c674520",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/2c14468b-6def-4e34-9de4-42fd7c674520"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/6b06e28a-da6e-4685-9866-2f53d85b163e",
+          "label": "[image 8]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/6b06e28a-da6e-4685-9866-2f53d85b163e/file/43227586-2483-4527-97c5-ddeea386d10f",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5084,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/b8%2F5d%2F79%2Fb85d791d729348f7b88d0eb9f70f7693%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5084,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/b8%2F5d%2F79%2Fb85d791d729348f7b88d0eb9f70f7693%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/6b06e28a-da6e-4685-9866-2f53d85b163e",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/6b06e28a-da6e-4685-9866-2f53d85b163e"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/a0cfa658-6e65-450d-b270-ed1393611465",
+          "label": "[image 9]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/a0cfa658-6e65-450d-b270-ed1393611465/file/d34fec04-2c7e-44a6-864c-8f14ba6c4cf5",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5084,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/ae%2F55%2Fdd%2Fae55dd1fa27048d2a12c2c1d00b46a3e%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5084,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/ae%2F55%2Fdd%2Fae55dd1fa27048d2a12c2c1d00b46a3e%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/a0cfa658-6e65-450d-b270-ed1393611465",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/a0cfa658-6e65-450d-b270-ed1393611465"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/c939aea2-b59c-46bd-a22d-9a464a3588cd",
+          "label": "[image 10]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/c939aea2-b59c-46bd-a22d-9a464a3588cd/file/62b0d1a7-dd0d-4aff-9935-ed9bab004c13",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5071,
+          "height": 6467,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/db%2Fd9%2F27%2Fdbd92789f8504f3aaa2ebe2a845250ae%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6467,
+                "width": 5071,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/db%2Fd9%2F27%2Fdbd92789f8504f3aaa2ebe2a845250ae%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/c939aea2-b59c-46bd-a22d-9a464a3588cd",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/c939aea2-b59c-46bd-a22d-9a464a3588cd"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/2f86f865-7370-44f1-a3dc-cbee14ef10be",
+          "label": "[image 11]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/2f86f865-7370-44f1-a3dc-cbee14ef10be/file/5f84c65a-de21-40f9-adb6-f526f9221ba7",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/0d%2F46%2F36%2F0d4636ad1f52465e92905bc58eb3e292%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/0d%2F46%2F36%2F0d4636ad1f52465e92905bc58eb3e292%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/2f86f865-7370-44f1-a3dc-cbee14ef10be",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/2f86f865-7370-44f1-a3dc-cbee14ef10be"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/25ae9a32-b4c9-4af0-90cd-ed9f84eff19e",
+          "label": "[image 12]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/25ae9a32-b4c9-4af0-90cd-ed9f84eff19e/file/ba3f5ddc-ceae-438a-8de3-c0d528b96c74",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/ca%2F4e%2F0b%2Fca4e0b269e9440c39c0a8b505dae1d20%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/ca%2F4e%2F0b%2Fca4e0b269e9440c39c0a8b505dae1d20%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/25ae9a32-b4c9-4af0-90cd-ed9f84eff19e",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/25ae9a32-b4c9-4af0-90cd-ed9f84eff19e"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/d3d7d912-6105-4374-8ce6-56989685e351",
+          "label": "[image 13]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/d3d7d912-6105-4374-8ce6-56989685e351/file/111903df-cf29-49fe-af85-630492a1847b",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/2d%2Fed%2F50%2F2ded50f954844eaeb9ab64e4fa830a9d%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/2d%2Fed%2F50%2F2ded50f954844eaeb9ab64e4fa830a9d%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/d3d7d912-6105-4374-8ce6-56989685e351",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/d3d7d912-6105-4374-8ce6-56989685e351"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/f7a94ed4-7f0a-4486-bbd9-c9fcfb2a261b",
+          "label": "[image 14]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/f7a94ed4-7f0a-4486-bbd9-c9fcfb2a261b/file/ecd2c68a-f01d-47e4-bbcb-097a0a67f1e9",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/f4%2Ff7%2F27%2Ff4f727b6a9ac4659a141ce64bfb02d73%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/f4%2Ff7%2F27%2Ff4f727b6a9ac4659a141ce64bfb02d73%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/f7a94ed4-7f0a-4486-bbd9-c9fcfb2a261b",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/f7a94ed4-7f0a-4486-bbd9-c9fcfb2a261b"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/7aa24ac8-52cd-42f1-9534-a400f3fa1d51",
+          "label": "[image 15]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/7aa24ac8-52cd-42f1-9534-a400f3fa1d51/file/bd50319a-9737-4e3d-9662-f67bf89eeb21",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/27%2F07%2Fba%2F2707bad7899744a5895c2e7e4e8d7f28%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/27%2F07%2Fba%2F2707bad7899744a5895c2e7e4e8d7f28%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/7aa24ac8-52cd-42f1-9534-a400f3fa1d51",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/7aa24ac8-52cd-42f1-9534-a400f3fa1d51"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/73191993-d096-4dcb-8901-9c2155ba661b",
+          "label": "[image 16]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/73191993-d096-4dcb-8901-9c2155ba661b/file/7edcd5b6-54c9-4a19-9c63-32cd74c192f6",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/31%2F3c%2Fa5%2F313ca55cf8ac41a5ba193a0a44e9b762%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/31%2F3c%2Fa5%2F313ca55cf8ac41a5ba193a0a44e9b762%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/73191993-d096-4dcb-8901-9c2155ba661b",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/73191993-d096-4dcb-8901-9c2155ba661b"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/2f6514f2-b728-4f34-9aaf-a6b291f8180a",
+          "label": "[image 17]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/2f6514f2-b728-4f34-9aaf-a6b291f8180a/file/89db6fbd-f721-4547-aea8-f34e0e781f55",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5057,
+          "height": 6442,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/ef%2F02%2F01%2Fef0201d11eba4414a6309b5c13a0a40e%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6442,
+                "width": 5057,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/ef%2F02%2F01%2Fef0201d11eba4414a6309b5c13a0a40e%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/2f6514f2-b728-4f34-9aaf-a6b291f8180a",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/2f6514f2-b728-4f34-9aaf-a6b291f8180a"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/f4f44002-1882-418e-9d70-90b285c912e4",
+          "label": "[image 18]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/f4f44002-1882-418e-9d70-90b285c912e4/file/b278027e-f485-40fe-8118-21ad0d0d594d",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/80%2Fc6%2F60%2F80c6607895ad46c5b7e86aac81ebbd41%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/80%2Fc6%2F60%2F80c6607895ad46c5b7e86aac81ebbd41%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/f4f44002-1882-418e-9d70-90b285c912e4",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/f4f44002-1882-418e-9d70-90b285c912e4"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/85d8251e-8dd0-4da2-b6c6-628f5cdb28bd",
+          "label": "[image 19]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/85d8251e-8dd0-4da2-b6c6-628f5cdb28bd/file/1517a90d-37d8-4378-9389-6ee1f8abd871",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/0b%2F70%2Fa5%2F0b70a58447904b0d9571d918bb9ca489%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/0b%2F70%2Fa5%2F0b70a58447904b0d9571d918bb9ca489%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/85d8251e-8dd0-4da2-b6c6-628f5cdb28bd",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/85d8251e-8dd0-4da2-b6c6-628f5cdb28bd"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/40b3b591-6c13-456b-8124-cfb23efad7c2",
+          "label": "[image 20]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/40b3b591-6c13-456b-8124-cfb23efad7c2/file/3ff39d92-ebc1-4f6d-9b7c-256136903b82",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/45%2F0c%2Fd9%2F450cd95411f34853afc2e27d7d093b88%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/45%2F0c%2Fd9%2F450cd95411f34853afc2e27d7d093b88%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/40b3b591-6c13-456b-8124-cfb23efad7c2",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/40b3b591-6c13-456b-8124-cfb23efad7c2"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/3822a6ee-f26a-4c27-988c-dc03ded68cf3",
+          "label": "[image 21]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/3822a6ee-f26a-4c27-988c-dc03ded68cf3/file/fb1d190b-f4be-4b91-952c-aa53a8217d07",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/6f%2Ff0%2F60%2F6ff060b42fd548febf7313ce48bc19ac%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/6f%2Ff0%2F60%2F6ff060b42fd548febf7313ce48bc19ac%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/3822a6ee-f26a-4c27-988c-dc03ded68cf3",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/3822a6ee-f26a-4c27-988c-dc03ded68cf3"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/e186faf7-bab4-4480-bd0c-75fd690156c0",
+          "label": "[image 22]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/e186faf7-bab4-4480-bd0c-75fd690156c0/file/d38bb0ed-c8dc-46bc-b3e2-553fbb0a501a",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/65%2Fa5%2F2b%2F65a52bb08ad64abc8eb115b7c98d8558%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/65%2Fa5%2F2b%2F65a52bb08ad64abc8eb115b7c98d8558%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/e186faf7-bab4-4480-bd0c-75fd690156c0",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/e186faf7-bab4-4480-bd0c-75fd690156c0"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/78eda394-e30d-4f6c-a71b-305493780aa8",
+          "label": "[image 23]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/78eda394-e30d-4f6c-a71b-305493780aa8/file/bbc5dbbe-8d0d-4bc6-9292-76686cd01aa9",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/23%2F7a%2Fd3%2F237ad302cefd43a8983f7f266af49bd7%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/23%2F7a%2Fd3%2F237ad302cefd43a8983f7f266af49bd7%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/78eda394-e30d-4f6c-a71b-305493780aa8",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/78eda394-e30d-4f6c-a71b-305493780aa8"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/56aafadd-7161-4ded-8957-b49aca850502",
+          "label": "[image 24]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/56aafadd-7161-4ded-8957-b49aca850502/file/437530b5-1129-41e0-85d7-92dbd312fd3b",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/10%2Fdf%2F6a%2F10df6a1e64744b7e9349fc9413d8b6a2%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/10%2Fdf%2F6a%2F10df6a1e64744b7e9349fc9413d8b6a2%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/56aafadd-7161-4ded-8957-b49aca850502",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/56aafadd-7161-4ded-8957-b49aca850502"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/1046a329-0474-4f0f-9141-33069a4c7f17",
+          "label": "[image 25]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/1046a329-0474-4f0f-9141-33069a4c7f17/file/dced97f8-32f8-48cf-b22e-a9e2750eec60",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/59%2F91%2F24%2F599124a0f53c493db47806b03d4f83f1%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/59%2F91%2F24%2F599124a0f53c493db47806b03d4f83f1%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/1046a329-0474-4f0f-9141-33069a4c7f17",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/1046a329-0474-4f0f-9141-33069a4c7f17"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/dce8aeae-e4b3-4995-a002-c8ec6b130987",
+          "label": "[image 26]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/dce8aeae-e4b3-4995-a002-c8ec6b130987/file/64f26431-e933-48ec-90a9-98b3c839db68",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6456,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/4a%2Fd2%2F22%2F4ad2226ecf1d4e608c6554f93c88bbef%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6456,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/4a%2Fd2%2F22%2F4ad2226ecf1d4e608c6554f93c88bbef%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/dce8aeae-e4b3-4995-a002-c8ec6b130987",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/dce8aeae-e4b3-4995-a002-c8ec6b130987"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/b7ab2a8c-7131-4019-a894-9b9d164294f5",
+          "label": "[image 27]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/b7ab2a8c-7131-4019-a894-9b9d164294f5/file/042b850b-fd90-42d9-903d-462d1b03b728",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/2b%2F97%2F6f%2F2b976f74a0fb4a1e8cc96c46962b9f93%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/2b%2F97%2F6f%2F2b976f74a0fb4a1e8cc96c46962b9f93%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/b7ab2a8c-7131-4019-a894-9b9d164294f5",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/b7ab2a8c-7131-4019-a894-9b9d164294f5"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/fabdf3b3-01c2-4c13-a349-86901cfc9d38",
+          "label": "[image 28]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/fabdf3b3-01c2-4c13-a349-86901cfc9d38/file/95895e62-c58f-4164-9a87-915993fa89cd",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/3e%2F5e%2F56%2F3e5e568b439f4b78b8bf33b1153812fd%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/3e%2F5e%2F56%2F3e5e568b439f4b78b8bf33b1153812fd%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/fabdf3b3-01c2-4c13-a349-86901cfc9d38",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/fabdf3b3-01c2-4c13-a349-86901cfc9d38"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/e99b0499-2ad1-47cd-b148-5ccc255b3406",
+          "label": "[image 29]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/e99b0499-2ad1-47cd-b148-5ccc255b3406/file/07529308-fc45-482c-b374-6162c04f4ec9",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/ea%2Fd5%2Fd1%2Fead5d1948e494e45bd30e9b640b24851%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/ea%2Fd5%2Fd1%2Fead5d1948e494e45bd30e9b640b24851%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/e99b0499-2ad1-47cd-b148-5ccc255b3406",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/e99b0499-2ad1-47cd-b148-5ccc255b3406"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/5be4cee3-cfb2-4ede-94c0-cbd286f79477",
+          "label": "[image 30]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/5be4cee3-cfb2-4ede-94c0-cbd286f79477/file/901d64c7-573e-4e7a-a3a2-d1d10eb9b6bd",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/37%2F72%2F9f%2F37729f3dba9343ce90d2177f9ffb33b0%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/37%2F72%2F9f%2F37729f3dba9343ce90d2177f9ffb33b0%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/5be4cee3-cfb2-4ede-94c0-cbd286f79477",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/5be4cee3-cfb2-4ede-94c0-cbd286f79477"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/5b610b32-a043-4758-b4d6-62c90a8fe5d2",
+          "label": "[image 31]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/5b610b32-a043-4758-b4d6-62c90a8fe5d2/file/a05e4b89-0a52-4539-81fe-f500fb910e49",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/76%2F6f%2F12%2F766f128276a0432bb302d8330285a565%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/76%2F6f%2F12%2F766f128276a0432bb302d8330285a565%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/5b610b32-a043-4758-b4d6-62c90a8fe5d2",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/5b610b32-a043-4758-b4d6-62c90a8fe5d2"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/a5091774-6373-4566-a2ca-8b3689912ccc",
+          "label": "[image 32]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/a5091774-6373-4566-a2ca-8b3689912ccc/file/147bea4d-34a3-46bf-8fd2-b63ff49d21df",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/35%2F21%2Ff4%2F3521f4a4a741448fb9deb5a45a221328%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/35%2F21%2Ff4%2F3521f4a4a741448fb9deb5a45a221328%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/a5091774-6373-4566-a2ca-8b3689912ccc",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/a5091774-6373-4566-a2ca-8b3689912ccc"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/805e6c24-92be-42c1-93de-fb3669c865c5",
+          "label": "[image 33]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/805e6c24-92be-42c1-93de-fb3669c865c5/file/5d22397c-943b-48a0-a56b-f017c6d523b7",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/1f%2Faf%2F4a%2F1faf4a4081f547d99e4bf18364d3c682%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/1f%2Faf%2F4a%2F1faf4a4081f547d99e4bf18364d3c682%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/805e6c24-92be-42c1-93de-fb3669c865c5",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/805e6c24-92be-42c1-93de-fb3669c865c5"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/a93a6d80-3b11-4182-bc15-4f069fcec83a",
+          "label": "[image 34]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/a93a6d80-3b11-4182-bc15-4f069fcec83a/file/7997e841-fd8e-4401-9904-73b17e107816",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/18%2F51%2F23%2F18512331a5c5482faee2810b32a66b5f%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/18%2F51%2F23%2F18512331a5c5482faee2810b32a66b5f%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/a93a6d80-3b11-4182-bc15-4f069fcec83a",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/a93a6d80-3b11-4182-bc15-4f069fcec83a"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/d064f30d-4984-43e5-8df8-2c276b1dbc86",
+          "label": "[image 35]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/d064f30d-4984-43e5-8df8-2c276b1dbc86/file/a1168767-aa6a-462b-adc5-8d2aa7c2375f",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/f7%2F3e%2Fad%2Ff73eade81cea481aa0ec60c0d9afc0e9%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/f7%2F3e%2Fad%2Ff73eade81cea481aa0ec60c0d9afc0e9%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/d064f30d-4984-43e5-8df8-2c276b1dbc86",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/d064f30d-4984-43e5-8df8-2c276b1dbc86"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/15252193-208a-4565-bf73-4bd7599b6f62",
+          "label": "[image 36]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/15252193-208a-4565-bf73-4bd7599b6f62/file/9dafb981-ffdf-4c03-a867-f1ac0cc2fd23",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/3b%2F88%2F9c%2F3b889c9270f742e091e7be12012fa57f%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/3b%2F88%2F9c%2F3b889c9270f742e091e7be12012fa57f%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/15252193-208a-4565-bf73-4bd7599b6f62",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/15252193-208a-4565-bf73-4bd7599b6f62"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/3b5ae029-b234-470e-9c20-217d0df24bd4",
+          "label": "[image 37]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/3b5ae029-b234-470e-9c20-217d0df24bd4/file/5c2043ec-3761-4c99-a555-b9826da6c341",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/50%2F65%2F9f%2F50659f35bdef4791aee83985270f75c8%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/50%2F65%2F9f%2F50659f35bdef4791aee83985270f75c8%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/3b5ae029-b234-470e-9c20-217d0df24bd4",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/3b5ae029-b234-470e-9c20-217d0df24bd4"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/43dfc000-a0c8-4348-877d-4eb49aef2a76",
+          "label": "[image 38]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/43dfc000-a0c8-4348-877d-4eb49aef2a76/file/55ad8db6-7044-4ed8-b72a-89aaf575291f",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/b2%2F62%2Ff1%2Fb262f1d85cc84ee6b82da2e7d5dcb74b%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/b2%2F62%2Ff1%2Fb262f1d85cc84ee6b82da2e7d5dcb74b%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/43dfc000-a0c8-4348-877d-4eb49aef2a76",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/43dfc000-a0c8-4348-877d-4eb49aef2a76"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/30290f32-a9cf-4040-b551-5f7df79d743c",
+          "label": "[image 39]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/30290f32-a9cf-4040-b551-5f7df79d743c/file/d3a075ea-f9b1-49a7-aed5-8a9f91bfda6a",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/1d%2F70%2Fb5%2F1d70b57a1b884a18a4803bc43edc8617%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/1d%2F70%2Fb5%2F1d70b57a1b884a18a4803bc43edc8617%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/30290f32-a9cf-4040-b551-5f7df79d743c",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/30290f32-a9cf-4040-b551-5f7df79d743c"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/e940db2c-009d-4a79-a3cc-473c0c0c8824",
+          "label": "[image 40]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/e940db2c-009d-4a79-a3cc-473c0c0c8824/file/421cffbf-4d2c-40b6-843b-1b8e282bcf18",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5058,
+          "height": 6465,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/e4%2F10%2F96%2Fe410969df5464c8aabb32aa90d607ae9%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6465,
+                "width": 5058,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/e4%2F10%2F96%2Fe410969df5464c8aabb32aa90d607ae9%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/e940db2c-009d-4a79-a3cc-473c0c0c8824",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/e940db2c-009d-4a79-a3cc-473c0c0c8824"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/beb74dd6-b05e-4354-8525-8e1f8e43788b",
+          "label": "[image 41]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/beb74dd6-b05e-4354-8525-8e1f8e43788b/file/b78c3c1c-97e7-46f4-8d4e-35e8167dfa67",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/f8%2F78%2Fde%2Ff878de753da2425c9bb2ef856fd2232f%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/f8%2F78%2Fde%2Ff878de753da2425c9bb2ef856fd2232f%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/beb74dd6-b05e-4354-8525-8e1f8e43788b",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/beb74dd6-b05e-4354-8525-8e1f8e43788b"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/8b28902c-486e-4616-a00d-dc38155229cc",
+          "label": "[image 42]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/8b28902c-486e-4616-a00d-dc38155229cc/file/b75426f4-082a-45f1-8567-08649457484d",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/3e%2F72%2F60%2F3e726037427f4c7b888442822bb9b432%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/3e%2F72%2F60%2F3e726037427f4c7b888442822bb9b432%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/8b28902c-486e-4616-a00d-dc38155229cc",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/8b28902c-486e-4616-a00d-dc38155229cc"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/9a32b16e-1d08-4236-a7b2-226f6c852d47",
+          "label": "[image 43]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/9a32b16e-1d08-4236-a7b2-226f6c852d47/file/89a59357-2009-4dfb-b1e8-4b3bac6bd9f5",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/51%2Fad%2Fd3%2F51add3f404574a0eab54a4f11508ff43%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/51%2Fad%2Fd3%2F51add3f404574a0eab54a4f11508ff43%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/9a32b16e-1d08-4236-a7b2-226f6c852d47",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/9a32b16e-1d08-4236-a7b2-226f6c852d47"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/ef979797-b8e8-44bf-9b14-01dc56c485ed",
+          "label": "[image 44]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/ef979797-b8e8-44bf-9b14-01dc56c485ed/file/f100c6ab-6ab1-414f-901f-160682cc2c61",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5054,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/77%2F4d%2F62%2F774d620ee073404d9aff77ec742ddedf%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5054,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/77%2F4d%2F62%2F774d620ee073404d9aff77ec742ddedf%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/ef979797-b8e8-44bf-9b14-01dc56c485ed",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/ef979797-b8e8-44bf-9b14-01dc56c485ed"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/5aec90b4-384a-4df3-b7e4-1d1e6a3fab8e",
+          "label": "[image 45]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/5aec90b4-384a-4df3-b7e4-1d1e6a3fab8e/file/c312f93e-ba8a-4141-af76-f3d137b4914b",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/ba%2Fac%2F81%2Fbaac8170e93342518bcbb6731256b070%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/ba%2Fac%2F81%2Fbaac8170e93342518bcbb6731256b070%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/5aec90b4-384a-4df3-b7e4-1d1e6a3fab8e",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/5aec90b4-384a-4df3-b7e4-1d1e6a3fab8e"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/037ac148-d9bd-4b05-b8d7-e618c93113bd",
+          "label": "[image 46]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/037ac148-d9bd-4b05-b8d7-e618c93113bd/file/30d16ec9-78eb-49a1-9001-2e15543ab8a3",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5015,
+          "height": 3128,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/54%2F84%2F29%2F54842996533b4c108887232e1a10dfeb%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 3128,
+                "width": 5015,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/54%2F84%2F29%2F54842996533b4c108887232e1a10dfeb%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/037ac148-d9bd-4b05-b8d7-e618c93113bd",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/037ac148-d9bd-4b05-b8d7-e618c93113bd"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/24951dbf-841e-4eba-951f-d916633fff37",
+          "label": "[image 47]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/24951dbf-841e-4eba-951f-d916633fff37/file/eb3ea53e-95ea-498a-a6e4-337671be53b3",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5025,
+          "height": 3152,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/5f%2Fce%2Fb0%2F5fceb0f215ab4ba1aa11b1518c038a94%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 3152,
+                "width": 5025,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/5f%2Fce%2Fb0%2F5fceb0f215ab4ba1aa11b1518c038a94%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/24951dbf-841e-4eba-951f-d916633fff37",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/24951dbf-841e-4eba-951f-d916633fff37"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/57c46443-2991-4049-8bb6-cb1584d9c9ec",
+          "label": "[image 48]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/57c46443-2991-4049-8bb6-cb1584d9c9ec/file/4c8c067b-4893-4db6-acff-62aa072ea53d",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5041,
+          "height": 6456,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/29%2Fb5%2Ffc%2F29b5fcd5448c4a5ab32a91fc4f989d71%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6456,
+                "width": 5041,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/29%2Fb5%2Ffc%2F29b5fcd5448c4a5ab32a91fc4f989d71%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/57c46443-2991-4049-8bb6-cb1584d9c9ec",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/57c46443-2991-4049-8bb6-cb1584d9c9ec"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/3ee84e11-220e-4940-ad57-f04598c237eb",
+          "label": "[image 49]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/3ee84e11-220e-4940-ad57-f04598c237eb/file/612b46e2-7946-49c7-afc6-13eaf437fe80",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5059,
+          "height": 6460,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/31%2Ffa%2F8f%2F31fa8f801221473ca8d9967ddcc12ae3%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6460,
+                "width": 5059,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/31%2Ffa%2F8f%2F31fa8f801221473ca8d9967ddcc12ae3%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/3ee84e11-220e-4940-ad57-f04598c237eb",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/3ee84e11-220e-4940-ad57-f04598c237eb"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/218b9ede-e356-43e7-a323-f6041a35a6fb",
+          "label": "[image 50]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/218b9ede-e356-43e7-a323-f6041a35a6fb/file/11e537a3-0a27-4050-9e27-f99d2f90d308",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/a9%2Fdf%2Fe5%2Fa9dfe5260672459cba9f86c1d3e2ec93%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/a9%2Fdf%2Fe5%2Fa9dfe5260672459cba9f86c1d3e2ec93%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/218b9ede-e356-43e7-a323-f6041a35a6fb",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/218b9ede-e356-43e7-a323-f6041a35a6fb"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/4356bf8a-93a6-4ed3-89c8-9dfca40e4bd8",
+          "label": "[image 51]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/4356bf8a-93a6-4ed3-89c8-9dfca40e4bd8/file/59e32582-c020-4dbe-ad06-7dc6de3a7033",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/97%2F61%2F6b%2F97616b4d32a647e2a5ffaeb5cb55a10b%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/97%2F61%2F6b%2F97616b4d32a647e2a5ffaeb5cb55a10b%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/4356bf8a-93a6-4ed3-89c8-9dfca40e4bd8",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/4356bf8a-93a6-4ed3-89c8-9dfca40e4bd8"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/feeadd97-11bd-4f70-b18a-edf5246de91e",
+          "label": "[image 52]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/feeadd97-11bd-4f70-b18a-edf5246de91e/file/912e2a27-1af3-4017-9b64-5e7cd37891ed",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/5a%2Fc3%2Fd9%2F5ac3d982d1954b23943297a53bbfa1f6%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/5a%2Fc3%2Fd9%2F5ac3d982d1954b23943297a53bbfa1f6%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/feeadd97-11bd-4f70-b18a-edf5246de91e",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/feeadd97-11bd-4f70-b18a-edf5246de91e"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/55f7942b-3fa4-44b3-a18a-ac55251314b4",
+          "label": "[image 53]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/55f7942b-3fa4-44b3-a18a-ac55251314b4/file/ea57d23d-539e-478e-b2d2-1c8df371e2b4",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/f3%2Faa%2F57%2Ff3aa57414e784f31a02e393b549e1692%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/f3%2Faa%2F57%2Ff3aa57414e784f31a02e393b549e1692%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/55f7942b-3fa4-44b3-a18a-ac55251314b4",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/55f7942b-3fa4-44b3-a18a-ac55251314b4"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/689c7503-4401-4d82-8014-e85f8d7de31f",
+          "label": "[image 54]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/689c7503-4401-4d82-8014-e85f8d7de31f/file/4498b875-dd77-4138-9d2a-33050ac8bd7b",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/67%2F37%2Fb1%2F6737b1a8937e443cae095326573192d9%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/67%2F37%2Fb1%2F6737b1a8937e443cae095326573192d9%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/689c7503-4401-4d82-8014-e85f8d7de31f",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/689c7503-4401-4d82-8014-e85f8d7de31f"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/dec488d6-65c2-49a3-a24e-511eebe6df7d",
+          "label": "[image 55]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/dec488d6-65c2-49a3-a24e-511eebe6df7d/file/25820689-517f-4f87-bd30-a59a61228081",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/55%2F20%2Fc0%2F5520c092e12a4d91a58c8ba3f301075b%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/55%2F20%2Fc0%2F5520c092e12a4d91a58c8ba3f301075b%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/dec488d6-65c2-49a3-a24e-511eebe6df7d",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/dec488d6-65c2-49a3-a24e-511eebe6df7d"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/af69a272-a23e-40f6-9198-049e45970a34",
+          "label": "[image 56]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/af69a272-a23e-40f6-9198-049e45970a34/file/4d6e22ac-fe16-47ee-87c7-337ecf52bd04",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/d4%2Fe6%2F7d%2Fd4e67d6c99d249f3bba4f99533ef8435%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/d4%2Fe6%2F7d%2Fd4e67d6c99d249f3bba4f99533ef8435%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/af69a272-a23e-40f6-9198-049e45970a34",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/af69a272-a23e-40f6-9198-049e45970a34"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/c1a4052d-6a8b-4242-9c74-eee93ec1b919",
+          "label": "[image 57]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/c1a4052d-6a8b-4242-9c74-eee93ec1b919/file/c6b1da90-d18c-4ea7-89c7-9c14f35a2121",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/ea%2F01%2F16%2Fea01161e0b304b09a49a7d7b3b90dae8%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/ea%2F01%2F16%2Fea01161e0b304b09a49a7d7b3b90dae8%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/c1a4052d-6a8b-4242-9c74-eee93ec1b919",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/c1a4052d-6a8b-4242-9c74-eee93ec1b919"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/fa1f48ff-92f5-4385-9847-629146c2d3a5",
+          "label": "[image 58]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/fa1f48ff-92f5-4385-9847-629146c2d3a5/file/70bc62c1-efb8-4cea-a0ce-f09ece2d4ab0",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/c1%2Fc7%2Ff1%2Fc1c7f11287e24ed991a755d145d6dea8%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/c1%2Fc7%2Ff1%2Fc1c7f11287e24ed991a755d145d6dea8%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/fa1f48ff-92f5-4385-9847-629146c2d3a5",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/fa1f48ff-92f5-4385-9847-629146c2d3a5"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/08dc898c-af9d-43b6-a2e6-e8cf593785dd",
+          "label": "[image 59]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/08dc898c-af9d-43b6-a2e6-e8cf593785dd/file/7f41bcd4-ab51-413a-883b-1ed9ff075dc9",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6446,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/f4%2Fcf%2F7c%2Ff4cf7cc1cbc04e7495aa18180661dcdf%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6446,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/f4%2Fcf%2F7c%2Ff4cf7cc1cbc04e7495aa18180661dcdf%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/08dc898c-af9d-43b6-a2e6-e8cf593785dd",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/08dc898c-af9d-43b6-a2e6-e8cf593785dd"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/b23b223c-537f-4fcc-ace0-9d809d3d6daf",
+          "label": "[image 60]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/b23b223c-537f-4fcc-ace0-9d809d3d6daf/file/6bd2ef19-c7e5-40c3-9b05-b9cb910dfae6",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5054,
+          "height": 7426,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/41%2F70%2Fa9%2F4170a965046b4627879356b707d8ade5%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 7426,
+                "width": 5054,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/41%2F70%2Fa9%2F4170a965046b4627879356b707d8ade5%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/b23b223c-537f-4fcc-ace0-9d809d3d6daf",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/b23b223c-537f-4fcc-ace0-9d809d3d6daf"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/3e4816e0-24ae-4676-814d-71d9747cade0",
+          "label": "[image 61]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/3e4816e0-24ae-4676-814d-71d9747cade0/file/61bdf467-d09c-4521-8913-b7728673cb3e",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 7425,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/bc%2Fec%2Fae%2Fbcecae1336a948fb83ac78e660d4fdbf%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 7425,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/bc%2Fec%2Fae%2Fbcecae1336a948fb83ac78e660d4fdbf%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/3e4816e0-24ae-4676-814d-71d9747cade0",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/3e4816e0-24ae-4676-814d-71d9747cade0"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/ae09f700-a7d6-4ed3-805e-cad9a4015726",
+          "label": "[image 62]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/ae09f700-a7d6-4ed3-805e-cad9a4015726/file/98df35cc-3347-4c54-bb69-b6df245ae4be",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6455,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/8d%2F26%2F9b%2F8d269bd4e44846beacfe526848231523%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6455,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/8d%2F26%2F9b%2F8d269bd4e44846beacfe526848231523%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/ae09f700-a7d6-4ed3-805e-cad9a4015726",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/ae09f700-a7d6-4ed3-805e-cad9a4015726"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/f848c330-49c4-4fab-bd2e-9069fbe012b5",
+          "label": "[image 63]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/f848c330-49c4-4fab-bd2e-9069fbe012b5/file/6d136c1c-3685-4bfd-a517-219a42ac3b4a",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5040,
+          "height": 6460,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/b2%2F9b%2Ffc%2Fb29bfcae73b94e429e0c8c6395f95b45%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 6460,
+                "width": 5040,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/b2%2F9b%2Ffc%2Fb29bfcae73b94e429e0c8c6395f95b45%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/f848c330-49c4-4fab-bd2e-9069fbe012b5",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/f848c330-49c4-4fab-bd2e-9069fbe012b5"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/160eb8a6-7a10-483a-9a76-e78de679acb4",
+          "label": "[image 64]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/160eb8a6-7a10-483a-9a76-e78de679acb4/file/3b288009-50f8-42b7-8cde-a39e047d79a3",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 3252,
+          "height": 5061,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/c4%2F08%2F3b%2Fc4083b5928be4bdb8c67f88a8545b24e%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 5061,
+                "width": 3252,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/c4%2F08%2F3b%2Fc4083b5928be4bdb8c67f88a8545b24e%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/160eb8a6-7a10-483a-9a76-e78de679acb4",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/160eb8a6-7a10-483a-9a76-e78de679acb4"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/1fa3c053-3ffe-43c3-b8d0-da40e14ba18a",
+          "label": "[image 65]",
+          "viewingHint": "single",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/1fa3c053-3ffe-43c3-b8d0-da40e14ba18a/file/4bee8ee0-acc4-4089-b917-caa28911c603",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 3243,
+          "height": 5079,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/f4%2F00%2Fee%2Ff400ee991b3d41bb864bee8d8eb12935%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 5079,
+                "width": 3243,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/f4%2F00%2Fee%2Ff400ee991b3d41bb864bee8d8eb12935%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/image/1fa3c053-3ffe-43c3-b8d0-da40e14ba18a",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/canvas/1fa3c053-3ffe-43c3-b8d0-da40e14ba18a"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@type": "sc:Range",
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest/range/rc143d604-6494-4168-bfb1-db3878843c36",
+      "label": "Logical",
+      "viewingHint": "top",
+      "ranges": [],
+      "canvases": []
+    }
+  ],
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/7cf437d0-c864-4230-8e76-84d117c88763.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/99131228335506421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "license": "http://rightsstatements.org/vocab/NKC/1.0/",
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/f0%2F02%2Fb9%2Ff002b91c72a84282aa519539cf56f868%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/f0%2F02%2Fb9%2Ff002b91c72a84282aa519539cf56f868%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/wh2471367",
+    "format": "text/html"
+  },
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png"
+}

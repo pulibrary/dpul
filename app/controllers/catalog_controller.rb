@@ -102,7 +102,13 @@ class CatalogController < ApplicationController
 
     config.add_search_field 'all_fields', label: 'Keyword'
     config.add_search_field 'title', label: 'Title'
-    config.add_search_field 'publisher', label: 'Publisher'
+    config.add_search_field(
+      'publisher',
+      label: 'Publisher',
+      solr_parameters: {
+        qf: 'readonly_publisher_tesim', pf: 'readonly_publisher_tesim'
+      }
+    )
     config.add_search_field 'subject', label: 'Subject'
 
     config.add_sort_field 'relevance', sort: 'score desc', label: 'Relevance'

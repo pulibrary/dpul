@@ -1,0 +1,93 @@
+{
+  "link_to_catalog": "https://catalog.princeton.edu/catalog/99131189093006421",
+  "@context": [
+    "https://bibdata.princeton.edu/context.json",
+    {
+      "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "latitude": {
+        "@id": "wgs84:lat"
+      },
+      "longitude": {
+        "@id": "wgs84:lon"
+      }
+    }
+  ],
+  "@id": "https://figgy.princeton.edu/catalog/8b33482f-9c15-4012-b3bc-43ae307ec2ef",
+  "title": [
+    {
+      "@language": "fr",
+      "@value": "Qu'est-ce qu'un phénomène?   1961-1962."
+    }
+  ],
+  "language": "fr",
+  "creator": "Derrida, Jacques",
+  "extent": "1 online resource.",
+  "format": [
+    "Manuscript",
+    "Book"
+  ],
+  "description": [
+    "Manuscript lecture notes for 1 seminar session by Jacques Derrida, including notecards.",
+    "Derrida taught at the Sorbonne.",
+    "These seminar materials form part of the Jacques Derrida papers, physically held by Special Collections and Archives, The UC Irvine Libraries. Princeton University Library holds the exclusive rights to display the digital surrogates online."
+  ],
+  "publisher": " 1961-1962",
+  "subject": [
+    "manuscripts (documents)",
+    "lecture notes",
+    "research notes",
+    "Insertions (Provenance)"
+  ],
+  "alternative": [
+    "Jacques Derrida seminar on \"Qu'est-ce qu'un phénomène?\", 1961-1962",
+    "\"Qu-est-ce qu'un phénomène?\""
+  ],
+  "contents": "\"Qu'est-ce qu'un phénomène?\" with pages numbered 1-3 (msc001_b05_f11_0003 through msc001_b05_f11_0013).",
+  "host_institution": [
+    "Université de Paris"
+  ],
+  "repository": [
+    "UCI Libraries. Department of Special Collections and Archives"
+  ],
+  "author": "Derrida, Jacques",
+  "created": "1961-01-01T00:00:00Z/1962-12-31T23:59:59Z",
+  "date": " 1961-1962.",
+  "identifier": [
+    "ark:/88435/m613n5816"
+  ],
+  "electronic_locations": [
+    {
+      "@id": "https://catalog.princeton.edu/catalog/#view",
+      "label": [
+        "Digital content"
+      ]
+    },
+    {
+      "@id": "https://oac.cdlib.org/findaid/ark:/13030/tf3q2nb26c/dsc/#aspace_ref201_2kz",
+      "label": [
+        "oac.cdlib.org",
+        "UCI finding aid description of original"
+      ]
+    },
+    {
+      "@id": "iiif_manifest_paths",
+      "label": {
+        "http://arks.princeton.edu/ark:/88435/m613n5816": "https://figgy.princeton.edu/concern/scanned_resources/8b33482f-9c15-4012-b3bc-43ae307ec2ef/manifest"
+      }
+    }
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "No Known Copyright"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/e075446c-e48f-43e4-939f-a075adef9ebe",
+      "@type": "pcdm:Collection",
+      "title": "Derrida Seminars"
+    }
+  ],
+  "system_created_at": "2020-09-18T22:43:12Z",
+  "system_updated_at": "2024-09-20T20:26:11Z"
+}

@@ -1,0 +1,90 @@
+{
+  "link_to_catalog": "https://catalog.princeton.edu/catalog/99131228335506421",
+  "@context": [
+    "https://bibdata.princeton.edu/context.json",
+    {
+      "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "latitude": {
+        "@id": "wgs84:lat"
+      },
+      "longitude": {
+        "@id": "wgs84:lon"
+      }
+    }
+  ],
+  "@id": "https://figgy.princeton.edu/catalog/7cf437d0-c864-4230-8e76-84d117c88763",
+  "title": [
+    {
+      "@language": "fr",
+      "@value": "L'autre selon Malebranche."
+    }
+  ],
+  "language": "fr",
+  "creator": "Derrida, Jacques",
+  "extent": "1 online resource.",
+  "format": [
+    "Manuscript",
+    "Book"
+  ],
+  "description": [
+    "Manuscript lecture notes for 2 seminar sessions by Jacques Derrida, including corrections.",
+    "Material may belong with the 1961-1962 \"L'Idée\" or with the undated \"L'Experience de la liberté selon Malebranche.\" Probably given at Lycée le Mans or the Sorbonne.",
+    "These seminar materials form part of the Jacques Derrida papers, physically held by Special Collections and Archives, The UC Irvine Libraries. Princeton University Library holds the exclusive rights to display the digital surrogates online."
+  ],
+  "publisher": " [dates not identified]",
+  "subject": [
+    "manuscripts (documents)",
+    "lecture notes",
+    "research notes",
+    "Annotations"
+  ],
+  "alternative": [
+    "Jacques Derrida seminar on \"L'autre selon Malebranche\"",
+    "\"L'Autre selon Malebranche,\" 2 séances"
+  ],
+  "host_institution": [
+    "Université de Paris"
+  ],
+  "repository": [
+    "UCI Libraries. Department of Special Collections and Archives"
+  ],
+  "author": "Derrida, Jacques",
+  "identifier": [
+    "ark:/88435/wh2471367"
+  ],
+  "electronic_locations": [
+    {
+      "@id": "https://catalog.princeton.edu/catalog/#view",
+      "label": [
+        "Digital content"
+      ]
+    },
+    {
+      "@id": "https://oac.cdlib.org/findaid/ark:/13030/tf3q2nb26c/dsc/#aspace_ref144_j3m",
+      "label": [
+        "oac.cdlib.org",
+        "UCI finding aid description of original"
+      ]
+    },
+    {
+      "@id": "iiif_manifest_paths",
+      "label": {
+        "http://arks.princeton.edu/ark:/88435/wh2471367": "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest"
+      }
+    }
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "No Known Copyright"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/e075446c-e48f-43e4-939f-a075adef9ebe",
+      "@type": "pcdm:Collection",
+      "title": "Derrida Seminars"
+    }
+  ],
+  "system_created_at": "2020-09-19T06:50:07Z",
+  "system_updated_at": "2024-09-20T20:27:03Z"
+}
