@@ -45,6 +45,7 @@ RSpec.describe CatalogController do
 
       expect(document_ids).to eq [resource.solr_documents.first[:id]]
     end
+
     context "when not signed in" do
       it "hides resources which are in un-published exhibits" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: false
@@ -83,6 +84,7 @@ RSpec.describe CatalogController do
 
         expect(document_ids).not_to be_empty
       end
+
       it "doesn't hide private resources in public exhibits" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
         resource = IiifResource.new url: url, exhibit: exhibit
@@ -97,6 +99,7 @@ RSpec.describe CatalogController do
 
         expect(document_ids).not_to be_empty
       end
+
       it "permits queries with quotes" do
         exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
         document = SolrDocument.new(id: 'd279a557a62937a8895eebbca2d4744c', exhibit:)
@@ -125,6 +128,27 @@ RSpec.describe CatalogController do
       get :index, params: { q: "Scanned Resource", exhibit_id: exhibit.id }
 
       expect(document_ids).to eq [resource.solr_documents.first[:id]]
+    end
+  end
+
+  context "fielded search" do
+    it "only retrieves documents with a match in the given field" do
+      url1 = 'https://figgy.princeton.edu/concern/scanned_resources/8b33482f-9c15-4012-b3bc-43ae307ec2ef/manifest'
+      url2 = 'https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest'
+      stub_manifest(url: url1, fixture: 'publisher_1962.json')
+      stub_manifest(url: url2, fixture: 'publisher_no_date.json')
+      stub_metadata(id: "8b33482f-9c15-4012-b3bc-43ae307ec2ef")
+      stub_metadata(id: "7cf437d0-c864-4230-8e76-84d117c88763")
+      exhibit = Spotlight::Exhibit.create title: 'Derida Seminars', published: true
+      resource1 = IiifResource.new(url: url1, exhibit:)
+      resource2 = IiifResource.new(url: url2, exhibit:)
+      resource1.save_and_index
+      resource2.save_and_index
+      Blacklight.default_index.connection.commit
+
+      get :index, params: { q: "1962", search_field: "publisher", exhibit_id: exhibit.id }
+
+      expect(document_ids.length).to eq 1
     end
   end
 
