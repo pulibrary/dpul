@@ -14,7 +14,6 @@ gem 'uglifier', '4.1.0'
 
 group :development, :test do
   gem 'bcrypt_pbkdf'
-  gem 'bixby', '~> 5.0'
   gem 'byebug'
   # see comment in spec/requests/pages_spec
   gem 'cancancan'
@@ -55,6 +54,7 @@ source "https://gems.contribsys.com/" do
 end
 
 gem 'acts-as-taggable-on'
+gem 'bixby', '~> 5.0'
 gem 'blacklight', '~> 7.18'
 gem 'blacklight-gallery', '~> 4.5.0'
 gem 'blacklight-oembed'
