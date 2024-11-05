@@ -12,8 +12,23 @@ RSpec.describe "Health Check", type: :request do
       expect(response).to be_successful
     end
 
-    it "errors when it can't contact the SMTP server" do
+    it "has a success response even if there are failures to non-critical services (e.g smtp)" do
+      get '/health.json'
+
+      expect(response).to be_successful
+    end
+
+    it "errors when it can't contact the SMTP server when the provider is included" do
       get "/health.json?providers[]=smtpstatus"
+
+      expect(response).not_to be_successful
+    end
+
+    it "errors when there's a failure to a critical service (e.g. solr)" do
+      allow(Blacklight.default_index.connection).to receive(:uri).and_return(URI("http://example.com/bla"))
+      stub_request(:get, "http://example.com/solr/admin/cores?action=STATUS").to_return(body: { responseHeader: { status: 500 } }.to_json, headers: { "Content-Type" => "text/json" })
+
+      get "/health.json"
 
       expect(response).not_to be_successful
     end
