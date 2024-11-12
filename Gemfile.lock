@@ -347,7 +347,7 @@ GEM
       graphql (>= 1.13.0)
     hashdiff (1.1.1)
     hashie (5.0.0)
-    health-monitor-rails (12.2.0)
+    health-monitor-rails (12.4.0)
       railties (>= 6.1)
     honeybadger (5.15.5)
     httpclient (2.8.3)
@@ -820,7 +820,7 @@ DEPENDENCIES
   faraday-follow_redirects
   google-cloud-storage
   graphql-client
-  health-monitor-rails
+  health-monitor-rails (= 12.4.0)
   honeybadger
   iiif-presentation
   iso-639

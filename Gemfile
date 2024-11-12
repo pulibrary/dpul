@@ -3,7 +3,8 @@
 source 'https://rubygems.org'
 
 gem 'graphql-client'
-gem 'health-monitor-rails'
+# Pinning to 12.4.0 due to Rails 7.1 compatibility issue in 12.4.1
+gem 'health-monitor-rails', '12.4.0'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rack', '>= 2.0.6'

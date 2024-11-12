@@ -19,12 +19,15 @@ Rails.application.config.after_initialize do
     config.add_custom_provider(SmtpStatus).configure do |provider_config|
       provider_config.critical = false
     end
+    config.file_absence.configure do |file_config|
+      file_config.filename = "public/remove-from-nginx"
+    end
 
     # Make this health check available at /health
     config.path = :health
 
     config.error_callback = proc do |e|
-      Rails.logger.error "Health check failed with: #{e.message}"
+      Rails.logger.error "Health check failed with: #{e.message}" unless e.is_a?(HealthMonitor::Providers::FileAbsenceException)
     end
   end
 end
