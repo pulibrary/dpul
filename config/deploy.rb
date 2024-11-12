@@ -115,8 +115,8 @@ namespace :application do
     on roles(:app) do
       count += 1
     end
-    if count > 1
-      raise "You must run this command on individual servers utilizing the --hosts= switch"
+    if count > (roles(:app).length / 2)
+      raise "You must run this command on no more than half the servers utilizing the --hosts= switch"
     end
     on roles(:app) do
       within release_path do
