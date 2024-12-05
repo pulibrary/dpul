@@ -26,4 +26,6 @@ Rails.application.config.to_prepare do
 
     # I18n.backend = I18n::Backend::Chain.new(I18n.backend, I18n::Backend::Simple.new)
   end
+rescue ActiveRecord::DatabaseConnectionError
+  Rails.logger.debug("Database error")
 end
