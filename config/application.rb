@@ -18,6 +18,13 @@ module Pomegranate
     config.exceptions_app = routes
 
     config.autoloader = :zeitwerk
+    # Keep using secrets.yml so we can pull secret key base from ENV.
+    # Pulled from
+    # https://island94.org/2024/11/keep-your-secrets-yml-in-rails-7-2
+    config.secrets = config_for(:secrets)
+    config.secret_key_base = config.secrets[:secret_key_base]
+
+    delegate :secrets, to: :config
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
