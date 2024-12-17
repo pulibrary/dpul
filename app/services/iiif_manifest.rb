@@ -115,7 +115,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
         create_sidecars_for(*metadata.keys)
 
         metadata.each_with_object({}) do |(key, value), hash|
-          # The exhibit field for the key povides the solr field name, so we
+          # The exhibit field for the key provides the solr field name, so we
           # have to fetch that.
           #
           # We compare based on the slug rather than the label because
