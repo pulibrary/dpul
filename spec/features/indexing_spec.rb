@@ -16,16 +16,18 @@ RSpec.describe "Indexing a figgy collection end-to-end test", type: :feature, js
       stub_manifest(url: "https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest", fixture: "44558d29f.json")
       Spotlight::ReindexExhibitJob.perform_now(exhibit)
 
-      # Add an override title
-      # visit "/princeton-best/catalog/7w62fb79e"
-      # click_link "Edit"
-      # fill_in "solr_document_sidecar_data_override-title_ssim", with: "Grecian Temples"
-      # click_button "Save changes"
-      # expect(page).to have_content "Grecian Temples"
-
       # before changing the label, the field is there
       visit "/princeton-best/catalog/7w62fb79g"
       expect(page).to have_content "Alternative"
+
+      # Add an override title
+      # the bug exists without the override title, but an override title
+      # complicates the fix
+      visit "/princeton-best/catalog/7w62fb79e"
+      click_link "Edit"
+      fill_in "solr_document_sidecar_data_override-title_ssim", with: "Grecian Temples"
+      click_button "Save changes"
+      expect(page).to have_content "Grecian Temples"
 
       visit "/princeton-best/metadata_configuration/edit"
 
