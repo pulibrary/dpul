@@ -192,6 +192,6 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   private
 
     def slug_lookup
-      @slug_lookup ||= exhibit_custom_fields.values.index_by(&:slug)
+      @slug_lookup ||= exhibit.custom_fields.index_by(&:slug)
     end
 end
