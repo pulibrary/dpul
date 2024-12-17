@@ -115,7 +115,21 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
         create_sidecars_for(*metadata.keys)
 
         metadata.each_with_object({}) do |(key, value), hash|
-          next unless (field = exhibit_custom_fields[key])
+          # The exhibit field for the key provides the solr field name, so we
+          # have to fetch that.
+          #
+          # We compare based on the slug rather than the label because
+          # the label of the custom field may have been changed and not match
+          # the key any longer.
+          #
+          # Use a regex because it's possible for there to be
+          # `title`, `title-uuid`, and/or `title-sort`, for example, and
+          # we want to match only the key or the key with a uuid appended
+          # -- it doesn't matter whether you have the one with uuid appended or
+          # the one without; they both translate into the same solr field name
+          slug_regex = /^#{Regexp.quote(key.parameterize)}(-(\p{Alnum}){8}-(\p{Alnum}){4}-(\p{Alnum}){4}-(\p{Alnum}){4}-(\p{Alnum}){12})?/
+          next unless (custom_field_slug = slug_lookup.keys.find { |s| slug_regex.match(s) })
+          field = slug_lookup[custom_field_slug]
 
           field = BothFields.new(field)
           hash[field.field] = value
@@ -174,4 +188,10 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     text = Array(FiggyGraphql.get_ocr_content_for_id(id: manifest_id)).map { |x| x.to_s.dup.force_encoding('UTF-8') }
     solr_hash["full_text_tesim"] = text
   end
+
+  private
+
+    def slug_lookup
+      @slug_lookup ||= exhibit.custom_fields.index_by(&:slug)
+    end
 end
