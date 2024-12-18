@@ -716,7 +716,7 @@ GEM
     sshkit-interactive (0.3.0)
       sshkit (~> 1.12)
     ssrf_filter (1.2.0)
-    string_rtl (0.1.0)
+    string_rtl (0.2.0)
     stringio (3.1.2)
     test_xml (0.1.8)
       diffy (~> 3.0)
@@ -782,6 +782,7 @@ PLATFORMS
   arm64-darwin-21
   arm64-darwin-22
   arm64-darwin-23
+  arm64-darwin-24
   x86_64-darwin-20
   x86_64-darwin-21
   x86_64-linux
