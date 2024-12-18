@@ -2,13 +2,13 @@
 version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.4.8
-  node: circleci/node@5.0.2
+  node: circleci/node@7.0.0
 jobs:
   build:
     working_directory: ~/dpul
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: cimg/ruby:3.1.0-browsers
+      - image: cimg/ruby:3.2.6-browsers
         environment:
           RAILS_ENV: test
           NODE_ENV: test
@@ -33,7 +33,7 @@ jobs:
       - run: gem install bundler -v '2.3.18'
       - node/install:
           install-yarn: true
-          node-version: '18.18.0'
+          node-version: '22.10.0'
       # Install dependencies
       - run: sudo apt-get install libidn11-dev
       - run: bundle config set --local path "vendor/bundle"
@@ -58,7 +58,7 @@ jobs:
   rubocop:
     working_directory: ~/dpul
     docker:
-      - image: cimg/ruby:3.1.0-browsers
+      - image: cimg/ruby:3.2.6-browsers
         environment:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
@@ -76,7 +76,7 @@ jobs:
   test:
     working_directory: ~/dpul
     docker:
-      - image: cimg/ruby:3.1.0-browsers
+      - image: cimg/ruby:3.2.6-browsers
         environment:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
@@ -106,7 +106,7 @@ jobs:
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       - node/install:
           install-yarn: true
-          node-version: '18.18.0'
+          node-version: '22.10.0'
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
