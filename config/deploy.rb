@@ -126,7 +126,7 @@ namespace :application do
   end
 
   # You can/ should apply this command to a single host
-  # cap --hosts=dpul-staging3.princeton.edu staging application:remove_from_nginx
+  # cap --hosts=dpul-staging3.princeton.edu staging application:serve_from_nginx
   desc "Marks the server(s) to be added back to the loadbalancer"
   task :serve_from_nginx do
     on roles(:app) do
