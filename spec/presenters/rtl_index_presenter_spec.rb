@@ -50,6 +50,16 @@ RSpec.describe RtlIndexPresenter do
         )
         expect(presenter.heading).to eq '<ul><li dir="rtl">تضيح المقال</li><li dir="ltr">Tawḍīḥ al-maqāl</li></ul>'
       end
+
+      it 'renders heading on browse view as multiline' do
+        exhibit = FactoryBot.create(:exhibit)
+        presenter = described_class.new(
+          SolrDocument.new(full_title_tesim: title),
+          double(document_index_view_type: :current_view, should_render_field?: true, action_name: "index", controller_name: "browse"),
+          exhibit.blacklight_config
+        )
+        expect(presenter.heading).to eq '<ul><li dir="rtl">تضيح المقال</li><li dir="ltr">Tawḍīḥ al-maqāl</li></ul>'
+      end
     end
 
     context "when given a title with special characters" do
