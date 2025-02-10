@@ -24,8 +24,11 @@ class ListRendering < Blacklight::Rendering::AbstractStep
   # don't make it a list.
   def use_join(config, context)
     return true if config.text_area == "1"
+
+    # always join on search and browse pages if it's anything other than the title field
     return true if context.try(:action_name) != "show" && config.field != "full_title_tesim"
 
-    context.try(:controller_name) != "catalog"
+    # don't join titles on search results and browse pages
+    !["catalog", "browse"].include?(context.try(:controller_name))
   end
 end

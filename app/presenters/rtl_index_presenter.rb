@@ -22,7 +22,7 @@ class RtlIndexPresenter < ::Blacklight::IndexPresenter
 
     # Checks if the requested field is the title field and if the configured
     # display title field exists on the document. If so, it returns the
-    # display title field value. This method allows pom to properly display
+    # display title field value. This method allows dpul to properly display
     # records with non-standard title fields.
     def value_from_symbol(field)
       default_title_field = @configuration.index.title_field.to_sym
