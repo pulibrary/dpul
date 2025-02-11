@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "Health Check", type: :request do
+RSpec.describe "Health Monitor", type: :request do
   describe "GET /health" do
     it "has a success response even if there are failures to non-critical services (e.g smtp)" do
       SmtpStatus.next_check_timestamp = 0

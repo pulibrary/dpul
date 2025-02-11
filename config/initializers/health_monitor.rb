@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.config.after_initialize do
-  # Adds a patch a check is always critical if it's filtered for, otherwise fall
-  # back to configured value.
+  # Adds a patch a monitor is always critical if it's filtered for, otherwise
+  # fall back to configured value.
   class HealthMonitor::Providers::Base
     def critical
       return true if request && request.parameters["providers"].present?
@@ -23,11 +23,11 @@ Rails.application.config.after_initialize do
       file_config.filename = "public/remove-from-nginx"
     end
 
-    # Make this health check available at /health
+    # Make this health monitor available at /health
     config.path = :health
 
     config.error_callback = proc do |e|
-      Rails.logger.error "Health check failed with: #{e.message}" unless e.is_a?(HealthMonitor::Providers::FileAbsenceException)
+      Rails.logger.error "Health monitor failed with: #{e.message}" unless e.is_a?(HealthMonitor::Providers::FileAbsenceException)
     end
   end
 end
