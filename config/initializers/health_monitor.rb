@@ -22,6 +22,7 @@ Rails.application.config.after_initialize do
     config.file_absence.configure do |file_config|
       file_config.filename = "public/remove-from-nginx"
     end
+    config.add_custom_provider(MountStatus)
 
     # Make this health monitor available at /health
     config.path = :health
