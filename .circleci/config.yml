@@ -121,6 +121,11 @@ jobs:
             curl -H 'Content-type: application/json' http://solr:SolrRocks@localhost:8983/api/collections/ -d '{create: {name: blacklight-core-test, config: dpul, numShards: 1}}'
       - run: bundle exec rake db:create
       - run: bundle exec rake db:migrate
+      - run:
+          name: Create uploads directory
+          command: |
+            cd ~/dpul/public
+            mkdir uploads && mkdir uploads/spotlight
       - run: bundle exec rspec spec
       - store_artifacts:
           path: coverage

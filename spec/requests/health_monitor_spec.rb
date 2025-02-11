@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "Health Check", type: :request do
+RSpec.describe "Health Monitor", type: :request do
   describe "GET /health" do
     it "has a success response even if there are failures to non-critical services (e.g smtp)" do
       SmtpStatus.next_check_timestamp = 0
@@ -50,6 +50,27 @@ RSpec.describe "Health Check", type: :request do
       expect(response.status).to eq 503
       solr_response = JSON.parse(response.body)["results"].find { |x| x["name"] == "SolrStatus" }
       expect(solr_response["message"]).to start_with "The solr has an invalid status"
+    end
+
+    context "when checking the status of the mounted directory" do
+      it "errors when the mount directory is empty" do
+        path_mock = Rails.root.join("spec", "fixtures", "fake_directory").to_s
+        uploader_mock = instance_double(Spotlight::FeaturedImageUploader)
+        allow(uploader_mock).to receive(:root).and_return(path_mock)
+        allow(Spotlight::FeaturedImageUploader).to receive(:new).and_return(uploader_mock)
+
+        get "/health.json?providers[]=mountstatus"
+
+        expect(response).not_to be_successful
+        expect(JSON.parse(response.body)["results"].first["message"]).to match(/uploads mount .*uploads\/spotlight is empty/)
+      end
+
+      it "succeeds when the mount directory has contents" do
+        get "/health.json?providers[]=mountstatus"
+
+        expect(response).to be_successful
+        expect(JSON.parse(response.body)["results"].first["status"]).to eq "OK"
+      end
     end
   end
 end
