@@ -1,6 +1,6 @@
 ---
-name: Issue Template
-about: 'Generic template providing a baseline for any kind of issue'
+name: Developer template
+about: 'Generic baseline template geared toward developers'
 title: ''
 labels: ''
 assignees: ''

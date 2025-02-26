@@ -1,30 +1,45 @@
 ---
-name: KEL Issue Template
-about: 'Testing out template to be used for KEL issues. '
+name: Standard Issue Template for POs
+about: Standard Issue Template to be used by PUL POs
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-### Summary
+### Summary (Product Owner)
 
-### Impact 
+### User Story (Product Owner, when applicable)
+_As a [persona], I want to [describe intent], so that [explain the big problem you are trying to solve and its benefit]_
+
+### Impact (Product Owner)
 _Please include hard deadlines, if the exhibit is part of an event, the issue is stopping work, etc._
 
-### Priority recommendation
+### Priority recommendation (Product Owner)
 
 - [ ] asap
 - [ ] within the next 3 weeks
 - [ ] PO will prioritize
 
-## Sudden Priority Justification
-_Required if "asap" or "within the next 3 weeks" is checked.  Add "Sudden Priority" and "Maintenance/Research labels_
+## Sudden Priority Justification (Product Owner)
+_Required if "asap" or "within the next 3 weeks" is checked. Add "Sudden Priority" and "dls-work-cycle" labels_
 
-### Expected behaviour
+### Implementation Notes
+_To be filled out by DLS._
 
-### Actual behaviour
+### Acceptance Criteria
+_To be filled out by DLS.Some requirements to consider, including:_
 
-### Steps to reproduce behaviour
+- [ ] The UI implemented for this issue meets accessibility requirements
+- [ ] New functionality is documented
 
-### Screenshots
+### First Step
+_To be filled out by DLS._
+
+### Expected behavior (Product Owner)
+
+### Actual behavior (Product Owner)
+
+### Steps to reproduce behavior (Product Owner)
+
+### Screenshots (Product Owner)
