@@ -15,27 +15,47 @@
           <% # Princeton Customization - add text area header  %>
           <th class="text-center">
             <div>Text Area</div>
-            <%= select_deselect_button %>
+            <div class="text-center">
+              <%= label_tag 'deselect-all-textarea', class: 'select-label'  do %>
+                <%= select_deselect_action('deselect-all-textarea') %>
+                <%= t(:'.select_all') %>
+              <% end %>
+            </div>
           </th>
           <% # End Princeton Customization %>
           <th class="text-center">
             <div>
               <%= t :'.view.show' %>
             </div>
-            <%= select_deselect_button %>
+            <div class="text-center">
+              <%= label_tag 'item_details', class: 'select-label'  do %>
+                <%= select_deselect_action(t :'.view.select_id') %>
+                <%= t(:'.select_all') %>
+              <% end %>
+            </div>
           </th>
           <% available_view_fields.keys.each do |type| %>
             <th class="text-center">
               <div>
                 <%= t :".view.#{type}", default: t("blacklight.search.view.#{type}", default: type.to_s.humanize.titleize) %>
               </div>
-              <%= select_deselect_button %>
+              <div class="text-center">
+                <%= label_tag t(:'.deselect_all') + type.to_s, class: 'select-label'  do %>
+                  <%= select_deselect_action(t(:'.deselect_all') + type.to_s) %>
+                  <%= t(:'.select_all') %>
+                <% end %>
+              </div>
             </th>
           <% end %>
           <% # Princeton Customization - add link to search header %>
           <th class="text-center">
             <div>Link to Search</div>
-            <%= select_deselect_button %>
+            <div class="text-center">
+              <%= label_tag 'deselect-all-link-to-search', class: 'select-label'  do %>
+                <%= select_deselect_action('deselect-all-link-to-search') %>
+                <%= t(:'.select_all') %>
+              <% end %>
+            </div>
           </th>
           <% # End Princeton Customization %>
         </tr>
