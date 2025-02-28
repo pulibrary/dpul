@@ -77,6 +77,8 @@ gem "net-smtp", require: false
 gem 'omniauth', "> 1.0.0"
 gem 'omniauth-cas'
 gem 'omniauth-rails_csrf_protection'
+# openseadragon is not compatible with sprockets starting at 1.0
+gem 'openseadragon', '< 1.0.0'
 gem 'open_uri_redirections'
 gem 'rbtree', '>= 0.4.6'
 gem 'redcarpet', '~> 3.5.1'

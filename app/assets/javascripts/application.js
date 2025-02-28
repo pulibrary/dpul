@@ -19,5 +19,6 @@
 //= require blacklight/blacklight
 //= require 'blacklight_oembed/jquery.oembed.js'
 //= require blacklight_gallery
+//= require openseadragon
 //= require spotlight
 //= require sir_trevor/blocks/recent_items
