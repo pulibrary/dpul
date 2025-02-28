@@ -13,7 +13,7 @@ describe 'shared/_masthead', type: :view do
                                     current_masthead: masthead,
                                     blacklight_config: CatalogController.blacklight_config,
                                     resource_masthead?: false,
-                                    render_breadcrumbs: false)
+                                    breadcrumbs: nil)
   end
 
   it 'has the site title and subtitle' do
