@@ -2,6 +2,7 @@
   "type": "module",
   "dependencies": {
     "lux-design-system": "^5.0.0-beta.6",
+    "openseadragon-rails": "^1.0.17",
     "postcss": "^8.4.38",
     "postcss-import": "^16.1.0",
     "postcss-preset-env": "^9.5.4",
@@ -12,5 +13,11 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "vite": "^5.0.0",
     "vite-plugin-ruby": "^5.1.0"
-  }
+  },
+  "name": "dpul",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:pulibrary/dpul.git",
+  "author": "Trey Pendragon <tpendragon@princeton.edu>",
+  "license": "MIT"
 }
