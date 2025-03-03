@@ -28,7 +28,7 @@ RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view 
   it 'renders a tooltip for imported fields' do
     Spotlight::CustomField.create!(exhibit:, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: true)
     allow(view).to receive(:index_field_label).with(nil, 'two').and_return 'Some label'
-    render partial: p, locals: { key: 'two', config: facet_field, f: f }
+    render partial: p, locals: { key: 'two', config: facet_field, f: }
 
     expect(rendered).to have_selector '.import-tooltip'
   end
@@ -36,7 +36,7 @@ RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view 
   it "doesn't render a tooltip for writeable fields" do
     Spotlight::CustomField.create!(exhibit:, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: false)
     allow(view).to receive(:index_field_label).with(nil, 'two').and_return 'Some label'
-    render partial: p, locals: { key: 'two', config: facet_field, f: f }
+    render partial: p, locals: { key: 'two', config: facet_field, f: }
 
     expect(rendered).not_to have_selector '.import-tooltip'
   end
@@ -44,7 +44,7 @@ RSpec.describe 'spotlight/metadata_configurations/_metadata_field', type: :view 
   it "renders a field to set link_to_facet" do
     Spotlight::CustomField.create!(exhibit:, slug: "two", field: "two", label: "two", field_type: "vocab", readonly_field: false)
     allow(view).to receive(:index_field_label).with(nil, 'two').and_return 'Some label'
-    render partial: p, locals: { key: 'two', config: facet_field, f: f }
+    render partial: p, locals: { key: 'two', config: facet_field, f: }
 
     expect(rendered).to have_selector "input[type=checkbox][name='z[two][link_to_facet]'][value='two']"
   end
