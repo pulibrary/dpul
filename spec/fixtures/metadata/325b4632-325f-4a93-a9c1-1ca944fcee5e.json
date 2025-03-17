@@ -1,0 +1,77 @@
+{
+  "link_to_catalog": "https://catalog.princeton.edu/catalog/99116815163506421",
+  "@context": [
+    "https://bibdata.princeton.edu/context.json",
+    {
+      "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "latitude": {
+        "@id": "wgs84:lat"
+      },
+      "longitude": {
+        "@id": "wgs84:lon"
+      }
+    }
+  ],
+  "@id": "https://figgy.princeton.edu/catalog/325b4632-325f-4a93-a9c1-1ca944fcee5e",
+  "title": [
+    {
+      "@language": "eng",
+      "@value": "北京市城区街道图"
+    },
+    {
+      "@language": "eng",
+      "@value": "Beijing Shi cheng qu jie dao tu"
+    }
+  ],
+  "language": "zho",
+  "creator": [
+    "Gong dai hui di tu chu ban she ge ming wei yuan hui. Di tu zhan bao bian ji zu.",
+    "工代会地图出版社革命委员会. 地图战报编辑组."
+  ],
+  "extent": "1 map : color ; 26 x 38.5 cm",
+  "format": "Map",
+  "type": "Maps",
+  "description": [
+    "4 transportation maps of Peking on verso.",
+    "Includes \"在文化大革命中破旧名立新名战国表\"（新旧街名对照)"
+  ],
+  "publisher": [
+    "[Beijing] : Gong dai hui di tu chu ban she ge ming wei yuan hui di tu zhan bao bian ji zu, 1967.",
+    "[北京] : 工代会地图出版社革命委员会地图战报编辑组, 1967."
+  ],
+  "subject": [
+    "Beijing (China)—Maps",
+    "Urban transportation—China—Beijing—Maps",
+    "Maps"
+  ],
+  "coverage": "northlimit=39.949227; eastlimit=116.462288; southlimit=39.865743; westlimit=116.303673; units=degrees; projection=EPSG:4326",
+  "title_sort": "Beijing Shi cheng qu jie dao tu / Gong dai hui di tu chu ban she ge ming wei yuan hui di tu zhan bao bian ji zu.",
+  "cartographic_scale": "Scale not given.",
+  "spatial": "Beijing (China)",
+  "author": "Gong dai hui di tu chu ban she ge ming wei yuan hui. Di tu zhan bao bian ji zu.",
+  "created": "1967-01-01T00:00:00Z",
+  "date": "1967",
+  "identifier": [
+    "ark:/88435/1v53k3454"
+  ],
+  "electronic_locations": [
+    {
+      "@id": "https://catalog.princeton.edu/catalog/11681516#view",
+      "label": "Digital content"
+    }
+  ],
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/NKC/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "No Known Copyright"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/f08f6307-2956-4791-bea2-0fdb35baef35",
+      "@type": "pcdm:Collection",
+      "title": "East Asian Library Tables of Contents"
+    }
+  ],
+  "system_created_at": "2020-01-07T14:44:58Z",
+  "system_updated_at": "2023-10-27T21:03:45Z"
+}

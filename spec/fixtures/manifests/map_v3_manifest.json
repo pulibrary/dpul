@@ -1,0 +1,429 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json",
+    "http://iiif.io/api/extension/navplace/context.json"
+  ],
+  "type": "Manifest",
+  "id": "https://figgy.princeton.edu/concern/scanned_maps/325b4632-325f-4a93-a9c1-1ca944fcee5e/manifest",
+  "label": {
+    "eng": [
+      "北京市城区街道图",
+      "Beijing Shi cheng qu jie dao tu"
+    ]
+  },
+  "summary": {
+    "eng": [
+      "4 transportation maps of Peking on verso.",
+      "Includes \"在文化大革命中破旧名立新名战国表\"（新旧街名对照)"
+    ]
+  },
+  "behavior": [
+    "individuals"
+  ],
+  "metadata": [
+    {
+      "label": {
+        "eng": [
+          "Author"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Gong dai hui di tu chu ban she ge ming wei yuan hui. Di tu zhan bao bian ji zu."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Title"
+        ]
+      },
+      "value": {
+        "zho": [
+          "北京市城区街道图 / 工代会地图出版社革命委员会地图战报编辑组.",
+          "Beijing Shi cheng qu jie dao tu / Gong dai hui di tu chu ban she ge ming wei yuan hui di tu zhan bao bian ji zu."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Type"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Maps"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Content Type"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Map"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Creator"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Gong dai hui di tu chu ban she ge ming wei yuan hui. Di tu zhan bao bian ji zu.",
+          "工代会地图出版社革命委员会. 地图战报编辑组."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Date"
+        ]
+      },
+      "value": {
+        "eng": [
+          "1967"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Language"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Chinese"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Publisher"
+        ]
+      },
+      "value": {
+        "eng": [
+          "[Beijing] : Gong dai hui di tu chu ban she ge ming wei yuan hui di tu zhan bao bian ji zu, 1967.",
+          "[北京] : 工代会地图出版社革命委员会地图战报编辑组, 1967."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Subject"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Beijing (China)—Maps"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Cartographic Scale"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Scale not given."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Holding Location"
+        ]
+      },
+      "value": {
+        "eng": [
+          {
+            "@id": "https://bibdata.princeton.edu/locations/delivery_locations/4"
+          }
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Source Metadata Identifier"
+        ]
+      },
+      "value": {
+        "eng": [
+          "99116815163506421"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Imported Author"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Gong dai hui di tu chu ban she ge ming wei yuan hui. Di tu zhan bao bian ji zu."
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Downloadable"
+        ]
+      },
+      "value": {
+        "eng": [
+          "public"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Held By"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Princeton"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Spatial"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Beijing (China)"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Ark"
+        ]
+      },
+      "value": {
+        "eng": [
+          "http://arks.princeton.edu/ark:/88435/1v53k3454"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Rendered Holding Location"
+        ]
+      },
+      "value": {
+        "eng": [
+          "East Asian Library"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Member Of Collections"
+        ]
+      },
+      "value": {
+        "eng": [
+          "East Asian Library Tables of Contents"
+        ]
+      }
+    }
+  ],
+  "rendering": [
+    {
+      "type": "Text",
+      "label": {
+        "en": [
+          "Download as PDF"
+        ]
+      },
+      "format": "application/pdf",
+      "id": "https://figgy.princeton.edu/concern/scanned_maps/325b4632-325f-4a93-a9c1-1ca944fcee5e/pdf"
+    },
+    {
+      "id": "http://arks.princeton.edu/ark:/88435/1v53k3454",
+      "format": "text/html",
+      "type": "Text",
+      "label": {
+        "en": [
+          "View in catalog"
+        ]
+      }
+    }
+  ],
+  "items": [
+    {
+      "type": "Canvas",
+      "id": "https://figgy.princeton.edu/concern/scanned_maps/325b4632-325f-4a93-a9c1-1ca944fcee5e/manifest/canvas/ac1c3977-aff2-4d01-b1e9-30532f27c75f",
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://iiif-cloud.princeton.edu/iiif/2/b3%2F2f%2F74%2Fb32f74ac13e243de89e1af175a4076d0%2Fintermediate_file/full/1000,/0/default.jpg",
+                "type": "Image",
+                "height": 3086,
+                "width": 4535,
+                "format": "image/jpeg",
+                "service": [
+                  {
+                    "@id": "https://iiif-cloud.princeton.edu/iiif/2/b3%2F2f%2F74%2Fb32f74ac13e243de89e1af175a4076d0%2Fintermediate_file",
+                    "profile": "http://iiif.io/api/image/2/level2.json",
+                    "@type": "ImageService2"
+                  }
+                ]
+              },
+              "id": "https://figgy.princeton.edu/concern/scanned_maps/325b4632-325f-4a93-a9c1-1ca944fcee5e/manifest/canvas/ac1c3977-aff2-4d01-b1e9-30532f27c75f/annotation_page/f5323490-9166-4a80-92d6-78bf9b652e7a/annotation/53d51466-9947-4ba0-990d-06b32a14595f",
+              "target": "https://figgy.princeton.edu/concern/scanned_maps/325b4632-325f-4a93-a9c1-1ca944fcee5e/manifest/canvas/ac1c3977-aff2-4d01-b1e9-30532f27c75f"
+            }
+          ],
+          "id": "https://figgy.princeton.edu/concern/scanned_maps/325b4632-325f-4a93-a9c1-1ca944fcee5e/manifest/canvas/ac1c3977-aff2-4d01-b1e9-30532f27c75f/annotation_page/f5323490-9166-4a80-92d6-78bf9b652e7a"
+        }
+      ],
+      "label": {
+        "eng": [
+          "11681516.tif"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://iiif-cloud.princeton.edu/iiif/2/b3%2F2f%2F74%2Fb32f74ac13e243de89e1af175a4076d0%2Fintermediate_file/full/!200,200/0/default.jpg",
+          "type": "Image",
+          "height": 136,
+          "width": 200,
+          "format": "image/jpeg",
+          "service": [
+            {
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/b3%2F2f%2F74%2Fb32f74ac13e243de89e1af175a4076d0%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json",
+              "@type": "ImageService2"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://figgy.princeton.edu/downloads/ac1c3977-aff2-4d01-b1e9-30532f27c75f/file/f9e0b554-1fbd-4dff-bd27-fbeed5d175e6",
+          "format": "image/tiff",
+          "type": "Dataset",
+          "label": {
+            "en": [
+              "Download the original file"
+            ]
+          }
+        }
+      ],
+      "width": 4535,
+      "height": 3086
+    }
+  ],
+  "thumbnail": [
+    {
+      "id": "https://iiif-cloud.princeton.edu/iiif/2/b3%2F2f%2F74%2Fb32f74ac13e243de89e1af175a4076d0%2Fintermediate_file/full/!200,150/0/default.jpg",
+      "type": "Image",
+      "format": "image/jpeg",
+      "height": 150
+    }
+  ],
+  "seeAlso": [
+    {
+      "id": "https://figgy.princeton.edu/catalog/325b4632-325f-4a93-a9c1-1ca944fcee5e.jsonld",
+      "type": "Dataset",
+      "format": "application/ld+json"
+    },
+    {
+      "id": "https://catalog.princeton.edu/catalog/99116815163506421.marcxml",
+      "type": "Dataset",
+      "format": "text/xml"
+    }
+  ],
+  "rights": "http://rightsstatements.org/vocab/NKC/1.0/",
+  "provider": [
+    {
+      "id": "https://library.princeton.edu",
+      "type": "Agent",
+      "label": {
+        "en": [
+          "Princeton University Library"
+        ]
+      },
+      "logo": [
+        {
+          "id": "https://figgy.princeton.edu/pul_logo_icon.png",
+          "type": "Image",
+          "format": "image/png",
+          "height": 100,
+          "width": 120
+        }
+      ]
+    }
+  ],
+  "navPlace": {
+    "id": "https://figgy.princeton.edu/concern/scanned_maps/325b4632-325f-4a93-a9c1-1ca944fcee5e/manifest/feature-collection/1",
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": "https://figgy.princeton.edu/concern/scanned_maps/325b4632-325f-4a93-a9c1-1ca944fcee5e/manifest/feature/1",
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                116.462288,
+                39.949227
+              ],
+              [
+                116.303673,
+                39.949227
+              ],
+              [
+                116.303673,
+                39.865743
+              ],
+              [
+                116.462288,
+                39.865743
+              ],
+              [
+                116.462288,
+                39.949227
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}
