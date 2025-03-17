@@ -53,7 +53,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     if manifest.is_a? IIIF::Presentation::Collection
       @resources ||= manifest.manifests.flat_map do |m|
         authorized_url = AuthorizedUrl.new(url: m['@id']).to_s
-        IiifService.parse(authorized_url).first.resources
+        IiifService.parse(authorized_url).first.try(:resources) || []
       end
     else
       super

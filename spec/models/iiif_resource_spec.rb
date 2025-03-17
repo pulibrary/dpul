@@ -255,6 +255,28 @@ describe IiifResource do
       end
     end
 
+    context "when given a MVW where a child is restricted" do
+      it "indexes the parent, not the child" do
+        url = "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest"
+        stub_manifest(url:, fixture: "mvw.json")
+        stub_manifest(
+          url: "https://hydra-dev.princeton.edu/concern/scanned_resources/k35694439/manifest",
+          fixture: "vol1.json",
+          status: 401
+        )
+        stub_metadata(id: "12345678")
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+        resource = described_class.new url: url, exhibit: exhibit
+        expect(resource.save_and_index).to be_truthy
+
+        Blacklight.default_index.connection.commit
+        docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
+        expect(docs.length).to eq 1
+        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["MVW", "Second Title"] }
+        expect(mvw_doc).to be_present
+      end
+    end
+
     context "when given a MVW" do
       let(:url) { "https://hydra-dev.princeton.edu/concern/multi_volume_works/f4752g76q/manifest" }
 
