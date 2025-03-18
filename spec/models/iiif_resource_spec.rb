@@ -23,6 +23,29 @@ describe IiifResource do
     end
   end
 
+  context "when indexing a Map IIIF v3 manifest" do
+    it "indexes successfully" do
+      url = 'https://figgy.princeton.edu/concern/scanned_maps/325b4632-325f-4a93-a9c1-1ca944fcee5e/manifest'
+      stub_manifest(url:, fixture: 'map_v3_manifest.json')
+      stub_metadata(id: "325b4632-325f-4a93-a9c1-1ca944fcee5e")
+
+      exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+      resource = described_class.new url: url, exhibit: exhibit
+      resource.save
+      error_handler = lambda do |pipeline, exception, _data|
+        raise exception
+      end
+      resource.reindex(on_error: error_handler)
+
+      solr = Blacklight.default_index.connection
+      solr.commit
+      solr_doc = solr.select(q: "*:*")["response"]["docs"].first
+
+      expect(solr_doc["full_title_tesim"]).to eq ["北京市城区街道图", "Beijing Shi cheng qu jie dao tu"]
+      expect(solr_doc["sort_date_ssi"]).not_to be_blank
+    end
+  end
+
   context "when indexing a NetID only Recording IIIF v3 manifest" do
     it "uses an auth token if configured" do
       allow(Pomegranate.config).to receive(:[]).and_call_original

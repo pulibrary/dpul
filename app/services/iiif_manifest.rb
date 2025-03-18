@@ -15,6 +15,13 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     super
   end
 
+  # In V3 manifests a thumbnail is in an array, and uses 'id' instead of '@id'
+  def add_thumbnail_url
+    return unless thumbnail_field && manifest['thumbnail'].present?
+    thumbnail = Array.wrap(manifest['thumbnail']).first
+    solr_hash[thumbnail_field] = thumbnail['@id'] || thumbnail['id']
+  end
+
   def add_noid
     solr_hash["access_identifier_ssim"] = [noid]
   end
@@ -41,8 +48,12 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     solr_hash['sort_author_ssi'] = Array.wrap(solr_hash['readonly_author_ssim']).first
   end
 
+  def manifest_thumbnail
+    Array.wrap(manifest['thumbnail']).first
+  end
+
   def full_image_url
-    return super unless manifest['thumbnail'] && manifest['thumbnail']['service'] && manifest['thumbnail']['service']['@id']
+    return super unless manifest_thumbnail && manifest_thumbnail['service'] && manifest_thumbnail['service']['@id']
 
     "#{manifest['thumbnail']['service']['@id']}/full/!800,800/0/default.jpg"
   end
