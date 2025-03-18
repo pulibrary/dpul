@@ -59,7 +59,7 @@ gem 'bixby', '~> 5.0'
 gem 'blacklight', '~> 7.18'
 gem 'blacklight-gallery', '~> 4.5.0'
 gem 'blacklight-oembed'
-gem 'blacklight-spotlight', '~> 4.0.0'
+gem 'blacklight-spotlight', '~> 4.6.0'
 gem 'bootstrap', '~> 4.0'
 gem 'bootstrap_form', '~> 4.0'
 gem 'ddtrace', require: "ddtrace/auto_instrument"
@@ -77,6 +77,8 @@ gem "net-smtp", require: false
 gem 'omniauth', "> 1.0.0"
 gem 'omniauth-cas'
 gem 'omniauth-rails_csrf_protection'
+# openseadragon is not compatible with sprockets starting at 1.0
+gem 'openseadragon', '< 1.0.0'
 gem 'open_uri_redirections'
 gem 'rbtree', '>= 0.4.6'
 gem 'redcarpet', '~> 3.5.1'

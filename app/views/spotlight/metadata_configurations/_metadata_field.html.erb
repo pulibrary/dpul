@@ -8,16 +8,24 @@
         <%- if readonly?(key) %>
           <span class="import-tooltip glyphicon glyphicon-import" title="Imported from Figgy" data-toggle="tooltip"></span>
         <% end %>
-        <%= field.hidden_field :label, value: config.display_label, class: 'form-control input-sm', data: {:"edit-field-target" => 'true'} %>
+        <%= field.hidden_field :label, value: config.display_label, class: 'form-control form-control-sm', data: {:"edit-field-target" => 'true'} %>
       </div>
     </td>
     <% # Customized - add text area option %>
-    <td class="checkbox-cell text-center"><%= field.check_box :text_area, inline: true, checked: config.text_area == "1", label: "", disabled: readonly?(key) %></td>
-    <td class="checkbox-cell text-center"><%= field.check_box :show, inline: true, checked: config.show, label: "" %></td>
+    <td class="checkbox-cell text-center">
+      <%= field.check_box_without_bootstrap :text_area, checked: config.text_area == "1", hide_label: true, disabled: readonly?(key) %>
+    </td>
+    <td class="checkbox-cell text-center">
+      <%= field.check_box_without_bootstrap :show, checked: config.show, disabled: !config.immutable.show.nil?, hide_label: true %>
+    </td>
     <% available_view_fields.keys.each do |type| %>
-      <td class="checkbox-cell text-center"><%= field.check_box type, inline: true, checked: config.send(type), label: "" %></td>
+      <td class="checkbox-cell text-center">
+        <%= field.check_box_without_bootstrap type, checked: config.send(type), disabled: !config.immutable.send(type).nil?, hide_label: true %>
+      </td>
     <% end %>
     <% # Customized - add link to facet option %>
-    <td class="checkbox-cell text-center"><%= field.check_box :link_to_facet, {inline: true, checked: config.link_to_facet.present?, label: ""}, config.key, false%></td>
+    <td class="checkbox-cell text-center">
+      <%= field.check_box_without_bootstrap :link_to_facet, {checked: config.link_to_facet.present?, hide_label: true}, config.key, false %>
+    </td>
   <% end %>
 </tr>
