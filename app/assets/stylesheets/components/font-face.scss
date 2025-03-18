@@ -10,3 +10,12 @@
   font-style: normal;
   font-display: fallback;
 }
+/* tangut */
+@font-face {
+  font-family: 'Noto Serif Tangut';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: font_url('NotoSerifTangut.woff2') format('woff2');
+  unicode-range: U+2FF0-2FFF, U+31EF, U+16FE0, U+17000-187F7, U+18800-18AFF, U+18D00-18D08;
+}
