@@ -295,7 +295,7 @@ describe IiifResource do
         Blacklight.default_index.connection.commit
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         expect(docs.length).to eq 1
-        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["MVW", "Second Title"] }
+        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["Christopher and his kind, 1929-1939"] }
         expect(mvw_doc).to be_present
       end
     end
@@ -321,7 +321,7 @@ describe IiifResource do
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         expect(docs.length).to eq 2
         scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Scanned Resource 1"] }
-        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["MVW", "Second Title"] }
+        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["Christopher and his kind, 1929-1939"] }
         expect(scanned_resource_doc["collection_id_ssim"]).to eq [mvw_doc["id"]]
         expect(mvw_doc["collection_id_ssim"]).to eq nil
       end
@@ -375,6 +375,24 @@ describe IiifResource do
         Blacklight.default_index.connection.commit
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         expect(docs.first["readonly_available-online_ssim"]).to eq ["<a href='https://arks.princeton.edu/ark:/88435/dc2j62sg20c'>A complete program is available in online here</a>"]
+      end
+    end
+
+    context "when given an ephemera folder with a title and transliterated title" do
+      let(:url) { "https://figgy.princeton.edu/concern/ephemera_folders/3c037d85-116f-490b-8d9b-62b3fe79a563/manifest" }
+      before do
+        stub_manifest(url:, fixture: "3c037d85-116f-490b-8d9b-62b3fe79a563.json")
+        stub_metadata(id: "3c037d85-116f-490b-8d9b-62b3fe79a563")
+      end
+      it "indexes both into full_title_tesim" do
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+        resource = described_class.new url: url, exhibit: exhibit
+        expect(resource.save_and_index).to be_truthy
+
+        Blacklight.default_index.connection.commit
+        doc = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
+
+        expect(doc["full_title_tesim"]).to eq ["گلابو", "Gulābo"]
       end
     end
 

@@ -1,0 +1,238 @@
+{
+  "@context": [
+    "https://bibdata.princeton.edu/context.json",
+    {
+      "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "latitude": {
+        "@id": "wgs84:lat"
+      },
+      "longitude": {
+        "@id": "wgs84:lon"
+      }
+    }
+  ],
+  "@id": "https://figgy.princeton.edu/catalog/3c037d85-116f-490b-8d9b-62b3fe79a563",
+  "edm_rights": {
+    "@id": "http://rightsstatements.org/vocab/CNE/1.0/",
+    "@type": "dcterms:RightsStatement",
+    "pref_label": "Copyright Not Evaluated"
+  },
+  "memberOf": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/cbdf1a60-1b5e-482a-a117-5cfa6643330a",
+      "@type": "pcdm:Collection",
+      "title": "Pakistani Film Ephemera Collection"
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/b9734420-6d54-4cc2-a082-2ea52128b4aa",
+      "@type": "pcdm:Collection",
+      "barcode": "32101046817340",
+      "label": "Box 26",
+      "box_number": "26"
+    }
+  ],
+  "system_created_at": "2024-10-12T11:39:10Z",
+  "system_updated_at": "2025-03-28T20:10:21Z",
+  "@type": "pcdm:Object",
+  "title": [
+    "گلابو",
+    "Gulābo"
+  ],
+  "alternative": [
+    "Gulabo"
+  ],
+  "creator": [
+    "ایس۔ خان ، illustrator"
+  ],
+  "contributor": [
+    "S. Khan, illustrator",
+    "Es. K̲h̲ān, illustrator",
+    "سنگیتا",
+    "Sangeeta, director",
+    "Sangītā, director",
+    "نمرہ انٹرٹینمنٹ",
+    "Nimra Entertainment, producer",
+    "Nimrah Inṭarṭenmanṭ, producer"
+  ],
+  "publisher": [
+    "لاہور : نمرہ فلمز",
+    "Lahore : Nimra Films ",
+    "Lāhaur : Nimrah Filmz"
+  ],
+  "barcode": "32101046817340",
+  "label": "Folder 20",
+  "is_part_of": "Pakistani Film Ephemera Collection",
+  "coverage": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/cba3b71d-9fae-4df7-abcb-faf19f2eb20f",
+      "@type": "skos:Concept",
+      "pref_label": "Pakistan",
+      "in_scheme": {
+        "@id": "https://figgy.princeton.edu/ns/ephemeraGeographicAreas",
+        "@type": "skos:ConceptScheme",
+        "pref_label": "Ephemera Geographic Areas"
+      },
+      "exact_match": {
+        "@id": "http://id.loc.gov/vocabulary/countries/pk"
+      }
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/eb1efb80-cbb0-4f8c-b9bc-ae632623675e",
+      "@type": "skos:Concept",
+      "pref_label": "Pakistan--Punjab",
+      "in_scheme": {
+        "@id": "https://figgy.princeton.edu/ns/ephemeraGeographicAreas",
+        "@type": "skos:ConceptScheme",
+        "pref_label": "Ephemera Geographic Areas"
+      },
+      "exact_match": {
+        "@id": {
+          "@id": "http://id.loc.gov/authorities/names/n80152695"
+        }
+      }
+    }
+  ],
+  "format": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/80d548de-cd6c-4aa3-9037-e40288a26d9f",
+      "@type": "skos:Concept",
+      "pref_label": "Posters",
+      "in_scheme": {
+        "@id": "https://figgy.princeton.edu/ns/ephemeraGenres",
+        "@type": "skos:ConceptScheme",
+        "pref_label": "Ephemera Genres"
+      },
+      "exact_match": {
+        "@id": "http://id.loc.gov/vocabulary/graphicMaterials/tgm008104"
+      }
+    }
+  ],
+  "origin_place": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/cba3b71d-9fae-4df7-abcb-faf19f2eb20f",
+      "@type": "skos:Concept",
+      "pref_label": "Pakistan",
+      "in_scheme": {
+        "@id": "https://figgy.princeton.edu/ns/ephemeraGeographicAreas",
+        "@type": "skos:ConceptScheme",
+        "pref_label": "Ephemera Geographic Areas"
+      },
+      "exact_match": {
+        "@id": "http://id.loc.gov/vocabulary/countries/pk"
+      }
+    }
+  ],
+  "language": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/2e615ab4-c542-45a0-95e5-56815128cea4",
+      "@type": "skos:Concept",
+      "pref_label": "English",
+      "in_scheme": {
+        "@id": "https://figgy.princeton.edu/ns/ephemeraLanguages",
+        "@type": "skos:ConceptScheme",
+        "pref_label": "Ephemera Languages"
+      },
+      "exact_match": {
+        "@id": {
+          "@id": "http://id.loc.gov/vocabulary/iso639-1/en"
+        }
+      }
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/262323b7-082e-43ee-8bab-e2efa0a59a70",
+      "@type": "skos:Concept",
+      "pref_label": "Urdu",
+      "in_scheme": {
+        "@id": "https://figgy.princeton.edu/ns/ephemeraLanguages",
+        "@type": "skos:ConceptScheme",
+        "pref_label": "Ephemera Languages"
+      },
+      "exact_match": {
+        "@id": "http://id.loc.gov/vocabulary/iso639-1/ur"
+      }
+    }
+  ],
+  "subject": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/86295cf5-c903-4475-8a08-ff89c932f4c0",
+      "@type": "skos:Concept",
+      "pref_label": "Advertising",
+      "in_scheme": {
+        "@id": "https://figgy.princeton.edu/ns/ephemeraSubjects/artsAndCulture",
+        "@type": "skos:ConceptScheme",
+        "pref_label": "Arts and culture"
+      },
+      "exact_match": {
+        "@id": {
+          "@id": "https://id.loc.gov/authorities/subjects/sh85001086.html"
+        }
+      }
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/ef9e7678-8e6f-4cd9-9a90-c292e91ab99b",
+      "@type": "skos:Concept",
+      "pref_label": "Arts",
+      "in_scheme": {
+        "@id": "https://figgy.princeton.edu/ns/ephemeraSubjects/artsAndCulture",
+        "@type": "skos:ConceptScheme",
+        "pref_label": "Arts and culture"
+      },
+      "exact_match": {
+        "@id": "http://id.loc.gov/authorities/subjects/sh85008324"
+      }
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/f0e684e6-3adb-4b78-a1ab-4517477ca67e",
+      "@type": "skos:Concept",
+      "pref_label": "Motion pictures",
+      "in_scheme": {
+        "@id": "https://figgy.princeton.edu/ns/ephemeraSubjects/artsAndCulture",
+        "@type": "skos:ConceptScheme",
+        "pref_label": "Arts and culture"
+      },
+      "exact_match": {
+        "@id": "http://id.loc.gov/authorities/subjects/sh85088084"
+      }
+    }
+  ],
+  "category": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/277cdbea-c0a8-4b7f-8bf6-de5ac07f95c3",
+      "@type": "skos:ConceptScheme",
+      "pref_label": "Arts and culture"
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/277cdbea-c0a8-4b7f-8bf6-de5ac07f95c3",
+      "@type": "skos:ConceptScheme",
+      "pref_label": "Arts and culture"
+    },
+    {
+      "@id": "https://figgy.princeton.edu/catalog/277cdbea-c0a8-4b7f-8bf6-de5ac07f95c3",
+      "@type": "skos:ConceptScheme",
+      "pref_label": "Arts and culture"
+    }
+  ],
+  "description": [
+    "Gulabo - directed by Sangeeta & produced by Nimra Entertainment. Saima, Shaan, Babar Ali, Iftikhar Thakur, Resham, Babbu Baral, Nasir Chinyoti - cast. This is an action film in Punjabi language. \r\n"
+  ],
+  "height": [
+    "102 cm"
+  ],
+  "width": [
+    "77 cm"
+  ],
+  "page_count": "1",
+  "created": "10/12/24 11:39:10 AM UTC",
+  "modified": "03/28/25 08:10:21 PM UTC",
+  "folder_number": "20",
+  "date_created": [
+    "2008"
+  ],
+  "provenance": "Collection of Mr. Umar Ali",
+  "transliterated_title": [
+    "Gulābo"
+  ],
+  "keywords": [
+    "Pakistani Film Ephemera Collection"
+  ]
+}

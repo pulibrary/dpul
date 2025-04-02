@@ -13,6 +13,17 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     add_full_text
     add_timestamps
     super
+    add_title_from_manifest_metadata
+    solr_hash
+  end
+
+  # Titles are single-valued in IIIF Manifests, but we need multiple titles from
+  # JSON-LD for transliterated titles.
+  def add_title_from_manifest_metadata
+    return unless title_fields.present? && solr_hash["readonly_title_tesim"].present?
+    Array.wrap(title_fields).each do |field|
+      solr_hash[field] = solr_hash["readonly_title_tesim"]
+    end
   end
 
   # In V3 manifests a thumbnail is in an array, and uses 'id' instead of '@id'
