@@ -295,7 +295,7 @@ describe IiifResource do
         Blacklight.default_index.connection.commit
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         expect(docs.length).to eq 1
-        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["MVW", "Second Title"] }
+        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["Christopher and his kind, 1929-1939"] }
         expect(mvw_doc).to be_present
       end
     end
@@ -321,7 +321,7 @@ describe IiifResource do
         docs = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"]
         expect(docs.length).to eq 2
         scanned_resource_doc = docs.find { |x| x["full_title_tesim"] == ["Scanned Resource 1"] }
-        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["MVW", "Second Title"] }
+        mvw_doc = docs.find { |x| x["full_title_tesim"] == ["Christopher and his kind, 1929-1939"] }
         expect(scanned_resource_doc["collection_id_ssim"]).to eq [mvw_doc["id"]]
         expect(mvw_doc["collection_id_ssim"]).to eq nil
       end

@@ -86,7 +86,7 @@ RSpec.describe FiggyEventProcessor do
       Blacklight.default_index.connection.commit
       resource = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
 
-      expect(resource["full_title_tesim"]).to eq ["Updated Record"]
+      expect(resource["sort_title_ssi"]).to eq "Updated Record"
     end
     context "when the record is gone" do
       it "doesn't blow up" do
