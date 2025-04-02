@@ -378,6 +378,24 @@ describe IiifResource do
       end
     end
 
+    context "when given an ephemera folder with a title and transliterated title" do
+      let(:url) { "https://figgy.princeton.edu/concern/ephemera_folders/3c037d85-116f-490b-8d9b-62b3fe79a563/manifest" }
+      before do
+        stub_manifest(url:, fixture: "3c037d85-116f-490b-8d9b-62b3fe79a563.json")
+        stub_metadata(id: "3c037d85-116f-490b-8d9b-62b3fe79a563")
+      end
+      it "indexes both into full_title_tesim" do
+        exhibit = Spotlight::Exhibit.create title: 'Exhibit A'
+        resource = described_class.new url: url, exhibit: exhibit
+        expect(resource.save_and_index).to be_truthy
+
+        Blacklight.default_index.connection.commit
+        doc = Blacklight.default_index.connection.get("select", params: { q: "*:*" })["response"]["docs"].first
+
+        expect(doc["full_title_tesim"]).to eq ["گلابو", "Gulābo"]
+      end
+    end
+
     describe '#reindex' do
       let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
       let(:resource) { described_class.new url:, exhibit: }

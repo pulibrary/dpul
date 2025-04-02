@@ -1,0 +1,278 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@type": "sc:Manifest",
+  "@id": "https://figgy.princeton.edu/concern/ephemera_folders/3c037d85-116f-490b-8d9b-62b3fe79a563/manifest",
+  "label": "گلابو",
+  "description": "Gulabo - directed by Sangeeta & produced by Nimra Entertainment. Saima, Shaan, Babar Ali, Iftikhar Thakur, Resham, Babbu Baral, Nasir Chinyoti - cast. This is an action film in Punjabi language. \r\n",
+  "viewingHint": "individuals",
+  "metadata": [
+    {
+      "label": "Barcode",
+      "value": [
+        "32101111343388"
+      ]
+    },
+    {
+      "label": "Folder Number",
+      "value": [
+        "20"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        "گلابو"
+      ]
+    },
+    {
+      "label": "Alternative Title",
+      "value": [
+        "Gulabo"
+      ]
+    },
+    {
+      "label": "Transliterated Title",
+      "value": [
+        "Gulābo"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "English",
+        "Urdu"
+      ]
+    },
+    {
+      "label": "Genre",
+      "value": [
+        "Posters"
+      ]
+    },
+    {
+      "label": "Width",
+      "value": [
+        "77"
+      ]
+    },
+    {
+      "label": "Height",
+      "value": [
+        "102"
+      ]
+    },
+    {
+      "label": "Page Count",
+      "value": [
+        "1"
+      ]
+    },
+    {
+      "label": "Keywords",
+      "value": [
+        "Pakistani Film Ephemera Collection"
+      ]
+    },
+    {
+      "label": "Creator",
+      "value": [
+        "ایس۔ خان ، illustrator"
+      ]
+    },
+    {
+      "label": "Contributor",
+      "value": [
+        "S. Khan, illustrator",
+        "Es. K̲h̲ān, illustrator",
+        "سنگیتا",
+        "Sangeeta, director",
+        "Sangītā, director",
+        "نمرہ انٹرٹینمنٹ",
+        "Nimra Entertainment, producer",
+        "Nimrah Inṭarṭenmanṭ, producer"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "لاہور : نمرہ فلمز",
+        "Lahore : Nimra Films ",
+        "Lāhaur : Nimrah Filmz"
+      ]
+    },
+    {
+      "label": "Geographic Origin",
+      "value": [
+        "Pakistan"
+      ]
+    },
+    {
+      "label": "Geo Subject",
+      "value": [
+        "Pakistan",
+        "Pakistan--Punjab"
+      ]
+    },
+    {
+      "label": "Date Created",
+      "value": [
+        "2008"
+      ]
+    },
+    {
+      "label": "Provenance",
+      "value": [
+        "Collection of Mr. Umar Ali"
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Advertising",
+        "Arts",
+        "Motion pictures"
+      ]
+    },
+    {
+      "label": "Categories",
+      "value": [
+        {
+          "id": {
+            "id": "277cdbea-c0a8-4b7f-8bf6-de5ac07f95c3"
+          },
+          "internal_resource": "EphemeraVocabulary",
+          "created_at": "10/06/17 07:48:35 PM UTC",
+          "updated_at": "03/09/18 08:20:11 PM UTC",
+          "new_record": false,
+          "optimistic_lock_token": [],
+          "read_groups": [],
+          "read_users": [],
+          "edit_users": [],
+          "edit_groups": [],
+          "label": "Arts and culture",
+          "uri": "https://figgy.princeton.edu/ns/ephemeraSubjects/artsAndCulture",
+          "definition": null,
+          "member_of_vocabulary_id": [
+            {
+              "id": "94ac8724-64e5-4f46-bbe1-991d6cdd438f"
+            }
+          ]
+        },
+        {
+          "id": {
+            "id": "277cdbea-c0a8-4b7f-8bf6-de5ac07f95c3"
+          },
+          "internal_resource": "EphemeraVocabulary",
+          "created_at": "10/06/17 07:48:35 PM UTC",
+          "updated_at": "03/09/18 08:20:11 PM UTC",
+          "new_record": false,
+          "optimistic_lock_token": [],
+          "read_groups": [],
+          "read_users": [],
+          "edit_users": [],
+          "edit_groups": [],
+          "label": "Arts and culture",
+          "uri": "https://figgy.princeton.edu/ns/ephemeraSubjects/artsAndCulture",
+          "definition": null,
+          "member_of_vocabulary_id": [
+            {
+              "id": "94ac8724-64e5-4f46-bbe1-991d6cdd438f"
+            }
+          ]
+        },
+        {
+          "id": {
+            "id": "277cdbea-c0a8-4b7f-8bf6-de5ac07f95c3"
+          },
+          "internal_resource": "EphemeraVocabulary",
+          "created_at": "10/06/17 07:48:35 PM UTC",
+          "updated_at": "03/09/18 08:20:11 PM UTC",
+          "new_record": false,
+          "optimistic_lock_token": [],
+          "read_groups": [],
+          "read_users": [],
+          "edit_users": [],
+          "edit_groups": [],
+          "label": "Arts and culture",
+          "uri": "https://figgy.princeton.edu/ns/ephemeraSubjects/artsAndCulture",
+          "definition": null,
+          "member_of_vocabulary_id": [
+            {
+              "id": "94ac8724-64e5-4f46-bbe1-991d6cdd438f"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sequences": [
+    {
+      "@type": "sc:Sequence",
+      "@id": "https://figgy.princeton.edu/concern/ephemera_folders/3c037d85-116f-490b-8d9b-62b3fe79a563/manifest/sequence/normal",
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/3c037d85-116f-490b-8d9b-62b3fe79a563/pdf",
+          "label": "Download as PDF",
+          "format": "application/pdf"
+        }
+      ],
+      "canvases": [
+        {
+          "@type": "sc:Canvas",
+          "@id": "https://figgy.princeton.edu/concern/ephemera_folders/3c037d85-116f-490b-8d9b-62b3fe79a563/manifest/canvas/575a0b87-0eaa-474e-a866-214e63716b7a",
+          "label": "PK_0002_00049",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/575a0b87-0eaa-474e-a866-214e63716b7a/file/2309dfce-6870-4f6f-b3fc-372cda9d4d36",
+              "label": "Download the original file",
+              "format": "image/tiff"
+            }
+          ],
+          "width": 5654,
+          "height": 7537,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@type": "dctypes:Image",
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/01%2F58%2F14%2F015814a1001b4bb092bed7cbde74c98b%2Fintermediate_file/full/1000,/0/default.jpg",
+                "height": 7537,
+                "width": 5654,
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/01%2F58%2F14%2F015814a1001b4bb092bed7cbde74c98b%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              },
+              "@id": "https://figgy.princeton.edu/concern/ephemera_folders/3c037d85-116f-490b-8d9b-62b3fe79a563/manifest/image/575a0b87-0eaa-474e-a866-214e63716b7a",
+              "on": "https://figgy.princeton.edu/concern/ephemera_folders/3c037d85-116f-490b-8d9b-62b3fe79a563/manifest/canvas/575a0b87-0eaa-474e-a866-214e63716b7a"
+            }
+          ]
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "seeAlso": {
+    "@id": "https://figgy.princeton.edu/catalog/3c037d85-116f-490b-8d9b-62b3fe79a563.jsonld",
+    "format": "application/ld+json"
+  },
+  "license": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/01%2F58%2F14%2F015814a1001b4bb092bed7cbde74c98b%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/01%2F58%2F14%2F015814a1001b4bb092bed7cbde74c98b%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "service": {
+    "@context": "http://iiif.io/api/search/0/context.json",
+    "@id": "https://figgy.princeton.edu/catalog/3c037d85-116f-490b-8d9b-62b3fe79a563/iiif_search",
+    "profile": "http://iiif.io/api/search/0/search",
+    "label": "Search within this item"
+  }
+}
