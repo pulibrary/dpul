@@ -300,7 +300,7 @@ GEM
     ffi (1.17.1-arm64-darwin)
     ffi (1.17.1-x86_64-darwin)
     ffi (1.17.1-x86_64-linux-gnu)
-    fiber-storage (1.0.0)
+    fiber-storage (1.0.1)
     friendly_id (5.5.1)
       activerecord (>= 4.0.0)
     gapic-common (0.25.0)
@@ -368,9 +368,10 @@ GEM
       multi_json (~> 1.11)
       os (>= 0.9, < 2.0)
       signet (>= 0.16, < 2.a)
-    graphql (2.4.6)
+    graphql (2.4.13)
       base64
       fiber-storage
+      logger
     graphql-client (0.24.0)
       activesupport (>= 3.0)
       graphql (>= 1.13.0)
