@@ -836,7 +836,7 @@ DEPENDENCIES
   blacklight-gallery (~> 4.5.0)
   blacklight-oembed
   blacklight-spotlight (~> 4.6.0)
-  bootstrap (~> 4.0)
+  bootstrap (~> 4.6)
   bootstrap_form (~> 4.0)
   byebug
   cancancan
