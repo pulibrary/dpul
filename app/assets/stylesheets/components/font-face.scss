@@ -36,6 +36,16 @@
   font-weight: 100 900;
   font-stretch: 100%;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/notosansthai/v25/iJWQBXeUZi_OHPqn4wq6hQ2_hbJ1xyN9wd43SofNWcdfKI2hTWsb-P2c.woff2) format('woff2');
+  src: font_url('NotoSansThai.woff2') format('woff2');
   unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+
+/* mongolian */
+@font-face {
+  font-family: 'Noto Sans Mongolian';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: font_url('NotoSansMongolian.woff2') format('woff2');
+  unicode-range: U+1800-18AF, U+200C-200D, U+202F, U+2048-2049, U+2460-2473, U+25CC, U+3001-3002, U+3008-300F, U+FE3D-FE3E, U+FE41-FE44, U+11660-1166C;
 }
