@@ -49,3 +49,14 @@
   src: font_url('NotoSansMongolian.woff2') format('woff2');
   unicode-range: U+1800-18AF, U+200C-200D, U+202F, U+2048-2049, U+2460-2473, U+25CC, U+3001-3002, U+3008-300F, U+FE3D-FE3E, U+FE41-FE44, U+11660-1166C;
 }
+
+/* devanagari */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: font_url('NotoSansDevanagari.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
