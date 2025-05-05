@@ -70,3 +70,13 @@
   src: font_url('NotoSansBatak.woff2') format('woff2');
   unicode-range: U+1BC0-1BFF, U+200C-200D, U+25CC;
 }
+
+/* tibetan */
+@font-face {
+  font-family: 'Noto Serif Tibetan';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: font_url('NotoSansTibetan.woff2') format('woff2');
+  unicode-range: U+0F00-0FFF, U+200C-200D, U+25CC, U+3008-300B;
+}
