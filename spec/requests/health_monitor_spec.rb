@@ -19,8 +19,9 @@ RSpec.describe "Health Monitor", type: :request do
     end
 
     it "errors when there's a failure to a critical service (e.g. solr)" do
-      allow(Blacklight.default_index.connection).to receive(:uri).and_return(URI("http://example.com/bla"))
-      stub_request(:get, "http://example.com/solr/admin/cores?action=STATUS").to_return(body: { responseHeader: { status: 500 } }.to_json, headers: { "Content-Type" => "text/json" })
+      solr_uri = URI.join(Blacklight.default_index.connection.uri, "admin/", "ping")
+      allow(Net::HTTP).to receive(:start).and_call_original
+      allow(Net::HTTP).to receive(:start).with(solr_uri.hostname, solr_uri.port).and_raise("Broken contacting solr.")
 
       get "/health.json"
 
@@ -38,18 +39,6 @@ RSpec.describe "Health Monitor", type: :request do
       get "/health.json?providers[]=smtpstatus"
 
       expect(Net::SMTP).to have_received(:new).exactly(1).times
-    end
-
-    it "errors when solr is down" do
-      allow(Blacklight.default_index.connection).to receive(:uri).and_return(URI("http://example.com/bla"))
-      stub_request(:get, "http://example.com/solr/admin/cores?action=STATUS").to_return(body: { responseHeader: { status: 500 } }.to_json, headers: { "Content-Type" => "text/json" })
-
-      get "/health.json?providers[]=solrstatus"
-
-      expect(response).not_to be_successful
-      expect(response.status).to eq 503
-      solr_response = JSON.parse(response.body)["results"].find { |x| x["name"] == "SolrStatus" }
-      expect(solr_response["message"]).to start_with "The solr has an invalid status"
     end
 
     context "when checking the status of the mounted directory" do

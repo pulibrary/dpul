@@ -15,7 +15,10 @@ Rails.application.config.after_initialize do
     config.add_custom_provider(CheckOverrides::Redis).configure do |provider_config|
       provider_config.critical = false
     end
-    config.add_custom_provider(SolrStatus)
+    config.solr.configure do |c|
+      c.url = Blacklight.default_index.connection.uri.to_s
+      c.collection = Blacklight.default_index.connection.uri.path.split("/").last
+    end
     config.add_custom_provider(SmtpStatus).configure do |provider_config|
       provider_config.critical = false
     end
