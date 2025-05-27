@@ -8,7 +8,8 @@ body {
     font-family: $font-sans;
     font-size: 16px;
     font-weight: 400;
-    line-height: normal !important;
+    // line-height: normal !important;
+    line-height: 1.45;
     color: #333;
 }
 
@@ -18,7 +19,8 @@ p {
 
 h1, h2, h3, h4 {
     font-weight: inherit;
-    line-height: normal !important;
+    line-height: 1.2;
+    // line-height: normal !important;
 }
 
 h1 {
