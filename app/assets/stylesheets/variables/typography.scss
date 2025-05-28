@@ -1,11 +1,14 @@
 // used for body text, cards, buttons
-$font-primary: "Noto Serif Tangut", "DejaVu Sans", "HelveticaNeue", Arial, sans-serif;
+$font-primary: "Noto Sans Mongolian", "Noto Sans Devanagari", "Noto Serif Tangut", "Noto Sans Tai Tham", "Noto Serif Tibetan", "Noto Sans Batak", "Noto Sans Devanagari", "Noto Serif Tangut", "Noto Sans Tai Tham", "Noto Sans Thai", "DejaVu Sans", "HelveticaNeue", Arial, sans-serif;
 
 // used for masthead title and other headers
 $font-secondary: Georgia, Times, 'Times New Roman', serif;
 
 // used for lists and tabs
-$font-sans: "Noto Serif Tangut", "DejaVu Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+// Mongolian must be first (or characters fail to render in Chrome), and Noto
+// Serif Myanmar must be after DejaVu Sans (or line heights get messed up for
+// some reason)
+$font-sans: "Noto Sans Mongolian", "Noto Sans Devanagari", "Noto Serif Tangut", "Noto Sans Tai Tham", "Noto Serif Tibetan", "Noto Sans Batak", "Noto Sans Devanagari", "Noto Serif Tangut", "Noto Sans Tai Tham", "Noto Sans Thai", "DejaVu Sans", "Noto Serif Myanmar", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 
 $text-color: #000 !default;
 $text-small: 12px;
