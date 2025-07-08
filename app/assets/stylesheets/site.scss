@@ -20,6 +20,12 @@ h1, h2, h3, h4, h5, h6 .facets, .facets-heading {
   font-family: $font-secondary;
 }
 
+main {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-sans;
+  }
+}
+
 h1, h2, h3, h4, h5, h6, .st__content-block, .content-block {
   margin: 1em 0 1em;
 }
