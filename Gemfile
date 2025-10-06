@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-source 'https://rubygems.org'
+source 'https://gem.coop'
 
 gem 'graphql-client'
 gem 'health-monitor-rails', '~> 12.9'
