@@ -98,7 +98,7 @@ gem 'vite_rails'
 
 gem 'dalli'
 gem 'honeybadger'
-gem 'nokogiri', '~> 1.18.8'
+gem 'nokogiri', '~> 1.18.9'
 gem 'ruby-prof', require: false
 gem 'rubyzip', '>= 1.2.2'
 
