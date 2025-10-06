@@ -1,11 +1,5 @@
 GEM
-  remote: https://gems.contribsys.com/
-  specs:
-    sidekiq-pro (7.1.6)
-      sidekiq (>= 7.1.5, < 8)
-
-GEM
-  remote: https://rubygems.org/
+  remote: https://gem.coop/
   specs:
     actioncable (7.2.2.1)
       actionpack (= 7.2.2.1)
@@ -817,6 +811,12 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.7.2)
+
+GEM
+  remote: https://gems.contribsys.com/
+  specs:
+    sidekiq-pro (7.1.6)
+      sidekiq (>= 7.1.5, < 8)
 
 PLATFORMS
   arm64-darwin-21
