@@ -55,6 +55,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     end
 
     def to_pair
+      return [new_key, [placeholder_title]] if new_key == "Title" && new_values.empty?
       [new_key, new_values]
     end
 
@@ -65,7 +66,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     end
 
     def new_values
-      values.map { |value| transform_value(value) }
+      values.compact.map { |value| transform_value(value) }
     end
 
     # rubocop:disable Metrics/PerceivedComplexity
@@ -104,6 +105,10 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
 
     def language_name(value)
       ISO_639.find_by_code(value).try(:english_name) || value
+    end
+
+    def placeholder_title
+      "[Missing Title]"
     end
   end
 
