@@ -8,6 +8,7 @@ RSpec.describe ManifestMetadata do
   let(:plain_value) { { "Title" => ["Plain"] } }
   let(:at_value) { { "Title" => { "@value" => "Value Text" } } }
   let(:pref_value) { { "Title" => { "pref_label" => "Pref Label Text" } } }
+  let(:nil_value) { { "Title" => [nil] } }
   let(:lang_code) { { "Language" => "en" } }
   let(:member) { { "Memberof" => { "title" => "Member Title" } } }
   let(:id_value) { { "Title" => { "@id" => "1234" } } }
@@ -57,6 +58,9 @@ RSpec.describe ManifestMetadata do
     end
     it "downcases keywords for consistent storage" do
       expect(metadata.process_values(keywords_value)).to eq("keywords" => ["christianity", "people's movement", "liberation theology"])
+    end
+    it "provides a placeholder title when nil" do
+      expect(metadata.process_values(nil_value)).to eq("Title" => ["[Missing Title]"])
     end
   end
 end
