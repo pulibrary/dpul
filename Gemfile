@@ -61,6 +61,8 @@ gem 'blacklight-oembed'
 gem 'blacklight-spotlight', '~> 4.6.0'
 gem 'bootstrap', '~> 4.6'
 gem 'bootstrap_form', '~> 4.0'
+# pinning connection_pool due to https://github.com/rails/rails/pull/56292
+gem "connection_pool", "< 3"
 gem 'ddtrace', require: "ddtrace/auto_instrument"
 gem 'devise', '~> 4.9.0'
 gem 'devise-guests', '~> 0.8'
