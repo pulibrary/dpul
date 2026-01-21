@@ -8,7 +8,7 @@ jobs:
     working_directory: ~/dpul
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: cimg/ruby:3.2.6-browsers
+      - image: cimg/ruby:3.4.8-browsers
         environment:
           RAILS_ENV: test
           NODE_ENV: test
@@ -30,7 +30,7 @@ jobs:
             - dpul-{{ checksum "Gemfile.lock" }}
             - dpul-yarn-{{ checksum "yarn.lock" }}
       # Install bundler / yarn
-      - run: gem install bundler -v '2.3.18'
+      - run: gem install bundler -v '2.6.9'
       - node/install:
           install-yarn: true
           node-version: '22.10.0'
@@ -58,7 +58,7 @@ jobs:
   rubocop:
     working_directory: ~/dpul
     docker:
-      - image: cimg/ruby:3.2.6-browsers
+      - image: cimg/ruby:3.4.8-browsers
         environment:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
@@ -68,7 +68,7 @@ jobs:
       - attach_workspace:
           at: '~/dpul'
       # Install Bundler
-      - run: gem install bundler -v '~> 2.0'
+      - run: gem install bundler -v '2.6.9'
       # Bundle install dependencies
       - run: bundle config set --local path "vendor/bundle"
       - run: bundle install
@@ -76,7 +76,7 @@ jobs:
   test:
     working_directory: ~/dpul
     docker:
-      - image: cimg/ruby:3.2.6-browsers
+      - image: cimg/ruby:3.4.8-browsers
         environment:
           RAILS_ENV: test
           POMEGRANATE_DB_HOST: localhost
@@ -108,7 +108,7 @@ jobs:
           install-yarn: true
           node-version: '22.10.0'
       # Install Bundler
-      - run: gem install bundler -v '~> 2.0'
+      - run: gem install bundler -v '2.6.9'
       # Bundle install dependencies
       - run: bundle config set --local path "vendor/bundle"
       - run: bundle install
