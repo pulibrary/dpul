@@ -33,9 +33,9 @@ class SolrDocument
   def update(current_exhibit, new_attributes)
     attributes = new_attributes.stringify_keys
 
-    custom_data = attributes.delete('sidecar')
-    tags = attributes.delete('exhibit_tag_list')
-    resource_attributes = attributes.delete('uploaded_resource')
+    custom_data = attributes.delete("sidecar")
+    tags = attributes.delete("exhibit_tag_list")
+    resource_attributes = attributes.delete("uploaded_resource")
     # This part was added
     if custom_data
       sidecar = sidecar(current_exhibit)

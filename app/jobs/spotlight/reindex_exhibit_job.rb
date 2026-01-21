@@ -17,7 +17,7 @@ module Spotlight
     end
 
     def perform(exhibit, **)
-      job_tracker.update(status: 'in_progress')
+      job_tracker.update(status: "in_progress")
       exhibit = ExhibitProxy.new(exhibit)
 
       # Remove resources not currently in collection
@@ -32,7 +32,7 @@ module Spotlight
       return if errored_resources.blank?
       # errors after retries set failed status, with details sent to Honeybadger
       Honeybadger.notify("Exhibit index failure on #{exhibit.slug}, with timeout errors on #{errored_resources.map(&:url).join(', ')}")
-      job_tracker.update(status: 'failed')
+      job_tracker.update(status: "failed")
     end
 
     def enqueue_resources(resources_to_enqueue)

@@ -72,9 +72,9 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     # rubocop:disable Metrics/PerceivedComplexity
     def transform_value(value)
       ["@value", "pref_label", "skos:prefLabel"].each { |prop| return value[prop] if value[prop] }
-      return electronic_location_link(value) if key == 'Electronic locations'
-      return language_name(value) if key == 'Language'
-      return value['title'] if key == 'Memberof'
+      return electronic_location_link(value) if key == "Electronic locations"
+      return language_name(value) if key == "Language"
+      return value["title"] if key == "Memberof"
       return value["@id"] if value["@id"]
       return link_to_catalog(value) if key == "Link to catalog" || key == "Link to finding aid"
       return actors(value) if key == "Actor"
@@ -151,9 +151,9 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
 
     def range_labels(hsh)
       values = []
-      (@manifest['structures'] || []).each do |s|
-        values << s['label']
+      (@manifest["structures"] || []).each do |s|
+        values << s["label"]
       end
-      hsh['Range label'] = values unless values.empty?
+      hsh["Range label"] = values unless values.empty?
     end
 end

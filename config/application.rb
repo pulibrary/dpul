@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require File.expand_path('boot', __dir__)
+require File.expand_path("boot", __dir__)
 
-require 'rails/all'
-require 'open-uri'
-require_relative 'lando_env'
+require "rails/all"
+require "open-uri"
+require_relative "lando_env"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -39,7 +39,7 @@ module Pomegranate
     # config.i18n.default_locale = :de
 
     config.autoload_paths += %W(#{Rails.root}/app/workers)
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     config.active_record.yaml_column_permitted_classes = [Symbol, Date, Time, Hash, HashWithIndifferentAccess, IIIF::OrderedHash]
   end

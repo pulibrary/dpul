@@ -14,8 +14,8 @@ module Blacklight
         @response = response
         @fields = fields
         @title = title
-        @id = id ? "facets-#{id}" : 'facets'
-        @panel_id = id ? "facet-panel-#{id}-collapse" : 'facet-panel-collapse'
+        @id = id ? "facets-#{id}" : "facets"
+        @panel_id = id ? "facet-panel-#{id}-collapse" : "facet-panel-collapse"
       end
 
       def render?

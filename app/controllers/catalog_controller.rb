@@ -10,15 +10,15 @@ class CatalogController < ApplicationController
   def search_across_settings
     return if current_exhibit
 
-    blacklight_config.add_index_field 'readonly_creator_ssim', label: 'Creator'
+    blacklight_config.add_index_field "readonly_creator_ssim", label: "Creator"
     # show: false is used to add results to the JSON endpoint for bento search.
-    blacklight_config.add_index_field 'readonly_title_ssim', label: 'Title', show: false
-    blacklight_config.add_index_field 'readonly_publisher_ssim', label: 'Publisher', show: false
-    blacklight_config.add_index_field 'readonly_format_ssim', label: 'Format', show: false
-    blacklight_config.add_index_field 'readonly_collections_tesim', label: 'Collections', show: false
+    blacklight_config.add_index_field "readonly_title_ssim", label: "Title", show: false
+    blacklight_config.add_index_field "readonly_publisher_ssim", label: "Publisher", show: false
+    blacklight_config.add_index_field "readonly_format_ssim", label: "Format", show: false
+    blacklight_config.add_index_field "readonly_collections_tesim", label: "Collections", show: false
 
-    blacklight_config.add_facet_field 'readonly_language_ssim', label: 'Language', limit: 10
-    blacklight_config.add_facet_field 'readonly_subject_ssim', label: 'Subject', limit: 10
+    blacklight_config.add_facet_field "readonly_language_ssim", label: "Language", limit: 10
+    blacklight_config.add_facet_field "readonly_subject_ssim", label: "Subject", limit: 10
     [:embed, :gallery, :masonry, :slideshow].each do |view|
       blacklight_config.view.delete(view)
     end
@@ -30,7 +30,7 @@ class CatalogController < ApplicationController
 
   def unique_custom_fields
     Spotlight::CustomField.select(:field, :configuration).distinct.to_a
-                          .uniq(&:field).reject { |v| v.field == 'readonly_range-label_ssim' }
+                          .uniq(&:field).reject { |v| v.field == "readonly_range-label_ssim" }
   end
 
   configure_blacklight do |config|
@@ -38,13 +38,13 @@ class CatalogController < ApplicationController
     config.show.oembed_field = :oembed_url_ssm
     config.show.partials.insert(1, :oembed)
     # Default Configurations
-    config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_results_document_tool(:bookmark, partial: "bookmark_control", if: :render_bookmarks_control?)
 
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
     config.add_results_collection_tool(:view_type_group)
 
-    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_tools_partial(:bookmark, partial: "bookmark_control", if: :render_bookmarks_control?)
 
     # Override default bulk_actions config so the change_visibilty option is hidden
     config.bulk_actions ||= Blacklight::NestedOpenStructWithHashAccess.new(Blacklight::Configuration::ToolConfig)
@@ -63,9 +63,9 @@ class CatalogController < ApplicationController
     config.show.tile_source_field = :tile_source_ssim
     config.index.tile_source_field = :tile_source_ssim
     config.show.partials.insert(1, :universal_viewer)
-    config.view.embed(partials: ['universal_viewer'])
+    config.view.embed(partials: ["universal_viewer"])
 
-    config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_results_document_tool(:bookmark, partial: "bookmark_control", if: :render_bookmarks_control?)
     # Make browse results doc actions consistent with search result doc actions
     config.browse.document_actions = config.index.document_actions
 
@@ -73,9 +73,9 @@ class CatalogController < ApplicationController
     # Group records by manifest in order to display a single result for a given
     # resource in 'search across'
     config.default_solr_params = {
-      qt: 'search',
+      qt: "search",
       rows: 10,
-      fl: '*',
+      fl: "*",
       group: true,
       'group.main': true,
       'group.limit': 1,
@@ -84,7 +84,7 @@ class CatalogController < ApplicationController
     }
 
     config.fetch_many_document_params = {
-      fl: '*',
+      fl: "*",
       group: true,
       'group.main': true,
       'group.limit': 1,
@@ -92,34 +92,34 @@ class CatalogController < ApplicationController
       'group.facet': true
     }
 
-    config.document_solr_path = 'get'
-    config.document_unique_id_param = 'ids'
+    config.document_solr_path = "get"
+    config.document_unique_id_param = "ids"
 
     # solr field configuration for search results/index views
     config.index.title_field = FieldStringifier.new(::Blacklight::Configuration::Field.new(field: Spotlight::Engine.config.iiif_title_fields, accessor: :title_or_override_title))
 
-    config.index.display_title_field = 'readonly_title_tesim'
+    config.index.display_title_field = "readonly_title_tesim"
 
-    config.add_search_field 'all_fields', label: 'Keyword'
-    config.add_search_field 'title', label: 'Title'
+    config.add_search_field "all_fields", label: "Keyword"
+    config.add_search_field "title", label: "Title"
     config.add_search_field(
-      'publisher',
-      label: 'Publisher',
+      "publisher",
+      label: "Publisher",
       solr_parameters: {
-        qf: 'readonly_publisher_tesim', pf: 'readonly_publisher_tesim'
+        qf: "readonly_publisher_tesim", pf: "readonly_publisher_tesim"
       }
     )
-    config.add_search_field 'subject', label: 'Subject'
+    config.add_search_field "subject", label: "Subject"
 
-    config.add_sort_field 'relevance', sort: 'score desc', label: 'Relevance'
-    config.add_sort_field 'sort_title', sort: 'sort_title_ssi asc, sort_date_ssi desc', label: 'Title'
-    config.add_sort_field 'sort_date_desc', sort: 'sort_date_ssi desc, sort_title_ssi asc', label: 'Date Descending'
-    config.add_sort_field 'sort_date_asc', sort: 'sort_date_ssi asc, sort_title_ssi asc', label: 'Date Ascending'
-    config.add_sort_field 'sort_author', sort: 'sort_author_ssi asc, sort_title_ssi asc', label: 'Author'
+    config.add_sort_field "relevance", sort: "score desc", label: "Relevance"
+    config.add_sort_field "sort_title", sort: "sort_title_ssi asc, sort_date_ssi desc", label: "Title"
+    config.add_sort_field "sort_date_desc", sort: "sort_date_ssi desc, sort_title_ssi asc", label: "Date Descending"
+    config.add_sort_field "sort_date_asc", sort: "sort_date_ssi asc, sort_title_ssi asc", label: "Date Ascending"
+    config.add_sort_field "sort_author", sort: "sort_author_ssi asc, sort_title_ssi asc", label: "Author"
 
-    config.add_facet_field 'spotlight_resource_type_ssim'
-    config.add_facet_field 'readonly_collections_ssim', label: 'Collections', limit: 10
-    config.add_index_field 'readonly_collections_ssim', label: 'Collections', helper_method: :collection_links
+    config.add_facet_field "spotlight_resource_type_ssim"
+    config.add_facet_field "readonly_collections_ssim", label: "Collections", limit: 10
+    config.add_index_field "readonly_collections_ssim", label: "Collections", helper_method: :collection_links
     config.index.thumbnail_method = :document_thumbnail
 
     # The embed view doesn't look good, so remove it.

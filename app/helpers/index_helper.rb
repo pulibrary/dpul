@@ -22,13 +22,13 @@ module IndexHelper
 
     # generate a counter prefix for the first title
     def counter_string(counter, title_index)
-      return '' unless counter
-      return '' unless title_index.zero?
+      return "" unless counter
+      return "" unless title_index.zero?
 
       counter = document_counter_with_offset(counter)
       content_tag(
         :span,
-        t('blacklight.search.documents.counter', counter:),
+        t("blacklight.search.documents.counter", counter:),
         class: ["document-counter"]
       )
     end

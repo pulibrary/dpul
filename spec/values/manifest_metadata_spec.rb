@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe ManifestMetadata do
   subject(:metadata) { described_class.new("http://example.com/1234") }

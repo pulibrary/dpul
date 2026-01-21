@@ -31,7 +31,7 @@ class ExhibitProxy
 
   # resource urls pulled from the manifest
   def members
-    @members ||= collection_manifest.manifests.map { |x| x['@id'] }
+    @members ||= collection_manifest.manifests.map { |x| x["@id"] }
   end
 
   # resources pulled from the database

@@ -72,7 +72,7 @@ namespace :dpul do
     end
 
     def replicate_uploaded_images
-      FileUtils.cp_r('/mnt/shared_data/dpul_production/.', '/mnt/shared_data/dpul_staging')
+      FileUtils.cp_r("/mnt/shared_data/dpul_production/.", "/mnt/shared_data/dpul_staging")
     end
 
     # Before running this task turn off nginx and sidekiq-workers on all staging

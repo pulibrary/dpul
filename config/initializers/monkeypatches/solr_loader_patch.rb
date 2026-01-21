@@ -8,7 +8,7 @@ Rails.application.config.to_prepare do
     def send_one(document, pipeline)
       blacklight_solr.update params: { commitWithin: 500 },
                              data: [document].to_json,
-                             headers: { 'Content-Type' => 'application/json' }
+                             headers: { "Content-Type" => "application/json" }
     rescue StandardError => e
       pipeline&.on_error(e, document.to_json)
     end

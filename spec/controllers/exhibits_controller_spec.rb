@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe ExhibitsController do
   before do
@@ -60,13 +60,13 @@ RSpec.describe ExhibitsController do
     end
   end
 
-  describe '#update' do
-    let(:exhibit) { Spotlight::Exhibit.new(title: 'New Collection', published: true, slug: 'new-collection') }
+  describe "#update" do
+    let(:exhibit) { Spotlight::Exhibit.new(title: "New Collection", published: true, slug: "new-collection") }
     let(:params) do
       {
-        title: 'Some Title',
+        title: "Some Title",
         thumbnails_enabled: false,
-        tag_list: '2014, R. Buckminster Fuller',
+        tag_list: "2014, R. Buckminster Fuller",
         condensed_viewer: true
       }
     end
@@ -75,7 +75,7 @@ RSpec.describe ExhibitsController do
       exhibit.save
     end
 
-    it 'disables the rendering of thumbnails and condenses the viewer' do
+    it "disables the rendering of thumbnails and condenses the viewer" do
       exhibit.reload
       expect(exhibit.thumbnails_enabled).to be true
       expect(exhibit.condensed_viewer).to be false

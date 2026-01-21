@@ -21,7 +21,7 @@ class UniversalViewer
     @params.each_pair do |name, value|
       params << "#{name}=#{CGI.escape(value)}"
     end
-    components += [params.join('&')]
+    components += [params.join("&")]
 
     components.join
   end

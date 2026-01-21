@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 describe LinkToSearchMigration do
   before do
@@ -11,7 +11,7 @@ describe LinkToSearchMigration do
     end
   end
 
-  it 'replaces the link_to_search field name with link_to_facet' do
+  it "replaces the link_to_search field name with link_to_facet" do
     described_class.run
 
     config = Spotlight::BlacklightConfiguration.all.first

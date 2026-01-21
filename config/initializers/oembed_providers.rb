@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-require 'oembed'
+require "oembed"
 
 OEmbed::Providers.register_all

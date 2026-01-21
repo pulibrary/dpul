@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe FriendlyIdRepository do
   let(:repository) { described_class.new(CatalogController.new.blacklight_config) }
-  let(:url) { 'https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest' }
-  let(:exhibit) { Spotlight::Exhibit.create title: 'Exhibit A' }
+  let(:url) { "https://hydra-dev.princeton.edu/concern/scanned_resources/1r66j1149/manifest" }
+  let(:exhibit) { Spotlight::Exhibit.create title: "Exhibit A" }
   let(:resource) { IiifResource.create(url:, exhibit:) }
   before do
     stub_manifest(url:, fixture: "1r66j1149.json")
@@ -30,8 +30,8 @@ RSpec.describe FriendlyIdRepository do
       end
     end
 
-    context 'when an exhibit is not passed and no documents can be found' do
-      it 'attempts to retrieve it using the default ID and raises an error' do
+    context "when an exhibit is not passed and no documents can be found" do
+      it "attempts to retrieve it using the default ID and raises an error" do
         expect { repository.find("test-id") }.to raise_error(Blacklight::Exceptions::RecordNotFound)
       end
     end

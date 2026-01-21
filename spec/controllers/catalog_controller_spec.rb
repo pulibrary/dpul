@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe CatalogController do
   with_queue_adapter :inline
@@ -8,11 +8,11 @@ RSpec.describe CatalogController do
   context "with full-text search" do
     let(:user) { FactoryBot.create(:site_admin) }
     it "searches" do
-      url = 'https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest'
-      stub_manifest(url:, fixture: 'full_text_manifest.json')
+      url = "https://figgy.princeton.edu/concern/ephemera_folders/e41da87f-84af-4f50-ab69-781576cf82db/manifest"
+      stub_manifest(url:, fixture: "full_text_manifest.json")
       stub_metadata(id: "e41da87f-84af-4f50-ab69-781576cf82db")
       stub_ocr_content(id: "e41da87f-84af-4f50-ab69-781576cf82db", text: "More searchable text")
-      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+      exhibit = Spotlight::Exhibit.create title: "Exhibit A", published: true
       resource = IiifResource.new(url:, exhibit:)
       resource.save_and_index
       Blacklight.default_index.connection.commit
@@ -36,7 +36,7 @@ RSpec.describe CatalogController do
     end
 
     it "hides scanned resources with parents" do
-      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+      exhibit = Spotlight::Exhibit.create title: "Exhibit A", published: true
       resource = IiifResource.new url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
       Blacklight.default_index.connection.commit
@@ -48,7 +48,7 @@ RSpec.describe CatalogController do
 
     context "when not signed in" do
       it "hides resources which are in un-published exhibits" do
-        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: false
+        exhibit = Spotlight::Exhibit.create title: "Exhibit A", published: false
         resource = IiifResource.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
 
@@ -57,7 +57,7 @@ RSpec.describe CatalogController do
         expect(document_ids).to eq []
       end
       it "hides private resources in published exhibits" do
-        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+        exhibit = Spotlight::Exhibit.create title: "Exhibit A", published: true
         resource = IiifResource.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
         document = SolrDocument.find(resource.noid, exhibit: resource.exhibit)
@@ -74,7 +74,7 @@ RSpec.describe CatalogController do
     context "when signed in as a site admin" do
       let(:user) { FactoryBot.create(:site_admin) }
       it "doesn't hide resources from un-published exhibits" do
-        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: false
+        exhibit = Spotlight::Exhibit.create title: "Exhibit A", published: false
         resource = IiifResource.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
         Blacklight.default_index.connection.commit
@@ -86,7 +86,7 @@ RSpec.describe CatalogController do
       end
 
       it "doesn't hide private resources in public exhibits" do
-        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+        exhibit = Spotlight::Exhibit.create title: "Exhibit A", published: true
         resource = IiifResource.new url: url, exhibit: exhibit
         expect(resource.save_and_index).to be_truthy
         document = SolrDocument.find(resource.noid, exhibit: resource.exhibit)
@@ -101,11 +101,11 @@ RSpec.describe CatalogController do
       end
 
       it "permits queries with quotes" do
-        exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
-        document = SolrDocument.new(id: 'd279a557a62937a8895eebbca2d4744c', exhibit:)
+        exhibit = Spotlight::Exhibit.create title: "Exhibit A", published: true
+        document = SolrDocument.new(id: "d279a557a62937a8895eebbca2d4744c", exhibit:)
         Spotlight::SolrDocumentSidecar.create!(
           document:, exhibit:,
-          data: { 'full_title_tesim' => ['"title1"'] }
+          data: { "full_title_tesim" => ['"title1"'] }
         )
 
         document.make_private!(exhibit)
@@ -120,7 +120,7 @@ RSpec.describe CatalogController do
     end
 
     it "returns MVW from metadata found in volume" do
-      exhibit = Spotlight::Exhibit.create title: 'Exhibit A', published: true
+      exhibit = Spotlight::Exhibit.create title: "Exhibit A", published: true
       resource = IiifResource.new url: url, exhibit: exhibit
       expect(resource.save_and_index).to be_truthy
       Blacklight.default_index.connection.commit
@@ -133,13 +133,13 @@ RSpec.describe CatalogController do
 
   context "fielded search" do
     it "only retrieves documents with a match in the given field" do
-      url1 = 'https://figgy.princeton.edu/concern/scanned_resources/8b33482f-9c15-4012-b3bc-43ae307ec2ef/manifest'
-      url2 = 'https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest'
-      stub_manifest(url: url1, fixture: 'publisher_1962.json')
-      stub_manifest(url: url2, fixture: 'publisher_no_date.json')
+      url1 = "https://figgy.princeton.edu/concern/scanned_resources/8b33482f-9c15-4012-b3bc-43ae307ec2ef/manifest"
+      url2 = "https://figgy.princeton.edu/concern/scanned_resources/7cf437d0-c864-4230-8e76-84d117c88763/manifest"
+      stub_manifest(url: url1, fixture: "publisher_1962.json")
+      stub_manifest(url: url2, fixture: "publisher_no_date.json")
       stub_metadata(id: "8b33482f-9c15-4012-b3bc-43ae307ec2ef")
       stub_metadata(id: "7cf437d0-c864-4230-8e76-84d117c88763")
-      exhibit = Spotlight::Exhibit.create title: 'Derida Seminars', published: true
+      exhibit = Spotlight::Exhibit.create title: "Derida Seminars", published: true
       resource1 = IiifResource.new(url: url1, exhibit:)
       resource2 = IiifResource.new(url: url2, exhibit:)
       resource1.save_and_index
@@ -173,18 +173,18 @@ RSpec.describe CatalogController do
     expect(assigns[:response]["facet_counts"]["facet_fields"]).to include "readonly_subject_ssim" => []
   end
 
-  describe '#index' do
+  describe "#index" do
     before do
       index.add(
-        id: '3',
-        full_title_ssim: ['Item B'],
-        readonly_title_ssim: ['Item B'],
-        spotlight_resource_type_ssim: ['iiif_resources'],
-        readonly_collections_ssim: ['Collection A', 'Collection B'],
-        readonly_collections_tesim: ['Collection A', 'Collection B'],
-        readonly_creator_ssim: ['Creator', 'Creator2'],
-        readonly_publisher_ssim: ['Publisher'],
-        readonly_format_ssim: ['Visual material']
+        id: "3",
+        full_title_ssim: ["Item B"],
+        readonly_title_ssim: ["Item B"],
+        spotlight_resource_type_ssim: ["iiif_resources"],
+        readonly_collections_ssim: ["Collection A", "Collection B"],
+        readonly_collections_tesim: ["Collection A", "Collection B"],
+        readonly_creator_ssim: ["Creator", "Creator2"],
+        readonly_publisher_ssim: ["Publisher"],
+        readonly_format_ssim: ["Visual material"]
       )
       index.commit
     end
@@ -192,7 +192,7 @@ RSpec.describe CatalogController do
     context "when using the JSON endpoint" do
       render_views
       it "returns all the values necessary for bento search" do
-        get :index, params: { q: '', format: :json }
+        get :index, params: { q: "", format: :json }
 
         json = JSON.parse(response.body)
         record = json["data"][0]
@@ -206,18 +206,18 @@ RSpec.describe CatalogController do
       end
     end
 
-    it 'facets upon collections' do
-      get :index, params: { q: '' }
+    it "facets upon collections" do
+      get :index, params: { q: "" }
 
       expect(assigns[:response][:facet_counts][:facet_fields]).not_to be_empty
-      expect(assigns[:response][:facet_counts][:facet_fields]).to include readonly_collections_ssim: ['Collection A', 1, 'Collection B', 1]
+      expect(assigns[:response][:facet_counts][:facet_fields]).to include readonly_collections_ssim: ["Collection A", 1, "Collection B", 1]
     end
 
-    it 'indexes collections' do
-      get :index, params: { q: '' }
+    it "indexes collections" do
+      get :index, params: { q: "" }
 
       expect(assigns[:response][:response][:docs]).not_to be_empty
-      expect(assigns[:response][:response][:docs].first).to include readonly_collections_ssim: ['Collection A', 'Collection B']
+      expect(assigns[:response][:response][:docs].first).to include readonly_collections_ssim: ["Collection A", "Collection B"]
     end
   end
 

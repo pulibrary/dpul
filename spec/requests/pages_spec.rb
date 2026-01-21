@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 # This tests a regression introduced in cancancan 3.2.0.
 # See issue: https://github.com/CanCanCommunity/cancancan/issues/677

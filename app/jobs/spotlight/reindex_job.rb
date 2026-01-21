@@ -55,10 +55,10 @@ module Spotlight
           type: :summary,
           exhibit:,
           message: I18n.t(
-            'spotlight.job_trackers.show.messages.status.in_progress',
+            "spotlight.job_trackers.show.messages.status.in_progress",
             progress: progress.progress,
             total: progress.total,
-            errors: (I18n.t('spotlight.job_trackers.show.messages.errors', count: errors.count) if errors.present?)
+            errors: (I18n.t("spotlight.job_trackers.show.messages.errors", count: errors.count) if errors.present?)
           ),
           progress: progress.progress, total: progress.total, errors: errors.count
         )

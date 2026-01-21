@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 describe DateSortMigration do
   it "replaces sort_date with ascending and descending, re-weighting if required" do

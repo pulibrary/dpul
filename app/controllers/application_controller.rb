@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_paper_trail_whodunnit
 
-  layout 'spotlight/spotlight'
+  layout "spotlight/spotlight"
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

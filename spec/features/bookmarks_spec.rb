@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Bookmarks', type: :feature, js: true do
+RSpec.describe "Bookmarks", type: :feature, js: true do
   with_queue_adapter :inline
   let(:iiif_resource1) do FactoryBot.create(
     :iiif_resource,
@@ -32,7 +32,7 @@ RSpec.describe 'Bookmarks', type: :feature, js: true do
     it "Adds bookmarks to the bookmark page, shows bookmark in exhibit context" do
       iiif_resource1
       iiif_resource2
-      visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
+      visit spotlight.search_exhibit_catalog_path(exhibit, search_field: "all_fields", q: "")
       bookmark_box = "toggle-bookmark_#{solr_id}"
       check bookmark_box
       expect(page).to have_content "In Bookmarks"

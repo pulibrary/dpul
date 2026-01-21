@@ -7,9 +7,9 @@ selenium_url = nil
 browser = :chrome
 # If we're not in CI then run Selenium from Lando. Makes it much easier to
 # upgrade versions of Chrome.
-if !ENV["CI"]
+unless ENV["CI"]
   selenium_url = "http://127.0.0.1:4445/wd/hub"
-  Capybara.server_host = '0.0.0.0'
+  Capybara.server_host = "0.0.0.0"
   Capybara.always_include_port = true
   Capybara.app_host = "http://host.docker.internal"
   browser = :remote
@@ -25,9 +25,9 @@ Capybara.register_driver(:selenium) do |app|
   http_client.read_timeout = 120
   http_client.open_timeout = 120
   Capybara::Selenium::Driver.new(app,
-                                 browser: browser,
+                                 browser:,
                                  options: browser_options,
-                                 http_client: http_client,
+                                 http_client:,
                                  url: selenium_url)
 end
 

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-describe 'catalog/_universal_viewer_default', type: :view do
+describe "catalog/_universal_viewer_default", type: :view do
   let(:exhibit) { FactoryBot.create(:exhibit, condensed_viewer: true) }
 
   before do

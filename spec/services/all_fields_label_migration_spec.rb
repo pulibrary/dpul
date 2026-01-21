@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 describe AllFieldsLabelMigration do
   # since code is changed; newly-generated exhibits will get the correct label;
