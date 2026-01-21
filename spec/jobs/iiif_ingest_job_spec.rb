@@ -14,14 +14,14 @@ describe IiifIngestJob do
   end
 
   it "ingests a single url" do
-    expect(IiifResource).to receive(:new).with(url: url1, exhibit_id: exhibit.id).and_return(resource)
+    expect(IiifResource).to receive(:new).with({ url: url1, exhibit_id: exhibit.id }).and_return(resource)
 
     described_class.new.perform(url1, exhibit)
   end
 
   it "ingests each of an array of urls" do
-    expect(IiifResource).to receive(:new).with(url: url1, exhibit_id: exhibit.id).and_return(resource)
-    expect(IiifResource).to receive(:new).with(url: url2, exhibit_id: exhibit.id).and_return(resource)
+    expect(IiifResource).to receive(:new).with({ url: url1, exhibit_id: exhibit.id }).and_return(resource)
+    expect(IiifResource).to receive(:new).with({ url: url2, exhibit_id: exhibit.id }).and_return(resource)
 
     described_class.new.perform([url1, url2], exhibit)
   end
