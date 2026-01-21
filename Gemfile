@@ -97,13 +97,8 @@ gem 'sprockets', '~> 3.7'
 gem 'sprockets-es6'
 gem 'string_rtl'
 gem 'vite_rails'
-
 gem 'dalli'
 gem 'honeybadger'
 gem 'nokogiri', '~> 1.18.9'
 gem 'ruby-prof', require: false
 gem 'rubyzip', '>= 1.2.2'
-
-# Required for deployment under ruby 3.1
-gem "net-imap", require: false
-gem "net-pop", require: false
