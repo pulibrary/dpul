@@ -15,6 +15,7 @@ jobs:
           POMEGRANATE_DB_HOST: localhost
           POMEGRANATE_DB_USERNAME: pomegranate
           POMEGRANATE_DB_PASSWORD: dpul
+    resource_class: large
     steps:
       - run: sudo apt-get update
       - browser-tools/install-chrome
