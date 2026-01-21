@@ -4,7 +4,7 @@ Rails.application.configure do
   class ActionDispatch::Http::UploadedFile
     def as_json(_options = nil)
       %w[headers].index_with do |attr|
-        send(attr).force_encoding('utf-8')
+        send(attr).force_encoding("utf-8")
       end
     end
   end

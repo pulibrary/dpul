@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 describe SpotlightHelper do
   let(:helper) { TestingHelper.new }
@@ -15,16 +15,16 @@ describe SpotlightHelper do
     Object.send(:remove_const, :TestingHelper)
   end
 
-  describe '#render_document_heading' do
-    let(:presenter) { instance_double('RtlShowPresenter', class: RtlShowPresenter) }
+  describe "#render_document_heading" do
+    let(:presenter) { instance_double("RtlShowPresenter", class: RtlShowPresenter) }
 
     before do
       allow(helper).to receive(:presenter).and_return(presenter)
-      allow(presenter).to receive(:heading).and_return('title')
+      allow(presenter).to receive(:heading).and_return("title")
     end
 
-    it 'returns a single ltr span tag' do
-      tag = helper.render_document_heading(title: 'title')
+    it "returns a single ltr span tag" do
+      tag = helper.render_document_heading(title: "title")
       expect(tag).to eq '<h4 itemprop="name">title</h4>'
     end
   end

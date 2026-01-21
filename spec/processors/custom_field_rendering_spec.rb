@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 describe CustomFieldRendering do
   subject(:rendered) { custom_field_rendering.render }
@@ -15,7 +15,7 @@ describe CustomFieldRendering do
 
   describe "#render" do
     let(:values) do
-      "{\"data\":[{\"type\":\"text\",\"data\":{\"text\":\"testing note\",\"format\":\"html\"}}]}"
+      '{"data":[{"type":"text","data":{"text":"testing note","format":"html"}}]}'
     end
     let(:field_config) { Blacklight::Configuration::NullField.new(text_area: "1", separator_options: nil) }
 

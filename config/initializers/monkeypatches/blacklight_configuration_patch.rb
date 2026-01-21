@@ -7,7 +7,7 @@ Rails.application.config.to_prepare do
       [
         super,
         Spotlight::Engine.config.full_image_field
-      ].flatten.join(' ')
+      ].flatten.join(" ")
     end
   end
 

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-describe 'spotlight/metadata_configurations/edit', type: :view do
+describe "spotlight/metadata_configurations/edit", type: :view do
   let(:exhibit) { FactoryBot.create(:exhibit) }
   before do
     assign(:exhibit, exhibit)

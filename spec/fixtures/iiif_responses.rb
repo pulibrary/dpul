@@ -5,32 +5,32 @@
 module IiifResponses
   def test_manifest1
     {
-      "@id": 'uri://for-manifest1/manifest',
-      "@type": 'sc:Manifest',
-      "label": 'Test Manifest 1',
-      "attribution": 'Attribution Data',
-      "description": 'A test IIIF manifest',
-      "license": 'http://www.example.org/license.html',
+      "@id": "uri://for-manifest1/manifest",
+      "@type": "sc:Manifest",
+      "label": "Test Manifest 1",
+      "attribution": "Attribution Data",
+      "description": "A test IIIF manifest",
+      "license": "http://www.example.org/license.html",
       "metadata": [
         {
-          "label": 'Author',
-          "value": 'John Doe'
+          "label": "Author",
+          "value": "John Doe"
         },
         {
-          "label": 'Author',
-          "value": 'Jane Doe'
+          "label": "Author",
+          "value": "Jane Doe"
         },
         {
-          "label": 'Another Field',
-          "value": 'Some data'
+          "label": "Another Field",
+          "value": "Some data"
         },
         {
-          "label": 'Date',
-          "value": '1929'
+          "label": "Date",
+          "value": "1929"
         }
       ],
       "thumbnail": {
-        "@id": 'uri://to-thumbnail',
+        "@id": "uri://to-thumbnail",
         "service": {
           "@context": "http://iiif.io/api/image/2/context.json",
           "@id": "uri://to-thumbnail"
@@ -38,18 +38,18 @@ module IiifResponses
       },
       "sequences": [
         {
-          "@type": 'sc:Sequence',
+          "@type": "sc:Sequence",
           "canvases": [
             {
-              "@type": 'sc:Canvas',
+              "@type": "sc:Canvas",
               "images": [
                 {
-                  "@type": 'oa:Annotation',
+                  "@type": "oa:Annotation",
                   "resource": {
-                    "@type": 'dcterms:Image',
-                    "@id": 'uri://full-image',
+                    "@type": "dcterms:Image",
+                    "@id": "uri://full-image",
                     "service": {
-                      "@id": 'uri://to-image-service'
+                      "@id": "uri://to-image-service"
                     }
                   }
                 }
@@ -81,38 +81,38 @@ module IiifResponses
       }
     ]
 
-    values['see_also'] = value
+    values["see_also"] = value
     values.to_json
   end
 
   def test_manifest_mvw
     {
-      "@id": 'uri://for-manifest_mvw/manifest',
-      "@type": 'sc:Collection',
-      "label": 'Test Manifest MVW',
-      "attribution": 'Attribution Data',
-      "description": 'A test IIIF MVW manifest',
-      "license": 'http://www.example.org/license.html',
+      "@id": "uri://for-manifest_mvw/manifest",
+      "@type": "sc:Collection",
+      "label": "Test Manifest MVW",
+      "attribution": "Attribution Data",
+      "description": "A test IIIF MVW manifest",
+      "license": "http://www.example.org/license.html",
       "metadata": [
         {
-          "label": 'Author',
-          "value": 'John Doe'
+          "label": "Author",
+          "value": "John Doe"
         },
         {
-          "label": 'Author',
-          "value": 'Jane Doe'
+          "label": "Author",
+          "value": "Jane Doe"
         },
         {
-          "label": 'Another Field',
-          "value": 'Some data'
+          "label": "Another Field",
+          "value": "Some data"
         },
         {
-          "label": 'Date',
-          "value": '1929'
+          "label": "Date",
+          "value": "1929"
         }
       ],
       "thumbnail": {
-        "@id": 'uri://to-thumbnail'
+        "@id": "uri://to-thumbnail"
       },
       "manifests": [
         {

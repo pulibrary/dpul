@@ -24,6 +24,7 @@ lpass login yournetid@princeton.edu
 bin/setup_keys
 bundle install
 yarn install
+mkdir public/uploads/spotlight
 ```
 
 Remember you'll need to run `bundle install` and `yarn install` on an ongoing basis as dependencies are updated.

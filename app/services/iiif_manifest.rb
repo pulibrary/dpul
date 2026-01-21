@@ -28,9 +28,9 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
 
   # In V3 manifests a thumbnail is in an array, and uses 'id' instead of '@id'
   def add_thumbnail_url
-    return unless thumbnail_field && manifest['thumbnail'].present?
-    thumbnail = Array.wrap(manifest['thumbnail']).first
-    solr_hash[thumbnail_field] = thumbnail['@id'] || thumbnail['id']
+    return unless thumbnail_field && manifest["thumbnail"].present?
+    thumbnail = Array.wrap(manifest["thumbnail"]).first
+    solr_hash[thumbnail_field] = thumbnail["@id"] || thumbnail["id"]
   end
 
   def add_noid
@@ -48,23 +48,23 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   def add_sort_title
     # Once we upgrade we should probably use this json_ld_value?
     # solr_hash['sort_title_ssi'] = Array.wrap(json_ld_value(manifest.label)).first
-    solr_hash['sort_title_ssi'] = Array.wrap(manifest.label).first
+    solr_hash["sort_title_ssi"] = Array.wrap(manifest.label).first
   end
 
   def add_sort_date
-    solr_hash['sort_date_ssi'] = Array.wrap(solr_hash['readonly_date_ssim']).first || Array.wrap(solr_hash['readonly_date-created_ssim']).first
+    solr_hash["sort_date_ssi"] = Array.wrap(solr_hash["readonly_date_ssim"]).first || Array.wrap(solr_hash["readonly_date-created_ssim"]).first
   end
 
   def add_sort_author
-    solr_hash['sort_author_ssi'] = Array.wrap(solr_hash['readonly_author_ssim']).first
+    solr_hash["sort_author_ssi"] = Array.wrap(solr_hash["readonly_author_ssim"]).first
   end
 
   def manifest_thumbnail
-    Array.wrap(manifest['thumbnail']).first
+    Array.wrap(manifest["thumbnail"]).first
   end
 
   def full_image_url
-    return super unless manifest_thumbnail && manifest_thumbnail['service'] && manifest_thumbnail['service']['@id']
+    return super unless manifest_thumbnail && manifest_thumbnail["service"] && manifest_thumbnail["service"]["@id"]
 
     "#{manifest['thumbnail']['service']['@id']}/full/!800,800/0/default.jpg"
   end
@@ -74,7 +74,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   def resources
     if manifest.is_a? IIIF::Presentation::Collection
       @resources ||= manifest.manifests.flat_map do |m|
-        authorized_url = AuthorizedUrl.new(url: m['@id']).to_s
+        authorized_url = AuthorizedUrl.new(url: m["@id"]).to_s
         IiifService.parse(authorized_url).first.try(:resources) || []
       end
     else
@@ -207,7 +207,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
     return if text.empty?
 
     manifest_id = manifest["@id"].match(/.*\/(.*)\/manifest/)[1]
-    text = Array(FiggyGraphql.get_ocr_content_for_id(id: manifest_id)).map { |x| x.to_s.dup.force_encoding('UTF-8') }
+    text = Array(FiggyGraphql.get_ocr_content_for_id(id: manifest_id)).map { |x| x.to_s.dup.force_encoding("UTF-8") }
     solr_hash["full_text_tesim"] = text
   end
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe User do
   let(:user) { FactoryBot.build(:user) }
@@ -65,7 +65,7 @@ RSpec.describe User do
 
   describe "inviting users" do
     it "can invite campus users" do
-      expect { described_class.invite!(email: 'a-user-that-does-not-exist@princeton.edu', skip_invitation: true) }.not_to raise_error
+      expect { described_class.invite!(email: "a-user-that-does-not-exist@princeton.edu", skip_invitation: true) }.not_to raise_error
       expect(described_class.last.provider).to eq "cas"
       expect(described_class.last.uid).to eq "a-user-that-does-not-exist"
       expect(described_class.last.username).to eq "a-user-that-does-not-exist"
@@ -73,7 +73,7 @@ RSpec.describe User do
     end
 
     it "can invite external users" do
-      expect { described_class.invite!(email: 'new-user@example.com', skip_invitation: true) }.not_to raise_error
+      expect { described_class.invite!(email: "new-user@example.com", skip_invitation: true) }.not_to raise_error
       expect(described_class.last.provider).to eq "cas"
       expect(described_class.last.uid).to eq "new-user@example.com"
       expect(described_class.last.username).to eq "new-user@example.com"

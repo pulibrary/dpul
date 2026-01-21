@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe RtlShowPresenter do
   subject(:presenter) { described_class.new(document, view_context) }
@@ -32,7 +32,7 @@ RSpec.describe RtlShowPresenter do
 
     it "links each individual property" do
       field = Blacklight::Configuration::Field.new(field: "field", link_to_facet: "field")
-      expect(presenter.field_value(field)).to eq "<ul><li dir=\"rtl\"><a link>بي</a link></li></ul>"
+      expect(presenter.field_value(field)).to eq '<ul><li dir="rtl"><a link>بي</a link></li></ul>'
     end
   end
 
@@ -40,7 +40,7 @@ RSpec.describe RtlShowPresenter do
     context "when given a RTL string" do
       it "renders it as a RTL list item" do
         field = Blacklight::Configuration::Field.new(field: "field")
-        expect(presenter.field_value(field)).to eq "<ul><li dir=\"rtl\">بي</li></ul>"
+        expect(presenter.field_value(field)).to eq '<ul><li dir="rtl">بي</li></ul>'
       end
     end
 
@@ -73,18 +73,18 @@ RSpec.describe RtlShowPresenter do
         exhibit.blacklight_config
       )
       field_presenters = presenter.field_presenters.to_a
-      expect(field_presenters[0].render).to eq '1 and 2'
+      expect(field_presenters[0].render).to eq "1 and 2"
     end
     it "returns presenters that can handle text areas" do
       exhibit = FactoryBot.create(:exhibit)
       exhibit.blacklight_config.add_index_field "readonly_bla_ssim", text_area: "1"
       presenter = described_class.new(
-        SolrDocument.new("readonly_bla_ssim" => ["{\"data\":[{\"type\":\"text\",\"data\":{\"text\":\"testing note\",\"format\":\"html\"}}]}"]),
+        SolrDocument.new("readonly_bla_ssim" => ['{"data":[{"type":"text","data":{"text":"testing note","format":"html"}}]}']),
         double(should_render_field?: true, action_name: "index", controller_name: "catalog"),
         exhibit.blacklight_config
       )
       field_presenters = presenter.field_presenters.to_a
-      expect(field_presenters[0].render).to eq 'testing note'
+      expect(field_presenters[0].render).to eq "testing note"
     end
   end
 
@@ -119,7 +119,7 @@ RSpec.describe RtlShowPresenter do
       end
 
       it "uses it" do
-        expect(presenter.heading).to eq "<ul><li dir=\"ltr\">Test</li></ul>"
+        expect(presenter.heading).to eq '<ul><li dir="ltr">Test</li></ul>'
       end
     end
 

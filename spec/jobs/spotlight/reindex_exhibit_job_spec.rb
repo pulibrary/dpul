@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 describe Spotlight::ReindexExhibitJob do
   include ActiveJob::TestHelper
   let(:exhibit) { FactoryBot.create(:exhibit) }
-  let(:url1) { 'http://example.com/1/manifest' }
+  let(:url1) { "http://example.com/1/manifest" }
   let(:manifest) { object_double(CollectionManifest.new, manifests: [{ "@id" => url1 }]) }
 
   before do
@@ -17,8 +17,8 @@ describe Spotlight::ReindexExhibitJob do
     clear_enqueued_jobs
   end
 
-  it 'runs the index job inline' do
-    stub_manifest(url: url1, fixture: 'full_text_manifest.json')
+  it "runs the index job inline" do
+    stub_manifest(url: url1, fixture: "full_text_manifest.json")
     allow(Spotlight::ReindexJob).to receive(:perform_later)
     described_class.perform_now(exhibit)
 
@@ -26,7 +26,7 @@ describe Spotlight::ReindexExhibitJob do
   end
 
   it "works for resources which aren't persisted yet" do
-    stub_manifest(url: url1, fixture: 'full_text_manifest.json')
+    stub_manifest(url: url1, fixture: "full_text_manifest.json")
 
     described_class.perform_now(exhibit)
 
@@ -36,11 +36,11 @@ describe Spotlight::ReindexExhibitJob do
 
   it "works for resources which aren't persisted yet, even if they timeout on save validation" do
     stub_request(:get, url1)
-      .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "manifests", "full_text_manifest.json")), headers: { 'content-type' => 'application/ld+json' })
+      .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "manifests", "full_text_manifest.json")), headers: { "content-type" => "application/ld+json" })
     # head request should fail first, because of the save
     stub_request(:head, url1)
       .to_timeout.then
-      .to_return(status: 200, body: "", headers: { 'content-type' => 'application/ld+json' })
+      .to_return(status: 200, body: "", headers: { "content-type" => "application/ld+json" })
     described_class.perform_now(exhibit)
 
     expect(Spotlight::UpdateJobTrackersJob).to have_received(:perform_now).exactly(:once)
@@ -48,7 +48,7 @@ describe Spotlight::ReindexExhibitJob do
   end
 
   it "skips over resources which there's no permission for" do
-    stub_manifest(url: url1, fixture: 'full_text_manifest.json', status: 403)
+    stub_manifest(url: url1, fixture: "full_text_manifest.json", status: 403)
     described_class.perform_now(exhibit)
 
     expect(Spotlight::UpdateJobTrackersJob).not_to have_received(:perform_now)
@@ -64,13 +64,13 @@ describe Spotlight::ReindexExhibitJob do
     it "retries indexing" do
       # get request can always succeed
       stub_request(:get, url1)
-        .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "manifests", "1r66j1149.json")), headers: { 'content-type' => 'application/ld+json' })
+        .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "manifests", "1r66j1149.json")), headers: { "content-type" => "application/ld+json" })
       # head request should succeed first, because of the save
       stub_request(:head, url1)
-        .to_return(status: 200, body: "", headers: { 'content-type' => 'application/ld+json' }).then
+        .to_return(status: 200, body: "", headers: { "content-type" => "application/ld+json" }).then
         .to_timeout.then
         .to_timeout.then
-        .to_return(status: 200, body: "", headers: { 'content-type' => 'application/ld+json' })
+        .to_return(status: 200, body: "", headers: { "content-type" => "application/ld+json" })
       # url2 resource has no issues
       stub_manifest(url: url2, fixture: "44558d29f.json")
 

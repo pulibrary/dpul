@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 describe "accessibility", type: :feature, js: true do
   context "when visiting bookmarks page" do
@@ -31,7 +31,7 @@ describe "accessibility", type: :feature, js: true do
     it "complies with WCAG" do
       iiif_resource1
       iiif_resource2
-      visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
+      visit spotlight.search_exhibit_catalog_path(exhibit, search_field: "all_fields", q: "")
       bookmark_box = "toggle-bookmark_#{solr_id}"
       check bookmark_box
       visit "/bookmarks"
@@ -46,9 +46,9 @@ describe "accessibility", type: :feature, js: true do
   context "when browsing exhibit items page" do
     let(:exhibit) { FactoryBot.create(:exhibit) }
     let(:user) { FactoryBot.create(:site_admin, exhibit:) }
-    let(:id) { 'd279a557a62937a8895eebbca2d4744c' }
-    let(:title) { 'Panoramic alphabet of peace' }
-    let(:rights) { 'http://rightsstatements.org/vocab/NKC/1.0/' }
+    let(:id) { "d279a557a62937a8895eebbca2d4744c" }
+    let(:title) { "Panoramic alphabet of peace" }
+    let(:rights) { "http://rightsstatements.org/vocab/NKC/1.0/" }
     let(:document) do
       SolrDocument.new(
         id:,
@@ -95,7 +95,7 @@ describe "accessibility", type: :feature, js: true do
       document.make_public! exhibit
       document.reindex
       Blacklight.default_index.connection.commit
-      visit spotlight.exhibit_browse_path(exhibit, id: 'all-exhibit-items')
+      visit spotlight.exhibit_browse_path(exhibit, id: "all-exhibit-items")
 
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
@@ -111,12 +111,12 @@ describe "accessibility", type: :feature, js: true do
 
     it "complies with WCAG" do
       sign_in admin
-      d = SolrDocument.new(id: 'dq287tq6352')
-      exhibit.tag(d.sidecar(exhibit), with: ['foo'], on: :tags)
+      d = SolrDocument.new(id: "dq287tq6352")
+      exhibit.tag(d.sidecar(exhibit), with: ["foo"], on: :tags)
       d.make_private! exhibit
       d.reindex
       Blacklight.default_index.connection.commit
-      visit spotlight.search_exhibit_catalog_path(exhibit, q: 'dq287tq6352')
+      visit spotlight.search_exhibit_catalog_path(exhibit, q: "dq287tq6352")
 
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
@@ -129,17 +129,17 @@ describe "accessibility", type: :feature, js: true do
   end
 
   context "when visiting catalog show page" do
-    let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
+    let(:exhibit) { FactoryBot.create(:exhibit, title: "Exhibit Title 1", slug: "exhibit-title-1") }
     let(:admin) { FactoryBot.create(:exhibit_admin, exhibit:) }
-    let(:document_id) { '1r66j4408' }
+    let(:document_id) { "1r66j4408" }
     let(:id) { Digest::MD5.hexdigest("#{exhibit.id}-#{document_id}") }
     let(:document) do
       SolrDocument.new(
         id:
       )
     end
-    let(:collection1) { Spotlight::Exhibit.create!(title: 'test collection 1') }
-    let(:collection2) { Spotlight::Exhibit.create!(title: 'test collection 2') }
+    let(:collection1) { Spotlight::Exhibit.create!(title: "test collection 1") }
+    let(:collection2) { Spotlight::Exhibit.create!(title: "test collection 2") }
 
     before do
       sign_in admin
@@ -147,18 +147,18 @@ describe "accessibility", type: :feature, js: true do
         document:, exhibit:,
         data: {
           full_title_tesim: [
-            'test item'
+            "test item"
           ],
           access_identifier_ssim: [
             "1r66j4408"
           ],
           readonly_collections_ssim: [
-            'test collection 1',
-            'test collection 2'
+            "test collection 1",
+            "test collection 2"
           ],
           'exhibit_exhibit-title-1_readonly_collections_ssim': [
-            'test collection 1',
-            'test collection 2'
+            "test collection 1",
+            "test collection 2"
           ],
           readonly_description_ssim: [
             "panoramic" * 150
@@ -167,17 +167,17 @@ describe "accessibility", type: :feature, js: true do
             "panoramic" * 150
           ],
           'content_metadata_iiif_manifest_field_ssi': [
-            'http://images.institution.edu'
+            "http://images.institution.edu"
           ]
         }
       )
       document.make_public! exhibit
       document.reindex
       Blacklight.default_index.connection.commit
-      Spotlight::CustomField.create!(exhibit:, slug: 'collections', field: 'readonly_collections_ssim', configuration: { "label" => "Collections" }, field_type: 'vocab', readonly_field: true)
+      Spotlight::CustomField.create!(exhibit:, slug: "collections", field: "readonly_collections_ssim", configuration: { "label" => "Collections" }, field_type: "vocab", readonly_field: true)
       collection1
       collection2
-      Spotlight::CustomField.create!(exhibit:, slug: 'description', field: 'readonly_description_ssim', configuration: { "label" => "Description" }, field_type: 'vocab', readonly_field: true)
+      Spotlight::CustomField.create!(exhibit:, slug: "description", field: "readonly_description_ssim", configuration: { "label" => "Description" }, field_type: "vocab", readonly_field: true)
     end
 
     it "complies with WCAG" do
@@ -194,11 +194,11 @@ describe "accessibility", type: :feature, js: true do
   end
 
   context "when visiting catalog page" do
-    let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit A') }
+    let(:exhibit) { FactoryBot.create(:exhibit, title: "Exhibit A") }
     let(:user) { FactoryBot.create(:site_admin, exhibit:) }
-    let(:id) { 'd279a557a62937a8895eebbca2d4744c' }
-    let(:title) { 'Panoramic alphabet of peace' }
-    let(:rights) { 'http://rightsstatements.org/vocab/NKC/1.0/' }
+    let(:id) { "d279a557a62937a8895eebbca2d4744c" }
+    let(:title) { "Panoramic alphabet of peace" }
+    let(:rights) { "http://rightsstatements.org/vocab/NKC/1.0/" }
     let(:document) do
       SolrDocument.new(
         id:,
@@ -246,7 +246,7 @@ describe "accessibility", type: :feature, js: true do
         document.make_public! exhibit
         document.reindex
         index.commit
-        visit spotlight.search_exhibit_catalog_path(exhibit, search_field: 'all_fields', q: '')
+        visit spotlight.search_exhibit_catalog_path(exhibit, search_field: "all_fields", q: "")
 
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
@@ -261,21 +261,21 @@ describe "accessibility", type: :feature, js: true do
     context "when searching across a catalog with many languages" do
       let(:languages) {
         [
-          'Language 1',
-          'Language 2',
-          'Language 3',
-          'Language 4'
+          "Language 1",
+          "Language 2",
+          "Language 3",
+          "Language 4"
         ]
       }
 
       it "complies with WCAG" do
-        index.add(id: '1',
-                  full_title_ssim: ['Test Item'],
-                  readonly_title_ssim: ['Test Item'],
-                  spotlight_resource_type_ssim: ['iiif_resources'],
+        index.add(id: "1",
+                  full_title_ssim: ["Test Item"],
+                  readonly_title_ssim: ["Test Item"],
+                  spotlight_resource_type_ssim: ["iiif_resources"],
                   readonly_language_ssim: languages)
         index.commit
-        visit main_app.search_catalog_path(q: '')
+        visit main_app.search_catalog_path(q: "")
 
         expect(page).to be_axe_clean
           .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
@@ -290,17 +290,17 @@ describe "accessibility", type: :feature, js: true do
   end
 
   context "when visiting edit page" do
-    let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
+    let(:exhibit) { FactoryBot.create(:exhibit, title: "Exhibit Title 1", slug: "exhibit-title-1") }
     let(:admin) { FactoryBot.create(:exhibit_admin, exhibit:) }
     let(:id) { Digest::MD5.hexdigest("#{exhibit.id}-#{document_id}") }
-    let(:document_id) { '1r66j4408' }
+    let(:document_id) { "1r66j4408" }
     let(:document) do
       SolrDocument.new(
         id:
       )
     end
-    let(:collection1) { Spotlight::Exhibit.create!(title: 'test collection 1') }
-    let(:collection2) { Spotlight::Exhibit.create!(title: 'test collection 2') }
+    let(:collection1) { Spotlight::Exhibit.create!(title: "test collection 1") }
+    let(:collection2) { Spotlight::Exhibit.create!(title: "test collection 2") }
 
     before do
       sign_in admin
@@ -309,25 +309,25 @@ describe "accessibility", type: :feature, js: true do
         data: {
           "override-title_ssim": nil,
           full_title_tesim: [
-            'test item'
+            "test item"
           ],
           access_identifier_ssim: [
             "1r66j4408"
           ],
           readonly_collections_ssim: [
-            'test collection 1',
-            'test collection 2'
+            "test collection 1",
+            "test collection 2"
           ],
           'content_metadata_iiif_manifest_field_ssi': [
-            'http://images.institution.edu'
+            "http://images.institution.edu"
           ]
         }.stringify_keys
       )
       document.make_public! exhibit
       document.reindex
       Blacklight.default_index.connection.commit
-      Spotlight::CustomField.create!(exhibit:, slug: 'collections', field: 'readonly_collections_ssim', configuration: { "label" => "Collections" }, field_type: 'vocab', readonly_field: true)
-      Spotlight::CustomField.create!(exhibit:, slug: 'override-title_ssim', field: 'override-title_ssim', configuration: { "label" => "Override Title" }, field_type: 'vocab', readonly_field: false)
+      Spotlight::CustomField.create!(exhibit:, slug: "collections", field: "readonly_collections_ssim", configuration: { "label" => "Collections" }, field_type: "vocab", readonly_field: true)
+      Spotlight::CustomField.create!(exhibit:, slug: "override-title_ssim", field: "override-title_ssim", configuration: { "label" => "Override Title" }, field_type: "vocab", readonly_field: false)
     end
 
     it "complies with WCAG" do

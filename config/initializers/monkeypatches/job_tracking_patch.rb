@@ -8,7 +8,7 @@ Rails.application.config.to_prepare do
     def find_or_initialize_job_tracker
       Spotlight::JobTracker.find_or_initialize_by(job_id:) do |tracker|
         tracker.job_class = self.class.name
-        tracker.status = 'enqueued'
+        tracker.status = "enqueued"
       end
     end
   end

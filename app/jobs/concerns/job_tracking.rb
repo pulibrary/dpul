@@ -41,7 +41,7 @@ module JobTracking
       on: reports_on&.call(job) || resource_object,
       user: user&.call(job),
       job_class: self.class.name,
-      status: 'enqueued',
+      status: "enqueued",
       data: { progress: 0, total: total_resources }
     }
 

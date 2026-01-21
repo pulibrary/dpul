@@ -8,7 +8,7 @@ module ApplicationHelper
   def render_search_bar
     super
   rescue StandardError
-    render partial: 'catalog/default_search_form'
+    render partial: "catalog/default_search_form"
   end
 
   ##
@@ -74,7 +74,7 @@ module ApplicationHelper
   # Gives the bookmarks path by document id instead of access id
   # Use as an alternative to bookmark_path
   def bookmarks_id_path(document)
-    Pathname.new('/').join("bookmarks", document.id).to_s
+    Pathname.new("/").join("bookmarks", document.id).to_s
   end
 
   private

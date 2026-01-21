@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'sneakers'
-require 'sneakers/handlers/maxretry'
-require_relative 'pom_config'
+require "sneakers"
+require "sneakers/handlers/maxretry"
+require_relative "pom_config"
 Sneakers.configure(
   amqp: Pomegranate.config["events"]["server"],
   exchange: Pomegranate.config["events"]["exchange"],

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.config.to_prepare do
-  require 'spotlight/resources/iiif_service'
+  require "spotlight/resources/iiif_service"
 
   module Spotlight
     module Resources

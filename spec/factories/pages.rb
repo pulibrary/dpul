@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :feature_page, class: 'Spotlight::FeaturePage' do
+  factory :feature_page, class: "Spotlight::FeaturePage" do
     exhibit
     sequence(:title) { |n| "FeaturePage#{n}" }
     published { true }
-    content { '[]' }
+    content { "[]" }
   end
 end

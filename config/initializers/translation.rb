@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.config.to_prepare do
-  require 'i18n/backend/active_record'
+  require "i18n/backend/active_record"
 
   Translation = I18n::Backend::ActiveRecord::Translation
 

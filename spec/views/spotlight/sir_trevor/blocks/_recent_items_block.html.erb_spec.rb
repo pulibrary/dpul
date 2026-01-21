@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view do
+describe "spotlight/sir_trevor/blocks/_recent_items_block.html.erb", type: :view do
   with_queue_adapter :inline
-  let(:p) { 'spotlight/sir_trevor/blocks/recent_items_block' }
+  let(:p) { "spotlight/sir_trevor/blocks/recent_items_block" }
   let(:block) do
-    RecentItemsBlock.new({ type: 'block', data: {} }, view)
+    RecentItemsBlock.new({ type: "block", data: {} }, view)
   end
   let(:exhibit) { FactoryBot.create(:exhibit) }
   let(:search_service) { Blacklight::SearchService.new(config: CatalogController.blacklight_config) }
 
   before do
     allow(controller).to receive(:search_service).and_return(search_service)
-    allow(view.main_app).to receive(:track_test_path).and_return('/track')
+    allow(view.main_app).to receive(:track_test_path).and_return("/track")
     allow(view).to receive_messages(recent_items_block: block)
     allow(view).to receive_messages(
       blacklight_config: CatalogController.blacklight_config,
@@ -60,7 +60,7 @@ describe 'spotlight/sir_trevor/blocks/_recent_items_block.html.erb', type: :view
     )
   end
 
-  it 'renders a set of recent items that have thunbnails' do
+  it "renders a set of recent items that have thunbnails" do
     render partial: p, locals: { recent_items_block: block }
 
     expect(rendered).to have_selector ".recent-item-card", count: 3

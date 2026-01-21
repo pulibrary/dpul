@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Catalog Edit', type: :feature do
-  let(:exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 1', slug: 'exhibit-title-1') }
-  let(:different_exhibit) { FactoryBot.create(:exhibit, title: 'Exhibit Title 2', slug: 'exhibit-title-2') }
+RSpec.describe "Catalog Edit", type: :feature do
+  let(:exhibit) { FactoryBot.create(:exhibit, title: "Exhibit Title 1", slug: "exhibit-title-1") }
+  let(:different_exhibit) { FactoryBot.create(:exhibit, title: "Exhibit Title 2", slug: "exhibit-title-2") }
   let(:admin) { FactoryBot.create(:exhibit_admin, exhibit:) }
-  let(:document_id) { '1r66j4408' }
+  let(:document_id) { "1r66j4408" }
   let(:id) { Digest::MD5.hexdigest("#{exhibit.id}-#{document_id}") }
   let(:id2) { Digest::MD5.hexdigest("#{different_exhibit.id}-#{document_id}") }
   let(:document) do
@@ -19,8 +19,8 @@ RSpec.describe 'Catalog Edit', type: :feature do
       id: id2
     )
   end
-  let(:collection1) { Spotlight::Exhibit.create!(title: 'test collection 1') }
-  let(:collection2) { Spotlight::Exhibit.create!(title: 'test collection 2') }
+  let(:collection1) { Spotlight::Exhibit.create!(title: "test collection 1") }
+  let(:collection2) { Spotlight::Exhibit.create!(title: "test collection 2") }
 
   before do
     sign_in admin
@@ -29,16 +29,16 @@ RSpec.describe 'Catalog Edit', type: :feature do
       data: {
         "override-title_ssim": "bla",
         full_title_tesim: [
-          'test item'
+          "test item"
         ],
         access_identifier_ssim: [
           "1r66j4408"
         ],
         readonly_collections_ssim: [
-          'test collection 3'
+          "test collection 3"
         ],
         'content_metadata_iiif_manifest_field_ssi': [
-          'http://images.institution.edu'
+          "http://images.institution.edu"
         ]
       }.stringify_keys
     )
@@ -47,17 +47,17 @@ RSpec.describe 'Catalog Edit', type: :feature do
       data: {
         "override-title_ssim": nil,
         full_title_tesim: [
-          'test item'
+          "test item"
         ],
         access_identifier_ssim: [
           "1r66j4408"
         ],
         readonly_collections_ssim: [
-          'test collection 1',
-          'test collection 2'
+          "test collection 1",
+          "test collection 2"
         ],
         'content_metadata_iiif_manifest_field_ssi': [
-          'http://images.institution.edu'
+          "http://images.institution.edu"
         ]
       }.stringify_keys
     )
@@ -68,8 +68,8 @@ RSpec.describe 'Catalog Edit', type: :feature do
     document2.reindex
     Blacklight.default_index.connection.commit
 
-    Spotlight::CustomField.create!(exhibit:, slug: 'collections', field: 'readonly_collections_ssim', configuration: { "label" => "Collections" }, field_type: 'vocab', readonly_field: true)
-    Spotlight::CustomField.create!(exhibit:, slug: 'override-title_ssim', field: 'override-title_ssim', configuration: { "label" => "Override Title" }, field_type: 'vocab', readonly_field: false)
+    Spotlight::CustomField.create!(exhibit:, slug: "collections", field: "readonly_collections_ssim", configuration: { "label" => "Collections" }, field_type: "vocab", readonly_field: true)
+    Spotlight::CustomField.create!(exhibit:, slug: "override-title_ssim", field: "override-title_ssim", configuration: { "label" => "Override Title" }, field_type: "vocab", readonly_field: false)
   end
 
   it "can be edited without losing data" do

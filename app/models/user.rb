@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   end
 
   def default_username
-    username, domain = email.split('@')
+    username, domain = email.split("@")
     return username if domain == "princeton.edu"
 
     email

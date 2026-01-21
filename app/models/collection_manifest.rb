@@ -15,7 +15,7 @@ class CollectionManifest < IIIF::Presentation::Collection
   # multiple places to ask for the manifest, and we need to make sure the auth
   # token is included.
   def id
-    AuthorizedUrl.new(url: self['@id']).to_s
+    AuthorizedUrl.new(url: self["@id"]).to_s
   end
 
   def slug

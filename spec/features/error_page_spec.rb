@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Error Pages', type: :feature do
+RSpec.describe "Error Pages", type: :feature do
   context "when visiting the pages directly" do
     it "shows a custom 404 page" do
       visit "/404"

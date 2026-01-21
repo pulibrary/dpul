@@ -34,7 +34,7 @@ class FiggyEventProcessor
       end
 
       def delete_resources
-        IiifResource.where(url: manifest_url).joins(:exhibit).where('spotlight_exhibits.slug IN (?)', delete_slugs)
+        IiifResource.where(url: manifest_url).joins(:exhibit).where("spotlight_exhibits.slug IN (?)", delete_slugs)
       end
 
       def delete_slugs
