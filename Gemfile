@@ -34,7 +34,7 @@ gem "jquery-rails"
 gem "lograge"
 gem "logstash-event"
 gem "net-smtp", require: false
-gem "nokogiri", "~> 1.18.9"
+gem "nokogiri", "~> 1.19.1"
 gem "omniauth", "> 1.0.0"
 gem "omniauth-cas"
 gem "omniauth-rails_csrf_protection"
