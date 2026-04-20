@@ -41,7 +41,7 @@ jobs:
       - run: bundle install
       - run:
           name: Install NPM dependencies via Yarn
-          command: yarn install --frozen-lockfile
+          command: yarn install --frozen-lockfile --ignore-scripts
       # Cache Dependencies
       - save_cache:
           name: Save Yarn Package Cache
