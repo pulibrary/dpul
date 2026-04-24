@@ -41,7 +41,7 @@ gem "omniauth-rails_csrf_protection"
 # openseadragon is not compatible with sprockets starting at 1.0
 gem "openseadragon", "< 1.0.0"
 gem "open_uri_redirections"
-gem "rack", ">= 2.0.6"
+gem "rack", ">= 2.2.23"
 gem "rails", "~> 7.2.0"
 gem "rbtree", ">= 0.4.6"
 gem "redcarpet", "~> 3.5.1"
