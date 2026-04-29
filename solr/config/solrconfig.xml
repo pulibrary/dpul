@@ -6,7 +6,7 @@
   
   <abortOnConfigurationError>${solr.abortOnConfigurationError:true}</abortOnConfigurationError>
   
-  <luceneMatchVersion>8.4.1</luceneMatchVersion>
+  <luceneMatchVersion>9.9.0</luceneMatchVersion>
 
   <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.StandardDirectoryFactory}"/>
 
