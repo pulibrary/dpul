@@ -6,7 +6,7 @@ services:
   dpul_development_solr:
     type: solr:custom
     overrides:
-      image: pulibrary/ci-solr:8.4-v1.0.0
+      image: quay.io/pulibrary/ci-solr:9.9-v1.0.1
       command: server/scripts/lando-start.sh
     portforward: true
     core: blacklight-core
@@ -15,7 +15,7 @@ services:
   dpul_test_solr:
     type: solr:custom
     overrides:
-      image: pulibrary/ci-solr:8.4-v1.0.0
+      image: quay.io/pulibrary/ci-solr:9.9-v1.0.1
       command: server/scripts/lando-start.sh
     portforward: true
     core: blacklight-core-test
