@@ -12,10 +12,11 @@ RSpec.describe ManifestMetadata do
   let(:lang_code) { { "Language" => "en" } }
   let(:member) { { "Memberof" => { "title" => "Member Title" } } }
   let(:id_value) { { "Title" => { "@id" => "1234" } } }
+  let("rights") { { "Edm rights" => "Rights Text" } }
   let(:date_range_value) do
     { "date_range" => [
       {
-        "@type" => "edm:TimeSpan",
+        "@type" => "edm:TimeSpan", # ????
         "begin" => ["1992"],
         "end" => ["1993"],
         "skos:prefLabel" => "approximately 1992-1993",
@@ -52,6 +53,9 @@ RSpec.describe ManifestMetadata do
     end
     it "uses member titles" do
       expect(metadata.process_values(member)).to eq("Collections" => ["Member Title"])
+    end
+    it "calls edm-rights rights" do
+      expect(metadata.process_values(rights)).to eq("Rights" => ["Rights Text"])
     end
     it "uses @id as a last resort" do
       expect(metadata.process_values(id_value)).to eq("Title" => ["1234"])
