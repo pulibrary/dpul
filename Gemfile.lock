@@ -135,7 +135,7 @@ GEM
       blacklight (>= 7.25, < 9)
       rails
       ruby-oembed
-    blacklight-spotlight (4.6.1)
+    blacklight-spotlight (4.7.1)
       activejob-status
       acts-as-taggable-on (>= 5.0, < 12)
       autoprefixer-rails
@@ -864,7 +864,7 @@ DEPENDENCIES
   blacklight (~> 7.18)
   blacklight-gallery (~> 4.5.0)
   blacklight-oembed
-  blacklight-spotlight (~> 4.6.0)
+  blacklight-spotlight (~> 4.7.0)
   bootstrap (~> 4.6)
   bootstrap_form (~> 4.0)
   byebug
