@@ -11,7 +11,7 @@ gem "bixby", "~> 5.0"
 gem "blacklight", "~> 7.18"
 gem "blacklight-gallery", "~> 4.5.0"
 gem "blacklight-oembed"
-gem "blacklight-spotlight", "~> 4.7.0"
+gem "blacklight-spotlight", github: "pulibrary/spotlight", branch: "relax-devise"
 gem "bootstrap", "~> 4.6"
 gem "bootstrap_form", "~> 4.0"
 # pinning connection_pool due to https://github.com/rails/rails/pull/56292
