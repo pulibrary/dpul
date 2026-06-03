@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/pulibrary/spotlight.git
-  revision: 8dc326300a2744765db885bd8cc5d53641afedd2
-  branch: relax-devise
+  revision: dae595d5cc5927ab3dcf2bee635929d9a46a4de0
+  branch: main
   specs:
     blacklight-spotlight (4.7.1)
       activejob-status
