@@ -160,17 +160,14 @@ GEM
       rubocop-performance
       rubocop-rails
       rubocop-rspec
-    blacklight (7.41.0)
-      deprecation
+    blacklight (8.1.0)
       globalid
-      hashdiff
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
       ostruct (>= 0.3.2)
-      rails (>= 6.1, < 8.1)
-      view_component (>= 2.74, < 4)
-      zeitwerk
+      rails (>= 6.1, < 8)
+      view_component (>= 2.66, < 4)
     blacklight-gallery (4.5.4)
       blacklight (>= 7.17, < 9)
       rails (>= 6.1, < 8)
@@ -867,7 +864,7 @@ DEPENDENCIES
   axe-core-rspec
   bcrypt_pbkdf
   bixby (~> 5.0)
-  blacklight (~> 7.18)
+  blacklight (~> 8.1.0)
   blacklight-gallery (~> 4.5.0)
   blacklight-oembed
   blacklight-spotlight!

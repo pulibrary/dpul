@@ -34,6 +34,7 @@ class CatalogController < ApplicationController
   end
 
   configure_blacklight do |config|
+    config.bootstrap_version = 4
     config.raw_endpoint.enabled = true
     config.show.oembed_field = :oembed_url_ssm
     config.show.partials.insert(1, :oembed)
@@ -152,7 +153,7 @@ class CatalogController < ApplicationController
   # get a single document from the index
   # to add responses for formats other than html or json see _Blacklight::Document::Export_
   def show
-    @response, @document = search_service.fetch params[:id], exhibit: @exhibit
+    @document = search_service.fetch params[:id], exhibit: @exhibit
     respond_to do |format|
       format.html { setup_next_and_previous_documents }
       format.json { render json: { response: { document: @document } } }

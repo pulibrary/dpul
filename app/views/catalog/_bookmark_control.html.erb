@@ -4,4 +4,4 @@
   # functionality work rather than overriding functionality in several other
   # places to stay consistent with the noid.
 -%>
-<%= render Blacklight::Document::BookmarkComponent.new(document: document, bookmark_path: bookmarks_id_path(document)) if current_or_guest_user %>
+<%= render Blacklight::Document::BookmarkComponent.new(document: document, bookmark_path: bookmarks_id_path(document), action: document_action_config) if current_or_guest_user %>
