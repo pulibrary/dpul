@@ -282,7 +282,7 @@ GEM
     dry-cli (1.4.1)
     dumb_delegator (1.1.0)
     ed25519 (1.4.0)
-    erb (6.0.1)
+    erb (6.0.4)
     erubi (1.13.1)
     execjs (2.10.0)
     factory_bot (6.5.6)
