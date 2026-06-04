@@ -31,6 +31,7 @@ gem "jbuilder", "~> 2.0"
 gem "jquery-rails"
 gem "lograge"
 gem "logstash-event"
+gem "multi_json"
 gem "net-smtp", require: false
 gem "nokogiri", "~> 1.19.1"
 gem "omniauth", "> 1.0.0"

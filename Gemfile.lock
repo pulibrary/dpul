@@ -489,6 +489,7 @@ GEM
       drb (~> 2.0)
       prism (~> 1.5)
     msgpack (1.8.0)
+    multi_json (1.21.1)
     multi_xml (0.9.1)
       bigdecimal (>= 3.1, < 5)
     mutex_m (0.3.0)
@@ -903,6 +904,7 @@ DEPENDENCIES
   lograge
   logstash-event
   marcel (~> 1.0.0)
+  multi_json
   net-smtp
   nokogiri (~> 1.19.1)
   omniauth (> 1.0.0)
