@@ -9,13 +9,11 @@ end
 gem "acts-as-taggable-on"
 gem "bixby", "~> 5.0"
 gem "blacklight", "~> 7.18"
-gem "blacklight-gallery", "~> 4.5.0"
+gem "blacklight-gallery", "~> 4.7"
 gem "blacklight-oembed"
-gem "blacklight-spotlight", github: "pulibrary/spotlight", branch: "main"
+gem "blacklight-spotlight", github: "pulibrary/spotlight", branch: "relax_rails"
 gem "bootstrap", "~> 4.6"
 gem "bootstrap_form", "~> 4.0"
-# pinning connection_pool due to https://github.com/rails/rails/pull/56292
-gem "connection_pool", "< 3"
 gem "dalli"
 gem "datadog", require: "datadog/auto_instrument"
 gem "devise", "~> 5.0.4"
@@ -41,8 +39,10 @@ gem "omniauth-rails_csrf_protection"
 # openseadragon is not compatible with sprockets starting at 1.0
 gem "openseadragon", "< 1.0.0"
 gem "open_uri_redirections"
+# Pin marcel to 1.0.x for carrierwave 2.x compatibility
+gem "marcel", "~> 1.0.0"
 gem "rack", "~> 3.2.6"
-gem "rails", "~> 7.2.0"
+gem "rails", "~> 8.0.0"
 gem "rbtree", ">= 0.4.6"
 gem "redcarpet", "~> 3.5.1"
 # Upgrading past redis 3.3.5 currently breaks deploy. Test any upgrades here carefully.

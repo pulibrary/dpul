@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   # root to: "catalog#index" # replaced by spotlight root path
   concern :searchable, Blacklight::Routes::Searchable.new
 
-  resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
+  resource :catalog, only: [], as: "catalog", path: "/catalog", controller: "catalog" do
     concerns :searchable
   end
 
