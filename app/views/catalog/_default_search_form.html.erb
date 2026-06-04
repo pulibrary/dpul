@@ -2,6 +2,4 @@
       url: main_app.search_catalog_url,
       advanced_search_url: nil,
       params: search_state.params_for_search.except(:qt),
-      search_fields: Deprecation.silence(Blacklight::ConfigurationHelperBehavior) { search_fields },
-      presenter: search_bar_presenter
 )) %>

@@ -8,12 +8,6 @@ class SolrDocument
 
   # self.unique_key = 'id'
 
-  # Email uses the semantic field mappings below to generate the body of an email.
-  SolrDocument.use_extension(Blacklight::Document::Email)
-
-  # SMS uses the semantic field mappings below to generate the body of an SMS email.
-  SolrDocument.use_extension(Blacklight::Document::Sms)
-
   class << self
     def find(id, params = {})
       solr_response = index.find(id, params)

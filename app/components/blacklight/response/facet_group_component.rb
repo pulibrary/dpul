@@ -5,23 +5,44 @@
 module Blacklight
   module Response
     # Render a group of facet fields
-    class FacetGroupComponent < ::ViewComponent::Base
+    class FacetGroupComponent < Blacklight::Component
+      renders_one :body
+
       # @param [Blacklight::Response] response
-      # @param [Array<String>] fields facet fields to render
+      # @param [Array<Blacklight::Configuration::FacetField>] fields facet fields to render
       # @param [String] title the title of the facet group section
       # @param [String] id a unique identifier for the group
-      def initialize(response:, fields: [], title: nil, id: nil)
-        @response = response
+      def initialize(id:, title: nil, fields: [], response: nil)
+        @groupname = id
+        @id = id ? "facets-#{id}" : 'facets'
+        @title = title || I18n.t("blacklight.search.#{@id}.title")
+        @panel_id = id ? "facet-panel-#{id}-collapse" : 'facet-panel-collapse'
+
+        # deprecated variables
         @fields = fields
-        @title = title
-        @id = id ? "facets-#{id}" : "facets"
-        @panel_id = id ? "facet-panel-#{id}-collapse" : "facet-panel-collapse"
+        @response = response
+      end
+
+      # Provide fallback behavior for rendering this object without a body slot
+      def before_render
+        set_slot(:body, nil) { default_body } unless body?
       end
 
       def render?
-        Deprecation.silence(Blacklight::FacetsHelperBehavior) do
-          @view_context.has_facet_values?(@fields, @response)
-        end
+        body.present?
+      end
+
+      private
+
+      # @deprecated
+      def default_body
+        Blacklight.deprecation.warn('Rendering the Blacklight::FacetGroupComponent without a body slot is deprecated.')
+        helpers.render(Blacklight::FacetComponent.with_collection(@fields, response: @response))
+      end
+
+      # @deprecated
+      def blacklight_config
+        helpers.blacklight_config
       end
     end
   end
