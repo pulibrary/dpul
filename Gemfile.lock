@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/pulibrary/spotlight.git
-  revision: 7256c362d95a700cd20f255546bf5241116dc8a8
-  branch: relax_rails
+  revision: d75e0e6fe316f17a2ba01f6586e7240bd65b8d33
   specs:
     blacklight-spotlight (4.7.1)
       activejob-status
