@@ -39,7 +39,7 @@ class SolrDocument
     # This part was added
     if custom_data
       sidecar = sidecar(current_exhibit)
-      custom_data["data"] = sidecar.data.merge(custom_data["data"])
+      custom_data["data"] = sidecar.data.merge(custom_data["data"] || {})
       sidecar.update(custom_data)
     end
     # End additions
