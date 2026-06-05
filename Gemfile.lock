@@ -371,7 +371,7 @@ GEM
       os (>= 0.9, < 2.0)
       pstore (~> 0.1)
       signet (>= 0.16, < 2.a)
-    graphql (2.5.17)
+    graphql (2.5.26)
       base64
       fiber-storage
       logger
