@@ -34,7 +34,7 @@ jobs:
       - run: gem install bundler -v '2.6.9'
       - node/install:
           install-yarn: true
-          node-version: '22.10.0'
+          node-version: '24.16.0'
       # Install dependencies
       - run: sudo apt-get install libidn11-dev
       - run: bundle config set --local path "vendor/bundle"
@@ -107,7 +107,7 @@ jobs:
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       - node/install:
           install-yarn: true
-          node-version: '22.10.0'
+          node-version: '24.16.0'
       # Install Bundler
       - run: gem install bundler -v '2.6.9'
       # Bundle install dependencies
