@@ -6,12 +6,12 @@ source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
 end
 
-gem "acts-as-taggable-on"
+gem "acts-as-taggable-on", "~> 13.0"
 gem "bixby", "~> 5.0"
-gem "blacklight", "~> 7.18"
+gem "blacklight", "~> 7.18", github: "projectblacklight/blacklight", branch: "rails-8-1-blacklight-7"
 gem "blacklight-gallery", "~> 4.7"
 gem "blacklight-oembed"
-gem "blacklight-spotlight", github: "pulibrary/spotlight"
+gem "blacklight-spotlight", github: "pulibrary/spotlight", branch: "rails_8_1"
 gem "bootstrap", "~> 4.6"
 gem "bootstrap_form", "~> 4.0"
 gem "dalli"
@@ -43,7 +43,7 @@ gem "open_uri_redirections"
 # Pin marcel to 1.0.x for carrierwave 2.x compatibility
 gem "marcel", "~> 1.0.0"
 gem "rack", "~> 3.2.6"
-gem "rails", "~> 8.0.0"
+gem "rails", "~> 8.1.0"
 gem "rbtree", ">= 0.4.6"
 gem "redcarpet", "~> 3.5.1"
 # Upgrading past redis 3.3.5 currently breaks deploy. Test any upgrades here carefully.
