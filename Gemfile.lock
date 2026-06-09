@@ -1,21 +1,4 @@
 GIT
-  remote: https://github.com/projectblacklight/blacklight.git
-  revision: 7810b5035b4e2e05f990da571d7e0559c5331459
-  branch: rails-8-1-blacklight-7
-  specs:
-    blacklight (7.41.0)
-      deprecation
-      globalid
-      hashdiff
-      i18n (>= 1.7.0)
-      jbuilder (~> 2.7)
-      kaminari (>= 0.15)
-      ostruct (>= 0.3.2)
-      rails (>= 6.1, < 9)
-      view_component (>= 2.74, < 4)
-      zeitwerk
-
-GIT
   remote: https://github.com/pulibrary/spotlight.git
   revision: dca8e2f903c3862615de00895c5e66be1350d58b
   branch: rails_8_1
@@ -179,6 +162,17 @@ GEM
       rubocop-performance
       rubocop-rails
       rubocop-rspec
+    blacklight (7.42.0)
+      deprecation
+      globalid
+      hashdiff
+      i18n (>= 1.7.0)
+      jbuilder (~> 2.7)
+      kaminari (>= 0.15)
+      ostruct (>= 0.3.2)
+      rails (>= 6.1, < 9)
+      view_component (>= 2.74, < 4)
+      zeitwerk
     blacklight-gallery (4.9.0)
       blacklight (>= 7.17, < 9)
       rails (>= 6.1, < 9)
@@ -878,7 +872,7 @@ DEPENDENCIES
   axe-core-rspec
   bcrypt_pbkdf
   bixby (~> 5.0)
-  blacklight (~> 7.18)!
+  blacklight (~> 7.42)
   blacklight-gallery (~> 4.7)
   blacklight-oembed
   blacklight-spotlight!
