@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/pulibrary/spotlight.git
-  revision: dca8e2f903c3862615de00895c5e66be1350d58b
-  branch: rails_8_1
+  revision: 77e15c02972cb11c4fde5db2f506f4ef883083bb
   specs:
     blacklight-spotlight (4.7.1)
       activejob-status
