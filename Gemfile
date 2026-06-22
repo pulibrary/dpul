@@ -64,6 +64,7 @@ gem "sprockets-es6"
 gem "string_rtl"
 gem "turbolinks"
 gem "uglifier", "4.1.0"
+gem "view_component", "3.24.0"
 gem "vite_rails"
 
 group :development, :test do
