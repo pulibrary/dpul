@@ -33,7 +33,7 @@ gem "lograge"
 gem "logstash-event"
 gem "multi_json"
 gem "net-smtp", require: false
-gem "nokogiri", "~> 1.19.1"
+gem "nokogiri", "~> 1.19.4"
 gem "omniauth", "> 1.0.0"
 gem "omniauth-cas"
 gem "omniauth-rails_csrf_protection"
