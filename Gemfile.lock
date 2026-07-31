@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/pulibrary/spotlight.git
-  revision: 77e15c02972cb11c4fde5db2f506f4ef883083bb
+  revision: ec5e0bb6ff5f8586ecbc530131b5a4c5ee0306d3
+  branch: main
   specs:
     blacklight-spotlight (4.7.1)
       activejob-status
@@ -30,7 +31,7 @@ GIT
       oauth2
       openseadragon
       ostruct (!= 0.3.2, != 0.3.1, != 0.3.0)
-      paper_trail (>= 11.0, < 16)
+      paper_trail (>= 11.0, < 18)
       rails (>= 7.0, < 9.0)
       redcarpet (>= 2.0.1, < 4)
       riiif (~> 2.0)
@@ -549,8 +550,8 @@ GEM
     orm_adapter (0.5.0)
     os (1.1.4)
     ostruct (0.6.3)
-    paper_trail (15.2.0)
-      activerecord (>= 6.1)
+    paper_trail (17.0.0)
+      activerecord (>= 7.1)
       request_store (~> 1.4)
     parallel (1.27.0)
     parser (3.3.10.1)
@@ -914,6 +915,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection
   open_uri_redirections
   openseadragon (< 1.0.0)
+  paper_trail (= 17.0.0)
   pg
   pry-byebug
   pry-rails
