@@ -56,7 +56,6 @@ gem "ruby2_keywords"
 gem "ruby-prof", require: false
 gem "rubyzip", ">= 1.2.2"
 gem "sassc-rails"
-gem "sidekiq", "~> 7.1.3"
 gem "sitemap_generator"
 gem "sneakers"
 gem "sprockets", "~> 4.2"
