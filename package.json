@@ -3,7 +3,7 @@
   "dependencies": {
     "lux-design-system": "^5.0.0-beta.6",
     "openseadragon-rails": "^1.0.17",
-    "postcss": "^8.4.38",
+    "postcss": "^8.5.23",
     "postcss-import": "^16.1.0",
     "postcss-preset-env": "^9.5.4",
     "vue": "^3.4.21",
@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^6.4.2",
+    "vite": "^6.4.3",
     "vite-plugin-ruby": "^5.1.0"
   },
   "name": "dpul",
