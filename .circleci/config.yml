@@ -28,8 +28,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dpul-{{ checksum "Gemfile.lock" }}
-            - dpul-yarn-{{ checksum "yarn.lock" }}
+            - dpul-{{ checksum "Gemfile.lock" }}-v1
+            - dpul-yarn-{{ checksum "yarn.lock" }}-v1
       # Install bundler / yarn
       - run: gem install bundler -v '2.6.9'
       - node/install:
@@ -45,12 +45,12 @@ jobs:
       # Cache Dependencies
       - save_cache:
           name: Save Yarn Package Cache
-          key: dpul-yarn-{{ checksum "yarn.lock" }}
+          key: dpul-yarn-{{ checksum "yarn.lock" }}-v1
           paths:
             - ~/.cache/yarn
       - save_cache:
           name: Save bundle cache
-          key: dpul-{{ checksum "Gemfile.lock" }}
+          key: dpul-{{ checksum "Gemfile.lock" }}-v1
           paths:
             - vendor/bundle
       - persist_to_workspace:
