@@ -13,6 +13,9 @@ export default defineConfig({
       'vue': 'vue/dist/vue.esm-bundler',
     }
   },
+  build: {
+    cssMinify: 'esbuild',
+  },
   css: {
     postcss: {
       plugins: [
