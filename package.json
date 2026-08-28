@@ -10,7 +10,7 @@
     "vue-loader": "^17.4.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue": "^6.0.0",
     "esbuild": "^0.28.2",
     "vite": "^8.0.0",
     "vite-plugin-ruby": "^5.2.0"
