@@ -4,7 +4,7 @@
     "lux-design-system": "^7.0.0",
     "openseadragon-rails": "^1.0.17",
     "postcss": "^8.4.38",
-    "postcss-import": "^16.1.0",
+    "postcss-import": "^17.0.0",
     "postcss-preset-env": "^11.0.0",
     "vue": "^3.4.21",
     "vue-loader": "^17.4.2"
