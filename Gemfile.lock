@@ -42,7 +42,13 @@ GIT
       view_component (>= 2.66, < 4)
 
 GEM
-  remote: https://gem.coop/
+  remote: https://gems.contribsys.com/
+  specs:
+    sidekiq-pro (8.1.5)
+      sidekiq (>= 8.1.0, < 9)
+
+GEM
+  remote: https://rubygems.org/
   specs:
     action_text-trix (2.1.19)
       railties
@@ -856,12 +862,6 @@ GEM
       nokogiri (~> 1.8)
     zeitwerk (2.8.2)
 
-GEM
-  remote: https://gems.contribsys.com/
-  specs:
-    sidekiq-pro (8.1.5)
-      sidekiq (>= 8.1.0, < 9)
-
 PLATFORMS
   arm-linux-gnu
   arm-linux-musl
@@ -952,4 +952,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.6.9
+  4.0.19
