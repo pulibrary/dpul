@@ -9,7 +9,7 @@ end
 gem "acts-as-taggable-on", "~> 13.0"
 gem "bixby", "~> 5.0"
 gem "blacklight", "~> 7.42"
-gem "blacklight-gallery", "~> 4.7"
+gem "blacklight-gallery", "~> 6.0"
 gem "blacklight-oembed"
 gem "blacklight-spotlight", github: "pulibrary/spotlight", branch: "main"
 gem "bootstrap", "~> 4.6"
