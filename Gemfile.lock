@@ -656,7 +656,8 @@ GEM
       rbs (>= 4.0.0)
       tsort
     redcarpet (3.6.1)
-    redis (4.8.1)
+    redis (6.0.0)
+      redis-client (= 0.30.1)
     redis-client (0.30.1)
       connection_pool
     redis-namespace (1.11.0)
@@ -921,7 +922,7 @@ DEPENDENCIES
   rake (~> 13.0)
   rbtree (>= 0.4.6)
   redcarpet (~> 3.6.0)
-  redis (~> 4.5)
+  redis (~> 6.0)
   redis-namespace
   riiif
   rsolr (~> 2.0)
