@@ -46,7 +46,7 @@ gem "rails", "~> 8.1.0"
 gem "rbtree", ">= 0.4.6"
 gem "redcarpet", "~> 3.6.0"
 # Upgrading past redis 3.3.5 currently breaks deploy. Test any upgrades here carefully.
-gem "redis", "~> 4.5"
+gem "redis", "~> 6.0"
 gem "redis-namespace"
 gem "riiif"
 gem "rsolr", "~> 2.0"
