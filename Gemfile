@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-source "https://gem.coop"
+source "https://rubygems.org", cooldown: 14
 
 source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
