@@ -178,9 +178,8 @@ GEM
       rails
       ruby-oembed
       view_component (>= 3.0)
-    bootstrap (4.6.2.1)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 1.16.1, < 2)
+    bootstrap (5.3.8)
+      popper_js (>= 2.11.8, < 3)
     bootstrap_form (4.5.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -563,7 +562,7 @@ GEM
     pg (1.6.3-arm64-darwin)
     pg (1.6.3-x86_64-darwin)
     pg (1.6.3-x86_64-linux)
-    popper_js (1.16.1)
+    popper_js (2.11.8)
     pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
@@ -863,7 +862,7 @@ DEPENDENCIES
   blacklight-gallery (~> 4.7)
   blacklight-oembed
   blacklight-spotlight!
-  bootstrap (~> 4.6)
+  bootstrap (~> 5.0)
   bootstrap_form (~> 4.0)
   byebug
   cancancan
