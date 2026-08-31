@@ -48,9 +48,9 @@
   integrity sha512-c5ihYsPkdG6JCkU2zTMm4+k6r7RXuGxtWYhu5DHMIiF1FHzrfmHL5so11AoFpUv/tu61xfcmT4AmKoFfMPoqdQ==
 
 "@csstools/css-color-parser@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@csstools/css-color-parser/-/css-color-parser-4.2.1.tgz#d2795d618e3d497f394277eede34f10d7adfad0e"
-  integrity sha512-YpAJZhaHplYQkG8ib+/Fx5Y0eF2lVWi3tIvMJA6i39TLyUNp2439cifzW8VMjhlqrBjHzK5hVGugRRm2zTKI/A==
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@csstools/css-color-parser/-/css-color-parser-4.2.2.tgz#f590bc710a26914dbe64c4656813eafc93f4e45e"
+  integrity sha512-3QKjR/vxyjcSXBLgb6lP0S3MGdvwbmqSsvLPbYdVORqPDc8FX1HAJ0Spk38bxaRXgvENTA47tlhhbb5Z2e8hEg==
   dependencies:
     "@csstools/color-helpers" "^6.1.1"
     "@csstools/css-calc" "^3.3.0"
@@ -883,9 +883,9 @@ css-prefers-color-scheme@^11.0.1:
   integrity sha512-JjBlS/GDGlqUBXS5duzFsSOMF5NJmnd11tGggppuhZeur7c1DEFWMw4xDPrUlRzfKt6AectVaiV622dZXpOPHA==
 
 cssdb@^8.10.0:
-  version "8.10.0"
-  resolved "https://registry.yarnpkg.com/cssdb/-/cssdb-8.10.0.tgz#fdb9cc7af72c81839265811ad8ca4e0a4db919c1"
-  integrity sha512-+JWEEjjoqkPY7iGHps3SaCT2w67Zpaj9zHvhCJ2iPBavKHwgtOOD2YEbZSCU8VO2uVGpKdYjVz+j6bhkNSjZ0g==
+  version "8.11.0"
+  resolved "https://registry.yarnpkg.com/cssdb/-/cssdb-8.11.0.tgz#e03c9cdc9c5e99d8cddf64a917bfc427b20c143a"
+  integrity sha512-VzY/8kcK5M8oCVr/cwh24J8XVlCOITpmzCizKBC28o7Z1s23MMojXoJ3q7a+TQQoMKvxC3YlG0Z9yU10kJF1uQ==
 
 cssesc@^3.0.0:
   version "3.0.0"
