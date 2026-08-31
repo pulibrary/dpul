@@ -906,7 +906,7 @@ DEPENDENCIES
   logstash-event
   multi_json
   net-smtp
-  nokogiri (~> 1.19.1)
+  nokogiri (~> 1.19.4)
   omniauth (> 1.0.0)
   omniauth-cas
   omniauth-rails_csrf_protection
