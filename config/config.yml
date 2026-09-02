@@ -6,8 +6,6 @@ defaults: &defaults
   events:
     server: 'amqp://localhost:5672'
     exchange: 'plum_events'
-  event_queue:
-    durable: true
 
 development:
   <<: *defaults
@@ -31,5 +29,3 @@ staging:
   events:
     server: <%= ENV["POMEGRANATE_RABBITMQ_URL"] %>
     exchange: <%= ENV["POMEGRANATE_RABBITMQ_EXCHANGE"] %>
-  event_queue:
-    durable: false
