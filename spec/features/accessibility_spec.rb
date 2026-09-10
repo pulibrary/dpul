@@ -55,10 +55,10 @@ describe "accessibility", type: :feature, js: true do
         readonly_title_tesim: [
           title
         ],
-        'exhibit_abc_books_readonly_edm-rights_ssim': [
+        'exhibit_abc_books_readonly_rights_ssim': [
           rights
         ],
-        'readonly_edm-rights_tesim': [
+        'readonly_rights_tesim': [
           rights
         ],
         exhibit_abc_books_readonly_license_ssim: [
@@ -79,7 +79,7 @@ describe "accessibility", type: :feature, js: true do
         'readonly_title-sort_ssim': [
           title
         ],
-        'readonly_edm-rights_ssim': [
+        'readonly_rights_ssim': [
           rights
         ],
         readonly_license_ssim: [
@@ -205,10 +205,10 @@ describe "accessibility", type: :feature, js: true do
         readonly_title_tesim: [
           title
         ],
-        'exhibit_abc_books_readonly_edm-rights_ssim': [
+        'exhibit_abc_books_readonly_rights_ssim': [
           rights
         ],
-        'readonly_edm-rights_tesim': [
+        'readonly_rights_tesim': [
           rights
         ],
         exhibit_abc_books_readonly_license_ssim: [
@@ -229,7 +229,7 @@ describe "accessibility", type: :feature, js: true do
         'readonly_title-sort_ssim': [
           title
         ],
-        'readonly_edm-rights_ssim': [
+        'readonly_rights_ssim': [
           rights
         ],
         readonly_license_ssim: [
