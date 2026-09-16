@@ -5,6 +5,7 @@ require File.expand_path("boot", __dir__)
 require "rails/all"
 require "open-uri"
 require_relative "lando_env"
+require_relative "log_filter"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -42,5 +43,9 @@ module Pomegranate
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     config.active_record.yaml_column_permitted_classes = [Symbol, Date, Time, Hash, HashWithIndifferentAccess, IIIF::OrderedHash]
+
+    config.rails_semantic_logger.appenders do |appenders|
+      appenders.add(file_name: "log/#{Rails.env}.log", formatter: :json, filter: LogFilter)
+    end
   end
 end
