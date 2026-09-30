@@ -4,6 +4,7 @@ require "rails_helper"
 
 RSpec.describe FiggyEventHandler do
   subject(:handler) { described_class.new }
+  with_queue_adapter :inline
 
   describe "#work" do
     before do

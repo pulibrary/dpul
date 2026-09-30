@@ -9,8 +9,7 @@ class FiggyEventHandler
 
   def work(msg)
     ActiveRecord::Base.connection.verify!
-    msg = JSON.parse(msg)
-    FiggyEventProcessor.new(msg).process
+    ProcessEventJob.perform_later(msg)
     ack!
   end
 end
