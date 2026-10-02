@@ -47,7 +47,7 @@ gem "redcarpet", "~> 3.6.0"
 gem "redis", "~> 6.0"
 gem "redis-namespace"
 gem "riiif"
-gem "rsolr", "~> 2.0"
+gem "rsolr", "~> 3.0"
 # Required by blacklight-oembed
 gem "kicks"
 gem "rake", "~> 13.0"
