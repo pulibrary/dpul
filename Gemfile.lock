@@ -398,7 +398,7 @@ GEM
       logger
     health-monitor-rails (12.9.0)
       railties (>= 6.1)
-    honeybadger (6.9.1)
+    honeybadger (6.9.2)
       logger
       ostruct
     i18n (1.15.2)
@@ -479,7 +479,7 @@ GEM
     minitest (6.0.6)
       drb (~> 2.0)
       prism (~> 1.5)
-    multi_json (1.21.1)
+    multi_json (1.21.2)
     multi_xml (0.9.1)
       bigdecimal (>= 3.1, < 5)
     mutex_m (0.3.0)
@@ -717,7 +717,7 @@ GEM
       ffi (~> 1.12)
       logger
     ruby2_keywords (0.0.5)
-    rubyzip (3.6.0)
+    rubyzip (3.7.0)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
