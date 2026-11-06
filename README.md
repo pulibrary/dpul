@@ -47,6 +47,8 @@ destroy` or turn off all services with `lando poweroff`.
 bundle exec rspec
 ```
 
+If vite_ruby autoBuild isn't working, some of the js-dependent feature specs will fail. You can run `bin/vite dev --mode=test` to get them to pass.
+
 ## Running in Development
 1. Run each of the services listed below in its own terminal as necessary. 
     ```sh
