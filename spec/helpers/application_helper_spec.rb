@@ -109,7 +109,7 @@ describe ApplicationHelper, type: :helper do
       let(:document) { nil }
 
       it "does not generate any markup" do
-        expect(output).to be nil
+        expect(output).to be_nil
       end
     end
 
@@ -119,7 +119,7 @@ describe ApplicationHelper, type: :helper do
       end
 
       it "suppresses the thumbnails and does not generate markup" do
-        expect(output).to be nil
+        expect(output).to be_nil
       end
     end
   end

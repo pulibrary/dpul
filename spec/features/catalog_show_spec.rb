@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "Catalog", type: :feature, js: true do
+RSpec.describe "Catalog", js: true, type: :feature do
   let(:exhibit) { FactoryBot.create(:exhibit, title: "Exhibit Title 1", slug: "exhibit-title-1") }
   let(:admin) { FactoryBot.create(:exhibit_admin, exhibit:) }
   let(:document_id) { "1r66j4408" }
@@ -65,13 +65,13 @@ RSpec.describe "Catalog", type: :feature, js: true do
     Spotlight::CustomField.create!(exhibit:, slug: "description", field: "readonly_description_ssim", configuration: { "label" => "Description" }, field_type: "vocab", readonly_field: true)
   end
 
-  it "will add a ... More link in the field" do
+  it "adds a ... More link in the field" do
     visit spotlight.exhibit_solr_document_path(exhibit, document_id)
     expect(page).to have_content "panoramic"
     expect(page).to have_selector "a.morelink"
   end
 
-  it "will render the collection titles as links" do
+  it "renders the collection titles as links" do
     visit spotlight.exhibit_solr_document_path(exhibit, document_id)
     expect(page).to have_link "test collection 1", href: "/test-collection-1"
     expect(page).to have_link "test collection 2", href: "/test-collection-2"

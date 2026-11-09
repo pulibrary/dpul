@@ -45,13 +45,6 @@ Lint/MissingSuper:
 Metrics/BlockLength:
   Max: 44
 
-# Offense count: 10
-RSpec/Capybara:
-  Exclude:
-    - 'spec/features/catalog_spec.rb'
-    - 'spec/features/exhibit_home_page_spec.rb'
-    - 'spec/features/sign_in_spec.rb'
-
 # Offense count: 6
 # Configuration parameters: Prefixes.
 # Prefixes: when, with, without
@@ -135,6 +128,11 @@ RSpec/VerifiedDoubles:
   Exclude:
     - 'spec/presenters/rtl_index_presenter_spec.rb'
     - 'spec/presenters/rtl_show_presenter_spec.rb'
+
+RSpec/VerifiedDoubleReference:
+  Exclude:
+    - 'spec/helpers/index_helper_spec.rb'
+    - 'spec/helpers/spotlight_helper_spec.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.

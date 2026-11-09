@@ -1,7 +1,6 @@
-require: rubocop-rspec
+plugins:
+  - rubocop-rspec
 
-# inherit_gem:
-#   bixby: bixby_default.yml
 inherit_from: .rubocop_todo.yml
 
 AllCops:
@@ -109,6 +108,9 @@ Rails/DynamicFindBy:
     - 'app/decorators/applies_title_from_slug.rb'
     - 'app/values/manifest_metadata.rb'
 
+Rails/FindEach:
+  Enabled: false
+
 Rails/HelperInstanceVariable:
   Enabled: false
 
@@ -136,7 +138,7 @@ RSpec/AnyInstance:
     - 'spec/features/catalog_show_spec.rb'
     - 'spec/models/iiif_resource_spec.rb'
 
-RSpec/Capybara/VisibilityMatcher:
+RSpec/BeEq:
   Enabled: false
 
 RSpec/ContextWording:
@@ -171,7 +173,13 @@ RSpec/ExampleWording:
   IgnoredWords:
     - only
 
-RSpec/FilePath:
+# RSpec/FilePath:
+#   Enabled: false
+
+RSpec/IndexedLet:
+  Enabled: false
+
+RSpec/MetadataStyle:
   Enabled: false
 
 RSpec/MultipleExpectations:
@@ -187,10 +195,12 @@ RSpec/MultipleMemoizedHelpers:
 
 RSpec/NestedGroups:
   Enabled: false
-  # Exclude:
-  #   - 'spec/models/iiif_resource_spec.rb'
-  #   - 'spec/services/iiif_service_spec.rb'
-  #   - 'spec/services/iiif_manifest_spec.rb'
+
+RSpec/ReceiveMessages:
+  Enabled: false
+
+RSpec/RemoveConst:
+  Enabled: false
 
 RSpec/VerifiedDoubles:
   Exclude:

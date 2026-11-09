@@ -51,6 +51,7 @@ gem "rsolr", "~> 2.0"
 gem "kicks"
 gem "rake", "~> 13.0"
 gem "rubocop", "~> 1.92", require: false
+gem "rubocop-capybara", require: false
 gem "rubocop-rails", require: false
 gem "rubocop-rspec", require: false
 gem "ruby2_keywords"

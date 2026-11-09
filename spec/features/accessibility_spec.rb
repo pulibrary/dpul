@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "accessibility", type: :feature, js: true do
+describe "accessibility", js: true, type: :feature do
   context "when visiting bookmarks page" do
     with_queue_adapter :inline
     let(:iiif_resource1) do FactoryBot.create(

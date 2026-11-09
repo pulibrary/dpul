@@ -699,12 +699,19 @@ GEM
     rubocop-ast (1.50.0)
       parser (>= 3.3.7.2)
       prism (~> 1.7)
-    rubocop-rails (2.15.2)
+    rubocop-capybara (3.1.0)
+      lint_roller (~> 1.1)
+      rubocop (~> 1.89)
+    rubocop-rails (2.38.0)
       activesupport (>= 4.2.0)
+      lint_roller (~> 1.1)
       rack (>= 1.1)
-      rubocop (>= 1.7.0, < 2.0)
-    rubocop-rspec (2.11.1)
-      rubocop (~> 1.19)
+      rubocop (>= 1.89.0, < 2.0)
+      rubocop-ast (>= 1.44.0, < 2.0)
+    rubocop-rspec (3.10.2)
+      lint_roller (~> 1.1)
+      regexp_parser (>= 2.0)
+      rubocop (~> 1.86, >= 1.86.2)
     ruby-oembed (0.18.1)
     ruby-prof (2.0.5)
       base64
@@ -900,6 +907,7 @@ DEPENDENCIES
   rsolr (~> 2.0)
   rspec-rails
   rubocop (~> 1.92)
+  rubocop-capybara
   rubocop-rails
   rubocop-rspec
   ruby-prof
