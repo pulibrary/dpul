@@ -1,16 +1,13 @@
 require: rubocop-rspec
 
-inherit_gem:
-  bixby: bixby_default.yml
+# inherit_gem:
+#   bixby: bixby_default.yml
 inherit_from: .rubocop_todo.yml
-
-Rails:
-  Enabled: true
 
 AllCops:
   NewCops: disable
   DisplayCopNames: true
-  TargetRubyVersion: 3.1.3
+  TargetRubyVersion: 4.0.9
   Exclude:
     - 'db/**/*'
     - 'script/**/*'
@@ -23,33 +20,43 @@ AllCops:
     - 'tmp/**/*'
     - 'log/**/*'
 
-Rails/UnknownEnv:
-  Environments:
-    - production
-    - development
-    - test
-    - staging
+Layout/BlockEndNewline:
+  Exclude:
+    - 'spec/**/*'
 
-Lint/UnusedBlockArgument:
+Layout/FirstHashElementIndentation:
+  Exclude:
+    - 'app/controllers/catalog_controller.rb'
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+Layout/LeadingCommentSpace:
   Exclude:
     - 'spec/**/*'
 
 Layout/LineLength:
   Enabled: false
 
-Metrics/AbcSize:
+Layout/MultilineBlockLayout:
+  Exclude:
+    - 'spec/**/*'
+
+Lint/ConstantDefinitionInBlock:
   Enabled: false
 
-Metrics/CyclomaticComplexity:
-  Exclude:
-    - 'app/values/manifest_metadata.rb'
+Lint/SendWithMixinArgument:
+  Enabled: false
 
-Metrics/ClassLength:
+Lint/UnusedBlockArgument:
   Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/services/iiif_manifest.rb'
+    - 'spec/**/*'
 
-Metrics/MethodLength:
+Lint/UnusedMethodArgument:
+  Exclude:
+    - 'app/jobs/spotlight/reindex_job.rb'
+
+Metrics/AbcSize:
   Enabled: false
 
 Metrics/BlockLength:
@@ -61,75 +68,47 @@ Metrics/BlockLength:
     - 'lib/tasks/**/*'
     - 'config/routes.rb'
 
+Metrics/ClassLength:
+  Exclude:
+    - 'app/controllers/catalog_controller.rb'
+    - 'app/services/iiif_manifest.rb'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'app/values/manifest_metadata.rb'
+    - 'app/services/iiif_manifest.rb'
+    - 'app/jobs/spotlight/update_job_trackers_job.rb'
+
+Metrics/MethodLength:
+  Enabled: false
+
 Metrics/ModuleLength:
   Exclude:
     - 'spec/fixtures/iiif_responses.rb'
 
-Style/BlockDelimiters:
+Naming/FileName:
   Exclude:
-    - 'spec/**/*'
+    - 'Capfile'
+    - 'Gemfile'
 
-Style/SymbolProc:
+Naming/MemoizedInstanceVariableName:
   Exclude:
-    - 'spec/factories/**/*'
+    - 'app/controllers/exhibits_controller.rb'
 
-Style/BlockComments:
-  Exclude:
-    - 'spec/spec_helper.rb'
-
-Layout/BlockEndNewline:
-  Exclude:
-    - 'spec/**/*'
-
-Layout/FirstHashElementIndentation:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-
-Layout/LeadingCommentSpace:
-  Exclude:
-    - 'spec/**/*'
-
-Layout/MultilineBlockLayout:
-  Exclude:
-    - 'spec/**/*'
-
-Layout/IndentationConsistency:
-  EnforcedStyle: indented_internal_methods
-
-Style/CollectionMethods:
-  PreferredMethods:
-    collect: 'map'
-    collect!: 'map!'
-    inject: 'reduce'
-    detect: 'find'
-    find_all: 'select'
-
-Style/WordArray:
-  Enabled: false
-
-Style/RegexpLiteral:
-  Enabled: false
-
-Style/StringLiterals:
+Rails:
   Enabled: true
-  EnforcedStyle: 'double_quotes'
-
-Style/ClassAndModuleChildren:
-  Enabled: false
-
-Style/Documentation:
-  Enabled: false
-
-Style/SingleLineBlockParams:
-  Enabled: false
-
-Style/SignalException:
-  Enabled: false
 
 Rails/Date:
   Enabled: false
 
-Rails/TimeZone:
+Rails/DynamicFindBy:
+  Exclude:
+    - 'app/controllers/exhibits_controller.rb'
+    - 'app/models/exhibit_proxy.rb'
+    - 'app/decorators/applies_title_from_slug.rb'
+    - 'app/values/manifest_metadata.rb'
+
+Rails/HelperInstanceVariable:
   Enabled: false
 
 Rails/OutputSafety:
@@ -140,12 +119,41 @@ Rails/OutputSafety:
     - 'spec/presenters/rtl_show_presenter_spec.rb'
     - 'app/processors/list_rendering.rb'
 
-Rails/DynamicFindBy:
+Rails/TimeZone:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
+
+RSpec/AnyInstance:
   Exclude:
-    - 'app/controllers/exhibits_controller.rb'
-    - 'app/models/exhibit_proxy.rb'
-    - 'app/decorators/applies_title_from_slug.rb'
-    - 'app/values/manifest_metadata.rb'
+    - 'spec/support/stub_iiif_response.rb'
+    - 'spec/features/catalog_show_spec.rb'
+    - 'spec/models/iiif_resource_spec.rb'
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/abilities/**/*'
+    - 'spec/features/**/*'
+    - 'spec/views/**/*'
+    - 'spec/routing/**/*'
+    - 'spec/inputs/**/*'
+
+RSpec/EmptyLineAfterExample:
+  Enabled: false
+
+RSpec/EmptyLineAfterHook:
+  Enabled: false
+
+RSpec/EmptyLineAfterSubject:
+  Enabled: false
 
 RSpec/ExampleLength:
   Enabled: false
@@ -159,13 +167,8 @@ RSpec/ExampleWording:
   IgnoredWords:
     - only
 
-RSpec/DescribeClass:
-  Exclude:
-    - 'spec/abilities/**/*'
-    - 'spec/features/**/*'
-    - 'spec/views/**/*'
-    - 'spec/routing/**/*'
-    - 'spec/inputs/**/*'
+RSpec/FilePath:
+  Enabled: false
 
 RSpec/MultipleExpectations:
   Exclude:
@@ -173,33 +176,67 @@ RSpec/MultipleExpectations:
     - 'spec/requests/catalog_spec.rb'
     - 'spec/models/iiif_resource_spec.rb'
     - 'spec/services/date_sort_migration_spec.rb'
+    - 'spec/views/**/*'
 
-RSpec/FilePath:
+RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
-Naming/FileName:
-  Exclude:
-    - 'Capfile'
-    - 'Gemfile'
-RSpec/AnyInstance:
-  Exclude:
-    - 'spec/support/stub_iiif_response.rb'
-    - 'spec/features/catalog_show_spec.rb'
-    - 'spec/models/iiif_resource_spec.rb'
 RSpec/NestedGroups:
-  Exclude:
-    - 'spec/models/iiif_resource_spec.rb'
+  Enabled: false
+  # Exclude:
+  #   - 'spec/models/iiif_resource_spec.rb'
+  #   - 'spec/services/iiif_service_spec.rb'
+  #   - 'spec/services/iiif_manifest_spec.rb'
+
 RSpec/VerifiedDoubles:
   Exclude:
     - 'spec/jobs/spotlight/reindex_job_spec.rb'
     - 'spec/presenters/rtl_index_presenter_spec.rb'
     - 'spec/presenters/rtl_show_presenter_spec.rb'
-Naming/MemoizedInstanceVariableName:
-  Exclude:
-    - 'app/controllers/exhibits_controller.rb'
+    - 'spec/views/spotlight/**/*'
+
 Security/Open:
   Exclude:
     - 'app/models/external_manifest.rb'
-Lint/UnusedMethodArgument:
+
+Style/BlockComments:
   Exclude:
-    - 'app/jobs/spotlight/reindex_job.rb'
+    - 'spec/spec_helper.rb'
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*'
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/CollectionMethods:
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'find'
+    find_all: 'select'
+
+Style/Documentation:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/SignalException:
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: 'double_quotes'
+
+Style/SymbolProc:
+  Exclude:
+    - 'spec/factories/**/*'
+
+Style/WordArray:
+  Enabled: false

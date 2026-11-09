@@ -25,7 +25,6 @@ describe ExhibitProxy do
 
   describe "#reindex" do
     context "when a resource is no longer in the manifest" do
-      # rubocop:disable Style/BracesAroundHashParameters
       before do
         stub_collections(fixture: "collections.json")
         url = "https://hydra-dev.princeton.edu/collections/2b88qc199/manifest"
@@ -43,7 +42,6 @@ describe ExhibitProxy do
         stub_metadata(id: "1234567")
         stub_manifest(url: "https://hydra-dev.princeton.edu/concern/scanned_resources/44558d29f/manifest", fixture: "44558d29f.json")
       end
-      # rubocop:enable Style/BracesAroundHashParameters
 
       it "deletes the resource from solr but not from the database" do
         exhibit = FactoryBot.create(:exhibit, slug: "princeton-best")

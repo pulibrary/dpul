@@ -440,9 +440,7 @@ describe IiifResource do
           expect(Spotlight::JobTracker.last.events.where(type: "error").first.data[:message]).to eq "solr mad"
         end
       end
-    end
 
-    describe "#reindex" do
       context "when the resource has a search service" do
         let(:exhibit) { Spotlight::Exhibit.create title: "Exhibit A" }
         let(:resource) { described_class.new url:, exhibit: }
