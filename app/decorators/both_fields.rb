@@ -3,7 +3,7 @@
 # Decorates a Custom Field to give an accessor for the alternate suffix.
 class BothFields < SimpleDelegator
   def alternate_field
-    field.gsub(/(.*)_.*$/, '\1' + alternate_field_suffix)
+    field.gsub(/(.*)_.*$/, "\\1#{alternate_field_suffix}")
   end
 
   private

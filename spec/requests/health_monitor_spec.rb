@@ -43,7 +43,7 @@ RSpec.describe "Health Monitor", type: :request do
 
     context "when checking the status of the mounted directory" do
       it "errors when the mount directory is empty" do
-        path_mock = Rails.root.join("spec", "fixtures", "fake_directory").to_s
+        path_mock = Rails.root.join("spec/fixtures/fake_directory").to_s
         uploader_mock = instance_double(Spotlight::FeaturedImageUploader)
         allow(uploader_mock).to receive(:root).and_return(path_mock)
         allow(Spotlight::FeaturedImageUploader).to receive(:new).and_return(uploader_mock)

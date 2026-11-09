@@ -4,7 +4,7 @@ namespace :dpul do
   namespace :cleanup do
     desc "delete duplicate sidecars"
     task sidecars: :environment do
-      logger = Logger.new(STDOUT)
+      logger = Logger.new($stdout)
       config = CatalogController.blacklight_config
       repo = FriendlyIdRepository.new(config)
       dups = Spotlight::SolrDocumentSidecar.select(:exhibit_id, :document_id).group(:exhibit_id, :document_id).having("count(*) > 1").size.keys

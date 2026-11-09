@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
     key &&= nil unless key.to_s.match?(/^guest/)
     return key if key
 
-    "guest_" + guest_user_unique_suffix
+    "guest_#{guest_user_unique_suffix}"
   end
 
   def create_guest_user(key = nil)

@@ -30,8 +30,8 @@ describe ExhibitProxy do
         url = "https://hydra-dev.princeton.edu/collections/2b88qc199/manifest"
         fixture1 = "2b88qc199.json"
         fixture2 = "2b88qc199-item-deleted.json"
-        body1 = File.read(Rails.root.join("spec", "fixtures", "manifests", fixture1))
-        body2 = File.read(Rails.root.join("spec", "fixtures", "manifests", fixture2))
+        body1 = File.read(Rails.root.join("spec/fixtures/manifests", fixture1))
+        body2 = File.read(Rails.root.join("spec/fixtures/manifests", fixture2))
         headers = { "content-type" => "application/ld+json" }
         stub_request(:get, url)
           .to_return(
@@ -65,7 +65,7 @@ describe ExhibitProxy do
     context "when a resource was persisted with a token in its url" do
       before do
         stub_collections(fixture: "collections.json")
-        body = File.read(Rails.root.join("spec", "fixtures", "manifests", "2b88qc199.json"))
+        body = File.read(Rails.root.join("spec/fixtures/manifests/2b88qc199.json"))
         headers = { "content-type" => "application/ld+json" }
         stub_request(:get, "https://hydra-dev.princeton.edu/collections/2b88qc199/manifest")
           .to_return(

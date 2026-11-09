@@ -8,6 +8,7 @@ AllCops:
   NewCops: disable
   DisplayCopNames: true
   TargetRubyVersion: 4.0.9
+  SuggestExtensions: false
   Exclude:
     - 'db/**/*'
     - 'script/**/*'
@@ -134,6 +135,9 @@ RSpec/AnyInstance:
     - 'spec/support/stub_iiif_response.rb'
     - 'spec/features/catalog_show_spec.rb'
     - 'spec/models/iiif_resource_spec.rb'
+
+RSpec/Capybara/VisibilityMatcher:
+  Enabled: false
 
 RSpec/ContextWording:
   Enabled: false

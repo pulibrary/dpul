@@ -7,7 +7,6 @@ source "https://gems.contribsys.com/" do
 end
 
 gem "acts-as-taggable-on", "~> 13.0"
-gem "benchmark" # a dependency of rubocop
 gem "blacklight", "~> 7.42"
 gem "blacklight-gallery", "~> 4.7"
 gem "blacklight-oembed"
