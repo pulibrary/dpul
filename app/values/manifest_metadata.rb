@@ -9,6 +9,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
 
     json_ld_see_also = Array.wrap(see_also).find { |v| v["format"] == "application/ld+json" }
     return unless json_ld_see_also
+
     json_ld_url = json_ld_see_also["@id"] || json_ld_see_also["id"]
 
     AuthorizedUrl.new(url: json_ld_url).to_s
@@ -49,6 +50,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
     }.freeze
 
     attr_reader :key, :values
+
     def initialize(key, values)
       @key = key
       @values = Array.wrap(values)
@@ -56,6 +58,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
 
     def to_pair
       return [new_key, [placeholder_title]] if new_key == "Title" && new_values.empty?
+
       [new_key, new_values]
     end
 
@@ -76,7 +79,7 @@ class ManifestMetadata < Spotlight::Resources::IiifManifest::Metadata
       return language_name(value) if key == "Language"
       return value["title"] if key == "Memberof"
       return value["@id"] if value["@id"]
-      return link_to_catalog(value) if key == "Link to catalog" || key == "Link to finding aid"
+      return link_to_catalog(value) if ["Link to catalog", "Link to finding aid"].include?(key)
       return actors(value) if key == "Actor"
       return value.downcase if key.casecmp("keywords").zero?
 

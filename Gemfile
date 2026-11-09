@@ -51,9 +51,9 @@ gem "rsolr", "~> 2.0"
 # Required by blacklight-oembed
 gem "kicks"
 gem "rake", "~> 13.0"
-gem 'rubocop', '~> 1.92', require: false
-gem 'rubocop-rails', require: false
-gem 'rubocop-rspec', require: false
+gem "rubocop", "~> 1.92", require: false
+gem "rubocop-rails", require: false
+gem "rubocop-rspec", require: false
 gem "ruby2_keywords"
 gem "ruby-prof", require: false
 gem "rubyzip", ">= 1.2.2"

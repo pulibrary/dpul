@@ -4,6 +4,7 @@
 # so should always be re-instantiated before use.
 class ExhibitProxy
   attr_reader :exhibit
+
   delegate :slug, to: :exhibit
   def initialize(exhibit)
     @exhibit = exhibit
@@ -48,6 +49,7 @@ class ExhibitProxy
 
   class DummyDocumentBuilder
     attr_reader :members
+
     def initialize(members)
       @members = members
     end

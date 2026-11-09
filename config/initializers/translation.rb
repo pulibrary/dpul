@@ -8,7 +8,7 @@ Rails.application.config.to_prepare do
   # Guard to prevent errors when running rake db:create
   # Important when running replicate:prod cap task
   def database_exist?
-    return true if ActiveRecord::Base.connection
+    true if ActiveRecord::Base.connection
   rescue ActiveRecord::NoDatabaseError, ActiveRecord::ConnectionNotEstablished
     false
   end

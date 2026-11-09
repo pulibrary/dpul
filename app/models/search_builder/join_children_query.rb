@@ -4,6 +4,7 @@ class SearchBuilder
   # Models Solr join queries for retrieving Documents modeling children of collections
   class JoinChildrenQuery
     attr_reader :parent_query
+
     # Constructor
     # @param parent_query [String] the query string from the client
     def initialize(parent_query)

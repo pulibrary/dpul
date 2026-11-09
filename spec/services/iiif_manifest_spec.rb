@@ -98,6 +98,7 @@ RSpec.describe IiifManifest do
 
     context "without a url or manifest" do
       let(:manifest_service) { described_class.new(url: nil, manifest: nil, collection:) }
+
       it "returns an empty hash" do
         expect(manifest_service.to_solr[:tile_source_ssim]).to be_nil
       end

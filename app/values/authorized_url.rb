@@ -6,6 +6,7 @@
 # index NetID only item metadata.
 class AuthorizedUrl
   attr_reader :url
+
   def initialize(url:)
     @url = url
   end

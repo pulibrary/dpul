@@ -7,7 +7,7 @@ RSpec.describe "Indexing a figgy collection end-to-end test", type: :feature, js
     with_queue_adapter :inline
     let(:exhibit) { FactoryBot.create(:exhibit, title: "princeton", slug: "princeton-best") }
 
-    scenario "the field with the custom label indexes a value" do
+    it "the field with the custom label indexes a value" do
       sign_in FactoryBot.create(:site_admin)
       stub_collections(fixture: "collections.json")
       stub_manifest(url: "https://hydra-dev.princeton.edu/collections/2b88qc199/manifest", fixture: "2b88qc199.json")

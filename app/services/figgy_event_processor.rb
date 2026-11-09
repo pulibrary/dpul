@@ -2,6 +2,7 @@
 
 class FiggyEventProcessor
   attr_reader :event
+
   def initialize(event)
     @event = event
   end

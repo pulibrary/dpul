@@ -6,6 +6,7 @@ Rails.application.config.after_initialize do
   class HealthMonitor::Providers::Base
     def critical
       return true if request && request.parameters["providers"].present?
+
       configuration.critical
     end
   end

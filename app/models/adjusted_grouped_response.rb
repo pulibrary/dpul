@@ -11,6 +11,7 @@ class AdjustedGroupedResponse < Blacklight::Solr::Response
 
   class FacetCount
     attr_reader :data
+
     def initialize(data)
       @data = data
     end

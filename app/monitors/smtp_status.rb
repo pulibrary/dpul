@@ -10,6 +10,7 @@ class SmtpStatus < HealthMonitor::Providers::Base
   end
   def check!
     return unless Time.current > self.class.next_check_timestamp
+
     settings = ActionMailer::Base.smtp_settings
     tls_setting = settings[:enable_starttls] == false ? false : :auto
     smtp = Net::SMTP.new(settings[:address], settings[:port], starttls: tls_setting)
