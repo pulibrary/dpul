@@ -25,6 +25,7 @@ class ExternalCollectionsQuery
   end
 
   attr_reader :remote_url
+
   def initialize(remote_url)
     @remote_url = remote_url
   end

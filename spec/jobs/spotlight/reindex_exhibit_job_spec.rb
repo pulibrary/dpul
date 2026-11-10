@@ -36,7 +36,7 @@ describe Spotlight::ReindexExhibitJob do
 
   it "works for resources which aren't persisted yet, even if they timeout on save validation" do
     stub_request(:get, url1)
-      .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "manifests", "full_text_manifest.json")), headers: { "content-type" => "application/ld+json" })
+      .to_return(status: 200, body: File.read(Rails.root.join("spec/fixtures/manifests/full_text_manifest.json")), headers: { "content-type" => "application/ld+json" })
     # head request should fail first, because of the save
     stub_request(:head, url1)
       .to_timeout.then
@@ -64,7 +64,7 @@ describe Spotlight::ReindexExhibitJob do
     it "retries indexing" do
       # get request can always succeed
       stub_request(:get, url1)
-        .to_return(status: 200, body: File.read(Rails.root.join("spec", "fixtures", "manifests", "1r66j1149.json")), headers: { "content-type" => "application/ld+json" })
+        .to_return(status: 200, body: File.read(Rails.root.join("spec/fixtures/manifests/1r66j1149.json")), headers: { "content-type" => "application/ld+json" })
       # head request should succeed first, because of the save
       stub_request(:head, url1)
         .to_return(status: 200, body: "", headers: { "content-type" => "application/ld+json" }).then

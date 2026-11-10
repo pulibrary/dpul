@@ -7,7 +7,6 @@ source "https://gems.contribsys.com/" do
 end
 
 gem "acts-as-taggable-on", "~> 13.0"
-gem "bixby", "~> 5.0"
 gem "blacklight", "~> 7.42"
 gem "blacklight-gallery", "~> 4.7"
 gem "blacklight-oembed"
@@ -51,6 +50,10 @@ gem "rsolr", "~> 2.0"
 # Required by blacklight-oembed
 gem "kicks"
 gem "rake", "~> 13.0"
+gem "rubocop", "~> 1.92", require: false
+gem "rubocop-capybara", require: false
+gem "rubocop-rails", require: false
+gem "rubocop-rspec", require: false
 gem "ruby2_keywords"
 gem "ruby-prof", require: false
 gem "rubyzip", ">= 1.2.2"

@@ -53,8 +53,7 @@ namespace :dpul do
         download_location = File.join(download_dir, filename)
         # unzip it
         `bunzip2 #{download_location}` # this takes a minute
-        unzipped_location = download_location[0..-5] # strip `.bz2`
-        unzipped_location
+        download_location[0..-5] # strip `.bz2`
 
       else # get it from the prod database
         filename = "dpul_production_replication_#{date}.sql"

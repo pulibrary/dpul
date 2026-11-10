@@ -27,9 +27,11 @@ module Spotlight
       # do up to 5 retries
       5.times do
         break if errored_resources.blank?
+
         errored_resources = enqueue_resources(errored_resources)
       end
       return if errored_resources.blank?
+
       # errors after retries set failed status, with details sent to Honeybadger
       Honeybadger.notify("Exhibit index failure on #{exhibit.slug}, with timeout errors on #{errored_resources.map(&:url).join(', ')}")
       job_tracker.update(status: "failed")

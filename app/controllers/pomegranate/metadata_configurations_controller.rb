@@ -10,7 +10,7 @@ module Pomegranate
         views = @blacklight_configuration.default_blacklight_config.view.keys | [:show]
 
         @blacklight_configuration.blacklight_config.index_fields.keys.index_with do |_element|
-          (%i[enabled label weight text_area link_to_facet] | views)
+          %i[enabled label weight text_area link_to_facet] | views
         end
       end
   end

@@ -6,8 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-require: rubocop-rails
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Layout/CommentIndentation:
@@ -30,6 +28,11 @@ Layout/EmptyLines:
   Exclude:
     - 'Gemfile'
 
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - 'spec/helpers/index_helper_spec.rb'
+    - 'spec/helpers/spotlight_helper_spec.rb'
+
 Lint/MissingSuper:
   Exclude:
     - 'app/services/figgy_event_processor/unknown_event.rb'
@@ -39,13 +42,6 @@ Lint/MissingSuper:
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
   Max: 44
-
-# Offense count: 10
-RSpec/Capybara:
-  Exclude:
-    - 'spec/features/catalog_spec.rb'
-    - 'spec/features/exhibit_home_page_spec.rb'
-    - 'spec/features/sign_in_spec.rb'
 
 # Offense count: 6
 # Configuration parameters: Prefixes.
@@ -75,14 +71,6 @@ RSpec/EmptyLineAfterFinalLet:
     - 'spec/views/spotlight/metadata_configurations/edit.html.erb_spec.rb'
     - 'spec/workers/figgy_event_handler_spec.rb'
 
-# Offense count: 4
-RSpec/EmptyLineAfterSubject:
-  Exclude:
-    - 'spec/decorators/both_fields_spec.rb'
-    - 'spec/models/external_manifest_spec.rb'
-    - 'spec/queries/external_collections_query_spec.rb'
-    - 'spec/services/figgy_event_processor_spec.rb'
-
 # Offense count: 15
 # Configuration parameters: Max.
 RSpec/ExampleLength:
@@ -91,6 +79,15 @@ RSpec/ExampleLength:
     - 'spec/models/iiif_resource_spec.rb'
     - 'spec/services/figgy_event_processor_spec.rb'
     - 'spec/workers/figgy_event_handler_spec.rb'
+
+RSpec/LeakyConstantDeclaration:
+  Exclude:
+    - 'spec/helpers/index_helper_spec.rb'
+    - 'spec/helpers/spotlight_helper_spec.rb'
+
+RSpec/StubbedMock:
+  Exclude:
+    - 'spec/jobs/iiif_ingest_job_spec.rb'
 
 # Offense count: 5
 # Configuration parameters: EnforcedStyle.
@@ -129,6 +126,11 @@ RSpec/VerifiedDoubles:
   Exclude:
     - 'spec/presenters/rtl_index_presenter_spec.rb'
     - 'spec/presenters/rtl_show_presenter_spec.rb'
+
+RSpec/VerifiedDoubleReference:
+  Exclude:
+    - 'spec/helpers/index_helper_spec.rb'
+    - 'spec/helpers/spotlight_helper_spec.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.

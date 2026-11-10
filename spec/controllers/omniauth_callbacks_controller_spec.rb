@@ -2,6 +2,7 @@
 
 require "rails_helper"
 
+#rubocop:disable RSpec/SpecFilePathFormat
 RSpec.describe Users::OmniauthCallbacksController do
   before { request.env["devise.mapping"] = Devise.mappings[:user] }
 
@@ -21,3 +22,4 @@ RSpec.describe Users::OmniauthCallbacksController do
     end
   end
 end
+#rubocop:enable RSpec/SpecFilePathFormat

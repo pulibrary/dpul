@@ -66,7 +66,7 @@ describe IiifService do
 
       it "appends the token to the request" do
         expect(response).not_to be_empty
-        authorized_url = url + "?auth_token=token"
+        authorized_url = "#{url}?auth_token=token"
         expect(http_client).to have_received(:get).with(authorized_url)
       end
 

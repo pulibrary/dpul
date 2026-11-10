@@ -5,12 +5,14 @@
 class HoneybadgerCheck
   def self.maintenance_window?
     return false unless Rails.env.staging? || Rails.env.production?
+
     # Check in Eastern time.
     Time.use_zone("America/New_York") do
       current_time = Time.zone.now
       # Only check times if we're the correct day of the week.
       return false if Rails.env.staging? && !current_time.monday?
       return false if Rails.env.production? && !current_time.tuesday?
+
       current_time.between?(Time.zone.parse("5:30"), Time.zone.parse("8:30"))
     end
   end

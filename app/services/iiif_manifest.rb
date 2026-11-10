@@ -3,6 +3,7 @@
 class IiifManifest < ::Spotlight::Resources::IiifManifest
   def to_solr(exhibit: nil)
     return {} unless url && manifest
+
     @exhibit ||= exhibit
     add_noid
     # this is called in super, but idempotent so safe to call here also; we need the metadata
@@ -21,6 +22,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   # JSON-LD for transliterated titles.
   def add_title_from_manifest_metadata
     return unless title_fields.present? && solr_hash["readonly_title_tesim"].present?
+
     Array.wrap(title_fields).each do |field|
       solr_hash[field] = solr_hash["readonly_title_tesim"]
     end
@@ -29,6 +31,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
   # In V3 manifests a thumbnail is in an array, and uses 'id' instead of '@id'
   def add_thumbnail_url
     return unless thumbnail_field && manifest["thumbnail"].present?
+
     thumbnail = Array.wrap(manifest["thumbnail"]).first
     solr_hash[thumbnail_field] = thumbnail["@id"] || thumbnail["id"]
   end
@@ -151,6 +154,7 @@ class IiifManifest < ::Spotlight::Resources::IiifManifest
           # the one without; they both translate into the same solr field name
           slug_regex = /^#{Regexp.quote(key.parameterize)}(-(\p{Alnum}){8}-(\p{Alnum}){4}-(\p{Alnum}){4}-(\p{Alnum}){4}-(\p{Alnum}){12})?/
           next unless (custom_field_slug = slug_lookup.keys.find { |s| slug_regex.match(s) })
+
           field = slug_lookup[custom_field_slug]
 
           field = BothFields.new(field)

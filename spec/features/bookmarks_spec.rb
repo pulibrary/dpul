@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "Bookmarks", type: :feature, js: true do
+RSpec.describe "Bookmarks", js: true, type: :feature do
   with_queue_adapter :inline
   let(:iiif_resource1) do FactoryBot.create(
     :iiif_resource,

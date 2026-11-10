@@ -13,6 +13,7 @@ RSpec.describe HoneybadgerCheck do
           end
         end
       end
+
       context "in the wrong day" do
         it "returns false" do
           allow(Rails.env).to receive(:staging?).and_return(true)
@@ -21,6 +22,7 @@ RSpec.describe HoneybadgerCheck do
           end
         end
       end
+
       context "in the wrong time" do
         it "returns false" do
           allow(Rails.env).to receive(:staging?).and_return(true)
@@ -30,6 +32,7 @@ RSpec.describe HoneybadgerCheck do
         end
       end
     end
+
     context "when it's production" do
       context "and in the maintenance window" do
         it "returns true" do
@@ -39,6 +42,7 @@ RSpec.describe HoneybadgerCheck do
           end
         end
       end
+
       context "in the wrong day" do
         it "returns false" do
           allow(Rails.env).to receive(:production?).and_return(true)
@@ -47,6 +51,7 @@ RSpec.describe HoneybadgerCheck do
           end
         end
       end
+
       context "in the wrong time" do
         it "returns false" do
           allow(Rails.env).to receive(:production?).and_return(true)

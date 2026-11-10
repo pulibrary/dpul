@@ -38,7 +38,7 @@ RSpec.describe RtlIndexPresenter do
       let(:title) { ["تضيح المقال", "Tawḍīḥ al-maqāl"] }
 
       it "renders as an Array" do
-        expect(presenter.label(:title)).to match_array ["تضيح المقال", "Tawḍīḥ al-maqāl"]
+        expect(presenter.label(:title)).to contain_exactly("تضيح المقال", "Tawḍīḥ al-maqāl")
       end
 
       it "renders heading as multiline" do

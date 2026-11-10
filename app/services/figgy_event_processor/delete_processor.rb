@@ -13,8 +13,6 @@ class FiggyEventProcessor
       true
     end
 
-    def index
-      SolrDocument.index
-    end
+    delegate :index, to: :SolrDocument
   end
 end
