@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # Enable version updates for Docker
+  - package-ecosystem: "bundler"
+    # Look for a `Gemfile` in the `root` directory
+    directory: "/"
+    # this key is required
+    schedule:
+      interval: "weekly"
+    # Disable all non-security pull requests
+    open-pull-requests-limit: 0
+
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Disable all non-security pull requests
+    open-pull-requests-limit: 0
