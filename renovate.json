@@ -14,7 +14,7 @@
   "timezone": "America/New_York",
   "lockFileMaintenance": {
     "enabled": true,
-    "automerge": true,
+    "automerge": false,
     "schedule": [
       "* 20-23 * * 1"
     ]
