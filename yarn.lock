@@ -20,9 +20,9 @@
     "@babel/types" "^7.29.15"
 
 "@babel/runtime@^7.21.0":
-  version "7.29.13"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.29.13.tgz#6b33e456181ff15b5585d932f3aebfc0669b32dd"
-  integrity sha512-v+oN26xP4YIlQsbQ/CbTH1WG5m/l/DjKKZNy/Kp3f/AFvbgt7Em/D0FeMM3O2hX0YzeN2M16W8lOpyhIkfCBcQ==
+  version "7.29.16"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.29.16.tgz#e91c6abc13849151d891fa8a422f44a2d30cc881"
+  integrity sha512-LKBjGopxrQE0aFucNL69OyyyF143MOWUULEOftU3oCgyD35Sy84UUpVnt/sNvTb7ZmCyALSt7om+fojlW35zYQ==
 
 "@babel/types@^7.29.15":
   version "7.29.15"
@@ -781,9 +781,9 @@
     tslib "^2.4.0"
 
 "@types/lodash@^4.14.165":
-  version "4.17.27"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.27.tgz#15fb73275b64dbfe49e2ae8376bb469b352a47a7"
-  integrity sha512-VenMRv/eKNrspX9v3H4dbmjsrnCOYdYBG3kxXKk3dG6X+urBGcj2Prww3xw1U5K4FV/mE4h5GbWd0szEKf+9ew==
+  version "4.17.28"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.28.tgz#44ed30e4af5f2a8ff445d977d605322f2a065374"
+  integrity sha512-2iP9dTMtHQOGZq086o7CyIVz5h3hCS7xqG1dZg3hfbxqcB5/ZaFD+vOp9ebR8YlbCQr84OQjBiv/qgITjHSrYA==
 
 "@types/resize-observer-browser@^0.1.7":
   version "0.1.11"
@@ -942,7 +942,7 @@ color-name@~1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-core-js@^3.8.3:
+core-js@^3.51.0:
   version "3.51.0"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.51.0.tgz#9a7b197159ab83173b50efbe0c4846bec94b3abb"
   integrity sha512-7bDKx/5jm5MxzsXxc93g6Z2+4ZsuT/MddrfRmTDJNAkWsYWHU8EVNEsBiIEWnMAMCHMmRfUEjkuo3jeNBOIHRw==
@@ -1181,13 +1181,13 @@ lodash@^4.17.20:
   integrity sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==
 
 lux-design-system@^7.0.0:
-  version "7.15.2"
-  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-7.15.2.tgz#ed2227a3ee98cac5711535d48668e0db4070346c"
-  integrity sha512-ih/cgFOyHGn2t9BdsH2XOCT8WSoXArDE2xKFQ55CUj/aV5gL7IZNmBFbwjbx0JSOZnZLFnnnrf48qlCV3vSZRA==
+  version "7.16.0"
+  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-7.16.0.tgz#6765e57e2d334f36b2f619c0a5fdd9bd4b69ed83"
+  integrity sha512-xhtUvb+PryAKNZ1Vp9HFJJEkNEaakxJUR19BHyNIyhXmEIw5xEiC3HkZ8r09Q532eUYP4zjyJZWGyij2MLdCxg==
   dependencies:
-    core-js "^3.8.3"
+    core-js "^3.51.0"
     register-service-worker "^1.7.2"
-    tar "^7.5.21"
+    tar "^7.5.23"
     v-calendar "^3.1.2"
     vue-draggable-plus "^0.3.5"
     vue3-cookies "^1.0.6"
@@ -1548,7 +1548,7 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.2.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-postcss@^8.4.38, postcss@^8.5.32:
+postcss@^8.4.38:
   version "8.5.33"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.33.tgz#088a2fee1bdee7ea1ffaf8abb4288513e7097ab0"
   integrity sha512-RVHEU9/Pp1Fnjr/MpAJsZoADukCKhfIi15OunEYiGktIkYLkPVvC1sioWolGDS7XByMTx9m/IGbro0Js13zhnQ==
@@ -1556,6 +1556,15 @@ postcss@^8.4.38, postcss@^8.5.32:
     nanoid "^3.3.20"
     picocolors "^1.1.1"
     source-map-js "^1.2.2"
+
+postcss@^8.5.32:
+  version "8.5.34"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.34.tgz#2c831942dc7c6896aa87e891e6e38c8f56f02c3f"
+  integrity sha512-P1Qzj0XXZjMda74C7qiVnBG90UKNbyNUAOeQRBW8X63RsIMV57gevRqjnkELdwtZ/S2/uQFksJhmwuN8xShLPw==
+  dependencies:
+    nanoid "^3.3.20"
+    picocolors "^1.1.1"
+    source-map-js "^1.2.4"
 
 read-cache@^1.0.0:
   version "1.0.2"
@@ -1602,7 +1611,7 @@ rolldown@~1.2.18:
     "@rolldown/binding-win32-arm64-msvc" "1.2.19"
     "@rolldown/binding-win32-x64-msvc" "1.2.19"
 
-source-map-js@^1.2.2, source-map-js@^1.2.3:
+source-map-js@^1.2.2, source-map-js@^1.2.3, source-map-js@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.4.tgz#b9303bf27115446da5e6ca3a4a2ee3e9f7b69633"
   integrity sha512-J7ZjMvHd9O1fcT/5V09QWaaSl2BbWx3F6O08spde82Namf9UB0GxRVIPiNbVsdKkoizHiSpTodo3vp2bAy91MA==
@@ -1619,10 +1628,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tar@^7.5.21:
-  version "7.5.22"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.22.tgz#a696f998136e71487dc3f869a85bba2c67971ba9"
-  integrity sha512-MFO/QzvtAOmJbkhOaCTvbGcFN9L9b+JunIsDwaKljSOdcLMea3NJ1k9Usz/rjdfSXTq4dfzfeS7W4p4YOAAHeA==
+tar@^7.5.23:
+  version "7.5.24"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.24.tgz#fc6e4eba45b5ac893f63457f090484df3639b8dc"
+  integrity sha512-to/OxuCk5DeVONcjjODT7aeoRq5NIPPlfPc0tNML+wLlnf6u5BcJz97Uukv3pT3jzorkFhUevylkAiBr+ZmV2w==
   dependencies:
     "@isaacs/fs-minipass" "^4.0.0"
     chownr "^3.0.0"
